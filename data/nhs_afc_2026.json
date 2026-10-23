@@ -1,0 +1,322 @@
+{
+  "taxYear": "2026/2027",
+  "payRisePercentage": 3.3,
+  "standardWeeklyHours": 37.5,
+  "standardAnnualHours": 1955.36,
+  "bands": [
+    {
+      "band": "Band 2",
+      "slug": "band-2",
+      "typicalRoles": ["Healthcare Assistant", "Clinical Support Worker", "Phlebotomist", "Domestic Support", "Receptionist"],
+      "points": [
+        {
+          "step": "Single Point",
+          "yearsExperience": 0,
+          "annualSalary": 25272,
+          "hourlyRate": 12.92
+        }
+      ]
+    },
+    {
+      "band": "Band 3",
+      "slug": "band-3",
+      "typicalRoles": ["Senior Healthcare Assistant", "Emergency Care Assistant", "Pharmacy Assistant", "Occupational Therapy Assistant"],
+      "points": [
+        {
+          "step": "Entry",
+          "yearsExperience": 0,
+          "annualSalary": 25760,
+          "hourlyRate": 13.17
+        },
+        {
+          "step": "After 2 years",
+          "yearsExperience": 2,
+          "annualSalary": 27476,
+          "hourlyRate": 14.05
+        }
+      ]
+    },
+    {
+      "band": "Band 4",
+      "slug": "band-4",
+      "typicalRoles": ["Nursing Associate", "Assistant Practitioner", "Pharmacy Technician", "Medical Secretary Team Leader"],
+      "points": [
+        {
+          "step": "Entry",
+          "yearsExperience": 0,
+          "annualSalary": 28392,
+          "hourlyRate": 14.52
+        },
+        {
+          "step": "After 3 years",
+          "yearsExperience": 3,
+          "annualSalary": 31157,
+          "hourlyRate": 15.93
+        }
+      ]
+    },
+    {
+      "band": "Band 5",
+      "slug": "band-5",
+      "typicalRoles": ["Staff Nurse (RN)", "Newly Qualified Paramedic", "Physiotherapist", "Radiographer", "Occupational Therapist", "Midwife"],
+      "points": [
+        {
+          "step": "Entry",
+          "yearsExperience": 0,
+          "annualSalary": 32073,
+          "hourlyRate": 16.40
+        },
+        {
+          "step": "After 2 years",
+          "yearsExperience": 2,
+          "annualSalary": 34592,
+          "hourlyRate": 17.69
+        },
+        {
+          "step": "After 4 years",
+          "yearsExperience": 4,
+          "annualSalary": 39043,
+          "hourlyRate": 19.97
+        }
+      ]
+    },
+    {
+      "band": "Band 6",
+      "slug": "band-6",
+      "typicalRoles": ["Junior Sister / Charge Nurse", "Senior Paramedic", "Specialist Physiotherapist", "Specialist Radiographer", "Biomedical Scientist"],
+      "points": [
+        {
+          "step": "Entry",
+          "yearsExperience": 0,
+          "annualSalary": 39959,
+          "hourlyRate": 20.44
+        },
+        {
+          "step": "After 2 years",
+          "yearsExperience": 2,
+          "annualSalary": 42170,
+          "hourlyRate": 21.57
+        },
+        {
+          "step": "After 5 years",
+          "yearsExperience": 5,
+          "annualSalary": 48117,
+          "hourlyRate": 24.61
+        }
+      ]
+    },
+    {
+      "band": "Band 7",
+      "slug": "band-7",
+      "typicalRoles": ["Ward Manager / Sister", "Advanced Clinical Practitioner (ACP)", "Advanced Paramedic", "Clinical Team Leader", "Lead Pharmacist"],
+      "points": [
+        {
+          "step": "Entry",
+          "yearsExperience": 0,
+          "annualSalary": 49387,
+          "hourlyRate": 25.26
+        },
+        {
+          "step": "After 2 years",
+          "yearsExperience": 2,
+          "annualSalary": 51932,
+          "hourlyRate": 26.56
+        },
+        {
+          "step": "After 5 years",
+          "yearsExperience": 5,
+          "annualSalary": 56515,
+          "hourlyRate": 28.90
+        }
+      ]
+    },
+    {
+      "band": "Band 8a",
+      "slug": "band-8a",
+      "typicalRoles": ["Matron", "Principal Clinical Psychologist", "Advanced Nurse Consultant", "Service Manager", "Senior Principal Pharmacist"],
+      "points": [
+        {
+          "step": "Entry",
+          "yearsExperience": 0,
+          "annualSalary": 57528,
+          "hourlyRate": 29.42
+        },
+        {
+          "step": "After 2 years",
+          "yearsExperience": 2,
+          "annualSalary": 60417,
+          "hourlyRate": 30.90
+        },
+        {
+          "step": "After 5 years",
+          "yearsExperience": 5,
+          "annualSalary": 64750,
+          "hourlyRate": 33.11
+        }
+      ]
+    },
+    {
+      "band": "Band 8b",
+      "slug": "band-8b",
+      "typicalRoles": ["Senior Matron", "Consultant Clinical Psychologist", "Head of Clinical Services", "Operational Directorate Lead"],
+      "points": [
+        {
+          "step": "Entry",
+          "yearsExperience": 0,
+          "annualSalary": 66582,
+          "hourlyRate": 34.05
+        },
+        {
+          "step": "After 2 years",
+          "yearsExperience": 2,
+          "annualSalary": 70896,
+          "hourlyRate": 36.26
+        },
+        {
+          "step": "After 5 years",
+          "yearsExperience": 5,
+          "annualSalary": 77368,
+          "hourlyRate": 39.57
+        }
+      ]
+    },
+    {
+      "band": "Band 8c",
+      "slug": "band-8c",
+      "typicalRoles": ["Head of Nursing", "Associate Director", "Consultant Scientist", "Deputy Chief Operating Officer"],
+      "points": [
+        {
+          "step": "Entry",
+          "yearsExperience": 0,
+          "annualSalary": 79504,
+          "hourlyRate": 40.66
+        },
+        {
+          "step": "After 2 years",
+          "yearsExperience": 2,
+          "annualSalary": 84346,
+          "hourlyRate": 43.14
+        },
+        {
+          "step": "After 5 years",
+          "yearsExperience": 5,
+          "annualSalary": 91609,
+          "hourlyRate": 46.85
+        }
+      ]
+    },
+    {
+      "band": "Band 8d",
+      "slug": "band-8d",
+      "typicalRoles": ["Deputy Director of Nursing", "Chief Pharmacist (Large Trust)", "Director of Operations", "Clinical Director"],
+      "points": [
+        {
+          "step": "Entry",
+          "yearsExperience": 0,
+          "annualSalary": 94356,
+          "hourlyRate": 48.25
+        },
+        {
+          "step": "After 2 years",
+          "yearsExperience": 2,
+          "annualSalary": 100140,
+          "hourlyRate": 51.21
+        },
+        {
+          "step": "After 5 years",
+          "yearsExperience": 5,
+          "annualSalary": 108814,
+          "hourlyRate": 55.65
+        }
+      ]
+    },
+    {
+      "band": "Band 9",
+      "slug": "band-9",
+      "typicalRoles": ["Director of Nursing", "Chief Operating Officer", "Director of Clinical Strategy", "National Specialist Advisor"],
+      "points": [
+        {
+          "step": "Entry",
+          "yearsExperience": 0,
+          "annualSalary": 112782,
+          "hourlyRate": 57.68
+        },
+        {
+          "step": "After 2 years",
+          "yearsExperience": 2,
+          "annualSalary": 119583,
+          "hourlyRate": 61.16
+        },
+        {
+          "step": "After 5 years",
+          "yearsExperience": 5,
+          "annualSalary": 129783,
+          "hourlyRate": 66.37
+        }
+      ]
+    }
+  ],
+  "hcasZones": [
+    {
+      "id": "inner-london",
+      "name": "Inner London",
+      "percentage": 20,
+      "min": 5794,
+      "max": 8746,
+      "description": "Applies to NHS Trusts situated in central London boroughs including Camden, Islington, Westminster, City of London, Kensington & Chelsea, Southwark, Lambeth, and Tower Hamlets."
+    },
+    {
+      "id": "outer-london",
+      "name": "Outer London",
+      "percentage": 15,
+      "min": 4870,
+      "max": 6137,
+      "description": "Applies to NHS Trusts in outer London boroughs including Barnet, Croydon, Bromley, Kingston, Richmond, Enfield, Hounslow, and Ealing."
+    },
+    {
+      "id": "fringe",
+      "name": "Fringe (London Border)",
+      "percentage": 5,
+      "min": 1346,
+      "max": 2270,
+      "description": "Applies to designated NHS Trusts bordering Greater London, including Dartford, Slough, Epsom, St Albans, and West Essex."
+    },
+    {
+      "id": "standard",
+      "name": "Standard (Rest of UK)",
+      "percentage": 0,
+      "min": 0,
+      "max": 0,
+      "description": "Applies to England outside Greater London and the Fringe zone, as well as Wales, Scotland, and Northern Ireland regional equivalents."
+    }
+  ],
+  "pensionTiers": [
+    { "min": 0, "max": 13259, "rate": 0.052, "percentageLabel": "5.2%" },
+    { "min": 13259.01, "max": 26831, "rate": 0.065, "percentageLabel": "6.5%" },
+    { "min": 26831.01, "max": 32691, "rate": 0.083, "percentageLabel": "8.3%" },
+    { "min": 32691.01, "max": 49078, "rate": 0.098, "percentageLabel": "9.8%" },
+    { "min": 49078.01, "max": 62924, "rate": 0.107, "percentageLabel": "10.7%" },
+    { "min": 62924.01, "max": 9999999, "rate": 0.125, "percentageLabel": "12.5%" }
+  ],
+  "taxBracketsUK": {
+    "personalAllowance": 12570,
+    "allowanceTaperThreshold": 100000,
+    "basicRateLimit": 50270,
+    "higherRateLimit": 125140,
+    "basicRate": 0.20,
+    "higherRate": 0.40,
+    "additionalRate": 0.45
+  },
+  "nationalInsurance": {
+    "primaryThresholdAnnual": 12570,
+    "upperEarningsLimitAnnual": 50270,
+    "mainRate": 0.08,
+    "additionalRate": 0.02
+  },
+  "studentLoans": {
+    "plan1": { "threshold": 24990, "rate": 0.09, "name": "Plan 1 (Pre-2012 UK)" },
+    "plan2": { "threshold": 27295, "rate": 0.09, "name": "Plan 2 (Post-2012 England/Wales)" },
+    "plan4": { "threshold": 31395, "rate": 0.09, "name": "Plan 4 (Scotland)" },
+    "postgrad": { "threshold": 21000, "rate": 0.06, "name": "Postgraduate Loan" }
+  }
+}
