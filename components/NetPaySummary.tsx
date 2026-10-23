@@ -3,7 +3,6 @@
 import React from "react";
 import { formatCurrency, formatHourlyRate, formatPercent } from "@/lib/formatters";
 import { CalculationResult } from "@/lib/calculator";
-import { ArrowUpRight, Banknote, Calendar, Clock, PiggyBank, Sparkles } from "lucide-react";
 
 interface NetPaySummaryProps {
   result: CalculationResult;
@@ -37,111 +36,128 @@ export default function NetPaySummary({
       ? result.totalDeductions.monthly
       : result.totalDeductions.weekly;
 
+  const currentPension =
+    timeframe === "annual"
+      ? result.pensionContribution.annual
+      : timeframe === "monthly"
+      ? result.pensionContribution.monthly
+      : result.pensionContribution.weekly;
+
+  const currentTax =
+    timeframe === "annual"
+      ? result.incomeTax.annual
+      : timeframe === "monthly"
+      ? result.incomeTax.monthly
+      : result.incomeTax.weekly;
+
+  const currentNI =
+    timeframe === "annual"
+      ? result.nationalInsurance.annual
+      : timeframe === "monthly"
+      ? result.nationalInsurance.monthly
+      : result.nationalInsurance.weekly;
+
   return (
-    <div className="relative overflow-hidden rounded-2xl border-2 border-emerald-500/30 bg-gradient-to-b from-white via-white to-emerald-50/20 p-5 shadow-lg dark:border-emerald-500/20 dark:from-slate-900 dark:via-slate-900 dark:to-emerald-950/20">
-      {/* Top Bar with Timeframe Switcher */}
-      <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-100 dark:border-slate-800">
+    <div className="rounded-xl border border-zinc-200/90 bg-white p-6 shadow-sm">
+      {/* Timeframe switcher */}
+      <div className="flex items-center justify-between pb-4 border-b border-zinc-100">
         <div>
-          <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 flex items-center gap-1.5">
-            <Banknote className="h-4 w-4" />
-            Estimated Take-Home Pay
-          </span>
-          <p className="text-[11px] text-slate-500 dark:text-slate-400">
+          <h2 className="text-sm font-semibold text-zinc-900">
+            Estimated Take-Home Deposit
+          </h2>
+          <p className="text-xs text-zinc-500 mt-0.5">
             {result.bandTitle} ({result.stepTitle}) • {result.hcasName}
           </p>
         </div>
 
-        {/* Timeframe Selector */}
-        <div className="inline-flex rounded-lg bg-slate-100 p-0.5 dark:bg-slate-800 text-xs font-semibold">
-          <button
-            type="button"
-            onClick={() => setTimeframe("monthly")}
-            className={`rounded-md px-3 py-1 transition-all ${
-              timeframe === "monthly"
-                ? "bg-white text-emerald-700 shadow-sm dark:bg-slate-700 dark:text-emerald-300 font-bold"
-                : "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
-            }`}
-          >
-            Monthly
-          </button>
-          <button
-            type="button"
-            onClick={() => setTimeframe("annual")}
-            className={`rounded-md px-3 py-1 transition-all ${
-              timeframe === "annual"
-                ? "bg-white text-emerald-700 shadow-sm dark:bg-slate-700 dark:text-emerald-300 font-bold"
-                : "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
-            }`}
-          >
-            Annual
-          </button>
-          <button
-            type="button"
-            onClick={() => setTimeframe("weekly")}
-            className={`rounded-md px-3 py-1 transition-all ${
-              timeframe === "weekly"
-                ? "bg-white text-emerald-700 shadow-sm dark:bg-slate-700 dark:text-emerald-300 font-bold"
-                : "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
-            }`}
-          >
-            Weekly
-          </button>
+        <div className="inline-flex rounded-lg bg-zinc-100 p-0.5 text-xs font-medium">
+          {(["monthly", "annual", "weekly"] as const).map((period) => (
+            <button
+              key={period}
+              type="button"
+              onClick={() => setTimeframe(period)}
+              className={`rounded-md px-3 py-1 capitalize transition-all ${
+                timeframe === period
+                  ? "bg-white text-zinc-950 font-semibold shadow-xs"
+                  : "text-zinc-600 hover:text-zinc-950"
+              }`}
+            >
+              {period}
+            </button>
+          ))}
         </div>
       </div>
 
-      {/* Main Net Pay Display */}
-      <div className="my-4">
+      {/* Main Net Pay Figure */}
+      <div className="py-5">
         <div className="flex items-baseline gap-2">
-          <span className="text-4xl sm:text-5xl font-black tracking-tight text-slate-900 dark:text-white font-mono">
+          <span className="text-4xl sm:text-5xl font-bold tracking-tight text-zinc-950 font-mono tabular-nums">
             {formatCurrency(currentNet, true)}
           </span>
-          <span className="text-sm sm:text-base font-semibold text-slate-500 dark:text-slate-400">
+          <span className="text-sm font-medium text-zinc-500">
             /{timeframe === "annual" ? "year" : timeframe === "monthly" ? "month" : "week"}
           </span>
         </div>
-        <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-          Direct bank deposit after NHS pension ({result.pensionTierLabel}), income tax, and National Insurance.
-        </p>
+        <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-zinc-500">
+          <span>{result.takeHomePercentage}% of gross retained</span>
+          <span>•</span>
+          <span>Effective tax & NI: {result.effectiveTaxRate}%</span>
+        </div>
       </div>
 
-      {/* Metric Cards Row */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-2 border-t border-slate-100 dark:border-slate-800 text-xs">
-        <div className="rounded-lg bg-slate-50 p-2.5 dark:bg-slate-800/60">
-          <span className="text-[10px] uppercase font-bold text-slate-500 dark:text-slate-400">
-            Total Gross Pay
-          </span>
-          <div className="text-sm font-bold text-slate-900 dark:text-white font-mono">
+      {/* Structured Ledger Summary (No icon-in-circle cards) */}
+      <div className="space-y-2 border-t border-zinc-100 pt-4 text-xs font-mono">
+        <div className="flex items-center justify-between py-1">
+          <span className="font-sans text-zinc-600">Total Gross Pay</span>
+          <span className="font-semibold text-zinc-900 tabular-nums">
             {formatCurrency(currentGross)}
-          </div>
+          </span>
         </div>
 
-        <div className="rounded-lg bg-slate-50 p-2.5 dark:bg-slate-800/60">
-          <span className="text-[10px] uppercase font-bold text-slate-500 dark:text-slate-400">
-            Total Deductions
+        <div className="flex items-center justify-between py-1">
+          <span className="font-sans text-zinc-600">
+            NHS Pension ({result.pensionTierLabel})
           </span>
-          <div className="text-sm font-bold text-rose-600 dark:text-rose-400 font-mono">
+          <span className="text-zinc-700 tabular-nums">
+            -{formatCurrency(currentPension)}
+          </span>
+        </div>
+
+        <div className="flex items-center justify-between py-1">
+          <span className="font-sans text-zinc-600">PAYE Income Tax</span>
+          <span className="text-zinc-700 tabular-nums">
+            -{formatCurrency(currentTax)}
+          </span>
+        </div>
+
+        <div className="flex items-center justify-between py-1">
+          <span className="font-sans text-zinc-600">National Insurance (Class 1)</span>
+          <span className="text-zinc-700 tabular-nums">
+            -{formatCurrency(currentNI)}
+          </span>
+        </div>
+
+        {result.studentLoanDeduction.annual > 0 && (
+          <div className="flex items-center justify-between py-1">
+            <span className="font-sans text-zinc-600">Student Loan</span>
+            <span className="text-zinc-700 tabular-nums">
+              -{formatCurrency(timeframe === "annual" ? result.studentLoanDeduction.annual : timeframe === "monthly" ? result.studentLoanDeduction.monthly : result.studentLoanDeduction.weekly)}
+            </span>
+          </div>
+        )}
+
+        <div className="flex items-center justify-between pt-2 border-t border-zinc-100 font-sans font-semibold">
+          <span className="text-zinc-900">Total Deductions</span>
+          <span className="font-mono text-zinc-900 tabular-nums">
             -{formatCurrency(currentDeductions)}
-          </div>
-        </div>
-
-        <div className="rounded-lg bg-slate-50 p-2.5 dark:bg-slate-800/60">
-          <span className="text-[10px] uppercase font-bold text-slate-500 dark:text-slate-400">
-            Take-Home Rate
           </span>
-          <div className="text-sm font-bold text-emerald-600 dark:text-emerald-400 font-mono">
-            {formatPercent(result.takeHomePercentage)}
-          </div>
         </div>
+      </div>
 
-        <div className="rounded-lg bg-purple-50/70 p-2.5 dark:bg-purple-950/30">
-          <span className="text-[10px] uppercase font-bold text-purple-700 dark:text-purple-300 flex items-center gap-1">
-            <PiggyBank className="h-3 w-3" />
-            Pension Relief
-          </span>
-          <div className="text-sm font-bold text-purple-700 dark:text-purple-300 font-mono">
-            +{formatCurrency(result.pensionTaxReliefAnnual / (timeframe === "annual" ? 1 : timeframe === "monthly" ? 12 : 52))}/yr
-          </div>
-        </div>
+      {/* Pension Relief Notice */}
+      <div className="mt-4 rounded-lg bg-zinc-50 border border-zinc-200/70 p-3 text-xs leading-relaxed text-zinc-600">
+        <span className="font-semibold text-zinc-900">Pre-Tax Relief Note: </span>
+        Pension contributions are deducted before income tax under the Net Pay arrangement, reducing taxable income by {formatCurrency(result.pensionTaxReliefAnnual)}/year.
       </div>
     </div>
   );

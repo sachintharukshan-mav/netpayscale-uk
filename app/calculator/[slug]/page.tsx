@@ -13,18 +13,6 @@ import Calculator from "@/components/Calculator";
 import AffiliateCards from "@/components/AffiliateCards";
 import AdPlaceholder from "@/components/AdPlaceholder";
 import FAQSection from "@/components/FAQSection";
-import {
-  ArrowLeft,
-  Building,
-  CheckCircle2,
-  ChevronRight,
-  Clock,
-  Compass,
-  FileText,
-  MapPin,
-  ShieldCheck,
-  TrendingUp,
-} from "lucide-react";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -74,7 +62,6 @@ export default async function PseoCalculatorPage({ params }: Props) {
     notFound();
   }
 
-  // Pre-calculate baseline figures for server-rendered editorial table
   const baselineResult = calculateNHSPay({
     band: entry.band,
     stepIndex: 0,
@@ -88,7 +75,6 @@ export default async function PseoCalculatorPage({ params }: Props) {
 
   const editorial = getRegionalEditorial(entry);
 
-  // Structured FinancialProduct Schema
   const schemaMarkup = {
     "@context": "https://schema.org",
     "@type": "FinancialProduct",
@@ -103,23 +89,24 @@ export default async function PseoCalculatorPage({ params }: Props) {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50/50 py-8 dark:bg-slate-950 transition-colors">
+    <div className="min-h-screen bg-[#fafafa] py-8">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
       />
 
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-8">
-        {/* Breadcrumb Navigation */}
-        <nav className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
-          <Link href="/" className="hover:text-slate-900 dark:hover:text-white flex items-center gap-1">
-            <ArrowLeft className="h-3 w-3" />
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
+        {/* Clean Breadcrumb */}
+        <nav className="flex items-center gap-1.5 text-xs text-zinc-500">
+          <Link href="/" className="hover:text-zinc-950 transition-colors">
             Home
           </Link>
-          <ChevronRight className="h-3 w-3" />
-          <span>Pay Scales</span>
-          <ChevronRight className="h-3 w-3" />
-          <span className="font-semibold text-slate-900 dark:text-white">
+          <span className="text-zinc-400">/</span>
+          <Link href="/#bands-overview" className="hover:text-zinc-950 transition-colors">
+            Pay Scales
+          </Link>
+          <span className="text-zinc-400">/</span>
+          <span className="font-medium text-zinc-900">
             {entry.band} {entry.roleName} ({entry.regionName})
           </span>
         </nav>
@@ -128,119 +115,113 @@ export default async function PseoCalculatorPage({ params }: Props) {
         <AdPlaceholder slotId="pseo-top-banner" format="leaderboard" />
 
         {/* SERVER-RENDERED CONTEXTUAL EDITORIAL BREAKDOWN TABLE (Above the Interactive Fold) */}
-        <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900 space-y-6">
-          <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-4 border-b border-slate-100 pb-5 dark:border-slate-800">
-            <div className="space-y-2">
-              <div className="flex flex-wrap items-center gap-2">
-                <span className="rounded-md bg-[#005EB8] px-2.5 py-1 text-xs font-bold text-white">
-                  {entry.band}
-                </span>
-                <span className="rounded-md bg-blue-50 px-2.5 py-1 text-xs font-bold text-[#005EB8] dark:bg-blue-950/60 dark:text-[#41B6E6]">
-                  {entry.regionName}
-                </span>
-                <span className="rounded-md bg-emerald-50 px-2.5 py-1 text-xs font-bold text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300">
-                  2026/27 (+3.3% Pay Rise)
-                </span>
+        <section className="rounded-xl border border-zinc-200/90 bg-white p-6 sm:p-7 shadow-xs space-y-6">
+          <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6 border-b border-zinc-100 pb-6">
+            <div className="space-y-2 max-w-3xl">
+              <div className="flex items-center gap-2 text-xs font-mono text-zinc-500">
+                <span className="font-semibold text-zinc-900">{entry.band}</span>
+                <span>•</span>
+                <span>{entry.regionName}</span>
+                <span>•</span>
+                <span>2026/27 (+3.3%)</span>
               </div>
-              <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-                {entry.band} {entry.roleName} Salary & Take-Home Pay in {entry.regionName}
+              <h1 className="text-2xl sm:text-3xl font-bold text-zinc-950 tracking-tight leading-snug">
+                {entry.band} {entry.roleName} Salary & Net Take-Home in {entry.regionName}
               </h1>
-              <p className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
-                <Building className="h-3.5 w-3.5 text-slate-400" />
-                <span>Applicable to {entry.regionHeadline}</span>
+              <p className="text-xs text-zinc-500">
+                Applicable to NHS staff at {entry.regionHeadline}
               </p>
             </div>
 
-            {/* Quick Baseline Snapshot Pill */}
-            <div className="flex flex-col rounded-xl bg-slate-50 p-4 border border-slate-200 dark:border-slate-800 dark:bg-slate-850 shrink-0">
-              <span className="text-[11px] font-semibold text-slate-500 dark:text-slate-400 uppercase">
-                Starting Net Take-Home
+            {/* Baseline Snapshot Block */}
+            <div className="rounded-lg bg-zinc-50 border border-zinc-200/70 p-4 shrink-0 min-w-[220px]">
+              <span className="text-[11px] font-medium text-zinc-500 block">
+                Baseline Net Take-Home (Entry)
               </span>
-              <div className="text-2xl font-black text-emerald-600 dark:text-emerald-400 font-mono">
+              <div className="text-2xl font-bold text-zinc-950 font-mono tabular-nums mt-0.5">
                 {formatCurrency(baselineResult.netPay.monthly, true)}
-                <span className="text-xs font-medium text-slate-500"> /month</span>
+                <span className="text-xs font-medium text-zinc-500"> /mo</span>
               </div>
-              <span className="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5">
-                Gross: {formatCurrency(baselineResult.grossPay.annual)}/yr
+              <span className="text-[11px] font-mono text-zinc-500 mt-1 block tabular-nums">
+                Gross: {formatCurrency(baselineResult.grossPay.annual)}/year
               </span>
             </div>
           </div>
 
           {/* 300-Word Contextual Editorial Text */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-            <div className="space-y-2 rounded-xl bg-slate-50/60 p-4 dark:bg-slate-850/60 border border-slate-100 dark:border-slate-800">
-              <h3 className="font-bold text-slate-900 dark:text-white flex items-center gap-1.5 text-xs">
-                <MapPin className="h-4 w-4 text-[#005EB8]" />
-                <span>Geographic Locality & Weighting</span>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs text-zinc-600 leading-relaxed">
+            <div className="space-y-1.5 rounded-lg bg-zinc-50/60 p-4 border border-zinc-100">
+              <h3 className="font-semibold text-zinc-900 text-xs">
+                Geographic Weighting & HCAS
               </h3>
               <p>{editorial.hcasExplanation}</p>
             </div>
 
-            <div className="space-y-2 rounded-xl bg-slate-50/60 p-4 dark:bg-slate-850/60 border border-slate-100 dark:border-slate-800">
-              <h3 className="font-bold text-slate-900 dark:text-white flex items-center gap-1.5 text-xs">
-                <TrendingUp className="h-4 w-4 text-emerald-600" />
-                <span>Agenda for Change Pay Progression</span>
+            <div className="space-y-1.5 rounded-lg bg-zinc-50/60 p-4 border border-zinc-100">
+              <h3 className="font-semibold text-zinc-900 text-xs">
+                Agenda for Change Progression
               </h3>
               <p>{editorial.careerProgression}</p>
             </div>
 
-            <div className="space-y-2 rounded-xl bg-slate-50/60 p-4 dark:bg-slate-850/60 border border-slate-100 dark:border-slate-800">
-              <h3 className="font-bold text-slate-900 dark:text-white flex items-center gap-1.5 text-xs">
-                <ShieldCheck className="h-4 w-4 text-purple-600" />
-                <span>NHS Pension & Tax Relief</span>
+            <div className="space-y-1.5 rounded-lg bg-zinc-50/60 p-4 border border-zinc-100">
+              <h3 className="font-semibold text-zinc-900 text-xs">
+                NHS Pension & Tax Relief
               </h3>
               <p>{editorial.pensionContext}</p>
             </div>
           </div>
 
-          {/* Official Benchmark Comparison Table for this Role */}
-          <div className="overflow-x-auto border-t border-slate-100 pt-5 dark:border-slate-800">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white mb-3">
-              Official 2026/27 Pay Step Benchmark for {entry.band} ({entry.regionName})
+          {/* Official Benchmark Table */}
+          <div className="border-t border-zinc-100 pt-5 space-y-2">
+            <h3 className="text-xs font-semibold text-zinc-900">
+              2026/27 Pay Step Benchmark for {entry.band} ({entry.regionName})
             </h3>
-            <table className="w-full text-left text-xs font-mono">
-              <thead>
-                <tr className="border-b border-slate-200 text-slate-500 dark:border-slate-800 dark:text-slate-400 font-sans">
-                  <th className="py-2">Experience Step</th>
-                  <th className="py-2">Basic Annual</th>
-                  <th className="py-2">Hourly Rate</th>
-                  <th className="py-2">HCAS Allowance</th>
-                  <th className="py-2">Gross Salary</th>
-                  <th className="py-2">Pension Tier</th>
-                  <th className="py-2 text-right">Net Take-Home (Est.)</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-100 dark:divide-slate-800/60">
-                <tr className="hover:bg-slate-50/50 dark:hover:bg-slate-850/50">
-                  <td className="py-2 font-sans font-bold text-slate-900 dark:text-white">
-                    Entry Level (0-2 yrs)
-                  </td>
-                  <td className="py-2">{formatCurrency(baselineResult.baseSalary.annual)}</td>
-                  <td className="py-2">{formatHourlyRate(baselineResult.hourlyRate)}</td>
-                  <td className="py-2 text-blue-600 dark:text-blue-400">
-                    +{formatCurrency(baselineResult.hcasAmount.annual)}
-                  </td>
-                  <td className="py-2 font-bold">{formatCurrency(baselineResult.grossPay.annual)}</td>
-                  <td className="py-2 text-purple-600 dark:text-purple-400">
-                    {baselineResult.pensionTierLabel}
-                  </td>
-                  <td className="py-2 text-right font-extrabold text-emerald-600 dark:text-emerald-400">
-                    {formatCurrency(baselineResult.netPay.annual)}/yr
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left text-xs font-mono">
+                <thead>
+                  <tr className="border-b border-zinc-200 text-zinc-500 font-sans font-medium">
+                    <th className="py-2.5">Experience Step</th>
+                    <th className="py-2.5">Basic Salary</th>
+                    <th className="py-2.5">Hourly Rate</th>
+                    <th className="py-2.5">HCAS Allowance</th>
+                    <th className="py-2.5">Total Gross</th>
+                    <th className="py-2.5">Pension Tier</th>
+                    <th className="py-2.5 text-right">Est. Take-Home Pay</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-zinc-100 text-zinc-800">
+                  <tr>
+                    <td className="py-2.5 font-sans font-medium text-zinc-950">
+                      Entry Level
+                    </td>
+                    <td className="py-2.5 tabular-nums">{formatCurrency(baselineResult.baseSalary.annual)}</td>
+                    <td className="py-2.5 tabular-nums">{formatHourlyRate(baselineResult.hourlyRate)}</td>
+                    <td className="py-2.5 tabular-nums text-zinc-700">
+                      +{formatCurrency(baselineResult.hcasAmount.annual)}
+                    </td>
+                    <td className="py-2.5 font-semibold text-zinc-950 tabular-nums">
+                      {formatCurrency(baselineResult.grossPay.annual)}
+                    </td>
+                    <td className="py-2.5 text-zinc-600">{baselineResult.pensionTierLabel}</td>
+                    <td className="py-2.5 text-right font-bold text-zinc-950 tabular-nums">
+                      {formatCurrency(baselineResult.netPay.annual, true)}/yr
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </section>
 
-        {/* INTERACTIVE CALCULATOR PRE-HYDRATED WITH THIS SPECIFIC BAND & REGION */}
-        <div id="calculator" className="space-y-4 pt-2">
-          <div className="flex items-center justify-between">
-            <h2 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-              <span>Personalize Your Shift Enhancements & Deductions</span>
+        {/* INTERACTIVE CALCULATOR PRE-LOADED WITH THIS EXACT BAND AND REGION */}
+        <section id="calculator" className="space-y-4 pt-2">
+          <div className="flex items-baseline justify-between border-b border-zinc-200/80 pb-2">
+            <h2 className="text-lg font-bold text-zinc-950">
+              Interactive Shift & Deduction Modeler
             </h2>
-            <span className="text-xs text-slate-500 dark:text-slate-400">
-              Pre-loaded with {entry.band} • {entry.regionName}
+            <span className="text-xs text-zinc-500 font-mono">
+              Pre-loaded: {entry.band} • {entry.regionName}
             </span>
           </div>
 
@@ -250,15 +231,15 @@ export default async function PseoCalculatorPage({ params }: Props) {
             initialHcasZone={entry.hcasZone}
             initialRoleTitle={entry.roleName}
           />
-        </div>
+        </section>
 
-        {/* Contextual Financial Affiliate Cards */}
+        {/* Financial Planning Guides */}
         <AffiliateCards />
 
-        {/* Bottom In-Content Ad */}
+        {/* Mid-Content Ad Slot */}
         <AdPlaceholder slotId="pseo-mid-banner" format="leaderboard" />
 
-        {/* High-Intent Search FAQs */}
+        {/* FAQs */}
         <FAQSection />
       </div>
     </div>

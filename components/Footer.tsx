@@ -1,83 +1,78 @@
 import React from "react";
 import Link from "next/link";
-import { ShieldAlert } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-slate-200 bg-white pt-10 pb-8 text-xs text-slate-500 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
+    <footer className="border-t border-zinc-200/80 bg-white pt-10 pb-10 text-xs text-zinc-500">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="space-y-3 md:col-span-2">
+          <div className="space-y-2 md:col-span-2">
             <div className="flex items-center gap-2">
-              <span className="flex h-7 w-7 items-center justify-center rounded bg-[#005EB8] text-xs font-bold text-white">
+              <span className="flex h-6 w-9 items-center justify-center rounded bg-[#005EB8] text-[11px] font-bold text-white">
                 NHS
               </span>
-              <span className="text-sm font-bold text-slate-900 dark:text-white">
-                NetPayScale UK (NHS Edition)
+              <span className="text-sm font-bold text-zinc-950">
+                NetPayScale UK
               </span>
             </div>
-            <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed max-w-md">
-              The premier interactive salary and pension take-home pay calculation portal for 1.3M+ NHS England, Scotland, and Wales healthcare professionals. Updated for the official 2026/2027 Agenda for Change (AfC) pay award (+3.3%).
+            <p className="text-xs text-zinc-500 leading-relaxed max-w-md">
+              Independent computational resource for 1.3M+ NHS England, Scotland, and Wales staff. Fully updated for the official 2026/2027 Agenda for Change (+3.3%) pay settlement and HMRC PAYE tax thresholds.
             </p>
           </div>
 
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white mb-3">
-              NHS Agenda for Change
+            <h4 className="text-xs font-semibold text-zinc-950 mb-2.5">
+              Pay Scales & Roles
             </h4>
-            <ul className="space-y-2">
+            <ul className="space-y-1.5 text-zinc-600">
               <li>
-                <Link href="/calculator/band-5-nurse-salary-inner-london" className="hover:text-[#005EB8] dark:hover:text-[#41B6E6]">
-                  Band 5 Staff Nurse (London)
+                <Link href="/calculator/band-5-nurse-salary-inner-london" className="hover:text-zinc-950 transition-colors">
+                  Band 5 Staff Nurse (Inner London)
                 </Link>
               </li>
               <li>
-                <Link href="/calculator/band-6-paramedic-take-home-pay-scotland" className="hover:text-[#005EB8] dark:hover:text-[#41B6E6]">
+                <Link href="/calculator/band-6-paramedic-take-home-pay-scotland" className="hover:text-zinc-950 transition-colors">
                   Band 6 Paramedic (Scotland)
                 </Link>
               </li>
               <li>
-                <Link href="/calculator/band-7-clinical-manager-salary-manchester" className="hover:text-[#005EB8] dark:hover:text-[#41B6E6]">
+                <Link href="/calculator/band-7-clinical-manager-salary-manchester" className="hover:text-zinc-950 transition-colors">
                   Band 7 Team Leader (Manchester)
                 </Link>
               </li>
               <li>
-                <Link href="/calculator/band-8a-matron-salary-inner-london" className="hover:text-[#005EB8] dark:hover:text-[#41B6E6]">
-                  Band 8a Matron (London)
+                <Link href="/calculator/band-8a-matron-salary-inner-london" className="hover:text-zinc-950 transition-colors">
+                  Band 8a Matron (Inner London)
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white mb-3">
-              Regulations & Data Sources
+            <h4 className="text-xs font-semibold text-zinc-950 mb-2.5">
+              Regulatory References
             </h4>
-            <ul className="space-y-2">
-              <li>NHS Terms and Conditions Handbook (AfC)</li>
-              <li>HMRC PAYE Tax Brackets 2026/27</li>
-              <li>NHS Business Services Authority (NHSBSA)</li>
-              <li>Section 2 Unsocial Hours Rules</li>
+            <ul className="space-y-1.5 text-zinc-600">
+              <li>NHS Terms & Conditions Handbook (AfC)</li>
+              <li>HMRC PAYE & National Insurance 2026/27</li>
+              <li>NHS Pension Scheme Regulations (2015 CARE)</li>
+              <li>Section 2 Unsocial Hours Framework</li>
             </ul>
           </div>
         </div>
 
         {/* Regulatory Disclaimer */}
-        <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-850 text-[11px] leading-relaxed text-slate-500 dark:text-slate-400">
-          <div className="flex items-start gap-2">
-            <ShieldAlert className="h-4 w-4 text-amber-500 shrink-0 mt-0.5" />
-            <p>
-              <strong>Disclaimer:</strong> NetPayScale UK is an independent computational resource and is not formally endorsed by or affiliated with the National Health Service (NHS), NHS Employers, or HM Revenue & Customs (HMRC). All estimates are derived strictly from published 2026/27 Agenda for Change pay circulars and UK statutory payroll rules. Variations may occur based on individual tax codes, salary sacrifice arrangements, or local Trust agreements.
-            </p>
-          </div>
+        <div className="rounded-lg border border-zinc-200/70 bg-zinc-50/70 p-3.5 text-[11px] leading-relaxed text-zinc-500">
+          <strong>Notice: </strong>
+          NetPayScale UK is an independent computational utility and is not affiliated with or endorsed by the National Health Service (NHS), NHS Employers, or HM Revenue & Customs (HMRC). All outputs are calculated strictly according to published 2026/27 Agenda for Change pay circulars and UK statutory payroll rules.
         </div>
 
-        <div className="flex flex-col sm:flex-row items-center justify-between border-t border-slate-100 dark:border-slate-800 pt-6 text-[11px]">
-          <p>© {new Date().getFullYear()} NetPayScale UK. All rights reserved.</p>
+        <div className="flex flex-col sm:flex-row items-center justify-between border-t border-zinc-100 pt-6 text-[11px] text-zinc-400">
+          <p>© {new Date().getFullYear()} NetPayScale UK. All calculations for estimation purposes.</p>
           <div className="flex items-center gap-4 mt-2 sm:mt-0">
-            <span className="hover:underline cursor-pointer">Privacy Policy</span>
-            <span className="hover:underline cursor-pointer">Terms of Service</span>
-            <span className="hover:underline cursor-pointer">Cookie Preferences</span>
+            <span className="hover:text-zinc-600 cursor-pointer">Privacy Policy</span>
+            <span className="hover:text-zinc-600 cursor-pointer">Terms of Service</span>
+            <span className="hover:text-zinc-600 cursor-pointer">Methodology</span>
           </div>
         </div>
       </div>
