@@ -9,6 +9,7 @@ import PersonaScenarios from "@/components/PersonaScenarios";
 import BandsOverview from "@/components/BandsOverview";
 import HcasGuide from "@/components/HcasGuide";
 import AffiliateCards from "@/components/AffiliateCards";
+import AdPlaceholder from "@/components/AdPlaceholder";
 import FAQSection from "@/components/FAQSection";
 import PseoDirectory from "@/components/PseoDirectory";
 import { getAllPseoEntries } from "@/lib/pseo-matrix";
@@ -54,10 +55,24 @@ export default function HomePage() {
           </p>
         </section>
 
-        {/* 3. CORE INTERACTIVE CALCULATOR FOLD */}
+        {/* AD SLOT 1: Above-the-Fold Top Leaderboard (High First-Impression Viewability) */}
+        <AdPlaceholder
+          slotId="home-top-leaderboard"
+          format="leaderboard"
+          label="728×90 ATF Leaderboard · 320×50 Mobile"
+        />
+
+        {/* 3. CORE INTERACTIVE CALCULATOR FOLD (Includes Sticky Right-Rail 300×250 Companion) */}
         <section id="calculator" className="scroll-mt-20">
           <Calculator />
         </section>
+
+        {/* AD SLOT 3: Post-Calculator Decision Transition Unit (Highest CTR Zone) */}
+        <AdPlaceholder
+          slotId="home-post-calculator"
+          format="in-content"
+          label="Post-Calculator Transition · Native / 728×90 Display"
+        />
 
         {/* 4. SIDE-BY-SIDE PROMOTION & STEP COMPARATOR (Directly Embedded matching Stitch Screen 2) */}
         <section id="comparator-section" className="scroll-mt-20 pt-8 sm:pt-10 border-t border-border-subtle space-y-5">
@@ -101,6 +116,13 @@ export default function HomePage() {
           <EsrPayslipView result={defaultEsrResult} />
         </section>
 
+        {/* AD SLOT 4: Post-Payslip Mid-Content Unit */}
+        <AdPlaceholder
+          slotId="home-post-payslip"
+          format="leaderboard"
+          label="Mid-Content Payslip Verification Slot · 728×90"
+        />
+
         {/* 6. CAREER PROMOTION & STEP-UP METRICS */}
         <BandStepUpMetrics />
 
@@ -125,6 +147,13 @@ export default function HomePage() {
 
         {/* 12. PROGRAMMATIC SEO REGIONAL GUIDES DIRECTORY */}
         <PseoDirectory entries={pseoEntries} />
+
+        {/* AD SLOT 5: Pre-FAQ Organic Search Anchor Slot */}
+        <AdPlaceholder
+          slotId="home-pre-faq"
+          format="in-content"
+          label="Pre-FAQ High-Intent Search Slot · 728×90 / Multiplex"
+        />
 
         {/* 13. FREQUENTLY ASKED QUESTIONS */}
         <section id="faq" className="scroll-mt-20">

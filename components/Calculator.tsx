@@ -6,6 +6,7 @@ import { calculateNHSPay, CalculatorInputs } from "@/lib/calculator";
 import { formatCurrency, formatHourlyRate } from "@/lib/formatters";
 import RoleQuickFinder from "./RoleQuickFinder";
 import MobileNetPayDock from "./MobileNetPayDock";
+import AdPlaceholder from "./AdPlaceholder";
 
 interface CalculatorProps {
   initialBand?: string;
@@ -734,6 +735,13 @@ Calculate yours at: ${siteUrl}`;
               Statutory model synchronised with 2026/27 NHS Pension Tier Threshold updates &amp; Autumn Statement NIC rates.
             </p>
           </div>
+
+          {/* High-Viewability Sticky Right-Rail Companion Ad Slot (300x250 MPU) */}
+          <AdPlaceholder
+            slotId="calculator-sticky-rail"
+            format="rectangle"
+            label="300×250 Sticky Right-Rail Companion"
+          />
         </div>
       </div>
 

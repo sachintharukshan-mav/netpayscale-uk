@@ -338,11 +338,22 @@ export default async function PseoCalculatorPage({ params }: Props) {
           />
         </section>
 
+        {/* Post-Calculator Transition Ad Slot */}
+        <AdPlaceholder
+          slotId="pseo-post-calculator"
+          format="in-content"
+          label="Post-Calculator Transition · Native / 728×90 Display"
+        />
+
         {/* Financial Planning Guides */}
         <AffiliateCards />
 
-        {/* Mid-Content Ad Slot */}
-        <AdPlaceholder slotId="pseo-mid-banner" format="leaderboard" />
+        {/* Pre-FAQ Ad Slot */}
+        <AdPlaceholder
+          slotId="pseo-mid-banner"
+          format="leaderboard"
+          label="Pre-FAQ High-Intent Search Slot · 728×90"
+        />
 
         {/* FAQs */}
         <FAQSection />
