@@ -110,5 +110,53 @@ for (const href of hrefMatches) {
 
 assert(internalLinksNonCompliant === 0, `All internal calculator links on homepage use trailing slash (checked: ${internalLinksChecked}, non-compliant: ${internalLinksNonCompliant})`);
 
+// 6. Full 490-Page Internal Cross-Linking Mesh & Zero-Orphan Graph Verification
+console.log('\n--- Auditing Complete 490-Page Internal Cross-Linking Graph ---');
+const calcDir = path.join(outDir, 'calculator');
+const allSlugs = fs.readdirSync(calcDir).filter(f => fs.statSync(path.join(calcDir, f)).isDirectory());
+const slugSet = new Set(allSlugs);
+const inDegree = new Map(allSlugs.map(s => [s, 0]));
+
+// Count links from homepage
+for (const href of hrefMatches) {
+  const m = href.match(/^\/calculator\/([^/]+)\/$/);
+  if (m && inDegree.has(m[1])) {
+    inDegree.set(m[1], inDegree.get(m[1]) + 1);
+  }
+}
+
+let totalCrossLinks = 0;
+let brokenCrossLinks = 0;
+let nonTrailingCrossLinks = 0;
+
+for (const slug of allSlugs) {
+  const pHtml = fs.readFileSync(path.join(calcDir, slug, 'index.html'), 'utf8');
+  const links = [...pHtml.matchAll(/href="(\/calculator\/[^"#]+)"/g)].map(m => m[1]);
+  for (const l of links) {
+    totalCrossLinks++;
+    if (!l.endsWith('/')) {
+      nonTrailingCrossLinks++;
+      continue;
+    }
+    const m = l.match(/^\/calculator\/([^/]+)\/$/);
+    if (!m || !slugSet.has(m[1])) {
+      brokenCrossLinks++;
+    } else if (m[1] !== slug) {
+      inDegree.set(m[1], inDegree.get(m[1]) + 1);
+    }
+  }
+}
+
+const degrees = [...inDegree.values()];
+const orphanCount = degrees.filter(d => d === 0).length;
+const minInDegree = Math.min(...degrees);
+const maxInDegree = Math.max(...degrees);
+const avgInDegree = (degrees.reduce((a, b) => a + b, 0) / degrees.length).toFixed(1);
+
+assert(allSlugs.length === 490, `All 490 pSEO static directories exist (actual: ${allSlugs.length})`);
+assert(brokenCrossLinks === 0, `Zero broken internal cross-links across all 490 pages (checked: ${totalCrossLinks}, broken: ${brokenCrossLinks})`);
+assert(nonTrailingCrossLinks === 0, `100% of cross-links across all 490 pages use trailing slash (non-compliant: ${nonTrailingCrossLinks})`);
+assert(orphanCount === 0, `Zero Orphan Pages across all 490 routes (orphans: ${orphanCount}, min incoming links: ${minInDegree}, max: ${maxInDegree}, avg: ${avgInDegree})`);
+
 console.log(`\n=== AUDIT SUMMARY: Passed: ${passed}, Warnings: ${warnings}, Failures: ${errors} ===`);
 process.exit(errors > 0 ? 1 : 0);

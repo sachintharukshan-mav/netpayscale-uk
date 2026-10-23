@@ -1,5 +1,4 @@
 import pseoData from "@/data/pseo_cities_roles.json";
-import nhsData from "@/data/nhs_afc_2026.json";
 
 export interface PseoEntry {
   slug: string;
@@ -14,12 +13,67 @@ export interface PseoEntry {
   description: string;
 }
 
+const BAND_ORDER = [
+  "Band 2",
+  "Band 3",
+  "Band 4",
+  "Band 5",
+  "Band 6",
+  "Band 7",
+  "Band 8a",
+  "Band 8b",
+  "Band 8c",
+  "Band 8d",
+  "Band 9",
+];
+
 export function getAllPseoEntries(): PseoEntry[] {
   return pseoData as PseoEntry[];
 }
 
 export function getPseoEntryBySlug(slug: string): PseoEntry | undefined {
   return (pseoData as PseoEntry[]).find((entry) => entry.slug === slug);
+}
+
+/**
+ * Builds a complete 2-axis internal cross-linking mesh for any pSEO entry:
+ * 1. sameRoleOtherRegions: Identical Band + Role across all other UK regions/HCAS zones.
+ * 2. sameRegionOtherRoles: All other Bands & clinical roles within the exact same UK region,
+ *    ordered by Agenda for Change band progression (Band 2 -> Band 9) with adjacent promotion bands highlighted.
+ */
+export function getRelatedPseoEntries(current: PseoEntry): {
+  sameRoleOtherRegions: PseoEntry[];
+  sameRegionOtherRoles: PseoEntry[];
+  adjacentPromotionRoles: PseoEntry[];
+} {
+  const all = getAllPseoEntries();
+  const currentBandIdx = BAND_ORDER.indexOf(current.band);
+
+  const sameRoleOtherRegions = all.filter(
+    (e) =>
+      e.slug !== current.slug &&
+      e.roleSlug === current.roleSlug &&
+      e.band === current.band
+  );
+
+  const sameRegionOtherRoles = all
+    .filter((e) => e.slug !== current.slug && e.regionId === current.regionId)
+    .sort((a, b) => BAND_ORDER.indexOf(a.band) - BAND_ORDER.indexOf(b.band));
+
+  const adjacentPromotionRoles = sameRegionOtherRoles.filter((e) => {
+    const idx = BAND_ORDER.indexOf(e.band);
+    return (
+      currentBandIdx !== -1 &&
+      idx !== -1 &&
+      Math.abs(idx - currentBandIdx) === 1
+    );
+  });
+
+  return {
+    sameRoleOtherRegions,
+    sameRegionOtherRoles,
+    adjacentPromotionRoles,
+  };
 }
 
 export function getRegionalEditorial(entry: PseoEntry) {

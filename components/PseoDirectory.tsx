@@ -182,10 +182,37 @@ export default function PseoDirectory({ entries }: PseoDirectoryProps) {
       {!searchQuery && filteredEntries.length > 24 && (
         <div className="text-center pt-2">
           <p className="text-xs text-zinc-500 font-mono">
-            Showing 24 of {filteredEntries.length} matching guides. Use the search box above to instantly find any role or NHS trust.
+            Showing 24 of {filteredEntries.length} matching guides. Use the search box above or expand the complete index below.
           </p>
         </div>
       )}
+
+      {/* Complete Crawl-Depth-1 HTML Directory of All 490 Regional & Clinical Role Guides */}
+      <details className="group rounded-xl border border-zinc-200/90 bg-white p-4 shadow-2xs">
+        <summary className="flex cursor-pointer items-center justify-between text-xs font-bold text-zinc-900 select-none list-none">
+          <div className="flex items-center gap-2">
+            <span className="material-symbols-outlined text-[#005EB8] text-[18px]">account_tree</span>
+            <span>
+              Complete UK Regional &amp; Clinical Role Pay Directory (All {entries.length} Agenda for Change Models)
+            </span>
+          </div>
+          <span className="font-mono text-[11px] text-[#005EB8] group-open:rotate-180 transition-transform">
+            ▼
+          </span>
+        </summary>
+        <div className="mt-4 pt-4 border-t border-zinc-100 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1.5 max-h-[420px] overflow-y-auto pr-1">
+          {entries.map((entry) => (
+            <Link
+              key={`index-${entry.slug}`}
+              href={`/calculator/${entry.slug}/`}
+              className="truncate rounded px-2 py-1 text-[11px] text-zinc-600 hover:bg-zinc-100 hover:text-[#005EB8] transition-colors"
+            >
+              <strong className="font-mono text-zinc-900">{entry.band}</strong>{" "}
+              {entry.roleName} — {entry.regionName}
+            </Link>
+          ))}
+        </div>
+      </details>
     </section>
   );
 }
