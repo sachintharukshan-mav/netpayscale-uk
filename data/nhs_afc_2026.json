@@ -1,8 +1,16 @@
 {
   "taxYear": "2026/2027",
+  "effectiveDate": "1 April 2026",
   "payRisePercentage": 3.3,
   "standardWeeklyHours": 37.5,
   "standardAnnualHours": 1955.36,
+  "source": {
+    "agency": "NHS Employers & Department of Health and Social Care (DHSC)",
+    "officialUrl": "https://www.nhsemployers.org/articles/pay-scales-202627",
+    "pensionUrl": "https://www.nhsbsa.nhs.uk/member-hub/cost-being-scheme",
+    "verificationMethod": "Live Firecrawl Scrape & Verification",
+    "verifiedAt": "2026-10-23"
+  },
   "bands": [
     {
       "band": "Band 2",
@@ -29,7 +37,7 @@
           "hourlyRate": 13.17
         },
         {
-          "step": "After 2 years",
+          "step": "After 2 years (Top)",
           "yearsExperience": 2,
           "annualSalary": 27476,
           "hourlyRate": 14.05
@@ -48,7 +56,7 @@
           "hourlyRate": 14.52
         },
         {
-          "step": "After 3 years",
+          "step": "After 3 years (Top)",
           "yearsExperience": 3,
           "annualSalary": 31157,
           "hourlyRate": 15.93
@@ -67,13 +75,13 @@
           "hourlyRate": 16.40
         },
         {
-          "step": "After 2 years",
+          "step": "After 2 years (Mid)",
           "yearsExperience": 2,
           "annualSalary": 34592,
           "hourlyRate": 17.69
         },
         {
-          "step": "After 4 years",
+          "step": "After 4 years (Top)",
           "yearsExperience": 4,
           "annualSalary": 39043,
           "hourlyRate": 19.97
@@ -92,13 +100,13 @@
           "hourlyRate": 20.44
         },
         {
-          "step": "After 2 years",
+          "step": "After 2 years (Mid)",
           "yearsExperience": 2,
           "annualSalary": 42170,
           "hourlyRate": 21.57
         },
         {
-          "step": "After 5 years",
+          "step": "After 5 years (Top)",
           "yearsExperience": 5,
           "annualSalary": 48117,
           "hourlyRate": 24.61
@@ -117,13 +125,13 @@
           "hourlyRate": 25.26
         },
         {
-          "step": "After 2 years",
+          "step": "After 2 years (Mid)",
           "yearsExperience": 2,
           "annualSalary": 51932,
           "hourlyRate": 26.56
         },
         {
-          "step": "After 5 years",
+          "step": "After 5 years (Top)",
           "yearsExperience": 5,
           "annualSalary": 56515,
           "hourlyRate": 28.90
@@ -142,13 +150,13 @@
           "hourlyRate": 29.42
         },
         {
-          "step": "After 2 years",
+          "step": "After 2 years (Mid)",
           "yearsExperience": 2,
           "annualSalary": 60417,
           "hourlyRate": 30.90
         },
         {
-          "step": "After 5 years",
+          "step": "After 5 years (Top)",
           "yearsExperience": 5,
           "annualSalary": 64750,
           "hourlyRate": 33.11
@@ -167,13 +175,13 @@
           "hourlyRate": 34.05
         },
         {
-          "step": "After 2 years",
+          "step": "After 2 years (Mid)",
           "yearsExperience": 2,
           "annualSalary": 70896,
           "hourlyRate": 36.26
         },
         {
-          "step": "After 5 years",
+          "step": "After 5 years (Top)",
           "yearsExperience": 5,
           "annualSalary": 77368,
           "hourlyRate": 39.57
@@ -192,13 +200,13 @@
           "hourlyRate": 40.66
         },
         {
-          "step": "After 2 years",
+          "step": "After 2 years (Mid)",
           "yearsExperience": 2,
           "annualSalary": 84346,
           "hourlyRate": 43.14
         },
         {
-          "step": "After 5 years",
+          "step": "After 5 years (Top)",
           "yearsExperience": 5,
           "annualSalary": 91609,
           "hourlyRate": 46.85
@@ -214,16 +222,16 @@
           "step": "Entry",
           "yearsExperience": 0,
           "annualSalary": 94356,
-          "hourlyRate": 48.25
+          "hourlyRate": 48.26
         },
         {
-          "step": "After 2 years",
+          "step": "After 2 years (Mid)",
           "yearsExperience": 2,
           "annualSalary": 100140,
           "hourlyRate": 51.21
         },
         {
-          "step": "After 5 years",
+          "step": "After 5 years (Top)",
           "yearsExperience": 5,
           "annualSalary": 108814,
           "hourlyRate": 55.65
@@ -242,13 +250,13 @@
           "hourlyRate": 57.68
         },
         {
-          "step": "After 2 years",
+          "step": "After 2 years (Mid)",
           "yearsExperience": 2,
           "annualSalary": 119583,
           "hourlyRate": 61.16
         },
         {
-          "step": "After 5 years",
+          "step": "After 5 years (Top)",
           "yearsExperience": 5,
           "annualSalary": 129783,
           "hourlyRate": 66.37
@@ -292,11 +300,11 @@
   ],
   "pensionTiers": [
     { "min": 0, "max": 13259, "rate": 0.052, "percentageLabel": "5.2%" },
-    { "min": 13259.01, "max": 26831, "rate": 0.065, "percentageLabel": "6.5%" },
-    { "min": 26831.01, "max": 32691, "rate": 0.083, "percentageLabel": "8.3%" },
-    { "min": 32691.01, "max": 49078, "rate": 0.098, "percentageLabel": "9.8%" },
-    { "min": 49078.01, "max": 62924, "rate": 0.107, "percentageLabel": "10.7%" },
-    { "min": 62924.01, "max": 9999999, "rate": 0.125, "percentageLabel": "12.5%" }
+    { "min": 13259.01, "max": 28854, "rate": 0.065, "percentageLabel": "6.5%" },
+    { "min": 28854.01, "max": 35155, "rate": 0.083, "percentageLabel": "8.3%" },
+    { "min": 35155.01, "max": 52778, "rate": 0.098, "percentageLabel": "9.8%" },
+    { "min": 52778.01, "max": 67668, "rate": 0.107, "percentageLabel": "10.7%" },
+    { "min": 67668.01, "max": 9999999, "rate": 0.125, "percentageLabel": "12.5%" }
   ],
   "taxBracketsUK": {
     "personalAllowance": 12570,
