@@ -4,11 +4,13 @@ export interface CalculatorInputs {
   band: string;
   stepIndex: number;
   hcasZone: "inner-london" | "outer-london" | "fringe" | "standard";
+  contractedHours?: number; // default 37.5
   nightHoursPerWeek: number;
   sundayHoursPerWeek: number;
   pensionOptedOut: boolean;
+  taxCode?: "1257L" | "S1257L" | "C1257L" | "BR" | "D0";
   isScottishTax: boolean;
-  studentLoan: "none" | "plan1" | "plan2" | "plan4" | "postgrad";
+  studentLoan: "none" | "plan1" | "plan2" | "plan4" | "plan5" | "postgrad";
 }
 
 export interface PayBreakdownItem {
@@ -20,7 +22,11 @@ export interface PayBreakdownItem {
 export interface CalculationResult {
   // Gross components
   baseSalary: PayBreakdownItem;
+  fullTimeBaseSalary: number;
   hourlyRate: number;
+  netHourlyRate: number;
+  contractedHours: number;
+  fteRatio: number;
   hcasAmount: PayBreakdownItem;
   hcasPercentage: number;
   unsocialNightAmount: PayBreakdownItem;
@@ -36,6 +42,7 @@ export interface CalculationResult {
 
   taxablePay: PayBreakdownItem;
   personalAllowance: number;
+  taxCode: string;
   incomeTax: PayBreakdownItem;
   nationalInsurance: PayBreakdownItem;
   studentLoanDeduction: PayBreakdownItem;
@@ -45,6 +52,7 @@ export interface CalculationResult {
   netPay: PayBreakdownItem;
   takeHomePercentage: number;
   effectiveTaxRate: number;
+  penceKeptPerPound: number; // e.g. 74p per £1
 
   // Visual Breakdown percentages (sum to 100)
   visualBreakdown: {
@@ -73,8 +81,13 @@ export function calculateNHSPay(inputs: CalculatorInputs): CalculationResult {
   const stepIndex = Math.min(Math.max(0, inputs.stepIndex), bandData.points.length - 1);
   const selectedPoint = bandData.points[stepIndex];
 
-  const baseAnnualSalary = selectedPoint.annualSalary;
+  const fullTimeBaseSalary = selectedPoint.annualSalary;
   const baseHourlyRate = selectedPoint.hourlyRate;
+  const contractedHours = inputs.contractedHours && inputs.contractedHours > 0 ? inputs.contractedHours : 37.5;
+  const fteRatio = contractedHours / 37.5;
+
+  // Pro-rata base salary based on contracted hours
+  const baseAnnualSalary = Math.round(fullTimeBaseSalary * fteRatio * 100) / 100;
 
   // 1. Calculate HCAS (London Weighting)
   let hcasAnnual = 0;
@@ -84,20 +97,18 @@ export function calculateNHSPay(inputs: CalculatorInputs): CalculationResult {
   if (inputs.hcasZone === "inner-london") {
     hcasPct = 20;
     const raw = baseAnnualSalary * 0.20;
-    hcasAnnual = Math.min(8746, Math.max(5794, raw));
+    hcasAnnual = Math.min(8746 * fteRatio, Math.max(5794 * fteRatio, raw));
   } else if (inputs.hcasZone === "outer-london") {
     hcasPct = 15;
     const raw = baseAnnualSalary * 0.15;
-    hcasAnnual = Math.min(6137, Math.max(4870, raw));
+    hcasAnnual = Math.min(6137 * fteRatio, Math.max(4870 * fteRatio, raw));
   } else if (inputs.hcasZone === "fringe") {
     hcasPct = 5;
     const raw = baseAnnualSalary * 0.05;
-    hcasAnnual = Math.min(2270, Math.max(1346, raw));
+    hcasAnnual = Math.min(2270 * fteRatio, Math.max(1346 * fteRatio, raw));
   }
 
   // 2. Unsocial Hours Enhancements (Section 2 Agenda for Change)
-  // Bands 1-3 receive +44% (nights/Sats) and +88% (Sundays/BHs)
-  // Bands 4-9 receive +30% (nights/Sats) and +60% (Sundays/BHs)
   const isLowerBand = ["Band 2", "Band 3"].includes(bandData.band);
   const nightRateUplift = isLowerBand ? 0.44 : 0.30;
   const sundayRateUplift = isLowerBand ? 0.88 : 0.60;
@@ -113,7 +124,7 @@ export function calculateNHSPay(inputs: CalculatorInputs): CalculationResult {
   // Total Gross Pay
   const grossAnnual = baseAnnualSalary + hcasAnnual + totalUnsocialAnnual;
 
-  // 3. NHS Pension Tiers
+  // 3. NHS Pension Tiers (Indexed 1 April 2026 rates from NHSBSA)
   let pensionAnnual = 0;
   let pensionRate = 0;
   let pensionTierLabel = "0%";
@@ -131,25 +142,33 @@ export function calculateNHSPay(inputs: CalculatorInputs): CalculationResult {
   // 4. Taxable Pay (Net Pay arrangement deducts pension pre-tax)
   const taxableAnnual = Math.max(0, grossAnnual - pensionAnnual);
 
-  // 5. Personal Allowance (with £100,000 taper trap)
+  // 5. Tax Code & Personal Allowance
+  const taxCode = inputs.taxCode || (inputs.isScottishTax ? "S1257L" : "1257L");
   let personalAllowance = 12570;
-  if (taxableAnnual > 100000) {
-    const excess = taxableAnnual - 100000;
-    personalAllowance = Math.max(0, 12570 - excess / 2);
+
+  if (taxCode === "BR" || taxCode === "D0") {
+    personalAllowance = 0;
+  } else {
+    // Standard allowance taper over £100,000
+    if (taxableAnnual > 100000) {
+      const excess = taxableAnnual - 100000;
+      personalAllowance = Math.max(0, 12570 - excess / 2);
+    }
   }
 
   // 6. UK Income Tax Calculation
   let incomeTaxAnnual = 0;
-  const taxableAboveAllowance = Math.max(0, taxableAnnual - personalAllowance);
+  const isScottish = taxCode === "S1257L" || inputs.isScottishTax;
 
-  if (inputs.isScottishTax) {
+  if (taxCode === "BR") {
+    // Basic rate on all earnings
+    incomeTaxAnnual = taxableAnnual * 0.20;
+  } else if (taxCode === "D0") {
+    // Higher rate on all earnings
+    incomeTaxAnnual = taxableAnnual * 0.40;
+  } else if (isScottish) {
     // Scottish Tax Bands 2026/27
-    // Starter: 19% on £1 - £2,306
-    // Basic: 20% on £2,307 - £13,991 (next £11,685)
-    // Intermediate: 21% on £13,992 - £31,092 (next £17,101)
-    // Higher: 42% on £31,093 - £62,430 (next £31,338)
-    // Advanced: 45% on £62,431 - £112,570 (next £50,140)
-    // Top: 48% over £112,570 above allowance
+    const taxableAboveAllowance = Math.max(0, taxableAnnual - personalAllowance);
     let rem = taxableAboveAllowance;
 
     const b1 = Math.min(rem, 2306);
@@ -176,13 +195,12 @@ export function calculateNHSPay(inputs: CalculatorInputs): CalculationResult {
       incomeTaxAnnual += rem * 0.48;
     }
   } else {
-    // Rest of UK (England, Wales, NI)
-    // Basic Rate: 20% on up to £37,700 (£12,570 to £50,270)
+    // Standard England, Wales, NI (1257L / C1257L)
+    const taxableAboveAllowance = Math.max(0, taxableAnnual - personalAllowance);
     const basicBandSize = 37700;
     const basicTaxable = Math.min(taxableAboveAllowance, basicBandSize);
     incomeTaxAnnual += basicTaxable * 0.20;
 
-    // Higher Rate: 40% on next £74,870 (£50,270 to £125,140)
     const higherBandSize = 74870;
     const higherTaxable = Math.min(
       Math.max(0, taxableAboveAllowance - basicBandSize),
@@ -190,7 +208,6 @@ export function calculateNHSPay(inputs: CalculatorInputs): CalculationResult {
     );
     incomeTaxAnnual += higherTaxable * 0.40;
 
-    // Additional Rate: 45% on excess over £125,140
     const additionalTaxable = Math.max(
       0,
       taxableAboveAllowance - basicBandSize - higherBandSize
@@ -229,6 +246,8 @@ export function calculateNHSPay(inputs: CalculatorInputs): CalculationResult {
     studentLoanAnnual = (grossAnnual - 27295) * 0.09;
   } else if (inputs.studentLoan === "plan4" && grossAnnual > 31395) {
     studentLoanAnnual = (grossAnnual - 31395) * 0.09;
+  } else if (inputs.studentLoan === "plan5" && grossAnnual > 25000) {
+    studentLoanAnnual = (grossAnnual - 25000) * 0.09;
   } else if (inputs.studentLoan === "postgrad" && grossAnnual > 21000) {
     studentLoanAnnual = (grossAnnual - 21000) * 0.06;
   }
@@ -240,11 +259,14 @@ export function calculateNHSPay(inputs: CalculatorInputs): CalculationResult {
   const makeBreakdown = (annual: number): PayBreakdownItem => ({
     annual: Math.round(annual * 100) / 100,
     monthly: Math.round((annual / 12) * 100) / 100,
-    weekly: Math.round((annual / 52) * 100) / 100,
+    weekly: Math.round((annual / 52.14) * 100) / 100,
   });
 
   const takeHomePercentage = grossAnnual > 0 ? (netAnnual / grossAnnual) * 100 : 0;
   const effectiveTaxRate = grossAnnual > 0 ? ((incomeTaxAnnual + niAnnual) / grossAnnual) * 100 : 0;
+  const penceKeptPerPound = grossAnnual > 0 ? Math.round((netAnnual / grossAnnual) * 100) : 100;
+  const totalAnnualHours = contractedHours * 52.14;
+  const netHourlyRate = totalAnnualHours > 0 ? netAnnual / totalAnnualHours : 0;
 
   // Visual breakdown calculation
   const netPercent = grossAnnual > 0 ? (netAnnual / grossAnnual) * 100 : 100;
@@ -255,7 +277,11 @@ export function calculateNHSPay(inputs: CalculatorInputs): CalculationResult {
 
   return {
     baseSalary: makeBreakdown(baseAnnualSalary),
+    fullTimeBaseSalary,
     hourlyRate: baseHourlyRate,
+    netHourlyRate: Math.round(netHourlyRate * 100) / 100,
+    contractedHours,
+    fteRatio: Math.round(fteRatio * 100) / 100,
     hcasAmount: makeBreakdown(hcasAnnual),
     hcasPercentage: hcasPct,
     unsocialNightAmount: makeBreakdown(unsocialNightAnnual),
@@ -270,6 +296,7 @@ export function calculateNHSPay(inputs: CalculatorInputs): CalculationResult {
 
     taxablePay: makeBreakdown(taxableAnnual),
     personalAllowance: Math.round(personalAllowance),
+    taxCode,
     incomeTax: makeBreakdown(incomeTaxAnnual),
     nationalInsurance: makeBreakdown(niAnnual),
     studentLoanDeduction: makeBreakdown(studentLoanAnnual),
@@ -278,6 +305,7 @@ export function calculateNHSPay(inputs: CalculatorInputs): CalculationResult {
     netPay: makeBreakdown(netAnnual),
     takeHomePercentage: Math.round(takeHomePercentage * 10) / 10,
     effectiveTaxRate: Math.round(effectiveTaxRate * 10) / 10,
+    penceKeptPerPound,
 
     visualBreakdown: {
       netPercent: Math.round(netPercent * 10) / 10,
@@ -291,4 +319,20 @@ export function calculateNHSPay(inputs: CalculatorInputs): CalculationResult {
     stepTitle: selectedPoint.step,
     hcasName: hcasZoneConfig.name,
   };
+}
+
+export interface StepUpMetric {
+  fromBand: string;
+  toBand: string;
+  grossDiff: number;
+  pctIncrease: number;
+}
+
+export function getPromotionMetrics(): StepUpMetric[] {
+  return [
+    { fromBand: "Band 5", toBand: "Band 6", grossDiff: 7886, pctIncrease: 24.6 },
+    { fromBand: "Band 6", toBand: "Band 7", grossDiff: 9428, pctIncrease: 23.6 },
+    { fromBand: "Band 7", toBand: "Band 8a", grossDiff: 8141, pctIncrease: 16.5 },
+    { fromBand: "Band 8a", toBand: "Band 8b", grossDiff: 9054, pctIncrease: 15.7 },
+  ];
 }
