@@ -64,6 +64,12 @@ assert(homeCanonical && homeCanonical[1] === 'https://netpayscale.uk/', `Homepag
 assert(homeHtml.includes('"@type":"WebSite"'), 'Homepage contains WebSite schema');
 assert(homeHtml.includes('"@type":"WebApplication"'), 'Homepage contains WebApplication schema');
 assert(homeHtml.includes('"@type":"FAQPage"'), 'Homepage contains FAQPage schema');
+assert(fs.existsSync(path.join(outDir, 'favicon.ico')), 'favicon.ico exists in static export');
+assert(fs.existsSync(path.join(outDir, 'icon.svg')), 'icon.svg exists in static export');
+assert(fs.existsSync(path.join(outDir, 'icon-48.png')), 'icon-48.png (48x48 Google SERP icon) exists in static export');
+assert(fs.existsSync(path.join(outDir, 'apple-touch-icon.png')), 'apple-touch-icon.png exists in static export');
+assert(fs.existsSync(path.join(outDir, 'og-image.png')), 'og-image.png (1200x630 social preview) exists in static export');
+assert(homeHtml.includes('https://netpayscale.uk/og-image.png'), 'Homepage references https://netpayscale.uk/og-image.png');
 
 // 4. Sample pSEO Pages Audit (Canonical, OpenGraph, BreadcrumbList, Occupation, AEO Direct Answer)
 const sampleSlugs = [

@@ -50,11 +50,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       locale: "en_GB",
       url: canonicalUrl,
       siteName: "NetPayScale UK",
+      images: [
+        {
+          url: "https://netpayscale.uk/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: ["https://netpayscale.uk/og-image.png"],
     },
     alternates: {
       canonical: canonicalUrl,
