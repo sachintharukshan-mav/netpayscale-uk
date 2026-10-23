@@ -64,8 +64,9 @@ export default function NetPaySummary({
       {/* Header and timeframe toggle */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-zinc-100">
         <div>
-          <div className="text-xs font-semibold text-zinc-900">
-            {result.bandTitle} · {timeframe} take-home
+          <div className="flex items-center gap-1.5 text-xs font-semibold text-zinc-900">
+            <span className="w-2 h-2 rounded-full bg-emerald-600 pulse-glow-dot shrink-0" />
+            <span>{result.bandTitle} · {timeframe} take-home</span>
           </div>
           <p className="text-[11px] text-zinc-500 mt-0.5">
             {result.stepTitle} • {result.hcasName} {result.contractedHours !== 37.5 && `(${result.contractedHours} hrs/wk)`}
@@ -93,7 +94,7 @@ export default function NetPaySummary({
       {/* Main Net Pay Numerals */}
       <div className="py-5">
         <div className="flex items-baseline gap-2">
-          <span className="text-4xl sm:text-5xl font-bold tracking-tight text-zinc-950 font-mono tabular-nums">
+          <span className="text-4xl sm:text-5xl font-extrabold tracking-tight text-emerald-600 font-mono tabular-nums transition-colors">
             {formatCurrency(currentNet, true)}
           </span>
           <span className="text-sm font-medium text-zinc-500">
@@ -123,7 +124,7 @@ export default function NetPaySummary({
         </div>
       </div>
 
-      {/* Structured Ledger Summary */}
+      {/* Structured Ledger Summary with Stitch Color-Coded Tokens */}
       <div className="space-y-2 border-t border-zinc-100 pt-4 text-xs font-mono">
         <div className="flex items-center justify-between py-1">
           <span className="font-sans text-zinc-600">Gross pay</span>
@@ -133,34 +134,42 @@ export default function NetPaySummary({
         </div>
 
         <div className="flex items-center justify-between py-1">
-          <span className="font-sans text-zinc-600">
+          <span className="font-sans text-zinc-600 flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-rose-600 shrink-0" />
             Income tax ({result.taxCode})
           </span>
-          <span className="text-zinc-700 tabular-nums">
+          <span className="text-rose-600 font-medium tabular-nums">
             −{formatCurrency(currentTax, true)}
           </span>
         </div>
 
         <div className="flex items-center justify-between py-1">
-          <span className="font-sans text-zinc-600">National Insurance</span>
-          <span className="text-zinc-700 tabular-nums">
+          <span className="font-sans text-zinc-600 flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-600 shrink-0" />
+            National Insurance
+          </span>
+          <span className="text-amber-600 font-medium tabular-nums">
             −{formatCurrency(currentNI, true)}
           </span>
         </div>
 
         <div className="flex items-center justify-between py-1">
-          <span className="font-sans text-zinc-600">
+          <span className="font-sans text-zinc-600 flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-indigo-600 shrink-0" />
             NHS Pension ({result.pensionTierLabel})
           </span>
-          <span className="text-zinc-700 tabular-nums">
+          <span className="text-indigo-600 font-medium tabular-nums">
             −{formatCurrency(currentPension, true)}
           </span>
         </div>
 
         {result.studentLoanDeduction.annual > 0 && (
           <div className="flex items-center justify-between py-1">
-            <span className="font-sans text-zinc-600">Student loan</span>
-            <span className="text-zinc-700 tabular-nums">
+            <span className="font-sans text-zinc-600 flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-pink-600 shrink-0" />
+              Student loan
+            </span>
+            <span className="text-pink-600 font-medium tabular-nums">
               −{formatCurrency(timeframe === "annual" ? result.studentLoanDeduction.annual : timeframe === "monthly" ? result.studentLoanDeduction.monthly : result.studentLoanDeduction.weekly, true)}
             </span>
           </div>
@@ -168,14 +177,17 @@ export default function NetPaySummary({
 
         <div className="flex items-center justify-between pt-2 border-t border-zinc-100 font-sans font-semibold">
           <span className="text-zinc-900">Total deductions</span>
-          <span className="font-mono text-zinc-900 tabular-nums">
+          <span className="font-mono text-rose-700 font-bold tabular-nums">
             −{formatCurrency(currentDeductions, true)}
           </span>
         </div>
 
         <div className="flex items-center justify-between pt-2 border-t border-zinc-900 font-sans font-bold text-sm">
-          <span className="text-zinc-950">Net take-home</span>
-          <span className="font-mono text-zinc-950 tabular-nums">
+          <span className="text-zinc-950 flex items-center gap-1.5">
+            <span className="w-2 h-2 rounded-full bg-emerald-600 shrink-0" />
+            Net take-home
+          </span>
+          <span className="font-mono text-emerald-600 tabular-nums">
             {formatCurrency(currentNet, true)}
           </span>
         </div>

@@ -37,6 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const title = `${entry.band} ${entry.roleName} Salary & Take-Home Pay (${entry.regionName}) | 2026/27 NetPayScale UK`;
   const description = entry.description;
+  const canonicalUrl = `https://netpayscale.co.uk/calculator/${entry.slug}/`;
 
   return {
     title,
@@ -46,10 +47,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description,
       type: "website",
       locale: "en_GB",
-      url: `https://netpayscale.co.uk/calculator/${entry.slug}`,
+      url: canonicalUrl,
+      siteName: "NetPayScale UK",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
     },
     alternates: {
-      canonical: `https://netpayscale.co.uk/calculator/${entry.slug}`,
+      canonical: canonicalUrl,
     },
   };
 }
@@ -74,18 +81,103 @@ export default async function PseoCalculatorPage({ params }: Props) {
   });
 
   const editorial = getRegionalEditorial(entry);
+  const canonicalUrl = `https://netpayscale.co.uk/calculator/${entry.slug}/`;
 
   const schemaMarkup = {
     "@context": "https://schema.org",
-    "@type": "FinancialProduct",
-    name: `${entry.band} ${entry.roleName} Pay Scale (${entry.regionName})`,
-    description: entry.description,
-    provider: {
-      "@type": "Organization",
-      name: "NHS Agenda for Change",
-    },
-    annualPercentageRate: 3.3,
-    feesAndCommissionsSpecification: "No user fees. Free computational resource.",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://netpayscale.co.uk/",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Pay Scales",
+            item: "https://netpayscale.co.uk/#bands-overview",
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: `${entry.band} ${entry.roleName} (${entry.regionName})`,
+            item: canonicalUrl,
+          },
+        ],
+      },
+      {
+        "@type": "Occupation",
+        name: `${entry.band} ${entry.roleName}`,
+        description: entry.description,
+        estimatedSalary: [
+          {
+            "@type": "MonetaryAmountDistribution",
+            name: "base",
+            currency: "GBP",
+            duration: "P1Y",
+            percentile10: baselineResult.grossPay.annual,
+            percentile90: Math.round(baselineResult.grossPay.annual * 1.25),
+          },
+        ],
+        occupationLocation: [
+          {
+            "@type": "AdministrativeArea",
+            name: entry.regionName,
+          },
+        ],
+      },
+      {
+        "@type": "FinancialProduct",
+        name: `${entry.band} ${entry.roleName} Pay Scale (${entry.regionName})`,
+        description: entry.description,
+        provider: {
+          "@type": "Organization",
+          name: "NHS Agenda for Change",
+        },
+        annualPercentageRate: 3.3,
+        feesAndCommissionsSpecification: "No user fees. Free computational resource.",
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: `How much does an NHS ${entry.band} ${entry.roleName} earn in ${entry.regionName}?`,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: `Under the 2026/27 Agenda for Change pay scale, an NHS ${entry.band} ${entry.roleName} in ${entry.regionName} earns a starting gross salary of ${formatCurrency(baselineResult.grossPay.annual)}/year. This results in an estimated monthly net take-home pay of ${formatCurrency(baselineResult.netPay.monthly)}/month after PAYE tax, National Insurance, and ${baselineResult.pensionTierLabel} CARE Pension deductions.`,
+            },
+          },
+          {
+            "@type": "Question",
+            name: `Does a ${entry.band} in ${entry.regionName} receive London Weighting (HCAS)?`,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text:
+                entry.hcasZone === "inner-london"
+                  ? "Yes. Staff in Inner London receive a 20% High Cost Area Supplement (HCAS), adding between £5,115 and £8,034 annually to basic salary."
+                  : entry.hcasZone === "outer-london"
+                  ? "Yes. Staff in Outer London receive a 15% High Cost Area Supplement (HCAS), adding between £4,313 and £5,436 annually to basic salary."
+                  : entry.hcasZone === "fringe"
+                  ? "Yes. Staff in the London Fringe receive a 5% High Cost Area Supplement, adding between £1,192 and £2,024 annually."
+                  : "No. Standard national NHS Agenda for Change pay rates apply in this region without London Weighting supplements.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: `What is the NHS Pension contribution for a ${entry.band}?`,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: `Under the NHS 2015 CARE Pension scheme, ${entry.band} staff pay ${baselineResult.pensionTierLabel} of their gross pensionable pay. Contributions are deducted before Income Tax, providing immediate tax relief on all contributions.`,
+            },
+          },
+        ],
+      },
+    ],
   };
 
   return (
@@ -172,6 +264,17 @@ export default async function PseoCalculatorPage({ params }: Props) {
             </div>
           </div>
 
+          {/* Direct Answer Summary Box for AEO & Google AI Overviews */}
+          <div className="rounded-xl bg-emerald-50/80 border border-emerald-200/90 p-4 text-xs text-emerald-950 leading-relaxed font-sans shadow-2xs">
+            <div className="flex items-center gap-1.5 font-bold text-emerald-900 mb-1">
+              <span className="w-2 h-2 rounded-full bg-cash-emerald pulse-glow-dot shrink-0" />
+              <span>Direct Answer · 2026/27 Official Benchmark</span>
+            </div>
+            <p>
+              An NHS <strong>{entry.band} {entry.roleName}</strong> in <strong>{entry.regionName}</strong> earns a starting gross basic salary of <strong>{formatCurrency(baselineResult.baseSalary.annual)}/year</strong> ({formatHourlyRate(baselineResult.hourlyRate)}). After standard UK PAYE Income Tax, National Insurance, and {baselineResult.pensionTierLabel} NHS Pension deductions, the estimated baseline net take-home pay is <strong>{formatCurrency(baselineResult.netPay.monthly, true)}/month</strong> (or {formatCurrency(baselineResult.netPay.annual, true)}/year), keeping <strong>{baselineResult.takeHomePercentage}%</strong> of total gross earnings in their pocket.
+            </p>
+          </div>
+
           {/* Official Benchmark Table */}
           <div className="border-t border-zinc-100 pt-5 space-y-2">
             <h3 className="text-xs font-semibold text-zinc-900">
@@ -226,10 +329,12 @@ export default async function PseoCalculatorPage({ params }: Props) {
           </div>
 
           <Calculator
+            key={entry.slug}
             initialBand={entry.band}
             initialStepIndex={0}
             initialHcasZone={entry.hcasZone}
             initialRoleTitle={entry.roleName}
+            initialTaxCode={entry.regionId === "scotland" ? "S1257L" : "1257L"}
           />
         </section>
 

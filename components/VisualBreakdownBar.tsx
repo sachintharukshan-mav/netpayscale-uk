@@ -6,7 +6,7 @@ import { CalculationResult } from "@/lib/calculator";
 
 interface VisualBreakdownBarProps {
   result: CalculationResult;
-  timeframe: "annual" | "monthly";
+  timeframe: "annual" | "monthly" | "weekly";
 }
 
 export default function VisualBreakdownBar({
@@ -15,11 +15,40 @@ export default function VisualBreakdownBar({
 }: VisualBreakdownBarProps) {
   const { visualBreakdown, netPay, pensionContribution, incomeTax, nationalInsurance, studentLoanDeduction } = result;
 
-  const currentNet = timeframe === "annual" ? netPay.annual : netPay.monthly;
-  const currentPension = timeframe === "annual" ? pensionContribution.annual : pensionContribution.monthly;
-  const currentTax = timeframe === "annual" ? incomeTax.annual : incomeTax.monthly;
-  const currentNI = timeframe === "annual" ? nationalInsurance.annual : nationalInsurance.monthly;
-  const currentStudentLoan = timeframe === "annual" ? studentLoanDeduction.annual : studentLoanDeduction.monthly;
+  const currentNet =
+    timeframe === "annual"
+      ? netPay.annual
+      : timeframe === "monthly"
+      ? netPay.monthly
+      : netPay.weekly;
+
+  const currentPension =
+    timeframe === "annual"
+      ? pensionContribution.annual
+      : timeframe === "monthly"
+      ? pensionContribution.monthly
+      : pensionContribution.weekly;
+
+  const currentTax =
+    timeframe === "annual"
+      ? incomeTax.annual
+      : timeframe === "monthly"
+      ? incomeTax.monthly
+      : incomeTax.weekly;
+
+  const currentNI =
+    timeframe === "annual"
+      ? nationalInsurance.annual
+      : timeframe === "monthly"
+      ? nationalInsurance.monthly
+      : nationalInsurance.weekly;
+
+  const currentStudentLoan =
+    timeframe === "annual"
+      ? studentLoanDeduction.annual
+      : timeframe === "monthly"
+      ? studentLoanDeduction.monthly
+      : studentLoanDeduction.weekly;
 
   const segments = [
     {

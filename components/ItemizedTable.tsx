@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { formatCurrency } from "@/lib/formatters";
 import { CalculationResult } from "@/lib/calculator";
+import EsrPayslipView from "./EsrPayslipView";
 
 interface ItemizedTableProps {
   result: CalculationResult;
@@ -10,29 +11,56 @@ interface ItemizedTableProps {
 
 export default function ItemizedTable({ result }: ItemizedTableProps) {
   const [isOpen, setIsOpen] = useState(true);
+  const [activeTab, setActiveTab] = useState<"table" | "esr">("table");
 
   return (
     <div className="rounded-xl border border-zinc-200/90 bg-white shadow-xs overflow-hidden">
-      <button
-        type="button"
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex w-full items-center justify-between px-6 py-4 text-left transition-colors hover:bg-zinc-50/60"
-      >
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 px-6 py-4 bg-white border-b border-zinc-100">
         <div>
           <h3 className="text-sm font-semibold text-zinc-950">
-            Payroll Ledger & Statutory Breakdown
+            Payroll Ledger &amp; ESR Payslip Documentation
           </h3>
           <p className="text-xs text-zinc-500 mt-0.5">
             Full itemized accounting comparing Annual, Monthly, and Weekly amounts
           </p>
         </div>
-        <span className="text-xs font-mono font-medium text-zinc-500">
-          {isOpen ? "Collapse ledger [-]" : "Expand ledger [+]"}
-        </span>
-      </button>
 
-      {isOpen && (
-        <div className="border-t border-zinc-100 px-6 py-4">
+        {/* View Switcher: Standard Table vs ESR Payslip */}
+        <div className="flex items-center gap-1.5 rounded-lg bg-zinc-100 p-1 text-xs font-semibold self-start sm:self-auto">
+          <button
+            type="button"
+            onClick={() => setActiveTab("table")}
+            className={`rounded-md px-3 py-1.5 transition-all cursor-pointer ${
+              activeTab === "table"
+                ? "bg-white text-zinc-950 shadow-xs"
+                : "text-zinc-600 hover:text-zinc-950"
+            }`}
+          >
+            Accounting Ledger
+          </button>
+          <button
+            type="button"
+            onClick={() => setActiveTab("esr")}
+            className={`flex items-center gap-1.5 rounded-md px-3 py-1.5 transition-all cursor-pointer ${
+              activeTab === "esr"
+                ? "bg-zinc-950 text-white shadow-xs"
+                : "text-zinc-600 hover:text-zinc-950"
+            }`}
+          >
+            <span>Official ESR Payslip</span>
+            <span className="rounded bg-[#005EB8] text-white px-1.5 py-0.2 text-[10px] font-bold">
+              ESR
+            </span>
+          </button>
+        </div>
+      </div>
+
+      {activeTab === "esr" ? (
+        <div className="p-6">
+          <EsrPayslipView result={result} />
+        </div>
+      ) : (
+        <div className="px-6 py-4">
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs">
               <thead>
@@ -129,8 +157,10 @@ export default function ItemizedTable({ result }: ItemizedTableProps) {
 
                 {/* Gross Pay */}
                 <tr className="bg-zinc-50/70 font-semibold text-zinc-950">
-                  <td className="py-3 font-sans">Total Gross Pensionable Earnings</td>
-                  <td className="py-3 font-sans text-zinc-500 font-normal">All Gross Elements</td>
+                  <td className="py-3 font-sans">Total Gross Pay</td>
+                  <td className="py-3 font-sans text-zinc-500 font-normal">
+                    All Gross Elements {result.totalUnsocialAmount.annual > 0 && `(incl. ${formatCurrency(result.totalUnsocialAmount.annual)} non-pensionable shift uplift)`}
+                  </td>
                   <td className="py-3 text-right tabular-nums font-bold">{formatCurrency(result.grossPay.annual)}</td>
                   <td className="py-3 text-right tabular-nums font-bold">{formatCurrency(result.grossPay.monthly)}</td>
                   <td className="py-3 text-right tabular-nums text-zinc-600">{formatCurrency(result.grossPay.weekly)}</td>
@@ -142,7 +172,7 @@ export default function ItemizedTable({ result }: ItemizedTableProps) {
                     NHS Pension Contribution
                   </td>
                   <td className="py-2.5 font-sans text-zinc-500">
-                    {result.pensionTierLabel} (Deducted pre-tax)
+                    {result.pensionTierLabel} on {formatCurrency(result.pensionablePay.annual)} pensionable base
                   </td>
                   <td className="py-2.5 text-right tabular-nums font-medium text-zinc-800">
                     -{formatCurrency(result.pensionContribution.annual)}

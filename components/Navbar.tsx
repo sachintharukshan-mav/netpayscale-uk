@@ -1,61 +1,129 @@
+"use client";
+
+import React, { useState } from "react";
 import Link from "next/link";
 
 export default function Navbar() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-zinc-200/80 bg-white/95 backdrop-blur-md">
-      <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center gap-2.5">
-          <div className="flex h-7 w-10 items-center justify-center rounded bg-[#005EB8] text-white">
-            <span className="font-extrabold text-xs tracking-tight">NHS</span>
-          </div>
-          <div className="flex items-baseline gap-1.5">
-            <span className="text-sm font-bold tracking-tight text-zinc-950">
-              NetPayScale UK
-            </span>
-            <span className="hidden sm:inline text-xs text-zinc-400">
-              /
-            </span>
-            <span className="hidden sm:inline text-xs font-medium text-zinc-500">
-              Agenda for Change 2026/27
-            </span>
-          </div>
-        </Link>
+    <header className="sticky top-0 left-0 right-0 z-50 bg-white border-b border-border-subtle shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+      <div className="h-16 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-3">
+        {/* Brand & Logo */}
+        <div className="flex items-center gap-3 shrink-0">
+          <Link href="/" className="flex items-center gap-2.5 group">
+            <div className="flex h-8 w-11 items-center justify-center rounded bg-nhs-blue text-white shadow-xs group-hover:scale-105 transition-transform duration-150">
+              <span className="font-extrabold text-sm tracking-tight">NHS</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-base sm:text-lg text-text-ink tracking-tight font-bold">
+                NetPayScale UK
+              </span>
+              <span className="text-[10px] text-text-muted hidden sm:inline leading-none">
+                Agenda for Change 2026/27 Circular
+              </span>
+            </div>
+          </Link>
+          <span className="hidden xl:inline-flex items-center px-2 py-0.5 rounded-full bg-surface-muted font-medium text-xs text-text-muted border border-border-subtle">
+            2026/27 AfC
+          </span>
+        </div>
 
-        {/* Right side navigation & status */}
-        <div className="flex items-center gap-4 text-xs font-medium text-zinc-600">
-          <div className="hidden md:flex items-center gap-1.5 rounded-full border border-zinc-200 bg-zinc-50 px-2.5 py-0.5 text-zinc-600">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-            <span className="text-[11px] font-medium">3.3% Uplift Verified</span>
+        {/* Desktop Navigation Links */}
+        <nav className="hidden lg:flex items-center gap-1">
+          <a
+            href="/#calculator"
+            className="px-3 py-1.5 transition-all duration-150 bg-nhs-blue text-white font-semibold text-sm rounded-lg shadow-xs active:scale-95"
+          >
+            Pay Calculator
+          </a>
+          <a
+            href="/#comparator-section"
+            className="px-3 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95"
+          >
+            Scenario Comparator
+          </a>
+          <a
+            href="/#esr-payslip-print"
+            className="px-3 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95"
+          >
+            Official ESR Payslip
+          </a>
+          <a
+            href="/#bands-overview"
+            className="px-3 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95"
+          >
+            Band Directory
+          </a>
+          <a
+            href="/#hcas-guide"
+            className="hidden xl:inline-block px-3 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95"
+          >
+            London Weighting
+          </a>
+        </nav>
+
+        {/* Right Metadata & Mobile Action Buttons */}
+        <div className="flex items-center gap-2 shrink-0">
+          <div className="hidden md:flex items-center gap-1.5 py-1 px-2.5 rounded-lg bg-surface-muted text-xs text-text-body border border-border-subtle font-mono">
+            <span className="w-1.5 h-1.5 rounded-full bg-cash-emerald pulse-glow-dot" />
+            <span className="whitespace-nowrap font-sans font-medium text-text-ink">Tax Year 2026/27</span>
+            <span className="text-zinc-300">•</span>
+            <span className="whitespace-nowrap text-text-muted">England &amp; Wales</span>
           </div>
 
-          <nav className="flex items-center gap-3">
-            <Link
-              href="/#bands-overview"
-              className="hidden sm:inline-block text-zinc-600 hover:text-zinc-950 transition-colors"
-            >
-              Pay Bands
-            </Link>
-            <Link
-              href="/#hcas-guide"
-              className="hidden sm:inline-block text-zinc-600 hover:text-zinc-950 transition-colors"
-            >
-              London Weighting
-            </Link>
-            <Link
-              href="/#faq"
-              className="hidden sm:inline-block text-zinc-600 hover:text-zinc-950 transition-colors"
-            >
-              FAQs
-            </Link>
-            <a
-              href="#calculator"
-              className="inline-flex items-center justify-center rounded-md bg-zinc-900 px-3 py-1.5 text-xs font-semibold text-white transition-all hover:bg-zinc-800 active:scale-[0.98]"
-            >
-              Open Calculator
-            </a>
-          </nav>
+          {/* Mobile Hamburger Toggle */}
+          <button
+            type="button"
+            aria-label="Toggle Navigation Menu"
+            className="lg:hidden w-9 h-9 rounded-lg bg-surface-muted flex items-center justify-center text-text-ink hover:bg-zinc-200 active:scale-90 transition-all duration-150"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            <span className="material-symbols-outlined text-[20px]">menu</span>
+          </button>
         </div>
       </div>
+
+      {/* Mobile Slide-Down Navigation Menu */}
+      {mobileMenuOpen && (
+        <div className="lg:hidden border-t border-border-subtle bg-white px-4 py-3 space-y-1 shadow-lg transition-all duration-200">
+          <a
+            className="block px-3 py-2 rounded-lg bg-nhs-blue text-white font-semibold text-sm"
+            href="/#calculator"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Pay Calculator
+          </a>
+          <a
+            className="block px-3 py-2 rounded-lg text-text-body hover:bg-surface-muted font-medium text-sm"
+            href="/#comparator-section"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Scenario Comparator
+          </a>
+          <a
+            className="block px-3 py-2 rounded-lg text-text-body hover:bg-surface-muted font-medium text-sm"
+            href="/#esr-payslip-print"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Official ESR Payslip
+          </a>
+          <a
+            className="block px-3 py-2 rounded-lg text-text-body hover:bg-surface-muted font-medium text-sm"
+            href="/#bands-overview"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            AfC Band Directory
+          </a>
+          <div className="pt-2 border-t border-border-subtle flex items-center justify-between text-xs font-mono text-text-muted">
+            <span className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-cash-emerald pulse-glow-dot" />
+              2026/27 AfC (+3.3%)
+            </span>
+            <span>Annex 2 &amp; 3</span>
+          </div>
+        </div>
+      )}
     </header>
   );
 }

@@ -96,3 +96,84 @@ input[type="range"]::-moz-range-thumb {
 ::-webkit-scrollbar-thumb:hover {
   background: #a1a1aa;
 }
+
+/* Print optimization for ESR Payslip */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #esr-payslip-print,
+  #esr-payslip-print * {
+    visibility: visible;
+  }
+  #esr-payslip-print {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    border: none;
+  }
+  header,
+  footer,
+  nav,
+  .lg\:hidden {
+    display: none !important;
+  }
+}
+
+/* Tactile physics keyframes & micro-interactions from Google Stitch */
+@keyframes numberPulse {
+  0% { transform: scale(1); filter: brightness(1); }
+  40% { transform: scale(1.025); filter: brightness(1.12); color: #047857; }
+  100% { transform: scale(1); filter: brightness(1); }
+}
+
+@keyframes toastPop {
+  0% { transform: translate(-50%, 16px) scale(0.92); opacity: 0; }
+  40% { transform: translate(-50%, -4px) scale(1.03); opacity: 1; }
+  100% { transform: translate(-50%, 0) scale(1); opacity: 1; }
+}
+
+@keyframes badgePulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.45); }
+  50% { box-shadow: 0 0 0 6px rgba(5, 150, 105, 0); }
+}
+
+.number-bump {
+  animation: numberPulse 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.toast-enter {
+  animation: toastPop 0.32s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.pulse-glow-dot {
+  animation: badgePulseGlow 2.2s infinite ease-in-out;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@supports(padding: max(0px)) {
+  .safe-area-bottom {
+    padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+

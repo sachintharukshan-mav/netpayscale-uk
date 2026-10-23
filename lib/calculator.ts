@@ -33,6 +33,7 @@ export interface CalculationResult {
   unsocialSundayAmount: PayBreakdownItem;
   totalUnsocialAmount: PayBreakdownItem;
   grossPay: PayBreakdownItem;
+  pensionablePay: PayBreakdownItem;
 
   // Deductions
   pensionContribution: PayBreakdownItem;
@@ -121,8 +122,11 @@ export function calculateNHSPay(inputs: CalculatorInputs): CalculationResult {
 
   const totalUnsocialAnnual = unsocialNightAnnual + unsocialSundayAnnual;
 
-  // Total Gross Pay
+  // Total Gross Pay (includes all pay elements for HMRC tax/NI)
   const grossAnnual = baseAnnualSalary + hcasAnnual + totalUnsocialAnnual;
+
+  // Pensionable Pay (Section 2 AfC enhancements & overtime are non-pensionable)
+  const pensionableAnnual = baseAnnualSalary + hcasAnnual;
 
   // 3. NHS Pension Tiers (Indexed 1 April 2026 rates from NHSBSA)
   let pensionAnnual = 0;
@@ -130,13 +134,15 @@ export function calculateNHSPay(inputs: CalculatorInputs): CalculationResult {
   let pensionTierLabel = "0%";
 
   if (!inputs.pensionOptedOut) {
-    const tier = nhsData.pensionTiers.find(
-      (t) => grossAnnual >= t.min && grossAnnual <= t.max
-    ) || nhsData.pensionTiers[nhsData.pensionTiers.length - 1];
+    // Tiers match continuously up to t.max to avoid fractional-cent boundary gaps
+    const tier =
+      nhsData.pensionTiers.find((t) => pensionableAnnual <= t.max) ||
+      nhsData.pensionTiers[nhsData.pensionTiers.length - 1];
 
     pensionRate = tier.rate;
     pensionTierLabel = tier.percentageLabel;
-    pensionAnnual = grossAnnual * pensionRate;
+    // Pension contribution is deducted strictly from pensionable pay
+    pensionAnnual = pensionableAnnual * pensionRate;
   }
 
   // 4. Taxable Pay (Net Pay arrangement deducts pension pre-tax)
@@ -144,83 +150,63 @@ export function calculateNHSPay(inputs: CalculatorInputs): CalculationResult {
 
   // 5. Tax Code & Personal Allowance
   const taxCode = inputs.taxCode || (inputs.isScottishTax ? "S1257L" : "1257L");
-  let personalAllowance = 12570;
-
-  if (taxCode === "BR" || taxCode === "D0") {
-    personalAllowance = 0;
-  } else {
-    // Standard allowance taper over £100,000
-    if (taxableAnnual > 100000) {
-      const excess = taxableAnnual - 100000;
-      personalAllowance = Math.max(0, 12570 - excess / 2);
-    }
-  }
-
-  // 6. UK Income Tax Calculation
-  let incomeTaxAnnual = 0;
   const isScottish = taxCode === "S1257L" || inputs.isScottishTax;
 
-  if (taxCode === "BR") {
-    // Basic rate on all earnings
-    incomeTaxAnnual = taxableAnnual * 0.20;
-  } else if (taxCode === "D0") {
-    // Higher rate on all earnings
-    incomeTaxAnnual = taxableAnnual * 0.40;
-  } else if (isScottish) {
-    // Scottish Tax Bands 2026/27
-    const taxableAboveAllowance = Math.max(0, taxableAnnual - personalAllowance);
-    let rem = taxableAboveAllowance;
-
-    const b1 = Math.min(rem, 2306);
-    incomeTaxAnnual += b1 * 0.19;
-    rem = Math.max(0, rem - 2306);
-
-    const b2 = Math.min(rem, 11685);
-    incomeTaxAnnual += b2 * 0.20;
-    rem = Math.max(0, rem - 11685);
-
-    const b3 = Math.min(rem, 17101);
-    incomeTaxAnnual += b3 * 0.21;
-    rem = Math.max(0, rem - 17101);
-
-    const b4 = Math.min(rem, 31338);
-    incomeTaxAnnual += b4 * 0.42;
-    rem = Math.max(0, rem - 31338);
-
-    const b5 = Math.min(rem, 50140);
-    incomeTaxAnnual += b5 * 0.45;
-    rem = Math.max(0, rem - 50140);
-
-    if (rem > 0) {
-      incomeTaxAnnual += rem * 0.48;
-    }
-  } else {
-    // Standard England, Wales, NI (1257L / C1257L)
-    const taxableAboveAllowance = Math.max(0, taxableAnnual - personalAllowance);
-    const basicBandSize = 37700;
-    const basicTaxable = Math.min(taxableAboveAllowance, basicBandSize);
-    incomeTaxAnnual += basicTaxable * 0.20;
-
-    const higherBandSize = 74870;
-    const higherTaxable = Math.min(
-      Math.max(0, taxableAboveAllowance - basicBandSize),
-      higherBandSize
-    );
-    incomeTaxAnnual += higherTaxable * 0.40;
-
-    const additionalTaxable = Math.max(
-      0,
-      taxableAboveAllowance - basicBandSize - higherBandSize
-    );
-    incomeTaxAnnual += additionalTaxable * 0.45;
+  let personalAllowance = 12570;
+  if (taxCode === "BR" || taxCode === "D0") {
+    personalAllowance = 0;
+  } else if (taxableAnnual > 100000) {
+    personalAllowance = Math.max(0, 12570 - (taxableAnnual - 100000) / 2);
   }
 
-  // Pension Tax Relief estimation: (tax without pension - tax with pension)
-  const taxableWithoutPension = Math.max(0, grossAnnual - personalAllowance);
-  const basicWithout = Math.min(taxableWithoutPension, 37700);
-  const higherWithout = Math.min(Math.max(0, taxableWithoutPension - 37700), 74870);
-  const addWithout = Math.max(0, taxableWithoutPension - 37700 - 74870);
-  const taxWithoutPension = basicWithout * 0.20 + higherWithout * 0.40 + addWithout * 0.45;
+  // Helper: Computes UK / Scottish income tax on any taxable amount with personal allowance taper
+  const computeIncomeTax = (taxable: number): number => {
+    let pa = 12570;
+    if (taxCode === "BR" || taxCode === "D0") {
+      pa = 0;
+    } else if (taxable > 100000) {
+      pa = Math.max(0, 12570 - (taxable - 100000) / 2);
+    }
+
+    if (taxCode === "BR") return taxable * 0.20;
+    if (taxCode === "D0") return taxable * 0.40;
+
+    const taxableAboveAllowance = Math.max(0, taxable - pa);
+
+    if (isScottish) {
+      // Scottish Tax Bands 2026/27: Top Rate (48%) applies strictly above £125,140 total income
+      const topTaxable = Math.max(0, taxable - 125140);
+      const b1 = Math.min(taxableAboveAllowance, 2306);
+      const b2 = Math.min(Math.max(0, taxableAboveAllowance - 2306), 11685);
+      const b3 = Math.min(Math.max(0, taxableAboveAllowance - 2306 - 11685), 17101);
+      const b4 = Math.min(Math.max(0, taxableAboveAllowance - 2306 - 11685 - 17101), 31338);
+      const sumLower = b1 + b2 + b3 + b4;
+      const b5 = Math.max(0, taxableAboveAllowance - sumLower - topTaxable);
+      return (
+        b1 * 0.19 +
+        b2 * 0.20 +
+        b3 * 0.21 +
+        b4 * 0.42 +
+        b5 * 0.45 +
+        topTaxable * 0.48
+      );
+    } else {
+      // England, Wales, NI (1257L / C1257L): Additional Rate (45%) threshold is fixed at £125,140
+      const additionalTaxable = Math.max(0, taxable - 125140);
+      const basicTaxable = Math.min(taxableAboveAllowance, 37700);
+      const higherTaxable = Math.max(
+        0,
+        taxableAboveAllowance - basicTaxable - additionalTaxable
+      );
+      return basicTaxable * 0.20 + higherTaxable * 0.40 + additionalTaxable * 0.45;
+    }
+  };
+
+  // 6. UK Income Tax Calculation
+  const incomeTaxAnnual = computeIncomeTax(taxableAnnual);
+
+  // Pension Tax Relief estimation: exact savings compared to having no pension deduction
+  const taxWithoutPension = computeIncomeTax(grossAnnual);
   const pensionTaxReliefAnnual = Math.max(0, taxWithoutPension - incomeTaxAnnual);
 
   // 7. National Insurance (Class 1 Employee - 2026/27)
@@ -288,6 +274,7 @@ export function calculateNHSPay(inputs: CalculatorInputs): CalculationResult {
     unsocialSundayAmount: makeBreakdown(unsocialSundayAnnual),
     totalUnsocialAmount: makeBreakdown(totalUnsocialAnnual),
     grossPay: makeBreakdown(grossAnnual),
+    pensionablePay: makeBreakdown(pensionableAnnual),
 
     pensionContribution: makeBreakdown(pensionAnnual),
     pensionRate,

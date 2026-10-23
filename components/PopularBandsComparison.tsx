@@ -105,12 +105,21 @@ export default function PopularBandsComparison() {
             </div>
 
             <div className="mt-5 pt-3 border-t border-zinc-100">
-              <a
-                href="#calculator"
-                className="block w-full text-center rounded-lg bg-zinc-900 py-2 text-xs font-semibold text-white hover:bg-zinc-800 transition-colors"
+              <button
+                type="button"
+                onClick={() => {
+                  window.dispatchEvent(
+                    new CustomEvent("nhs-select-band", {
+                      detail: { band: item.band, stepIndex: 0 },
+                    })
+                  );
+                  const el = document.getElementById("calculator");
+                  if (el) el.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="block w-full text-center rounded-lg bg-zinc-900 py-2 text-xs font-semibold text-white hover:bg-zinc-800 transition-colors cursor-pointer"
               >
                 Model {item.band} in Calculator →
-              </a>
+              </button>
             </div>
           </div>
         ))}

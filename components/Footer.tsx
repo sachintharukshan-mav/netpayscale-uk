@@ -22,26 +22,26 @@ export default function Footer() {
 
           <div>
             <h4 className="text-xs font-semibold text-zinc-950 mb-2.5">
-              Pay Scales & Roles
+              Pay Scales &amp; Roles
             </h4>
             <ul className="space-y-1.5 text-zinc-600">
               <li>
-                <Link href="/calculator/band-5-nurse-salary-inner-london" className="hover:text-zinc-950 transition-colors">
+                <Link href="/calculator/band-5-nurse-salary-inner-london/" className="hover:text-zinc-950 transition-colors">
                   Band 5 Staff Nurse (Inner London)
                 </Link>
               </li>
               <li>
-                <Link href="/calculator/band-6-paramedic-take-home-pay-scotland" className="hover:text-zinc-950 transition-colors">
-                  Band 6 Paramedic (Scotland)
+                <Link href="/calculator/band-6-senior-paramedic-salary-scotland/" className="hover:text-zinc-950 transition-colors">
+                  Band 6 Senior Paramedic (Scotland)
                 </Link>
               </li>
               <li>
-                <Link href="/calculator/band-7-clinical-manager-salary-manchester" className="hover:text-zinc-950 transition-colors">
+                <Link href="/calculator/band-7-clinical-manager-salary-manchester/" className="hover:text-zinc-950 transition-colors">
                   Band 7 Team Leader (Manchester)
                 </Link>
               </li>
               <li>
-                <Link href="/calculator/band-8a-matron-salary-inner-london" className="hover:text-zinc-950 transition-colors">
+                <Link href="/calculator/band-8a-matron-salary-inner-london/" className="hover:text-zinc-950 transition-colors">
                   Band 8a Matron (Inner London)
                 </Link>
               </li>

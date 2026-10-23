@@ -1,0 +1,816 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><title>NetPayScale UK - NHS Agenda for Change Pay Calculator</title><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700;800&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-muted": "#F4F4F5", "border-strong": "#D4D4D8", "primary-container": "#005eb8", "tertiary": "#1d4197", "error": "#ba1a1a", "bg-page": "#FAFAFA", "surface-container-highest": "#e1e2ea", "nhs-blue": "#005EB8", "nhs-navy": "#003087", "surface-container-high": "#e7e8f0", "on-primary-fixed-variant": "#00468c", "surface-container": "#ecedf6", "on-primary": "#ffffff", "on-background": "#191c21", "surface-variant": "#e1e2ea", "on-surface": "#191c21", "cash-emerald": "#059669", "tertiary-fixed-dim": "#b4c5ff", "on-primary-fixed": "#001b3d", "background": "#f9f9ff", "loan-pink": "#DB2777", "secondary-fixed-dim": "#68dba9", "secondary": "#006c4a", "surface-tint": "#005db6", "inverse-primary": "#a9c7ff", "on-error-container": "#93000a", "on-secondary-fixed-variant": "#005137", "on-tertiary": "#ffffff", "inverse-on-surface": "#eff0f8", "pension-indigo": "#4F46E5", "on-secondary": "#ffffff", "surface-bright": "#f9f9ff", "surface": "#f9f9ff", "surface-dim": "#d8dae2", "surface-card": "#FFFFFF", "primary-fixed": "#d6e3ff", "on-secondary-fixed": "#002114", "on-secondary-container": "#00714e", "surface-container-lowest": "#ffffff", "tertiary-fixed": "#dbe1ff", "outline": "#727783", "ni-amber": "#D97706", "on-error": "#ffffff", "error-container": "#ffdad6", "text-ink": "#09090B", "inverse-surface": "#2e3037", "tax-rose": "#E11D48", "on-tertiary-fixed-variant": "#1c4197", "primary-fixed-dim": "#a9c7ff", "text-muted": "#71717A", "secondary-fixed": "#85f8c4", "border-subtle": "#E4E4E7", "outline-variant": "#c2c6d4", "on-primary-container": "#c8daff", "text-body": "#27272A", "tertiary-container": "#3a5ab1", "surface-container-low": "#f2f3fb", "primary": "#00478d", "on-tertiary-container": "#ced8ff", "secondary-container": "#82f5c1", "on-tertiary-fixed": "#00174b", "on-surface-variant": "#424752" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-mobile": "1rem", "margin-mobile": "1rem", "gutter": "1.5rem", "space-xl": "2rem", "space-md": "1rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "margin": "2rem", "space-sm": "0.5rem" }, "fontFamily": { "headline-lg": [ "Inter" ], "body-default": [ "Inter" ], "headline-md": [ "Inter" ], "display-hero-mobile": [ "JetBrains Mono" ], "body-sm": [ "Inter" ], "tabular-ledger": [ "JetBrains Mono" ], "title-sm": [ "Inter" ], "label-caps": [ "Inter" ], "micro-meta": [ "Inter" ], "tabular-caption": [ "JetBrains Mono" ], "display-hero": [ "JetBrains Mono" ], "body-xs": [ "Inter" ] }, "fontSize": { "headline-lg": [ "24px", { "lineHeight": "32px", "fontWeight": "700" } ], "body-default": [ "14px", { "lineHeight": "22px", "fontWeight": "400" } ], "headline-md": [ "18px", { "lineHeight": "26px", "fontWeight": "700" } ], "display-hero-mobile": [ "36px", { "lineHeight": "40px", "fontWeight": "800" } ], "body-sm": [ "13px", { "lineHeight": "18px", "fontWeight": "400" } ], "tabular-ledger": [ "13px", { "lineHeight": "18px", "fontWeight": "500" } ], "title-sm": [ "14px", { "lineHeight": "20px", "fontWeight": "600" } ], "label-caps": [ "11px", { "lineHeight": "14px", "fontWeight": "600" } ], "micro-meta": [ "10px", { "lineHeight": "12px", "fontWeight": "500" } ], "tabular-caption": [ "11px", { "lineHeight": "14px", "fontWeight": "400" } ], "display-hero": [ "48px", { "lineHeight": "52px", "fontWeight": "800" } ], "body-xs": [ "12px", { "lineHeight": "16px", "fontWeight": "400" } ] } } } };</script></head><body class="bg-bg-page font-body-default text-body antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-card border-b border-border-subtle shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full max-w-7xl mx-auto px-gutter flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md shrink-0"><div class="flex items-center gap-space-sm"><img alt="NHS Emblem Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UU5ogpwNoLUU75oQQxctjFQqRVwQVj-uVLi92l08b2A4AYvPXs9DkH-e0TDTZ96fa3RSBKe77CW-0nmtBAYrT4PWMbcpZK8_rZewrRm1jXrXNiivh59tDchGePC2tF8Dxfr7isDbLQctGs93YfY-qV9LrM58ROkT9LpMLFnuuUjgpZv-Fxs805770dQO-Wzvkc8NN_gkpPzjeIIHbrrmy4YyOrDU0s0gWKUIAfRWoImhn3vnwDKZDEGOex"><div class="flex flex-col"><span class="font-headline-md text-headline-md text-text-ink tracking-tight">NetPayScale UK</span><span class="font-micro-meta text-micro-meta text-text-muted">Agenda for Change 2024/25 Circular</span></div></div><span class="hidden lg:inline-flex items-center px-2 py-0.5 rounded-full bg-surface-container font-label-caps text-label-caps text-on-surface-variant font-medium">2024/25 AfC</span></div><div class="hidden md:flex items-center flex-1 max-w-xs mx-space-sm"><div class="relative w-full"><span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-[18px] text-text-muted pointer-events-none">search</span><input class="w-full h-8 pl-8 pr-3 bg-surface-muted border-none rounded-lg font-body-xs text-body-xs text-text-ink placeholder:text-text-muted focus:outline-none focus:bg-surface-card focus:ring-1 focus:ring-nhs-blue transition-all" placeholder="Find AfC role, band, or code..." type="search"></div></div><nav class="hidden xl:flex items-center gap-1" data-active-classes="bg-nhs-blue text-on-primary font-title-sm rounded-lg shadow-xs"><a aria-current="page" class="px-3 py-1.5 transition-colors bg-nhs-blue text-on-primary font-title-sm rounded-lg shadow-xs" data-path="pay-calculator" href="#">Pay Calculator</a><a class="px-3 py-1.5 rounded-lg font-title-sm text-title-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-colors" data-path="scenario-comparator" href="#">Scenario Comparator</a><a class="px-3 py-1.5 rounded-lg font-title-sm text-title-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-colors" data-path="official-esr-payslip" href="#">Official ESR Payslip</a><a class="px-3 py-1.5 rounded-lg font-title-sm text-title-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-colors" data-path="band-directory" href="#">Band Directory</a><a class="px-3 py-1.5 rounded-lg font-title-sm text-title-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-colors" data-path="pension-impact" href="#">Pension Impact</a></nav><div class="flex items-center gap-space-sm shrink-0"><div class="hidden sm:flex items-center gap-1.5 py-1 px-2.5 rounded-lg bg-surface-muted font-tabular-caption text-tabular-caption text-text-body"><span class="w-1.5 h-1.5 rounded-full bg-cash-emerald"></span><span>Tax Year 2024/25</span><span class="text-border-strong">•</span><span>England &amp; Wales</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-bg-page min-h-screen"><div class="flex flex-col w-full">
+<!-- Interactive Engine & Real-Time State Controller Script -->
+<script>
+    window.calcState = {
+      band: 5,
+      step: 'mid',
+      hours: 37.5,
+      hcas: 'none',
+      rota: 'standard',
+      taxCode: '1257L',
+      pensionTier: 'Tier 5 (9.8%)',
+      studentLoan: 'plan2'
+    };
+
+    function updatePayDisplays() {
+      // Base Pay points for Band 5
+      let baseGrossAnnual = 32324;
+      if (window.calcState.step === 'entry') baseGrossAnnual = 29970;
+      if (window.calcState.step === 'top') baseGrossAnnual = 36483;
+
+      const fte = window.calcState.hours / 37.5;
+      baseGrossAnnual = baseGrossAnnual * fte;
+
+      // HCAS
+      let hcasAnnual = 0;
+      if (window.calcState.hcas === 'outer') {
+        hcasAnnual = Math.min(Math.max(baseGrossAnnual * 0.15, 4313), 5436);
+      } else if (window.calcState.hcas === 'inner') {
+        hcasAnnual = Math.min(Math.max(baseGrossAnnual * 0.20, 5115), 8034);
+      }
+
+      // Unsocial enhancements estimate
+      let enhancementAnnual = 0;
+      if (window.calcState.rota === 'standard') {
+        enhancementAnnual = 5718;
+      } else if (window.calcState.rota === 'acute') {
+        enhancementAnnual = 8940;
+      }
+
+      const totalGrossAnnual = baseGrossAnnual + hcasAnnual + enhancementAnnual;
+      const totalGrossMonthly = totalGrossAnnual / 12;
+
+      // Calculations (simplified UK 2024/25)
+      const pa = 12570;
+      const taxableGross = Math.max(0, totalGrossAnnual - pa);
+      const taxAnnual = taxableGross * 0.20;
+      const taxMonthly = taxAnnual / 12;
+
+      // NI (8% above £12,570 up to £50,270)
+      const niThreshold = 12570;
+      const niAnnual = Math.max(0, Math.min(totalGrossAnnual - niThreshold, 37700)) * 0.08;
+      const niMonthly = niAnnual / 12;
+
+      // NHS Pension (9.8% for Band 5 basic + shift)
+      const pensionRate = 0.098;
+      const pensionMonthly = totalGrossMonthly * pensionRate;
+
+      // Net Monthly
+      const deductionsMonthly = taxMonthly + niMonthly + pensionMonthly;
+      const netMonthly = totalGrossMonthly - deductionsMonthly;
+      const netAnnual = netMonthly * 12;
+      const hourlyNet = netMonthly / (window.calcState.hours * 4.333);
+
+      const netEl = document.getElementById('val-net-monthly');
+      if (netEl) netEl.innerText = '£' + netMonthly.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      
+      const annEl = document.getElementById('val-net-annual');
+      if (annEl) annEl.innerText = '£' + netAnnual.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' / yr';
+      
+      const hrEl = document.getElementById('val-net-hourly');
+      if (hrEl) hrEl.innerText = '£' + hourlyNet.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' / hr';
+
+      const grossEl = document.getElementById('val-gross-annual');
+      if (grossEl) grossEl.innerText = '£' + totalGrossAnnual.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+      const dedEl = document.getElementById('val-total-deductions');
+      if (dedEl) dedEl.innerText = '-£' + deductionsMonthly.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' / mo';
+
+      const taxLegEl = document.getElementById('val-tax-monthly');
+      if (taxLegEl) taxLegEl.innerText = '£' + taxMonthly.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+      const niLegEl = document.getElementById('val-ni-monthly');
+      if (niLegEl) niLegEl.innerText = '£' + niMonthly.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+      const penLegEl = document.getElementById('val-pension-monthly');
+      if (penLegEl) penLegEl.innerText = '£' + pensionMonthly.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+      const retention = ((netMonthly / totalGrossMonthly) * 100).toFixed(1);
+      const retEl = document.getElementById('val-retention-rate');
+      if (retEl) retEl.innerText = retention + '% of gross earnings kept';
+
+      // Bar widths
+      const netPct = (netMonthly / totalGrossMonthly) * 100;
+      const penPct = (pensionMonthly / totalGrossMonthly) * 100;
+      const taxPct = (taxMonthly / totalGrossMonthly) * 100;
+      const niPct = (niMonthly / totalGrossMonthly) * 100;
+
+      const barNet = document.getElementById('bar-net');
+      if (barNet) barNet.style.width = netPct + '%';
+      const barPen = document.getElementById('bar-pension');
+      if (barPen) barPen.style.width = penPct + '%';
+      const barTax = document.getElementById('bar-tax');
+      if (barTax) barTax.style.width = taxPct + '%';
+      const barNi = document.getElementById('bar-ni');
+      if (barNi) barNi.style.width = niPct + '%';
+    }
+
+    function selectStep(step) {
+      window.calcState.step = step;
+      document.querySelectorAll('.step-card').forEach(c => {
+        c.classList.remove('bg-text-ink', 'text-on-primary', 'shadow-sm');
+        c.classList.add('bg-surface-card', 'text-text-body');
+        const icon = c.querySelector('.check-indicator');
+        if (icon) icon.classList.add('opacity-0');
+      });
+      const active = document.getElementById('step-card-' + step);
+      if (active) {
+        active.classList.remove('bg-surface-card', 'text-text-body');
+        active.classList.add('bg-text-ink', 'text-on-primary', 'shadow-sm');
+        const icon = active.querySelector('.check-indicator');
+        if (icon) icon.classList.remove('opacity-0');
+      }
+      updatePayDisplays();
+    }
+
+    function adjustHours(delta) {
+      let h = window.calcState.hours + delta;
+      if (h < 7.5) h = 7.5;
+      if (h > 48) h = 48;
+      window.calcState.hours = parseFloat(h.toFixed(1));
+      applyHours();
+    }
+
+    function setHours(val) {
+      window.calcState.hours = val;
+      applyHours();
+    }
+
+    function applyHours() {
+      const fte = (window.calcState.hours / 37.5).toFixed(2);
+      const display = document.getElementById('hours-display');
+      if (display) display.innerText = window.calcState.hours.toFixed(1) + ' hrs / wk (' + fte + ' FTE)';
+      const slider = document.getElementById('hours-slider');
+      if (slider) slider.value = window.calcState.hours;
+      updatePayDisplays();
+    }
+
+    function selectHcas(tier) {
+      window.calcState.hcas = tier;
+      document.querySelectorAll('.hcas-option').forEach(el => {
+        el.classList.remove('bg-text-ink', 'text-on-primary');
+        el.classList.add('bg-surface-card', 'text-text-body');
+        const radio = el.querySelector('.hcas-radio-dot');
+        if (radio) radio.classList.add('opacity-0');
+      });
+      const active = document.getElementById('hcas-' + tier);
+      if (active) {
+        active.classList.remove('bg-surface-card', 'text-text-body');
+        active.classList.add('bg-text-ink', 'text-on-primary');
+        const radio = active.querySelector('.hcas-radio-dot');
+        if (radio) radio.classList.remove('opacity-0');
+      }
+      updatePayDisplays();
+    }
+
+    function selectRota(preset) {
+      window.calcState.rota = preset;
+      document.querySelectorAll('.rota-chip').forEach(el => {
+        el.classList.remove('bg-nhs-blue', 'text-on-primary');
+        el.classList.add('bg-surface-muted', 'text-text-body');
+      });
+      const active = document.getElementById('rota-' + preset);
+      if (active) {
+        active.classList.remove('bg-surface-muted', 'text-text-body');
+        active.classList.add('bg-nhs-blue', 'text-on-primary');
+      }
+      updatePayDisplays();
+    }
+
+    function printPayslip() {
+      window.print();
+    }
+  </script>
+<!-- Top Status & Context Strip -->
+<section class="w-full bg-surface-card border-b border-border-subtle">
+<div class="max-w-7xl mx-auto px-gutter py-space-sm">
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-sm">
+<!-- Autocomplete Finder & Role Quick-Pills -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-space-sm flex-1">
+<div class="flex items-center gap-1.5 px-3 py-1 bg-surface-muted rounded-lg shrink-0">
+<span class="material-symbols-outlined text-nhs-blue text-[18px]">verified</span>
+<span class="font-title-sm text-title-sm text-text-ink">2024/25 AfC Official Rates</span>
+</div>
+<div class="flex items-center gap-1.5 overflow-x-auto w-full no-scrollbar py-0.5">
+<span class="font-micro-meta text-micro-meta text-text-muted uppercase tracking-wider shrink-0 mr-1">Quick Select:</span>
+<button class="px-2.5 py-1 bg-surface-muted hover:bg-surface-container rounded-md font-body-xs text-body-xs text-text-body whitespace-nowrap transition-colors" onclick="selectStep('mid')">
+              Band 5 Staff Nurse
+            </button>
+<button class="px-2.5 py-1 bg-surface-muted hover:bg-surface-container rounded-md font-body-xs text-body-xs text-text-body whitespace-nowrap transition-colors" onclick="selectStep('top')">
+              Band 6 Ward Sister
+            </button>
+<button class="px-2.5 py-1 bg-surface-muted hover:bg-surface-container rounded-md font-body-xs text-body-xs text-text-body whitespace-nowrap transition-colors">
+              Band 7 Clinical Specialist
+            </button>
+<button class="px-2.5 py-1 bg-surface-muted hover:bg-surface-container rounded-md font-body-xs text-body-xs text-text-body whitespace-nowrap transition-colors">
+              Band 3 HCA
+            </button>
+<button class="hidden xl:inline-block px-2.5 py-1 bg-surface-muted hover:bg-surface-container rounded-md font-body-xs text-body-xs text-text-body whitespace-nowrap transition-colors">
+              Band 8a Lead Pharmacist
+            </button>
+</div>
+</div>
+<!-- Verification Timestamp -->
+<div class="flex items-center gap-2 self-end lg:self-center shrink-0 text-text-muted">
+<span class="w-2 h-2 rounded-full bg-cash-emerald animate-pulse"></span>
+<span class="font-tabular-caption text-tabular-caption">Verified: HMRC &amp; NHS Employers Circular 02/2024 (Nov 2024)</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 12-Column Main Workstation Layout -->
+<div class="max-w-7xl mx-auto px-gutter py-space-lg w-full">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Left Column (7 Columns / ~58% width): Interactive Precision Controls -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<!-- a. Pay Band Selector -->
+<div class="bg-surface-card border border-border-subtle rounded-xl p-space-md shadow-xs">
+<div class="flex items-center justify-between mb-space-sm">
+<label class="font-title-sm text-title-sm text-text-ink flex items-center gap-2">
+<span class="material-symbols-outlined text-nhs-blue text-[20px]">badge</span>
+              Agenda for Change (AfC) Pay Band
+            </label>
+<span class="font-micro-meta text-micro-meta text-text-muted uppercase">England &amp; Wales 24/25</span>
+</div>
+<!-- Segmented horizontal pill row: Bands 2 to 9 -->
+<div class="p-1 bg-surface-muted rounded-xl flex items-center gap-1 overflow-x-auto no-scrollbar">
+<button class="px-3 py-1.5 rounded-lg font-body-sm text-body-sm text-text-muted hover:text-text-ink hover:bg-surface-card transition-all shrink-0">B2</button>
+<button class="px-3 py-1.5 rounded-lg font-body-sm text-body-sm text-text-muted hover:text-text-ink hover:bg-surface-card transition-all shrink-0">B3</button>
+<button class="px-3 py-1.5 rounded-lg font-body-sm text-body-sm text-text-muted hover:text-text-ink hover:bg-surface-card transition-all shrink-0">B4</button>
+<button class="px-3.5 py-1.5 rounded-lg font-title-sm text-title-sm bg-text-ink text-on-primary shadow-xs shrink-0 active:scale-[0.97] transition-all">Band 5</button>
+<button class="px-3 py-1.5 rounded-lg font-body-sm text-body-sm text-text-muted hover:text-text-ink hover:bg-surface-card transition-all shrink-0">B6</button>
+<button class="px-3 py-1.5 rounded-lg font-body-sm text-body-sm text-text-muted hover:text-text-ink hover:bg-surface-card transition-all shrink-0">B7</button>
+<button class="px-3 py-1.5 rounded-lg font-body-sm text-body-sm text-text-muted hover:text-text-ink hover:bg-surface-card transition-all shrink-0">B8A</button>
+<button class="px-3 py-1.5 rounded-lg font-body-sm text-body-sm text-text-muted hover:text-text-ink hover:bg-surface-card transition-all shrink-0">B8B</button>
+<button class="px-3 py-1.5 rounded-lg font-body-sm text-body-sm text-text-muted hover:text-text-ink hover:bg-surface-card transition-all shrink-0">B8C</button>
+<button class="px-3 py-1.5 rounded-lg font-body-sm text-body-sm text-text-muted hover:text-text-ink hover:bg-surface-card transition-all shrink-0">B8D</button>
+<button class="px-3 py-1.5 rounded-lg font-body-sm text-body-sm text-text-muted hover:text-text-ink hover:bg-surface-card transition-all shrink-0">B9</button>
+</div>
+</div>
+<!-- b. Experience Progression Milestones -->
+<div class="bg-surface-card border border-border-subtle rounded-xl p-space-md shadow-xs">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-title-sm text-title-sm text-text-ink flex items-center gap-2">
+<span class="material-symbols-outlined text-nhs-blue text-[20px]">timeline</span>
+              Experience Progression Milestone
+            </span>
+<span class="font-body-xs text-body-xs text-text-muted">Annex 2 Incremental Pay Scale</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
+<!-- Entry -->
+<button class="step-card text-left p-3.5 rounded-xl border border-border-subtle bg-surface-card hover:bg-surface-muted transition-all active:scale-[0.97] flex flex-col justify-between" id="step-card-entry" onclick="selectStep('entry')">
+<div class="flex items-center justify-between w-full mb-2">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-text-muted">Entry Step</span>
+<span class="check-indicator opacity-0 material-symbols-outlined text-[16px] text-cash-emerald">check_circle</span>
+</div>
+<div>
+<p class="font-body-xs text-body-xs opacity-80">&lt; 2 Years in Band</p>
+<p class="font-tabular-ledger text-tabular-ledger font-bold mt-0.5">£29,970 <span class="font-normal text-xs opacity-70">/ yr</span></p>
+</div>
+</button>
+<!-- Intermediate (Active) -->
+<button class="step-card text-left p-3.5 rounded-xl border border-border-strong bg-text-ink text-on-primary shadow-sm transition-all active:scale-[0.97] flex flex-col justify-between" id="step-card-mid" onclick="selectStep('mid')">
+<div class="flex items-center justify-between w-full mb-2">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-border-strong">Intermediate</span>
+<span class="check-indicator material-symbols-outlined text-[16px] text-cash-emerald">check_circle</span>
+</div>
+<div>
+<p class="font-body-xs text-body-xs opacity-80">2 – 4 Years in Band</p>
+<p class="font-tabular-ledger text-tabular-ledger font-bold mt-0.5">£32,324 <span class="font-normal text-xs opacity-70">/ yr</span></p>
+</div>
+</button>
+<!-- Top of Band -->
+<button class="step-card text-left p-3.5 rounded-xl border border-border-subtle bg-surface-card hover:bg-surface-muted transition-all active:scale-[0.97] flex flex-col justify-between" id="step-card-top" onclick="selectStep('top')">
+<div class="flex items-center justify-between w-full mb-2">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-text-muted">Top of Band</span>
+<span class="check-indicator opacity-0 material-symbols-outlined text-[16px] text-cash-emerald">check_circle</span>
+</div>
+<div>
+<p class="font-body-xs text-body-xs opacity-80">4+ Years in Band</p>
+<p class="font-tabular-ledger text-tabular-ledger font-bold mt-0.5">£36,483 <span class="font-normal text-xs opacity-70">/ yr</span></p>
+</div>
+</button>
+</div>
+</div>
+<!-- c. Contracted Hours & FTE Precision Slider -->
+<div class="bg-surface-card border border-border-subtle rounded-xl p-space-md shadow-xs">
+<div class="flex items-center justify-between mb-space-sm">
+<div>
+<span class="font-title-sm text-title-sm text-text-ink flex items-center gap-2">
+<span class="material-symbols-outlined text-nhs-blue text-[20px]">schedule</span>
+                Contracted Working Hours
+              </span>
+<p class="font-body-xs text-body-xs text-text-muted">Full-Time Equivalent (FTE) standard NHS baseline is 37.5 hrs/week</p>
+</div>
+<!-- Touch Steppers + Display -->
+<div class="flex items-center gap-1.5 bg-surface-muted p-1 rounded-xl border border-border-subtle">
+<button class="w-8 h-8 rounded-lg bg-surface-card hover:bg-surface-container flex items-center justify-center font-bold text-text-ink shadow-2xs active:scale-[0.95] transition-all" onclick="adjustHours(-1.5)">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<span class="font-tabular-ledger text-tabular-ledger px-3 text-text-ink font-semibold" id="hours-display">
+                37.5 hrs / wk (1.00 FTE)
+              </span>
+<button class="w-8 h-8 rounded-lg bg-surface-card hover:bg-surface-container flex items-center justify-center font-bold text-text-ink shadow-2xs active:scale-[0.95] transition-all" onclick="adjustHours(1.5)">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+<!-- Native Precision Slider -->
+<div class="py-2">
+<input class="w-full h-2 bg-surface-muted rounded-lg appearance-none cursor-pointer accent-nhs-blue" id="hours-slider" max="48" min="7.5" oninput="setHours(parseFloat(this.value))" step="0.5" type="range" value="37.5">
+</div>
+<!-- Quick Presets -->
+<div class="flex items-center gap-2 pt-2 overflow-x-auto no-scrollbar">
+<button class="px-3 py-1 rounded-full bg-surface-muted hover:bg-surface-container font-tabular-caption text-tabular-caption text-text-body transition-colors" onclick="setHours(37.5)">
+              37.5h (1.0 FTE)
+            </button>
+<button class="px-3 py-1 rounded-full bg-surface-muted hover:bg-surface-container font-tabular-caption text-tabular-caption text-text-body transition-colors" onclick="setHours(30.0)">
+              30.0h (0.8 FTE)
+            </button>
+<button class="px-3 py-1 rounded-full bg-surface-muted hover:bg-surface-container font-tabular-caption text-tabular-caption text-text-body transition-colors" onclick="setHours(22.5)">
+              22.5h (0.6 FTE)
+            </button>
+<button class="px-3 py-1 rounded-full bg-surface-muted hover:bg-surface-container font-tabular-caption text-tabular-caption text-text-body transition-colors" onclick="setHours(15.0)">
+              Bank / Ad-Hoc (15h)
+            </button>
+</div>
+</div>
+<!-- d. High Cost Area Supplement (HCAS) London Weighting -->
+<div class="bg-surface-card border border-border-subtle rounded-xl p-space-md shadow-xs">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-title-sm text-title-sm text-text-ink flex items-center gap-2">
+<span class="material-symbols-outlined text-nhs-blue text-[20px]">location_on</span>
+              High Cost Area Supplement (HCAS London Weighting)
+            </span>
+<span class="font-micro-meta text-micro-meta text-text-muted uppercase">Section 4 AfC</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm">
+<!-- Rest of England -->
+<button class="hcas-option text-left p-3.5 rounded-xl border border-border-strong bg-text-ink text-on-primary transition-all active:scale-[0.97] flex flex-col justify-between" id="hcas-none" onclick="selectHcas('none')">
+<div class="flex items-center justify-between w-full mb-1">
+<span class="font-title-sm text-title-sm">Rest of England</span>
+<span class="hcas-radio-dot w-2 h-2 rounded-full bg-cash-emerald"></span>
+</div>
+<p class="font-body-xs text-body-xs opacity-80">Standard National AfC Rates (0%)</p>
+<p class="font-tabular-ledger text-tabular-ledger font-semibold mt-2">£0 / yr</p>
+</button>
+<!-- Outer London -->
+<button class="hcas-option text-left p-3.5 rounded-xl border border-border-subtle bg-surface-card hover:bg-surface-muted transition-all active:scale-[0.97] flex flex-col justify-between" id="hcas-outer" onclick="selectHcas('outer')">
+<div class="flex items-center justify-between w-full mb-1">
+<span class="font-title-sm text-title-sm">Outer London</span>
+<span class="hcas-radio-dot opacity-0 w-2 h-2 rounded-full bg-cash-emerald"></span>
+</div>
+<p class="font-body-xs text-body-xs opacity-80">+15% Basic Salary</p>
+<p class="font-tabular-ledger text-tabular-ledger font-semibold mt-2">min £4,313 – max £5,436</p>
+</button>
+<!-- Inner London -->
+<button class="hcas-option text-left p-3.5 rounded-xl border border-border-subtle bg-surface-card hover:bg-surface-muted transition-all active:scale-[0.97] flex flex-col justify-between" id="hcas-inner" onclick="selectHcas('inner')">
+<div class="flex items-center justify-between w-full mb-1">
+<span class="font-title-sm text-title-sm">Inner London</span>
+<span class="hcas-radio-dot opacity-0 w-2 h-2 rounded-full bg-cash-emerald"></span>
+</div>
+<p class="font-body-xs text-body-xs opacity-80">+20% Basic Salary</p>
+<p class="font-tabular-ledger text-tabular-ledger font-semibold mt-2">min £5,115 – max £8,034</p>
+</button>
+</div>
+</div>
+<!-- e. Unsocial Hours (Section 2 AFC Enhancements) -->
+<div class="bg-surface-card border border-border-subtle rounded-xl p-space-md shadow-xs">
+<div class="flex items-center justify-between mb-space-sm">
+<div>
+<span class="font-title-sm text-title-sm text-text-ink flex items-center gap-2">
+<span class="material-symbols-outlined text-nhs-blue text-[20px]">nightlight</span>
+                Unsocial Hours &amp; Shift Enhancements (Section 2)
+              </span>
+<p class="font-body-xs text-body-xs text-text-muted">Band 5 statutory rates: Nights &amp; Saturdays +30% | Sundays &amp; Bank Holidays +60%</p>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-muted font-label-caps text-label-caps text-text-muted font-bold">SECTION 2</span>
+</div>
+<!-- Rota Presets -->
+<div class="flex flex-wrap items-center gap-2 mb-space-md">
+<button class="rota-chip px-3 py-1.5 rounded-lg font-body-xs text-body-xs bg-nhs-blue text-on-primary font-medium transition-all" id="rota-standard" onclick="selectRota('standard')">
+              Standard Ward Rota (3x Nights, 2x W/E per month)
+            </button>
+<button class="rota-chip px-3 py-1.5 rounded-lg font-body-xs text-body-xs bg-surface-muted text-text-body font-medium hover:bg-surface-container transition-all" id="rota-acute" onclick="selectRota('acute')">
+              High Intensity Acute (ITU / A&amp;E Rotation)
+            </button>
+<button class="rota-chip px-3 py-1.5 rounded-lg font-body-xs text-body-xs bg-surface-muted text-text-body font-medium hover:bg-surface-container transition-all" id="rota-none" onclick="selectRota('none')">
+              No Enhancements (Mon-Fri 9-5)
+            </button>
+</div>
+<!-- Clean Shift Cash Yield Callout -->
+<div class="rounded-xl p-4 bg-emerald-50 border border-emerald-200 text-emerald-900 flex items-start gap-3">
+<span class="material-symbols-outlined text-cash-emerald text-[24px] shrink-0 mt-0.5">account_balance_wallet</span>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm font-bold text-emerald-950">Net Shift Cash Yield: Real In-Pocket Value</span>
+<p class="font-body-sm text-body-sm mt-0.5 text-emerald-900 leading-snug">
+<strong class="font-tabular-ledger">+£342.18 / mo</strong> directly into your bank account. Unlike misleading gross uplift quotes, this is the net spendable cash remaining after 20% Income Tax, 8% NI, and 9.8% Tier 5 Pension contributions.
+              </p>
+</div>
+</div>
+</div>
+<!-- f. Advanced Tax & Pension Settings Accordion -->
+<details class="group bg-surface-card border border-border-subtle rounded-xl p-space-md shadow-xs transition-all">
+<summary class="flex items-center justify-between cursor-pointer list-none select-none">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-nhs-blue text-[20px]">tune</span>
+<span class="font-title-sm text-title-sm text-text-ink">Advanced Statutory Tax &amp; Pension Configuration</span>
+</div>
+<span class="material-symbols-outlined text-text-muted transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md pt-space-md mt-space-sm border-t border-border-subtle">
+<!-- Tax Code -->
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-text-muted uppercase">HMRC Tax Code</label>
+<div class="flex items-center gap-2">
+<input class="w-full h-9 px-3 bg-surface-muted border border-border-subtle rounded-lg font-tabular-ledger text-tabular-ledger text-text-ink font-semibold focus:outline-none focus:border-nhs-blue" type="text" value="1257L">
+</div>
+<span class="font-micro-meta text-micro-meta text-text-muted">Standard £12,570 Allowance</span>
+</div>
+<!-- NHS Pension Tier -->
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-text-muted uppercase">NHS Pension 2015 Tier</label>
+<select class="w-full h-9 px-2 bg-surface-muted border border-border-subtle rounded-lg font-tabular-caption text-tabular-caption text-text-ink font-semibold focus:outline-none focus:border-nhs-blue">
+<option selected="">Tier 5 (9.8% CARE)</option>
+<option>Tier 4 (8.3% CARE)</option>
+<option>Tier 6 (10.7% CARE)</option>
+<option>Opt-Out (0% - Not Advised)</option>
+</select>
+<span class="font-micro-meta text-micro-meta text-text-muted">Member CARE Scheme</span>
+</div>
+<!-- Student Loan Plan -->
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-text-muted uppercase">Student Loan Repayment</label>
+<select class="w-full h-9 px-2 bg-surface-muted border border-border-subtle rounded-lg font-tabular-caption text-tabular-caption text-text-ink font-semibold focus:outline-none focus:border-nhs-blue">
+<option selected="">Plan 2 (£27,295 @ 9%)</option>
+<option>Plan 1 (£24,990 @ 9%)</option>
+<option>Plan 5 (£25,000 @ 9%)</option>
+<option>Postgraduate (£21,000 @ 6%)</option>
+<option>None / Fully Repaid</option>
+</select>
+<span class="font-micro-meta text-micro-meta text-text-muted">Post-2012 Undergraduate</span>
+</div>
+</div>
+</details>
+</div>
+<!-- Right Column (5 Columns / ~42% width): Sticky Real-Time Ledger -->
+<div class="lg:col-span-5 lg:sticky lg:top-20 flex flex-col gap-space-md">
+<!-- Sticky Net Take-Home Pay Hero Card -->
+<div class="bg-surface-card border border-border-strong rounded-2xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-sm border-b border-border-subtle">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-cash-emerald animate-pulse"></span>
+<span class="font-title-sm text-title-sm text-text-ink font-bold">Estimated Take-Home Pay</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-muted font-tabular-caption text-tabular-caption text-text-muted font-medium">Monthly Pay Date: 28th</span>
+</div>
+<!-- Hero Number -->
+<div class="py-space-md flex flex-col">
+<span class="font-micro-meta text-micro-meta uppercase tracking-wider text-text-muted">Net Monthly In-Bank</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-display-hero text-display-hero text-cash-emerald font-extrabold tracking-tight" id="val-net-monthly">£2,148.65</span>
+<span class="font-title-sm text-title-sm text-text-muted">/ mo</span>
+</div>
+<!-- Secondary Net Figures -->
+<div class="flex items-center gap-4 mt-2 font-tabular-ledger text-tabular-ledger text-text-body">
+<span class="flex items-center gap-1">
+<span class="text-text-muted">Annual:</span>
+<strong class="font-semibold" id="val-net-annual">£25,783.80 / yr</strong>
+</span>
+<span class="text-border-strong">•</span>
+<span class="flex items-center gap-1">
+<span class="text-text-muted">Hourly:</span>
+<strong class="font-semibold" id="val-net-hourly">£13.22 / hr</strong>
+</span>
+</div>
+</div>
+<!-- Key Deductions Headline Strip -->
+<div class="grid grid-cols-2 gap-space-sm p-3 bg-surface-muted rounded-xl mb-space-md border border-border-subtle">
+<div>
+<span class="font-micro-meta text-micro-meta uppercase text-text-muted">Gross AfC Salary</span>
+<p class="font-tabular-ledger text-tabular-ledger font-bold text-text-ink mt-0.5" id="val-gross-annual">£36,483.00</p>
+</div>
+<div>
+<span class="font-micro-meta text-micro-meta uppercase text-text-muted">Total Statutory Deductions</span>
+<p class="font-tabular-ledger text-tabular-ledger font-bold text-tax-rose mt-0.5" id="val-total-deductions">-£891.60 / mo</p>
+</div>
+</div>
+<!-- Proportional Visual Stacked Breakdown Bar -->
+<div class="flex flex-col gap-2 mb-space-md">
+<div class="flex items-center justify-between font-label-caps text-label-caps text-text-muted">
+<span>Proportional Distribution</span>
+<span class="font-semibold text-cash-emerald" id="val-retention-rate">70.7% of gross earnings kept</span>
+</div>
+<!-- Multi-segment Progress Bar -->
+<div class="h-3.5 w-full bg-surface-muted rounded-full overflow-hidden flex shadow-2xs">
+<div class="h-full bg-cash-emerald transition-all duration-300" id="bar-net" style="width: 68%;" title="Take Home: 68%"></div>
+<div class="h-full bg-pension-indigo transition-all duration-300" id="bar-pension" style="width: 10%;" title="NHS Pension: 10%"></div>
+<div class="h-full bg-tax-rose transition-all duration-300" id="bar-tax" style="width: 14%;" title="Income Tax: 14%"></div>
+<div class="h-full bg-ni-amber transition-all duration-300" id="bar-ni" style="width: 8%;" title="National Insurance: 8%"></div>
+</div>
+<!-- Color-Coded Detailed Breakdown Legend -->
+<div class="grid grid-cols-2 gap-2 pt-2 border-t border-border-subtle">
+<div class="flex items-center justify-between text-body-xs font-body-xs">
+<span class="flex items-center gap-1.5 text-text-body">
+<span class="w-2 h-2 rounded-full bg-cash-emerald"></span>
+                  Take-Home Pay
+                </span>
+<span class="font-tabular-ledger font-semibold text-text-ink">£2,148.65</span>
+</div>
+<div class="flex items-center justify-between text-body-xs font-body-xs">
+<span class="flex items-center gap-1.5 text-text-body">
+<span class="w-2 h-2 rounded-full bg-pension-indigo"></span>
+                  NHS Pension (9.8%)
+                </span>
+<span class="font-tabular-ledger font-semibold text-text-ink" id="val-pension-monthly">£263.65</span>
+</div>
+<div class="flex items-center justify-between text-body-xs font-body-xs">
+<span class="flex items-center gap-1.5 text-text-body">
+<span class="w-2 h-2 rounded-full bg-tax-rose"></span>
+                  PAYE Income Tax
+                </span>
+<span class="font-tabular-ledger font-semibold text-text-ink" id="val-tax-monthly">£382.40</span>
+</div>
+<div class="flex items-center justify-between text-body-xs font-body-xs">
+<span class="flex items-center gap-1.5 text-text-body">
+<span class="w-2 h-2 rounded-full bg-ni-amber"></span>
+                  National Insurance
+                </span>
+<span class="font-tabular-ledger font-semibold text-text-ink" id="val-ni-monthly">£245.55</span>
+</div>
+</div>
+</div>
+<!-- Quick Action Buttons -->
+<div class="flex flex-col gap-2 pt-2 border-t border-border-subtle">
+<button class="w-full h-10 px-4 bg-text-ink hover:bg-black text-on-primary rounded-lg font-title-sm text-title-sm flex items-center justify-center gap-2 active:scale-[0.97] transition-all" onclick="navigator.clipboard.writeText('NHS Band 5 Take-Home Pay (2024/25): £2,148.65/mo. Calculated via NetPayScale UK.')">
+<span class="material-symbols-outlined text-[18px]">share</span>
+              Share WhatsApp / SMS Summary
+            </button>
+<div class="grid grid-cols-2 gap-2">
+<button class="h-9 px-3 bg-surface-muted hover:bg-surface-container text-text-ink border border-border-subtle rounded-lg font-body-xs text-body-xs flex items-center justify-center gap-1.5 active:scale-[0.97] transition-all" onclick="navigator.clipboard.writeText('Gross: £36,483 | Net: £2,148.65/mo | Tax: £382.40 | NI: £245.55 | Pension: £263.65')">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+                Copy Figures
+              </button>
+<button class="h-9 px-3 bg-surface-muted hover:bg-surface-container text-text-ink border border-border-subtle rounded-lg font-body-xs text-body-xs flex items-center justify-center gap-1.5 active:scale-[0.97] transition-all" onclick="printPayslip()">
+<span class="material-symbols-outlined text-[16px]">picture_as_pdf</span>
+                Download 1-Page PDF
+              </button>
+</div>
+</div>
+</div>
+<!-- Trust & Compliance Micro Badge -->
+<div class="p-3 bg-surface-muted rounded-xl flex items-center gap-3 border border-border-subtle">
+<span class="material-symbols-outlined text-nhs-blue text-[20px] shrink-0">shield</span>
+<p class="font-micro-meta text-micro-meta text-text-muted leading-relaxed">
+            Statutory model synchronised with 2024 NHS Pension Tier Threshold updates &amp; Autumn Budget NIC rate reductions.
+          </p>
+</div>
+</div>
+</div>
+<!-- SECTION BELOW FOLD - SCENARIO COMPARATOR -->
+<section class="mt-space-xl pt-space-xl border-t border-border-subtle">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-md gap-space-sm">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-nhs-blue text-[22px]">compare_arrows</span>
+<h2 class="font-headline-lg text-headline-lg text-text-ink">Side-by-Side Promotion &amp; Step Comparator</h2>
+</div>
+<p class="font-body-default text-body-default text-text-muted mt-1">
+            Evaluate the real cash-in-pocket gain when stepping from Band 5 (Top) to Band 6 (Entry) after pension tier shifts.
+          </p>
+</div>
+<!-- Warning Callout Badge -->
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-ni-amber/10 border border-ni-amber/30 text-ni-amber self-start md:self-auto">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+<span class="font-tabular-caption text-tabular-caption font-semibold">Pension Tier Boundary: 9.8% → 10.7%</span>
+</div>
+</div>
+<!-- Comparator Dual-Card Split Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Scenario A: Current Post -->
+<div class="bg-surface-card border border-border-subtle rounded-xl p-space-md shadow-xs flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-sm border-b border-border-subtle mb-space-sm">
+<span class="px-2.5 py-0.5 rounded-full bg-surface-muted font-label-caps text-label-caps font-semibold text-text-muted uppercase">Scenario A • Current Post</span>
+<span class="font-tabular-caption text-tabular-caption text-text-muted">Band 5 (Top of Band)</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-text-ink">Band 5 Experienced Staff Nurse</h3>
+<p class="font-body-xs text-body-xs text-text-muted mt-0.5">37.5 hrs/wk • 4+ Years Experience • Tier 5 (9.8%)</p>
+<div class="mt-space-md space-y-2 font-tabular-ledger text-tabular-ledger">
+<div class="flex justify-between py-1 border-b border-border-subtle text-text-body">
+<span class="text-text-muted font-normal">Gross Annual Salary:</span>
+<span class="font-semibold text-text-ink">£36,483.00</span>
+</div>
+<div class="flex justify-between py-1 border-b border-border-subtle text-text-body">
+<span class="text-text-muted font-normal">Gross Monthly Pay:</span>
+<span class="font-semibold text-text-ink">£3,040.25</span>
+</div>
+<div class="flex justify-between py-1 border-b border-border-subtle text-tax-rose">
+<span class="text-text-muted font-normal">Income Tax (PAYE):</span>
+<span>-£382.40</span>
+</div>
+<div class="flex justify-between py-1 border-b border-border-subtle text-ni-amber">
+<span class="text-text-muted font-normal">National Insurance:</span>
+<span>-£245.55</span>
+</div>
+<div class="flex justify-between py-1 border-b border-border-subtle text-pension-indigo">
+<span class="text-text-muted font-normal">NHS Pension (9.8%):</span>
+<span>-£297.94</span>
+</div>
+</div>
+</div>
+<div class="pt-space-md mt-space-md border-t border-border-subtle flex items-baseline justify-between">
+<span class="font-title-sm text-title-sm text-text-muted">Current Net Monthly:</span>
+<span class="font-display-hero-mobile text-display-hero-mobile text-text-ink font-bold">£2,148.65</span>
+</div>
+</div>
+<!-- Scenario B: Proposed Promotion Post -->
+<div class="bg-surface-card border-2 border-nhs-blue rounded-xl p-space-md shadow-xs flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 right-0 bg-nhs-blue text-on-primary px-3 py-1 rounded-bl-lg font-label-caps text-label-caps font-bold uppercase tracking-wider">
+            Proposed Step
+          </div>
+<div>
+<div class="flex items-center justify-between pb-space-sm border-b border-border-subtle mb-space-sm">
+<span class="px-2.5 py-0.5 rounded-full bg-blue-50 text-nhs-blue font-label-caps text-label-caps font-semibold uppercase">Scenario B • Promoted</span>
+<span class="font-tabular-caption text-tabular-caption text-text-muted pr-20">Band 6 (Entry Step)</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-text-ink">Band 6 Junior Sister / Charge Nurse</h3>
+<p class="font-body-xs text-body-xs text-text-muted mt-0.5">37.5 hrs/wk • Entry Step &lt;2 yrs • Tier 6 (10.7%)</p>
+<div class="mt-space-md space-y-2 font-tabular-ledger text-tabular-ledger">
+<div class="flex justify-between py-1 border-b border-border-subtle text-text-body">
+<span class="text-text-muted font-normal">Gross Annual Salary:</span>
+<span class="font-semibold text-text-ink">£37,338.00</span>
+</div>
+<div class="flex justify-between py-1 border-b border-border-subtle text-text-body">
+<span class="text-text-muted font-normal">Gross Monthly Pay:</span>
+<span class="font-semibold text-text-ink">£3,111.50</span>
+</div>
+<div class="flex justify-between py-1 border-b border-border-subtle text-tax-rose">
+<span class="text-text-muted font-normal">Income Tax (PAYE):</span>
+<span>-£396.65</span>
+</div>
+<div class="flex justify-between py-1 border-b border-border-subtle text-ni-amber">
+<span class="text-text-muted font-normal">National Insurance:</span>
+<span>-£251.25</span>
+</div>
+<div class="flex justify-between py-1 border-b border-border-subtle text-pension-indigo">
+<span class="text-text-muted font-normal">NHS Pension (10.7%):</span>
+<span>-£332.93</span>
+</div>
+</div>
+</div>
+<div class="pt-space-md mt-space-md border-t border-border-subtle flex items-baseline justify-between">
+<span class="font-title-sm text-title-sm text-text-muted">Promoted Net Monthly:</span>
+<span class="font-display-hero-mobile text-display-hero-mobile text-cash-emerald font-bold">£2,192.10</span>
+</div>
+</div>
+</div>
+<!-- Real Pay Rise Delta Callout -->
+<div class="mt-space-md p-space-md bg-surface-card border border-border-subtle rounded-xl flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-full bg-cash-emerald/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-cash-emerald text-[28px]">trending_up</span>
+</div>
+<div>
+<span class="font-title-sm text-title-sm text-text-ink font-bold">Promotion Net Cash Gain Delta</span>
+<p class="font-body-xs text-body-xs text-text-muted mt-0.5 max-w-xl">
+              Gross salary increases by <strong class="text-text-ink font-semibold">£855.00 / yr</strong>. Due to crossing into the 10.7% CARE Pension bracket (+0.9% across your entire salary), you retain 51.2% of the uplift in your bank account.
+            </p>
+</div>
+</div>
+<div class="flex items-center gap-6 shrink-0 self-end md:self-center">
+<div class="text-right">
+<span class="font-micro-meta text-micro-meta text-text-muted uppercase">Net Gain (Monthly)</span>
+<p class="font-tabular-ledger text-headline-md font-bold text-cash-emerald">+£43.45 / mo</p>
+</div>
+<div class="text-right border-l border-border-subtle pl-6">
+<span class="font-micro-meta text-micro-meta text-text-muted uppercase">Net Gain (Annual)</span>
+<p class="font-tabular-ledger text-headline-md font-bold text-text-ink">+£521.40 / yr</p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: OFFICIAL ESR PAYSLIP REPLICA VIEW -->
+<section class="mt-space-xl pt-space-xl border-t border-border-subtle" id="esr-payslip-print">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between mb-space-md gap-space-sm">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-nhs-blue text-[22px]">receipt_long</span>
+<h2 class="font-headline-lg text-headline-lg text-text-ink">Official Electronic Staff Record (ESR) Payslip Replica</h2>
+</div>
+<p class="font-body-default text-body-default text-text-muted mt-1">
+            Exact visual mimic of standard NHS ESR itemized payroll statements for mortgage, tenancy, or verification checks.
+          </p>
+</div>
+<button class="h-10 px-4 bg-nhs-blue hover:bg-nhs-navy text-on-primary rounded-lg font-title-sm text-title-sm flex items-center justify-center gap-2 active:scale-[0.97] transition-all self-start sm:self-auto" onclick="printPayslip()">
+<span class="material-symbols-outlined text-[18px]">print</span>
+          Print Official A4 Payslip
+        </button>
+</div>
+<!-- Authentic ESR Card Container -->
+<div class="bg-surface-card border border-border-strong rounded-xl shadow-md overflow-hidden font-tabular-caption text-tabular-caption">
+<!-- NHS Blue Header Banner -->
+<div class="bg-nhs-blue text-on-primary px-space-md py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div class="flex items-center gap-3">
+<div class="bg-white text-nhs-blue font-extrabold text-sm px-2 py-0.5 rounded tracking-tighter">NHS</div>
+<div class="flex flex-col">
+<span class="font-bold text-sm tracking-wide">Electronic Staff Record (ESR) - Standard Pay Advice</span>
+<span class="text-[10px] opacity-80">Annex 3 AfC Model • ST THOMAS' NHS FOUNDATION TRUST</span>
+</div>
+</div>
+<div class="flex items-center gap-4 text-xs font-mono">
+<span>PERIOD: 08 / 2024</span>
+<span>PAY DATE: 28/11/2024</span>
+</div>
+</div>
+<!-- Employee Info Bar -->
+<div class="bg-surface-muted border-b border-border-subtle px-space-md py-2.5 grid grid-cols-2 sm:grid-cols-4 gap-2 text-text-body">
+<div><span class="text-text-muted">Employee No:</span> <strong class="text-text-ink">60294188</strong></div>
+<div><span class="text-text-muted">NI Number:</span> <strong class="text-text-ink">QQ 12 34 56 A</strong></div>
+<div><span class="text-text-muted">Tax Code:</span> <strong class="text-text-ink">1257L</strong></div>
+<div><span class="text-text-muted">Pay Method:</span> <strong class="text-text-ink">BACS (Lloyds)</strong></div>
+</div>
+<!-- Symmetrical Two-Column Split Ledger -->
+<div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border-subtle">
+<!-- Left Column: Payments & Allowances -->
+<div class="p-space-md flex flex-col justify-between">
+<div>
+<div class="flex justify-between font-bold text-text-ink border-b border-border-subtle pb-1 mb-2">
+<span>PAYMENTS &amp; ALLOWANCES</span>
+<span>AMOUNT (£)</span>
+</div>
+<div class="space-y-1.5 font-mono text-text-body">
+<div class="flex justify-between">
+<span>Basic Salary (Band 5 Top)</span>
+<span class="text-text-ink">2,693.67</span>
+</div>
+<div class="flex justify-between">
+<span>Unsocial Hours Night 30%</span>
+<span class="text-text-ink">284.12</span>
+</div>
+<div class="flex justify-between">
+<span>Unsocial Hours W/End 60%</span>
+<span class="text-text-ink">192.40</span>
+</div>
+<div class="flex justify-between text-text-muted">
+<span>Uniform Allowance (Statutory)</span>
+<span class="text-text-ink">0.00</span>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-2 border-t-2 border-border-strong flex justify-between font-mono font-bold text-text-ink text-sm">
+<span>TOTAL GROSS PAY</span>
+<span>£3,170.19</span>
+</div>
+</div>
+<!-- Right Column: Statutory Deductions -->
+<div class="p-space-md flex flex-col justify-between">
+<div>
+<div class="flex justify-between font-bold text-text-ink border-b border-border-subtle pb-1 mb-2">
+<span>DEDUCTIONS</span>
+<span>AMOUNT (£)</span>
+</div>
+<div class="space-y-1.5 font-mono text-text-body">
+<div class="flex justify-between text-tax-rose">
+<span>PAYE Income Tax</span>
+<span>382.40</span>
+</div>
+<div class="flex justify-between text-ni-amber">
+<span>National Insurance (Category A)</span>
+<span>245.55</span>
+</div>
+<div class="flex justify-between text-pension-indigo">
+<span>NHS Pension 2015 Tier 5 (9.8%)</span>
+<span>310.68</span>
+</div>
+<div class="flex justify-between text-loan-pink">
+<span>Student Loan Plan 2</span>
+<span>82.91</span>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-2 border-t-2 border-border-strong flex justify-between font-mono font-bold text-text-ink text-sm">
+<span>TOTAL DEDUCTIONS</span>
+<span class="text-tax-rose">-£1,021.54</span>
+</div>
+</div>
+</div>
+<!-- Official Bottom Summary Strip -->
+<div class="bg-surface-muted border-t border-border-strong px-space-md py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-4 text-xs font-mono text-text-muted">
+<span>TAXABLE GROSS YTD: £25,361.52</span>
+<span>TAX PAID YTD: £3,059.20</span>
+</div>
+<!-- Final Net Payable Box -->
+<div class="flex items-center gap-3">
+<span class="font-bold text-sm uppercase text-text-ink">NET PAY PAYABLE:</span>
+<div class="bg-cash-emerald text-on-primary px-4 py-1.5 rounded-lg font-mono font-extrabold text-base tracking-tight shadow-xs">
+              £2,148.65
+            </div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div></main><footer class="w-full bg-surface-card border-t border-border-subtle py-space-lg mt-auto"><div class="max-w-7xl mx-auto px-gutter flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex flex-col gap-1 text-center md:text-left"><p class="font-body-xs text-body-xs text-text-muted max-w-3xl leading-relaxed">Independent pay calculation model based on NHS Terms and Conditions of Service Handbook &amp; 2024/25 Pay Circulars. Not officially endorsed by NHS Employers or the Department of Health and Social Care.</p><p class="font-micro-meta text-micro-meta text-text-muted">© 2024 NetPayScale UK. All statutory deductions verified against HMRC &amp; NHS Pensions 2024/25 regulations.</p></div><div class="flex items-center gap-space-md font-body-xs text-body-xs text-text-muted"><span class="inline-flex items-center gap-1 font-tabular-caption text-tabular-caption"><span class="material-symbols-outlined text-[14px] text-cash-emerald">verified_user</span>AfC Pay Review 2024/25</span></div></div></footer></body></html>

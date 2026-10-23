@@ -300,11 +300,11 @@
   ],
   "pensionTiers": [
     { "min": 0, "max": 13259, "rate": 0.052, "percentageLabel": "5.2%" },
-    { "min": 13259.01, "max": 28854, "rate": 0.065, "percentageLabel": "6.5%" },
-    { "min": 28854.01, "max": 35155, "rate": 0.083, "percentageLabel": "8.3%" },
-    { "min": 35155.01, "max": 52778, "rate": 0.098, "percentageLabel": "9.8%" },
-    { "min": 52778.01, "max": 67668, "rate": 0.107, "percentageLabel": "10.7%" },
-    { "min": 67668.01, "max": 9999999, "rate": 0.125, "percentageLabel": "12.5%" }
+    { "min": 13259, "max": 28854, "rate": 0.065, "percentageLabel": "6.5%" },
+    { "min": 28854, "max": 35155, "rate": 0.083, "percentageLabel": "8.3%" },
+    { "min": 35155, "max": 52778, "rate": 0.098, "percentageLabel": "9.8%" },
+    { "min": 52778, "max": 67668, "rate": 0.107, "percentageLabel": "10.7%" },
+    { "min": 67668, "max": 9999999, "rate": 0.125, "percentageLabel": "12.5%" }
   ],
   "taxBracketsUK": {
     "personalAllowance": 12570,
@@ -325,6 +325,7 @@
     "plan1": { "threshold": 24990, "rate": 0.09, "name": "Plan 1 (Pre-2012 UK)" },
     "plan2": { "threshold": 27295, "rate": 0.09, "name": "Plan 2 (Post-2012 England/Wales)" },
     "plan4": { "threshold": 31395, "rate": 0.09, "name": "Plan 4 (Scotland)" },
+    "plan5": { "threshold": 25000, "rate": 0.09, "name": "Plan 5 (Post-2023 England)" },
     "postgrad": { "threshold": 21000, "rate": 0.06, "name": "Postgraduate Loan" }
   }
 }
