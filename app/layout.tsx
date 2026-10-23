@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://netpayscale.co.uk"),
+  metadataBase: new URL("https://netpayscale.uk"),
   title: {
     default: "NetPayScale UK (NHS Edition) | 2026/27 NHS Salary & Pension Calculator",
     template: "%s | NetPayScale UK",
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description:
     "Official 2026/2027 UK NHS Salary & Pension Calculator. Accurately calculate take-home pay, Agenda for Change pay steps, London Weighting (HCAS), unsocial hours enhancements, and NHS pension deductions.",
   alternates: {
-    canonical: "https://netpayscale.co.uk/",
+    canonical: "https://netpayscale.uk/",
   },
   keywords: [
     "NHS salary calculator",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title: "NetPayScale UK (NHS Edition) | 2026/27 NHS Pay & Pension Calculator",
     description:
       "Instant take-home pay calculation for 1.3M+ NHS healthcare staff. Includes 3.3% pay uplift, HCAS London weighting, and 2015 CARE Pension tiers.",
-    url: "https://netpayscale.co.uk",
+    url: "https://netpayscale.uk",
     siteName: "NetPayScale UK",
     locale: "en_GB",
     type: "website",
@@ -74,24 +74,24 @@ export default function RootLayout({
       {
         "@type": "WebSite",
         name: "NetPayScale UK (NHS Edition)",
-        url: "https://netpayscale.co.uk/",
+        url: "https://netpayscale.uk/",
         description:
           "Official 2026/2027 UK NHS Salary & Pension Calculator for 1.3M+ Agenda for Change staff.",
         publisher: {
           "@type": "Organization",
           name: "NetPayScale UK",
-          url: "https://netpayscale.co.uk/",
+          url: "https://netpayscale.uk/",
         },
         potentialAction: {
           "@type": "SearchAction",
-          target: "https://netpayscale.co.uk/calculator/{search_term_string}/",
+          target: "https://netpayscale.uk/calculator/{search_term_string}/",
           "query-input": "required name=search_term_string",
         },
       },
       {
         "@type": "WebApplication",
         name: "NHS Salary & Pension Calculator",
-        url: "https://netpayscale.co.uk/",
+        url: "https://netpayscale.uk/",
         applicationCategory: "FinanceApplication",
         operatingSystem: "All",
         browserRequirements: "Requires JavaScript. Requires HTML5.",

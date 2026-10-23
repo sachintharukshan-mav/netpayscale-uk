@@ -30,7 +30,7 @@ Total Deductions: -${formatCurrency(result.totalDeductions.monthly, true)}
 💰 NET MONTHLY DEPOSIT: ${formatCurrency(result.netPay.monthly, true)}
 Annual Take-Home: ${formatCurrency(result.netPay.annual, true)}/yr
 (You keep ${result.penceKeptPerPound}p in every £1)
-Calculated via NetPayScale UK (https://netpayscale.co.uk)`;
+Calculated via NetPayScale UK (https://netpayscale.uk)`;
 
     try {
       await navigator.clipboard.writeText(text);

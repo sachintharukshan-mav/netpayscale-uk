@@ -136,7 +136,7 @@ export default function Calculator({
 
   // WhatsApp & Social Share Message
   const shareText = useMemo(() => {
-    const siteUrl = typeof window !== "undefined" ? window.location.href : "https://netpayscale.co.uk";
+    const siteUrl = typeof window !== "undefined" ? window.location.href : "https://netpayscale.uk";
     return `NHS ${result.bandTitle} (${result.stepTitle}) Pay Breakdown (2026/27):
 • Take-Home (Net): ${formatCurrency(result.netPay.monthly)}/month (${formatCurrency(result.netPay.annual)}/year)
 • Basic Gross Salary: ${formatCurrency(result.grossPay.annual)}

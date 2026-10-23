@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const title = `${entry.band} ${entry.roleName} Salary & Take-Home Pay (${entry.regionName}) | 2026/27 NetPayScale UK`;
   const description = entry.description;
-  const canonicalUrl = `https://netpayscale.co.uk/calculator/${entry.slug}/`;
+  const canonicalUrl = `https://netpayscale.uk/calculator/${entry.slug}/`;
 
   return {
     title,
@@ -81,7 +81,7 @@ export default async function PseoCalculatorPage({ params }: Props) {
   });
 
   const editorial = getRegionalEditorial(entry);
-  const canonicalUrl = `https://netpayscale.co.uk/calculator/${entry.slug}/`;
+  const canonicalUrl = `https://netpayscale.uk/calculator/${entry.slug}/`;
 
   const schemaMarkup = {
     "@context": "https://schema.org",
@@ -93,13 +93,13 @@ export default async function PseoCalculatorPage({ params }: Props) {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://netpayscale.co.uk/",
+            item: "https://netpayscale.uk/",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Pay Scales",
-            item: "https://netpayscale.co.uk/#bands-overview",
+            item: "https://netpayscale.uk/#bands-overview",
           },
           {
             "@type": "ListItem",

@@ -251,7 +251,7 @@ export default function MobileNetPayDock({
             <div className="pt-5 pb-2 space-y-2">
               <a
                 href={`https://api.whatsapp.com/send?text=${encodeURIComponent(
-                  `NHS ${result.bandTitle} (${result.stepTitle}) Pay Breakdown (2026/27):\n• Net Monthly: ${formatCurrency(result.netPay.monthly)}/mo\n• Net Annual: ${formatCurrency(result.netPay.annual)}/yr\n• Gross: ${formatCurrency(result.grossPay.annual)}\n• Pension: -${formatCurrency(result.pensionContribution.monthly)}/mo\nCalculate yours at: https://netpayscale.co.uk`
+                  `NHS ${result.bandTitle} (${result.stepTitle}) Pay Breakdown (2026/27):\n• Net Monthly: ${formatCurrency(result.netPay.monthly)}/mo\n• Net Annual: ${formatCurrency(result.netPay.annual)}/yr\n• Gross: ${formatCurrency(result.grossPay.annual)}\n• Pension: -${formatCurrency(result.pensionContribution.monthly)}/mo\nCalculate yours at: https://netpayscale.uk`
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"

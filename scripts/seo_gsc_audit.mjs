@@ -28,7 +28,7 @@ assert(fs.existsSync(robotsPath), 'robots.txt exists in static export');
 const robotsContent = fs.readFileSync(robotsPath, 'utf8');
 assert(robotsContent.includes('User-Agent: *') || robotsContent.includes('User-agent: *'), 'robots.txt specifies User-agent: *');
 assert(robotsContent.includes('Allow: /'), 'robots.txt specifies Allow: /');
-assert(robotsContent.includes('Sitemap: https://netpayscale.co.uk/sitemap.xml'), 'robots.txt references absolute canonical sitemap.xml');
+assert(robotsContent.includes('Sitemap: https://netpayscale.uk/sitemap.xml'), 'robots.txt references absolute canonical sitemap.xml');
 
 // 2. Sitemap.xml check
 const sitemapPath = path.join(outDir, 'sitemap.xml');
@@ -40,17 +40,17 @@ const locMatches = [...sitemapContent.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => m
 console.log(`Found ${locMatches.length} URLs in sitemap.xml`);
 
 assert(locMatches.length >= 491, `Sitemap contains 491+ URLs (actual: ${locMatches.length})`);
-assert(locMatches[0] === 'https://netpayscale.co.uk/', `Homepage in sitemap is exact canonical: https://netpayscale.co.uk/ (actual: ${locMatches[0]})`);
+assert(locMatches[0] === 'https://netpayscale.uk/', `Homepage in sitemap is exact canonical: https://netpayscale.uk/ (actual: ${locMatches[0]})`);
 
 let nonTrailingSlashCount = 0;
 let invalidHostCount = 0;
 
 for (const url of locMatches) {
-  if (!url.startsWith('https://netpayscale.co.uk')) invalidHostCount++;
+  if (!url.startsWith('https://netpayscale.uk')) invalidHostCount++;
   if (!url.endsWith('/')) nonTrailingSlashCount++;
 }
 
-assert(invalidHostCount === 0, `All sitemap URLs use https://netpayscale.co.uk (invalid: ${invalidHostCount})`);
+assert(invalidHostCount === 0, `All sitemap URLs use https://netpayscale.uk (invalid: ${invalidHostCount})`);
 assert(nonTrailingSlashCount === 0, `All sitemap URLs end with trailing slash to prevent 308 redirects (non-compliant: ${nonTrailingSlashCount})`);
 
 // 3. Homepage HTML Audit (Canonical, Meta, Schema)
@@ -59,7 +59,7 @@ assert(fs.existsSync(homePath), 'index.html exists in static export');
 const homeHtml = fs.readFileSync(homePath, 'utf8');
 
 const homeCanonical = homeHtml.match(/<link[^>]+rel="canonical"[^>]+href="([^"]+)"/i) || homeHtml.match(/<link[^>]+href="([^"]+)"[^>]+rel="canonical"/i);
-assert(homeCanonical && homeCanonical[1] === 'https://netpayscale.co.uk/', `Homepage canonical is exactly https://netpayscale.co.uk/ (actual: ${homeCanonical ? homeCanonical[1] : 'NONE'})`);
+assert(homeCanonical && homeCanonical[1] === 'https://netpayscale.uk/', `Homepage canonical is exactly https://netpayscale.uk/ (actual: ${homeCanonical ? homeCanonical[1] : 'NONE'})`);
 
 assert(homeHtml.includes('"@type":"WebSite"'), 'Homepage contains WebSite schema');
 assert(homeHtml.includes('"@type":"WebApplication"'), 'Homepage contains WebApplication schema');
@@ -80,7 +80,7 @@ for (const slug of sampleSlugs) {
   if (!fs.existsSync(pagePath)) continue;
 
   const pageHtml = fs.readFileSync(pagePath, 'utf8');
-  const expectedCanonical = `https://netpayscale.co.uk/calculator/${slug}/`;
+  const expectedCanonical = `https://netpayscale.uk/calculator/${slug}/`;
   
   const pageCanonical = pageHtml.match(/<link[^>]+rel="canonical"[^>]+href="([^"]+)"/i) || pageHtml.match(/<link[^>]+href="([^"]+)"[^>]+rel="canonical"/i);
   assert(pageCanonical && pageCanonical[1] === expectedCanonical, `Page /${slug}/ has exact self-referential canonical (actual: ${pageCanonical ? pageCanonical[1] : 'NONE'})`);
