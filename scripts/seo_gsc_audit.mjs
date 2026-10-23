@@ -39,7 +39,7 @@ const sitemapContent = fs.readFileSync(sitemapPath, 'utf8');
 const locMatches = [...sitemapContent.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => m[1]);
 console.log(`Found ${locMatches.length} URLs in sitemap.xml`);
 
-assert(locMatches.length >= 491, `Sitemap contains 491+ URLs (actual: ${locMatches.length})`);
+assert(locMatches.length >= 495, `Sitemap contains 495+ URLs (actual: ${locMatches.length})`);
 assert(locMatches[0] === 'https://netpayscale.uk/', `Homepage in sitemap is exact canonical: https://netpayscale.uk/ (actual: ${locMatches[0]})`);
 
 let nonTrailingSlashCount = 0;
@@ -70,6 +70,19 @@ assert(fs.existsSync(path.join(outDir, 'icon-48.png')), 'icon-48.png (48x48 Goog
 assert(fs.existsSync(path.join(outDir, 'apple-touch-icon.png')), 'apple-touch-icon.png exists in static export');
 assert(fs.existsSync(path.join(outDir, 'og-image.png')), 'og-image.png (1200x630 social preview) exists in static export');
 assert(homeHtml.includes('https://netpayscale.uk/og-image.png'), 'Homepage references https://netpayscale.uk/og-image.png');
+
+// 3B. Mandatory Legal & Trust Pages for Google AdSense & Quality Standards
+const trustPages = ['about', 'privacy', 'terms', 'contact'];
+for (const p of trustPages) {
+  const pPath = path.join(outDir, p, 'index.html');
+  assert(fs.existsSync(pPath), `Trust page exists: /${p}/index.html`);
+  if (fs.existsSync(pPath)) {
+    const pHtml = fs.readFileSync(pPath, 'utf8');
+    const expectedCanonical = `https://netpayscale.uk/${p}/`;
+    const canonicalMatch = pHtml.match(/<link[^>]+rel="canonical"[^>]+href="([^"]+)"/i) || pHtml.match(/<link[^>]+href="([^"]+)"[^>]+rel="canonical"/i);
+    assert(canonicalMatch && canonicalMatch[1] === expectedCanonical, `Page /${p}/ has exact self-referential canonical (actual: ${canonicalMatch ? canonicalMatch[1] : 'NONE'})`);
+  }
+}
 
 // 4. Sample pSEO Pages Audit (Canonical, OpenGraph, BreadcrumbList, Occupation, AEO Direct Answer)
 const sampleSlugs = [

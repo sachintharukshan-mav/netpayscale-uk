@@ -15,6 +15,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily",
       priority: 1.0,
     },
+    {
+      url: `${baseUrl}/about/`,
+      lastModified: buildDate,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/privacy/`,
+      lastModified: buildDate,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/terms/`,
+      lastModified: buildDate,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/contact/`,
+      lastModified: buildDate,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
   ];
 
   const programmaticRoutes: MetadataRoute.Sitemap = pseoEntries.map((entry) => ({

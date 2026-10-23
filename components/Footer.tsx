@@ -50,13 +50,29 @@ export default function Footer() {
 
           <div>
             <h4 className="text-xs font-semibold text-zinc-950 mb-2.5">
-              Regulatory References
+              Transparency &amp; Governance
             </h4>
             <ul className="space-y-1.5 text-zinc-600">
-              <li>NHS Terms & Conditions Handbook (AfC)</li>
-              <li>HMRC PAYE & National Insurance 2026/27</li>
-              <li>NHS Pension Scheme Regulations (2015 CARE)</li>
-              <li>Section 2 Unsocial Hours Framework</li>
+              <li>
+                <Link href="/about/" className="hover:text-zinc-950 transition-colors">
+                  About &amp; Methodology
+                </Link>
+              </li>
+              <li>
+                <Link href="/privacy/" className="hover:text-zinc-950 transition-colors">
+                  Privacy &amp; Cookie Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms/" className="hover:text-zinc-950 transition-colors">
+                  Terms of Service &amp; Disclaimer
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact/" className="hover:text-zinc-950 transition-colors">
+                  Contact &amp; Editorial Feedback
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
@@ -64,15 +80,24 @@ export default function Footer() {
         {/* Regulatory Disclaimer */}
         <div className="rounded-lg border border-zinc-200/70 bg-zinc-50/70 p-3.5 text-[11px] leading-relaxed text-zinc-500">
           <strong>Notice: </strong>
-          NetPayScale UK is an independent computational utility and is not affiliated with or endorsed by the National Health Service (NHS), NHS Employers, or HM Revenue & Customs (HMRC). All outputs are calculated strictly according to published 2026/27 Agenda for Change pay circulars and UK statutory payroll rules.
+          NetPayScale UK is an independent computational utility and is not affiliated with or endorsed by the National Health Service (NHS), NHS Employers, or HM Revenue &amp; Customs (HMRC). All outputs are calculated strictly according to published 2026/27 Agenda for Change pay circulars and UK statutory payroll rules.
         </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-between border-t border-zinc-100 pt-6 text-[11px] text-zinc-400">
           <p>© {new Date().getFullYear()} NetPayScale UK. All calculations for estimation purposes.</p>
-          <div className="flex items-center gap-4 mt-2 sm:mt-0">
-            <span className="hover:text-zinc-600 cursor-pointer">Privacy Policy</span>
-            <span className="hover:text-zinc-600 cursor-pointer">Terms of Service</span>
-            <span className="hover:text-zinc-600 cursor-pointer">Methodology</span>
+          <div className="flex flex-wrap items-center gap-4 mt-2 sm:mt-0">
+            <Link href="/privacy/" className="hover:text-zinc-600 transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href="/terms/" className="hover:text-zinc-600 transition-colors">
+              Terms of Service
+            </Link>
+            <Link href="/about/" className="hover:text-zinc-600 transition-colors">
+              Methodology
+            </Link>
+            <Link href="/contact/" className="hover:text-zinc-600 transition-colors">
+              Contact Us
+            </Link>
           </div>
         </div>
       </div>
