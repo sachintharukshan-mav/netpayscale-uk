@@ -39,7 +39,7 @@ const sitemapContent = fs.readFileSync(sitemapPath, 'utf8');
 const locMatches = [...sitemapContent.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => m[1]);
 console.log(`Found ${locMatches.length} URLs in sitemap.xml`);
 
-assert(locMatches.length === 509, `Sitemap contains all 509 canonical URLs (5 static + 3 sibling calculators + 11 band hubs + 490 role-region spokes; actual: ${locMatches.length})`);
+assert(locMatches.length === 511, `Sitemap contains all 511 canonical URLs (5 static + 5 sibling calculators + 11 band hubs + 490 role-region spokes; actual: ${locMatches.length})`);
 assert(locMatches[0] === 'https://netpayscale.uk/', `Homepage in sitemap is exact canonical: https://netpayscale.uk/ (actual: ${locMatches[0]})`);
 
 let nonTrailingSlashCount = 0;
@@ -84,8 +84,8 @@ for (const p of trustPages) {
   }
 }
 
-// 3C. 3 High-Volume Sibling Calculators Audit
-const siblingCalculators = ['maternity-pay-calculator', 'annual-leave-calculator', 'bank-shift-calculator'];
+// 3C. 5 High-Volume Sibling Calculators Audit
+const siblingCalculators = ['pension-calculator', 'sick-pay-calculator', 'maternity-pay-calculator', 'annual-leave-calculator', 'bank-shift-calculator'];
 for (const calcSlug of siblingCalculators) {
   const cPath = path.join(outDir, calcSlug, 'index.html');
   assert(fs.existsSync(cPath), `Sibling calculator exists: /${calcSlug}/index.html`);

@@ -44,6 +44,12 @@ export function Navbar() {
             Band 5–9 Hubs
           </Link>
           <Link
+            href="/pension-calculator/"
+            className="px-3 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95"
+          >
+            Pension
+          </Link>
+          <Link
             href="/maternity-pay-calculator/"
             className="px-3 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95"
           >
@@ -60,6 +66,12 @@ export function Navbar() {
             className="px-3 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95"
           >
             Bank &amp; Overtime
+          </Link>
+          <Link
+            href="/sick-pay-calculator/"
+            className="hidden xl:inline-block px-3 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95"
+          >
+            Sick Pay
           </Link>
         </nav>
 
@@ -100,6 +112,20 @@ export function Navbar() {
             onClick={() => setMobileMenuOpen(false)}
           >
             NHS Band 2–9 Salary Hubs
+          </Link>
+          <Link
+            className="block px-3 py-2 rounded-lg text-text-body hover:bg-surface-muted font-medium text-sm"
+            href="/pension-calculator/"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            NHS Pension Calculator (2015 CARE Scheme)
+          </Link>
+          <Link
+            className="block px-3 py-2 rounded-lg text-text-body hover:bg-surface-muted font-medium text-sm"
+            href="/sick-pay-calculator/"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            NHS Sick Pay &amp; Half-Pay Calculator
           </Link>
           <Link
             className="block px-3 py-2 rounded-lg text-text-body hover:bg-surface-muted font-medium text-sm"

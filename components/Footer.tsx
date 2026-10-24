@@ -50,7 +50,17 @@ export function Footer() {
             <ul className="space-y-1.5 text-zinc-600">
               <li>
                 <Link href="/" className="hover:text-zinc-950 transition-colors">
-                  NHS Salary &amp; Pension Calculator
+                  NHS Salary &amp; Take-Home Calculator
+                </Link>
+              </li>
+              <li>
+                <Link href="/pension-calculator/" className="hover:text-zinc-950 transition-colors">
+                  NHS Pension (2015 CARE) Calculator
+                </Link>
+              </li>
+              <li>
+                <Link href="/sick-pay-calculator/" className="hover:text-zinc-950 transition-colors">
+                  NHS Sick Pay &amp; Half-Pay Calculator
                 </Link>
               </li>
               <li>

@@ -17,6 +17,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
+      url: `${baseUrl}/pension-calculator/`,
+      lastModified: buildDate,
+      changeFrequency: "weekly",
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/sick-pay-calculator/`,
+      lastModified: buildDate,
+      changeFrequency: "weekly",
+      priority: 0.95,
+    },
+    {
       url: `${baseUrl}/maternity-pay-calculator/`,
       lastModified: buildDate,
       changeFrequency: "weekly",
