@@ -3,7 +3,7 @@ import path from 'path';
 
 const outDir = path.resolve('out');
 
-console.log('=== RUNNING COMPREHENSIVE SEO / AEO / GSC AUDIT ===\n');
+console.log('=== RUNNING COMPREHENSIVE SEO / AEO / GSC AUDIT (509-PAGE ARCHITECTURE) ===\n');
 
 let errors = 0;
 let warnings = 0;
@@ -39,7 +39,7 @@ const sitemapContent = fs.readFileSync(sitemapPath, 'utf8');
 const locMatches = [...sitemapContent.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => m[1]);
 console.log(`Found ${locMatches.length} URLs in sitemap.xml`);
 
-assert(locMatches.length >= 495, `Sitemap contains 495+ URLs (actual: ${locMatches.length})`);
+assert(locMatches.length === 509, `Sitemap contains all 509 canonical URLs (5 static + 3 sibling calculators + 11 band hubs + 490 role-region spokes; actual: ${locMatches.length})`);
 assert(locMatches[0] === 'https://netpayscale.uk/', `Homepage in sitemap is exact canonical: https://netpayscale.uk/ (actual: ${locMatches[0]})`);
 
 let nonTrailingSlashCount = 0;
@@ -84,7 +84,37 @@ for (const p of trustPages) {
   }
 }
 
-// 4. Sample pSEO Pages Audit (Canonical, OpenGraph, BreadcrumbList, Occupation, AEO Direct Answer)
+// 3C. 3 High-Volume Sibling Calculators Audit
+const siblingCalculators = ['maternity-pay-calculator', 'annual-leave-calculator', 'bank-shift-calculator'];
+for (const calcSlug of siblingCalculators) {
+  const cPath = path.join(outDir, calcSlug, 'index.html');
+  assert(fs.existsSync(cPath), `Sibling calculator exists: /${calcSlug}/index.html`);
+  if (fs.existsSync(cPath)) {
+    const cHtml = fs.readFileSync(cPath, 'utf8');
+    const expectedCanonical = `https://netpayscale.uk/${calcSlug}/`;
+    const canonicalMatch = cHtml.match(/<link[^>]+rel="canonical"[^>]+href="([^"]+)"/i) || cHtml.match(/<link[^>]+href="([^"]+)"[^>]+rel="canonical"/i);
+    assert(canonicalMatch && canonicalMatch[1] === expectedCanonical, `Calculator /${calcSlug}/ has exact self-referential canonical (actual: ${canonicalMatch ? canonicalMatch[1] : 'NONE'})`);
+    assert(cHtml.includes('"@type":"BreadcrumbList"'), `Calculator /${calcSlug}/ contains BreadcrumbList schema`);
+    assert(cHtml.includes('"@type":"FAQPage"'), `Calculator /${calcSlug}/ contains FAQPage schema`);
+  }
+}
+
+// 3D. 11 National Band Hub Pages Audit (/bands/band-2/ to /bands/band-9/)
+const bandSlugs = ['band-2', 'band-3', 'band-4', 'band-5', 'band-6', 'band-7', 'band-8a', 'band-8b', 'band-8c', 'band-8d', 'band-9'];
+for (const bSlug of bandSlugs) {
+  const bPath = path.join(outDir, 'bands', bSlug, 'index.html');
+  assert(fs.existsSync(bPath), `National Band Hub exists: /bands/${bSlug}/index.html`);
+  if (fs.existsSync(bPath)) {
+    const bHtml = fs.readFileSync(bPath, 'utf8');
+    const expectedCanonical = `https://netpayscale.uk/bands/${bSlug}/`;
+    const canonicalMatch = bHtml.match(/<link[^>]+rel="canonical"[^>]+href="([^"]+)"/i) || bHtml.match(/<link[^>]+href="([^"]+)"[^>]+rel="canonical"/i);
+    assert(canonicalMatch && canonicalMatch[1] === expectedCanonical, `Band Hub /bands/${bSlug}/ has exact self-referential canonical (actual: ${canonicalMatch ? canonicalMatch[1] : 'NONE'})`);
+    assert(bHtml.includes('"@type":"BreadcrumbList"'), `Band Hub /bands/${bSlug}/ contains BreadcrumbList schema`);
+    assert(bHtml.includes('"@type":"FAQPage"'), `Band Hub /bands/${bSlug}/ contains FAQPage schema`);
+  }
+}
+
+// 4. Sample pSEO Pages Audit (Canonical, OpenGraph, BreadcrumbList, Occupation, AEO Direct Answer, Multi-Step Matrix)
 const sampleSlugs = [
   'band-5-nurse-salary-inner-london',
   'band-6-senior-paramedic-salary-scotland',
@@ -111,6 +141,7 @@ for (const slug of sampleSlugs) {
   assert(pageHtml.includes('"@type":"Occupation"'), `Page /${slug}/ contains Occupation schema`);
   assert(pageHtml.includes('"@type":"FAQPage"'), `Page /${slug}/ contains FAQPage schema`);
   assert(pageHtml.includes('Direct Answer · 2026/27 Official Benchmark'), `Page /${slug}/ contains AEO Direct Answer executive block`);
+  assert(pageHtml.includes('Full-Time, Part-Time Pro-Rata &amp; Night Shift Take-Home Matrix'), `Page /${slug}/ contains Phase 2 Working Pattern & Shift Matrix`);
 }
 
 // 5. Check Internal Link consistency
@@ -118,7 +149,7 @@ console.log('\n--- Checking Internal Links for Trailing Slash Compliance ---');
 let internalLinksChecked = 0;
 let internalLinksNonCompliant = 0;
 
-const hrefMatches = [...homeHtml.matchAll(/href="(\/calculator\/[^"#]+)"/g)].map(m => m[1]);
+const hrefMatches = [...homeHtml.matchAll(/href="(\/(?:calculator|bands)\/[^"#]+)"/g)].map(m => m[1]);
 for (const href of hrefMatches) {
   internalLinksChecked++;
   if (!href.endsWith('/')) {
@@ -127,7 +158,7 @@ for (const href of hrefMatches) {
   }
 }
 
-assert(internalLinksNonCompliant === 0, `All internal calculator links on homepage use trailing slash (checked: ${internalLinksChecked}, non-compliant: ${internalLinksNonCompliant})`);
+assert(internalLinksNonCompliant === 0, `All internal calculator & band hub links on homepage use trailing slash (checked: ${internalLinksChecked}, non-compliant: ${internalLinksNonCompliant})`);
 
 // 6. Full 490-Page Internal Cross-Linking Mesh & Zero-Orphan Graph Verification
 console.log('\n--- Auditing Complete 490-Page Internal Cross-Linking Graph ---');
@@ -136,11 +167,25 @@ const allSlugs = fs.readdirSync(calcDir).filter(f => fs.statSync(path.join(calcD
 const slugSet = new Set(allSlugs);
 const inDegree = new Map(allSlugs.map(s => [s, 0]));
 
-// Count links from homepage
+// Count links from homepage and Band Hubs
 for (const href of hrefMatches) {
   const m = href.match(/^\/calculator\/([^/]+)\/$/);
   if (m && inDegree.has(m[1])) {
     inDegree.set(m[1], inDegree.get(m[1]) + 1);
+  }
+}
+
+for (const bSlug of bandSlugs) {
+  const bPath = path.join(outDir, 'bands', bSlug, 'index.html');
+  if (fs.existsSync(bPath)) {
+    const bHtml = fs.readFileSync(bPath, 'utf8');
+    const bLinks = [...bHtml.matchAll(/href="(\/calculator\/[^"#]+)"/g)].map(m => m[1]);
+    for (const l of bLinks) {
+      const m = l.match(/^\/calculator\/([^/]+)\/$/);
+      if (m && inDegree.has(m[1])) {
+        inDegree.set(m[1], inDegree.get(m[1]) + 1);
+      }
+    }
   }
 }
 

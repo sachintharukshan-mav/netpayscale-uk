@@ -1,12 +1,12 @@
 import React from "react";
 import Link from "next/link";
 
-export default function Footer() {
+export function Footer() {
   return (
     <footer className="border-t border-zinc-200/80 bg-white pt-10 pb-10 text-xs text-zinc-500">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="space-y-2 md:col-span-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+          <div className="space-y-2 lg:col-span-2">
             <div className="flex items-center gap-2">
               <span className="flex h-6 w-9 items-center justify-center rounded bg-[#005EB8] text-[11px] font-bold text-white">
                 NHS
@@ -16,13 +16,64 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-xs text-zinc-500 leading-relaxed max-w-md">
-              Independent computational resource for 1.3M+ NHS England, Scotland, and Wales staff. Fully updated for the official 2026/2027 Agenda for Change (+3.3%) pay settlement and HMRC PAYE tax thresholds.
+              Independent computational resource for 1.3M+ NHS England, Scotland, Wales, and Northern Ireland staff. Fully updated for the official 2026/2027 Agenda for Change (+3.3%) pay settlement and HMRC PAYE tax thresholds.
             </p>
+            <div className="pt-2 flex flex-wrap gap-1.5">
+              {[
+                { slug: "band-2", label: "Band 2" },
+                { slug: "band-3", label: "Band 3" },
+                { slug: "band-4", label: "Band 4" },
+                { slug: "band-5", label: "Band 5" },
+                { slug: "band-6", label: "Band 6" },
+                { slug: "band-7", label: "Band 7" },
+                { slug: "band-8a", label: "Band 8a" },
+                { slug: "band-8b", label: "Band 8b" },
+                { slug: "band-8c", label: "Band 8c" },
+                { slug: "band-8d", label: "Band 8d" },
+                { slug: "band-9", label: "Band 9" },
+              ].map((b) => (
+                <Link
+                  key={b.slug}
+                  href={`/bands/${b.slug}/`}
+                  className="px-2 py-1 rounded bg-zinc-100 hover:bg-[#005EB8] hover:text-white text-[11px] font-semibold text-zinc-700 transition-colors"
+                >
+                  {b.label}
+                </Link>
+              ))}
+            </div>
           </div>
 
           <div>
             <h4 className="text-xs font-semibold text-zinc-950 mb-2.5">
-              Pay Scales &amp; Roles
+              NHS Calculators (2026/27)
+            </h4>
+            <ul className="space-y-1.5 text-zinc-600">
+              <li>
+                <Link href="/" className="hover:text-zinc-950 transition-colors">
+                  NHS Salary &amp; Pension Calculator
+                </Link>
+              </li>
+              <li>
+                <Link href="/maternity-pay-calculator/" className="hover:text-zinc-950 transition-colors">
+                  NHS Maternity Pay (OMP + SMP)
+                </Link>
+              </li>
+              <li>
+                <Link href="/annual-leave-calculator/" className="hover:text-zinc-950 transition-colors">
+                  NHS Annual Leave &amp; BH Hours
+                </Link>
+              </li>
+              <li>
+                <Link href="/bank-shift-calculator/" className="hover:text-zinc-950 transition-colors">
+                  NHS Bank Shift &amp; Overtime Pay
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-xs font-semibold text-zinc-950 mb-2.5">
+              Popular Role &amp; Region Guides
             </h4>
             <ul className="space-y-1.5 text-zinc-600">
               <li>
@@ -104,3 +155,5 @@ export default function Footer() {
     </footer>
   );
 }
+
+export default Footer;

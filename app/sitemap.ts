@@ -1,4 +1,5 @@
 import { MetadataRoute } from "next";
+import nhsData from "@/data/nhs_afc_2026.json";
 import { getAllPseoEntries } from "@/lib/pseo-matrix";
 
 export const dynamic = "force-static";
@@ -14,6 +15,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: buildDate,
       changeFrequency: "daily",
       priority: 1.0,
+    },
+    {
+      url: `${baseUrl}/maternity-pay-calculator/`,
+      lastModified: buildDate,
+      changeFrequency: "weekly",
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/annual-leave-calculator/`,
+      lastModified: buildDate,
+      changeFrequency: "weekly",
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/bank-shift-calculator/`,
+      lastModified: buildDate,
+      changeFrequency: "weekly",
+      priority: 0.95,
     },
     {
       url: `${baseUrl}/about/`,
@@ -41,6 +60,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
+  const bandHubRoutes: MetadataRoute.Sitemap = nhsData.bands.map((band) => ({
+    url: `${baseUrl}/bands/${band.slug}/`,
+    lastModified: buildDate,
+    changeFrequency: "weekly",
+    priority: 0.9,
+  }));
+
   const programmaticRoutes: MetadataRoute.Sitemap = pseoEntries.map((entry) => ({
     url: `${baseUrl}/calculator/${entry.slug}/`,
     lastModified: buildDate,
@@ -48,5 +74,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   }));
 
-  return [...staticRoutes, ...programmaticRoutes];
+  return [...staticRoutes, ...bandHubRoutes, ...programmaticRoutes];
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import nhsData from "@/data/nhs_afc_2026.json";
 import { formatCurrency, formatHourlyRate } from "@/lib/formatters";
 
@@ -52,7 +53,12 @@ export default function BandsOverview() {
               return (
                 <tr key={b.band} className="hover:bg-zinc-50/60 transition-colors">
                   <td className="py-3 px-4 font-sans font-semibold text-zinc-950">
-                    {b.band}
+                    <Link
+                      href={`/bands/${b.slug}/`}
+                      className="text-[#005EB8] hover:underline font-bold"
+                    >
+                      {b.band}
+                    </Link>
                   </td>
                   <td className="py-3 px-4 font-semibold text-zinc-950 tabular-nums">
                     {formatCurrency(entryPoint.annualSalary)}
@@ -70,13 +76,21 @@ export default function BandsOverview() {
                     {b.typicalRoles.slice(0, 3).join(", ")}
                   </td>
                   <td className="py-3 px-4 text-right font-sans">
-                    <button
-                      type="button"
-                      onClick={() => handleModelBand(b.band)}
-                      className="rounded-md bg-zinc-100 px-2.5 py-1 text-[11px] font-semibold text-zinc-800 hover:bg-zinc-900 hover:text-white transition-colors cursor-pointer"
-                    >
-                      Calculate →
-                    </button>
+                    <div className="inline-flex items-center gap-1.5">
+                      <Link
+                        href={`/bands/${b.slug}/`}
+                        className="rounded-md border border-zinc-200 bg-white px-2.5 py-1 text-[11px] font-semibold text-[#005EB8] hover:border-[#005EB8] transition-colors"
+                      >
+                        {b.band} Guide
+                      </Link>
+                      <button
+                        type="button"
+                        onClick={() => handleModelBand(b.band)}
+                        className="rounded-md bg-zinc-100 px-2.5 py-1 text-[11px] font-semibold text-zinc-800 hover:bg-zinc-900 hover:text-white transition-colors cursor-pointer"
+                      >
+                        Calculate →
+                      </button>
+                    </div>
                   </td>
                 </tr>
               );

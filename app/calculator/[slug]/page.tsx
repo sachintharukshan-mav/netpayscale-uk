@@ -8,6 +8,7 @@ import {
   getRegionalEditorial,
   getRelatedPseoEntries,
 } from "@/lib/pseo-matrix";
+import nhsData from "@/data/nhs_afc_2026.json";
 import { calculateNHSPay } from "@/lib/calculator";
 import { formatCurrency, formatHourlyRate } from "@/lib/formatters";
 import Calculator from "@/components/Calculator";
@@ -79,16 +80,70 @@ export default async function PseoCalculatorPage({ params }: Props) {
     notFound();
   }
 
-  const baselineResult = calculateNHSPay({
-    band: entry.band,
-    stepIndex: 0,
-    hcasZone: entry.hcasZone,
-    nightHoursPerWeek: 0,
-    sundayHoursPerWeek: 0,
-    pensionOptedOut: false,
-    isScottishTax: entry.regionId === "scotland",
-    studentLoan: "none",
-  });
+  const bandObj = nhsData.bands.find((b) => b.band === entry.band);
+  const bandSlug = bandObj
+    ? bandObj.slug
+    : entry.band.toLowerCase().replace(/\s+/g, "-");
+
+  const stepModels = (
+    bandObj?.points ?? [{ step: "Entry", yearsExperience: 0 }]
+  ).map((pt, idx) => ({
+    stepLabel: pt.step,
+    yearsExperience: pt.yearsExperience,
+    calc: calculateNHSPay({
+      band: entry.band,
+      stepIndex: idx,
+      hcasZone: entry.hcasZone,
+      nightHoursPerWeek: 0,
+      sundayHoursPerWeek: 0,
+      pensionOptedOut: false,
+      isScottishTax: entry.regionId === "scotland",
+      studentLoan: "none",
+    }),
+  }));
+
+  const baselineResult = stepModels[0].calc;
+  const topStepResult = stepModels[stepModels.length - 1].calc;
+
+  const workingPatternModels = [
+    {
+      label: "Full-Time Standard Days (37.5h / 1.0 WTE)",
+      hours: 37.5,
+      nights: 0,
+      sundays: 0,
+    },
+    {
+      label: "Acute Rotational Ward Shifts (37.5h inc. Nights & Sundays)",
+      hours: 37.5,
+      nights: 11.5,
+      sundays: 2.88,
+    },
+    {
+      label: "Part-Time 4 Days / Week (30.0h / 0.8 WTE)",
+      hours: 30.0,
+      nights: 0,
+      sundays: 0,
+    },
+    {
+      label: "Part-Time 3 Days / Week (22.5h / 0.6 WTE)",
+      hours: 22.5,
+      nights: 0,
+      sundays: 0,
+    },
+  ].map((wp) => ({
+    ...wp,
+    calc: calculateNHSPay({
+      band: entry.band,
+      stepIndex: 0,
+      hcasZone: entry.hcasZone,
+      contractedHours: wp.hours,
+      nightHoursPerWeek: wp.nights,
+      sundayHoursPerWeek: wp.sundays,
+      pensionOptedOut: false,
+      isScottishTax: entry.regionId === "scotland",
+      studentLoan: "none",
+    }),
+  }));
 
   const editorial = getRegionalEditorial(entry);
   const { sameRoleOtherRegions, sameRegionOtherRoles, adjacentPromotionRoles } =
@@ -110,8 +165,8 @@ export default async function PseoCalculatorPage({ params }: Props) {
           {
             "@type": "ListItem",
             position: 2,
-            name: "Pay Scales",
-            item: "https://netpayscale.uk/#bands-overview",
+            name: `${entry.band} Pay Scale`,
+            item: `https://netpayscale.uk/bands/${bandSlug}/`,
           },
           {
             "@type": "ListItem",
@@ -132,7 +187,7 @@ export default async function PseoCalculatorPage({ params }: Props) {
             currency: "GBP",
             duration: "P1Y",
             percentile10: baselineResult.grossPay.annual,
-            percentile90: Math.round(baselineResult.grossPay.annual * 1.25),
+            percentile90: topStepResult.grossPay.annual,
           },
         ],
         occupationLocation: [
@@ -151,7 +206,8 @@ export default async function PseoCalculatorPage({ params }: Props) {
           name: "NHS Agenda for Change",
         },
         annualPercentageRate: 3.3,
-        feesAndCommissionsSpecification: "No user fees. Free computational resource.",
+        feesAndCommissionsSpecification:
+          "No user fees. Free computational resource.",
       },
       {
         "@type": "FAQPage",
@@ -161,7 +217,7 @@ export default async function PseoCalculatorPage({ params }: Props) {
             name: `How much does an NHS ${entry.band} ${entry.roleName} earn in ${entry.regionName}?`,
             acceptedAnswer: {
               "@type": "Answer",
-              text: `Under the 2026/27 Agenda for Change pay scale, an NHS ${entry.band} ${entry.roleName} in ${entry.regionName} earns a starting gross salary of ${formatCurrency(baselineResult.grossPay.annual)}/year. This results in an estimated monthly net take-home pay of ${formatCurrency(baselineResult.netPay.monthly)}/month after PAYE tax, National Insurance, and ${baselineResult.pensionTierLabel} CARE Pension deductions.`,
+              text: `Under the 2026/27 Agenda for Change pay scale, an NHS ${entry.band} ${entry.roleName} in ${entry.regionName} earns a starting gross salary of ${formatCurrency(baselineResult.grossPay.annual)}/year (rising to ${formatCurrency(topStepResult.grossPay.annual)}/year at the top step). This results in an estimated monthly net take-home pay of ${formatCurrency(baselineResult.netPay.monthly)}/month at entry and ${formatCurrency(topStepResult.netPay.monthly)}/month at top of band after PAYE tax, National Insurance, and ${baselineResult.pensionTierLabel} CARE Pension deductions.`,
             },
           },
           {
@@ -171,11 +227,11 @@ export default async function PseoCalculatorPage({ params }: Props) {
               "@type": "Answer",
               text:
                 entry.hcasZone === "inner-london"
-                  ? "Yes. Staff in Inner London receive a 20% High Cost Area Supplement (HCAS), adding between £5,115 and £8,034 annually to basic salary."
+                  ? "Yes. Staff in Inner London receive a 20% High Cost Area Supplement (HCAS), adding between £5,794 and £8,746 annually to basic salary."
                   : entry.hcasZone === "outer-london"
-                  ? "Yes. Staff in Outer London receive a 15% High Cost Area Supplement (HCAS), adding between £4,313 and £5,436 annually to basic salary."
+                  ? "Yes. Staff in Outer London receive a 15% High Cost Area Supplement (HCAS), adding between £4,870 and £6,137 annually to basic salary."
                   : entry.hcasZone === "fringe"
-                  ? "Yes. Staff in the London Fringe receive a 5% High Cost Area Supplement, adding between £1,192 and £2,024 annually."
+                  ? "Yes. Staff in the London Fringe receive a 5% High Cost Area Supplement, adding between £1,346 and £2,270 annually."
                   : "No. Standard national NHS Agenda for Change pay rates apply in this region without London Weighting supplements.",
             },
           },
@@ -206,8 +262,11 @@ export default async function PseoCalculatorPage({ params }: Props) {
             Home
           </Link>
           <span className="text-zinc-400">/</span>
-          <Link href="/#bands-overview" className="hover:text-zinc-950 transition-colors">
-            Pay Scales
+          <Link
+            href={`/bands/${bandSlug}/`}
+            className="hover:text-[#005EB8] font-medium transition-colors"
+          >
+            {entry.band} Pay Scale
           </Link>
           <span className="text-zinc-400">/</span>
           <span className="font-medium text-zinc-900">
@@ -223,14 +282,20 @@ export default async function PseoCalculatorPage({ params }: Props) {
           <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6 border-b border-zinc-100 pb-6">
             <div className="space-y-2 max-w-3xl">
               <div className="flex items-center gap-2 text-xs font-mono text-zinc-500">
-                <span className="font-semibold text-zinc-900">{entry.band}</span>
+                <Link
+                  href={`/bands/${bandSlug}/`}
+                  className="font-semibold text-[#005EB8] hover:underline"
+                >
+                  {entry.band}
+                </Link>
                 <span>•</span>
                 <span>{entry.regionName}</span>
                 <span>•</span>
                 <span>2026/27 (+3.3%)</span>
               </div>
               <h1 className="text-2xl sm:text-3xl font-bold text-zinc-950 tracking-tight leading-snug">
-                {entry.band} {entry.roleName} Salary & Net Take-Home in {entry.regionName}
+                {entry.band} {entry.roleName} Salary &amp; Net Take-Home in{" "}
+                {entry.regionName}
               </h1>
               <p className="text-xs text-zinc-500">
                 Applicable to NHS staff at {entry.regionHeadline}
@@ -256,7 +321,7 @@ export default async function PseoCalculatorPage({ params }: Props) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs text-zinc-600 leading-relaxed">
             <div className="space-y-1.5 rounded-lg bg-zinc-50/60 p-4 border border-zinc-100">
               <h3 className="font-semibold text-zinc-900 text-xs">
-                Geographic Weighting & HCAS
+                Geographic Weighting &amp; HCAS
               </h3>
               <p>{editorial.hcasExplanation}</p>
             </div>
@@ -270,7 +335,7 @@ export default async function PseoCalculatorPage({ params }: Props) {
 
             <div className="space-y-1.5 rounded-lg bg-zinc-50/60 p-4 border border-zinc-100">
               <h3 className="font-semibold text-zinc-900 text-xs">
-                NHS Pension & Tax Relief
+                NHS Pension &amp; Tax Relief
               </h3>
               <p>{editorial.pensionContext}</p>
             </div>
@@ -283,48 +348,146 @@ export default async function PseoCalculatorPage({ params }: Props) {
               <span>Direct Answer · 2026/27 Official Benchmark</span>
             </div>
             <p>
-              An NHS <strong>{entry.band} {entry.roleName}</strong> in <strong>{entry.regionName}</strong> earns a starting gross basic salary of <strong>{formatCurrency(baselineResult.baseSalary.annual)}/year</strong> ({formatHourlyRate(baselineResult.hourlyRate)}). After standard UK PAYE Income Tax, National Insurance, and {baselineResult.pensionTierLabel} NHS Pension deductions, the estimated baseline net take-home pay is <strong>{formatCurrency(baselineResult.netPay.monthly, true)}/month</strong> (or {formatCurrency(baselineResult.netPay.annual, true)}/year), keeping <strong>{baselineResult.takeHomePercentage}%</strong> of total gross earnings in their pocket.
+              An NHS <strong>{entry.band} {entry.roleName}</strong> in{" "}
+              <strong>{entry.regionName}</strong> earns a starting gross basic
+              salary of{" "}
+              <strong>{formatCurrency(baselineResult.baseSalary.annual)}/year</strong>{" "}
+              ({formatHourlyRate(baselineResult.hourlyRate)}), rising to{" "}
+              <strong>{formatCurrency(topStepResult.baseSalary.annual)}/year</strong>{" "}
+              at the top experience step. After standard UK PAYE Income Tax,
+              National Insurance, and {baselineResult.pensionTierLabel} NHS
+              Pension deductions, the estimated baseline net take-home pay is{" "}
+              <strong>{formatCurrency(baselineResult.netPay.monthly, true)}/month</strong>{" "}
+              at entry (and{" "}
+              <strong>{formatCurrency(topStepResult.netPay.monthly, true)}/month</strong>{" "}
+              at top of band), keeping{" "}
+              <strong>{baselineResult.takeHomePercentage}%</strong> of total
+              gross earnings in their pocket.
             </p>
           </div>
 
-          {/* Official Benchmark Table */}
-          <div className="border-t border-zinc-100 pt-5 space-y-2">
-            <h3 className="text-xs font-semibold text-zinc-900">
-              2026/27 Pay Step Benchmark for {entry.band} ({entry.regionName})
-            </h3>
-            <div className="overflow-x-auto">
-              <table className="w-full text-left text-xs font-mono">
-                <thead>
-                  <tr className="border-b border-zinc-200 text-zinc-500 font-sans font-medium">
-                    <th className="py-2.5">Experience Step</th>
-                    <th className="py-2.5">Basic Salary</th>
-                    <th className="py-2.5">Hourly Rate</th>
-                    <th className="py-2.5">HCAS Allowance</th>
-                    <th className="py-2.5">Total Gross</th>
-                    <th className="py-2.5">Pension Tier</th>
-                    <th className="py-2.5 text-right">Est. Take-Home Pay</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-zinc-100 text-zinc-800">
-                  <tr>
-                    <td className="py-2.5 font-sans font-medium text-zinc-950">
-                      Entry Level
-                    </td>
-                    <td className="py-2.5 tabular-nums">{formatCurrency(baselineResult.baseSalary.annual)}</td>
-                    <td className="py-2.5 tabular-nums">{formatHourlyRate(baselineResult.hourlyRate)}</td>
-                    <td className="py-2.5 tabular-nums text-zinc-700">
-                      +{formatCurrency(baselineResult.hcasAmount.annual)}
-                    </td>
-                    <td className="py-2.5 font-semibold text-zinc-950 tabular-nums">
-                      {formatCurrency(baselineResult.grossPay.annual)}
-                    </td>
-                    <td className="py-2.5 text-zinc-600">{baselineResult.pensionTierLabel}</td>
-                    <td className="py-2.5 text-right font-bold text-zinc-950 tabular-nums">
-                      {formatCurrency(baselineResult.netPay.annual, true)}/yr
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+          {/* Official Multi-Step Benchmark Table */}
+          <div className="border-t border-zinc-100 pt-5 space-y-5">
+            <div className="space-y-2">
+              <div className="flex items-center justify-between">
+                <h2 className="text-xs sm:text-sm font-bold text-zinc-950">
+                  1. 2026/27 Pay Step Progression for {entry.band}{" "}
+                  {entry.roleName} ({entry.regionName})
+                </h2>
+                <Link
+                  href={`/bands/${bandSlug}/`}
+                  className="text-[11px] font-semibold text-[#005EB8] hover:underline"
+                >
+                  National {entry.band} Guide →
+                </Link>
+              </div>
+              <div className="overflow-x-auto rounded-lg border border-zinc-200/80">
+                <table className="w-full text-left text-xs font-mono">
+                  <thead>
+                    <tr className="border-b border-zinc-200 bg-zinc-50 text-zinc-600 font-sans font-semibold">
+                      <th className="py-2.5 px-3">Experience Step</th>
+                      <th className="py-2.5 px-3">Basic Salary</th>
+                      <th className="py-2.5 px-3">Hourly Rate</th>
+                      <th className="py-2.5 px-3">HCAS Allowance</th>
+                      <th className="py-2.5 px-3">Total Gross</th>
+                      <th className="py-2.5 px-3">NHS Pension</th>
+                      <th className="py-2.5 px-3 text-right">
+                        Net Monthly Take-Home
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-zinc-100 text-zinc-800">
+                    {stepModels.map(({ stepLabel, yearsExperience, calc }) => (
+                      <tr key={stepLabel} className="hover:bg-zinc-50/70">
+                        <td className="py-2.5 px-3 font-sans font-semibold text-zinc-950">
+                          {stepLabel}{" "}
+                          <span className="text-[10px] font-normal text-zinc-500">
+                            (
+                            {yearsExperience === 0
+                              ? "0 yrs"
+                              : `${yearsExperience}+ yrs`}
+                            )
+                          </span>
+                        </td>
+                        <td className="py-2.5 px-3 tabular-nums">
+                          {formatCurrency(calc.baseSalary.annual)}
+                        </td>
+                        <td className="py-2.5 px-3 tabular-nums">
+                          {formatHourlyRate(calc.hourlyRate)}
+                        </td>
+                        <td className="py-2.5 px-3 tabular-nums text-zinc-700">
+                          +{formatCurrency(calc.hcasAmount.annual)}
+                        </td>
+                        <td className="py-2.5 px-3 font-semibold text-zinc-950 tabular-nums">
+                          {formatCurrency(calc.grossPay.annual)}
+                        </td>
+                        <td className="py-2.5 px-3 text-indigo-700 tabular-nums">
+                          {calc.pensionTierLabel} (−
+                          {formatCurrency(calc.pensionContribution.monthly)}/mo)
+                        </td>
+                        <td className="py-2.5 px-3 text-right font-bold text-emerald-700 tabular-nums">
+                          {formatCurrency(calc.netPay.monthly)}/mo (
+                          {formatCurrency(calc.netPay.annual)}/yr)
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Working Pattern, Part-Time Pro-Rata & Shift Uplift Matrix */}
+            <div className="space-y-2">
+              <h2 className="text-xs sm:text-sm font-bold text-zinc-950">
+                2. Full-Time, Part-Time Pro-Rata &amp; Night Shift Take-Home
+                Matrix ({entry.band} {entry.roleName} in {entry.regionName})
+              </h2>
+              <div className="overflow-x-auto rounded-lg border border-zinc-200/80">
+                <table className="w-full text-left text-xs font-mono">
+                  <thead>
+                    <tr className="border-b border-zinc-200 bg-zinc-50 text-zinc-600 font-sans font-semibold">
+                      <th className="py-2.5 px-3">
+                        Working Pattern / Contracted Hours
+                      </th>
+                      <th className="py-2.5 px-3">
+                        Annual Gross (Inc. HCAS/Uplifts)
+                      </th>
+                      <th className="py-2.5 px-3">PAYE Tax &amp; NI</th>
+                      <th className="py-2.5 px-3">NHS Pension</th>
+                      <th className="py-2.5 px-3 text-right">
+                        Net Monthly In-Bank
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-zinc-100 text-zinc-800">
+                    {workingPatternModels.map((wp) => (
+                      <tr key={wp.label} className="hover:bg-zinc-50/70">
+                        <td className="py-2.5 px-3 font-sans font-medium text-zinc-950">
+                          {wp.label}
+                        </td>
+                        <td className="py-2.5 px-3 font-semibold tabular-nums">
+                          {formatCurrency(wp.calc.grossPay.annual)}/yr
+                        </td>
+                        <td className="py-2.5 px-3 text-rose-700 tabular-nums">
+                          −
+                          {formatCurrency(
+                            wp.calc.incomeTax.monthly +
+                              wp.calc.nationalInsurance.monthly
+                          )}
+                          /mo
+                        </td>
+                        <td className="py-2.5 px-3 text-indigo-700 tabular-nums">
+                          −{formatCurrency(wp.calc.pensionContribution.monthly)}
+                          /mo ({wp.calc.pensionTierLabel})
+                        </td>
+                        <td className="py-2.5 px-3 text-right font-bold text-emerald-700 tabular-nums">
+                          {formatCurrency(wp.calc.netPay.monthly)}/mo
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </section>
@@ -333,7 +496,7 @@ export default async function PseoCalculatorPage({ params }: Props) {
         <section id="calculator" className="space-y-4 pt-2">
           <div className="flex items-baseline justify-between border-b border-zinc-200/80 pb-2">
             <h2 className="text-lg font-bold text-zinc-950">
-              Interactive Shift & Deduction Modeler
+              Interactive Shift &amp; Deduction Modeler
             </h2>
             <span className="text-xs text-zinc-500 font-mono">
               Pre-loaded: {entry.band} • {entry.regionName}
@@ -373,7 +536,9 @@ export default async function PseoCalculatorPage({ params }: Props) {
                   Compare {entry.band} {entry.roleName} Pay Across UK Regions
                 </h2>
                 <p className="text-xs text-zinc-500">
-                  See how High Cost Area Supplements (HCAS) and Scottish tax bands change monthly take-home pay for a {entry.band} {entry.roleName}.
+                  See how High Cost Area Supplements (HCAS) and Scottish tax
+                  bands change monthly take-home pay for a {entry.band}{" "}
+                  {entry.roleName}.
                 </p>
               </div>
               <span className="text-[11px] font-mono text-zinc-500 shrink-0">
@@ -404,7 +569,8 @@ export default async function PseoCalculatorPage({ params }: Props) {
                         {rel.roleName} in {rel.regionName}
                       </span>
                       <span className="text-[10px] text-zinc-500 font-mono">
-                        {rel.band} • Gross {formatCurrency(relCalc.grossPay.annual)}/yr
+                        {rel.band} • Gross{" "}
+                        {formatCurrency(relCalc.grossPay.annual)}/yr
                       </span>
                     </div>
                     <div className="text-right shrink-0">
@@ -426,10 +592,12 @@ export default async function PseoCalculatorPage({ params }: Props) {
             <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
               <div>
                 <h2 className="text-base font-bold text-zinc-950">
-                  Adjacent Promotion Bands &amp; Clinical Roles in {entry.regionName}
+                  Adjacent Promotion Bands &amp; Clinical Roles in{" "}
+                  {entry.regionName}
                 </h2>
                 <p className="text-xs text-zinc-500">
-                  Explore career step-up pay scales and all Agenda for Change bands (Band 2 – Band 9) in {entry.regionName}.
+                  Explore career step-up pay scales and all Agenda for Change
+                  bands (Band 2 – Band 9) in {entry.regionName}.
                 </p>
               </div>
               <span className="text-[11px] font-mono text-zinc-500 shrink-0">
@@ -449,8 +617,12 @@ export default async function PseoCalculatorPage({ params }: Props) {
                       href={`/calculator/${adj.slug}/`}
                       className="inline-flex items-center gap-1.5 rounded-md bg-white border border-blue-200 px-3 py-1.5 text-xs font-semibold text-zinc-900 hover:border-[#005EB8] hover:text-[#005EB8] shadow-2xs transition-colors"
                     >
-                      <span className="font-mono text-[#005EB8]">{adj.band}</span>
-                      <span>{adj.roleName} ({adj.regionName})</span>
+                      <span className="font-mono text-[#005EB8]">
+                        {adj.band}
+                      </span>
+                      <span>
+                        {adj.roleName} ({adj.regionName})
+                      </span>
                       <span className="text-zinc-400">→</span>
                     </Link>
                   ))}
@@ -466,10 +638,14 @@ export default async function PseoCalculatorPage({ params }: Props) {
                   className="flex items-center justify-between rounded-lg border border-zinc-200/70 bg-white px-3 py-2 text-xs hover:border-zinc-400 hover:bg-zinc-50 transition-colors"
                 >
                   <span className="truncate pr-2 text-zinc-800">
-                    <strong className="font-mono text-zinc-950">{relRole.band}</strong>{" "}
+                    <strong className="font-mono text-zinc-950">
+                      {relRole.band}
+                    </strong>{" "}
                     {relRole.roleName}
                   </span>
-                  <span className="font-mono text-[10px] text-zinc-400 shrink-0">→</span>
+                  <span className="font-mono text-[10px] text-zinc-400 shrink-0">
+                    →
+                  </span>
                 </Link>
               ))}
             </div>

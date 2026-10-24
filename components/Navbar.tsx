@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
-export default function Navbar() {
+export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -31,36 +31,36 @@ export default function Navbar() {
 
         {/* Desktop Navigation Links */}
         <nav className="hidden lg:flex items-center gap-1">
-          <a
-            href="/#calculator"
+          <Link
+            href="/"
             className="px-3 py-1.5 transition-all duration-150 bg-nhs-blue text-white font-semibold text-sm rounded-lg shadow-xs active:scale-95"
           >
             Pay Calculator
-          </a>
-          <a
-            href="/#comparator-section"
+          </Link>
+          <Link
+            href="/bands/band-5/"
             className="px-3 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95"
           >
-            Scenario Comparator
-          </a>
-          <a
-            href="/#esr-payslip-print"
+            Band 5–9 Hubs
+          </Link>
+          <Link
+            href="/maternity-pay-calculator/"
             className="px-3 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95"
           >
-            Official ESR Payslip
-          </a>
-          <a
-            href="/#bands-overview"
+            Maternity Pay
+          </Link>
+          <Link
+            href="/annual-leave-calculator/"
             className="px-3 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95"
           >
-            Band Directory
-          </a>
-          <a
-            href="/#hcas-guide"
-            className="hidden xl:inline-block px-3 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95"
+            Annual Leave
+          </Link>
+          <Link
+            href="/bank-shift-calculator/"
+            className="px-3 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95"
           >
-            London Weighting
-          </a>
+            Bank &amp; Overtime
+          </Link>
         </nav>
 
         {/* Right Metadata & Mobile Action Buttons */}
@@ -69,7 +69,7 @@ export default function Navbar() {
             <span className="w-1.5 h-1.5 rounded-full bg-cash-emerald pulse-glow-dot" />
             <span className="whitespace-nowrap font-sans font-medium text-text-ink">Tax Year 2026/27</span>
             <span className="text-zinc-300">•</span>
-            <span className="whitespace-nowrap text-text-muted">England &amp; Wales</span>
+            <span className="whitespace-nowrap text-text-muted">UK Wide</span>
           </div>
 
           {/* Mobile Hamburger Toggle */}
@@ -87,34 +87,41 @@ export default function Navbar() {
       {/* Mobile Slide-Down Navigation Menu */}
       {mobileMenuOpen && (
         <div className="lg:hidden border-t border-border-subtle bg-white px-4 py-3 space-y-1 shadow-lg transition-all duration-200">
-          <a
+          <Link
             className="block px-3 py-2 rounded-lg bg-nhs-blue text-white font-semibold text-sm"
-            href="/#calculator"
+            href="/"
             onClick={() => setMobileMenuOpen(false)}
           >
-            Pay Calculator
-          </a>
-          <a
+            2026/27 NHS Salary Calculator
+          </Link>
+          <Link
             className="block px-3 py-2 rounded-lg text-text-body hover:bg-surface-muted font-medium text-sm"
-            href="/#comparator-section"
+            href="/bands/band-5/"
             onClick={() => setMobileMenuOpen(false)}
           >
-            Scenario Comparator
-          </a>
-          <a
+            NHS Band 2–9 Salary Hubs
+          </Link>
+          <Link
             className="block px-3 py-2 rounded-lg text-text-body hover:bg-surface-muted font-medium text-sm"
-            href="/#esr-payslip-print"
+            href="/maternity-pay-calculator/"
             onClick={() => setMobileMenuOpen(false)}
           >
-            Official ESR Payslip
-          </a>
-          <a
+            NHS Maternity Pay Calculator
+          </Link>
+          <Link
             className="block px-3 py-2 rounded-lg text-text-body hover:bg-surface-muted font-medium text-sm"
-            href="/#bands-overview"
+            href="/annual-leave-calculator/"
             onClick={() => setMobileMenuOpen(false)}
           >
-            AfC Band Directory
-          </a>
+            NHS Annual Leave &amp; Bank Holiday Calculator
+          </Link>
+          <Link
+            className="block px-3 py-2 rounded-lg text-text-body hover:bg-surface-muted font-medium text-sm"
+            href="/bank-shift-calculator/"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            NHS Bank Shift &amp; Overtime Calculator
+          </Link>
           <div className="pt-2 border-t border-border-subtle flex items-center justify-between text-xs font-mono text-text-muted">
             <span className="flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-cash-emerald pulse-glow-dot" />
@@ -127,3 +134,5 @@ export default function Navbar() {
     </header>
   );
 }
+
+export default Navbar;
