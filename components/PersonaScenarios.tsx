@@ -1,16 +1,22 @@
 import React from "react";
 import { formatCurrency } from "@/lib/formatters";
+import { calculateNHSPay } from "@/lib/calculator";
 
 export default function PersonaScenarios() {
+  const p1 = calculateNHSPay({ band: "Band 5", stepIndex: 0, hcasZone: "standard", contractedHours: 37.5, nightHoursPerWeek: 0, sundayHoursPerWeek: 0, pensionOptedOut: false, isScottishTax: false, studentLoan: "plan2" });
+  const p2 = calculateNHSPay({ band: "Band 7", stepIndex: 1, hcasZone: "standard", contractedHours: 30, nightHoursPerWeek: 0, sundayHoursPerWeek: 0, pensionOptedOut: false, isScottishTax: false, studentLoan: "none" });
+  const p3 = calculateNHSPay({ band: "Band 3", stepIndex: 1, hcasZone: "standard", contractedHours: 37.5, nightHoursPerWeek: 0, sundayHoursPerWeek: 0, pensionOptedOut: false, isScottishTax: false, studentLoan: "none" });
+  const p4 = calculateNHSPay({ band: "Band 6", stepIndex: 1, hcasZone: "standard", contractedHours: 37.5, nightHoursPerWeek: 11.5, sundayHoursPerWeek: 0, pensionOptedOut: false, isScottishTax: false, studentLoan: "none" });
+
   const scenarios = [
     {
       title: "Newly Qualified Nurse (RN)",
       role: "Staff Nurse",
       band: "Band 5",
       details: "Band 5 · £32,073 FTE · Full time (37.5h) · Plan 2 Student Loan",
-      grossMonthly: 2672.75,
-      deductionsMonthly: 652.70,
-      netMonthly: 2020.05,
+      grossMonthly: p1.grossPay.monthly,
+      deductionsMonthly: p1.totalDeductions.monthly,
+      netMonthly: p1.netPay.monthly,
       badge: "Band 5",
       badgeColor: "bg-blue-50 text-blue-800 border-blue-200",
     },
@@ -19,9 +25,9 @@ export default function PersonaScenarios() {
       role: "Specialist Practitioner",
       band: "Band 7",
       details: "Band 7 · £51,932 FTE · 30 hours/week part-time · Standard tax",
-      grossMonthly: 3462.13,
-      deductionsMonthly: 947.53,
-      netMonthly: 2514.60,
+      grossMonthly: p2.grossPay.monthly,
+      deductionsMonthly: p2.totalDeductions.monthly,
+      netMonthly: p2.netPay.monthly,
       badge: "Band 7",
       badgeColor: "bg-purple-50 text-purple-800 border-purple-200",
     },
@@ -30,9 +36,9 @@ export default function PersonaScenarios() {
       role: "Clinical Support Worker",
       band: "Band 3",
       details: "Band 3 · £27,476 FTE · Full time · Top of pay band",
-      grossMonthly: 2289.67,
-      deductionsMonthly: 466.87,
-      netMonthly: 1822.80,
+      grossMonthly: p3.grossPay.monthly,
+      deductionsMonthly: p3.totalDeductions.monthly,
+      netMonthly: p3.netPay.monthly,
       badge: "Band 3",
       badgeColor: "bg-emerald-50 text-emerald-800 border-emerald-200",
     },
@@ -40,10 +46,10 @@ export default function PersonaScenarios() {
       title: "Senior Paramedic (Shift Worker)",
       role: "Ambulance Clinician",
       band: "Band 6",
-      details: "Band 6 · £42,170 FTE · 2x Night Shifts (23h) · Section 2 Uplift",
-      grossMonthly: 3950.40,
-      deductionsMonthly: 1120.20,
-      netMonthly: 2830.20,
+      details: "Band 6 · £42,170 FTE · 1x Night Shift/wk (11.5h) · Section 2 Uplift",
+      grossMonthly: p4.grossPay.monthly,
+      deductionsMonthly: p4.totalDeductions.monthly,
+      netMonthly: p4.netPay.monthly,
       badge: "Band 6",
       badgeColor: "bg-amber-50 text-amber-800 border-amber-200",
     },

@@ -388,11 +388,12 @@ Calculate yours at: ${siteUrl}`;
               <span className="text-[10px] text-text-muted uppercase font-medium shrink-0">Section 4 AfC</span>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
               {[
-                { id: "standard", name: "Rest of England", desc: "National Baseline (0%)", val: "£0 / yr" },
-                { id: "outer-london", name: "Outer London", desc: "+15% Basic Salary", val: "min £4,313 – £5,436" },
-                { id: "inner-london", name: "Inner London", desc: "+20% Basic Salary", val: "min £5,115 – £8,034" },
+                { id: "standard", name: "Rest of UK", desc: "National Baseline (0%)", val: "£0 / yr" },
+                { id: "fringe", name: "London Fringe", desc: "+5% Basic Salary", val: "min £1,346 – £2,270" },
+                { id: "outer-london", name: "Outer London", desc: "+15% Basic Salary", val: "min £4,870 – £6,137" },
+                { id: "inner-london", name: "Inner London", desc: "+20% Basic Salary", val: "min £5,794 – £8,746" },
               ].map((z) => {
                 const isSelected = hcasZone === z.id;
                 return (

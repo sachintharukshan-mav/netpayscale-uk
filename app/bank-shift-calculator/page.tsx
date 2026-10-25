@@ -69,7 +69,7 @@ export default function BankShiftCalculatorPage() {
             name: "What are the 2026/27 NHS unsocial hours enhancement rates for bank shifts?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Under Agenda for Change Section 2, nights (8pm–6am) and Saturdays attract +47% for Band 2, +37% for Band 3, and +30% for Bands 4–9. Sundays and Public/Bank Holidays attract +83% for Band 2, +72% for Band 3, and +60% for Bands 4–9.",
+              text: "Under Agenda for Change Section 2, nights (8pm–6am) and Saturdays attract +44% for Bands 2 and 3, and +30% for Bands 4–9. Sundays and Public/Bank Holidays attract +88% for Bands 2 and 3, and +60% for Bands 4–9.",
             },
           },
         ],
@@ -150,8 +150,9 @@ export default function BankShiftCalculatorPage() {
                 {matrixBands.map((b) => {
                   const sal = b.points[0].annualSalary;
                   const hr = b.points[0].hourlyRate || sal / 1955.357;
-                  const nightMult = b.band === "Band 2" ? 1.47 : b.band === "Band 3" ? 1.37 : 1.3;
-                  const sunMult = b.band === "Band 2" ? 1.83 : b.band === "Band 3" ? 1.72 : 1.6;
+                  const isLow = ["Band 2", "Band 3"].includes(b.band);
+                  const nightMult = isLow ? 1.44 : 1.3;
+                  const sunMult = isLow ? 1.88 : 1.6;
                   const keepRatio = sal > 50270 ? 0.58 : 0.72; // 1 - (tax + NI)
 
                   const wkGross = hr * 1.1207 * 11.5;

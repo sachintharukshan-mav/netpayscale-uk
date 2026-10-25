@@ -26,11 +26,11 @@ export const metadata: Metadata = {
 
 const PENSION_TIERS_2026 = [
   { tier: "Tier 1", range: "Up to £13,259", rate: "5.2%", exampleBand: "Part-time lower bands" },
-  { tier: "Tier 2", range: "£13,260 to £27,288", rate: "6.5%", exampleBand: "Band 2 & Band 3 Entry" },
-  { tier: "Tier 3", range: "£27,289 to £33,247", rate: "8.3%", exampleBand: "Band 4 & Band 5 Entry" },
-  { tier: "Tier 4", range: "£33,248 to £49,913", rate: "9.8%", exampleBand: "Band 5 Top, Band 6 & Band 7" },
-  { tier: "Tier 5", range: "£49,914 to £63,994", rate: "10.7%", exampleBand: "Band 7 Top & Band 8a" },
-  { tier: "Tier 6", range: "£63,995 and above", rate: "12.5%", exampleBand: "Band 8b, 8c, 8d & Band 9" },
+  { tier: "Tier 2", range: "£13,260 to £28,854", rate: "6.5%", exampleBand: "Band 2, Band 3 & Band 4 Entry" },
+  { tier: "Tier 3", range: "£28,855 to £35,155", rate: "8.3%", exampleBand: "Band 4 Top, Band 5 Entry & Mid" },
+  { tier: "Tier 4", range: "£35,156 to £52,778", rate: "9.8%", exampleBand: "Band 5 Top, Band 6 & Band 7 Entry/Mid" },
+  { tier: "Tier 5", range: "£52,779 to £67,668", rate: "10.7%", exampleBand: "Band 7 Top, Band 8a & Band 8b Entry" },
+  { tier: "Tier 6", range: "£67,669 and above", rate: "12.5%", exampleBand: "Band 8b Mid/Top, 8c, 8d & Band 9" },
 ];
 
 export default function PensionCalculatorPage() {
@@ -70,7 +70,7 @@ export default function PensionCalculatorPage() {
             name: "What are the NHS pension contribution tiers for 2026/27?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "NHS employee pension contribution rates are based on your actual annual pensionable pay: 5.2% (up to £13,259), 6.5% (£13,260–£27,288), 8.3% (£27,289–£33,247), 9.8% (£33,248–£49,913), 10.7% (£49,914–£63,994), and 12.5% (£63,995+). In addition, your NHS employer contributes 23.78% of your pensionable pay.",
+              text: "NHS employee pension contribution rates for 2026/27 are based on your actual annual pensionable pay: 5.2% (up to £13,259), 6.5% (£13,260–£28,854), 8.3% (£28,855–£35,155), 9.8% (£35,156–£52,778), 10.7% (£52,779–£67,668), and 12.5% (£67,669+). In addition, your NHS employer contributes 23.78% of your pensionable pay.",
             },
           },
           {

@@ -2,9 +2,14 @@
 
 import React, { useState } from "react";
 import { formatCurrency } from "@/lib/formatters";
+import { calculateNHSPay } from "@/lib/calculator";
 
 export default function PopularBandsComparison() {
   const [isAnnual, setIsAnnual] = useState(true);
+
+  const b5Entry = calculateNHSPay({ band: "Band 5", stepIndex: 0, hcasZone: "standard", nightHoursPerWeek: 0, sundayHoursPerWeek: 0, pensionOptedOut: false, isScottishTax: false, studentLoan: "none" });
+  const b6Entry = calculateNHSPay({ band: "Band 6", stepIndex: 0, hcasZone: "standard", nightHoursPerWeek: 0, sundayHoursPerWeek: 0, pensionOptedOut: false, isScottishTax: false, studentLoan: "none" });
+  const b7Entry = calculateNHSPay({ band: "Band 7", stepIndex: 0, hcasZone: "standard", nightHoursPerWeek: 0, sundayHoursPerWeek: 0, pensionOptedOut: false, isScottishTax: false, studentLoan: "none" });
 
   const bands = [
     {
@@ -15,7 +20,7 @@ export default function PopularBandsComparison() {
         { label: "Entry", val: isAnnual ? "£32,073" : "£2,672.75/mo" },
         { label: "After 2 years", val: isAnnual ? "£34,592" : "£2,882.67/mo" },
         { label: "After 4 years (Top)", val: isAnnual ? "£39,043" : "£3,253.58/mo" },
-        { label: "Starting take-home", val: isAnnual ? "£24,483/yr" : "£2,040.21/mo" },
+        { label: "Starting take-home", val: isAnnual ? `${formatCurrency(b5Entry.netPay.annual)}/yr` : `${formatCurrency(b5Entry.netPay.monthly, true)}/mo` },
       ],
     },
     {
@@ -26,7 +31,7 @@ export default function PopularBandsComparison() {
         { label: "Entry", val: isAnnual ? "£39,959" : "£3,329.92/mo" },
         { label: "After 2 years", val: isAnnual ? "£42,170" : "£3,514.17/mo" },
         { label: "After 5 years (Top)", val: isAnnual ? "£48,117" : "£4,009.75/mo" },
-        { label: "Starting take-home", val: isAnnual ? "£29,157/yr" : "£2,429.75/mo" },
+        { label: "Starting take-home", val: isAnnual ? `${formatCurrency(b6Entry.netPay.annual)}/yr` : `${formatCurrency(b6Entry.netPay.monthly, true)}/mo` },
       ],
     },
     {
@@ -37,7 +42,7 @@ export default function PopularBandsComparison() {
         { label: "Entry", val: isAnnual ? "£49,387" : "£4,115.58/mo" },
         { label: "After 2 years", val: isAnnual ? "£51,932" : "£4,327.67/mo" },
         { label: "After 5 years (Top)", val: isAnnual ? "£56,515" : "£4,709.58/mo" },
-        { label: "Starting take-home", val: isAnnual ? "£35,206/yr" : "£2,933.83/mo" },
+        { label: "Starting take-home", val: isAnnual ? `${formatCurrency(b7Entry.netPay.annual)}/yr` : `${formatCurrency(b7Entry.netPay.monthly, true)}/mo` },
       ],
     },
   ];

@@ -71,6 +71,7 @@ assert(fs.existsSync(path.join(outDir, 'apple-touch-icon.png')), 'apple-touch-ic
 assert(fs.existsSync(path.join(outDir, 'og-image.png')), 'og-image.png (1200x630 social preview) exists in static export');
 assert(homeHtml.includes('https://netpayscale.uk/og-image.png'), 'Homepage references https://netpayscale.uk/og-image.png');
 assert(homeHtml.includes('data-share-widget="whatsapp-copy-breakdown"'), 'Homepage calculator includes 1-Tap WhatsApp / Copy Breakdown widget');
+assert(!homeHtml.includes('href="#"'), 'Homepage contains zero dead href="#" links');
 
 // 3B. Mandatory Legal & Trust Pages for Google AdSense & Quality Standards
 const trustPages = ['about', 'privacy', 'terms', 'contact'];

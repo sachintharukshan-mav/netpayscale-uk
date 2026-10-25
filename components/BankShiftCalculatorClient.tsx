@@ -30,11 +30,10 @@ export function BankShiftCalculatorClient() {
     const baseSalary = point.annualSalary;
     const baseHourly = point.hourlyRate || baseSalary / 1955.357; // 37.5h * 52.143 wks
 
-    // Unsocial multipliers under AfC Section 2
-    const isBand2 = band === "Band 2";
-    const isBand3 = band === "Band 3";
-    const nightSatMultiplier = isBand2 ? 1.47 : isBand3 ? 1.37 : 1.3;
-    const sunBhMultiplier = isBand2 ? 1.83 : isBand3 ? 1.72 : 1.6;
+    // Unsocial multipliers under AfC Section 2 (matching lib/calculator.ts)
+    const isLowerBand = ["Band 2", "Band 3"].includes(band);
+    const nightSatMultiplier = isLowerBand ? 1.44 : 1.3;
+    const sunBhMultiplier = isLowerBand ? 1.88 : 1.6;
 
     let multiplier = 1.0;
     let shiftLabel = "Standard Weekday (1.0x)";
@@ -174,12 +173,12 @@ export function BankShiftCalculatorClient() {
               {
                 id: "night_sat",
                 label: "Night or Saturday Bank Shift",
-                sub: band === "Band 2" ? "+47% unsocial enhancement" : band === "Band 3" ? "+37% unsocial enhancement" : "+30% unsocial enhancement",
+                sub: ["Band 2", "Band 3"].includes(band) ? "+44% unsocial enhancement" : "+30% unsocial enhancement",
               },
               {
                 id: "sun_bh",
                 label: "Sunday or Bank Holiday Shift",
-                sub: band === "Band 2" ? "+83% unsocial enhancement" : band === "Band 3" ? "+72% unsocial enhancement" : "+60% unsocial enhancement",
+                sub: ["Band 2", "Band 3"].includes(band) ? "+88% unsocial enhancement" : "+60% unsocial enhancement",
               },
               { id: "overtime_15", label: "Contractual Overtime (1.5x)", sub: "Time-and-a-half above 37.5h/wk (Bands 2–7)" },
               { id: "overtime_20", label: "Public Holiday Overtime (2.0x)", sub: "Double time on official Bank Holidays" },
@@ -202,16 +201,12 @@ export function BankShiftCalculatorClient() {
                   {opt.id === "weekday"
                     ? "1.0x"
                     : opt.id === "night_sat"
-                    ? band === "Band 2"
-                      ? "1.47x"
-                      : band === "Band 3"
-                      ? "1.37x"
+                    ? ["Band 2", "Band 3"].includes(band)
+                      ? "1.44x"
                       : "1.30x"
                     : opt.id === "sun_bh"
-                    ? band === "Band 2"
-                      ? "1.83x"
-                      : band === "Band 3"
-                      ? "1.72x"
+                    ? ["Band 2", "Band 3"].includes(band)
+                      ? "1.88x"
                       : "1.60x"
                     : opt.id === "overtime_15"
                     ? "1.50x"
@@ -430,13 +425,13 @@ export function BankShiftCalculatorClient() {
                   {
                     id: "night_sat",
                     name: "Night / Saturday",
-                    mult: band === "Band 2" ? 1.47 : band === "Band 3" ? 1.37 : 1.3,
+                    mult: ["Band 2", "Band 3"].includes(band) ? 1.44 : 1.3,
                     isOt: false,
                   },
                   {
                     id: "sun_bh",
                     name: "Sunday / Bank Holiday",
-                    mult: band === "Band 2" ? 1.83 : band === "Band 3" ? 1.72 : 1.6,
+                    mult: ["Band 2", "Band 3"].includes(band) ? 1.88 : 1.6,
                     isOt: false,
                   },
                   { id: "overtime_15", name: "Overtime (1.5x)", mult: 1.5, isOt: true },
