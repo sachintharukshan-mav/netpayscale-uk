@@ -2,6 +2,7 @@
 
 import React, { useState, useMemo } from "react";
 import { Calendar, Clock, Sparkles, Info, CheckCircle2 } from "lucide-react";
+import { ShareBreakdownButton } from "@/components/ShareBreakdownButton";
 
 const fmtNum = (val: number, decimals = 1) =>
   Number.isInteger(val) ? val.toString() : val.toFixed(decimals);
@@ -260,6 +261,15 @@ export function AnnualLeaveCalculatorClient() {
                 {fmtNum(calc.annualLeaveHours / 7.5, 1)} AL days + {fmtNum(calc.bankHolidayHours / 7.5, 1)} BH days
               </p>
             </div>
+          </div>
+
+          <div className="pt-5">
+            <ShareBreakdownButton
+              variant="dark"
+              label="Share Annual Leave & Shift Hours"
+              url="https://netpayscale.uk/annual-leave-calculator/"
+              shareText={`My 2026/27 NHS Annual Leave & Bank Holiday Entitlement (${weeklyHours}h/wk):\n• Total Combined Leave: ${fmtNum(calc.totalLeaveHours)} hours (${fmtNum(calc.annualLeaveHours)}h AL + ${fmtNum(calc.bankHolidayHours)}h Bank Holidays)\n• In ${shiftLength}h Shifts: ${calc.wholeShifts} full shifts${calc.remainderHours > 0 ? ` + ${fmtNum(calc.remainderHours)}h` : ""}\nCalculate yours: https://netpayscale.uk/annual-leave-calculator/`}
+            />
           </div>
         </div>
 

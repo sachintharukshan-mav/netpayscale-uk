@@ -5,6 +5,7 @@ import nhsData from "@/data/nhs_afc_2026.json";
 import { calculateNHSPay } from "@/lib/calculator";
 import { formatCurrency } from "@/lib/formatters";
 import { Landmark, Sparkles, TrendingUp, ShieldCheck, Info } from "lucide-react";
+import { ShareBreakdownButton } from "@/components/ShareBreakdownButton";
 
 export function PensionCalculatorClient() {
   const [band, setBand] = useState<string>("Band 5");
@@ -357,6 +358,15 @@ export function PensionCalculatorClient() {
                 ({formatCurrency(Math.round(pensionModel.employerAnnualContribution))}/yr funded by NHS Trust)
               </p>
             </div>
+          </div>
+
+          <div className="pt-5">
+            <ShareBreakdownButton
+              variant="dark"
+              label="Share NHS Pension Projection"
+              url="https://netpayscale.uk/pension-calculator/"
+              shareText={`NHS ${band} 2015 CARE Pension Projection (${futureYears} Yrs):\n• Guaranteed Annual Pension: ${formatCurrency(Math.round(pensionModel.finalAnnualPension))}/yr (${formatCurrency(Math.round(pensionModel.finalMonthlyPension))}/mo for life)\n• Tax-Free Cash Lump Sum: ${formatCurrency(Math.round(pensionModel.taxFreeLumpSum))}\n• True Monthly Net Cost (After Tax Relief): ${formatCurrency(Math.round(pensionModel.trueMonthlyNetCost))}/mo\nCalculate yours: https://netpayscale.uk/pension-calculator/`}
+            />
           </div>
         </div>
 

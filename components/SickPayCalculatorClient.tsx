@@ -5,6 +5,7 @@ import nhsData from "@/data/nhs_afc_2026.json";
 import { calculateNHSPay } from "@/lib/calculator";
 import { formatCurrency } from "@/lib/formatters";
 import { HeartPulse, Sparkles, ShieldAlert, CheckCircle2, Info } from "lucide-react";
+import { ShareBreakdownButton } from "@/components/ShareBreakdownButton";
 
 const SSP_WEEKLY_2026 = 118.75; // Statutory Sick Pay weekly rate (£514.58/mo)
 
@@ -328,6 +329,15 @@ export function SickPayCalculatorClient() {
                 Across {currentTier.fullMonths}m full pay and {currentTier.halfMonths}m half pay
               </p>
             </div>
+          </div>
+
+          <div className="pt-5">
+            <ShareBreakdownButton
+              variant="dark"
+              label="Share NHS Sick Pay Breakdown"
+              url="https://netpayscale.uk/sick-pay-calculator/"
+              shareText={`NHS ${band} Sick Pay Breakdown (${currentTier.label}):\n• Full Pay Phase (${currentTier.fullMonths}m): ${formatCurrency(Math.round(sickModel.fullMonthlyNet))}/mo net\n• Half Pay + SSP Phase (${currentTier.halfMonths}m): ${formatCurrency(Math.round(sickModel.halfPayMonthlyNet))}/mo net (${sickModel.halfPayRetentionPct}% of normal net pay!)\nCalculate yours: https://netpayscale.uk/sick-pay-calculator/`}
+            />
           </div>
         </div>
 

@@ -4,6 +4,7 @@ import React, { useState, useMemo } from "react";
 import nhsData from "@/data/nhs_afc_2026.json";
 import { formatCurrency } from "@/lib/formatters";
 import { Banknote, Clock, Sparkles, Info, TrendingUp } from "lucide-react";
+import { ShareBreakdownButton } from "@/components/ShareBreakdownButton";
 
 type ShiftRateType = "weekday" | "night_sat" | "sun_bh" | "overtime_15" | "overtime_20";
 
@@ -386,6 +387,15 @@ export function BankShiftCalculatorClient() {
                 -{formatCurrency(Math.round(calc.pensionPerShift))}
               </p>
             </div>
+          </div>
+
+          <div className="pt-5">
+            <ShareBreakdownButton
+              variant="dark"
+              label="Share Bank Shift Take-Home Breakdown"
+              url="https://netpayscale.uk/bank-shift-calculator/"
+              shareText={`NHS ${band} ${shiftHours}h Bank Shift Breakdown (${calc.shiftLabel}):\n• Net Cash Per Shift: ${formatCurrency(Math.round(calc.netPerShift))} (Gross: ${formatCurrency(Math.round(calc.grossPerShift))})\n• Net Hourly Take-Home: £${calc.netHourly.toFixed(2)}/hr\n• ${shiftsPerMonth} Shifts/Mo Boost: +${formatCurrency(Math.round(calc.netPerMonth))} net\nCalculate yours: https://netpayscale.uk/bank-shift-calculator/`}
+            />
           </div>
         </div>
 

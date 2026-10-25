@@ -70,6 +70,7 @@ assert(fs.existsSync(path.join(outDir, 'icon-48.png')), 'icon-48.png (48x48 Goog
 assert(fs.existsSync(path.join(outDir, 'apple-touch-icon.png')), 'apple-touch-icon.png exists in static export');
 assert(fs.existsSync(path.join(outDir, 'og-image.png')), 'og-image.png (1200x630 social preview) exists in static export');
 assert(homeHtml.includes('https://netpayscale.uk/og-image.png'), 'Homepage references https://netpayscale.uk/og-image.png');
+assert(homeHtml.includes('data-share-widget="whatsapp-copy-breakdown"'), 'Homepage calculator includes 1-Tap WhatsApp / Copy Breakdown widget');
 
 // 3B. Mandatory Legal & Trust Pages for Google AdSense & Quality Standards
 const trustPages = ['about', 'privacy', 'terms', 'contact'];
@@ -96,6 +97,7 @@ for (const calcSlug of siblingCalculators) {
     assert(canonicalMatch && canonicalMatch[1] === expectedCanonical, `Calculator /${calcSlug}/ has exact self-referential canonical (actual: ${canonicalMatch ? canonicalMatch[1] : 'NONE'})`);
     assert(cHtml.includes('"@type":"BreadcrumbList"'), `Calculator /${calcSlug}/ contains BreadcrumbList schema`);
     assert(cHtml.includes('"@type":"FAQPage"'), `Calculator /${calcSlug}/ contains FAQPage schema`);
+    assert(cHtml.includes('data-share-widget="whatsapp-copy-breakdown"'), `Calculator /${calcSlug}/ contains 1-Tap WhatsApp / Copy Breakdown widget`);
   }
 }
 

@@ -696,30 +696,30 @@ Calculate yours at: ${siteUrl}`;
             </div>
 
             {/* Quick Action Buttons */}
-            <div className="flex flex-col gap-2 pt-2 border-t border-border-subtle">
+            <div data-share-widget="whatsapp-copy-breakdown" className="print:hidden flex flex-col gap-2 pt-2 border-t border-border-subtle">
               <a
                 href={whatsappShareUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={handleShareClick}
-                className="w-full min-h-[44px] px-4 bg-text-ink hover:bg-black text-white rounded-lg text-sm font-semibold flex items-center justify-center gap-2 active:scale-[0.97] transition-all duration-150 shadow-xs cursor-pointer select-none"
+                className="w-full min-h-[44px] px-4 bg-[#25D366] hover:bg-[#20bd5a] text-slate-950 rounded-xl text-sm font-extrabold flex items-center justify-center gap-2 active:scale-[0.97] transition-all duration-150 shadow-xs cursor-pointer select-none"
               >
                 <span className="material-symbols-outlined text-[18px]">share</span>
-                Share WhatsApp / SMS Summary
+                Share to WhatsApp / Copy Breakdown
               </a>
               <div className="grid grid-cols-2 gap-2">
                 <button
                   type="button"
                   onClick={copyFigures}
-                  className="min-h-[40px] px-3 bg-surface-muted hover:bg-zinc-200 text-text-ink border border-border-subtle rounded-lg text-xs font-medium flex items-center justify-center gap-1.5 active:scale-[0.97] transition-all duration-150 cursor-pointer"
+                  className="min-h-[40px] px-3 bg-surface-muted hover:bg-zinc-200 text-text-ink border border-border-subtle rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 active:scale-[0.97] transition-all duration-150 cursor-pointer"
                 >
                   <span className="material-symbols-outlined text-[16px]">content_copy</span>
-                  Copy Figures
+                  Copy Breakdown
                 </button>
                 <button
                   type="button"
                   onClick={printPayslip}
-                  className="min-h-[40px] px-3 bg-surface-muted hover:bg-zinc-200 text-text-ink border border-border-subtle rounded-lg text-xs font-medium flex items-center justify-center gap-1.5 active:scale-[0.97] transition-all duration-150 cursor-pointer"
+                  className="min-h-[40px] px-3 bg-surface-muted hover:bg-zinc-200 text-text-ink border border-border-subtle rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 active:scale-[0.97] transition-all duration-150 cursor-pointer"
                 >
                   <span className="material-symbols-outlined text-[16px]">picture_as_pdf</span>
                   Download 1-Page PDF

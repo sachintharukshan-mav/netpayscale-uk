@@ -4,6 +4,7 @@ import React, { useState, useMemo } from "react";
 import nhsData from "@/data/nhs_afc_2026.json";
 import { calculateNHSPay } from "@/lib/calculator";
 import { formatCurrency } from "@/lib/formatters";
+import { ShareBreakdownButton } from "@/components/ShareBreakdownButton";
 
 const SMP_WEEKLY_RATE_2026 = 187.18; // Statutory Maternity Pay weekly flat rate
 
@@ -350,6 +351,13 @@ export default function MaternityCalculatorClient() {
             </div>
           ))}
         </div>
+
+        <ShareBreakdownButton
+          variant="light"
+          label="Share Maternity Pay Plan"
+          url="https://netpayscale.uk/maternity-pay-calculator/"
+          shareText={`NHS ${band} Maternity Pay Breakdown (2026/27):\n• Total 52-Week Net Pay: ${formatCurrency(maternityBreakdown.total52WeekNet)} (Gross: ${formatCurrency(maternityBreakdown.total52WeekGross)})\n• Equalised Over 9 Months: ${formatCurrency(maternityBreakdown.spread39MonthlyNet)}/mo net\n• Equalised Over 12 Months: ${formatCurrency(maternityBreakdown.spread52MonthlyNet)}/mo net\nCalculate yours: https://netpayscale.uk/maternity-pay-calculator/`}
+        />
       </div>
     </div>
   );
