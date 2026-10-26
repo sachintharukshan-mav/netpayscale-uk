@@ -37,7 +37,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const title = `${entry.band} ${entry.roleName} Salary & Take-Home Pay (${entry.regionName}) | 2026/27 NetPayScale UK`;
+  const entryCalc = calculateNHSPay({
+    band: entry.band,
+    stepIndex: 0,
+    hcasZone: entry.hcasZone,
+    nightHoursPerWeek: 0,
+    sundayHoursPerWeek: 0,
+    pensionOptedOut: false,
+    isScottishTax: entry.regionId === "scotland",
+    studentLoan: "none",
+  });
+
+  const title = `${entry.band} ${entry.roleName} Salary ${entry.regionName} 2026/27: ${formatCurrency(entryCalc.grossPay.annual)} (${formatCurrency(entryCalc.netPay.monthly)}/mo Take-Home)`;
   const description = entry.description;
   const canonicalUrl = `https://netpayscale.uk/calculator/${entry.slug}/`;
 

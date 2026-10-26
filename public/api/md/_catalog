@@ -2,8 +2,8 @@
   "site": "NetPayScale UK (NHS Edition)",
   "url": "https://netpayscale.uk",
   "updated": "2026-10-26",
-  "totalMarkdownRoutes": 17,
-  "totalHtmlRoutes": 511,
+  "totalMarkdownRoutes": 20,
+  "totalHtmlRoutes": 514,
   "routes": [
     {
       "htmlUrl": "https://netpayscale.uk/",
@@ -45,6 +45,27 @@
       "markdownUrl": "https://netpayscale.uk/bank-shift-calculator.md",
       "title": "NHS Bank Shift, Overtime & Section 2 Unsocial Hours Calculator 2026/27",
       "description": "Section 2 unsocial hours multipliers (+44%/+88% Bands 2–3, +30%/+60% Bands 4–9), 1.5x overtime, +12.07% WTD holiday uplift, and net shift pay.",
+      "category": "core"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/pay-rise-backpay-calculator/",
+      "markdownUrl": "https://netpayscale.uk/pay-rise-backpay-calculator.md",
+      "title": "NHS Back Pay & 3.3% Pay Rise Arrears Calculator 2026/27",
+      "description": "Backdated 2026/27 NHS 3.3% Agenda for Change pay award arrears from 1 April after PAYE tax, 8% NICs, NHS Pension, and Student Loan.",
+      "category": "core"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/promotion-calculator/",
+      "markdownUrl": "https://netpayscale.uk/promotion-calculator.md",
+      "title": "NHS Band Promotion & Spine Step Net Pay Comparator 2026/27",
+      "description": "Side-by-side net monthly pay comparison across any two NHS Bands or spine steps, factoring in NHS Pension tier cliffs and unsocial shift changes.",
+      "category": "core"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/redundancy-pay-calculator/",
+      "markdownUrl": "https://netpayscale.uk/redundancy-pay-calculator.md",
+      "title": "NHS Redundancy & MARS Severance Calculator 2026/27 (Section 16)",
+      "description": "NHS Section 16 contractual redundancy (1 month per year up to 24 years, £80k salary cap), MARS severance, and £30,000 HMRC tax-free exemption.",
       "category": "core"
     },
     {

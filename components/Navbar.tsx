@@ -73,6 +73,18 @@ export function Navbar() {
           >
             Sick Pay
           </Link>
+          <Link
+            href="/pay-rise-backpay-calculator/"
+            className="hidden xl:inline-block px-3 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95"
+          >
+            Back Pay
+          </Link>
+          <Link
+            href="/promotion-calculator/"
+            className="hidden 2xl:inline-block px-3 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95"
+          >
+            Promotion
+          </Link>
         </nav>
 
         {/* Right Metadata & Mobile Action Buttons */}
@@ -147,6 +159,27 @@ export function Navbar() {
             onClick={() => setMobileMenuOpen(false)}
           >
             NHS Bank Shift &amp; Overtime Calculator
+          </Link>
+          <Link
+            className="block px-3 py-2 rounded-lg text-text-body hover:bg-surface-muted font-medium text-sm"
+            href="/pay-rise-backpay-calculator/"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            NHS 3.3% Pay Rise &amp; Back-Pay Arrears Calculator
+          </Link>
+          <Link
+            className="block px-3 py-2 rounded-lg text-text-body hover:bg-surface-muted font-medium text-sm"
+            href="/promotion-calculator/"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            NHS Band Promotion Pay Comparator
+          </Link>
+          <Link
+            className="block px-3 py-2 rounded-lg text-text-body hover:bg-surface-muted font-medium text-sm"
+            href="/redundancy-pay-calculator/"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            NHS Redundancy &amp; MARS Severance Calculator
           </Link>
           <div className="pt-2 border-t border-border-subtle flex items-center justify-between text-xs font-mono text-text-muted">
             <span className="flex items-center gap-1.5">

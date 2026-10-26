@@ -265,6 +265,95 @@ Last updated: 2026-10-26
 - [NHS Pension Calculator](https://netpayscale.uk/pension-calculator/)
 
 ---
+<!-- source: https://netpayscale.uk/pay-rise-backpay-calculator/ -->
+# NHS Back Pay & 3.3% Pay Rise Calculator 2026/27 — Net Arrears After Tax & Pension
+
+> Calculate your exact 2026/27 NHS 3.3% Agenda for Change backdated arrears lump sum from 1 April after PAYE tax, National Insurance, NHS Pension, and Student Loan deductions.
+
+Canonical: https://netpayscale.uk/pay-rise-backpay-calculator/
+Last updated: 2026-10-26
+
+## 2026/27 NHS 3.3% Pay Rise & 6-Month Arrears Table (Bands 2 to 9)
+
+| NHS Band | Pre-Uplift Gross | 2026/27 New Gross | Annual Gross Gain (+3.3%) | 6-Mo Gross Back Pay | 6-Mo Net Back Pay Kept |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Band 2 Entry | £24,465 | £25,272 | +£807/yr | £404 | **£270** |
+| Band 3 Entry | £24,937 | £25,760 | +£823/yr | £412 | **£275** |
+| Band 4 Entry | £27,485 | £28,392 | +£907/yr | £454 | **£303** |
+| Band 5 Entry | £31,048 | £32,073 | +£1,025/yr | £513 | **£335** |
+| Band 6 Entry | £38,682 | £39,959 | +£1,277/yr | £639 | **£410** |
+| Band 7 Entry | £47,809 | £49,387 | +£1,578/yr | £789 | **£506** |
+| Band 8a Entry | £55,690 | £57,528 | +£1,838/yr | £919 | **£474** |
+| Band 8b Entry | £64,455 | £66,582 | +£2,127/yr | £1,064 | **£549** |
+| Band 8c Entry | £76,964 | £79,504 | +£2,540/yr | £1,270 | **£641** |
+| Band 8d Entry | £91,342 | £94,356 | +£3,014/yr | £1,507 | **£761** |
+| Band 9 Entry | £109,179 | £112,782 | +£3,603/yr | £1,802 | **£910** |
+
+## Related
+- [NHS Back Pay & Pay Rise Calculator (Interactive HTML)](https://netpayscale.uk/pay-rise-backpay-calculator/)
+- [NHS Band Promotion Calculator](https://netpayscale.uk/promotion-calculator/)
+- [NHS Salary & Take-Home Calculator](https://netpayscale.uk/)
+
+---
+<!-- source: https://netpayscale.uk/promotion-calculator/ -->
+# NHS Band Promotion Pay Calculator 2026/27 — Band-to-Band Net Take-Home Gain
+
+> Compare any two NHS Agenda for Change Bands or spine steps side-by-side (e.g. Band 5 to Band 6), factoring in NHS Pension tier cliffs and unsocial shift changes.
+
+Canonical: https://netpayscale.uk/promotion-calculator/
+Last updated: 2026-10-26
+
+## 2026/27 NHS Band-to-Band Promotion Net Monthly Gain Table (Entry to Entry)
+
+| Promotion Transition | Current Gross | Promoted Gross | Annual Gross Increase | Pension Tier Shift | Monthly Net Take-Home Gain |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Band 2 → Band 3 | £25,272 | £25,760 | +£488/yr | 6.5% → 6.5% | **+£27/mo** |
+| Band 3 → Band 4 | £25,760 | £28,392 | +£2,632/yr | 6.5% → 6.5% | **+£147/mo** |
+| Band 4 → Band 5 | £28,392 | £32,073 | +£3,681/yr | 6.5% → 8.3% | **+£166/mo** |
+| Band 5 → Band 6 | £32,073 | £39,959 | +£7,886/yr | 8.3% → 9.8% | **+£390/mo** |
+| Band 6 → Band 7 | £39,959 | £49,387 | +£9,428/yr | 9.8% → 9.8% | **+£504/mo** |
+| Band 7 → Band 8a | £49,387 | £57,528 | +£8,141/yr | 9.8% → 10.7% | **+£419/mo** |
+| Band 8a → Band 8b | £57,528 | £66,582 | +£9,054/yr | 10.7% → 10.7% | **+£389/mo** |
+| Band 8b → Band 8c | £66,582 | £79,504 | +£12,922/yr | 10.7% → 12.5% | **+£484/mo** |
+| Band 8c → Band 8d | £79,504 | £94,356 | +£14,852/yr | 12.5% → 12.5% | **+£625/mo** |
+| Band 8d → Band 9 | £94,356 | £112,782 | +£18,426/yr | 12.5% → 12.5% | **+£775/mo** |
+
+## Related
+- [NHS Promotion Pay Calculator (Interactive HTML)](https://netpayscale.uk/promotion-calculator/)
+- [NHS Back Pay Calculator](https://netpayscale.uk/pay-rise-backpay-calculator/)
+- [NHS Salary Calculator](https://netpayscale.uk/)
+
+---
+<!-- source: https://netpayscale.uk/redundancy-pay-calculator/ -->
+# NHS Redundancy & MARS Severance Calculator 2026/27 — Section 16 & £30k Tax-Free
+
+> Calculate your 2026/27 NHS Section 16 contractual redundancy pay (1 month per year of service up to 24 years, £80k salary cap) and NHS MARS voluntary severance after the £30,000 HMRC tax-free allowance.
+
+Canonical: https://netpayscale.uk/redundancy-pay-calculator/
+Last updated: 2026-10-26
+
+## 2026/27 NHS Section 16 Redundancy Payout Matrix by Band & Reckonable Service
+
+| NHS Band | Reckonable Salary (Cap £80k) | 5 Years (5 Mos) | 10 Years (10 Mos) | 15 Years (15 Mos) | 24 Years Max (24 Mos) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Band 2 Entry | £25,272 | £10,530 | £21,060 | £31,590 | **£50,544** |
+| Band 3 Entry | £25,760 | £10,733 | £21,467 | £32,200 | **£51,520** |
+| Band 4 Entry | £28,392 | £11,830 | £23,660 | £35,490 | **£56,784** |
+| Band 5 Entry | £32,073 | £13,364 | £26,728 | £40,091 | **£64,146** |
+| Band 6 Entry | £39,959 | £16,650 | £33,299 | £49,949 | **£79,918** |
+| Band 7 Entry | £49,387 | £20,578 | £41,156 | £61,734 | **£98,774** |
+| Band 8a Entry | £57,528 | £23,970 | £47,940 | £71,910 | **£115,056** |
+| Band 8b Entry | £66,582 | £27,743 | £55,485 | £83,228 | **£133,164** |
+| Band 8c Entry | £79,504 | £33,127 | £66,253 | £99,380 | **£159,008** |
+| Band 8d Entry | £80,000 | £33,333 | £66,667 | £100,000 | **£160,000** |
+| Band 9 Entry | £80,000 | £33,333 | £66,667 | £100,000 | **£160,000** |
+
+## Related
+- [NHS Redundancy & MARS Calculator (Interactive HTML)](https://netpayscale.uk/redundancy-pay-calculator/)
+- [NHS Pension Calculator](https://netpayscale.uk/pension-calculator/)
+- [NHS Salary Calculator](https://netpayscale.uk/)
+
+---
 <!-- source: https://netpayscale.uk/bands/band-2/ -->
 # NHS Band 2 Salary 2026/27 — Pay Scale Steps, Hourly Rate & Monthly Net Take-Home
 

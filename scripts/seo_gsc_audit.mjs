@@ -45,7 +45,7 @@ assert(fs.existsSync(catalogPath), 'api/md/_catalog exists in static export');
 const llmsFullContent = fs.readFileSync(llmsFullPath, 'utf8');
 assert(llmsFullContent.length > 10000 && llmsFullContent.length < 500000, `llms-full.txt length is within optimal LLM context window (${llmsFullContent.length} chars)`);
 const catalogData = JSON.parse(fs.readFileSync(catalogPath, 'utf8'));
-assert(catalogData.totalMarkdownRoutes === 17, `api/md/_catalog lists all 17 core & band Markdown routes (actual: ${catalogData.totalMarkdownRoutes})`);
+assert(catalogData.totalMarkdownRoutes === 20, `api/md/_catalog lists all 20 core & band Markdown routes (actual: ${catalogData.totalMarkdownRoutes})`);
 
 // 2. Sitemap.xml check
 const sitemapPath = path.join(outDir, 'sitemap.xml');
@@ -56,7 +56,7 @@ const sitemapContent = fs.readFileSync(sitemapPath, 'utf8');
 const locMatches = [...sitemapContent.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => m[1]);
 console.log(`Found ${locMatches.length} URLs in sitemap.xml`);
 
-assert(locMatches.length === 511, `Sitemap contains all 511 canonical URLs (5 static + 5 sibling calculators + 11 band hubs + 490 role-region spokes; actual: ${locMatches.length})`);
+assert(locMatches.length === 514, `Sitemap contains all 514 canonical URLs (5 static + 8 sibling calculators + 11 band hubs + 490 role-region spokes; actual: ${locMatches.length})`);
 assert(locMatches[0] === 'https://netpayscale.uk/', `Homepage in sitemap is exact canonical: https://netpayscale.uk/ (actual: ${locMatches[0]})`);
 
 let nonTrailingSlashCount = 0;
@@ -106,8 +106,17 @@ for (const p of trustPages) {
   }
 }
 
-// 3C. 5 High-Volume Sibling Calculators Audit
-const siblingCalculators = ['pension-calculator', 'sick-pay-calculator', 'maternity-pay-calculator', 'annual-leave-calculator', 'bank-shift-calculator'];
+// 3C. 8 High-Volume Sibling Calculators Audit
+const siblingCalculators = [
+  'pension-calculator',
+  'sick-pay-calculator',
+  'maternity-pay-calculator',
+  'annual-leave-calculator',
+  'bank-shift-calculator',
+  'pay-rise-backpay-calculator',
+  'promotion-calculator',
+  'redundancy-pay-calculator',
+];
 for (const calcSlug of siblingCalculators) {
   const cPath = path.join(outDir, calcSlug, 'index.html');
   assert(fs.existsSync(cPath), `Sibling calculator exists: /${calcSlug}/index.html`);

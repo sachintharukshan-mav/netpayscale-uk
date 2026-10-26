@@ -47,6 +47,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.95,
     },
     {
+      url: `${baseUrl}/pay-rise-backpay-calculator/`,
+      lastModified: buildDate,
+      changeFrequency: "weekly",
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/promotion-calculator/`,
+      lastModified: buildDate,
+      changeFrequency: "weekly",
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/redundancy-pay-calculator/`,
+      lastModified: buildDate,
+      changeFrequency: "weekly",
+      priority: 0.95,
+    },
+    {
       url: `${baseUrl}/about/`,
       lastModified: buildDate,
       changeFrequency: "monthly",

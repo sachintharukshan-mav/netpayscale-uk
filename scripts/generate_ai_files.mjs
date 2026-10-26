@@ -484,6 +484,105 @@ ${fteRows}
 `;
 }
 
+function renderBackPayMd() {
+  const rows = nhsData.bands
+    .map((b) => {
+      const sal = b.points[0].annualSalary;
+      const oldSal = Math.round(sal / 1.033);
+      const gain = sal - oldSal;
+      const gross6Mo = Math.round(gain * 0.5);
+      const rate = getPensionRate(sal);
+      const taxRate = sal > 50270 ? 0.4 : 0.2;
+      const niRate = sal > 50270 ? 0.02 : 0.08;
+      const net6Mo = Math.round(
+        gross6Mo * (1 - rate - (1 - rate) * taxRate - niRate)
+      );
+      return `| ${b.band} Entry | ${fmtGBP(oldSal)} | ${fmtGBP(sal)} | +${fmtGBP(gain)}/yr | ${fmtGBP(gross6Mo)} | **${fmtGBP(net6Mo)}** |`;
+    })
+    .join("\n");
+
+  return `# NHS Back Pay & 3.3% Pay Rise Calculator 2026/27 — Net Arrears After Tax & Pension
+
+> Calculate your exact 2026/27 NHS 3.3% Agenda for Change backdated arrears lump sum from 1 April after PAYE tax, National Insurance, NHS Pension, and Student Loan deductions.
+
+Canonical: ${SITE.url}/pay-rise-backpay-calculator/
+Last updated: ${SITE.updated}
+
+## 2026/27 NHS 3.3% Pay Rise & 6-Month Arrears Table (Bands 2 to 9)
+
+| NHS Band | Pre-Uplift Gross | 2026/27 New Gross | Annual Gross Gain (+3.3%) | 6-Mo Gross Back Pay | 6-Mo Net Back Pay Kept |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+${rows}
+
+## Related
+- [NHS Back Pay & Pay Rise Calculator (Interactive HTML)](${SITE.url}/pay-rise-backpay-calculator/)
+- [NHS Band Promotion Calculator](${SITE.url}/promotion-calculator/)
+- [NHS Salary & Take-Home Calculator](${SITE.url}/)
+`;
+}
+
+function renderPromotionMd() {
+  const rows = nhsData.bands
+    .slice(0, -1)
+    .map((fromB, i) => {
+      const toB = nhsData.bands[i + 1];
+      const fSal = fromB.points[0].annualSalary;
+      const tSal = toB.points[0].annualSalary;
+      const fCalc = calculateNet(fSal, { bandSlug: fromB.slug });
+      const tCalc = calculateNet(tSal, { bandSlug: toB.slug });
+      return `| ${fromB.band} → ${toB.band} | ${fmtGBP(fSal)} | ${fmtGBP(tSal)} | +${fmtGBP(tSal - fSal)}/yr | ${fCalc.pensionRate}% → ${tCalc.pensionRate}% | **+${fmtGBP(tCalc.netMonthly - fCalc.netMonthly)}/mo** |`;
+    })
+    .join("\n");
+
+  return `# NHS Band Promotion Pay Calculator 2026/27 — Band-to-Band Net Take-Home Gain
+
+> Compare any two NHS Agenda for Change Bands or spine steps side-by-side (e.g. Band 5 to Band 6), factoring in NHS Pension tier cliffs and unsocial shift changes.
+
+Canonical: ${SITE.url}/promotion-calculator/
+Last updated: ${SITE.updated}
+
+## 2026/27 NHS Band-to-Band Promotion Net Monthly Gain Table (Entry to Entry)
+
+| Promotion Transition | Current Gross | Promoted Gross | Annual Gross Increase | Pension Tier Shift | Monthly Net Take-Home Gain |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+${rows}
+
+## Related
+- [NHS Promotion Pay Calculator (Interactive HTML)](${SITE.url}/promotion-calculator/)
+- [NHS Back Pay Calculator](${SITE.url}/pay-rise-backpay-calculator/)
+- [NHS Salary Calculator](${SITE.url}/)
+`;
+}
+
+function renderRedundancyMd() {
+  const rows = nhsData.bands
+    .map((b) => {
+      const sal = Math.min(80000, Math.max(23000, b.points[0].annualSalary));
+      const mo = sal / 12;
+      return `| ${b.band} Entry | ${fmtGBP(sal)} | ${fmtGBP(mo * 5)} | ${fmtGBP(mo * 10)} | ${fmtGBP(mo * 15)} | **${fmtGBP(Math.min(160000, mo * 24))}** |`;
+    })
+    .join("\n");
+
+  return `# NHS Redundancy & MARS Severance Calculator 2026/27 — Section 16 & £30k Tax-Free
+
+> Calculate your 2026/27 NHS Section 16 contractual redundancy pay (1 month per year of service up to 24 years, £80k salary cap) and NHS MARS voluntary severance after the £30,000 HMRC tax-free allowance.
+
+Canonical: ${SITE.url}/redundancy-pay-calculator/
+Last updated: ${SITE.updated}
+
+## 2026/27 NHS Section 16 Redundancy Payout Matrix by Band & Reckonable Service
+
+| NHS Band | Reckonable Salary (Cap £80k) | 5 Years (5 Mos) | 10 Years (10 Mos) | 15 Years (15 Mos) | 24 Years Max (24 Mos) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+${rows}
+
+## Related
+- [NHS Redundancy & MARS Calculator (Interactive HTML)](${SITE.url}/redundancy-pay-calculator/)
+- [NHS Pension Calculator](${SITE.url}/pension-calculator/)
+- [NHS Salary Calculator](${SITE.url}/)
+`;
+}
+
 // ---------------------------------------------------------------------------
 // 2. Build Registry & Generate All Files
 // ---------------------------------------------------------------------------
@@ -548,6 +647,36 @@ const markdownRegistry = [
     category: "core",
     render: renderBankShiftMd,
   },
+  {
+    route: "/pay-rise-backpay-calculator/",
+    mdPath: "/pay-rise-backpay-calculator.md",
+    fileOut: path.join(PUBLIC_DIR, "pay-rise-backpay-calculator.md"),
+    title: "NHS Back Pay & 3.3% Pay Rise Arrears Calculator 2026/27",
+    description:
+      "Backdated 2026/27 NHS 3.3% Agenda for Change pay award arrears from 1 April after PAYE tax, 8% NICs, NHS Pension, and Student Loan.",
+    category: "core",
+    render: renderBackPayMd,
+  },
+  {
+    route: "/promotion-calculator/",
+    mdPath: "/promotion-calculator.md",
+    fileOut: path.join(PUBLIC_DIR, "promotion-calculator.md"),
+    title: "NHS Band Promotion & Spine Step Net Pay Comparator 2026/27",
+    description:
+      "Side-by-side net monthly pay comparison across any two NHS Bands or spine steps, factoring in NHS Pension tier cliffs and unsocial shift changes.",
+    category: "core",
+    render: renderPromotionMd,
+  },
+  {
+    route: "/redundancy-pay-calculator/",
+    mdPath: "/redundancy-pay-calculator.md",
+    fileOut: path.join(PUBLIC_DIR, "redundancy-pay-calculator.md"),
+    title: "NHS Redundancy & MARS Severance Calculator 2026/27 (Section 16)",
+    description:
+      "NHS Section 16 contractual redundancy (1 month per year up to 24 years, £80k salary cap), MARS severance, and £30,000 HMRC tax-free exemption.",
+    category: "core",
+    render: renderRedundancyMd,
+  },
   ...nhsData.bands.map((b) => {
     const slug = b.slug;
     const roleSummary = b.typicalRoles.slice(0, 2).join(", ");
@@ -579,7 +708,7 @@ const catalogPayload = {
   url: SITE.url,
   updated: SITE.updated,
   totalMarkdownRoutes: markdownRegistry.length,
-  totalHtmlRoutes: 511,
+  totalHtmlRoutes: 514,
   routes: markdownRegistry.map((r) => ({
     htmlUrl: `${SITE.url}${r.route}`,
     markdownUrl: `${SITE.url}${r.mdPath}`,

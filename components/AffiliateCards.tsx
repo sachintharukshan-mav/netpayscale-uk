@@ -1,12 +1,42 @@
 import React from "react";
 import Link from "next/link";
 
-export default function AffiliateCards() {
+export function AffiliateCards() {
   const guides = [
+    {
+      id: "back-pay-arrears",
+      title: "NHS 3.3% Pay Rise & Back-Pay Arrears Calculator",
+      category: "Pay Award • Apr Arrears",
+      description:
+        "Calculate your exact backdated 2026/27 NHS Agenda for Change lump-sum arrears from 1 April after PAYE tax, National Insurance, NHS Pension, and Student Loan.",
+      actionText: "Open Back-Pay Calculator →",
+      href: "/pay-rise-backpay-calculator/",
+      benefit: "+3.3% Backdated Lump Sum",
+    },
+    {
+      id: "band-promotion",
+      title: "NHS Band Promotion & Spine Step Net Comparator",
+      category: "Promotion • Band 5 → 6",
+      description:
+        "Compare any two NHS Bands or spine steps side-by-side—including NHS Pension tier cliffs (8.3% to 9.8%) and the net pay impact of dropping ward night shifts.",
+      actionText: "Open Promotion Comparator →",
+      href: "/promotion-calculator/",
+      benefit: "Pension Cliff & Shift Check",
+    },
+    {
+      id: "redundancy-mars",
+      title: "NHS Redundancy & MARS Severance Calculator",
+      category: "Severance • Sec 16",
+      description:
+        "Calculate your contractual NHS Section 16 redundancy (1 month per year up to 24 years, £80k cap) or MARS payout after the £30,000 HMRC tax-free allowance.",
+      actionText: "Open Redundancy Calculator →",
+      href: "/redundancy-pay-calculator/",
+      benefit: "First £30,000 Tax-Free",
+    },
     {
       id: "pension-avc",
       title: "NHS 2015 CARE Pension, AVCs & Lump Sum Calculator",
-      category: "Retirement • Sec 16",
+      category: "Retirement • CARE 1/54th",
       description:
         "NHS employees bank 1/54th of pensionable pay every year (+23.78% employer contribution) with 20% to 40% automatic PAYE tax relief and £12:£1 lump sum commutation.",
       actionText: "Open NHS Pension Calculator →",
@@ -73,7 +103,7 @@ export default function AffiliateCards() {
             Complete NHS Agenda for Change Calculator Suite &amp; Financial Toolkit
           </h3>
           <p className="text-xs text-zinc-500 mt-0.5">
-            Specialist calculators for NHS pensions, bank shifts, maternity leave, sick pay, and HealthRoster annual leave hours
+            Specialist calculators for NHS back-pay arrears, band promotions, redundancy, pensions, bank shifts, maternity, sick pay, and annual leave
           </p>
         </div>
         <span className="text-[11px] text-zinc-400 font-mono">
@@ -117,8 +147,10 @@ export default function AffiliateCards() {
       </div>
 
       <p className="text-[11px] text-zinc-400 pt-2 border-t border-zinc-100">
-         Statutory Notice: NetPayScale UK provides independent computational models synchronised with the 2026/27 NHS Terms and Conditions of Service (Agenda for Change) Handbook and HMRC PAYE regulations.
+        Statutory Notice: NetPayScale UK provides independent computational models synchronised with the 2026/27 NHS Terms and Conditions of Service (Agenda for Change) Handbook and HMRC PAYE regulations.
       </p>
     </section>
   );
 }
+
+export default AffiliateCards;

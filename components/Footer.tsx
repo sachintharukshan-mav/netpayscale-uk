@@ -78,6 +78,21 @@ export function Footer() {
                   NHS Bank Shift &amp; Overtime Pay
                 </Link>
               </li>
+              <li>
+                <Link href="/pay-rise-backpay-calculator/" className="hover:text-zinc-950 transition-colors">
+                  NHS Back Pay &amp; 3.3% Rise Calculator
+                </Link>
+              </li>
+              <li>
+                <Link href="/promotion-calculator/" className="hover:text-zinc-950 transition-colors">
+                  NHS Band Promotion Pay Comparator
+                </Link>
+              </li>
+              <li>
+                <Link href="/redundancy-pay-calculator/" className="hover:text-zinc-950 transition-colors">
+                  NHS Redundancy &amp; MARS Calculator
+                </Link>
+              </li>
             </ul>
           </div>
 
