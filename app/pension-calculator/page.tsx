@@ -12,6 +12,13 @@ export const metadata: Metadata = {
     "Calculate your 2026/27 NHS Pension monthly contribution (5.2% to 12.5%), PAYE tax relief savings, 23.78% employer contribution, and 2015 CARE Scheme (1/54th) annual retirement pension and tax-free lump sum.",
   alternates: {
     canonical: "https://netpayscale.uk/pension-calculator/",
+    types: {
+      "text/markdown": "https://netpayscale.uk/pension-calculator.md",
+    },
+  },
+  other: {
+    "ai-summary":
+      "2026/27 NHS Pension Calculator (2015 CARE Scheme): computes 7-tier employee contribution rates (5.2% to 12.5%), 23.78% employer contribution, Net-Pay PAYE tax relief, 1/54th annual retirement pension accrual, and tax-free lump sum commutation.",
   },
   openGraph: {
     title: "NHS Pension Calculator 2026/27 (2015 CARE Scheme & Contribution Tiers) | NetPayScale UK",

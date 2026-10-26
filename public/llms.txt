@@ -1,0 +1,45 @@
+# NetPayScale UK (NHS Edition)
+# Keep in sync with /robots.txt and /ai.txt
+
+> Official 2026/27 UK NHS Salary & Pension Calculator for 1.3M+ Agenda for Change healthcare staff. Computes net take-home pay, 3.3% AfC pay steps, London Weighting (HCAS), NHS 2015 CARE Pension tiers, Section 2 unsocial hours, Maternity Pay (OMP/SMP), Sick Pay, and Annual Leave.
+
+NetPayScale UK is an open-access statutory payroll reference and calculator suite for UK National Health Service (NHS) staff employed under the Agenda for Change (AfC) framework. All figures reflect the confirmed 2026/27 tax year (effective 1 April 2026), including the 3.3% AfC consolidated pay uplift, HMRC PAYE Income Tax (England/Wales/NI and Scottish 6-band regimes), Class 1 National Insurance (8% / 2%), 2015 CARE NHS Pension tiers (5.2% to 12.5%), and High Cost Area Supplements (Inner London 20%, Outer London 15%, Fringe 5%). Contact: editorial@netpayscale.uk.
+
+## Core Calculators (Markdown Twins)
+- [NetPayScale UK — 2026/27 NHS Salary & Pension Calculator](https://netpayscale.uk/index.md): 2026/27 NHS Agenda for Change Band 2 to Band 9 salary tables, net monthly take-home pay, London Weighting (HCAS), and pension tiers.
+- [NHS Pension Calculator 2026/27 (2015 CARE Scheme)](https://netpayscale.uk/pension-calculator.md): 7-tier NHS employee contribution rates (5.2%–12.5%), 23.7% employer contribution, Net-Pay tax relief, and 1/54th annual pension accrual.
+- [NHS Sick Pay & Half-Pay Calculator 2026/27 (Section 14)](https://netpayscale.uk/sick-pay-calculator.md): NHS Occupational Sick Pay entitlements by years of service (1 to 6 months Full Pay + 2 to 6 months Half Pay) and Statutory Sick Pay (£118.75/wk).
+- [NHS Maternity Pay Calculator 2026/27 (OMP + SMP Section 15)](https://netpayscale.uk/maternity-pay-calculator.md): 52-week NHS Occupational Maternity Pay timeline (8 wks 100%, 18 wks 50% + SMP £187.18/wk, 13 wks SMP, 13 wks unpaid), equal spread, and leave accrual.
+- [NHS Annual Leave & Pro-Rata Holiday Calculator 2026/27 (Section 13)](https://netpayscale.uk/annual-leave-calculator.md): 27, 29, and 33 days NHS annual leave plus 8 public bank holidays converted into exact hours and shifts for full-time and part-time contracts.
+- [NHS Bank Shift, Overtime & Section 2 Unsocial Hours Calculator 2026/27](https://netpayscale.uk/bank-shift-calculator.md): Section 2 unsocial hours multipliers (+44%/+88% Bands 2–3, +30%/+60% Bands 4–9), 1.5x overtime, +12.07% WTD holiday uplift, and net shift pay.
+
+## 2026/27 NHS Agenda for Change Band Guides (Markdown Twins)
+- [NHS Band 2 Salary 2026/27 (Healthcare Assistant, Clinical Support Worker)](https://netpayscale.uk/bands/band-2.md): 2026/27 Band 2 pay scale (£25,272–£25,272), hourly rates, step progression, and regional net pay.
+- [NHS Band 3 Salary 2026/27 (Senior Healthcare Assistant, Emergency Care Assistant)](https://netpayscale.uk/bands/band-3.md): 2026/27 Band 3 pay scale (£25,760–£27,476), hourly rates, step progression, and regional net pay.
+- [NHS Band 4 Salary 2026/27 (Nursing Associate, Assistant Practitioner)](https://netpayscale.uk/bands/band-4.md): 2026/27 Band 4 pay scale (£28,392–£31,157), hourly rates, step progression, and regional net pay.
+- [NHS Band 5 Salary 2026/27 (Staff Nurse (RN), Newly Qualified Paramedic)](https://netpayscale.uk/bands/band-5.md): 2026/27 Band 5 pay scale (£32,073–£39,043), hourly rates, step progression, and regional net pay.
+- [NHS Band 6 Salary 2026/27 (Junior Sister / Charge Nurse, Senior Paramedic)](https://netpayscale.uk/bands/band-6.md): 2026/27 Band 6 pay scale (£39,959–£48,117), hourly rates, step progression, and regional net pay.
+- [NHS Band 7 Salary 2026/27 (Ward Manager / Sister, Advanced Clinical Practitioner (ACP))](https://netpayscale.uk/bands/band-7.md): 2026/27 Band 7 pay scale (£49,387–£56,515), hourly rates, step progression, and regional net pay.
+- [NHS Band 8a Salary 2026/27 (Matron, Principal Clinical Psychologist)](https://netpayscale.uk/bands/band-8a.md): 2026/27 Band 8a pay scale (£57,528–£64,750), hourly rates, step progression, and regional net pay.
+- [NHS Band 8b Salary 2026/27 (Senior Matron, Consultant Clinical Psychologist)](https://netpayscale.uk/bands/band-8b.md): 2026/27 Band 8b pay scale (£66,582–£77,368), hourly rates, step progression, and regional net pay.
+- [NHS Band 8c Salary 2026/27 (Head of Nursing, Associate Director)](https://netpayscale.uk/bands/band-8c.md): 2026/27 Band 8c pay scale (£79,504–£91,609), hourly rates, step progression, and regional net pay.
+- [NHS Band 8d Salary 2026/27 (Deputy Director of Nursing, Chief Pharmacist (Large Trust))](https://netpayscale.uk/bands/band-8d.md): 2026/27 Band 8d pay scale (£94,356–£108,814), hourly rates, step progression, and regional net pay.
+- [NHS Band 9 Salary 2026/27 (Director of Nursing, Chief Operating Officer)](https://netpayscale.uk/bands/band-9.md): 2026/27 Band 9 pay scale (£112,782–£129,783), hourly rates, step progression, and regional net pay.
+
+## Popular Role & Regional Salary Benchmarks (HTML)
+- [Band 5 Nurse Salary — Inner London](https://netpayscale.uk/calculator/band-5-nurse-salary-inner-london/): £32,073 base + £6,415 HCAS = £38,488 gross (£2,367/mo net take-home)
+- [Band 6 Senior Paramedic Salary — Scotland](https://netpayscale.uk/calculator/band-6-senior-paramedic-salary-scotland/): £38,619 to £46,580 gross under Scottish 6-band Income Tax
+- [Band 7 Clinical Manager Salary — Manchester](https://netpayscale.uk/calculator/band-7-clinical-manager-salary-manchester/): £47,810 to £54,710 gross (£2,855 to £3,190/mo net take-home)
+- [Band 8a Matron Salary — Inner London](https://netpayscale.uk/calculator/band-8a-matron-salary-inner-london/): £55,690 base + £8,746 HCAS = £64,436 gross
+
+## Machine-readable
+- [Full content](https://netpayscale.uk/llms-full.txt): Every core calculator and Band 2–9 pay table concatenated in one Markdown file
+- [Markdown catalog](https://netpayscale.uk/api/md/_catalog): JSON index of all Markdown endpoints
+- [Sitemap](https://netpayscale.uk/sitemap.xml): Complete XML sitemap of all 511 canonical HTML pages
+- [AI usage policy](https://netpayscale.uk/ai.txt): Permissions, attribution rules, and crawler scope (ai-txt v1.1.1)
+
+## Optional & Legal
+- [About Us & Statutory Methodology](https://netpayscale.uk/about/): Official NHS Employers, NHSBSA, and HMRC sources
+- [Privacy Policy](https://netpayscale.uk/privacy/): Zero-server-storage client-side calculation privacy guarantee
+- [Terms of Service](https://netpayscale.uk/terms/): Terms of use and financial disclaimer
+- [Contact Us](https://netpayscale.uk/contact/): Editorial and payroll verification inquiries

@@ -69,6 +69,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: {
       canonical: canonicalUrl,
     },
+    other: {
+      "ai-summary": description,
+    },
   };
 }
 

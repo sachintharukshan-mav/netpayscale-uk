@@ -1,0 +1,128 @@
+{
+  "site": "NetPayScale UK (NHS Edition)",
+  "url": "https://netpayscale.uk",
+  "updated": "2026-10-26",
+  "totalMarkdownRoutes": 17,
+  "totalHtmlRoutes": 511,
+  "routes": [
+    {
+      "htmlUrl": "https://netpayscale.uk/",
+      "markdownUrl": "https://netpayscale.uk/index.md",
+      "title": "NetPayScale UK — 2026/27 NHS Salary & Pension Calculator",
+      "description": "2026/27 NHS Agenda for Change Band 2 to Band 9 salary tables, net monthly take-home pay, London Weighting (HCAS), and pension tiers.",
+      "category": "core"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/pension-calculator/",
+      "markdownUrl": "https://netpayscale.uk/pension-calculator.md",
+      "title": "NHS Pension Calculator 2026/27 (2015 CARE Scheme)",
+      "description": "7-tier NHS employee contribution rates (5.2%–12.5%), 23.7% employer contribution, Net-Pay tax relief, and 1/54th annual pension accrual.",
+      "category": "core"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/sick-pay-calculator/",
+      "markdownUrl": "https://netpayscale.uk/sick-pay-calculator.md",
+      "title": "NHS Sick Pay & Half-Pay Calculator 2026/27 (Section 14)",
+      "description": "NHS Occupational Sick Pay entitlements by years of service (1 to 6 months Full Pay + 2 to 6 months Half Pay) and Statutory Sick Pay (£118.75/wk).",
+      "category": "core"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/maternity-pay-calculator/",
+      "markdownUrl": "https://netpayscale.uk/maternity-pay-calculator.md",
+      "title": "NHS Maternity Pay Calculator 2026/27 (OMP + SMP Section 15)",
+      "description": "52-week NHS Occupational Maternity Pay timeline (8 wks 100%, 18 wks 50% + SMP £187.18/wk, 13 wks SMP, 13 wks unpaid), equal spread, and leave accrual.",
+      "category": "core"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/annual-leave-calculator/",
+      "markdownUrl": "https://netpayscale.uk/annual-leave-calculator.md",
+      "title": "NHS Annual Leave & Pro-Rata Holiday Calculator 2026/27 (Section 13)",
+      "description": "27, 29, and 33 days NHS annual leave plus 8 public bank holidays converted into exact hours and shifts for full-time and part-time contracts.",
+      "category": "core"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/bank-shift-calculator/",
+      "markdownUrl": "https://netpayscale.uk/bank-shift-calculator.md",
+      "title": "NHS Bank Shift, Overtime & Section 2 Unsocial Hours Calculator 2026/27",
+      "description": "Section 2 unsocial hours multipliers (+44%/+88% Bands 2–3, +30%/+60% Bands 4–9), 1.5x overtime, +12.07% WTD holiday uplift, and net shift pay.",
+      "category": "core"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/bands/band-2/",
+      "markdownUrl": "https://netpayscale.uk/bands/band-2.md",
+      "title": "NHS Band 2 Salary 2026/27 (Healthcare Assistant, Clinical Support Worker)",
+      "description": "2026/27 Band 2 pay scale (£25,272–£25,272), hourly rates, step progression, and regional net pay.",
+      "category": "bands"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/bands/band-3/",
+      "markdownUrl": "https://netpayscale.uk/bands/band-3.md",
+      "title": "NHS Band 3 Salary 2026/27 (Senior Healthcare Assistant, Emergency Care Assistant)",
+      "description": "2026/27 Band 3 pay scale (£25,760–£27,476), hourly rates, step progression, and regional net pay.",
+      "category": "bands"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/bands/band-4/",
+      "markdownUrl": "https://netpayscale.uk/bands/band-4.md",
+      "title": "NHS Band 4 Salary 2026/27 (Nursing Associate, Assistant Practitioner)",
+      "description": "2026/27 Band 4 pay scale (£28,392–£31,157), hourly rates, step progression, and regional net pay.",
+      "category": "bands"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/bands/band-5/",
+      "markdownUrl": "https://netpayscale.uk/bands/band-5.md",
+      "title": "NHS Band 5 Salary 2026/27 (Staff Nurse (RN), Newly Qualified Paramedic)",
+      "description": "2026/27 Band 5 pay scale (£32,073–£39,043), hourly rates, step progression, and regional net pay.",
+      "category": "bands"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/bands/band-6/",
+      "markdownUrl": "https://netpayscale.uk/bands/band-6.md",
+      "title": "NHS Band 6 Salary 2026/27 (Junior Sister / Charge Nurse, Senior Paramedic)",
+      "description": "2026/27 Band 6 pay scale (£39,959–£48,117), hourly rates, step progression, and regional net pay.",
+      "category": "bands"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/bands/band-7/",
+      "markdownUrl": "https://netpayscale.uk/bands/band-7.md",
+      "title": "NHS Band 7 Salary 2026/27 (Ward Manager / Sister, Advanced Clinical Practitioner (ACP))",
+      "description": "2026/27 Band 7 pay scale (£49,387–£56,515), hourly rates, step progression, and regional net pay.",
+      "category": "bands"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/bands/band-8a/",
+      "markdownUrl": "https://netpayscale.uk/bands/band-8a.md",
+      "title": "NHS Band 8a Salary 2026/27 (Matron, Principal Clinical Psychologist)",
+      "description": "2026/27 Band 8a pay scale (£57,528–£64,750), hourly rates, step progression, and regional net pay.",
+      "category": "bands"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/bands/band-8b/",
+      "markdownUrl": "https://netpayscale.uk/bands/band-8b.md",
+      "title": "NHS Band 8b Salary 2026/27 (Senior Matron, Consultant Clinical Psychologist)",
+      "description": "2026/27 Band 8b pay scale (£66,582–£77,368), hourly rates, step progression, and regional net pay.",
+      "category": "bands"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/bands/band-8c/",
+      "markdownUrl": "https://netpayscale.uk/bands/band-8c.md",
+      "title": "NHS Band 8c Salary 2026/27 (Head of Nursing, Associate Director)",
+      "description": "2026/27 Band 8c pay scale (£79,504–£91,609), hourly rates, step progression, and regional net pay.",
+      "category": "bands"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/bands/band-8d/",
+      "markdownUrl": "https://netpayscale.uk/bands/band-8d.md",
+      "title": "NHS Band 8d Salary 2026/27 (Deputy Director of Nursing, Chief Pharmacist (Large Trust))",
+      "description": "2026/27 Band 8d pay scale (£94,356–£108,814), hourly rates, step progression, and regional net pay.",
+      "category": "bands"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/bands/band-9/",
+      "markdownUrl": "https://netpayscale.uk/bands/band-9.md",
+      "title": "NHS Band 9 Salary 2026/27 (Director of Nursing, Chief Operating Officer)",
+      "description": "2026/27 Band 9 pay scale (£112,782–£129,783), hourly rates, step progression, and regional net pay.",
+      "category": "bands"
+    }
+  ]
+}

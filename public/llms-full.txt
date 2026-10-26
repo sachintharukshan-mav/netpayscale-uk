@@ -1,0 +1,690 @@
+# NetPayScale UK (NHS Edition) - full content
+> Official 2026/27 UK NHS Salary & Pension Calculator for 1.3M+ Agenda for Change healthcare staff. Computes net take-home pay, 3.3% AfC pay steps, London Weighting (HCAS), NHS 2015 CARE Pension tiers, Section 2 unsocial hours, Maternity Pay (OMP/SMP), Sick Pay, and Annual Leave.
+Generated: 2026-10-26
+
+---
+<!-- source: https://netpayscale.uk/ -->
+# NetPayScale UK (NHS Edition) — 2026/27 Official Agenda for Change Take-Home Pay Reference
+
+> Official 2026/27 UK NHS Salary & Pension Calculator for 1.3M+ Agenda for Change healthcare staff. Computes net take-home pay, 3.3% AfC pay steps, London Weighting (HCAS), NHS 2015 CARE Pension tiers, Section 2 unsocial hours, Maternity Pay (OMP/SMP), Sick Pay, and Annual Leave.
+
+Canonical: https://netpayscale.uk/
+Last updated: 2026-10-26
+
+## Summary of 2026/27 Statutory NHS Pay Rules
+- **Agenda for Change Pay Uplift (Effective 1 April 2026):** Confirmed **3.3% consolidated increase** across all Bands 2 to 9, with the Band 2 single spine point set at **£25,272/yr (£12.92/hr)** and Band 5 entry at **£32,073/yr (£16.40/hr)**.
+- **Standard Full-Time Contract (1.0 FTE):** **37.5 hours/week** (1,955.36 hours/year; 52.143 weeks/year).
+- **Income Tax (England, Wales & NI 2026/27):** £12,570 Personal Allowance (0%), 20% Basic Rate (£12,571–£50,270), 40% Higher Rate (£50,271–£125,140), 45% Additional Rate (>£125,140). Personal Allowance tapers by £1 for every £2 of adjusted net income above £100,000.
+- **Employee Class 1 National Insurance (2026/27):** 8% between £12,570 and £50,270/yr; 2% above £50,270/yr.
+- **High Cost Area Supplement (HCAS London Weighting 2026/27):**
+  - **Inner London (20% of base):** Minimum **£5,794/yr** | Maximum **£8,746/yr**
+  - **Outer London (15% of base):** Minimum **£4,870/yr** | Maximum **£6,137/yr**
+  - **London Fringe (5% of base):** Minimum **£1,346/yr** | Maximum **£2,270/yr**
+
+## 2026/27 NHS Agenda for Change Pay Scales & Monthly Net Take-Home Table (Bands 2 to 9)
+
+| NHS Band | Entry Gross (Monthly Net) | Top Step Gross (Monthly Net) | Hourly Rate Range | Entry Pension Tier | Inner London Entry Net/Mo |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| [Band 2](https://netpayscale.uk/bands/band-2/) | £25,272 (£1,700/mo net) | £25,272 (£1,700/mo net) | £12.92 – £12.92/hr | 6.5% | £2,023/mo |
+| [Band 3](https://netpayscale.uk/bands/band-3/) | £25,760 (£1,727/mo net) | £27,476 (£1,823/mo net) | £13.17 – £14.05/hr | 6.5% | £2,050/mo |
+| [Band 4](https://netpayscale.uk/bands/band-4/) | £28,392 (£1,874/mo net) | £31,157 (£1,990/mo net) | £14.52 – £15.93/hr | 6.5% | £2,196/mo |
+| [Band 5](https://netpayscale.uk/bands/band-5/) | £32,073 (£2,040/mo net) | £39,043 (£2,381/mo net) | £16.40 – £19.97/hr | 8.3% | £2,390/mo |
+| [Band 6](https://netpayscale.uk/bands/band-6/) | £39,959 (£2,430/mo net) | £48,117 (£2,866/mo net) | £20.44 – £24.61/hr | 9.8% | £2,857/mo |
+| [Band 7](https://netpayscale.uk/bands/band-7/) | £49,387 (£2,934/mo net) | £56,515 (£3,309/mo net) | £25.26 – £28.90/hr | 9.8% | £3,405/mo |
+| [Band 8a](https://netpayscale.uk/bands/band-8a/) | £57,528 (£3,353/mo net) | £64,750 (£3,663/mo net) | £29.42 – £33.11/hr | 10.7% | £3,728/mo |
+| [Band 8b](https://netpayscale.uk/bands/band-8b/) | £66,582 (£3,742/mo net) | £77,368 (£4,136/mo net) | £34.05 – £39.57/hr | 10.7% | £4,118/mo |
+| [Band 8c](https://netpayscale.uk/bands/band-8c/) | £79,504 (£4,226/mo net) | £91,609 (£4,735/mo net) | £40.66 – £46.85/hr | 12.5% | £4,594/mo |
+| [Band 8d](https://netpayscale.uk/bands/band-8d/) | £94,356 (£4,851/mo net) | £108,814 (£5,459/mo net) | £48.26 – £55.65/hr | 12.5% | £5,219/mo |
+| [Band 9](https://netpayscale.uk/bands/band-9/) | £112,782 (£5,626/mo net) | £129,783 (£6,115/mo net) | £57.68 – £66.37/hr | 12.5% | £5,888/mo |
+
+## 2026/27 NHS Pension Scheme (2015 CARE) Employee & Employer Contribution Tiers
+
+| Tier | Whole-Time Equivalent Pensionable Pay (2026/27) | Employee Contribution Rate | Employer Contribution Rate |
+| :--- | :--- | :--- | :--- |
+| Tier 1 | £0 – £13,259 | 5.2% | 23.7% |
+| Tier 2 | £13,259 – £28,854 | 6.5% | 23.7% |
+| Tier 3 | £28,854 – £35,155 | 8.3% | 23.7% |
+| Tier 4 | £35,155 – £52,778 | 9.8% | 23.7% |
+| Tier 5 | £52,778 – £67,668 | 10.7% | 23.7% |
+| Tier 6 | £67,668+ | 12.5% | 23.7% |
+
+## Frequently Asked Questions
+
+### How is NHS net take-home pay calculated in 2026/27?
+NHS net pay is calculated by taking your gross Agenda for Change salary (plus pensionable HCAS London Weighting and any non-pensionable unsocial hours), deducting your 2015 CARE NHS Pension contribution first under the Net-Pay Arrangement, and then applying HMRC PAYE Income Tax and Class 1 Employee National Insurance (8% / 2%).
+
+### What is the 2026/27 Band 5 Nurse starting salary and monthly take-home pay?
+In 2026/27, a Band 5 Nurse in England starts on **£32,073 gross per year** (£16.40/hr). After an 8.3% NHS Pension contribution (£222/mo), Income Tax (£288/mo), and National Insurance (£130/mo), the standard monthly net take-home pay outside London is **£2,033 per month** (or **£2,367/month** in Inner London with 20% HCAS).
+
+## Related Calculators & Guides
+- [NHS Take-Home Pay Calculator](https://netpayscale.uk/)
+- [NHS Pension Calculator (2015 CARE Scheme)](https://netpayscale.uk/pension-calculator/)
+- [NHS Sick Pay & Half-Pay Calculator](https://netpayscale.uk/sick-pay-calculator/)
+- [NHS Maternity Pay (OMP + SMP) Calculator](https://netpayscale.uk/maternity-pay-calculator/)
+- [NHS Annual Leave & Pro-Rata Holiday Calculator](https://netpayscale.uk/annual-leave-calculator/)
+- [NHS Bank Shift, Overtime & Section 2 Unsocial Hours Calculator](https://netpayscale.uk/bank-shift-calculator/)
+
+---
+<!-- source: https://netpayscale.uk/pension-calculator/ -->
+# NHS Pension Calculator 2026/27 — 2015 CARE Scheme Tiers, Tax Relief & Annual Accrual
+
+> Calculate your exact 2026/27 NHS Pension monthly cost after PAYE tax relief, 23.7% employer contribution, and 1/54th guaranteed annual CARE pension accrual.
+
+Canonical: https://netpayscale.uk/pension-calculator/
+Last updated: 2026-10-26
+
+## 2026/27 NHS Pension Scheme Mechanics (2015 CARE Section)
+- **Accrual Rate:** **1/54th (1.85%)** of your pensionable earnings each scheme year is added to your guaranteed annual pension pot for life.
+- **In-Service Revaluation:** Revalued every April by **CPI inflation + 1.5%** (Treasury Order).
+- **Employer Contribution:** Your NHS Trust contributes **23.7%** of your pensionable pay on top of your own contribution.
+- **Net-Pay Tax Relief:** Employee contributions are deducted from gross pay *before* PAYE Income Tax, granting automatic 20%, 40%, or 45% tax relief at source.
+- **Part-Time Tier Rule:** Your contribution tier percentage is determined by your **whole-time equivalent (1.0 FTE)** salary, then applied to your actual pro-rata pensionable earnings.
+
+## 2026/27 NHS Pension Employee Contribution Tiers
+
+| Tier | Whole-Time Equivalent Pensionable Pay | Employee Rate | Employer Rate | Annual CARE Accrual |
+| :--- | :--- | :--- | :--- | :--- |
+| Tier 1 | £0 – £13,259 | 5.2% | 23.7% | 1/54th of pensionable pay |
+| Tier 2 | £13,259 – £28,854 | 6.5% | 23.7% | 1/54th of pensionable pay |
+| Tier 3 | £28,854 – £35,155 | 8.3% | 23.7% | 1/54th of pensionable pay |
+| Tier 4 | £35,155 – £52,778 | 9.8% | 23.7% | 1/54th of pensionable pay |
+| Tier 5 | £52,778 – £67,668 | 10.7% | 23.7% | 1/54th of pensionable pay |
+| Tier 6 | £67,668+ | 12.5% | 23.7% | 1/54th of pensionable pay |
+
+## Band-by-Band Monthly Pension Cost vs. Guaranteed Retirement Accrual (2026/27)
+
+| Band & Entry Salary | Tier Rate | Gross Monthly Deduction | True Net Cost After Tax Relief | NHS Employer 23.7% Deposit | Annual Pension Added Per Year Worked |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Band 2 Entry (£25,272) | 6.5% | £137/mo | £110/mo (20% relief) | £499/mo | +£468/yr for life |
+| Band 3 Entry (£25,760) | 6.5% | £140/mo | £112/mo (20% relief) | £509/mo | +£477/yr for life |
+| Band 4 Entry (£28,392) | 6.5% | £154/mo | £123/mo (20% relief) | £561/mo | +£526/yr for life |
+| Band 5 Entry (£32,073) | 8.3% | £222/mo | £178/mo (20% relief) | £633/mo | +£594/yr for life |
+| Band 6 Entry (£39,959) | 9.8% | £326/mo | £261/mo (20% relief) | £789/mo | +£740/yr for life |
+| Band 7 Entry (£49,387) | 9.8% | £403/mo | £322/mo (20% relief) | £975/mo | +£915/yr for life |
+| Band 8a Entry (£57,528) | 10.7% | £513/mo | £308/mo (40% relief) | £1,136/mo | +£1,065/yr for life |
+| Band 8b Entry (£66,582) | 10.7% | £594/mo | £356/mo (40% relief) | £1,315/mo | +£1,233/yr for life |
+| Band 8c Entry (£79,504) | 12.5% | £828/mo | £497/mo (40% relief) | £1,570/mo | +£1,472/yr for life |
+| Band 8d Entry (£94,356) | 12.5% | £983/mo | £590/mo (40% relief) | £1,864/mo | +£1,747/yr for life |
+| Band 9 Entry (£112,782) | 12.5% | £1,175/mo | £705/mo (40% relief) | £2,227/mo | +£2,089/yr for life |
+
+## Related
+- [NHS Pension Calculator (Interactive HTML)](https://netpayscale.uk/pension-calculator/)
+- [NHS Salary & Take-Home Calculator](https://netpayscale.uk/)
+- [NHS Sick Pay Calculator](https://netpayscale.uk/sick-pay-calculator/)
+
+---
+<!-- source: https://netpayscale.uk/sick-pay-calculator/ -->
+# NHS Sick Pay Calculator 2026/27 — Section 14 Full Pay, Half Pay & SSP Take-Home
+
+> Calculate your exact 2026/27 NHS Occupational Sick Pay entitlement by years of continuous NHS service, plus net monthly take-home during Full Pay and Half Pay + Statutory Sick Pay (SSP).
+
+Canonical: https://netpayscale.uk/sick-pay-calculator/
+Last updated: 2026-10-26
+
+## NHS Terms & Conditions Handbook (Section 14) Sick Pay Entitlement Table
+
+| Continuous NHS Service | Full Pay Entitlement (100% Gross) | Half Pay Entitlement (50% Gross + SSP) | Combined Protected Window |
+| :--- | :--- | :--- | :--- |
+| During 1st year of service | **1 month** | **2 months** | 3 months |
+| During 2nd year of service | **2 months** | **2 months** | 4 months |
+| During 3rd year of service | **4 months** | **4 months** | 8 months |
+| During 4th and 5th years | **5 months** | **5 months** | 10 months |
+| After 5 years completed service | **6 months** | **6 months** | 12 months |
+
+## Statutory Sick Pay (SSP) Integration Rules (2026/27)
+- **2026/27 Statutory Sick Pay (SSP) Rate:** **£118.75 per week** (~£514.58/month), payable for up to 28 weeks.
+- **Full Pay Phase:** 100% of normal basic salary + HCAS + regularly scheduled unsocial hours enhancements (inclusive of SSP).
+- **Half Pay Phase:** 50% of normal salary **plus** £118.75/wk SSP, capped so that total gross pay does not exceed 100% normal full pay.
+
+## 2026/27 Full Pay vs. Half Pay + SSP Monthly Net Take-Home by Band
+
+| Band & Entry Salary | Full Pay Net/Month | Half Pay + SSP Net/Month | Monthly Net Drop on Half Pay |
+| :--- | :--- | :--- | :--- |
+| Band 2 Entry (£25,272) | £1,700/mo | £1,341/mo | -£359/mo |
+| Band 3 Entry (£25,760) | £1,727/mo | £1,355/mo | -£372/mo |
+| Band 4 Entry (£28,392) | £1,874/mo | £1,428/mo | -£446/mo |
+| Band 5 Entry (£32,073) | £2,040/mo | £1,531/mo | -£509/mo |
+| Band 6 Entry (£39,959) | £2,430/mo | £1,750/mo | -£680/mo |
+| Band 7 Entry (£49,387) | £2,934/mo | £1,976/mo | -£958/mo |
+| Band 8a Entry (£57,528) | £3,353/mo | £2,197/mo | -£1,156/mo |
+| Band 8b Entry (£66,582) | £3,742/mo | £2,404/mo | -£1,338/mo |
+| Band 8c Entry (£79,504) | £4,226/mo | £2,750/mo | -£1,476/mo |
+| Band 8d Entry (£94,356) | £4,851/mo | £3,130/mo | -£1,721/mo |
+| Band 9 Entry (£112,782) | £5,626/mo | £3,570/mo | -£2,056/mo |
+
+## Related
+- [NHS Sick Pay Calculator (Interactive HTML)](https://netpayscale.uk/sick-pay-calculator/)
+- [NHS Maternity Pay Calculator](https://netpayscale.uk/maternity-pay-calculator/)
+- [NHS Take-Home Pay Calculator](https://netpayscale.uk/)
+
+---
+<!-- source: https://netpayscale.uk/maternity-pay-calculator/ -->
+# NHS Maternity Pay Calculator 2026/27 — Section 15 OMP & SMP 52-Week Breakdown
+
+> Calculate your 2026/27 NHS Occupational Maternity Pay (OMP), Statutory Maternity Pay (SMP £187.18/wk), Equal Monthly Spread option, and Holiday Accrual across all 52 weeks.
+
+Canonical: https://netpayscale.uk/maternity-pay-calculator/
+Last updated: 2026-10-26
+
+## 2026/27 NHS Occupational Maternity Pay (OMP) 4-Phase Timeline
+To qualify for NHS Occupational Maternity Pay (Section 15), you must have **12 months of continuous NHS service** by the beginning of the 11th week before your Expected Week of Childbirth (EWC) and commit to returning to NHS employment for at least 3 months:
+
+1. **Weeks 1 to 8 (8 Weeks):** **100% Full Pay** (inclusive of SMP).
+2. **Weeks 9 to 26 (18 Weeks):** **50% Half Pay + Statutory Maternity Pay (£187.18/week)**, capped at 100% normal full pay.
+3. **Weeks 27 to 39 (13 Weeks):** **Statutory Maternity Pay (£187.18/week)** (or 90% of average weekly earnings if lower).
+4. **Weeks 40 to 52 (13 Weeks):** **Unpaid Maternity Leave** (many staff use accrued annual leave + 8 bank holidays to bridge this phase on 100% full pay).
+
+## 2026/27 Total 52-Week Maternity Pay & Equal Monthly Spread by Band
+
+| Band & Entry Salary | Total 52-Week Gross OMP+SMP | Equal Monthly Spread (Gross) | Equal Monthly Spread (Estimated Net/Mo) |
+| :--- | :--- | :--- | :--- |
+| Band 2 Entry (£25,272) | £14,042 | £1,170/mo | £1,075/mo |
+| Band 3 Entry (£25,760) | £14,201 | £1,183/mo | £1,084/mo |
+| Band 4 Entry (£28,392) | £15,059 | £1,255/mo | £1,132/mo |
+| Band 5 Entry (£32,073) | £16,259 | £1,355/mo | £1,198/mo |
+| Band 6 Entry (£39,959) | £18,830 | £1,569/mo | £1,342/mo |
+| Band 7 Entry (£49,387) | £21,904 | £1,825/mo | £1,513/mo |
+| Band 8a Entry (£57,528) | £24,558 | £2,047/mo | £1,660/mo |
+| Band 8b Entry (£66,582) | £27,510 | £2,293/mo | £1,825/mo |
+| Band 8c Entry (£79,504) | £31,723 | £2,644/mo | £2,021/mo |
+| Band 8d Entry (£94,356) | £36,565 | £3,047/mo | £2,248/mo |
+| Band 9 Entry (£112,782) | £42,573 | £3,548/mo | £2,570/mo |
+
+## Related
+- [NHS Maternity Pay Calculator (Interactive HTML)](https://netpayscale.uk/maternity-pay-calculator/)
+- [NHS Annual Leave Calculator](https://netpayscale.uk/annual-leave-calculator/)
+- [NHS Salary Calculator](https://netpayscale.uk/)
+
+---
+<!-- source: https://netpayscale.uk/annual-leave-calculator/ -->
+# NHS Annual Leave Calculator 2026/27 — Section 13 Pro-Rata Hours & Bank Holiday Entitlement
+
+> Convert your 2026/27 NHS Annual Leave and 8 Public Bank Holidays into exact working hours or days based on years of NHS service (0–4 yrs, 5–9 yrs, 10+ yrs), weekly contract hours, and shift length.
+
+Canonical: https://netpayscale.uk/annual-leave-calculator/
+Last updated: 2026-10-26
+
+## 2026/27 NHS Agenda for Change Annual Leave Tiers (Section 13)
+
+| Reckonable NHS Service | Annual Leave Days (1.0 FTE) | Bank Holidays (1.0 FTE) | Combined Total Days | Total Annual Hours (at 37.5h/wk) | 12.5-Hour Long Shifts Equivalent |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **0 to 4 Years Service** | 27 days (202.5 hrs) | 8 days (60.0 hrs) | **35 days** | **262.5 hours** | 21.0 shifts |
+| **5 to 9 Years Service** | 29 days (217.5 hrs) | 8 days (60.0 hrs) | **37 days** | **277.5 hours** | 22.2 shifts |
+| **10+ Years Service** | 33 days (247.5 hrs) | 8 days (60.0 hrs) | **41 days** | **307.5 hours** | 24.6 shifts |
+
+## Part-Time Pro-Rata NHS Holiday Hours Matrix (Leave + Bank Holidays Combined)
+
+| Weekly Contracted Hours (FTE) | 0–4 Years Service | 5–9 Years Service | 10+ Years Service |
+| :--- | :--- | :--- | :--- |
+| **37.5 hrs/wk (1.00 FTE)** | 262.5 hrs (202.5 AL + 60.0 BH) | 277.5 hrs (217.5 AL + 60.0 BH) | 307.5 hrs (247.5 AL + 60.0 BH) |
+| **30.0 hrs/wk (0.80 FTE)** | 210.0 hrs (162.0 AL + 48.0 BH) | 222.0 hrs (174.0 AL + 48.0 BH) | 246.0 hrs (198.0 AL + 48.0 BH) |
+| **22.5 hrs/wk (0.60 FTE)** | 157.5 hrs (121.5 AL + 36.0 BH) | 166.5 hrs (130.5 AL + 36.0 BH) | 184.5 hrs (148.5 AL + 36.0 BH) |
+| **18.75 hrs/wk (0.50 FTE)** | 131.25 hrs (101.25 AL + 30.0 BH) | 138.75 hrs (108.75 AL + 30.0 BH) | 153.75 hrs (123.75 AL + 30.0 BH) |
+| **15.0 hrs/wk (0.40 FTE)** | 105.0 hrs (81.0 AL + 24.0 BH) | 111.0 hrs (87.0 AL + 24.0 BH) | 123.0 hrs (99.0 AL + 24.0 BH) |
+
+## Related
+- [NHS Annual Leave Calculator (Interactive HTML)](https://netpayscale.uk/annual-leave-calculator/)
+- [NHS Maternity Pay Calculator](https://netpayscale.uk/maternity-pay-calculator/)
+- [NHS Salary Calculator](https://netpayscale.uk/)
+
+---
+<!-- source: https://netpayscale.uk/bank-shift-calculator/ -->
+# NHS Bank Shift & Overtime Calculator 2026/27 — Section 2 Unsocial Hours & Net Shift Pay
+
+> Calculate your real 2026/27 NHS Bank Shift or Overtime take-home pay after marginal PAYE tax (20%/40%), 8% National Insurance, Section 2 night/weekend enhancements, and 12.07% WTD holiday pay.
+
+Canonical: https://netpayscale.uk/bank-shift-calculator/
+Last updated: 2026-10-26
+
+## NHS Agenda for Change Section 2 Unsocial Hours Multipliers (2026/27)
+
+| Pay Band Group | Standard Day | Nights (8pm–6am) & Saturdays | Sundays & Public Bank Holidays | Overtime (>37.5h/wk, Bands 2–7) | Bank Shift WTD Holiday Uplift |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Band 2 & Band 3** | 1.00x (Plain Time) | **1.44x (+44%)** | **1.88x (+88%)** | **1.50x (Time-and-a-half)** | +12.07% rolled-up |
+| **Bands 4 to 9** | 1.00x (Plain Time) | **1.30x (+30%)** | **1.60x (+60%)** | **1.50x (Bands 4–7)** | +12.07% rolled-up |
+
+## 2026/27 Hourly Bank Rates & 11.5-Hour Paid Long Shift Gross Earnings (Including +12.07% WTD)
+
+| Band & Entry Salary | Plain Hourly Rate | Night/Saturday Hourly Rate | Sunday/BH Hourly Rate | 11.5h Paid Day Shift (incl. WTD) | 11.5h Paid Sunday Shift (incl. WTD) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Band 2 Entry (£25,272) | £12.92/hr | £18.60/hr (+44%) | £24.29/hr (+88%) | £166.51 | £313.05 |
+| Band 3 Entry (£25,760) | £13.17/hr | £18.96/hr (+44%) | £24.76/hr (+88%) | £169.74 | £319.10 |
+| Band 4 Entry (£28,392) | £14.52/hr | £18.88/hr (+30%) | £23.23/hr (+60%) | £187.13 | £299.42 |
+| Band 5 Entry (£32,073) | £16.40/hr | £21.32/hr (+30%) | £26.24/hr (+60%) | £211.36 | £338.18 |
+| Band 6 Entry (£39,959) | £20.44/hr | £26.57/hr (+30%) | £32.70/hr (+60%) | £263.43 | £421.49 |
+| Band 7 Entry (£49,387) | £25.26/hr | £32.84/hr (+30%) | £40.42/hr (+60%) | £325.55 | £520.88 |
+| Band 8a Entry (£57,528) | £29.42/hr | £38.25/hr (+30%) | £47.07/hr (+60%) | £379.17 | £606.67 |
+| Band 8b Entry (£66,582) | £34.05/hr | £44.27/hr (+30%) | £54.48/hr (+60%) | £438.84 | £702.14 |
+| Band 8c Entry (£79,504) | £40.66/hr | £52.86/hr (+30%) | £65.06/hr (+60%) | £524.03 | £838.44 |
+| Band 8d Entry (£94,356) | £48.26/hr | £62.74/hr (+30%) | £77.22/hr (+60%) | £621.98 | £995.16 |
+| Band 9 Entry (£112,782) | £57.68/hr | £74.98/hr (+30%) | £92.29/hr (+60%) | £743.38 | £1189.41 |
+
+## Related
+- [NHS Bank Shift Calculator (Interactive HTML)](https://netpayscale.uk/bank-shift-calculator/)
+- [NHS Salary Calculator](https://netpayscale.uk/)
+- [NHS Pension Calculator](https://netpayscale.uk/pension-calculator/)
+
+---
+<!-- source: https://netpayscale.uk/bands/band-2/ -->
+# NHS Band 2 Salary 2026/27 — Pay Scale Steps, Hourly Rate & Monthly Net Take-Home
+
+> Official 2026/27 NHS Agenda for Change Band 2 (Healthcare Assistant, Clinical Support Worker, Phlebotomist) salary breakdown: £25,272 to £25,272 gross per year, exact monthly net pay after pension, PAYE tax, and NICs across England, Scotland, and London HCAS zones.
+
+Canonical: https://netpayscale.uk/bands/band-2/
+Last updated: 2026-10-26
+
+## Band 2 Overview (Healthcare Assistant, Clinical Support Worker, Phlebotomist)
+- **2026/27 Gross Salary Range:** **£25,272** (Entry) to **£25,272** (Top Step)
+- **Hourly Rate Range (37.5h/wk):** **£12.92/hr** to **£12.92/hr**
+- **Typical NHS Roles:** Healthcare Assistant, Clinical Support Worker, Phlebotomist, Domestic Support, Receptionist
+- **NHS Pension Tier (2015 CARE):** **6.5%** (Entry) to **6.5%** (Top Step)
+
+## Band 2 Step Progression & Regional Net Monthly Take-Home Table (2026/27)
+
+| Pay Step (Tenure) | Annual Gross | Hourly Rate | Pension Tier (Mo) | Rest of UK Net/Mo | Scotland Net/Mo | Fringe (+5%) Net/Mo | Outer London (+15%) Net/Mo | Inner London (+20%) Net/Mo |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Single Point (0 yrs) | £25,272 | £12.92/hr | 6.5% (£137/mo) | **£1,700/mo** | £1,702/mo | £1,775/mo | £1,971/mo | £2,023/mo |
+
+## Band 2 Entry (£25,272) Full-Time, Part-Time Pro-Rata & Night Shift Matrix
+
+| Working Pattern | Annual Gross (incl. Unsocial) | Monthly Pension | Monthly PAYE Tax | Monthly NICs | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Full-Time (37.5 hrs/wk · 1.00 FTE) | £25,272/yr | £137/mo | £184/mo | £85/mo | **£1,700/mo** |
+| Full-Time + 1 Night Shift/wk (11.5h night) | £28,682/yr | £137/mo | £241/mo | £107/mo | **£1,905/mo** |
+| Part-Time 4 Days (30.0 hrs/wk · 0.80 FTE) | £20,218/yr | £110/mo | £106/mo | £51/mo | **£1,419/mo** |
+| Part-Time 3 Days (22.5 hrs/wk · 0.60 FTE) | £15,163/yr | £82/mo | £27/mo | £17/mo | **£1,137/mo** |
+| Part-Time Half-Time (18.75 hrs/wk · 0.50 FTE) | £12,636/yr | £68/mo | £0/mo | £0/mo | **£984/mo** |
+
+## Related
+- [Band 2 Interactive Calculator & Full Guide](https://netpayscale.uk/bands/band-2/)
+- [NHS Salary & Pension Calculator](https://netpayscale.uk/)
+- [NHS Pension Calculator](https://netpayscale.uk/pension-calculator/)
+- [NHS Bank Shift Calculator](https://netpayscale.uk/bank-shift-calculator/)
+
+---
+<!-- source: https://netpayscale.uk/bands/band-3/ -->
+# NHS Band 3 Salary 2026/27 — Pay Scale Steps, Hourly Rate & Monthly Net Take-Home
+
+> Official 2026/27 NHS Agenda for Change Band 3 (Senior Healthcare Assistant, Emergency Care Assistant, Pharmacy Assistant) salary breakdown: £25,760 to £27,476 gross per year, exact monthly net pay after pension, PAYE tax, and NICs across England, Scotland, and London HCAS zones.
+
+Canonical: https://netpayscale.uk/bands/band-3/
+Last updated: 2026-10-26
+
+## Band 3 Overview (Senior Healthcare Assistant, Emergency Care Assistant, Pharmacy Assistant)
+- **2026/27 Gross Salary Range:** **£25,760** (Entry) to **£27,476** (Top Step)
+- **Hourly Rate Range (37.5h/wk):** **£13.17/hr** to **£14.05/hr**
+- **Typical NHS Roles:** Senior Healthcare Assistant, Emergency Care Assistant, Pharmacy Assistant, Occupational Therapy Assistant
+- **NHS Pension Tier (2015 CARE):** **6.5%** (Entry) to **6.5%** (Top Step)
+
+## Band 3 Step Progression & Regional Net Monthly Take-Home Table (2026/27)
+
+| Pay Step (Tenure) | Annual Gross | Hourly Rate | Pension Tier (Mo) | Rest of UK Net/Mo | Scotland Net/Mo | Fringe (+5%) Net/Mo | Outer London (+15%) Net/Mo | Inner London (+20%) Net/Mo |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £25,760 | £13.17/hr | 6.5% (£140/mo) | **£1,727/mo** | £1,729/mo | £1,802/mo | £1,998/mo | £2,050/mo |
+| After 2 years (Top) (2 yrs) | £27,476 | £14.05/hr | 6.5% (£149/mo) | **£1,823/mo** | £1,825/mo | £1,899/mo | £2,094/mo | £2,145/mo |
+
+## Band 3 Entry (£25,760) Full-Time, Part-Time Pro-Rata & Night Shift Matrix
+
+| Working Pattern | Annual Gross (incl. Unsocial) | Monthly Pension | Monthly PAYE Tax | Monthly NICs | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Full-Time (37.5 hrs/wk · 1.00 FTE) | £25,760/yr | £140/mo | £192/mo | £88/mo | **£1,727/mo** |
+| Full-Time + 1 Night Shift/wk (11.5h night) | £29,236/yr | £140/mo | £250/mo | £111/mo | **£1,936/mo** |
+| Part-Time 4 Days (30.0 hrs/wk · 0.80 FTE) | £20,608/yr | £112/mo | £112/mo | £54/mo | **£1,440/mo** |
+| Part-Time 3 Days (22.5 hrs/wk · 0.60 FTE) | £15,456/yr | £84/mo | £31/mo | £19/mo | **£1,154/mo** |
+| Part-Time Half-Time (18.75 hrs/wk · 0.50 FTE) | £12,880/yr | £70/mo | £0/mo | £2/mo | **£1,002/mo** |
+
+## Related
+- [Band 3 Interactive Calculator & Full Guide](https://netpayscale.uk/bands/band-3/)
+- [NHS Salary & Pension Calculator](https://netpayscale.uk/)
+- [NHS Pension Calculator](https://netpayscale.uk/pension-calculator/)
+- [NHS Bank Shift Calculator](https://netpayscale.uk/bank-shift-calculator/)
+
+---
+<!-- source: https://netpayscale.uk/bands/band-4/ -->
+# NHS Band 4 Salary 2026/27 — Pay Scale Steps, Hourly Rate & Monthly Net Take-Home
+
+> Official 2026/27 NHS Agenda for Change Band 4 (Nursing Associate, Assistant Practitioner, Pharmacy Technician) salary breakdown: £28,392 to £31,157 gross per year, exact monthly net pay after pension, PAYE tax, and NICs across England, Scotland, and London HCAS zones.
+
+Canonical: https://netpayscale.uk/bands/band-4/
+Last updated: 2026-10-26
+
+## Band 4 Overview (Nursing Associate, Assistant Practitioner, Pharmacy Technician)
+- **2026/27 Gross Salary Range:** **£28,392** (Entry) to **£31,157** (Top Step)
+- **Hourly Rate Range (37.5h/wk):** **£14.52/hr** to **£15.93/hr**
+- **Typical NHS Roles:** Nursing Associate, Assistant Practitioner, Pharmacy Technician, Medical Secretary Team Leader
+- **NHS Pension Tier (2015 CARE):** **6.5%** (Entry) to **8.3%** (Top Step)
+
+## Band 4 Step Progression & Regional Net Monthly Take-Home Table (2026/27)
+
+| Pay Step (Tenure) | Annual Gross | Hourly Rate | Pension Tier (Mo) | Rest of UK Net/Mo | Scotland Net/Mo | Fringe (+5%) Net/Mo | Outer London (+15%) Net/Mo | Inner London (+20%) Net/Mo |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £28,392 | £14.52/hr | 6.5% (£154/mo) | **£1,874/mo** | £1,876/mo | £1,953/mo | £2,145/mo | £2,196/mo |
+| After 3 years (Top) (3 yrs) | £31,157 | £15.93/hr | 8.3% (£216/mo) | **£1,990/mo** | £1,991/mo | £2,075/mo | £2,256/mo | £2,330/mo |
+
+## Band 4 Entry (£28,392) Full-Time, Part-Time Pro-Rata & Night Shift Matrix
+
+| Working Pattern | Annual Gross (incl. Unsocial) | Monthly Pension | Monthly PAYE Tax | Monthly NICs | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Full-Time (37.5 hrs/wk · 1.00 FTE) | £28,392/yr | £154/mo | £233/mo | £105/mo | **£1,874/mo** |
+| Full-Time + 1 Night Shift/wk (11.5h night) | £31,004/yr | £154/mo | £276/mo | £123/mo | **£2,031/mo** |
+| Part-Time 4 Days (30.0 hrs/wk · 0.80 FTE) | £22,714/yr | £123/mo | £144/mo | £68/mo | **£1,558/mo** |
+| Part-Time 3 Days (22.5 hrs/wk · 0.60 FTE) | £17,035/yr | £92/mo | £56/mo | £30/mo | **£1,242/mo** |
+| Part-Time Half-Time (18.75 hrs/wk · 0.50 FTE) | £14,196/yr | £77/mo | £12/mo | £11/mo | **£1,084/mo** |
+
+## Related
+- [Band 4 Interactive Calculator & Full Guide](https://netpayscale.uk/bands/band-4/)
+- [NHS Salary & Pension Calculator](https://netpayscale.uk/)
+- [NHS Pension Calculator](https://netpayscale.uk/pension-calculator/)
+- [NHS Bank Shift Calculator](https://netpayscale.uk/bank-shift-calculator/)
+
+---
+<!-- source: https://netpayscale.uk/bands/band-5/ -->
+# NHS Band 5 Salary 2026/27 — Pay Scale Steps, Hourly Rate & Monthly Net Take-Home
+
+> Official 2026/27 NHS Agenda for Change Band 5 (Staff Nurse (RN), Newly Qualified Paramedic, Physiotherapist) salary breakdown: £32,073 to £39,043 gross per year, exact monthly net pay after pension, PAYE tax, and NICs across England, Scotland, and London HCAS zones.
+
+Canonical: https://netpayscale.uk/bands/band-5/
+Last updated: 2026-10-26
+
+## Band 5 Overview (Staff Nurse (RN), Newly Qualified Paramedic, Physiotherapist)
+- **2026/27 Gross Salary Range:** **£32,073** (Entry) to **£39,043** (Top Step)
+- **Hourly Rate Range (37.5h/wk):** **£16.40/hr** to **£19.97/hr**
+- **Typical NHS Roles:** Staff Nurse (RN), Newly Qualified Paramedic, Physiotherapist, Radiographer, Occupational Therapist, Midwife
+- **NHS Pension Tier (2015 CARE):** **8.3%** (Entry) to **9.8%** (Top Step)
+
+## Band 5 Step Progression & Regional Net Monthly Take-Home Table (2026/27)
+
+| Pay Step (Tenure) | Annual Gross | Hourly Rate | Pension Tier (Mo) | Rest of UK Net/Mo | Scotland Net/Mo | Fringe (+5%) Net/Mo | Outer London (+15%) Net/Mo | Inner London (+20%) Net/Mo |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £32,073 | £16.40/hr | 8.3% (£222/mo) | **£2,040/mo** | £2,040/mo | £2,128/mo | £2,305/mo | £2,390/mo |
+| After 2 years (Mid) (2 yrs) | £34,592 | £17.69/hr | 8.3% (£239/mo) | **£2,177/mo** | £2,175/mo | £2,272/mo | £2,460/mo | £2,554/mo |
+| After 4 years (Top) (4 yrs) | £39,043 | £19.97/hr | 9.8% (£319/mo) | **£2,381/mo** | £2,376/mo | £2,485/mo | £2,694/mo | £2,798/mo |
+
+## Band 5 Entry (£32,073) Full-Time, Part-Time Pro-Rata & Night Shift Matrix
+
+| Working Pattern | Annual Gross (incl. Unsocial) | Monthly Pension | Monthly PAYE Tax | Monthly NICs | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Full-Time (37.5 hrs/wk · 1.00 FTE) | £32,073/yr | £222/mo | £281/mo | £130/mo | **£2,040/mo** |
+| Full-Time + 1 Night Shift/wk (11.5h night) | £35,024/yr | £222/mo | £330/mo | £150/mo | **£2,217/mo** |
+| Part-Time 4 Days (30.0 hrs/wk · 0.80 FTE) | £25,658/yr | £177/mo | £183/mo | £87/mo | **£1,691/mo** |
+| Part-Time 3 Days (22.5 hrs/wk · 0.60 FTE) | £19,244/yr | £133/mo | £85/mo | £44/mo | **£1,341/mo** |
+| Part-Time Half-Time (18.75 hrs/wk · 0.50 FTE) | £16,037/yr | £111/mo | £36/mo | £23/mo | **£1,167/mo** |
+
+## Related
+- [Band 5 Interactive Calculator & Full Guide](https://netpayscale.uk/bands/band-5/)
+- [NHS Salary & Pension Calculator](https://netpayscale.uk/)
+- [NHS Pension Calculator](https://netpayscale.uk/pension-calculator/)
+- [NHS Bank Shift Calculator](https://netpayscale.uk/bank-shift-calculator/)
+
+---
+<!-- source: https://netpayscale.uk/bands/band-6/ -->
+# NHS Band 6 Salary 2026/27 — Pay Scale Steps, Hourly Rate & Monthly Net Take-Home
+
+> Official 2026/27 NHS Agenda for Change Band 6 (Junior Sister / Charge Nurse, Senior Paramedic, Specialist Physiotherapist) salary breakdown: £39,959 to £48,117 gross per year, exact monthly net pay after pension, PAYE tax, and NICs across England, Scotland, and London HCAS zones.
+
+Canonical: https://netpayscale.uk/bands/band-6/
+Last updated: 2026-10-26
+
+## Band 6 Overview (Junior Sister / Charge Nurse, Senior Paramedic, Specialist Physiotherapist)
+- **2026/27 Gross Salary Range:** **£39,959** (Entry) to **£48,117** (Top Step)
+- **Hourly Rate Range (37.5h/wk):** **£20.44/hr** to **£24.61/hr**
+- **Typical NHS Roles:** Junior Sister / Charge Nurse, Senior Paramedic, Specialist Physiotherapist, Specialist Radiographer, Biomedical Scientist
+- **NHS Pension Tier (2015 CARE):** **9.8%** (Entry) to **9.8%** (Top Step)
+
+## Band 6 Step Progression & Regional Net Monthly Take-Home Table (2026/27)
+
+| Pay Step (Tenure) | Annual Gross | Hourly Rate | Pension Tier (Mo) | Rest of UK Net/Mo | Scotland Net/Mo | Fringe (+5%) Net/Mo | Outer London (+15%) Net/Mo | Inner London (+20%) Net/Mo |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £39,959 | £20.44/hr | 9.8% (£326/mo) | **£2,430/mo** | £2,424/mo | £2,537/mo | £2,750/mo | £2,857/mo |
+| After 2 years (Mid) (2 yrs) | £42,170 | £21.57/hr | 9.8% (£344/mo) | **£2,548/mo** | £2,540/mo | £2,661/mo | £2,876/mo | £3,001/mo |
+| After 5 years (Top) (5 yrs) | £48,117 | £24.61/hr | 9.8% (£393/mo) | **£2,866/mo** | £2,854/mo | £2,988/mo | £3,214/mo | £3,350/mo |
+
+## Band 6 Entry (£39,959) Full-Time, Part-Time Pro-Rata & Night Shift Matrix
+
+| Working Pattern | Annual Gross (incl. Unsocial) | Monthly Pension | Monthly PAYE Tax | Monthly NICs | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Full-Time (37.5 hrs/wk · 1.00 FTE) | £39,959/yr | £326/mo | £391/mo | £183/mo | **£2,430/mo** |
+| Full-Time + 1 Night Shift/wk (11.5h night) | £43,635/yr | £326/mo | £452/mo | £207/mo | **£2,650/mo** |
+| Part-Time 4 Days (30.0 hrs/wk · 0.80 FTE) | £31,967/yr | £261/mo | £271/mo | £129/mo | **£2,002/mo** |
+| Part-Time 3 Days (22.5 hrs/wk · 0.60 FTE) | £23,975/yr | £196/mo | £151/mo | £76/mo | **£1,575/mo** |
+| Part-Time Half-Time (18.75 hrs/wk · 0.50 FTE) | £19,980/yr | £163/mo | £91/mo | £49/mo | **£1,362/mo** |
+
+## Related
+- [Band 6 Interactive Calculator & Full Guide](https://netpayscale.uk/bands/band-6/)
+- [NHS Salary & Pension Calculator](https://netpayscale.uk/)
+- [NHS Pension Calculator](https://netpayscale.uk/pension-calculator/)
+- [NHS Bank Shift Calculator](https://netpayscale.uk/bank-shift-calculator/)
+
+---
+<!-- source: https://netpayscale.uk/bands/band-7/ -->
+# NHS Band 7 Salary 2026/27 — Pay Scale Steps, Hourly Rate & Monthly Net Take-Home
+
+> Official 2026/27 NHS Agenda for Change Band 7 (Ward Manager / Sister, Advanced Clinical Practitioner (ACP), Advanced Paramedic) salary breakdown: £49,387 to £56,515 gross per year, exact monthly net pay after pension, PAYE tax, and NICs across England, Scotland, and London HCAS zones.
+
+Canonical: https://netpayscale.uk/bands/band-7/
+Last updated: 2026-10-26
+
+## Band 7 Overview (Ward Manager / Sister, Advanced Clinical Practitioner (ACP), Advanced Paramedic)
+- **2026/27 Gross Salary Range:** **£49,387** (Entry) to **£56,515** (Top Step)
+- **Hourly Rate Range (37.5h/wk):** **£25.26/hr** to **£28.90/hr**
+- **Typical NHS Roles:** Ward Manager / Sister, Advanced Clinical Practitioner (ACP), Advanced Paramedic, Clinical Team Leader, Lead Pharmacist
+- **NHS Pension Tier (2015 CARE):** **9.8%** (Entry) to **10.7%** (Top Step)
+
+## Band 7 Step Progression & Regional Net Monthly Take-Home Table (2026/27)
+
+| Pay Step (Tenure) | Annual Gross | Hourly Rate | Pension Tier (Mo) | Rest of UK Net/Mo | Scotland Net/Mo | Fringe (+5%) Net/Mo | Outer London (+15%) Net/Mo | Inner London (+20%) Net/Mo |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £49,387 | £25.26/hr | 9.8% (£403/mo) | **£2,934/mo** | £2,905/mo | £3,062/mo | £3,288/mo | £3,405/mo |
+| After 2 years (Mid) (2 yrs) | £51,932 | £26.56/hr | 9.8% (£424/mo) | **£3,078/mo** | £3,008/mo | £3,211/mo | £3,402/mo | £3,515/mo |
+| After 5 years (Top) (5 yrs) | £56,515 | £28.90/hr | 10.7% (£504/mo) | **£3,309/mo** | £3,175/mo | £3,407/mo | £3,573/mo | £3,685/mo |
+
+## Band 7 Entry (£49,387) Full-Time, Part-Time Pro-Rata & Night Shift Matrix
+
+| Working Pattern | Annual Gross (incl. Unsocial) | Monthly Pension | Monthly PAYE Tax | Monthly NICs | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Full-Time (37.5 hrs/wk · 1.00 FTE) | £49,387/yr | £403/mo | £533/mo | £245/mo | **£2,934/mo** |
+| Full-Time + 1 Night Shift/wk (11.5h night) | £53,931/yr | £403/mo | £609/mo | £257/mo | **£3,225/mo** |
+| Part-Time 4 Days (30.0 hrs/wk · 0.80 FTE) | £39,510/yr | £323/mo | £384/mo | £180/mo | **£2,406/mo** |
+| Part-Time 3 Days (22.5 hrs/wk · 0.60 FTE) | £29,632/yr | £242/mo | £236/mo | £114/mo | **£1,878/mo** |
+| Part-Time Half-Time (18.75 hrs/wk · 0.50 FTE) | £24,694/yr | £202/mo | £162/mo | £81/mo | **£1,614/mo** |
+
+## Related
+- [Band 7 Interactive Calculator & Full Guide](https://netpayscale.uk/bands/band-7/)
+- [NHS Salary & Pension Calculator](https://netpayscale.uk/)
+- [NHS Pension Calculator](https://netpayscale.uk/pension-calculator/)
+- [NHS Bank Shift Calculator](https://netpayscale.uk/bank-shift-calculator/)
+
+---
+<!-- source: https://netpayscale.uk/bands/band-8a/ -->
+# NHS Band 8a Salary 2026/27 — Pay Scale Steps, Hourly Rate & Monthly Net Take-Home
+
+> Official 2026/27 NHS Agenda for Change Band 8a (Matron, Principal Clinical Psychologist, Advanced Nurse Consultant) salary breakdown: £57,528 to £64,750 gross per year, exact monthly net pay after pension, PAYE tax, and NICs across England, Scotland, and London HCAS zones.
+
+Canonical: https://netpayscale.uk/bands/band-8a/
+Last updated: 2026-10-26
+
+## Band 8a Overview (Matron, Principal Clinical Psychologist, Advanced Nurse Consultant)
+- **2026/27 Gross Salary Range:** **£57,528** (Entry) to **£64,750** (Top Step)
+- **Hourly Rate Range (37.5h/wk):** **£29.42/hr** to **£33.11/hr**
+- **Typical NHS Roles:** Matron, Principal Clinical Psychologist, Advanced Nurse Consultant, Service Manager, Senior Principal Pharmacist
+- **NHS Pension Tier (2015 CARE):** **10.7%** (Entry) to **10.7%** (Top Step)
+
+## Band 8a Step Progression & Regional Net Monthly Take-Home Table (2026/27)
+
+| Pay Step (Tenure) | Annual Gross | Hourly Rate | Pension Tier (Mo) | Rest of UK Net/Mo | Scotland Net/Mo | Fringe (+5%) Net/Mo | Outer London (+15%) Net/Mo | Inner London (+20%) Net/Mo |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £57,528 | £29.42/hr | 10.7% (£513/mo) | **£3,353/mo** | £3,217/mo | £3,450/mo | £3,616/mo | £3,728/mo |
+| After 2 years (Mid) (2 yrs) | £60,417 | £30.90/hr | 10.7% (£539/mo) | **£3,477/mo** | £3,337/mo | £3,574/mo | £3,740/mo | £3,853/mo |
+| After 5 years (Top) (5 yrs) | £64,750 | £33.11/hr | 10.7% (£577/mo) | **£3,663/mo** | £3,517/mo | £3,761/mo | £3,927/mo | £4,039/mo |
+
+## Band 8a Entry (£57,528) Full-Time, Part-Time Pro-Rata & Night Shift Matrix
+
+| Working Pattern | Annual Gross (incl. Unsocial) | Monthly Pension | Monthly PAYE Tax | Monthly NICs | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Full-Time (37.5 hrs/wk · 1.00 FTE) | £57,528/yr | £513/mo | £665/mo | £263/mo | **£3,353/mo** |
+| Full-Time + 1 Night Shift/wk (11.5h night) | £62,821/yr | £513/mo | £842/mo | £272/mo | **£3,608/mo** |
+| Part-Time 4 Days (30.0 hrs/wk · 0.80 FTE) | £46,022/yr | £410/mo | £475/mo | £223/mo | **£2,726/mo** |
+| Part-Time 3 Days (22.5 hrs/wk · 0.60 FTE) | £34,517/yr | £308/mo | £304/mo | £146/mo | **£2,118/mo** |
+| Part-Time Half-Time (18.75 hrs/wk · 0.50 FTE) | £28,764/yr | £256/mo | £219/mo | £108/mo | **£1,814/mo** |
+
+## Related
+- [Band 8a Interactive Calculator & Full Guide](https://netpayscale.uk/bands/band-8a/)
+- [NHS Salary & Pension Calculator](https://netpayscale.uk/)
+- [NHS Pension Calculator](https://netpayscale.uk/pension-calculator/)
+- [NHS Bank Shift Calculator](https://netpayscale.uk/bank-shift-calculator/)
+
+---
+<!-- source: https://netpayscale.uk/bands/band-8b/ -->
+# NHS Band 8b Salary 2026/27 — Pay Scale Steps, Hourly Rate & Monthly Net Take-Home
+
+> Official 2026/27 NHS Agenda for Change Band 8b (Senior Matron, Consultant Clinical Psychologist, Head of Clinical Services) salary breakdown: £66,582 to £77,368 gross per year, exact monthly net pay after pension, PAYE tax, and NICs across England, Scotland, and London HCAS zones.
+
+Canonical: https://netpayscale.uk/bands/band-8b/
+Last updated: 2026-10-26
+
+## Band 8b Overview (Senior Matron, Consultant Clinical Psychologist, Head of Clinical Services)
+- **2026/27 Gross Salary Range:** **£66,582** (Entry) to **£77,368** (Top Step)
+- **Hourly Rate Range (37.5h/wk):** **£34.05/hr** to **£39.57/hr**
+- **Typical NHS Roles:** Senior Matron, Consultant Clinical Psychologist, Head of Clinical Services, Operational Directorate Lead
+- **NHS Pension Tier (2015 CARE):** **10.7%** (Entry) to **12.5%** (Top Step)
+
+## Band 8b Step Progression & Regional Net Monthly Take-Home Table (2026/27)
+
+| Pay Step (Tenure) | Annual Gross | Hourly Rate | Pension Tier (Mo) | Rest of UK Net/Mo | Scotland Net/Mo | Fringe (+5%) Net/Mo | Outer London (+15%) Net/Mo | Inner London (+20%) Net/Mo |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £66,582 | £34.05/hr | 10.7% (£594/mo) | **£3,742/mo** | £3,593/mo | £3,839/mo | £4,005/mo | £4,118/mo |
+| After 2 years (Mid) (2 yrs) | £70,896 | £36.26/hr | 12.5% (£739/mo) | **£3,863/mo** | £3,710/mo | £3,959/mo | £4,122/mo | £4,231/mo |
+| After 5 years (Top) (5 yrs) | £77,368 | £39.57/hr | 12.5% (£806/mo) | **£4,136/mo** | £3,973/mo | £4,231/mo | £4,394/mo | £4,504/mo |
+
+## Band 8b Entry (£66,582) Full-Time, Part-Time Pro-Rata & Night Shift Matrix
+
+| Working Pattern | Annual Gross (incl. Unsocial) | Monthly Pension | Monthly PAYE Tax | Monthly NICs | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Full-Time (37.5 hrs/wk · 1.00 FTE) | £66,582/yr | £594/mo | £935/mo | £279/mo | **£3,742/mo** |
+| Full-Time + 1 Night Shift/wk (11.5h night) | £72,708/yr | £594/mo | £1,139/mo | £289/mo | **£4,038/mo** |
+| Part-Time 4 Days (30.0 hrs/wk · 0.80 FTE) | £53,266/yr | £475/mo | £583/mo | £256/mo | **£3,124/mo** |
+| Part-Time 3 Days (22.5 hrs/wk · 0.60 FTE) | £39,949/yr | £356/mo | £385/mo | £183/mo | **£2,405/mo** |
+| Part-Time Half-Time (18.75 hrs/wk · 0.50 FTE) | £33,291/yr | £297/mo | £286/mo | £138/mo | **£2,053/mo** |
+
+## Related
+- [Band 8b Interactive Calculator & Full Guide](https://netpayscale.uk/bands/band-8b/)
+- [NHS Salary & Pension Calculator](https://netpayscale.uk/)
+- [NHS Pension Calculator](https://netpayscale.uk/pension-calculator/)
+- [NHS Bank Shift Calculator](https://netpayscale.uk/bank-shift-calculator/)
+
+---
+<!-- source: https://netpayscale.uk/bands/band-8c/ -->
+# NHS Band 8c Salary 2026/27 — Pay Scale Steps, Hourly Rate & Monthly Net Take-Home
+
+> Official 2026/27 NHS Agenda for Change Band 8c (Head of Nursing, Associate Director, Consultant Scientist) salary breakdown: £79,504 to £91,609 gross per year, exact monthly net pay after pension, PAYE tax, and NICs across England, Scotland, and London HCAS zones.
+
+Canonical: https://netpayscale.uk/bands/band-8c/
+Last updated: 2026-10-26
+
+## Band 8c Overview (Head of Nursing, Associate Director, Consultant Scientist)
+- **2026/27 Gross Salary Range:** **£79,504** (Entry) to **£91,609** (Top Step)
+- **Hourly Rate Range (37.5h/wk):** **£40.66/hr** to **£46.85/hr**
+- **Typical NHS Roles:** Head of Nursing, Associate Director, Consultant Scientist, Deputy Chief Operating Officer
+- **NHS Pension Tier (2015 CARE):** **12.5%** (Entry) to **12.5%** (Top Step)
+
+## Band 8c Step Progression & Regional Net Monthly Take-Home Table (2026/27)
+
+| Pay Step (Tenure) | Annual Gross | Hourly Rate | Pension Tier (Mo) | Rest of UK Net/Mo | Scotland Net/Mo | Fringe (+5%) Net/Mo | Outer London (+15%) Net/Mo | Inner London (+20%) Net/Mo |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £79,504 | £40.66/hr | 12.5% (£828/mo) | **£4,226/mo** | £4,060/mo | £4,321/mo | £4,484/mo | £4,594/mo |
+| After 2 years (Mid) (2 yrs) | £84,346 | £43.14/hr | 12.5% (£879/mo) | **£4,429/mo** | £4,257/mo | £4,525/mo | £4,688/mo | £4,797/mo |
+| After 5 years (Top) (5 yrs) | £91,609 | £46.85/hr | 12.5% (£954/mo) | **£4,735/mo** | £4,539/mo | £4,831/mo | £4,993/mo | £5,103/mo |
+
+## Band 8c Entry (£79,504) Full-Time, Part-Time Pro-Rata & Night Shift Matrix
+
+| Working Pattern | Annual Gross (incl. Unsocial) | Monthly Pension | Monthly PAYE Tax | Monthly NICs | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Full-Time (37.5 hrs/wk · 1.00 FTE) | £79,504/yr | £828/mo | £1,272/mo | £300/mo | **£4,226/mo** |
+| Full-Time + 1 Night Shift/wk (11.5h night) | £86,818/yr | £828/mo | £1,515/mo | £312/mo | **£4,579/mo** |
+| Part-Time 4 Days (30.0 hrs/wk · 0.80 FTE) | £63,603/yr | £663/mo | £808/mo | £274/mo | **£3,556/mo** |
+| Part-Time 3 Days (22.5 hrs/wk · 0.60 FTE) | £47,702/yr | £497/mo | £486/mo | £234/mo | **£2,758/mo** |
+| Part-Time Half-Time (18.75 hrs/wk · 0.50 FTE) | £39,752/yr | £414/mo | £370/mo | £181/mo | **£2,347/mo** |
+
+## Related
+- [Band 8c Interactive Calculator & Full Guide](https://netpayscale.uk/bands/band-8c/)
+- [NHS Salary & Pension Calculator](https://netpayscale.uk/)
+- [NHS Pension Calculator](https://netpayscale.uk/pension-calculator/)
+- [NHS Bank Shift Calculator](https://netpayscale.uk/bank-shift-calculator/)
+
+---
+<!-- source: https://netpayscale.uk/bands/band-8d/ -->
+# NHS Band 8d Salary 2026/27 — Pay Scale Steps, Hourly Rate & Monthly Net Take-Home
+
+> Official 2026/27 NHS Agenda for Change Band 8d (Deputy Director of Nursing, Chief Pharmacist (Large Trust), Director of Operations) salary breakdown: £94,356 to £108,814 gross per year, exact monthly net pay after pension, PAYE tax, and NICs across England, Scotland, and London HCAS zones.
+
+Canonical: https://netpayscale.uk/bands/band-8d/
+Last updated: 2026-10-26
+
+## Band 8d Overview (Deputy Director of Nursing, Chief Pharmacist (Large Trust), Director of Operations)
+- **2026/27 Gross Salary Range:** **£94,356** (Entry) to **£108,814** (Top Step)
+- **Hourly Rate Range (37.5h/wk):** **£48.26/hr** to **£55.65/hr**
+- **Typical NHS Roles:** Deputy Director of Nursing, Chief Pharmacist (Large Trust), Director of Operations, Clinical Director
+- **NHS Pension Tier (2015 CARE):** **12.5%** (Entry) to **12.5%** (Top Step)
+
+## Band 8d Step Progression & Regional Net Monthly Take-Home Table (2026/27)
+
+| Pay Step (Tenure) | Annual Gross | Hourly Rate | Pension Tier (Mo) | Rest of UK Net/Mo | Scotland Net/Mo | Fringe (+5%) Net/Mo | Outer London (+15%) Net/Mo | Inner London (+20%) Net/Mo |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £94,356 | £48.26/hr | 12.5% (£983/mo) | **£4,851/mo** | £4,644/mo | £4,946/mo | £5,109/mo | £5,219/mo |
+| After 2 years (Mid) (2 yrs) | £100,140 | £51.21/hr | 12.5% (£1,043/mo) | **£5,094/mo** | £4,867/mo | £5,190/mo | £5,352/mo | £5,462/mo |
+| After 5 years (Top) (5 yrs) | £108,814 | £55.65/hr | 12.5% (£1,133/mo) | **£5,459/mo** | £5,200/mo | £5,555/mo | £5,708/mo | £5,779/mo |
+
+## Band 8d Entry (£94,356) Full-Time, Part-Time Pro-Rata & Night Shift Matrix
+
+| Working Pattern | Annual Gross (incl. Unsocial) | Monthly Pension | Monthly PAYE Tax | Monthly NICs | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Full-Time (37.5 hrs/wk · 1.00 FTE) | £94,356/yr | £983/mo | £1,705/mo | £325/mo | **£4,851/mo** |
+| Full-Time + 1 Night Shift/wk (11.5h night) | £103,037/yr | £983/mo | £1,994/mo | £339/mo | **£5,270/mo** |
+| Part-Time 4 Days (30.0 hrs/wk · 0.80 FTE) | £75,485/yr | £786/mo | £1,154/mo | £293/mo | **£4,056/mo** |
+| Part-Time 3 Days (22.5 hrs/wk · 0.60 FTE) | £56,614/yr | £590/mo | £616/mo | £262/mo | **£3,250/mo** |
+| Part-Time Half-Time (18.75 hrs/wk · 0.50 FTE) | £47,178/yr | £491/mo | £479/mo | £231/mo | **£2,731/mo** |
+
+## Related
+- [Band 8d Interactive Calculator & Full Guide](https://netpayscale.uk/bands/band-8d/)
+- [NHS Salary & Pension Calculator](https://netpayscale.uk/)
+- [NHS Pension Calculator](https://netpayscale.uk/pension-calculator/)
+- [NHS Bank Shift Calculator](https://netpayscale.uk/bank-shift-calculator/)
+
+---
+<!-- source: https://netpayscale.uk/bands/band-9/ -->
+# NHS Band 9 Salary 2026/27 — Pay Scale Steps, Hourly Rate & Monthly Net Take-Home
+
+> Official 2026/27 NHS Agenda for Change Band 9 (Director of Nursing, Chief Operating Officer, Director of Clinical Strategy) salary breakdown: £112,782 to £129,783 gross per year, exact monthly net pay after pension, PAYE tax, and NICs across England, Scotland, and London HCAS zones.
+
+Canonical: https://netpayscale.uk/bands/band-9/
+Last updated: 2026-10-26
+
+## Band 9 Overview (Director of Nursing, Chief Operating Officer, Director of Clinical Strategy)
+- **2026/27 Gross Salary Range:** **£112,782** (Entry) to **£129,783** (Top Step)
+- **Hourly Rate Range (37.5h/wk):** **£57.68/hr** to **£66.37/hr**
+- **Typical NHS Roles:** Director of Nursing, Chief Operating Officer, Director of Clinical Strategy, National Specialist Advisor
+- **NHS Pension Tier (2015 CARE):** **12.5%** (Entry) to **12.5%** (Top Step)
+
+## Band 9 Step Progression & Regional Net Monthly Take-Home Table (2026/27)
+
+| Pay Step (Tenure) | Annual Gross | Hourly Rate | Pension Tier (Mo) | Rest of UK Net/Mo | Scotland Net/Mo | Fringe (+5%) Net/Mo | Outer London (+15%) Net/Mo | Inner London (+20%) Net/Mo |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £112,782 | £57.68/hr | 12.5% (£1,175/mo) | **£5,626/mo** | £5,353/mo | £5,710/mo | £5,817/mo | £5,888/mo |
+| After 2 years (Mid) (2 yrs) | £119,583 | £61.16/hr | 12.5% (£1,246/mo) | **£5,835/mo** | £5,527/mo | £5,897/mo | £6,004/mo | £6,076/mo |
+| After 5 years (Top) (5 yrs) | £129,783 | £66.37/hr | 12.5% (£1,352/mo) | **£6,115/mo** | £5,752/mo | £6,178/mo | £6,271/mo | £6,328/mo |
+
+## Band 9 Entry (£112,782) Full-Time, Part-Time Pro-Rata & Night Shift Matrix
+
+| Working Pattern | Annual Gross (incl. Unsocial) | Monthly Pension | Monthly PAYE Tax | Monthly NICs | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Full-Time (37.5 hrs/wk · 1.00 FTE) | £112,782/yr | £1,175/mo | £2,242/mo | £356/mo | **£5,626/mo** |
+| Full-Time + 1 Night Shift/wk (11.5h night) | £123,158/yr | £1,175/mo | £2,739/mo | £373/mo | **£5,977/mo** |
+| Part-Time 4 Days (30.0 hrs/wk · 0.80 FTE) | £90,226/yr | £940/mo | £1,584/mo | £318/mo | **£4,677/mo** |
+| Part-Time 3 Days (22.5 hrs/wk · 0.60 FTE) | £67,669/yr | £705/mo | £926/mo | £280/mo | **£3,728/mo** |
+| Part-Time Half-Time (18.75 hrs/wk · 0.50 FTE) | £56,391/yr | £587/mo | £613/mo | £262/mo | **£3,237/mo** |
+
+## Related
+- [Band 9 Interactive Calculator & Full Guide](https://netpayscale.uk/bands/band-9/)
+- [NHS Salary & Pension Calculator](https://netpayscale.uk/)
+- [NHS Pension Calculator](https://netpayscale.uk/pension-calculator/)
+- [NHS Bank Shift Calculator](https://netpayscale.uk/bank-shift-calculator/)

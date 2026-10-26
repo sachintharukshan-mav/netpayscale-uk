@@ -14,6 +14,13 @@ export const metadata: Metadata = {
     "Official 2026/2027 UK NHS Salary & Pension Calculator. Accurately calculate take-home pay, Agenda for Change pay steps, London Weighting (HCAS), unsocial hours enhancements, and NHS pension deductions.",
   alternates: {
     canonical: "https://netpayscale.uk/",
+    types: {
+      "text/markdown": "https://netpayscale.uk/index.md",
+    },
+  },
+  other: {
+    "ai-summary":
+      "Official 2026/27 UK NHS Salary & Pension Calculator for 1.3M+ Agenda for Change healthcare staff. Computes net take-home pay, 3.3% AfC pay steps, London Weighting (HCAS), NHS 2015 CARE Pension tiers, Section 2 unsocial hours, Maternity Pay (OMP/SMP), Sick Pay, and Annual Leave.",
   },
   keywords: [
     "NHS salary calculator",
@@ -95,15 +102,28 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "Organization",
+        "@id": "https://netpayscale.uk/#organization",
+        name: "NetPayScale UK (NHS Edition)",
+        url: "https://netpayscale.uk/",
+        logo: "https://netpayscale.uk/icon-512.png",
+        description:
+          "Official 2026/27 UK NHS Salary & Pension Calculator for 1.3M+ Agenda for Change healthcare staff. Computes net take-home pay, 3.3% AfC pay steps, London Weighting (HCAS), NHS 2015 CARE Pension tiers, Section 2 unsocial hours, Maternity Pay (OMP/SMP), Sick Pay, and Annual Leave.",
+        contactPoint: {
+          "@type": "ContactPoint",
+          email: "editorial@netpayscale.uk",
+          contactType: "editorial & payroll verification",
+          url: "https://netpayscale.uk/contact/",
+        },
+      },
+      {
         "@type": "WebSite",
         name: "NetPayScale UK (NHS Edition)",
         url: "https://netpayscale.uk/",
         description:
           "Official 2026/2027 UK NHS Salary & Pension Calculator for 1.3M+ Agenda for Change staff.",
         publisher: {
-          "@type": "Organization",
-          name: "NetPayScale UK",
-          url: "https://netpayscale.uk/",
+          "@id": "https://netpayscale.uk/#organization",
         },
         potentialAction: {
           "@type": "SearchAction",
@@ -139,6 +159,8 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <head>
         <meta name="theme-color" content="#005EB8" />
+        <link rel="describedby" href="https://netpayscale.uk/llms.txt" type="text/plain" />
+        <link rel="describedby" href="https://netpayscale.uk/ai.txt" type="text/plain" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet" />

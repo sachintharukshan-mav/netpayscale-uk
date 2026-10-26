@@ -28,7 +28,24 @@ assert(fs.existsSync(robotsPath), 'robots.txt exists in static export');
 const robotsContent = fs.readFileSync(robotsPath, 'utf8');
 assert(robotsContent.includes('User-Agent: *') || robotsContent.includes('User-agent: *'), 'robots.txt specifies User-agent: *');
 assert(robotsContent.includes('Allow: /'), 'robots.txt specifies Allow: /');
+assert(robotsContent.includes('OAI-SearchBot') && robotsContent.includes('PerplexityBot') && robotsContent.includes('Claude-SearchBot'), 'robots.txt explicitly allows AI Search & Citation bots (OAI-SearchBot, PerplexityBot, Claude-SearchBot)');
 assert(robotsContent.includes('Sitemap: https://netpayscale.uk/sitemap.xml'), 'robots.txt references absolute canonical sitemap.xml');
+
+// 1B. AI / GEO / LLMs.txt & Markdown Twins check
+const llmsPath = path.join(outDir, 'llms.txt');
+const llmsFullPath = path.join(outDir, 'llms-full.txt');
+const aiTxtPath = path.join(outDir, 'ai.txt');
+const indexMdPath = path.join(outDir, 'index.md');
+const catalogPath = path.join(outDir, 'api', 'md', '_catalog');
+assert(fs.existsSync(llmsPath), 'llms.txt exists in static export');
+assert(fs.existsSync(llmsFullPath), 'llms-full.txt exists in static export');
+assert(fs.existsSync(aiTxtPath), 'ai.txt exists in static export');
+assert(fs.existsSync(indexMdPath), 'index.md exists in static export');
+assert(fs.existsSync(catalogPath), 'api/md/_catalog exists in static export');
+const llmsFullContent = fs.readFileSync(llmsFullPath, 'utf8');
+assert(llmsFullContent.length > 10000 && llmsFullContent.length < 500000, `llms-full.txt length is within optimal LLM context window (${llmsFullContent.length} chars)`);
+const catalogData = JSON.parse(fs.readFileSync(catalogPath, 'utf8'));
+assert(catalogData.totalMarkdownRoutes === 17, `api/md/_catalog lists all 17 core & band Markdown routes (actual: ${catalogData.totalMarkdownRoutes})`);
 
 // 2. Sitemap.xml check
 const sitemapPath = path.join(outDir, 'sitemap.xml');
@@ -61,9 +78,12 @@ const homeHtml = fs.readFileSync(homePath, 'utf8');
 const homeCanonical = homeHtml.match(/<link[^>]+rel="canonical"[^>]+href="([^"]+)"/i) || homeHtml.match(/<link[^>]+href="([^"]+)"[^>]+rel="canonical"/i);
 assert(homeCanonical && homeCanonical[1] === 'https://netpayscale.uk/', `Homepage canonical is exactly https://netpayscale.uk/ (actual: ${homeCanonical ? homeCanonical[1] : 'NONE'})`);
 
+assert(homeHtml.includes('"@type":"Organization"'), 'Homepage contains Organization schema');
 assert(homeHtml.includes('"@type":"WebSite"'), 'Homepage contains WebSite schema');
 assert(homeHtml.includes('"@type":"WebApplication"'), 'Homepage contains WebApplication schema');
 assert(homeHtml.includes('"@type":"FAQPage"'), 'Homepage contains FAQPage schema');
+assert(homeHtml.includes('name="ai-summary"'), 'Homepage contains <meta name="ai-summary"> head signal');
+assert(homeHtml.includes('type="text/markdown"'), 'Homepage contains <link rel="alternate" type="text/markdown"> head signal');
 assert(fs.existsSync(path.join(outDir, 'favicon.ico')), 'favicon.ico exists in static export');
 assert(fs.existsSync(path.join(outDir, 'icon.svg')), 'icon.svg exists in static export');
 assert(fs.existsSync(path.join(outDir, 'icon-48.png')), 'icon-48.png (48x48 Google SERP icon) exists in static export');

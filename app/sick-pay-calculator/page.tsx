@@ -13,6 +13,13 @@ export const metadata: Metadata = {
     "Calculate your 2026/27 NHS sick pay entitlement under Agenda for Change Section 14 (1 to 6 months Full Pay and Half Pay + £118.75/wk SSP). See your exact net monthly take-home pay during full pay and half pay.",
   alternates: {
     canonical: "https://netpayscale.uk/sick-pay-calculator/",
+    types: {
+      "text/markdown": "https://netpayscale.uk/sick-pay-calculator.md",
+    },
+  },
+  other: {
+    "ai-summary":
+      "2026/27 NHS Sick Pay Calculator (Agenda for Change Section 14): calculates 1 to 6 months Full Pay and 2 to 6 months Half Pay + £118.75/wk Statutory Sick Pay (SSP) based on continuous NHS service, with exact monthly net take-home pay.",
   },
   openGraph: {
     title: "NHS Sick Pay Calculator 2026/27 (Full Pay, Half Pay & SSP) | NetPayScale UK",

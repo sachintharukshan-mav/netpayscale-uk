@@ -10,6 +10,13 @@ export const metadata: Metadata = {
     "Calculate your 2026/27 NHS annual leave and bank holiday entitlement in hours and shifts (7.5h, 11.5h, 12h). Covers 0–5 years (27 days), 5–10 years (29 days), and 10+ years (33 days) plus 8 pro-rata bank holidays.",
   alternates: {
     canonical: "https://netpayscale.uk/annual-leave-calculator/",
+    types: {
+      "text/markdown": "https://netpayscale.uk/annual-leave-calculator.md",
+    },
+  },
+  other: {
+    "ai-summary":
+      "2026/27 NHS Annual Leave & Bank Holiday Calculator (Section 13): converts 27 days (0–4 yrs), 29 days (5–9 yrs), and 33 days (10+ yrs) plus 8 public bank holidays into exact pro-rata hours and shifts.",
   },
   openGraph: {
     title: "NHS Annual Leave & Bank Holiday Hours Calculator 2026/27 | NetPayScale UK",

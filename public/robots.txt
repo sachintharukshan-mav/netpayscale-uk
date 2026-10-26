@@ -1,0 +1,42 @@
+# robots.txt for NetPayScale UK (NHS Edition)
+# Keep in sync with /llms.txt and /ai.txt
+# LLMs.txt: https://netpayscale.uk/llms.txt
+# Full LLMs Reference: https://netpayscale.uk/llms-full.txt
+# AI Usage Policy: https://netpayscale.uk/ai.txt
+
+# Standard Search Crawlers
+User-agent: *
+Allow: /
+
+# AI Search & User-Fetch Citation Bots (Explicitly Allowed)
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+Sitemap: https://netpayscale.uk/sitemap.xml

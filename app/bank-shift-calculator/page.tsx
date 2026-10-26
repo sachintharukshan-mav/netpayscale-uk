@@ -12,6 +12,13 @@ export const metadata: Metadata = {
     "Calculate your exact 2026/27 NHS bank shift and overtime take-home pay per 7.5h, 11.5h, or 12h shift after PAYE tax, National Insurance, Student Loan, and WTR 12.07% holiday uplift.",
   alternates: {
     canonical: "https://netpayscale.uk/bank-shift-calculator/",
+    types: {
+      "text/markdown": "https://netpayscale.uk/bank-shift-calculator.md",
+    },
+  },
+  other: {
+    "ai-summary":
+      "2026/27 NHS Bank Shift & Overtime Net Pay Calculator (Section 2): calculates real net cash per shift after marginal PAYE tax, 8% NICs, unsocial hours enhancements (+44%/+88% Bands 2–3, +30%/+60% Bands 4–9), and 12.07% WTD holiday uplift.",
   },
   openGraph: {
     title: "NHS Bank Shift & Overtime Net Pay Calculator 2026/27 | NetPayScale UK",

@@ -10,6 +10,13 @@ export const metadata: Metadata = {
     "Calculate your exact 2026/27 NHS Occupational Maternity Pay (OMP) and Statutory Maternity Pay (SMP) by Band. Compare 8 weeks full pay, 18 weeks half pay + SMP, and equalised 9 or 12 month payslips.",
   alternates: {
     canonical: "https://netpayscale.uk/maternity-pay-calculator/",
+    types: {
+      "text/markdown": "https://netpayscale.uk/maternity-pay-calculator.md",
+    },
+  },
+  other: {
+    "ai-summary":
+      "2026/27 NHS Maternity Pay Calculator (Section 15 OMP & SMP): models 8 weeks Full Pay (100%), 18 weeks Half Pay (50%) + £187.18/wk SMP, 13 weeks SMP, and 13 weeks unpaid leave, plus equal monthly spread and holiday accrual.",
   },
   openGraph: {
     title: "NHS Maternity Pay Calculator 2026/27 (OMP + SMP) | NetPayScale UK",

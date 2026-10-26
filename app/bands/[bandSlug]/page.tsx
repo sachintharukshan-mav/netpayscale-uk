@@ -59,6 +59,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description,
     alternates: {
       canonical: canonicalUrl,
+      types: {
+        "text/markdown": `https://netpayscale.uk/bands/${bandSlug}.md`,
+      },
+    },
+    other: {
+      "ai-summary": description,
     },
     openGraph: {
       title,
