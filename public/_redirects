@@ -1,0 +1,26 @@
+# Cloudflare Pages 301 Permanent Redirects
+# Resolve legacy crawler relative paths to homepage
+/year                                    /    301
+/year/                                   /    301
+/month                                   /    301
+/month/                                  /    301
+/mo                                      /    301
+/mo/                                     /    301
+/yr                                      /    301
+/yr/                                     /    301
+
+# Resolve Schema SearchAction template URL crawler hits
+/calculator/{search_term_string}         /    301
+/calculator/{search_term_string}/        /    301
+/calculator/%7Bsearch_term_string%7D     /    301
+/calculator/%7Bsearch_term_string%7D/    /    301
+
+# Common legacy/alias paths
+/privacy-policy                          /privacy/   301
+/privacy-policy/                         /privacy/   301
+/terms-of-service                        /terms/     301
+/terms-of-service/                       /terms/     301
+/about-us                                /about/     301
+/about-us/                               /about/     301
+/contact-us                              /contact/   301
+/contact-us/                             /contact/   301

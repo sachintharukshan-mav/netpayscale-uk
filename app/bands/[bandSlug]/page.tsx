@@ -321,7 +321,7 @@ export default async function BandHubPage({ params }: Props) {
                 </span>
                 <div className="text-xl sm:text-2xl font-extrabold text-emerald-700 font-mono tabular-nums mt-0.5">
                   {formatCurrency(entryCalc.netPay.monthly)}
-                  <span className="text-xs font-normal text-zinc-500">/mo</span>
+                  <span className="text-xs font-normal text-zinc-500"> / mo</span>
                 </div>
                 <span className="text-[11px] font-mono text-zinc-500 block mt-0.5">
                   Gross: {formatCurrency(entryCalc.baseSalary.annual)}
@@ -333,7 +333,7 @@ export default async function BandHubPage({ params }: Props) {
                 </span>
                 <div className="text-xl sm:text-2xl font-extrabold text-zinc-950 font-mono tabular-nums mt-0.5">
                   {formatCurrency(topCalc.netPay.monthly)}
-                  <span className="text-xs font-normal text-zinc-500">/mo</span>
+                  <span className="text-xs font-normal text-zinc-500"> / mo</span>
                 </div>
                 <span className="text-[11px] font-mono text-zinc-500 block mt-0.5">
                   Gross: {formatCurrency(topCalc.baseSalary.annual)}

@@ -127,7 +127,10 @@ export default function RootLayout({
         },
         potentialAction: {
           "@type": "SearchAction",
-          target: "https://netpayscale.uk/calculator/{search_term_string}/",
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate: "https://netpayscale.uk/?q={search_term_string}",
+          },
           "query-input": "required name=search_term_string",
         },
       },

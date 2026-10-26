@@ -16,7 +16,7 @@ export default function HeroStatsTicker() {
           </span>
         </div>
         <div className="text-2xl font-bold text-zinc-950 font-mono tracking-tight tabular-nums">
-          £2,040<span className="text-sm font-medium text-zinc-500">.21/mo</span>
+          £2,040.21<span className="text-sm font-medium text-zinc-500"> / mo</span>
         </div>
         <div className="mt-1 flex items-center justify-between text-[11px] text-zinc-500">
           <span>From £2,672.75 gross</span>
@@ -33,7 +33,7 @@ export default function HeroStatsTicker() {
           </span>
         </div>
         <div className="text-2xl font-bold text-zinc-950 font-mono tracking-tight tabular-nums">
-          +£7,886<span className="text-sm font-medium text-zinc-500">/year</span>
+          +£7,886<span className="text-sm font-medium text-zinc-500"> / year</span>
         </div>
         <div className="mt-1 flex items-center justify-between text-[11px] text-zinc-500">
           <span>From £32,073 to £39,959</span>
@@ -50,7 +50,7 @@ export default function HeroStatsTicker() {
           </span>
         </div>
         <div className="text-2xl font-bold text-zinc-950 font-mono tracking-tight tabular-nums">
-          £49,387<span className="text-sm font-medium text-zinc-500">/year</span>
+          £49,387<span className="text-sm font-medium text-zinc-500"> / year</span>
         </div>
         <div className="mt-1 flex items-center justify-between text-[11px] text-zinc-500">
           <span>£25.26/hr base rate</span>
@@ -67,7 +67,7 @@ export default function HeroStatsTicker() {
           </span>
         </div>
         <div className="text-2xl font-bold text-zinc-950 font-mono tracking-tight tabular-nums">
-          Up to £8,746<span className="text-sm font-medium text-zinc-500">/yr</span>
+          Up to £8,746<span className="text-sm font-medium text-zinc-500"> / yr</span>
         </div>
         <div className="mt-1 flex items-center justify-between text-[11px] text-zinc-500">
           <span>Minimum payment £5,794</span>
