@@ -128,6 +128,11 @@ for (const calcSlug of siblingCalculators) {
     assert(cHtml.includes('"@type":"BreadcrumbList"'), `Calculator /${calcSlug}/ contains BreadcrumbList schema`);
     assert(cHtml.includes('"@type":"FAQPage"'), `Calculator /${calcSlug}/ contains FAQPage schema`);
     assert(cHtml.includes('data-share-widget="whatsapp-copy-breakdown"'), `Calculator /${calcSlug}/ contains 1-Tap WhatsApp / Copy Breakdown widget`);
+    if (calcSlug === 'promotion-calculator') {
+      assert(cHtml.includes('Pension Bracket Trap') || cHtml.includes('Pension Trap'), 'Promotion Calculator includes Pension Trap features and schema');
+      assert(cHtml.includes('The £50/Month Trap') || cHtml.includes('£50/mo trap') || cHtml.includes('£50/Month'), 'Promotion Calculator features £50/Month Trap scenario preset');
+      assert(cHtml.includes('Is moving from Band 5 to Band 6 financially worth it'), 'Promotion Calculator includes clinical FAQ on Band 5 to Band 6 financial verdict');
+    }
   }
 }
 
