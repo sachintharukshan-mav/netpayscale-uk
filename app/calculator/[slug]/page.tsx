@@ -15,6 +15,7 @@ import Calculator from "@/components/Calculator";
 import AffiliateCards from "@/components/AffiliateCards";
 import AdPlaceholder from "@/components/AdPlaceholder";
 import FAQSection from "@/components/FAQSection";
+import { ShareBreakdownButton } from "@/components/ShareBreakdownButton";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -379,6 +380,14 @@ export default async function PseoCalculatorPage({ params }: Props) {
               gross earnings in their pocket.
             </p>
           </div>
+
+          {/* 1-Tap WhatsApp & Colleague Share Widget */}
+          <ShareBreakdownButton
+            shareText={`NHS ${entry.band} ${entry.roleName} in ${entry.regionName} (2026/27): Starting net take-home is ${formatCurrency(baselineResult.netPay.monthly, true)}/mo (£${formatCurrency(baselineResult.grossPay.annual)} gross, ${baselineResult.pensionTierLabel} CARE Pension). Top step: ${formatCurrency(topStepResult.netPay.monthly, true)}/mo.`}
+            url={`https://netpayscale.uk/calculator/${entry.slug}/`}
+            variant="light"
+            label={`Share ${entry.band} ${entry.roleName} Breakdown with Colleagues`}
+          />
 
           {/* Official Multi-Step Benchmark Table */}
           <div className="border-t border-zinc-100 pt-5 space-y-5">

@@ -143,6 +143,7 @@ for (const bSlug of bandSlugs) {
     assert(canonicalMatch && canonicalMatch[1] === expectedCanonical, `Band Hub /bands/${bSlug}/ has exact self-referential canonical (actual: ${canonicalMatch ? canonicalMatch[1] : 'NONE'})`);
     assert(bHtml.includes('"@type":"BreadcrumbList"'), `Band Hub /bands/${bSlug}/ contains BreadcrumbList schema`);
     assert(bHtml.includes('"@type":"FAQPage"'), `Band Hub /bands/${bSlug}/ contains FAQPage schema`);
+    assert(bHtml.includes('data-share-widget="whatsapp-copy-breakdown"'), `Band Hub /bands/${bSlug}/ contains 1-Tap WhatsApp / Copy Breakdown widget`);
   }
 }
 
@@ -173,6 +174,7 @@ for (const slug of sampleSlugs) {
   assert(pageHtml.includes('"@type":"Occupation"'), `Page /${slug}/ contains Occupation schema`);
   assert(pageHtml.includes('"@type":"FAQPage"'), `Page /${slug}/ contains FAQPage schema`);
   assert(pageHtml.includes('Direct Answer · 2026/27 Official Benchmark'), `Page /${slug}/ contains AEO Direct Answer executive block`);
+  assert(pageHtml.includes('data-share-widget="whatsapp-copy-breakdown"'), `Page /${slug}/ contains 1-Tap WhatsApp / Copy Breakdown widget`);
   assert(pageHtml.includes('Full-Time, Part-Time Pro-Rata &amp; Night Shift Take-Home Matrix'), `Page /${slug}/ contains Phase 2 Working Pattern & Shift Matrix`);
 }
 

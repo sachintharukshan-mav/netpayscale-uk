@@ -10,6 +10,7 @@ import Calculator from "@/components/Calculator";
 import AdPlaceholder from "@/components/AdPlaceholder";
 import AffiliateCards from "@/components/AffiliateCards";
 import FAQSection from "@/components/FAQSection";
+import { ShareBreakdownButton } from "@/components/ShareBreakdownButton";
 
 interface Props {
   params: Promise<{ bandSlug: string }>;
@@ -352,6 +353,14 @@ export default async function BandHubPage({ params }: Props) {
               In the <strong>2026/27 financial year</strong>, an NHS <strong>{bandObj.band}</strong> earns a starting basic salary of <strong>{formatCurrency(entryCalc.baseSalary.annual)}/year</strong> ({formatHourlyRate(entryCalc.hourlyRate)}), progressing to <strong>{formatCurrency(topCalc.baseSalary.annual)}/year</strong> ({formatHourlyRate(topCalc.hourlyRate)}) at the top of the band. After standard UK PAYE Income Tax, National Insurance, and 2015 CARE Pension ({entryCalc.pensionTierLabel}–{topCalc.pensionTierLabel}) deductions, a full-time (37.5h/wk) {bandObj.band} takes home <strong>{formatCurrency(entryCalc.netPay.monthly)}/month</strong> at entry and <strong>{formatCurrency(topCalc.netPay.monthly)}/month</strong> at the top pay step.
             </p>
           </div>
+
+          {/* 1-Tap WhatsApp & Colleague Share Widget */}
+          <ShareBreakdownButton
+            shareText={`NHS ${bandObj.band} Pay Scale 2026/27: Entry take-home is ${formatCurrency(entryCalc.netPay.monthly)}/mo (£${formatCurrency(entryCalc.baseSalary.annual)} gross) rising to ${formatCurrency(topCalc.netPay.monthly)}/mo at top of band. Calculated via NetPayScale UK.`}
+            url={`https://netpayscale.uk/bands/${bandObj.slug}/`}
+            variant="light"
+            label={`Share NHS ${bandObj.band} Salary Breakdown with Ward / Team`}
+          />
 
           {/* Complete Experience Step Progression Table */}
           <div className="space-y-2.5">
