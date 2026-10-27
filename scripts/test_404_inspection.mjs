@@ -43,20 +43,11 @@ async function main() {
   const token = await getAccessToken();
 
   const testUrls = [
-    "https://netpayscale.uk/privacy-policy/",
-    "https://netpayscale.uk/terms-of-service/",
-    "https://netpayscale.uk/privacy-policy",
-    "https://netpayscale.uk/terms-of-service",
-    "https://netpayscale.uk/calculator/band-5-nurse-salary-uk-national/",
-    "https://netpayscale.uk/calculator/band-6-midwife-salary-uk-national/",
-    "https://netpayscale.uk/calculator/",
-    "https://netpayscale.uk/bands/",
-    "https://netpayscale.uk/calculator",
-    "https://netpayscale.uk/bands",
-    "https://netpayscale.uk/maternity-calculator/",
-    "https://netpayscale.uk/annual-leave/",
-    "https://netpayscale.uk/sick-pay/",
-    "https://netpayscale.uk/pension/",
+    "https://netpayscale.uk/calculator/{search_term_string}/",
+    "https://netpayscale.uk/year",
+    "https://netpayscale.uk/month",
+    "https://netpayscale.uk/mo",
+    "https://netpayscale.uk/yr",
   ];
 
   for (const u of testUrls) {
