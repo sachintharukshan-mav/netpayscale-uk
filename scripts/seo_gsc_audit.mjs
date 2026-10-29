@@ -45,7 +45,8 @@ assert(fs.existsSync(catalogPath), 'api/md/_catalog exists in static export');
 const llmsFullContent = fs.readFileSync(llmsFullPath, 'utf8');
 assert(llmsFullContent.length > 10000 && llmsFullContent.length < 500000, `llms-full.txt length is within optimal LLM context window (${llmsFullContent.length} chars)`);
 const catalogData = JSON.parse(fs.readFileSync(catalogPath, 'utf8'));
-assert(catalogData.totalMarkdownRoutes === 20, `api/md/_catalog lists all 20 core & band Markdown routes (actual: ${catalogData.totalMarkdownRoutes})`);
+assert(catalogData.totalMarkdownRoutes === 21, `api/md/_catalog lists all 21 core & band Markdown routes (actual: ${catalogData.totalMarkdownRoutes})`);
+assert(catalogData.totalHtmlRoutes === 515, `api/md/_catalog reports 515 total HTML routes (actual: ${catalogData.totalHtmlRoutes})`);
 
 // 2. Sitemap.xml check
 const sitemapPath = path.join(outDir, 'sitemap.xml');
@@ -56,7 +57,7 @@ const sitemapContent = fs.readFileSync(sitemapPath, 'utf8');
 const locMatches = [...sitemapContent.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => m[1]);
 console.log(`Found ${locMatches.length} URLs in sitemap.xml`);
 
-assert(locMatches.length === 514, `Sitemap contains all 514 canonical URLs (5 static + 8 sibling calculators + 11 band hubs + 490 role-region spokes; actual: ${locMatches.length})`);
+assert(locMatches.length === 515, `Sitemap contains all 515 canonical URLs (6 static + 8 sibling calculators + 11 band hubs + 490 role-region spokes; actual: ${locMatches.length})`);
 assert(locMatches[0] === 'https://netpayscale.uk/', `Homepage in sitemap is exact canonical: https://netpayscale.uk/ (actual: ${locMatches[0]})`);
 
 let nonTrailingSlashCount = 0;
@@ -150,6 +151,22 @@ for (const bSlug of bandSlugs) {
     assert(bHtml.includes('"@type":"FAQPage"'), `Band Hub /bands/${bSlug}/ contains FAQPage schema`);
     assert(bHtml.includes('data-share-widget="whatsapp-copy-breakdown"'), `Band Hub /bands/${bSlug}/ contains 1-Tap WhatsApp / Copy Breakdown widget`);
   }
+}
+
+// 3E. International Recruits Hub Page Audit (/international/)
+const intlPath = path.join(outDir, 'international', 'index.html');
+assert(fs.existsSync(intlPath), 'International recruits guide exists: /international/index.html');
+if (fs.existsSync(intlPath)) {
+  const intlHtml = fs.readFileSync(intlPath, 'utf8');
+  const expectedCanonical = 'https://netpayscale.uk/international/';
+  const canonicalMatch = intlHtml.match(/<link[^>]+rel="canonical"[^>]+href="([^"]+)"/i) || intlHtml.match(/<link[^>]+href="([^"]+)"[^>]+rel="canonical"/i);
+  assert(canonicalMatch && canonicalMatch[1] === expectedCanonical, `Page /international/ has exact self-referential canonical (actual: ${canonicalMatch ? canonicalMatch[1] : 'NONE'})`);
+  assert(intlHtml.includes('"@type":"BreadcrumbList"'), 'International page contains BreadcrumbList schema');
+  assert(intlHtml.includes('"@type":"FAQPage"'), 'International page contains FAQPage schema');
+  assert(intlHtml.includes('data-share-widget="whatsapp-copy-breakdown"'), 'International page contains 1-Tap WhatsApp / Copy Breakdown widget');
+  assert(intlHtml.includes('Pre-OSCE') && intlHtml.includes('Post-OSCE'), 'International page explains Pre-OSCE vs Post-OSCE progression');
+  assert(intlHtml.includes('Health and Care Worker Visa') || intlHtml.includes('Health &amp; Care Worker Visa'), 'International page covers Health & Care Worker Visa');
+  assert(intlHtml.includes('Immigration Health Surcharge') || intlHtml.includes('IHS'), 'International page covers IHS exemption (£1,035/yr)');
 }
 
 // 4. Sample pSEO Pages Audit (Canonical, OpenGraph, BreadcrumbList, Occupation, AEO Direct Answer, Multi-Step Matrix)

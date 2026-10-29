@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { LanguageSelector } from "./LanguageSelector";
 
 export function Footer() {
   return (
@@ -151,6 +152,11 @@ export function Footer() {
               </li>
             </ul>
           </div>
+        </div>
+
+        {/* Multi-Language Selection Section for Diverse NHS Staff */}
+        <div className="pt-4 border-t border-zinc-100">
+          <LanguageSelector variant="footer" />
         </div>
 
         {/* Regulatory Disclaimer */}

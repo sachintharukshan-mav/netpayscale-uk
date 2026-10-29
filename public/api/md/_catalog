@@ -2,8 +2,8 @@
   "site": "NetPayScale UK (NHS Edition)",
   "url": "https://netpayscale.uk",
   "updated": "2026-10-26",
-  "totalMarkdownRoutes": 20,
-  "totalHtmlRoutes": 514,
+  "totalMarkdownRoutes": 21,
+  "totalHtmlRoutes": 515,
   "routes": [
     {
       "htmlUrl": "https://netpayscale.uk/",
@@ -66,6 +66,13 @@
       "markdownUrl": "https://netpayscale.uk/redundancy-pay-calculator.md",
       "title": "NHS Redundancy & MARS Severance Calculator 2026/27 (Section 16)",
       "description": "NHS Section 16 contractual redundancy (1 month per year up to 24 years, £80k salary cap), MARS severance, and £30,000 HMRC tax-free exemption.",
+      "category": "core"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/international/",
+      "markdownUrl": "https://netpayscale.uk/international.md",
+      "title": "NHS Salary & Visa Guide for International Recruits 2026/27",
+      "description": "Complete guide for overseas nurses, doctors, and healthcare staff: Pre-OSCE (Band 4) vs Post-OSCE (Band 5) pay, Health and Care Worker Visa exemptions, and remittances.",
       "category": "core"
     },
     {

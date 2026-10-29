@@ -4,6 +4,7 @@ import React, { useState, useMemo, useEffect } from "react";
 import nhsData from "@/data/nhs_afc_2026.json";
 import { calculateNHSPay, CalculatorInputs } from "@/lib/calculator";
 import { formatCurrency, formatHourlyRate } from "@/lib/formatters";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 import RoleQuickFinder from "./RoleQuickFinder";
 import MobileNetPayDock from "./MobileNetPayDock";
 import AdPlaceholder from "./AdPlaceholder";
@@ -23,6 +24,7 @@ export default function Calculator({
   initialRoleTitle,
   initialTaxCode = "1257L",
 }: CalculatorProps) {
+  const { t, language, currentLanguage } = useLanguage();
   const [band, setBand] = useState<string>(initialBand);
   const [stepIndex, setStepIndex] = useState<number>(initialStepIndex);
   const [hcasZone, setHcasZone] = useState<"inner-london" | "outer-london" | "fringe" | "standard">(initialHcasZone);
@@ -198,6 +200,26 @@ Calculate yours at: ${siteUrl}`;
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
         {/* Left Column (lg:col-span-7 ~58% width): Interactive Precision Controls */}
         <div className="lg:col-span-7 flex flex-col gap-5 sm:gap-6 w-full">
+          {/* Multi-Language International Recruits Welcome Banner */}
+          {language !== "en" && (
+            <div className="bg-gradient-to-r from-blue-50 via-indigo-50/70 to-slate-50 border border-blue-200/80 rounded-xl p-4 flex items-center justify-between gap-3 text-xs shadow-2xs">
+              <div className="flex items-center gap-3 min-w-0">
+                <span className="text-3xl shrink-0">{currentLanguage.flag}</span>
+                <div className="min-w-0">
+                  <strong className="text-slate-900 font-bold block text-sm">
+                    {t("internationalBannerTitle")} ({currentLanguage.nativeName})
+                  </strong>
+                  <p className="text-slate-600 mt-0.5 leading-relaxed">
+                    {t("internationalBannerDesc")}
+                  </p>
+                </div>
+              </div>
+              <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-[#005EB8] text-white shrink-0 hidden md:inline-block">
+                {currentLanguage.community}
+              </span>
+            </div>
+          )}
+
           {/* Smart Job Title Quick-Finder */}
           <RoleQuickFinder
             currentBand={band}
@@ -214,10 +236,10 @@ Calculate yours at: ${siteUrl}`;
             <div className="flex items-center justify-between mb-3 gap-2">
               <label className="text-sm font-bold text-text-ink flex items-center gap-2">
                 <span className="material-symbols-outlined text-nhs-blue text-[20px]">badge</span>
-                Agenda for Change (AfC) Pay Band
+                {t("afcPayBand", "Agenda for Change (AfC) Pay Band")}
               </label>
               <span className="text-[10px] text-text-muted uppercase font-medium shrink-0">
-                England &amp; Wales 2026/27 (+3.3%)
+                {t("afcSubtitle", "England & Wales 2026/27 (+3.3%)")}
               </span>
             </div>
 
@@ -248,7 +270,7 @@ Calculate yours at: ${siteUrl}`;
             <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-3 gap-1">
               <span className="text-sm font-bold text-text-ink flex items-center gap-2">
                 <span className="material-symbols-outlined text-nhs-blue text-[20px]">timeline</span>
-                Experience Progression Milestone
+                {t("experienceMilestones", "Experience Progression Milestone")}
               </span>
               <span className="text-xs text-text-muted">Annex 2 Incremental Pay Scale</span>
             </div>
@@ -258,10 +280,10 @@ Calculate yours at: ${siteUrl}`;
                 const isSelected = stepIndex === idx;
                 const stepLabel =
                   idx === 0
-                    ? "Entry Step"
+                    ? t("entryStep", "Entry Step")
                     : idx === currentBandData.points.length - 1
-                    ? "Top of Band"
-                    : "Intermediate";
+                    ? t("topStep", "Top of Band")
+                    : t("midStep", "Intermediate");
                 const yearsLabel =
                   idx === 0
                     ? "< 2 Years in Band"
@@ -307,7 +329,7 @@ Calculate yours at: ${siteUrl}`;
               <div>
                 <span className="text-sm font-bold text-text-ink flex items-center gap-2">
                   <span className="material-symbols-outlined text-nhs-blue text-[20px]">schedule</span>
-                  Contracted Working Hours
+                  {t("contractedHours", "Contracted Working Hours")}
                 </span>
                 <p className="text-xs text-text-muted mt-0.5">
                   Standard NHS baseline is 37.5 hrs/wk (1.0 FTE)
@@ -383,17 +405,17 @@ Calculate yours at: ${siteUrl}`;
             <div className="flex items-center justify-between mb-3 gap-2">
               <span className="text-sm font-bold text-text-ink flex items-center gap-2">
                 <span className="material-symbols-outlined text-nhs-blue text-[20px]">location_on</span>
-                HCAS London Weighting
+                {t("locationHcas", "HCAS London Weighting")}
               </span>
               <span className="text-[10px] text-text-muted uppercase font-medium shrink-0">Section 4 AfC</span>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
               {[
-                { id: "standard", name: "Rest of UK", desc: "National Baseline (0%)", val: "£0 / yr" },
-                { id: "fringe", name: "London Fringe", desc: "+5% Basic Salary", val: "min £1,346 – £2,270" },
-                { id: "outer-london", name: "Outer London", desc: "+15% Basic Salary", val: "min £4,870 – £6,137" },
-                { id: "inner-london", name: "Inner London", desc: "+20% Basic Salary", val: "min £5,794 – £8,746" },
+                { id: "standard", name: t("standardUK", "Rest of UK"), desc: "National Baseline (0%)", val: "£0 / yr" },
+                { id: "fringe", name: t("fringeLondon", "London Fringe"), desc: "+5% Basic Salary", val: "min £1,346 – £2,270" },
+                { id: "outer-london", name: t("outerLondon", "Outer London"), desc: "+15% Basic Salary", val: "min £4,870 – £6,137" },
+                { id: "inner-london", name: t("innerLondon", "Inner London"), desc: "+20% Basic Salary", val: "min £5,794 – £8,746" },
               ].map((z) => {
                 const isSelected = hcasZone === z.id;
                 return (
@@ -425,7 +447,7 @@ Calculate yours at: ${siteUrl}`;
               <div>
                 <span className="text-sm font-bold text-text-ink flex items-center gap-2">
                   <span className="material-symbols-outlined text-nhs-blue text-[20px]">nightlight</span>
-                  Unsocial Hours &amp; Shift Enhancements
+                  {t("unsocialHours", "Unsocial Hours & Shift Enhancements")}
                 </span>
                 <p className="text-xs text-text-muted mt-0.5">
                   Nights &amp; Sats +30% | Suns &amp; Bank Hols +60%
@@ -447,7 +469,7 @@ Calculate yours at: ${siteUrl}`;
                     : "bg-surface-muted text-text-body hover:bg-zinc-200"
                 }`}
               >
-                Standard Ward Rota (3x Nights, 2x W/E)
+                {t("standardRota", "Standard Ward Rota (3x Nights, 2x W/E)")}
               </button>
               <button
                 type="button"
@@ -458,7 +480,7 @@ Calculate yours at: ${siteUrl}`;
                     : "bg-surface-muted text-text-body hover:bg-zinc-200"
                 }`}
               >
-                High Intensity Acute (ITU / A&amp;E)
+                {t("acuteRota", "High Intensity Acute (ITU / A&E)")}
               </button>
               <button
                 type="button"
@@ -469,7 +491,7 @@ Calculate yours at: ${siteUrl}`;
                     : "bg-surface-muted text-text-body hover:bg-zinc-200"
                 }`}
               >
-                No Enhancements (Mon-Fri 9-5)
+                {t("daysOnly", "No Enhancements (Mon-Fri 9-5)")}
               </button>
             </div>
 
@@ -563,7 +585,7 @@ Calculate yours at: ${siteUrl}`;
             <div className="flex items-center justify-between pb-3 border-b border-border-subtle gap-2">
               <div className="flex items-center gap-1.5">
                 <span className="w-2.5 h-2.5 rounded-full bg-cash-emerald pulse-glow-dot" />
-                <span className="text-sm font-bold text-text-ink">Estimated Take-Home Pay</span>
+                <span className="text-sm font-bold text-text-ink">{t("estimatedMonthlyTakeHome", "Estimated Take-Home Pay")}</span>
               </div>
               <span className="px-2 py-0.5 rounded-full bg-surface-muted text-[11px] text-text-muted font-mono font-medium shrink-0 border border-border-subtle">
                 Pay Date: 28th
@@ -573,7 +595,7 @@ Calculate yours at: ${siteUrl}`;
             {/* Hero Number */}
             <div className="py-4 flex flex-col">
               <span className="text-xs uppercase tracking-wider text-text-muted font-medium">
-                Net Monthly In-Bank
+                {t("estimatedMonthlyTakeHome", "Net Monthly In-Bank")}
               </span>
               <div className="flex items-baseline gap-2 mt-1">
                 <span className="text-3xl sm:text-4xl lg:text-5xl text-cash-emerald font-extrabold tracking-tight font-mono tabular-nums truncate transition-all">
@@ -585,14 +607,14 @@ Calculate yours at: ${siteUrl}`;
               {/* Secondary Figures */}
               <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mt-2 text-xs text-text-body font-mono">
                 <span className="flex items-center gap-1">
-                  <span className="text-text-muted">Annual:</span>
+                  <span className="text-text-muted">{t("annualTakeHome", "Annual")}:</span>
                   <strong className="font-semibold tabular-nums">
                     {formatCurrency(result.netPay.annual)} / yr
                   </strong>
                 </span>
                 <span className="text-zinc-300 hidden sm:inline">•</span>
                 <span className="flex items-center gap-1">
-                  <span className="text-text-muted">Hourly:</span>
+                  <span className="text-text-muted">{t("netHourlyRate", "Hourly")}:</span>
                   <strong className="font-semibold tabular-nums">
                     {formatHourlyRate(result.netHourlyRate)}
                   </strong>
@@ -603,13 +625,13 @@ Calculate yours at: ${siteUrl}`;
             {/* Key Deductions Headline Strip */}
             <div className="grid grid-cols-2 gap-2 sm:gap-3 p-3 bg-surface-muted rounded-xl mb-4 border border-border-subtle">
               <div>
-                <span className="text-[10px] uppercase text-text-muted font-semibold">Gross AfC Salary</span>
+                <span className="text-[10px] uppercase text-text-muted font-semibold">{t("basicSalary", "Gross AfC Salary")}</span>
                 <p className="font-mono text-xs sm:text-sm font-bold text-text-ink mt-0.5 truncate tabular-nums">
                   {formatCurrency(result.grossPay.annual)}
                 </p>
               </div>
               <div>
-                <span className="text-[10px] uppercase text-text-muted font-semibold">Total Deductions</span>
+                <span className="text-[10px] uppercase text-text-muted font-semibold">{t("totalDeductions", "Total Deductions")}</span>
                 <p className="font-mono text-xs sm:text-sm font-bold text-tax-rose mt-0.5 truncate tabular-nums">
                   −{formatCurrency(result.totalDeductions.monthly)} / mo
                 </p>
@@ -660,7 +682,7 @@ Calculate yours at: ${siteUrl}`;
                 <div className="flex items-center justify-between text-xs">
                   <span className="flex items-center gap-1.5 text-text-body">
                     <span className="w-2 h-2 rounded-full bg-cash-emerald shrink-0" />
-                    Take-Home Pay
+                    {t("estimatedMonthlyTakeHome", "Take-Home Pay")}
                   </span>
                   <span className="font-mono font-semibold text-text-ink tabular-nums">
                     {formatCurrency(result.netPay.monthly)}
@@ -669,7 +691,7 @@ Calculate yours at: ${siteUrl}`;
                 <div className="flex items-center justify-between text-xs">
                   <span className="flex items-center gap-1.5 text-text-body">
                     <span className="w-2 h-2 rounded-full bg-pension-indigo shrink-0" />
-                    NHS Pension ({result.pensionTierLabel})
+                    {t("pensionContribution", "NHS Pension")} ({result.pensionTierLabel})
                   </span>
                   <span className="font-mono font-semibold text-text-ink tabular-nums">
                     −{formatCurrency(result.pensionContribution.monthly)}
@@ -678,7 +700,7 @@ Calculate yours at: ${siteUrl}`;
                 <div className="flex items-center justify-between text-xs">
                   <span className="flex items-center gap-1.5 text-text-body">
                     <span className="w-2 h-2 rounded-full bg-tax-rose shrink-0" />
-                    PAYE Income Tax
+                    {t("incomeTax", "PAYE Income Tax")}
                   </span>
                   <span className="font-mono font-semibold text-text-ink tabular-nums">
                     −{formatCurrency(result.incomeTax.monthly)}
@@ -687,7 +709,7 @@ Calculate yours at: ${siteUrl}`;
                 <div className="flex items-center justify-between text-xs">
                   <span className="flex items-center gap-1.5 text-text-body">
                     <span className="w-2 h-2 rounded-full bg-ni-amber shrink-0" />
-                    National Insurance
+                    {t("nationalInsurance", "National Insurance")}
                   </span>
                   <span className="font-mono font-semibold text-text-ink tabular-nums">
                     −{formatCurrency(result.nationalInsurance.monthly)}
@@ -706,7 +728,7 @@ Calculate yours at: ${siteUrl}`;
                 className="w-full min-h-[44px] px-4 bg-[#25D366] hover:bg-[#20bd5a] text-slate-950 rounded-xl text-sm font-extrabold flex items-center justify-center gap-2 active:scale-[0.97] transition-all duration-150 shadow-xs cursor-pointer select-none"
               >
                 <span className="material-symbols-outlined text-[18px]">share</span>
-                Share to WhatsApp / Copy Breakdown
+                {t("shareWhatsApp", "Share to WhatsApp / Copy Breakdown")}
               </a>
               <div className="grid grid-cols-2 gap-2">
                 <button
@@ -715,7 +737,7 @@ Calculate yours at: ${siteUrl}`;
                   className="min-h-[40px] px-3 bg-surface-muted hover:bg-zinc-200 text-text-ink border border-border-subtle rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 active:scale-[0.97] transition-all duration-150 cursor-pointer"
                 >
                   <span className="material-symbols-outlined text-[16px]">content_copy</span>
-                  Copy Breakdown
+                  {t("copyFigures", "Copy Figures")}
                 </button>
                 <button
                   type="button"
@@ -723,7 +745,7 @@ Calculate yours at: ${siteUrl}`;
                   className="min-h-[40px] px-3 bg-surface-muted hover:bg-zinc-200 text-text-ink border border-border-subtle rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 active:scale-[0.97] transition-all duration-150 cursor-pointer"
                 >
                   <span className="material-symbols-outlined text-[16px]">picture_as_pdf</span>
-                  Download 1-Page PDF
+                  {t("printPayslip", "Print ESR Payslip")}
                 </button>
               </div>
             </div>

@@ -2,9 +2,12 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
+import { LanguageSelector } from "./LanguageSelector";
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   return (
     <header className="sticky top-0 left-0 right-0 z-50 bg-white border-b border-border-subtle shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
@@ -17,10 +20,10 @@ export function Navbar() {
             </div>
             <div className="flex flex-col">
               <span className="text-base sm:text-lg text-text-ink tracking-tight font-bold">
-                NetPayScale UK
+                {t("siteTitle", "NetPayScale UK")}
               </span>
               <span className="text-[10px] text-text-muted hidden sm:inline leading-none">
-                Agenda for Change 2026/27 Circular
+                {t("circularTitle", "Agenda for Change 2026/27 Circular")}
               </span>
             </div>
           </Link>
@@ -35,65 +38,67 @@ export function Navbar() {
             href="/"
             className="px-3 py-1.5 transition-all duration-150 bg-nhs-blue text-white font-semibold text-sm rounded-lg shadow-xs active:scale-95"
           >
-            Pay Calculator
+            {t("payCalculator", "Pay Calculator")}
           </Link>
           <Link
             href="/bands/band-5/"
             className="px-3 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95"
           >
-            Band 5–9 Hubs
+            {t("bandHubs", "Band 5–9 Hubs")}
           </Link>
           <Link
             href="/pension-calculator/"
             className="px-3 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95"
           >
-            Pension
+            {t("pension", "Pension")}
           </Link>
           <Link
             href="/maternity-pay-calculator/"
             className="px-3 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95"
           >
-            Maternity Pay
+            {t("maternityPay", "Maternity Pay")}
           </Link>
           <Link
             href="/annual-leave-calculator/"
             className="px-3 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95"
           >
-            Annual Leave
+            {t("annualLeave", "Annual Leave")}
           </Link>
           <Link
             href="/bank-shift-calculator/"
             className="px-3 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95"
           >
-            Bank &amp; Overtime
+            {t("bankShift", "Bank & Overtime")}
           </Link>
           <Link
             href="/sick-pay-calculator/"
             className="hidden xl:inline-block px-3 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95"
           >
-            Sick Pay
+            {t("sickPay", "Sick Pay")}
           </Link>
           <Link
             href="/pay-rise-backpay-calculator/"
             className="hidden xl:inline-block px-3 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95"
           >
-            Back Pay
+            {t("backPay", "Back Pay")}
           </Link>
           <Link
             href="/promotion-calculator/"
             className="hidden 2xl:inline-block px-3 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95"
           >
-            Promotion
+            {t("promotion", "Promotion")}
           </Link>
         </nav>
 
-        {/* Right Metadata & Mobile Action Buttons */}
+        {/* Right Metadata & Language Selector */}
         <div className="flex items-center gap-2 shrink-0">
+          <LanguageSelector variant="header" />
+
           <div className="hidden md:flex items-center gap-1.5 py-1 px-2.5 rounded-lg bg-surface-muted text-xs text-text-body border border-border-subtle font-mono">
             <span className="w-1.5 h-1.5 rounded-full bg-cash-emerald pulse-glow-dot" />
-            <span className="whitespace-nowrap font-sans font-medium text-text-ink">Tax Year 2026/27</span>
+            <span className="whitespace-nowrap font-sans font-medium text-text-ink">{t("taxYearLabel", "Tax Year 2026/27")}</span>
             <span className="text-zinc-300">•</span>
-            <span className="whitespace-nowrap text-text-muted">UK Wide</span>
+            <span className="whitespace-nowrap text-text-muted">{t("ukWide", "UK Wide")}</span>
           </div>
 
           {/* Mobile Hamburger Toggle */}
@@ -110,7 +115,9 @@ export function Navbar() {
 
       {/* Mobile Slide-Down Navigation Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-border-subtle bg-white px-4 py-3 space-y-1 shadow-lg transition-all duration-200">
+        <div className="lg:hidden border-t border-border-subtle bg-white px-4 py-3 space-y-2 shadow-lg transition-all duration-200">
+          <LanguageSelector variant="mobile" />
+
           <Link
             className="block px-3 py-2 rounded-lg bg-nhs-blue text-white font-semibold text-sm"
             href="/"
@@ -195,3 +202,4 @@ export function Navbar() {
 }
 
 export default Navbar;
+
