@@ -44,7 +44,8 @@ export default function QuickSelectStrip() {
 
             {/* Touch Scrollable Quick Select Chips Bar with smooth tactile clicks */}
             <div className="relative w-full overflow-hidden">
-              <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5 w-full touch-pan-x">
+              <div className="bento-container flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5 w-full touch-pan-x">
+                <div className="bento-indicator" aria-hidden="true" />
                 <span className="text-[10px] text-text-muted uppercase tracking-wider shrink-0 mr-0.5 font-medium">
                   Quick Select:
                 </span>
@@ -53,7 +54,7 @@ export default function QuickSelectStrip() {
                     key={role.label}
                     type="button"
                     onClick={() => handleSelect(role)}
-                    className="px-2.5 py-1 bg-surface-muted hover:bg-zinc-200 hover:border-zinc-300 border border-transparent rounded-md text-xs text-text-body whitespace-nowrap active:scale-[0.96] transition-all duration-150 shrink-0 cursor-pointer"
+                    className="bento-card px-2.5 py-1 bg-surface-muted hover:bg-zinc-200 hover:border-zinc-300 border border-transparent rounded-md text-xs text-text-body whitespace-nowrap active:scale-[0.96] transition-all duration-150 shrink-0 cursor-pointer"
                   >
                     {role.label}
                   </button>

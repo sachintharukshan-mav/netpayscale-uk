@@ -164,7 +164,10 @@ export function TrustDirectoryClient() {
       </div>
 
       {/* Trust Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="bento-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Floating magnetic indicator */}
+        <div className="bento-indicator bento-2xl" aria-hidden="true" />
+
         {filteredTrusts.map((trust) => {
           const isInner = trust.hcasZone === "inner-london";
           const isOuter = trust.hcasZone === "outer-london";
@@ -173,7 +176,7 @@ export function TrustDirectoryClient() {
           return (
             <div
               key={trust.id}
-              className="bg-white rounded-2xl border border-slate-200 hover:border-slate-300 transition-all shadow-xs hover:shadow-md flex flex-col justify-between overflow-hidden group"
+              className="bento-card bg-white rounded-2xl border border-slate-200 hover:border-slate-300 transition-all shadow-xs hover:shadow-md flex flex-col justify-between overflow-hidden group"
             >
               <div className="p-5 sm:p-6 space-y-4">
                 {/* Header: Code & HCAS Zone */}

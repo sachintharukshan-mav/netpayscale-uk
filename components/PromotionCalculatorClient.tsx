@@ -271,7 +271,8 @@ Check full breakdown & pension trap on NetPayScale UK:`;
           )}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+        <div className="bento-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          <div className="bento-indicator bento-2xl" aria-hidden="true" />
           {PRESETS.map((p) => {
             const isSelected = activePreset === p.id;
             return (
@@ -279,7 +280,7 @@ Check full breakdown & pension trap on NetPayScale UK:`;
                 key={p.id}
                 type="button"
                 onClick={() => applyPreset(p)}
-                className={`text-left p-3.5 rounded-xl border transition-all flex flex-col justify-between ${
+                className={`bento-card text-left p-3.5 rounded-xl border transition-all flex flex-col justify-between ${
                   isSelected
                     ? "border-[#005EB8] bg-blue-50/70 ring-2 ring-[#005EB8]/20 shadow-sm"
                     : "border-slate-200 bg-slate-50/60 hover:bg-slate-100/70 hover:border-slate-300"

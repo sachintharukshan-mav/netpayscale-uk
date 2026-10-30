@@ -1,37 +1,47 @@
 import React from "react";
 import Link from "next/link";
+import { Sparkles, ArrowRight, ShieldCheck, Zap } from "lucide-react";
 
 export function AffiliateCards() {
   const guides = [
     {
-      id: "back-pay-arrears",
-      title: "NHS 3.3% Pay Rise & Back-Pay Arrears Calculator",
-      category: "Pay Award • Apr Arrears",
-      description:
-        "Calculate your exact backdated 2026/27 NHS Agenda for Change lump-sum arrears from 1 April after PAYE tax, National Insurance, NHS Pension, and Student Loan.",
-      actionText: "Open Back-Pay Calculator →",
-      href: "/pay-rise-backpay-calculator/",
-      benefit: "+3.3% Backdated Lump Sum",
-    },
-    {
       id: "band-promotion",
-      title: "NHS Band Promotion & Spine Step Net Comparator",
-      category: "Promotion • Band 5 → 6",
+      title: "⚡ Band 5 → 6 Promotion & Pension Bracket Trap Tool",
+      category: "Promotion • Pension Trap",
       description:
-        "Compare any two NHS Bands or spine steps side-by-side—including NHS Pension tier cliffs (8.3% to 9.8%) and the net pay impact of dropping ward night shifts.",
+        "The £50/month marginal deduction trap solved. Model pension tier jumps (8.3% to 9.8%), tax creep, and the net cash impact of dropping ward night shifts.",
       actionText: "Open Promotion Comparator →",
       href: "/promotion-calculator/",
       benefit: "Pension Cliff & Shift Check",
+      isHero: true,
+      colSpan: "md:col-span-2",
+      badgeColor: "bg-amber-50 text-amber-800 border-amber-200/80",
     },
     {
-      id: "redundancy-mars",
-      title: "NHS Redundancy & MARS Severance Calculator",
-      category: "Severance • Sec 16",
+      id: "unsocial-hours",
+      title: "🌙 Section 2 Unsocial Hours & Night Shift Pay Calculator",
+      category: "Shift Pay • Section 2",
       description:
-        "Calculate your contractual NHS Section 16 redundancy (1 month per year up to 24 years, £80k cap) or MARS payout after the £30,000 HMRC tax-free allowance.",
-      actionText: "Open Redundancy Calculator →",
-      href: "/redundancy-pay-calculator/",
-      benefit: "First £30,000 Tax-Free",
+        "Calculate gross enhancement vs. net cash in bank across Nights (+30%/+44%), Saturdays, and Sundays (+60%/+88%). Includes interactive rota builder.",
+      actionText: "Open Unsocial Hours Calculator →",
+      href: "/unsocial-hours-calculator/",
+      benefit: "+30% to +88% AfC Uplift",
+      isHero: false,
+      colSpan: "md:col-span-1",
+      badgeColor: "bg-blue-50 text-blue-800 border-blue-200/80",
+    },
+    {
+      id: "trusts-directory",
+      title: "🏥 Top 50 NHS Trusts & Hospital Pay Directory",
+      category: "Hospitals • HCAS Zones",
+      description:
+        "Explore starting and top pay across 50 major UK NHS Trusts and Health Boards with hospital site mappings, ODS codes, and London Weighting allowances.",
+      actionText: "Explore NHS Trusts Directory →",
+      href: "/trusts/",
+      benefit: "50 Verified NHS Trusts",
+      isHero: false,
+      colSpan: "md:col-span-1",
+      badgeColor: "bg-emerald-50 text-emerald-800 border-emerald-200/80",
     },
     {
       id: "pension-avc",
@@ -42,6 +52,9 @@ export function AffiliateCards() {
       actionText: "Open NHS Pension Calculator →",
       href: "/pension-calculator/",
       benefit: "Up to 40% HMRC Tax Relief",
+      isHero: false,
+      colSpan: "md:col-span-1",
+      badgeColor: "bg-purple-50 text-purple-800 border-purple-200/80",
     },
     {
       id: "bank-overtime",
@@ -52,6 +65,22 @@ export function AffiliateCards() {
       actionText: "Open Bank Shift Calculator →",
       href: "/bank-shift-calculator/",
       benefit: "+12.07% WTR Holiday Uplift",
+      isHero: false,
+      colSpan: "md:col-span-1",
+      badgeColor: "bg-emerald-50 text-emerald-800 border-emerald-200/80",
+    },
+    {
+      id: "back-pay-arrears",
+      title: "NHS 3.3% Pay Rise & Back-Pay Arrears Calculator",
+      category: "Pay Award • Apr Arrears",
+      description:
+        "Calculate your exact backdated 2026/27 NHS Agenda for Change lump-sum arrears from 1 April after PAYE tax, National Insurance, NHS Pension, and Student Loan.",
+      actionText: "Open Back-Pay Calculator →",
+      href: "/pay-rise-backpay-calculator/",
+      benefit: "+3.3% Backdated Lump Sum",
+      isHero: false,
+      colSpan: "md:col-span-1",
+      badgeColor: "bg-emerald-50 text-emerald-800 border-emerald-200/80",
     },
     {
       id: "maternity-omp",
@@ -62,6 +91,9 @@ export function AffiliateCards() {
       actionText: "Open Maternity Pay Calculator →",
       href: "/maternity-pay-calculator/",
       benefit: "Equalised 9/12-Mo Spread",
+      isHero: false,
+      colSpan: "md:col-span-1",
+      badgeColor: "bg-pink-50 text-pink-800 border-pink-200/80",
     },
     {
       id: "sick-pay",
@@ -72,6 +104,35 @@ export function AffiliateCards() {
       actionText: "Open NHS Sick Pay Calculator →",
       href: "/sick-pay-calculator/",
       benefit: "Up to 6m Full + 6m Half Pay",
+      isHero: false,
+      colSpan: "md:col-span-1",
+      badgeColor: "bg-teal-50 text-teal-800 border-teal-200/80",
+    },
+    {
+      id: "redundancy-mars",
+      title: "NHS Redundancy & MARS Severance Calculator",
+      category: "Severance • Sec 16",
+      description:
+        "Calculate your contractual NHS Section 16 redundancy (1 month per year up to 24 years, £80k cap) or MARS payout after the £30,000 HMRC tax-free allowance.",
+      actionText: "Open Redundancy Calculator →",
+      href: "/redundancy-pay-calculator/",
+      benefit: "First £30,000 Tax-Free",
+      isHero: false,
+      colSpan: "md:col-span-1",
+      badgeColor: "bg-rose-50 text-rose-800 border-rose-200/80",
+    },
+    {
+      id: "international",
+      title: "🌍 Overseas Recruits Visa & Relocation Hub (8 Languages)",
+      category: "Global • Relocation",
+      description:
+        "Dedicated guide for international healthcare workers entering the UK NHS on Health & Care Worker Visas. Translated into 8 languages with take-home pay models.",
+      actionText: "Open International Guide →",
+      href: "/international/",
+      benefit: "8 Languages Supported",
+      isHero: false,
+      colSpan: "md:col-span-1",
+      badgeColor: "bg-indigo-50 text-indigo-800 border-indigo-200/80",
     },
     {
       id: "annual-leave",
@@ -82,28 +143,35 @@ export function AffiliateCards() {
       actionText: "Open Annual Leave Calculator →",
       href: "/annual-leave-calculator/",
       benefit: "262.5h to 307.5h FTE",
+      isHero: false,
+      colSpan: "md:col-span-1",
+      badgeColor: "bg-cyan-50 text-cyan-800 border-cyan-200/80",
     },
     {
-      id: "band-progression",
-      title: "National Agenda for Change Band 2–9 Progression Hubs",
-      category: "Pay Progression • Annex 2",
+      id: "embed-widget",
+      title: "🔗 Embed Free NHS Calculator Widget for Your Site",
+      category: "Webmasters • Backlink Engine",
       description:
-        "Explore full experience step progression timelines, regional HCAS London Weighting comparisons, and hourly rates across all 11 Agenda for Change pay bands.",
-      actionText: "Explore NHS Band 5–9 Hubs →",
-      href: "/bands/band-5/",
-      benefit: "+3.3% 2026/27 Pay Award",
+        "Add a responsive, zero-maintenance 2026/27 NHS Pay Calculator to your nursing blog, trust intranet, or recruitment portal in 30 seconds with 1-click HTML code.",
+      actionText: "Get Embed Code →",
+      href: "/embed/",
+      benefit: "Free Iframe Generator",
+      isHero: false,
+      colSpan: "md:col-span-1",
+      badgeColor: "bg-slate-100 text-slate-800 border-slate-300",
     },
   ];
 
   return (
-    <section className="rounded-xl border border-zinc-200/90 bg-white p-6 shadow-xs space-y-4">
+    <section className="rounded-2xl border border-zinc-200/90 bg-white p-6 sm:p-7 shadow-xs space-y-5">
       <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 border-b border-zinc-100 pb-3">
         <div>
-          <h3 className="text-sm font-semibold text-zinc-950">
+          <h3 className="text-base font-bold text-zinc-950 flex items-center gap-2">
+            <Sparkles className="w-4 h-4 text-[#005EB8]" />
             Complete NHS Agenda for Change Calculator Suite &amp; Financial Toolkit
           </h3>
           <p className="text-xs text-zinc-500 mt-0.5">
-            Specialist calculators for NHS back-pay arrears, band promotions, redundancy, pensions, bank shifts, maternity, sick pay, and annual leave
+            Specialist interactive calculators for NHS promotion traps, unsocial night shifts, pensions, trusts, maternity, sick pay, and back-pay arrears
           </p>
         </div>
         <span className="text-[11px] text-zinc-400 font-mono">
@@ -111,36 +179,53 @@ export function AffiliateCards() {
         </span>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-1">
+      {/* Asymmetric Bento Grid Container with CSS Anchor Positioning Magnetic Hover Engine */}
+      <div className="bento-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-1">
+        {/* The shared floating magnetic indicator (Glides magnetically across cards in modern Chromium, zero JS) */}
+        <div className="bento-indicator bento-2xl" aria-hidden="true" />
+
         {guides.map((item) => (
           <div
             key={item.id}
-            className="flex flex-col justify-between rounded-lg border border-zinc-200/80 bg-zinc-50/50 p-4 transition-all hover:bg-zinc-50 hover:border-zinc-300"
+            className={`bento-card group flex flex-col justify-between rounded-xl border border-zinc-200/80 bg-zinc-50/50 p-4 sm:p-5 transition-all duration-200 hover:bg-white hover:border-zinc-300 hover:shadow-xs ${
+              item.colSpan || ""
+            }`}
           >
             <div>
-              <div className="flex items-center justify-between mb-1.5">
+              <div className="flex items-center justify-between mb-2">
                 <span className="text-[10px] font-mono uppercase text-zinc-500 tracking-wider">
                   {item.category}
                 </span>
-                <span className="text-[11px] font-mono font-medium text-emerald-700 bg-emerald-50 border border-emerald-200/70 rounded px-1.5 py-0.5">
+                <span
+                  className={`text-[11px] font-mono font-semibold rounded px-2 py-0.5 border ${item.badgeColor}`}
+                >
                   {item.benefit}
                 </span>
               </div>
-              <h4 className="text-xs font-semibold text-zinc-900 leading-snug">
+              <h4
+                className={`font-bold text-zinc-900 leading-snug group-hover:text-[#005EB8] transition-colors ${
+                  item.isHero ? "text-sm sm:text-base" : "text-xs sm:text-sm"
+                }`}
+              >
                 {item.title}
               </h4>
-              <p className="mt-1.5 text-xs text-zinc-600 leading-relaxed">
+              <p
+                className={`mt-1.5 text-zinc-600 leading-relaxed ${
+                  item.isHero ? "text-xs sm:text-sm" : "text-xs"
+                }`}
+              >
                 {item.description}
               </p>
             </div>
 
-            <div className="mt-3 pt-2.5 border-t border-zinc-200/60">
+            <div className="mt-4 pt-3 border-t border-zinc-200/60 flex items-center justify-between">
               <Link
                 href={item.href}
-                className="text-xs font-semibold text-[#005EB8] hover:underline transition-colors"
+                className="text-xs font-bold text-[#005EB8] hover:underline transition-colors flex items-center gap-1"
               >
-                {item.actionText}
+                <span>{item.actionText}</span>
               </Link>
+              <ArrowRight className="w-3.5 h-3.5 text-[#005EB8] opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
             </div>
           </div>
         ))}

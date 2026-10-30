@@ -206,11 +206,12 @@ export function UnsocialHoursCalculatorClient() {
           </span>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5">
+        <div className="bento-container grid grid-cols-2 lg:grid-cols-4 gap-2.5">
+          <div className="bento-indicator bento-2xl" aria-hidden="true" />
           <button
             type="button"
             onClick={() => applyPreset("ward")}
-            className="p-3 rounded-xl border border-blue-200 bg-blue-50/60 hover:bg-blue-100/70 text-left transition-all active:scale-[0.98]"
+            className="bento-card p-3 rounded-xl border border-blue-200 bg-blue-50/60 hover:bg-blue-100/70 text-left transition-all active:scale-[0.98]"
           >
             <span className="text-xs font-bold text-[#005EB8] block">
               🏥 Standard Ward Rota
@@ -223,7 +224,7 @@ export function UnsocialHoursCalculatorClient() {
           <button
             type="button"
             onClick={() => applyPreset("nights")}
-            className="p-3 rounded-xl border border-purple-200 bg-purple-50/60 hover:bg-purple-100/70 text-left transition-all active:scale-[0.98]"
+            className="bento-card p-3 rounded-xl border border-purple-200 bg-purple-50/60 hover:bg-purple-100/70 text-left transition-all active:scale-[0.98]"
           >
             <span className="text-xs font-bold text-purple-800 block">
               🌙 Night Shift Intensive
@@ -236,7 +237,7 @@ export function UnsocialHoursCalculatorClient() {
           <button
             type="button"
             onClick={() => applyPreset("weekend")}
-            className="p-3 rounded-xl border border-emerald-200 bg-emerald-50/60 hover:bg-emerald-100/70 text-left transition-all active:scale-[0.98]"
+            className="bento-card p-3 rounded-xl border border-emerald-200 bg-emerald-50/60 hover:bg-emerald-100/70 text-left transition-all active:scale-[0.98]"
           >
             <span className="text-xs font-bold text-emerald-800 block">
               ⭐ Weekend Heavy Rota
@@ -249,7 +250,7 @@ export function UnsocialHoursCalculatorClient() {
           <button
             type="button"
             onClick={() => applyPreset("clinic")}
-            className="p-3 rounded-xl border border-slate-200 bg-slate-50/80 hover:bg-slate-100 text-left transition-all active:scale-[0.98]"
+            className="bento-card p-3 rounded-xl border border-slate-200 bg-slate-50/80 hover:bg-slate-100 text-left transition-all active:scale-[0.98]"
           >
             <span className="text-xs font-bold text-slate-700 block">
               🏢 9–5 Clinic (No Unsocial)

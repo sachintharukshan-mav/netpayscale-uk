@@ -81,11 +81,14 @@ export default function PopularBandsComparison() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="bento-container grid grid-cols-1 md:grid-cols-3 gap-4">
+        {/* Floating magnetic indicator */}
+        <div className="bento-indicator bento-2xl" aria-hidden="true" />
+
         {bands.map((item) => (
           <div
             key={item.band}
-            className="flex flex-col justify-between rounded-xl border border-zinc-200/90 bg-white p-5 shadow-xs"
+            className="bento-card flex flex-col justify-between rounded-xl border border-zinc-200/90 bg-white p-5 shadow-xs transition-all duration-200 hover:border-zinc-300 hover:shadow-xs"
           >
             <div>
               <div className="flex items-center justify-between">
