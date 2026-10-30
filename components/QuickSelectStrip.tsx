@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { MagneticBentoContainer } from "@/components/MagneticBento";
 
 interface QuickSelectRole {
   label: string;
@@ -42,10 +43,12 @@ export default function QuickSelectStrip() {
               <span className="text-xs font-semibold text-text-ink">2026/27 AfC Rates</span>
             </div>
 
-            {/* Touch Scrollable Quick Select Chips Bar with smooth tactile clicks */}
+            {/* Touch Scrollable Quick Select Chips Bar with smooth tactile clicks & magnetic hover indicator */}
             <div className="relative w-full overflow-hidden">
-              <div className="bento-container flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5 w-full touch-pan-x">
-                <div className="bento-indicator" aria-hidden="true" />
+              <MagneticBentoContainer
+                variant="pill"
+                className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5 w-full touch-pan-x"
+              >
                 <span className="text-[10px] text-text-muted uppercase tracking-wider shrink-0 mr-0.5 font-medium">
                   Quick Select:
                 </span>
@@ -54,12 +57,12 @@ export default function QuickSelectStrip() {
                     key={role.label}
                     type="button"
                     onClick={() => handleSelect(role)}
-                    className="bento-card px-2.5 py-1 bg-surface-muted hover:bg-zinc-200 hover:border-zinc-300 border border-transparent rounded-md text-xs text-text-body whitespace-nowrap active:scale-[0.96] transition-all duration-150 shrink-0 cursor-pointer"
+                    className="bento-card px-2.5 py-1 bg-surface-muted hover:bg-zinc-200 border border-transparent rounded-full text-xs text-text-body whitespace-nowrap active:scale-[0.96] transition-all duration-150 shrink-0 cursor-pointer"
                   >
                     {role.label}
                   </button>
                 ))}
-              </div>
+              </MagneticBentoContainer>
             </div>
           </div>
 

@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { formatCurrency } from "@/lib/formatters";
 import { calculateNHSPay } from "@/lib/calculator";
+import { MagneticBentoContainer } from "@/components/MagneticBento";
 
 export default function PopularBandsComparison() {
   const [isAnnual, setIsAnnual] = useState(true);
@@ -81,10 +82,7 @@ export default function PopularBandsComparison() {
         </div>
       </div>
 
-      <div className="bento-container grid grid-cols-1 md:grid-cols-3 gap-4">
-        {/* Floating magnetic indicator */}
-        <div className="bento-indicator bento-2xl" aria-hidden="true" />
-
+      <MagneticBentoContainer variant="2xl" className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {bands.map((item) => (
           <div
             key={item.band}
@@ -131,7 +129,7 @@ export default function PopularBandsComparison() {
             </div>
           </div>
         ))}
-      </div>
+      </MagneticBentoContainer>
     </section>
   );
 }

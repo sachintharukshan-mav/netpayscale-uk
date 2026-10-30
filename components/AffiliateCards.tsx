@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Sparkles, ArrowRight, ShieldCheck, Zap } from "lucide-react";
+import { MagneticBentoContainer } from "@/components/MagneticBento";
 
 export function AffiliateCards() {
   const guides = [
@@ -179,11 +180,11 @@ export function AffiliateCards() {
         </span>
       </div>
 
-      {/* Asymmetric Bento Grid Container with CSS Anchor Positioning Magnetic Hover Engine */}
-      <div className="bento-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-1">
-        {/* The shared floating magnetic indicator (Glides magnetically across cards in modern Chromium, zero JS) */}
-        <div className="bento-indicator bento-2xl" aria-hidden="true" />
-
+      {/* Asymmetric Bento Grid Container with Universal & GPU-Accelerated Magnetic Hover Engine */}
+      <MagneticBentoContainer
+        variant="2xl"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-1"
+      >
         {guides.map((item) => (
           <div
             key={item.id}
@@ -229,7 +230,7 @@ export function AffiliateCards() {
             </div>
           </div>
         ))}
-      </div>
+      </MagneticBentoContainer>
 
       <p className="text-[11px] text-zinc-400 pt-2 border-t border-zinc-100">
         Statutory Notice: NetPayScale UK provides independent computational models synchronised with the 2026/27 NHS Terms and Conditions of Service (Agenda for Change) Handbook and HMRC PAYE regulations.

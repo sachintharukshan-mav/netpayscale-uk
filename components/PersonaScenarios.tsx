@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import { formatCurrency } from "@/lib/formatters";
 import { calculateNHSPay } from "@/lib/calculator";
+import { MagneticBentoContainer } from "@/components/MagneticBento";
 
 export default function PersonaScenarios() {
   const p1 = calculateNHSPay({ band: "Band 5", stepIndex: 0, hcasZone: "standard", contractedHours: 37.5, nightHoursPerWeek: 0, sundayHoursPerWeek: 0, pensionOptedOut: false, isScottishTax: false, studentLoan: "plan2" });
@@ -71,10 +74,7 @@ export default function PersonaScenarios() {
         </span>
       </div>
 
-      <div className="bento-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {/* Floating magnetic indicator */}
-        <div className="bento-indicator bento-2xl" aria-hidden="true" />
-
+      <MagneticBentoContainer variant="2xl" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {scenarios.map((item) => (
           <div
             key={item.title}
@@ -117,7 +117,7 @@ export default function PersonaScenarios() {
             </div>
           </div>
         ))}
-      </div>
+      </MagneticBentoContainer>
     </section>
   );
 }

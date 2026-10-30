@@ -4,6 +4,7 @@ import React, { useState, useMemo } from "react";
 import Link from "next/link";
 import trustsData from "@/data/nhs_trusts.json";
 import { formatCurrency } from "@/lib/formatters";
+import { MagneticBentoContainer } from "@/components/MagneticBento";
 import {
   Search,
   Building2,
@@ -164,10 +165,7 @@ export function TrustDirectoryClient() {
       </div>
 
       {/* Trust Grid */}
-      <div className="bento-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {/* Floating magnetic indicator */}
-        <div className="bento-indicator bento-2xl" aria-hidden="true" />
-
+      <MagneticBentoContainer variant="2xl" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredTrusts.map((trust) => {
           const isInner = trust.hcasZone === "inner-london";
           const isOuter = trust.hcasZone === "outer-london";
@@ -279,7 +277,7 @@ export function TrustDirectoryClient() {
             </div>
           );
         })}
-      </div>
+      </MagneticBentoContainer>
 
       {filteredTrusts.length === 0 && (
         <div className="bg-white rounded-2xl border border-slate-200 p-12 text-center space-y-3">

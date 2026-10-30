@@ -5,6 +5,7 @@ import Link from "next/link";
 import nhsData from "@/data/nhs_afc_2026.json";
 import { formatCurrency } from "@/lib/formatters";
 import { ShareBreakdownButton } from "@/components/ShareBreakdownButton";
+import { MagneticBentoContainer } from "@/components/MagneticBento";
 import {
   Moon,
   Sun,
@@ -206,8 +207,7 @@ export function UnsocialHoursCalculatorClient() {
           </span>
         </div>
 
-        <div className="bento-container grid grid-cols-2 lg:grid-cols-4 gap-2.5">
-          <div className="bento-indicator bento-2xl" aria-hidden="true" />
+        <MagneticBentoContainer variant="2xl" className="grid grid-cols-2 lg:grid-cols-4 gap-2.5">
           <button
             type="button"
             onClick={() => applyPreset("ward")}
@@ -259,7 +259,7 @@ export function UnsocialHoursCalculatorClient() {
               Monday–Friday standard hours
             </span>
           </button>
-        </div>
+        </MagneticBentoContainer>
       </div>
 
       {/* Main Dual Column Layout */}

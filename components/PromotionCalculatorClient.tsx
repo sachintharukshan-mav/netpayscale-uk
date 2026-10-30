@@ -5,6 +5,7 @@ import nhsData from "@/data/nhs_afc_2026.json";
 import { calculateNHSPay, CalculatorInputs } from "@/lib/calculator";
 import { formatCurrency } from "@/lib/formatters";
 import { ShareBreakdownButton } from "@/components/ShareBreakdownButton";
+import { MagneticBentoContainer } from "@/components/MagneticBento";
 import {
   AlertTriangle,
   TrendingUp,
@@ -271,8 +272,7 @@ Check full breakdown & pension trap on NetPayScale UK:`;
           )}
         </div>
 
-        <div className="bento-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-          <div className="bento-indicator bento-2xl" aria-hidden="true" />
+        <MagneticBentoContainer variant="2xl" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
           {PRESETS.map((p) => {
             const isSelected = activePreset === p.id;
             return (
@@ -316,7 +316,7 @@ Check full breakdown & pension trap on NetPayScale UK:`;
               </button>
             );
           })}
-        </div>
+        </MagneticBentoContainer>
       </div>
 
       {/* 2. Side-by-Side Role Selectors & Comparative Dashboard */}
