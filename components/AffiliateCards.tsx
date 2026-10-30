@@ -19,6 +19,19 @@ export function AffiliateCards() {
       badgeColor: "bg-amber-50 text-amber-800 border-amber-200/80",
     },
     {
+      id: "agency-vs-bank",
+      title: "⚖️ NHS Staff Bank vs. Agency vs. Substantive Net Pay Comparator",
+      category: "Shift Work • IR35 Umbrella",
+      description:
+        "The Inside IR35 umbrella trap exposed. Compare actual net take-home pay: NHS Staff Bank (+12.07% WTR holiday uplift & pension) vs Agency (deducting 13.8% Employer NI & umbrella margins).",
+      actionText: "Open Bank vs Agency Comparator →",
+      href: "/agency-vs-bank-calculator/",
+      benefit: "Inside IR35 vs +12.07% WTR",
+      isHero: false,
+      colSpan: "md:col-span-1",
+      badgeColor: "bg-amber-50 text-amber-800 border-amber-200/80",
+    },
+    {
       id: "unsocial-hours",
       title: "🌙 Section 2 Unsocial Hours & Night Shift Pay Calculator",
       category: "Shift Pay • Section 2",

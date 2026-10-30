@@ -18,6 +18,7 @@ NetPayScale UK is an open-access statutory payroll reference and calculator suit
 - [NHS Salary & Visa Guide for International Recruits 2026/27](https://netpayscale.uk/international.md): Complete guide for overseas nurses, doctors, and healthcare staff: Pre-OSCE (Band 4) vs Post-OSCE (Band 5) pay, Health and Care Worker Visa exemptions, and remittances.
 - [Embed Free NHS Salary & Pension Calculator Widget (2026/27)](https://netpayscale.uk/embed.md): Free embeddable 2026/27 NHS Agenda for Change take-home pay calculator widget for blogs, intranets, and recruitment portals.
 - [NHS Unsocial Hours & Night Shift Pay Calculator 2026/27](https://netpayscale.uk/unsocial-hours-calculator.md): Official Agenda for Change Section 2 unsocial hours calculator: weekday nights (+30%/+44%), Saturdays, and Sundays/Bank Holidays (+60%/+88%) gross and net take-home pay.
+- [NHS Bank vs. Agency vs. Substantive Pay Calculator 2026/27](https://netpayscale.uk/agency-vs-bank-calculator.md): Compare net take-home pay: Permanent Substantive AfC vs Trust Staff Bank (+12.07% WTR holiday pay) vs Agency Nursing Inside IR35 after umbrella fees.
 - [Top 50 NHS Trusts & Hospital Pay Directory 2026/27](https://netpayscale.uk/trusts.md): Official directory of the 50 largest UK NHS Hospital Trusts, London Weighting (HCAS) zones, starting Band 5 gross and net pay, and hospital sites.
 
 ## 2026/27 NHS Agenda for Change Band Guides (Markdown Twins)
@@ -55,7 +56,7 @@ NetPayScale UK is an open-access statutory payroll reference and calculator suit
 ## Machine-readable
 - [Full content](https://netpayscale.uk/llms-full.txt): Every core calculator, Band 2–9 pay table, and NHS Trust pay scale concatenated in one Markdown file
 - [Markdown catalog](https://netpayscale.uk/api/md/_catalog): JSON index of all Markdown endpoints
-- [Sitemap](https://netpayscale.uk/sitemap.xml): Complete XML sitemap of all 568 canonical HTML pages
+- [Sitemap](https://netpayscale.uk/sitemap.xml): Complete XML sitemap of all 569 canonical HTML pages
 - [AI usage policy](https://netpayscale.uk/ai.txt): Permissions, attribution rules, and crawler scope (ai-txt v1.1.1)
 
 ## Optional & Legal

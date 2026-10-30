@@ -80,6 +80,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/agency-vs-bank-calculator/" className="hover:text-zinc-950 transition-colors font-medium text-amber-700">
+                  NHS Bank vs. Agency vs. Substantive
+                </Link>
+              </li>
+              <li>
                 <Link href="/unsocial-hours-calculator/" className="hover:text-zinc-950 transition-colors font-medium text-purple-700">
                   NHS Unsocial Hours &amp; Night Pay
                 </Link>

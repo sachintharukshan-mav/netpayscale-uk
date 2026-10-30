@@ -2,8 +2,8 @@
   "site": "NetPayScale UK (NHS Edition)",
   "url": "https://netpayscale.uk",
   "updated": "2026-10-26",
-  "totalMarkdownRoutes": 74,
-  "totalHtmlRoutes": 568,
+  "totalMarkdownRoutes": 75,
+  "totalHtmlRoutes": 569,
   "routes": [
     {
       "htmlUrl": "https://netpayscale.uk/",
@@ -87,6 +87,13 @@
       "markdownUrl": "https://netpayscale.uk/unsocial-hours-calculator.md",
       "title": "NHS Unsocial Hours & Night Shift Pay Calculator 2026/27",
       "description": "Official Agenda for Change Section 2 unsocial hours calculator: weekday nights (+30%/+44%), Saturdays, and Sundays/Bank Holidays (+60%/+88%) gross and net take-home pay.",
+      "category": "core"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/agency-vs-bank-calculator/",
+      "markdownUrl": "https://netpayscale.uk/agency-vs-bank-calculator.md",
+      "title": "NHS Bank vs. Agency vs. Substantive Pay Calculator 2026/27",
+      "description": "Compare net take-home pay: Permanent Substantive AfC vs Trust Staff Bank (+12.07% WTR holiday pay) vs Agency Nursing Inside IR35 after umbrella fees.",
       "category": "core"
     },
     {

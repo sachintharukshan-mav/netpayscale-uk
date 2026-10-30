@@ -88,6 +88,12 @@ export function Navbar() {
           >
             {t("promotion", "Promotion")}
           </Link>
+          <Link
+            href="/agency-vs-bank-calculator/"
+            className="hidden 2xl:inline-block px-3 py-1.5 rounded-lg text-sm text-amber-700 hover:text-amber-900 hover:bg-amber-50 font-medium transition-all duration-150 active:scale-95"
+          >
+            Bank vs Agency
+          </Link>
         </nav>
 
         {/* Right Metadata & Language Selector */}
@@ -166,6 +172,14 @@ export function Navbar() {
             onClick={() => setMobileMenuOpen(false)}
           >
             NHS Bank Shift &amp; Overtime Calculator
+          </Link>
+          <Link
+            className="block px-3 py-2 rounded-lg text-amber-900 bg-amber-50 hover:bg-amber-100 font-semibold text-sm flex items-center justify-between"
+            href="/agency-vs-bank-calculator/"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <span>NHS Bank vs. Agency vs. Substantive</span>
+            <span className="text-[10px] px-1.5 py-0.5 rounded bg-amber-600 text-white font-bold">New</span>
           </Link>
           <Link
             className="block px-3 py-2 rounded-lg text-text-body hover:bg-surface-muted font-medium text-sm"

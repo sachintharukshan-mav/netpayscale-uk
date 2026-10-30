@@ -41,6 +41,7 @@ allow = /annual-leave-calculator/
 allow = /bank-shift-calculator/
 allow = /promotion-calculator/
 allow = /unsocial-hours-calculator/
+allow = /agency-vs-bank-calculator/
 allow = /pay-rise-backpay-calculator/
 allow = /redundancy-pay-calculator/
 allow = /international/

@@ -45,8 +45,8 @@ assert(fs.existsSync(catalogPath), 'api/md/_catalog exists in static export');
 const llmsFullContent = fs.readFileSync(llmsFullPath, 'utf8');
 assert(llmsFullContent.length > 10000 && llmsFullContent.length < 500000, `llms-full.txt length is within optimal LLM context window (${llmsFullContent.length} chars)`);
 const catalogData = JSON.parse(fs.readFileSync(catalogPath, 'utf8'));
-assert(catalogData.totalMarkdownRoutes === 74, `api/md/_catalog lists all 74 core, band & trust Markdown routes (actual: ${catalogData.totalMarkdownRoutes})`);
-assert(catalogData.totalHtmlRoutes === 568, `api/md/_catalog reports 568 total HTML routes (actual: ${catalogData.totalHtmlRoutes})`);
+assert(catalogData.totalMarkdownRoutes === 75, `api/md/_catalog lists all 75 core, band & trust Markdown routes (actual: ${catalogData.totalMarkdownRoutes})`);
+assert(catalogData.totalHtmlRoutes === 569, `api/md/_catalog reports 569 total HTML routes (actual: ${catalogData.totalHtmlRoutes})`);
 
 // 2. Sitemap.xml check
 const sitemapPath = path.join(outDir, 'sitemap.xml');
@@ -57,7 +57,7 @@ const sitemapContent = fs.readFileSync(sitemapPath, 'utf8');
 const locMatches = [...sitemapContent.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => m[1]);
 console.log(`Found ${locMatches.length} URLs in sitemap.xml`);
 
-assert(locMatches.length === 568, `Sitemap contains all 568 canonical URLs (8 static + 9 sibling calculators + 11 band hubs + 50 trust hubs + 490 role-region spokes; actual: ${locMatches.length})`);
+assert(locMatches.length === 569, `Sitemap contains all 569 canonical URLs (8 static + 10 sibling calculators + 11 band hubs + 50 trust hubs + 490 role-region spokes; actual: ${locMatches.length})`);
 assert(locMatches[0] === 'https://netpayscale.uk/', `Homepage in sitemap is exact canonical: https://netpayscale.uk/ (actual: ${locMatches[0]})`);
 
 let nonTrailingSlashCount = 0;
@@ -79,7 +79,7 @@ const sitemapIndexMatches = [...sitemapIndexContent.matchAll(/<loc>(.*?)<\/loc>/
 assert(sitemapIndexMatches.length === 4, `sitemap-index.xml points to 4 child sitemaps (actual: ${sitemapIndexMatches.length})`);
 
 const childSitemaps = [
-  { file: 'sitemap-core.xml', count: 17 },
+  { file: 'sitemap-core.xml', count: 18 },
   { file: 'sitemap-bands.xml', count: 11 },
   { file: 'sitemap-trusts.xml', count: 50 },
   { file: 'sitemap-roles.xml', count: 490 }
@@ -100,7 +100,7 @@ for (const child of childSitemaps) {
     }
   }
 }
-assert(totalSegmentedUrls === 568, `Segmented child sitemaps sum to exactly 568 URLs matching master sitemap.xml (actual: ${totalSegmentedUrls})`);
+assert(totalSegmentedUrls === 569, `Segmented child sitemaps sum to exactly 569 URLs matching master sitemap.xml (actual: ${totalSegmentedUrls})`);
 
 
 // 3. Homepage HTML Audit (Canonical, Meta, Schema)
@@ -139,7 +139,7 @@ for (const p of trustPages) {
   }
 }
 
-// 3C. 9 High-Volume Sibling Calculators Audit
+// 3C. 10 High-Volume Sibling Calculators Audit
 const siblingCalculators = [
   'pension-calculator',
   'sick-pay-calculator',
@@ -150,6 +150,7 @@ const siblingCalculators = [
   'promotion-calculator',
   'redundancy-pay-calculator',
   'unsocial-hours-calculator',
+  'agency-vs-bank-calculator',
 ];
 for (const calcSlug of siblingCalculators) {
   const cPath = path.join(outDir, calcSlug, 'index.html');
@@ -171,6 +172,11 @@ for (const calcSlug of siblingCalculators) {
       assert(cHtml.includes('Section 2') || cHtml.includes('Section 2 Terms'), 'Unsocial Hours Calculator includes AfC Section 2 statutory references');
       assert(cHtml.includes('+30%') && cHtml.includes('+60%'), 'Unsocial Hours Calculator covers +30% night and +60% Sunday enhancements');
       assert(cHtml.includes('+44%') && cHtml.includes('+88%'), 'Unsocial Hours Calculator covers +44% and +88% Band 2-3 enhancements');
+    }
+    if (calcSlug === 'agency-vs-bank-calculator') {
+      assert(cHtml.includes('Inside IR35') || cHtml.includes('IR35'), 'Agency vs Bank Calculator covers Inside IR35 umbrella deductions');
+      assert(cHtml.includes('12.07%') || cHtml.includes('+12.07%'), 'Agency vs Bank Calculator covers 12.07% WTR holiday pay uplift');
+      assert(cHtml.includes('Employer NI') || cHtml.includes('Employer Class 1 NI') || cHtml.includes('13.8%'), 'Agency vs Bank Calculator audits 13.8% Employer NI deductions');
     }
   }
 }
@@ -285,6 +291,23 @@ if (fs.existsSync(pensionPath)) {
   assert(pHtml.includes('Tax-Free Lump Sum Commutation'), 'Pension page contains commutation guidance');
   assert(pHtml.includes('data-share-widget="whatsapp-copy-breakdown"'), 'Pension page contains 1-Tap WhatsApp Share widget');
   assert(fs.existsSync(path.join(outDir, 'pension-calculator.md')), 'pension-calculator.md exists in static export');
+}
+
+// 3J. NHS Bank vs Agency vs Substantive Net Pay Comparator Audit (/agency-vs-bank-calculator/)
+const agencyPath = path.join(outDir, 'agency-vs-bank-calculator', 'index.html');
+assert(fs.existsSync(agencyPath), 'Agency vs Bank calculator page exists: /agency-vs-bank-calculator/index.html');
+if (fs.existsSync(agencyPath)) {
+  const aHtml = fs.readFileSync(agencyPath, 'utf8');
+  const expectedCanonical = 'https://netpayscale.uk/agency-vs-bank-calculator/';
+  const canonicalMatch = aHtml.match(/<link[^>]+rel="canonical"[^>]+href="([^"]+)"/i) || aHtml.match(/<link[^>]+href="([^"]+)"[^>]+rel="canonical"/i);
+  assert(canonicalMatch && canonicalMatch[1] === expectedCanonical, `Page /agency-vs-bank-calculator/ has exact canonical (actual: ${canonicalMatch ? canonicalMatch[1] : 'NONE'})`);
+  assert(aHtml.includes('"@type":"WebApplication"'), 'Agency vs Bank page contains WebApplication schema');
+  assert(aHtml.includes('"@type":"FAQPage"'), 'Agency vs Bank page contains FAQPage schema');
+  assert(aHtml.includes('"@type":"BreadcrumbList"'), 'Agency vs Bank page contains BreadcrumbList schema');
+  assert(aHtml.includes('Quick Answer: NHS Bank vs. Agency Inside IR35'), 'Agency vs Bank page contains Position 0 Answer Box');
+  assert(aHtml.includes('Contractual Deductions &amp; Employment Rights Comparison') || aHtml.includes('Contractual Deductions & Employment Rights Comparison'), 'Agency vs Bank page contains deductions comparison table');
+  assert(aHtml.includes('data-share-widget="whatsapp-copy-breakdown"'), 'Agency vs Bank page contains 1-Tap WhatsApp Share widget');
+  assert(fs.existsSync(path.join(outDir, 'agency-vs-bank-calculator.md')), 'agency-vs-bank-calculator.md exists in static export');
 }
 
 // 4. Sample pSEO Pages Audit (Canonical, OpenGraph, BreadcrumbList, Occupation, AEO Direct Answer, Multi-Step Matrix)

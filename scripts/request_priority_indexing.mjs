@@ -6,6 +6,7 @@ const keyPath = path.resolve("nhspayscale-gsc-2f1e6db0dd83.json");
 const keyData = JSON.parse(fs.readFileSync(keyPath, "utf8"));
 
 const NEW_PRIORITY_URLS = [
+  "https://netpayscale.uk/agency-vs-bank-calculator/",
   "https://netpayscale.uk/pension-calculator/",
   "https://netpayscale.uk/trusts/",
   "https://netpayscale.uk/trusts/guys-and-st-thomas/",
