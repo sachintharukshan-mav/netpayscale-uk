@@ -45,7 +45,23 @@ export default function AdPlaceholder({
   label,
   className = "",
 }: AdPlaceholderProps) {
+  const showDebugWireframe = process.env.NEXT_PUBLIC_SHOW_AD_WIREFRAMES === "true";
   const meta = FORMAT_METADATA[format];
+
+  if (!showDebugWireframe) {
+    // Clean production: maintains the DOM slot anchor for ad scripts with zero CLS,
+    // but cleanly hides raw wireframe developer text from real clinical users.
+    return (
+      <aside
+        id={`ad-slot-${slotId}`}
+        data-ad-slot={slotId}
+        data-ad-format={format}
+        data-ad-status="ready"
+        aria-hidden="true"
+        className={`print:hidden empty:hidden ${className}`}
+      />
+    );
+  }
 
   return (
     <aside

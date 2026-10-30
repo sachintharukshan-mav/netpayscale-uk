@@ -113,7 +113,7 @@ export default function Calculator({
     { label: "B2", full: "Band 2" },
     { label: "B3", full: "Band 3" },
     { label: "B4", full: "Band 4" },
-    { label: "Band 5", full: "Band 5" },
+    { label: "B5", full: "Band 5" },
     { label: "B6", full: "Band 6" },
     { label: "B7", full: "Band 7" },
     { label: "B8A", full: "Band 8a" },

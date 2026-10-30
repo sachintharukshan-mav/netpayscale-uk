@@ -177,7 +177,7 @@ export default function AgencyVsBankCalculatorPage() {
               Home
             </Link>
             <ChevronRight className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-            <span className="text-slate-900 font-semibold truncate shrink-0">
+            <span className="text-slate-900 font-semibold whitespace-nowrap">
               NHS Bank vs. Agency vs. Permanent Calculator
             </span>
           </nav>
@@ -197,9 +197,9 @@ export default function AgencyVsBankCalculatorPage() {
             </span>
           </div>
 
-          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+          <h1 className="text-xl sm:text-3xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight break-words">
             NHS Bank vs. Agency vs. Permanent <span className="text-[#005EB8]">Calculator (2026/27)</span>
-            <span className="block text-lg sm:text-2xl font-bold text-slate-700 mt-1.5">
+            <span className="block text-base sm:text-xl lg:text-2xl font-bold text-slate-700 mt-2 break-words">
               The Real Take-Home Pay Comparison: Umbrella Deductions vs. 12.07% WTR Holiday Pay
             </span>
           </h1>
@@ -211,8 +211,8 @@ export default function AgencyVsBankCalculatorPage() {
 
         {/* Position 0 Executive Answer Box (Targeting Google Featured Snippets) */}
         <section className="bg-gradient-to-r from-blue-50/90 via-white to-blue-50/50 border-2 border-[#005EB8]/30 rounded-2xl p-5 sm:p-7 shadow-xs space-y-3">
-          <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-[#005EB8]">
-            <Sparkles className="w-4 h-4" />
+          <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-[#005EB8] flex-wrap">
+            <Sparkles className="w-4 h-4 shrink-0" />
             <span>Quick Answer: NHS Bank vs. Agency Inside IR35</span>
           </div>
           <p className="text-sm sm:text-base text-slate-900 font-medium leading-relaxed">

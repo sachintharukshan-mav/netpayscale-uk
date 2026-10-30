@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   });
 
   const title = `${entry.roleName} Salary ${entry.regionName} (2026/27): ${formatCurrency(entryCalc.netPay.monthly)}/mo Net (${formatHourlyRate(entryCalc.hourlyRate)})`;
-  const description = `Official 2026/27 NHS ${entry.band} ${entry.roleName} salary in ${entry.regionName}: ${formatCurrency(entryCalc.grossPay.annual)} gross (${formatHourlyRate(entryCalc.hourlyRate)}/hr). Monthly net take-home is ${formatCurrency(entryCalc.netPay.monthly)}/mo after PAYE tax, NI, and ${entryCalc.pensionTierLabel} CARE pension. View step progression and shift pay tables.`;
+  const description = `Official 2026/27 NHS ${entry.band} ${entry.roleName} salary in ${entry.regionName}: ${formatCurrency(entryCalc.grossPay.annual)} gross (${formatHourlyRate(entryCalc.hourlyRate)}). Monthly net take-home is ${formatCurrency(entryCalc.netPay.monthly)}/mo after PAYE tax, NI, and ${entryCalc.pensionTierLabel} CARE pension. View step progression and shift pay tables.`;
   const canonicalUrl = `https://netpayscale.uk/calculator/${entry.slug}/`;
 
   return {
@@ -264,7 +264,7 @@ export default async function PseoCalculatorPage({ params }: Props) {
             name: `What is the hourly rate for an NHS ${entry.band} ${entry.roleName} in ${entry.regionName}?`,
             acceptedAnswer: {
               "@type": "Answer",
-              text: `The basic daytime hourly rate for an NHS ${entry.band} ${entry.roleName} in ${entry.regionName} is ${formatHourlyRate(baselineResult.hourlyRate)} at entry (rising to ${formatHourlyRate(topStepResult.hourlyRate)} at top of band). Under Section 2 unsocial hours rules, night shifts and Saturdays pay an enhancement rate of ${formatHourlyRate(baselineResult.hourlyRate * (entry.band === "Band 2" || entry.band === "Band 3" ? 1.44 : 1.30))}/hr, while Sundays and Bank Holidays pay ${formatHourlyRate(baselineResult.hourlyRate * (entry.band === "Band 2" || entry.band === "Band 3" ? 1.88 : 1.60))}/hr.`,
+              text: `The basic daytime hourly rate for an NHS ${entry.band} ${entry.roleName} in ${entry.regionName} is ${formatHourlyRate(baselineResult.hourlyRate)} at entry (rising to ${formatHourlyRate(topStepResult.hourlyRate)} at top of band). Under Section 2 unsocial hours rules, night shifts and Saturdays pay an enhancement rate of ${formatHourlyRate(baselineResult.hourlyRate * (entry.band === "Band 2" || entry.band === "Band 3" ? 1.44 : 1.30))}, while Sundays and Bank Holidays pay ${formatHourlyRate(baselineResult.hourlyRate * (entry.band === "Band 2" || entry.band === "Band 3" ? 1.88 : 1.60))}.`,
             },
           },
           {
@@ -325,7 +325,7 @@ export default async function PseoCalculatorPage({ params }: Props) {
                 <span>•</span>
                 <span>2026/27 (+3.3%)</span>
               </div>
-              <h1 className="text-2xl sm:text-3xl font-bold text-zinc-950 tracking-tight leading-snug">
+              <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-zinc-950 tracking-tight leading-snug break-words">
                 {entry.band} {entry.roleName} Salary &amp; Net Take-Home in{" "}
                 {entry.regionName}
               </h1>
@@ -346,10 +346,10 @@ export default async function PseoCalculatorPage({ params }: Props) {
                 </div>
                 <div className="flex flex-wrap items-center gap-1.5 pt-1 text-[11px] font-mono">
                   <span className="px-2 py-0.5 rounded bg-white border border-zinc-200 text-zinc-700 font-bold">
-                    {formatHourlyRate(baselineResult.hourlyRate)}/hr
+                    {formatHourlyRate(baselineResult.hourlyRate)}
                   </span>
                   <span className="px-2 py-0.5 rounded bg-blue-50 border border-blue-200 text-blue-700 font-bold">
-                    Night: {formatHourlyRate(baselineResult.hourlyRate * (entry.band === "Band 2" || entry.band === "Band 3" ? 1.44 : 1.30))}/hr
+                    Night: {formatHourlyRate(baselineResult.hourlyRate * (entry.band === "Band 2" || entry.band === "Band 3" ? 1.44 : 1.30))}
                   </span>
                 </div>
                 <span className="text-[10px] font-mono text-zinc-500 block tabular-nums">
@@ -412,7 +412,7 @@ export default async function PseoCalculatorPage({ params }: Props) {
               <div className="bg-white/90 rounded-lg p-2.5 border border-emerald-100 space-y-0.5">
                 <span className="text-zinc-500 block text-[10px] font-bold uppercase tracking-wider">Day Rate (1.0x)</span>
                 <span className="font-mono font-black text-zinc-950 text-sm block">{formatHourlyRate(baselineResult.hourlyRate)}</span>
-                <span className="text-[10px] text-zinc-400 block">to {formatHourlyRate(topStepResult.hourlyRate)}/hr</span>
+                <span className="text-[10px] text-zinc-400 block">to {formatHourlyRate(topStepResult.hourlyRate)}</span>
               </div>
               <div className="bg-white/90 rounded-lg p-2.5 border border-emerald-100 space-y-0.5">
                 <span className="text-zinc-500 block text-[10px] font-bold uppercase tracking-wider">Night Shift (+{entry.band === "Band 2" || entry.band === "Band 3" ? "44%" : "30%"})</span>
@@ -744,7 +744,7 @@ export default async function PseoCalculatorPage({ params }: Props) {
                 What is the hourly rate for an NHS {entry.band} {entry.roleName}?
               </h3>
               <p className="text-zinc-600 leading-relaxed">
-                The basic daytime hourly rate in {entry.regionName} is <strong>{formatHourlyRate(baselineResult.hourlyRate)}/hr</strong> at entry, rising to <strong>{formatHourlyRate(topStepResult.hourlyRate)}/hr</strong> at top of band. Night shifts and Saturdays pay <strong>{formatHourlyRate(baselineResult.hourlyRate * (entry.band === "Band 2" || entry.band === "Band 3" ? 1.44 : 1.30))}/hr</strong> (+{entry.band === "Band 2" || entry.band === "Band 3" ? "44%" : "30%"}), while Sundays and Bank Holidays pay <strong>{formatHourlyRate(baselineResult.hourlyRate * (entry.band === "Band 2" || entry.band === "Band 3" ? 1.88 : 1.60))}/hr</strong> (+{entry.band === "Band 2" || entry.band === "Band 3" ? "88%" : "60%"}).
+                The basic daytime hourly rate in {entry.regionName} is <strong>{formatHourlyRate(baselineResult.hourlyRate)}</strong> at entry, rising to <strong>{formatHourlyRate(topStepResult.hourlyRate)}</strong> at top of band. Night shifts and Saturdays pay <strong>{formatHourlyRate(baselineResult.hourlyRate * (entry.band === "Band 2" || entry.band === "Band 3" ? 1.44 : 1.30))}</strong> (+{entry.band === "Band 2" || entry.band === "Band 3" ? "44%" : "30%"}), while Sundays and Bank Holidays pay <strong>{formatHourlyRate(baselineResult.hourlyRate * (entry.band === "Band 2" || entry.band === "Band 3" ? 1.88 : 1.60))}</strong> (+{entry.band === "Band 2" || entry.band === "Band 3" ? "88%" : "60%"}).
               </p>
             </div>
 

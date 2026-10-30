@@ -398,14 +398,14 @@ export function AgencyVsBankCalculatorClient() {
           {/* Agency Headline Rate & Umbrella Margin */}
           <div className="space-y-4 pt-2 border-t border-slate-100">
             <div>
-              <div className="flex justify-between items-center mb-1.5">
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-2 mb-1.5">
                 <div>
                   <label htmlFor="comp-agency-rate" className="text-xs font-bold uppercase tracking-wider text-slate-700 block">
                     Agency Quoted Hourly Rate
                   </label>
                   <span className="text-[11px] text-slate-500">Headline assignment rate quoted by agency</span>
                 </div>
-                <span className="text-xs font-extrabold text-amber-800 bg-amber-50 px-2.5 py-0.5 rounded-full border border-amber-200 shrink-0">
+                <span className="text-xs font-extrabold text-amber-800 bg-amber-50 px-2.5 py-0.5 rounded-full border border-amber-200 shrink-0 self-start sm:self-auto">
                   £{agencyRate.toFixed(2)}/hr
                 </span>
               </div>
@@ -438,7 +438,7 @@ export function AgencyVsBankCalculatorClient() {
             </div>
 
             <div>
-              <div className="flex justify-between items-center mb-1.5">
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-2 mb-1.5">
                 <label htmlFor="comp-umbrella-fee" className="text-xs font-bold uppercase tracking-wider text-slate-700">
                   Umbrella Company Fee (£/week)
                 </label>
@@ -489,7 +489,7 @@ export function AgencyVsBankCalculatorClient() {
                       Substantive
                     </span>
                     <span className="text-xs font-bold text-slate-600 font-mono">
-                      {formatHourlyRate(point.annualSalary / 1955.357)}/hr
+                      {formatHourlyRate(point.annualSalary / 1955.357)}
                     </span>
                   </div>
 
@@ -546,7 +546,7 @@ export function AgencyVsBankCalculatorClient() {
                       NHS Staff Bank
                     </span>
                     <span className="text-xs font-bold text-emerald-700 font-mono">
-                      {formatHourlyRate(bankModel.totalHourlyGross)}/hr
+                      {formatHourlyRate(bankModel.totalHourlyGross)}
                     </span>
                   </div>
 
@@ -573,7 +573,7 @@ export function AgencyVsBankCalculatorClient() {
                   <div className="mt-4 space-y-2 text-[11px] text-slate-600 border-t border-slate-100 pt-3">
                     <div className="flex justify-between">
                       <span>WTR Holiday Pay:</span>
-                      <strong className="text-emerald-700">+{formatHourlyRate(bankModel.holidayHourly)}/hr (+12%)</strong>
+                      <strong className="text-emerald-700">+{formatHourlyRate(bankModel.holidayHourly)} (+12%)</strong>
                     </div>
                     <div className="flex justify-between">
                       <span>Umbrella Fees:</span>
@@ -619,7 +619,7 @@ export function AgencyVsBankCalculatorClient() {
                       <span className="text-xs font-semibold text-slate-500">/mo</span>
                     </p>
                     <span className="text-[11px] text-slate-500 block font-mono">
-                      Effective: {formatHourlyRate(agencyModel.netHourlyRate)}/hr net
+                      Effective: {formatHourlyRate(agencyModel.netHourlyRate)} net
                     </span>
                   </div>
 
