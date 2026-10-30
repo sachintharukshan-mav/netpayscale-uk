@@ -4,9 +4,11 @@ import path from "path";
 const ROOT = process.cwd();
 const DATA_PATH = path.join(ROOT, "data", "nhs_afc_2026.json");
 const TRUSTS_PATH = path.join(ROOT, "data", "nhs_trusts.json");
+const PSEO_PATH = path.join(ROOT, "data", "pseo_cities_roles.json");
 const PUBLIC_DIR = path.join(ROOT, "public");
 const nhsData = JSON.parse(fs.readFileSync(DATA_PATH, "utf8"));
 const trustsData = JSON.parse(fs.readFileSync(TRUSTS_PATH, "utf8"));
+const pseoData = JSON.parse(fs.readFileSync(PSEO_PATH, "utf8"));
 
 const SITE = {
   name: "NetPayScale UK (NHS Edition)",
@@ -1160,9 +1162,97 @@ User-agent: ClaudeBot
 Allow: /
 
 Sitemap: ${SITE.url}/sitemap.xml
+Sitemap: ${SITE.url}/sitemap-index.xml
 `;
 fs.writeFileSync(path.join(PUBLIC_DIR, "robots.txt"), robotsTxt, "utf8");
 
+// ---------------------------------------------------------------------------
+// XML Segmented Sitemaps Generation (Core, Bands, Trusts, Roles, Index)
+// ---------------------------------------------------------------------------
+const buildDate = "2026-10-30";
+
+const coreUrls = [
+  { loc: `${SITE.url}/`, priority: "1.0", changefreq: "daily" },
+  { loc: `${SITE.url}/pension-calculator/`, priority: "0.95", changefreq: "weekly" },
+  { loc: `${SITE.url}/sick-pay-calculator/`, priority: "0.95", changefreq: "weekly" },
+  { loc: `${SITE.url}/maternity-pay-calculator/`, priority: "0.95", changefreq: "weekly" },
+  { loc: `${SITE.url}/annual-leave-calculator/`, priority: "0.95", changefreq: "weekly" },
+  { loc: `${SITE.url}/bank-shift-calculator/`, priority: "0.95", changefreq: "weekly" },
+  { loc: `${SITE.url}/pay-rise-backpay-calculator/`, priority: "0.95", changefreq: "weekly" },
+  { loc: `${SITE.url}/promotion-calculator/`, priority: "0.95", changefreq: "weekly" },
+  { loc: `${SITE.url}/redundancy-pay-calculator/`, priority: "0.95", changefreq: "weekly" },
+  { loc: `${SITE.url}/unsocial-hours-calculator/`, priority: "0.95", changefreq: "weekly" },
+  { loc: `${SITE.url}/international/`, priority: "0.95", changefreq: "weekly" },
+  { loc: `${SITE.url}/embed/`, priority: "0.90", changefreq: "weekly" },
+  { loc: `${SITE.url}/trusts/`, priority: "0.90", changefreq: "weekly" },
+  { loc: `${SITE.url}/about/`, priority: "0.70", changefreq: "monthly" },
+  { loc: `${SITE.url}/privacy/`, priority: "0.60", changefreq: "monthly" },
+  { loc: `${SITE.url}/terms/`, priority: "0.60", changefreq: "monthly" },
+  { loc: `${SITE.url}/contact/`, priority: "0.60", changefreq: "monthly" },
+];
+
+const bandUrls = nhsData.bands.map((b) => ({
+  loc: `${SITE.url}/bands/${b.slug}/`,
+  priority: "0.90",
+  changefreq: "weekly",
+}));
+
+const trustUrls = trustsData.map((t) => ({
+  loc: `${SITE.url}/trusts/${t.id}/`,
+  priority: "0.85",
+  changefreq: "weekly",
+}));
+
+const roleUrls = pseoData.map((p) => ({
+  loc: `${SITE.url}/calculator/${p.slug}/`,
+  priority: "0.85",
+  changefreq: "weekly",
+}));
+
+function buildUrlsetXml(urls) {
+  const items = urls
+    .map(
+      (u) => `  <url>
+    <loc>${u.loc}</loc>
+    <lastmod>${buildDate}</lastmod>
+    <changefreq>${u.changefreq}</changefreq>
+    <priority>${u.priority}</priority>
+  </url>`
+    )
+    .join("\n");
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${items}
+</urlset>`;
+}
+
+fs.writeFileSync(path.join(PUBLIC_DIR, "sitemap-core.xml"), buildUrlsetXml(coreUrls), "utf8");
+fs.writeFileSync(path.join(PUBLIC_DIR, "sitemap-bands.xml"), buildUrlsetXml(bandUrls), "utf8");
+fs.writeFileSync(path.join(PUBLIC_DIR, "sitemap-trusts.xml"), buildUrlsetXml(trustUrls), "utf8");
+fs.writeFileSync(path.join(PUBLIC_DIR, "sitemap-roles.xml"), buildUrlsetXml(roleUrls), "utf8");
+
+const sitemapIndexXml = `<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>${SITE.url}/sitemap-core.xml</loc>
+    <lastmod>${buildDate}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>${SITE.url}/sitemap-bands.xml</loc>
+    <lastmod>${buildDate}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>${SITE.url}/sitemap-trusts.xml</loc>
+    <lastmod>${buildDate}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>${SITE.url}/sitemap-roles.xml</loc>
+    <lastmod>${buildDate}</lastmod>
+  </sitemap>
+</sitemapindex>`;
+
+fs.writeFileSync(path.join(PUBLIC_DIR, "sitemap-index.xml"), sitemapIndexXml, "utf8");
+
 console.log(
-  `[generate_ai_files] Generated ${markdownRegistry.length} .md files, /llms.txt (${llmsTxt.length} chars), /llms-full.txt (${llmsFullTxt.length} chars), /ai.txt, /robots.txt, and /api/md/_catalog.`
+  `[generate_ai_files] Generated ${markdownRegistry.length} .md files, /llms.txt (${llmsTxt.length} chars), /llms-full.txt (${llmsFullTxt.length} chars), /ai.txt, /robots.txt, /api/md/_catalog, and 5 segmented XML sitemaps (core: ${coreUrls.length}, bands: ${bandUrls.length}, trusts: ${trustUrls.length}, roles: ${roleUrls.length}).`
 );

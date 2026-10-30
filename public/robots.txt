@@ -40,3 +40,4 @@ User-agent: ClaudeBot
 Allow: /
 
 Sitemap: https://netpayscale.uk/sitemap.xml
+Sitemap: https://netpayscale.uk/sitemap-index.xml

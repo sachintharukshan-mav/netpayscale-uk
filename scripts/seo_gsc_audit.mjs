@@ -71,6 +71,38 @@ for (const url of locMatches) {
 assert(invalidHostCount === 0, `All sitemap URLs use https://netpayscale.uk (invalid: ${invalidHostCount})`);
 assert(nonTrailingSlashCount === 0, `All sitemap URLs end with trailing slash to prevent 308 redirects (non-compliant: ${nonTrailingSlashCount})`);
 
+// 2B. Segmented XML Sitemaps Check (Index, Core, Bands, Trusts, Roles)
+const sitemapIndexPath = path.join(outDir, 'sitemap-index.xml');
+assert(fs.existsSync(sitemapIndexPath), 'sitemap-index.xml exists in static export');
+const sitemapIndexContent = fs.readFileSync(sitemapIndexPath, 'utf8');
+const sitemapIndexMatches = [...sitemapIndexContent.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => m[1]);
+assert(sitemapIndexMatches.length === 4, `sitemap-index.xml points to 4 child sitemaps (actual: ${sitemapIndexMatches.length})`);
+
+const childSitemaps = [
+  { file: 'sitemap-core.xml', count: 17 },
+  { file: 'sitemap-bands.xml', count: 11 },
+  { file: 'sitemap-trusts.xml', count: 50 },
+  { file: 'sitemap-roles.xml', count: 490 }
+];
+
+let totalSegmentedUrls = 0;
+for (const child of childSitemaps) {
+  const cPath = path.join(outDir, child.file);
+  assert(fs.existsSync(cPath), `${child.file} exists in static export`);
+  const cContent = fs.readFileSync(cPath, 'utf8');
+  const cLocs = [...cContent.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => m[1]);
+  assert(cLocs.length === child.count, `${child.file} contains exactly ${child.count} URLs (actual: ${cLocs.length})`);
+  totalSegmentedUrls += cLocs.length;
+
+  for (const u of cLocs) {
+    if (!u.startsWith('https://netpayscale.uk') || !u.endsWith('/')) {
+      assert(false, `Invalid URL in ${child.file}: ${u}`);
+    }
+  }
+}
+assert(totalSegmentedUrls === 568, `Segmented child sitemaps sum to exactly 568 URLs matching master sitemap.xml (actual: ${totalSegmentedUrls})`);
+
+
 // 3. Homepage HTML Audit (Canonical, Meta, Schema)
 const homePath = path.join(outDir, 'index.html');
 assert(fs.existsSync(homePath), 'index.html exists in static export');
@@ -234,6 +266,25 @@ for (const tSlug of sampleTrustSlugs) {
   assert(tHtml.includes('"@type":"BreadcrumbList"'), `Trust page /${tSlug}/ contains BreadcrumbList schema`);
   assert(tHtml.includes('"@type":"FAQPage"'), `Trust page /${tSlug}/ contains FAQPage schema`);
   assert(tHtml.includes('data-share-widget="whatsapp-copy-breakdown"'), `Trust page /${tSlug}/ contains 1-Tap WhatsApp Share widget`);
+}
+
+// 3I. Enhanced NHS 2015 CARE Pension Calculator Audit (/pension-calculator/)
+const pensionPath = path.join(outDir, 'pension-calculator', 'index.html');
+assert(fs.existsSync(pensionPath), 'Pension calculator page exists: /pension-calculator/index.html');
+if (fs.existsSync(pensionPath)) {
+  const pHtml = fs.readFileSync(pensionPath, 'utf8');
+  const expectedCanonical = 'https://netpayscale.uk/pension-calculator/';
+  const canonicalMatch = pHtml.match(/<link[^>]+rel="canonical"[^>]+href="([^"]+)"/i) || pHtml.match(/<link[^>]+href="([^"]+)"[^>]+rel="canonical"/i);
+  assert(canonicalMatch && canonicalMatch[1] === expectedCanonical, `Page /pension-calculator/ has exact canonical (actual: ${canonicalMatch ? canonicalMatch[1] : 'NONE'})`);
+  assert(pHtml.includes('"@type":"WebApplication"'), 'Pension page contains WebApplication schema');
+  assert(pHtml.includes('"@type":"FAQPage"'), 'Pension page contains FAQPage schema');
+  assert(pHtml.includes('"@type":"BreadcrumbList"'), 'Pension page contains BreadcrumbList schema');
+  assert(pHtml.includes('Quick Answer: 2026/27 NHS Pension'), 'Pension page contains Position 0 Answer Box');
+  assert(pHtml.includes('GAD Early Retirement Actuarial Reduction Factors'), 'Pension page contains GAD early retirement actuarial table');
+  assert(pHtml.includes('2026/27 NHS Pension Contribution Tiers'), 'Pension page contains 2026/27 tiers table');
+  assert(pHtml.includes('Tax-Free Lump Sum Commutation'), 'Pension page contains commutation guidance');
+  assert(pHtml.includes('data-share-widget="whatsapp-copy-breakdown"'), 'Pension page contains 1-Tap WhatsApp Share widget');
+  assert(fs.existsSync(path.join(outDir, 'pension-calculator.md')), 'pension-calculator.md exists in static export');
 }
 
 // 4. Sample pSEO Pages Audit (Canonical, OpenGraph, BreadcrumbList, Occupation, AEO Direct Answer, Multi-Step Matrix)
