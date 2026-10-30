@@ -45,8 +45,8 @@ assert(fs.existsSync(catalogPath), 'api/md/_catalog exists in static export');
 const llmsFullContent = fs.readFileSync(llmsFullPath, 'utf8');
 assert(llmsFullContent.length > 10000 && llmsFullContent.length < 500000, `llms-full.txt length is within optimal LLM context window (${llmsFullContent.length} chars)`);
 const catalogData = JSON.parse(fs.readFileSync(catalogPath, 'utf8'));
-assert(catalogData.totalMarkdownRoutes === 24, `api/md/_catalog lists all 24 core & band Markdown routes (actual: ${catalogData.totalMarkdownRoutes})`);
-assert(catalogData.totalHtmlRoutes === 518, `api/md/_catalog reports 518 total HTML routes (actual: ${catalogData.totalHtmlRoutes})`);
+assert(catalogData.totalMarkdownRoutes === 74, `api/md/_catalog lists all 74 core, band & trust Markdown routes (actual: ${catalogData.totalMarkdownRoutes})`);
+assert(catalogData.totalHtmlRoutes === 568, `api/md/_catalog reports 568 total HTML routes (actual: ${catalogData.totalHtmlRoutes})`);
 
 // 2. Sitemap.xml check
 const sitemapPath = path.join(outDir, 'sitemap.xml');
@@ -57,7 +57,7 @@ const sitemapContent = fs.readFileSync(sitemapPath, 'utf8');
 const locMatches = [...sitemapContent.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => m[1]);
 console.log(`Found ${locMatches.length} URLs in sitemap.xml`);
 
-assert(locMatches.length === 518, `Sitemap contains all 518 canonical URLs (8 static + 9 sibling calculators + 11 band hubs + 490 role-region spokes; actual: ${locMatches.length})`);
+assert(locMatches.length === 568, `Sitemap contains all 568 canonical URLs (8 static + 9 sibling calculators + 11 band hubs + 50 trust hubs + 490 role-region spokes; actual: ${locMatches.length})`);
 assert(locMatches[0] === 'https://netpayscale.uk/', `Homepage in sitemap is exact canonical: https://netpayscale.uk/ (actual: ${locMatches[0]})`);
 
 let nonTrailingSlashCount = 0;
@@ -211,6 +211,29 @@ if (fs.existsSync(trustsPath)) {
   assert(trustsHtml.includes("Guy&#x27;s and St Thomas") || trustsHtml.includes("Guy's and St Thomas"), 'Trusts directory covers Guy\'s and St Thomas\'');
   assert(trustsHtml.includes('Barts Health'), 'Trusts directory covers Barts Health');
   assert(trustsHtml.includes('Manchester University'), 'Trusts directory covers Manchester MFT');
+}
+
+// 3H. Programmatic NHS Trust Detail Pages Audit (/trusts/[slug]/)
+const sampleTrustSlugs = [
+  'guys-and-st-thomas',
+  'barts-health',
+  'manchester-university',
+  'nhs-greater-glasgow-clyde'
+];
+
+for (const tSlug of sampleTrustSlugs) {
+  const tPath = path.join(outDir, 'trusts', tSlug, 'index.html');
+  assert(fs.existsSync(tPath), `Trust detail page exists: /trusts/${tSlug}/index.html`);
+  if (!fs.existsSync(tPath)) continue;
+
+  const tHtml = fs.readFileSync(tPath, 'utf8');
+  const expectedCanonical = `https://netpayscale.uk/trusts/${tSlug}/`;
+  const canonicalMatch = tHtml.match(/<link[^>]+rel="canonical"[^>]+href="([^"]+)"/i) || tHtml.match(/<link[^>]+href="([^"]+)"[^>]+rel="canonical"/i);
+  assert(canonicalMatch && canonicalMatch[1] === expectedCanonical, `Trust page /trusts/${tSlug}/ has exact canonical (actual: ${canonicalMatch ? canonicalMatch[1] : 'NONE'})`);
+  assert(tHtml.includes('"@type":"MedicalOrganization"'), `Trust page /${tSlug}/ contains MedicalOrganization schema`);
+  assert(tHtml.includes('"@type":"BreadcrumbList"'), `Trust page /${tSlug}/ contains BreadcrumbList schema`);
+  assert(tHtml.includes('"@type":"FAQPage"'), `Trust page /${tSlug}/ contains FAQPage schema`);
+  assert(tHtml.includes('data-share-widget="whatsapp-copy-breakdown"'), `Trust page /${tSlug}/ contains 1-Tap WhatsApp Share widget`);
 }
 
 // 4. Sample pSEO Pages Audit (Canonical, OpenGraph, BreadcrumbList, Occupation, AEO Direct Answer, Multi-Step Matrix)

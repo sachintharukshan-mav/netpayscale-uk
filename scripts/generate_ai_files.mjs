@@ -770,6 +770,38 @@ ${trustRows}
 `;
 }
 
+function renderTrustDetailMd(t) {
+  const hospitals = t.majorHospitals.join(", ");
+  return `# ${t.name} (${t.code}) - 2026/27 Salary Scales & Pay Bands
+
+> Official 2026/27 Agenda for Change salary and take-home pay tables for ${t.name} (${t.code}). Includes ${t.hcasRate}, starting Band 5 take-home pay, and hospital site allocations.
+
+Canonical: ${SITE.url}/trusts/${t.id}/
+Last updated: ${SITE.updated}
+
+## 1. Key Trust Facts
+- **Trust Name:** ${t.name} (${t.shortName})
+- **ODS Code:** ${t.code}
+- **Geographic Area:** ${t.city}
+- **Region / Health Board:** ${t.region}
+- **Allowance Zone (HCAS):** ${t.hcasRate}
+- **Starting Band 5 Gross Pay:** £${t.band5StartingGross.toLocaleString("en-GB")}/year
+- **Starting Band 5 Net Pay:** ~£${t.band5StartingNetMonthly.toLocaleString("en-GB")}/month
+- **Clinical Workforce:** ${t.staffCount}
+- **Hospital Sites (${t.majorHospitals.length}):** ${hospitals}
+
+## 2. Executive Pay Answer
+Under the 2026/27 NHS Agenda for Change pay deal (+3.3%), healthcare staff at **${t.name}** receive ${t.hcasRate}. A newly qualified Band 5 nurse starts at **£${t.band5StartingGross.toLocaleString("en-GB")}/year gross** (approx. **£${t.band5StartingNetMonthly.toLocaleString("en-GB")} net/month** in take-home pay after PAYE tax, National Insurance, and 8.3% NHS CARE pension deductions).
+
+## 3. Related Links
+- [${t.name} Pay Scales (Interactive HTML)](${SITE.url}/trusts/${t.id}/)
+- [Top 50 NHS Trusts Pay Directory](${SITE.url}/trusts/)
+- [NHS Salary & Take-Home Calculator](${SITE.url}/)
+- [NHS Band 5 to Band 6 Promotion Trap Calculator](${SITE.url}/promotion-calculator/)
+- [NHS Unsocial Hours & Night Shift Pay Calculator](${SITE.url}/unsocial-hours-calculator/)
+`;
+}
+
 // ---------------------------------------------------------------------------
 // 2. Build Registry & Generate All Files
 // ---------------------------------------------------------------------------
@@ -917,10 +949,20 @@ const markdownRegistry = [
       render: () => renderBandMd(b),
     };
   }),
+  ...trustsData.map((t) => ({
+    route: `/trusts/${t.id}/`,
+    mdPath: `/trusts/${t.id}.md`,
+    fileOut: path.join(PUBLIC_DIR, "trusts", `${t.id}.md`),
+    title: `${t.name} Salary 2026/27: Pay Bands & Monthly Take-Home`,
+    description: `Official 2026/27 Agenda for Change salary scale for ${t.name} (${t.code}). Starting Band 5 pay: £${t.band5StartingGross.toLocaleString("en-GB")}/yr (~£${t.band5StartingNetMonthly.toLocaleString("en-GB")}/mo net) with ${t.hcasRate}.`,
+    category: "trusts",
+    render: () => renderTrustDetailMd(t),
+  })),
 ];
 
 // Ensure directories exist
 fs.mkdirSync(path.join(PUBLIC_DIR, "bands"), { recursive: true });
+fs.mkdirSync(path.join(PUBLIC_DIR, "trusts"), { recursive: true });
 fs.mkdirSync(path.join(PUBLIC_DIR, "api", "md"), { recursive: true });
 
 // Write individual .md files
@@ -935,7 +977,7 @@ const catalogPayload = {
   url: SITE.url,
   updated: SITE.updated,
   totalMarkdownRoutes: markdownRegistry.length,
-  totalHtmlRoutes: 518,
+  totalHtmlRoutes: 568,
   routes: markdownRegistry.map((r) => ({
     htmlUrl: `${SITE.url}${r.route}`,
     markdownUrl: `${SITE.url}${r.mdPath}`,
@@ -961,6 +1003,12 @@ const bandLinks = markdownRegistry
   .map((r) => `- [${r.title}](${SITE.url}${r.mdPath}): ${r.description}`)
   .join("\n");
 
+const trustLinks = markdownRegistry
+  .filter((r) => r.category === "trusts")
+  .slice(0, 10)
+  .map((r) => `- [${r.title}](${SITE.url}${r.mdPath}): ${r.description}`)
+  .join("\n");
+
 const llmsTxt = `# ${SITE.name}
 # Keep in sync with /robots.txt and /ai.txt
 
@@ -974,6 +1022,10 @@ ${coreLinks}
 ## 2026/27 NHS Agenda for Change Band Guides (Markdown Twins)
 ${bandLinks}
 
+## Top NHS Hospital Trusts (Markdown Twins)
+${trustLinks}
+- [Full Directory of 50 Verified NHS Trusts](${SITE.url}/trusts/): All major UK hospital trusts, health boards, and London weighting allowances.
+
 ## Popular Role & Regional Salary Benchmarks (HTML)
 - [Band 5 Nurse Salary — Inner London](${SITE.url}/calculator/band-5-nurse-salary-inner-london/): £32,073 base + £6,415 HCAS = £38,488 gross (£2,367/mo net take-home)
 - [Band 6 Senior Paramedic Salary — Scotland](${SITE.url}/calculator/band-6-senior-paramedic-salary-scotland/): £38,619 to £46,580 gross under Scottish 6-band Income Tax
@@ -981,9 +1033,9 @@ ${bandLinks}
 - [Band 8a Matron Salary — Inner London](${SITE.url}/calculator/band-8a-matron-salary-inner-london/): £55,690 base + £8,746 HCAS = £64,436 gross
 
 ## Machine-readable
-- [Full content](${SITE.url}/llms-full.txt): Every core calculator and Band 2–9 pay table concatenated in one Markdown file
+- [Full content](${SITE.url}/llms-full.txt): Every core calculator, Band 2–9 pay table, and NHS Trust pay scale concatenated in one Markdown file
 - [Markdown catalog](${SITE.url}/api/md/_catalog): JSON index of all Markdown endpoints
-- [Sitemap](${SITE.url}/sitemap.xml): Complete XML sitemap of all 511 canonical HTML pages
+- [Sitemap](${SITE.url}/sitemap.xml): Complete XML sitemap of all 568 canonical HTML pages
 - [AI usage policy](${SITE.url}/ai.txt): Permissions, attribution rules, and crawler scope (ai-txt v1.1.1)
 
 ## Optional & Legal
@@ -1042,12 +1094,19 @@ canonical_source = "Cite the canonical HTML URL on https://netpayscale.uk/ whene
 [scope]
 allow = /
 allow = /bands/*
+allow = /trusts/*
 allow = /calculator/*
 allow = /pension-calculator/
 allow = /sick-pay-calculator/
 allow = /maternity-pay-calculator/
 allow = /annual-leave-calculator/
 allow = /bank-shift-calculator/
+allow = /promotion-calculator/
+allow = /unsocial-hours-calculator/
+allow = /pay-rise-backpay-calculator/
+allow = /redundancy-pay-calculator/
+allow = /international/
+allow = /embed/
 allow = /llms.txt
 allow = /llms-full.txt
 disallow = /_next/*

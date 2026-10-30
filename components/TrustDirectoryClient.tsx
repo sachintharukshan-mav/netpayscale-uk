@@ -206,7 +206,9 @@ export function TrustDirectoryClient() {
                 {/* Trust Name & Location */}
                 <div>
                   <h3 className="text-base font-extrabold text-slate-900 group-hover:text-[#005EB8] transition-colors leading-snug">
-                    {trust.name}
+                    <Link href={`/trusts/${trust.id}/`} className="hover:underline">
+                      {trust.name}
+                    </Link>
                   </h3>
                   <div className="flex items-center gap-1.5 text-xs text-slate-500 mt-1 font-medium">
                     <MapPin className="w-3.5 h-3.5 text-slate-400 shrink-0" />
@@ -256,23 +258,31 @@ export function TrustDirectoryClient() {
               {/* Action Buttons Footer */}
               <div className="px-5 py-3.5 bg-slate-50/90 border-t border-slate-100 flex items-center justify-between gap-2">
                 <Link
-                  href={`/?band=Band+5&hcas=${trust.hcasZone}`}
+                  href={`/trusts/${trust.id}/`}
                   className="text-xs font-bold text-[#005EB8] hover:text-blue-800 transition-colors inline-flex items-center gap-1"
                 >
-                  <span>Model My Band at {trust.shortName}</span>
+                  <span>View Full Pay Scale</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                 </Link>
-                <a
-                  href={`https://wa.me/?text=${encodeURIComponent(
-                    `🏥 ${trust.name} 2026/27 Pay:\n• Allowance: ${trust.hcasRate}\n• Starting Band 5 Take-Home: ~${formatCurrency(trust.band5StartingNetMonthly)}/mo (${formatCurrency(trust.band5StartingGross)}/yr gross)\nCalculate your pay: https://netpayscale.uk/trusts/`
-                  )}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-1.5 rounded-lg text-slate-400 hover:text-emerald-600 hover:bg-emerald-50 transition-colors"
-                  title="Share Trust Pay Breakdown via WhatsApp"
-                >
-                  <Share2 className="w-4 h-4" />
-                </a>
+                <div className="flex items-center gap-2">
+                  <Link
+                    href={`/?band=Band+5&hcas=${trust.hcasZone}`}
+                    className="text-[11px] font-semibold text-slate-600 hover:text-slate-900 bg-white hover:bg-slate-100 px-2 py-1 rounded border border-slate-200 transition-colors"
+                  >
+                    Calculate →
+                  </Link>
+                  <a
+                    href={`https://wa.me/?text=${encodeURIComponent(
+                      `🏥 ${trust.name} 2026/27 Pay:\n• Allowance: ${trust.hcasRate}\n• Starting Band 5 Take-Home: ~${formatCurrency(trust.band5StartingNetMonthly)}/mo (${formatCurrency(trust.band5StartingGross)}/yr gross)\nView full trust pay scales: https://netpayscale.uk/trusts/${trust.id}/`
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-1.5 rounded-lg text-slate-400 hover:text-emerald-600 hover:bg-emerald-50 transition-colors"
+                    title="Share Trust Pay Breakdown via WhatsApp"
+                  >
+                    <Share2 className="w-4 h-4" />
+                  </a>
+                </div>
               </div>
             </div>
           );

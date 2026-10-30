@@ -2,8 +2,8 @@
   "site": "NetPayScale UK (NHS Edition)",
   "url": "https://netpayscale.uk",
   "updated": "2026-10-26",
-  "totalMarkdownRoutes": 24,
-  "totalHtmlRoutes": 518,
+  "totalMarkdownRoutes": 74,
+  "totalHtmlRoutes": 568,
   "routes": [
     {
       "htmlUrl": "https://netpayscale.uk/",
@@ -172,6 +172,356 @@
       "title": "NHS Band 9 Salary 2026/27 (Director of Nursing, Chief Operating Officer)",
       "description": "2026/27 Band 9 pay scale (£112,782–£129,783), hourly rates, step progression, and regional net pay.",
       "category": "bands"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/guys-and-st-thomas/",
+      "markdownUrl": "https://netpayscale.uk/trusts/guys-and-st-thomas.md",
+      "title": "Guy's and St Thomas' NHS Foundation Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for Guy's and St Thomas' NHS Foundation Trust (RJ1). Starting Band 5 pay: £38,488/yr (~£2,384/mo net) with Inner London (+20%, up to £8,746).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/barts-health/",
+      "markdownUrl": "https://netpayscale.uk/trusts/barts-health.md",
+      "title": "Barts Health NHS Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for Barts Health NHS Trust (R1H). Starting Band 5 pay: £38,488/yr (~£2,384/mo net) with Inner London (+20%, up to £8,746).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/imperial-college-healthcare/",
+      "markdownUrl": "https://netpayscale.uk/trusts/imperial-college-healthcare.md",
+      "title": "Imperial College Healthcare NHS Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for Imperial College Healthcare NHS Trust (RYJ). Starting Band 5 pay: £38,488/yr (~£2,384/mo net) with Inner London (+20%, up to £8,746).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/kings-college-hospital/",
+      "markdownUrl": "https://netpayscale.uk/trusts/kings-college-hospital.md",
+      "title": "King's College Hospital NHS Foundation Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for King's College Hospital NHS Foundation Trust (RJZ). Starting Band 5 pay: £38,488/yr (~£2,384/mo net) with Inner London (+20%, up to £8,746).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/uclh/",
+      "markdownUrl": "https://netpayscale.uk/trusts/uclh.md",
+      "title": "University College London Hospitals NHS Foundation Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for University College London Hospitals NHS Foundation Trust (RRV). Starting Band 5 pay: £38,488/yr (~£2,384/mo net) with Inner London (+20%, up to £8,746).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/royal-free-london/",
+      "markdownUrl": "https://netpayscale.uk/trusts/royal-free-london.md",
+      "title": "Royal Free London NHS Foundation Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for Royal Free London NHS Foundation Trust (RAL). Starting Band 5 pay: £38,488/yr (~£2,384/mo net) with Inner London (+20%, up to £8,746).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/chelsea-and-westminster/",
+      "markdownUrl": "https://netpayscale.uk/trusts/chelsea-and-westminster.md",
+      "title": "Chelsea and Westminster Hospital NHS Foundation Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for Chelsea and Westminster Hospital NHS Foundation Trust (RQM). Starting Band 5 pay: £38,488/yr (~£2,384/mo net) with Inner London (+20%, up to £8,746).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/st-georges-university-hospitals/",
+      "markdownUrl": "https://netpayscale.uk/trusts/st-georges-university-hospitals.md",
+      "title": "St George's University Hospitals NHS Foundation Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for St George's University Hospitals NHS Foundation Trust (RJ7). Starting Band 5 pay: £38,488/yr (~£2,384/mo net) with Inner London (+20%, up to £8,746).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/great-ormond-street/",
+      "markdownUrl": "https://netpayscale.uk/trusts/great-ormond-street.md",
+      "title": "Great Ormond Street Hospital for Children NHS Foundation Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for Great Ormond Street Hospital for Children NHS Foundation Trust (RP4). Starting Band 5 pay: £38,488/yr (~£2,384/mo net) with Inner London (+20%, up to £8,746).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/lewisham-and-greenwich/",
+      "markdownUrl": "https://netpayscale.uk/trusts/lewisham-and-greenwich.md",
+      "title": "Lewisham and Greenwich NHS Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for Lewisham and Greenwich NHS Trust (RJ2). Starting Band 5 pay: £38,488/yr (~£2,384/mo net) with Inner London (+20%, up to £8,746).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/london-north-west-university/",
+      "markdownUrl": "https://netpayscale.uk/trusts/london-north-west-university.md",
+      "title": "London North West University Healthcare NHS Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for London North West University Healthcare NHS Trust (R1K). Starting Band 5 pay: £36,943/yr (~£2,304/mo net) with Outer London (+15%, up to £6,137).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/barking-havering-redbridge/",
+      "markdownUrl": "https://netpayscale.uk/trusts/barking-havering-redbridge.md",
+      "title": "Barking, Havering and Redbridge University Hospitals NHS Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for Barking, Havering and Redbridge University Hospitals NHS Trust (RF4). Starting Band 5 pay: £36,943/yr (~£2,304/mo net) with Outer London (+15%, up to £6,137).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/croydon-health-services/",
+      "markdownUrl": "https://netpayscale.uk/trusts/croydon-health-services.md",
+      "title": "Croydon Health Services NHS Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for Croydon Health Services NHS Trust (RJ6). Starting Band 5 pay: £36,943/yr (~£2,304/mo net) with Outer London (+15%, up to £6,137).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/kingston-hospital/",
+      "markdownUrl": "https://netpayscale.uk/trusts/kingston-hospital.md",
+      "title": "Kingston Hospital NHS Foundation Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for Kingston Hospital NHS Foundation Trust (RAX). Starting Band 5 pay: £36,943/yr (~£2,304/mo net) with Outer London (+15%, up to £6,137).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/epsom-and-st-helier/",
+      "markdownUrl": "https://netpayscale.uk/trusts/epsom-and-st-helier.md",
+      "title": "Epsom and St Helier University Hospitals NHS Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for Epsom and St Helier University Hospitals NHS Trust (RVR). Starting Band 5 pay: £36,943/yr (~£2,304/mo net) with Outer London (+15%, up to £6,137).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/hillingdon-hospitals/",
+      "markdownUrl": "https://netpayscale.uk/trusts/hillingdon-hospitals.md",
+      "title": "The Hillingdon Hospitals NHS Foundation Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for The Hillingdon Hospitals NHS Foundation Trust (RAS). Starting Band 5 pay: £36,943/yr (~£2,304/mo net) with Outer London (+15%, up to £6,137).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/frimley-health/",
+      "markdownUrl": "https://netpayscale.uk/trusts/frimley-health.md",
+      "title": "Frimley Health NHS Foundation Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for Frimley Health NHS Foundation Trust (RDU). Starting Band 5 pay: £33,677/yr (~£2,166/mo net) with Fringe Zone (+5%, up to £2,270).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/west-hertfordshire-teaching/",
+      "markdownUrl": "https://netpayscale.uk/trusts/west-hertfordshire-teaching.md",
+      "title": "West Hertfordshire Teaching Hospitals NHS Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for West Hertfordshire Teaching Hospitals NHS Trust (RWG). Starting Band 5 pay: £33,677/yr (~£2,166/mo net) with Fringe Zone (+5%, up to £2,270).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/east-and-north-hertfordshire/",
+      "markdownUrl": "https://netpayscale.uk/trusts/east-and-north-hertfordshire.md",
+      "title": "East and North Hertfordshire NHS Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for East and North Hertfordshire NHS Trust (RWH). Starting Band 5 pay: £33,677/yr (~£2,166/mo net) with Fringe Zone (+5%, up to £2,270).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/royal-surrey-county/",
+      "markdownUrl": "https://netpayscale.uk/trusts/royal-surrey-county.md",
+      "title": "Royal Surrey County Hospital NHS Foundation Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for Royal Surrey County Hospital NHS Foundation Trust (RA2). Starting Band 5 pay: £33,677/yr (~£2,166/mo net) with Fringe Zone (+5%, up to £2,270).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/surrey-and-sussex-healthcare/",
+      "markdownUrl": "https://netpayscale.uk/trusts/surrey-and-sussex-healthcare.md",
+      "title": "Surrey and Sussex Healthcare NHS Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for Surrey and Sussex Healthcare NHS Trust (RTP). Starting Band 5 pay: £33,677/yr (~£2,166/mo net) with Fringe Zone (+5%, up to £2,270).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/dartford-and-gravesham/",
+      "markdownUrl": "https://netpayscale.uk/trusts/dartford-and-gravesham.md",
+      "title": "Dartford and Gravesham NHS Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for Dartford and Gravesham NHS Trust (RN7). Starting Band 5 pay: £33,677/yr (~£2,166/mo net) with Fringe Zone (+5%, up to £2,270).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/manchester-university/",
+      "markdownUrl": "https://netpayscale.uk/trusts/manchester-university.md",
+      "title": "Manchester University NHS Foundation Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for Manchester University NHS Foundation Trust (R0A). Starting Band 5 pay: £32,073/yr (~£2,080/mo net) with Standard National (No HCAS).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/university-hospitals-birmingham/",
+      "markdownUrl": "https://netpayscale.uk/trusts/university-hospitals-birmingham.md",
+      "title": "University Hospitals Birmingham NHS Foundation Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for University Hospitals Birmingham NHS Foundation Trust (RRK). Starting Band 5 pay: £32,073/yr (~£2,080/mo net) with Standard National (No HCAS).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/leeds-teaching-hospitals/",
+      "markdownUrl": "https://netpayscale.uk/trusts/leeds-teaching-hospitals.md",
+      "title": "Leeds Teaching Hospitals NHS Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for Leeds Teaching Hospitals NHS Trust (RR8). Starting Band 5 pay: £32,073/yr (~£2,080/mo net) with Standard National (No HCAS).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/newcastle-upon-tyne-hospitals/",
+      "markdownUrl": "https://netpayscale.uk/trusts/newcastle-upon-tyne-hospitals.md",
+      "title": "The Newcastle upon Tyne Hospitals NHS Foundation Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for The Newcastle upon Tyne Hospitals NHS Foundation Trust (RTD). Starting Band 5 pay: £32,073/yr (~£2,080/mo net) with Standard National (No HCAS).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/university-hospitals-of-leicester/",
+      "markdownUrl": "https://netpayscale.uk/trusts/university-hospitals-of-leicester.md",
+      "title": "University Hospitals of Leicester NHS Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for University Hospitals of Leicester NHS Trust (RJE). Starting Band 5 pay: £32,073/yr (~£2,080/mo net) with Standard National (No HCAS).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/sheffield-teaching-hospitals/",
+      "markdownUrl": "https://netpayscale.uk/trusts/sheffield-teaching-hospitals.md",
+      "title": "Sheffield Teaching Hospitals NHS Foundation Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for Sheffield Teaching Hospitals NHS Foundation Trust (RHQ). Starting Band 5 pay: £32,073/yr (~£2,080/mo net) with Standard National (No HCAS).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/nottingham-university-hospitals/",
+      "markdownUrl": "https://netpayscale.uk/trusts/nottingham-university-hospitals.md",
+      "title": "Nottingham University Hospitals NHS Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for Nottingham University Hospitals NHS Trust (RX1). Starting Band 5 pay: £32,073/yr (~£2,080/mo net) with Standard National (No HCAS).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/liverpool-university-hospitals/",
+      "markdownUrl": "https://netpayscale.uk/trusts/liverpool-university-hospitals.md",
+      "title": "Liverpool University Hospitals NHS Foundation Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for Liverpool University Hospitals NHS Foundation Trust (REM). Starting Band 5 pay: £32,073/yr (~£2,080/mo net) with Standard National (No HCAS).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/oxford-university-hospitals/",
+      "markdownUrl": "https://netpayscale.uk/trusts/oxford-university-hospitals.md",
+      "title": "Oxford University Hospitals NHS Foundation Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for Oxford University Hospitals NHS Foundation Trust (RTH). Starting Band 5 pay: £32,073/yr (~£2,080/mo net) with Standard National (No HCAS).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/cambridge-university-hospitals/",
+      "markdownUrl": "https://netpayscale.uk/trusts/cambridge-university-hospitals.md",
+      "title": "Cambridge University Hospitals NHS Foundation Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for Cambridge University Hospitals NHS Foundation Trust (RGT). Starting Band 5 pay: £32,073/yr (~£2,080/mo net) with Standard National (No HCAS).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/university-hospitals-bristol-weston/",
+      "markdownUrl": "https://netpayscale.uk/trusts/university-hospitals-bristol-weston.md",
+      "title": "University Hospitals Bristol and Weston NHS Foundation Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for University Hospitals Bristol and Weston NHS Foundation Trust (RA7). Starting Band 5 pay: £32,073/yr (~£2,080/mo net) with Standard National (No HCAS).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/university-hospital-southampton/",
+      "markdownUrl": "https://netpayscale.uk/trusts/university-hospital-southampton.md",
+      "title": "University Hospital Southampton NHS Foundation Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for University Hospital Southampton NHS Foundation Trust (RHM). Starting Band 5 pay: £32,073/yr (~£2,080/mo net) with Standard National (No HCAS).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/north-bristol-nhs-trust/",
+      "markdownUrl": "https://netpayscale.uk/trusts/north-bristol-nhs-trust.md",
+      "title": "North Bristol NHS Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for North Bristol NHS Trust (RV3). Starting Band 5 pay: £32,073/yr (~£2,080/mo net) with Standard National (No HCAS).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/hull-university-teaching/",
+      "markdownUrl": "https://netpayscale.uk/trusts/hull-university-teaching.md",
+      "title": "Hull University Teaching Hospitals NHS Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for Hull University Teaching Hospitals NHS Trust (RWA). Starting Band 5 pay: £32,073/yr (~£2,080/mo net) with Standard National (No HCAS).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/norfolk-and-norwich/",
+      "markdownUrl": "https://netpayscale.uk/trusts/norfolk-and-norwich.md",
+      "title": "Norfolk and Norwich University Hospitals NHS Foundation Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for Norfolk and Norwich University Hospitals NHS Foundation Trust (RM1). Starting Band 5 pay: £32,073/yr (~£2,080/mo net) with Standard National (No HCAS).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/royal-devon-university/",
+      "markdownUrl": "https://netpayscale.uk/trusts/royal-devon-university.md",
+      "title": "Royal Devon University Healthcare NHS Foundation Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for Royal Devon University Healthcare NHS Foundation Trust (RH8). Starting Band 5 pay: £32,073/yr (~£2,080/mo net) with Standard National (No HCAS).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/university-hospitals-plymouth/",
+      "markdownUrl": "https://netpayscale.uk/trusts/university-hospitals-plymouth.md",
+      "title": "University Hospitals Plymouth NHS Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for University Hospitals Plymouth NHS Trust (RK9). Starting Band 5 pay: £32,073/yr (~£2,080/mo net) with Standard National (No HCAS).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/gloucestershire-hospitals/",
+      "markdownUrl": "https://netpayscale.uk/trusts/gloucestershire-hospitals.md",
+      "title": "Gloucestershire Hospitals NHS Foundation Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for Gloucestershire Hospitals NHS Foundation Trust (RTE). Starting Band 5 pay: £32,073/yr (~£2,080/mo net) with Standard National (No HCAS).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/royal-cornwall-hospitals/",
+      "markdownUrl": "https://netpayscale.uk/trusts/royal-cornwall-hospitals.md",
+      "title": "Royal Cornwall Hospitals NHS Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for Royal Cornwall Hospitals NHS Trust (REF). Starting Band 5 pay: £32,073/yr (~£2,080/mo net) with Standard National (No HCAS).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/portsmouth-hospitals-university/",
+      "markdownUrl": "https://netpayscale.uk/trusts/portsmouth-hospitals-university.md",
+      "title": "Portsmouth Hospitals University NHS Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for Portsmouth Hospitals University NHS Trust (RHU). Starting Band 5 pay: £32,073/yr (~£2,080/mo net) with Standard National (No HCAS).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/mid-and-south-essex/",
+      "markdownUrl": "https://netpayscale.uk/trusts/mid-and-south-essex.md",
+      "title": "Mid and South Essex NHS Foundation Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for Mid and South Essex NHS Foundation Trust (RAJ). Starting Band 5 pay: £32,073/yr (~£2,080/mo net) with Standard National (No HCAS).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/united-lincolnshire-hospitals/",
+      "markdownUrl": "https://netpayscale.uk/trusts/united-lincolnshire-hospitals.md",
+      "title": "United Lincolnshire Hospitals NHS Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for United Lincolnshire Hospitals NHS Trust (RWD). Starting Band 5 pay: £32,073/yr (~£2,080/mo net) with Standard National (No HCAS).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/wirral-university-teaching/",
+      "markdownUrl": "https://netpayscale.uk/trusts/wirral-university-teaching.md",
+      "title": "Wirral University Teaching Hospital NHS Foundation Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for Wirral University Teaching Hospital NHS Foundation Trust (RBL). Starting Band 5 pay: £32,073/yr (~£2,080/mo net) with Standard National (No HCAS).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/nhs-lothian/",
+      "markdownUrl": "https://netpayscale.uk/trusts/nhs-lothian.md",
+      "title": "NHS Lothian Health Board Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for NHS Lothian Health Board (S08000024). Starting Band 5 pay: £32,073/yr (~£2,060/mo net) with Scottish AfC & 6-Band Tax.",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/nhs-greater-glasgow-clyde/",
+      "markdownUrl": "https://netpayscale.uk/trusts/nhs-greater-glasgow-clyde.md",
+      "title": "NHS Greater Glasgow and Clyde Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for NHS Greater Glasgow and Clyde (S08000031). Starting Band 5 pay: £32,073/yr (~£2,060/mo net) with Scottish AfC & 6-Band Tax.",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/cardiff-and-vale-university/",
+      "markdownUrl": "https://netpayscale.uk/trusts/cardiff-and-vale-university.md",
+      "title": "Cardiff and Vale University Health Board Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for Cardiff and Vale University Health Board (7A4). Starting Band 5 pay: £32,073/yr (~£2,080/mo net) with Welsh NHS (GIG Cymru).",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/belfast-health-social-care/",
+      "markdownUrl": "https://netpayscale.uk/trusts/belfast-health-social-care.md",
+      "title": "Belfast Health and Social Care Trust Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for Belfast Health and Social Care Trust (BHSCT). Starting Band 5 pay: £32,073/yr (~£2,080/mo net) with HSC Northern Ireland Standard.",
+      "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/swansea-bay-university/",
+      "markdownUrl": "https://netpayscale.uk/trusts/swansea-bay-university.md",
+      "title": "Swansea Bay University Health Board Salary 2026/27: Pay Bands & Monthly Take-Home",
+      "description": "Official 2026/27 Agenda for Change salary scale for Swansea Bay University Health Board (7A6). Starting Band 5 pay: £32,073/yr (~£2,080/mo net) with Welsh NHS (GIG Cymru).",
+      "category": "trusts"
     }
   ]
 }

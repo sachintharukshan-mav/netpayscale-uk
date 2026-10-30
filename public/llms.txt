@@ -33,6 +33,19 @@ NetPayScale UK is an open-access statutory payroll reference and calculator suit
 - [NHS Band 8d Salary 2026/27 (Deputy Director of Nursing, Chief Pharmacist (Large Trust))](https://netpayscale.uk/bands/band-8d.md): 2026/27 Band 8d pay scale (£94,356–£108,814), hourly rates, step progression, and regional net pay.
 - [NHS Band 9 Salary 2026/27 (Director of Nursing, Chief Operating Officer)](https://netpayscale.uk/bands/band-9.md): 2026/27 Band 9 pay scale (£112,782–£129,783), hourly rates, step progression, and regional net pay.
 
+## Top NHS Hospital Trusts (Markdown Twins)
+- [Guy's and St Thomas' NHS Foundation Trust Salary 2026/27: Pay Bands & Monthly Take-Home](https://netpayscale.uk/trusts/guys-and-st-thomas.md): Official 2026/27 Agenda for Change salary scale for Guy's and St Thomas' NHS Foundation Trust (RJ1). Starting Band 5 pay: £38,488/yr (~£2,384/mo net) with Inner London (+20%, up to £8,746).
+- [Barts Health NHS Trust Salary 2026/27: Pay Bands & Monthly Take-Home](https://netpayscale.uk/trusts/barts-health.md): Official 2026/27 Agenda for Change salary scale for Barts Health NHS Trust (R1H). Starting Band 5 pay: £38,488/yr (~£2,384/mo net) with Inner London (+20%, up to £8,746).
+- [Imperial College Healthcare NHS Trust Salary 2026/27: Pay Bands & Monthly Take-Home](https://netpayscale.uk/trusts/imperial-college-healthcare.md): Official 2026/27 Agenda for Change salary scale for Imperial College Healthcare NHS Trust (RYJ). Starting Band 5 pay: £38,488/yr (~£2,384/mo net) with Inner London (+20%, up to £8,746).
+- [King's College Hospital NHS Foundation Trust Salary 2026/27: Pay Bands & Monthly Take-Home](https://netpayscale.uk/trusts/kings-college-hospital.md): Official 2026/27 Agenda for Change salary scale for King's College Hospital NHS Foundation Trust (RJZ). Starting Band 5 pay: £38,488/yr (~£2,384/mo net) with Inner London (+20%, up to £8,746).
+- [University College London Hospitals NHS Foundation Trust Salary 2026/27: Pay Bands & Monthly Take-Home](https://netpayscale.uk/trusts/uclh.md): Official 2026/27 Agenda for Change salary scale for University College London Hospitals NHS Foundation Trust (RRV). Starting Band 5 pay: £38,488/yr (~£2,384/mo net) with Inner London (+20%, up to £8,746).
+- [Royal Free London NHS Foundation Trust Salary 2026/27: Pay Bands & Monthly Take-Home](https://netpayscale.uk/trusts/royal-free-london.md): Official 2026/27 Agenda for Change salary scale for Royal Free London NHS Foundation Trust (RAL). Starting Band 5 pay: £38,488/yr (~£2,384/mo net) with Inner London (+20%, up to £8,746).
+- [Chelsea and Westminster Hospital NHS Foundation Trust Salary 2026/27: Pay Bands & Monthly Take-Home](https://netpayscale.uk/trusts/chelsea-and-westminster.md): Official 2026/27 Agenda for Change salary scale for Chelsea and Westminster Hospital NHS Foundation Trust (RQM). Starting Band 5 pay: £38,488/yr (~£2,384/mo net) with Inner London (+20%, up to £8,746).
+- [St George's University Hospitals NHS Foundation Trust Salary 2026/27: Pay Bands & Monthly Take-Home](https://netpayscale.uk/trusts/st-georges-university-hospitals.md): Official 2026/27 Agenda for Change salary scale for St George's University Hospitals NHS Foundation Trust (RJ7). Starting Band 5 pay: £38,488/yr (~£2,384/mo net) with Inner London (+20%, up to £8,746).
+- [Great Ormond Street Hospital for Children NHS Foundation Trust Salary 2026/27: Pay Bands & Monthly Take-Home](https://netpayscale.uk/trusts/great-ormond-street.md): Official 2026/27 Agenda for Change salary scale for Great Ormond Street Hospital for Children NHS Foundation Trust (RP4). Starting Band 5 pay: £38,488/yr (~£2,384/mo net) with Inner London (+20%, up to £8,746).
+- [Lewisham and Greenwich NHS Trust Salary 2026/27: Pay Bands & Monthly Take-Home](https://netpayscale.uk/trusts/lewisham-and-greenwich.md): Official 2026/27 Agenda for Change salary scale for Lewisham and Greenwich NHS Trust (RJ2). Starting Band 5 pay: £38,488/yr (~£2,384/mo net) with Inner London (+20%, up to £8,746).
+- [Full Directory of 50 Verified NHS Trusts](https://netpayscale.uk/trusts/): All major UK hospital trusts, health boards, and London weighting allowances.
+
 ## Popular Role & Regional Salary Benchmarks (HTML)
 - [Band 5 Nurse Salary — Inner London](https://netpayscale.uk/calculator/band-5-nurse-salary-inner-london/): £32,073 base + £6,415 HCAS = £38,488 gross (£2,367/mo net take-home)
 - [Band 6 Senior Paramedic Salary — Scotland](https://netpayscale.uk/calculator/band-6-senior-paramedic-salary-scotland/): £38,619 to £46,580 gross under Scottish 6-band Income Tax
@@ -40,9 +53,9 @@ NetPayScale UK is an open-access statutory payroll reference and calculator suit
 - [Band 8a Matron Salary — Inner London](https://netpayscale.uk/calculator/band-8a-matron-salary-inner-london/): £55,690 base + £8,746 HCAS = £64,436 gross
 
 ## Machine-readable
-- [Full content](https://netpayscale.uk/llms-full.txt): Every core calculator and Band 2–9 pay table concatenated in one Markdown file
+- [Full content](https://netpayscale.uk/llms-full.txt): Every core calculator, Band 2–9 pay table, and NHS Trust pay scale concatenated in one Markdown file
 - [Markdown catalog](https://netpayscale.uk/api/md/_catalog): JSON index of all Markdown endpoints
-- [Sitemap](https://netpayscale.uk/sitemap.xml): Complete XML sitemap of all 511 canonical HTML pages
+- [Sitemap](https://netpayscale.uk/sitemap.xml): Complete XML sitemap of all 568 canonical HTML pages
 - [AI usage policy](https://netpayscale.uk/ai.txt): Permissions, attribution rules, and crawler scope (ai-txt v1.1.1)
 
 ## Optional & Legal

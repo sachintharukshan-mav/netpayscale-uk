@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import nhsData from "@/data/nhs_afc_2026.json";
+import trustsData from "@/data/nhs_trusts.json";
 import { getAllPseoEntries } from "@/lib/pseo-matrix";
 
 export const dynamic = "force-static";
@@ -121,6 +122,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
+  const trustRoutes: MetadataRoute.Sitemap = trustsData.map((trust) => ({
+    url: `${baseUrl}/trusts/${trust.id}/`,
+    lastModified: buildDate,
+    changeFrequency: "weekly",
+    priority: 0.85,
+  }));
+
   const programmaticRoutes: MetadataRoute.Sitemap = pseoEntries.map((entry) => ({
     url: `${baseUrl}/calculator/${entry.slug}/`,
     lastModified: buildDate,
@@ -128,5 +136,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   }));
 
-  return [...staticRoutes, ...bandHubRoutes, ...programmaticRoutes];
+  return [...staticRoutes, ...bandHubRoutes, ...trustRoutes, ...programmaticRoutes];
 }
