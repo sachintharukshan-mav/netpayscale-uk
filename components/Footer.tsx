@@ -105,6 +105,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/trusts/" className="hover:text-zinc-950 transition-colors font-medium text-[#005EB8]">
+                  Top 50 NHS Trusts Directory
+                </Link>
+              </li>
+              <li>
                 <Link href="/embed/" className="hover:text-zinc-950 transition-colors flex items-center gap-1.5 text-[#005EB8] font-semibold">
                   <span>Embed Calculator Widget</span>
                   <span className="text-[9px] px-1 py-0.2 bg-blue-100 rounded text-[#005EB8] font-bold">FREE</span>

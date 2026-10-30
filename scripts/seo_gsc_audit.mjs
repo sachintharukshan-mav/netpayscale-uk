@@ -45,8 +45,8 @@ assert(fs.existsSync(catalogPath), 'api/md/_catalog exists in static export');
 const llmsFullContent = fs.readFileSync(llmsFullPath, 'utf8');
 assert(llmsFullContent.length > 10000 && llmsFullContent.length < 500000, `llms-full.txt length is within optimal LLM context window (${llmsFullContent.length} chars)`);
 const catalogData = JSON.parse(fs.readFileSync(catalogPath, 'utf8'));
-assert(catalogData.totalMarkdownRoutes === 23, `api/md/_catalog lists all 23 core & band Markdown routes (actual: ${catalogData.totalMarkdownRoutes})`);
-assert(catalogData.totalHtmlRoutes === 517, `api/md/_catalog reports 517 total HTML routes (actual: ${catalogData.totalHtmlRoutes})`);
+assert(catalogData.totalMarkdownRoutes === 24, `api/md/_catalog lists all 24 core & band Markdown routes (actual: ${catalogData.totalMarkdownRoutes})`);
+assert(catalogData.totalHtmlRoutes === 518, `api/md/_catalog reports 518 total HTML routes (actual: ${catalogData.totalHtmlRoutes})`);
 
 // 2. Sitemap.xml check
 const sitemapPath = path.join(outDir, 'sitemap.xml');
@@ -57,7 +57,7 @@ const sitemapContent = fs.readFileSync(sitemapPath, 'utf8');
 const locMatches = [...sitemapContent.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => m[1]);
 console.log(`Found ${locMatches.length} URLs in sitemap.xml`);
 
-assert(locMatches.length === 517, `Sitemap contains all 517 canonical URLs (7 static + 9 sibling calculators + 11 band hubs + 490 role-region spokes; actual: ${locMatches.length})`);
+assert(locMatches.length === 518, `Sitemap contains all 518 canonical URLs (8 static + 9 sibling calculators + 11 band hubs + 490 role-region spokes; actual: ${locMatches.length})`);
 assert(locMatches[0] === 'https://netpayscale.uk/', `Homepage in sitemap is exact canonical: https://netpayscale.uk/ (actual: ${locMatches[0]})`);
 
 let nonTrailingSlashCount = 0;
@@ -195,6 +195,22 @@ if (fs.existsSync(embedCalcPath)) {
   const embedCalcHtml = fs.readFileSync(embedCalcPath, 'utf8');
   assert(embedCalcHtml.includes('NetPayScale UK'), 'Embed widget contains NetPayScale UK attribution');
   assert(embedCalcHtml.includes('2026/27'), 'Embed widget contains 2026/27 AfC benchmark');
+}
+
+// 3G. Top 50 NHS Trusts Directory Audit (/trusts/)
+const trustsPath = path.join(outDir, 'trusts', 'index.html');
+assert(fs.existsSync(trustsPath), 'NHS Trusts Directory exists: /trusts/index.html');
+if (fs.existsSync(trustsPath)) {
+  const trustsHtml = fs.readFileSync(trustsPath, 'utf8');
+  const expectedCanonical = 'https://netpayscale.uk/trusts/';
+  const canonicalMatch = trustsHtml.match(/<link[^>]+rel="canonical"[^>]+href="([^"]+)"/i) || trustsHtml.match(/<link[^>]+href="([^"]+)"[^>]+rel="canonical"/i);
+  assert(canonicalMatch && canonicalMatch[1] === expectedCanonical, `Page /trusts/ has exact self-referential canonical (actual: ${canonicalMatch ? canonicalMatch[1] : 'NONE'})`);
+  assert(trustsHtml.includes('"@type":"BreadcrumbList"'), 'Trusts directory contains BreadcrumbList schema');
+  assert(trustsHtml.includes('"@type":"FAQPage"'), 'Trusts directory contains FAQPage schema');
+  assert(trustsHtml.includes('data-share-widget="whatsapp-copy-breakdown"'), 'Trusts directory contains 1-Tap WhatsApp / Copy Breakdown widget');
+  assert(trustsHtml.includes("Guy&#x27;s and St Thomas") || trustsHtml.includes("Guy's and St Thomas"), 'Trusts directory covers Guy\'s and St Thomas\'');
+  assert(trustsHtml.includes('Barts Health'), 'Trusts directory covers Barts Health');
+  assert(trustsHtml.includes('Manchester University'), 'Trusts directory covers Manchester MFT');
 }
 
 // 4. Sample pSEO Pages Audit (Canonical, OpenGraph, BreadcrumbList, Occupation, AEO Direct Answer, Multi-Step Matrix)

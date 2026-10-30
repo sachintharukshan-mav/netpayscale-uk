@@ -18,6 +18,7 @@ NetPayScale UK is an open-access statutory payroll reference and calculator suit
 - [NHS Salary & Visa Guide for International Recruits 2026/27](https://netpayscale.uk/international.md): Complete guide for overseas nurses, doctors, and healthcare staff: Pre-OSCE (Band 4) vs Post-OSCE (Band 5) pay, Health and Care Worker Visa exemptions, and remittances.
 - [Embed Free NHS Salary & Pension Calculator Widget (2026/27)](https://netpayscale.uk/embed.md): Free embeddable 2026/27 NHS Agenda for Change take-home pay calculator widget for blogs, intranets, and recruitment portals.
 - [NHS Unsocial Hours & Night Shift Pay Calculator 2026/27](https://netpayscale.uk/unsocial-hours-calculator.md): Official Agenda for Change Section 2 unsocial hours calculator: weekday nights (+30%/+44%), Saturdays, and Sundays/Bank Holidays (+60%/+88%) gross and net take-home pay.
+- [Top 50 NHS Trusts & Hospital Pay Directory 2026/27](https://netpayscale.uk/trusts.md): Official directory of the 50 largest UK NHS Hospital Trusts, London Weighting (HCAS) zones, starting Band 5 gross and net pay, and hospital sites.
 
 ## 2026/27 NHS Agenda for Change Band Guides (Markdown Twins)
 - [NHS Band 2 Salary 2026/27 (Healthcare Assistant, Clinical Support Worker)](https://netpayscale.uk/bands/band-2.md): 2026/27 Band 2 pay scale (£25,272–£25,272), hourly rates, step progression, and regional net pay.

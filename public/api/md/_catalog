@@ -2,8 +2,8 @@
   "site": "NetPayScale UK (NHS Edition)",
   "url": "https://netpayscale.uk",
   "updated": "2026-10-26",
-  "totalMarkdownRoutes": 23,
-  "totalHtmlRoutes": 517,
+  "totalMarkdownRoutes": 24,
+  "totalHtmlRoutes": 518,
   "routes": [
     {
       "htmlUrl": "https://netpayscale.uk/",
@@ -87,6 +87,13 @@
       "markdownUrl": "https://netpayscale.uk/unsocial-hours-calculator.md",
       "title": "NHS Unsocial Hours & Night Shift Pay Calculator 2026/27",
       "description": "Official Agenda for Change Section 2 unsocial hours calculator: weekday nights (+30%/+44%), Saturdays, and Sundays/Bank Holidays (+60%/+88%) gross and net take-home pay.",
+      "category": "core"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/trusts/",
+      "markdownUrl": "https://netpayscale.uk/trusts.md",
+      "title": "Top 50 NHS Trusts & Hospital Pay Directory 2026/27",
+      "description": "Official directory of the 50 largest UK NHS Hospital Trusts, London Weighting (HCAS) zones, starting Band 5 gross and net pay, and hospital sites.",
       "category": "core"
     },
     {

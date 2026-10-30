@@ -203,6 +203,13 @@ export function Navbar() {
             International Recruits &amp; Visa Pay Guide
           </Link>
           <Link
+            className="block px-3 py-2 rounded-lg text-text-body hover:bg-surface-muted font-medium text-sm"
+            href="/trusts/"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Top 50 NHS Trusts &amp; Hospitals Directory
+          </Link>
+          <Link
             className="block px-3 py-2 rounded-lg text-emerald-800 bg-emerald-50 hover:bg-emerald-100 font-semibold text-sm flex items-center justify-between"
             href="/embed/"
             onClick={() => setMobileMenuOpen(false)}

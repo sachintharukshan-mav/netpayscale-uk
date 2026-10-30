@@ -3,8 +3,10 @@ import path from "path";
 
 const ROOT = process.cwd();
 const DATA_PATH = path.join(ROOT, "data", "nhs_afc_2026.json");
+const TRUSTS_PATH = path.join(ROOT, "data", "nhs_trusts.json");
 const PUBLIC_DIR = path.join(ROOT, "public");
 const nhsData = JSON.parse(fs.readFileSync(DATA_PATH, "utf8"));
+const trustsData = JSON.parse(fs.readFileSync(TRUSTS_PATH, "utf8"));
 
 const SITE = {
   name: "NetPayScale UK (NHS Edition)",
@@ -731,6 +733,43 @@ Under NHS Agenda for Change Terms and Conditions of Service (Section 2: Maintain
 `;
 }
 
+function renderTrustsMd() {
+  const trustRows = trustsData
+    .map(
+      (t) =>
+        `| **${t.name}** | \`${t.code}\` | ${t.city} | ${t.hcasRate} | £${t.band5StartingGross.toLocaleString("en-GB")} | ~£${t.band5StartingNetMonthly.toLocaleString("en-GB")}/mo |`
+    )
+    .join("\n");
+
+  return `# Top 50 NHS Trusts & Hospital Pay Directory 2026/27 (London Weighting HCAS)
+
+> Official directory of the 50 largest NHS Hospital Trusts and Health Boards in the UK: exact High Cost Area Supplement (HCAS) allowances, starting Band 5 gross and net monthly take-home pay, and hospital sites.
+
+Canonical: ${SITE.url}/trusts/
+Last updated: ${SITE.updated}
+
+## 1. High Cost Area Supplement (HCAS) Rules for 2026/27
+
+Under Agenda for Change Section 4 (Annex 8 & Annex 9):
+- **Inner London (20% of basic):** Minimum £5,794, Maximum £8,746 / year.
+- **Outer London (15% of basic):** Minimum £4,870, Maximum £6,137 / year.
+- **Fringe Zone (5% of basic):** Minimum £1,346, Maximum £2,270 / year.
+- **National Standard (0%):** Standard national AfC pay rates across regional England, Scotland, Wales, and Northern Ireland.
+
+## 2. Directory of 50 Major UK NHS Trusts
+
+| NHS Trust / Health Board | ODS Code | Location | London Weighting (HCAS) | Starting Band 5 Gross | Starting Band 5 Net Pay |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+${trustRows}
+
+## Related
+- [Top 50 NHS Trusts Pay Directory (Interactive HTML)](${SITE.url}/trusts/)
+- [NHS Salary & Take-Home Calculator](${SITE.url}/)
+- [NHS Band 5 to Band 6 Promotion Trap Calculator](${SITE.url}/promotion-calculator/)
+- [NHS Unsocial Hours & Night Shift Pay Calculator](${SITE.url}/unsocial-hours-calculator/)
+`;
+}
+
 // ---------------------------------------------------------------------------
 // 2. Build Registry & Generate All Files
 // ---------------------------------------------------------------------------
@@ -855,6 +894,16 @@ const markdownRegistry = [
     category: "core",
     render: renderUnsocialHoursMd,
   },
+  {
+    route: "/trusts/",
+    mdPath: "/trusts.md",
+    fileOut: path.join(PUBLIC_DIR, "trusts.md"),
+    title: "Top 50 NHS Trusts & Hospital Pay Directory 2026/27",
+    description:
+      "Official directory of the 50 largest UK NHS Hospital Trusts, London Weighting (HCAS) zones, starting Band 5 gross and net pay, and hospital sites.",
+    category: "core",
+    render: renderTrustsMd,
+  },
   ...nhsData.bands.map((b) => {
     const slug = b.slug;
     const roleSummary = b.typicalRoles.slice(0, 2).join(", ");
@@ -886,7 +935,7 @@ const catalogPayload = {
   url: SITE.url,
   updated: SITE.updated,
   totalMarkdownRoutes: markdownRegistry.length,
-  totalHtmlRoutes: 517,
+  totalHtmlRoutes: 518,
   routes: markdownRegistry.map((r) => ({
     htmlUrl: `${SITE.url}${r.route}`,
     markdownUrl: `${SITE.url}${r.mdPath}`,
