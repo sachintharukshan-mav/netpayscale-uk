@@ -16,6 +16,7 @@ import AffiliateCards from "@/components/AffiliateCards";
 import AdPlaceholder from "@/components/AdPlaceholder";
 import FAQSection from "@/components/FAQSection";
 import { ShareBreakdownButton } from "@/components/ShareBreakdownButton";
+import { MagneticBentoContainer } from "@/components/MagneticBento";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -49,8 +50,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     studentLoan: "none",
   });
 
-  const title = `${entry.band} ${entry.roleName} Salary ${entry.regionName} 2026/27: ${formatCurrency(entryCalc.grossPay.annual)} (${formatCurrency(entryCalc.netPay.monthly)}/mo Take-Home)`;
-  const description = entry.description;
+  const title = `${entry.roleName} Salary ${entry.regionName} (2026/27): ${formatCurrency(entryCalc.netPay.monthly)}/mo Net (${formatHourlyRate(entryCalc.hourlyRate)})`;
+  const description = `Official 2026/27 NHS ${entry.band} ${entry.roleName} salary in ${entry.regionName}: ${formatCurrency(entryCalc.grossPay.annual)} gross (${formatHourlyRate(entryCalc.hourlyRate)}/hr). Monthly net take-home is ${formatCurrency(entryCalc.netPay.monthly)}/mo after PAYE tax, NI, and ${entryCalc.pensionTierLabel} CARE pension. View step progression and shift pay tables.`;
   const canonicalUrl = `https://netpayscale.uk/calculator/${entry.slug}/`;
 
   return {
@@ -258,6 +259,22 @@ export default async function PseoCalculatorPage({ params }: Props) {
               text: `Under the NHS 2015 CARE Pension scheme, ${entry.band} staff pay ${baselineResult.pensionTierLabel} of their gross pensionable pay. Contributions are deducted before Income Tax, providing immediate tax relief on all contributions.`,
             },
           },
+          {
+            "@type": "Question",
+            name: `What is the hourly rate for an NHS ${entry.band} ${entry.roleName} in ${entry.regionName}?`,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: `The basic daytime hourly rate for an NHS ${entry.band} ${entry.roleName} in ${entry.regionName} is ${formatHourlyRate(baselineResult.hourlyRate)} at entry (rising to ${formatHourlyRate(topStepResult.hourlyRate)} at top of band). Under Section 2 unsocial hours rules, night shifts and Saturdays pay an enhancement rate of ${formatHourlyRate(baselineResult.hourlyRate * (entry.band === "Band 2" || entry.band === "Band 3" ? 1.44 : 1.30))}/hr, while Sundays and Bank Holidays pay ${formatHourlyRate(baselineResult.hourlyRate * (entry.band === "Band 2" || entry.band === "Band 3" ? 1.88 : 1.60))}/hr.`,
+            },
+          },
+          {
+            "@type": "Question",
+            name: `What is the monthly take-home pay for an NHS ${entry.band} ${entry.roleName} after tax and pension?`,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: `A full-time (37.5 hrs/week) ${entry.band} ${entry.roleName} in ${entry.regionName} takes home approximately ${formatCurrency(baselineResult.netPay.monthly)} net per month at entry step, and ${formatCurrency(topStepResult.netPay.monthly)} net per month at top step after standard PAYE Income Tax, Class 1 National Insurance, and ${baselineResult.pensionTierLabel} (${(baselineResult.pensionRate * 100).toFixed(1)}%) NHS CARE Pension deductions.`,
+            },
+          },
         ],
       },
     ],
@@ -318,18 +335,28 @@ export default async function PseoCalculatorPage({ params }: Props) {
             </div>
 
             {/* Baseline Snapshot Block */}
-            <div className="rounded-lg bg-zinc-50 border border-zinc-200/70 p-4 shrink-0 min-w-[220px]">
-              <span className="text-[11px] font-medium text-zinc-500 block">
-                Baseline Net Take-Home (Entry)
-              </span>
-              <div className="text-2xl font-bold text-zinc-950 font-mono tabular-nums mt-0.5">
-                {formatCurrency(baselineResult.netPay.monthly, true)}
-                <span className="text-xs font-medium text-zinc-500"> /mo</span>
+            <MagneticBentoContainer variant="card" className="shrink-0 min-w-[240px]">
+              <div className="bento-card rounded-xl bg-zinc-50 border border-zinc-200/90 p-4 space-y-2">
+                <span className="text-[11px] font-semibold text-zinc-500 block uppercase tracking-wider">
+                  Baseline Net Pay (Entry)
+                </span>
+                <div className="text-2xl sm:text-3xl font-black text-zinc-950 font-mono tabular-nums">
+                  {formatCurrency(baselineResult.netPay.monthly, true)}
+                  <span className="text-xs font-semibold text-zinc-500"> /mo</span>
+                </div>
+                <div className="flex flex-wrap items-center gap-1.5 pt-1 text-[11px] font-mono">
+                  <span className="px-2 py-0.5 rounded bg-white border border-zinc-200 text-zinc-700 font-bold">
+                    {formatHourlyRate(baselineResult.hourlyRate)}/hr
+                  </span>
+                  <span className="px-2 py-0.5 rounded bg-blue-50 border border-blue-200 text-blue-700 font-bold">
+                    Night: {formatHourlyRate(baselineResult.hourlyRate * (entry.band === "Band 2" || entry.band === "Band 3" ? 1.44 : 1.30))}/hr
+                  </span>
+                </div>
+                <span className="text-[10px] font-mono text-zinc-500 block tabular-nums">
+                  Gross: {formatCurrency(baselineResult.grossPay.annual)}/year
+                </span>
               </div>
-              <span className="text-[11px] font-mono text-zinc-500 mt-1 block tabular-nums">
-                Gross: {formatCurrency(baselineResult.grossPay.annual)}/year
-              </span>
-            </div>
+            </MagneticBentoContainer>
           </div>
 
           {/* 300-Word Contextual Editorial Text */}
@@ -357,12 +384,12 @@ export default async function PseoCalculatorPage({ params }: Props) {
           </div>
 
           {/* Direct Answer Summary Box for AEO & Google AI Overviews */}
-          <div className="rounded-xl bg-emerald-50/80 border border-emerald-200/90 p-4 text-xs text-emerald-950 leading-relaxed font-sans shadow-2xs">
-            <div className="flex items-center gap-1.5 font-bold text-emerald-900 mb-1">
+          <div className="rounded-xl bg-emerald-50/80 border border-emerald-200/90 p-5 text-xs text-emerald-950 leading-relaxed font-sans shadow-2xs space-y-3">
+            <div className="flex items-center gap-1.5 font-bold text-emerald-900">
               <span className="w-2 h-2 rounded-full bg-cash-emerald pulse-glow-dot shrink-0" />
               <span>Direct Answer · 2026/27 Official Benchmark</span>
             </div>
-            <p>
+            <p className="text-xs sm:text-sm leading-relaxed">
               An NHS <strong>{entry.band} {entry.roleName}</strong> in{" "}
               <strong>{entry.regionName}</strong> earns a starting gross basic
               salary of{" "}
@@ -379,6 +406,30 @@ export default async function PseoCalculatorPage({ params }: Props) {
               <strong>{baselineResult.takeHomePercentage}%</strong> of total
               gross earnings in their pocket.
             </p>
+
+            {/* Structured Key Figures Strip for Google Featured Snippets */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-2 border-t border-emerald-200/60 text-[11px]">
+              <div className="bg-white/90 rounded-lg p-2.5 border border-emerald-100 space-y-0.5">
+                <span className="text-zinc-500 block text-[10px] font-bold uppercase tracking-wider">Day Rate (1.0x)</span>
+                <span className="font-mono font-black text-zinc-950 text-sm block">{formatHourlyRate(baselineResult.hourlyRate)}</span>
+                <span className="text-[10px] text-zinc-400 block">to {formatHourlyRate(topStepResult.hourlyRate)}/hr</span>
+              </div>
+              <div className="bg-white/90 rounded-lg p-2.5 border border-emerald-100 space-y-0.5">
+                <span className="text-zinc-500 block text-[10px] font-bold uppercase tracking-wider">Night Shift (+{entry.band === "Band 2" || entry.band === "Band 3" ? "44%" : "30%"})</span>
+                <span className="font-mono font-black text-blue-700 text-sm block">{formatHourlyRate(baselineResult.hourlyRate * (entry.band === "Band 2" || entry.band === "Band 3" ? 1.44 : 1.30))}</span>
+                <span className="text-[10px] text-zinc-400 block">8pm–6am AfC Sec 2</span>
+              </div>
+              <div className="bg-white/90 rounded-lg p-2.5 border border-emerald-100 space-y-0.5">
+                <span className="text-zinc-500 block text-[10px] font-bold uppercase tracking-wider">Sunday/BH (+{entry.band === "Band 2" || entry.band === "Band 3" ? "88%" : "60%"})</span>
+                <span className="font-mono font-black text-purple-700 text-sm block">{formatHourlyRate(baselineResult.hourlyRate * (entry.band === "Band 2" || entry.band === "Band 3" ? 1.88 : 1.60))}</span>
+                <span className="text-[10px] text-zinc-400 block">Full weekend uplift</span>
+              </div>
+              <div className="bg-white/90 rounded-lg p-2.5 border border-emerald-100 space-y-0.5">
+                <span className="text-zinc-500 block text-[10px] font-bold uppercase tracking-wider">Monthly Net Pay</span>
+                <span className="font-mono font-black text-emerald-700 text-sm block">{formatCurrency(baselineResult.netPay.monthly, true)}</span>
+                <span className="text-[10px] text-zinc-400 block">to {formatCurrency(topStepResult.netPay.monthly, true)}/mo</span>
+              </div>
+            </div>
           </div>
 
           {/* 1-Tap WhatsApp & Colleague Share Widget */}
@@ -681,6 +732,32 @@ export default async function PseoCalculatorPage({ params }: Props) {
           format="leaderboard"
           label="Pre-FAQ High-Intent Search Slot · 728×90"
         />
+
+        {/* Role-Specific High-Intent FAQs (Directly matching FAQ Schema) */}
+        <section className="rounded-2xl border border-zinc-200/90 bg-white p-6 sm:p-7 shadow-xs space-y-4">
+          <h2 className="text-base sm:text-lg font-bold text-zinc-950">
+            Frequently Asked Questions: {entry.band} {entry.roleName} ({entry.regionName})
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+            <div className="rounded-xl bg-zinc-50 border border-zinc-200/70 p-4 space-y-1.5">
+              <h3 className="font-bold text-zinc-900 text-xs">
+                What is the hourly rate for an NHS {entry.band} {entry.roleName}?
+              </h3>
+              <p className="text-zinc-600 leading-relaxed">
+                The basic daytime hourly rate in {entry.regionName} is <strong>{formatHourlyRate(baselineResult.hourlyRate)}/hr</strong> at entry, rising to <strong>{formatHourlyRate(topStepResult.hourlyRate)}/hr</strong> at top of band. Night shifts and Saturdays pay <strong>{formatHourlyRate(baselineResult.hourlyRate * (entry.band === "Band 2" || entry.band === "Band 3" ? 1.44 : 1.30))}/hr</strong> (+{entry.band === "Band 2" || entry.band === "Band 3" ? "44%" : "30%"}), while Sundays and Bank Holidays pay <strong>{formatHourlyRate(baselineResult.hourlyRate * (entry.band === "Band 2" || entry.band === "Band 3" ? 1.88 : 1.60))}/hr</strong> (+{entry.band === "Band 2" || entry.band === "Band 3" ? "88%" : "60%"}).
+              </p>
+            </div>
+
+            <div className="rounded-xl bg-zinc-50 border border-zinc-200/70 p-4 space-y-1.5">
+              <h3 className="font-bold text-zinc-900 text-xs">
+                What is the monthly net take-home pay after tax and pension?
+              </h3>
+              <p className="text-zinc-600 leading-relaxed">
+                A full-time (37.5 hrs/wk) {entry.band} {entry.roleName} takes home approx. <strong>{formatCurrency(baselineResult.netPay.monthly, true)}/month</strong> net at starting step, and <strong>{formatCurrency(topStepResult.netPay.monthly, true)}/month</strong> at top step after standard PAYE Income Tax, Class 1 National Insurance, and {baselineResult.pensionTierLabel} ({(baselineResult.pensionRate * 100).toFixed(1)}%) 2015 CARE Pension deductions.
+              </p>
+            </div>
+          </div>
+        </section>
 
         {/* FAQs */}
         <FAQSection />
