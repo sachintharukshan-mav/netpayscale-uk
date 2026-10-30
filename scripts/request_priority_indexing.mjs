@@ -7,11 +7,24 @@ const keyData = JSON.parse(fs.readFileSync(keyPath, "utf8"));
 
 const NEW_PRIORITY_URLS = [
   "https://netpayscale.uk/pension-calculator/",
-  "https://netpayscale.uk/sick-pay-calculator/",
-  "https://netpayscale.uk/bands/band-8b/",
-  "https://netpayscale.uk/bands/band-8c/",
-  "https://netpayscale.uk/bands/band-8d/",
-  "https://netpayscale.uk/bands/band-9/",
+  "https://netpayscale.uk/trusts/",
+  "https://netpayscale.uk/trusts/guys-and-st-thomas/",
+  "https://netpayscale.uk/trusts/barts-health/",
+  "https://netpayscale.uk/trusts/manchester-university/",
+  "https://netpayscale.uk/trusts/nhs-greater-glasgow-clyde/",
+  "https://netpayscale.uk/promotion-calculator/",
+  "https://netpayscale.uk/unsocial-hours-calculator/",
+  "https://netpayscale.uk/embed/",
+  "https://netpayscale.uk/",
+];
+
+const SITEMAPS_TO_SUBMIT = [
+  "https://netpayscale.uk/sitemap.xml",
+  "https://netpayscale.uk/sitemap-index.xml",
+  "https://netpayscale.uk/sitemap-core.xml",
+  "https://netpayscale.uk/sitemap-bands.xml",
+  "https://netpayscale.uk/sitemap-trusts.xml",
+  "https://netpayscale.uk/sitemap-roles.xml",
 ];
 
 function base64UrlEncode(str) {
@@ -62,17 +75,18 @@ async function getAccessToken(scopes) {
 }
 
 async function main() {
-  console.log("=== 1. Verifying Live Production Endpoints (511 Sitemap URLs) ===");
+  console.log("=== 1. Verifying Live Production Edge Endpoints (568 URLs) ===");
   for (const url of [
     "https://netpayscale.uk/sitemap.xml",
+    "https://netpayscale.uk/sitemap-index.xml",
     "https://netpayscale.uk/pension-calculator/",
-    "https://netpayscale.uk/sick-pay-calculator/",
+    "https://netpayscale.uk/trusts/guys-and-st-thomas/",
   ]) {
     const r = await fetch(url, { redirect: "manual" });
     const text = await r.text();
-    if (url.endsWith("sitemap.xml")) {
-      const locs = [...text.matchAll(/<loc>(.*?)<\/loc>/g)].map((m) => m[1]);
-      console.log(`[HTTP ${r.status}] ${url} -> Live Sitemap URLs: ${locs.length}`);
+    if (url.includes("sitemap")) {
+      const count = (text.match(/<loc>/g) || []).length;
+      console.log(`[HTTP ${r.status}] ${url} -> URLs/Entries: ${count}`);
     } else {
       const can =
         text.match(/<link[^>]+rel="canonical"[^>]+href="([^"]+)"/i) ||
@@ -81,7 +95,7 @@ async function main() {
     }
   }
 
-  console.log("\n=== 2. Pushing All 511 URLs to IndexNow (Bing, DuckDuckGo, Yahoo, ChatGPT) ===");
+  console.log("\n=== 2. Pushing All 568 URLs to IndexNow (Bing, Copilot, ChatGPT, DuckDuckGo) ===");
   const sitemapXml = fs.readFileSync(path.resolve("out", "sitemap.xml"), "utf8");
   const allUrls = [...sitemapXml.matchAll(/<loc>(.*?)<\/loc>/g)].map((m) => m[1]);
   const indexNowRes = await fetch("https://api.indexnow.org/indexnow", {
@@ -94,25 +108,27 @@ async function main() {
       urlList: allUrls,
     }),
   });
-  console.log(`IndexNow 511-URL Push Status: HTTP ${indexNowRes.status} (${indexNowRes.statusText})\n`);
+  console.log(`IndexNow ${allUrls.length}-URL Push Status: HTTP ${indexNowRes.status} (${indexNowRes.statusText})\n`);
 
   const token = await getAccessToken(
     "https://www.googleapis.com/auth/indexing https://www.googleapis.com/auth/webmasters"
   );
 
-  console.log("=== 3. Resubmitting 511-URL Sitemap to Google Search Console ===");
-  const smRes = await fetch(
-    `https://www.googleapis.com/webmasters/v3/sites/${encodeURIComponent(
-      "sc-domain:netpayscale.uk"
-    )}/sitemaps/${encodeURIComponent("https://netpayscale.uk/sitemap.xml")}`,
-    {
-      method: "PUT",
-      headers: { Authorization: `Bearer ${token}` },
-    }
-  );
-  console.log(`GSC Sitemap Submission Status: HTTP ${smRes.status}\n`);
+  console.log("=== 3. Registering Segmented Sitemaps in Google Search Console ===");
+  for (const sitemapUrl of SITEMAPS_TO_SUBMIT) {
+    const smRes = await fetch(
+      `https://www.googleapis.com/webmasters/v3/sites/${encodeURIComponent(
+        "sc-domain:netpayscale.uk"
+      )}/sitemaps/${encodeURIComponent(sitemapUrl)}`,
+      {
+        method: "PUT",
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    );
+    console.log(`[GSC Sitemap HTTP ${smRes.status}] Registered: ${sitemapUrl}`);
+  }
 
-  console.log("=== 4. Requesting Google Indexing API (urlNotifications:publish) for New Calculators & Hubs ===");
+  console.log("\n=== 4. Requesting Google Indexing API (urlNotifications:publish) ===");
   for (const url of NEW_PRIORITY_URLS) {
     const pubRes = await fetch("https://indexing.googleapis.com/v3/urlNotifications:publish", {
       method: "POST",
@@ -128,13 +144,18 @@ async function main() {
     const pubData = await pubRes.json();
     console.log(
       `✓ [INDEXING API ${pubRes.status}] ${url} -> ${
-        pubData.urlNotificationMetadata?.latestUpdate?.notifyTime || "Queued"
+        pubData.urlNotificationMetadata?.latestUpdate?.notifyTime || pubData.error?.message || "Queued"
       }`
     );
   }
 
-  console.log("\n=== 5. Inspecting New URLs via Google Search Console URL Inspection API ===");
-  for (const url of NEW_PRIORITY_URLS) {
+  console.log("\n=== 5. Inspecting URLs via Google Search Console URL Inspection API ===");
+  for (const url of [
+    "https://netpayscale.uk/pension-calculator/",
+    "https://netpayscale.uk/trusts/",
+    "https://netpayscale.uk/trusts/guys-and-st-thomas/",
+    "https://netpayscale.uk/",
+  ]) {
     const inspectRes = await fetch("https://searchconsole.googleapis.com/v1/urlInspection/index:inspect", {
       method: "POST",
       headers: {
@@ -150,7 +171,7 @@ async function main() {
     const resObj = inspectData.inspectionResult?.indexStatusResult || {};
     const uiLink = inspectData.inspectionResult?.inspectionResultLink || "";
     console.log(
-      `- ${url}\n  Status: ${resObj.coverageState || "Unknown"} | Verdict: ${resObj.verdict || "N/A"} | Direct GSC Link: ${uiLink}`
+      `- ${url}\n  Status: ${resObj.coverageState || "Unknown"} | Verdict: ${resObj.verdict || "N/A"} | Last Crawl: ${resObj.lastCrawlTime || "Not yet crawled"}\n  Direct Link: ${uiLink}`
     );
   }
 }
