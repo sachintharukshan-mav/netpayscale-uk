@@ -80,6 +80,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/unsocial-hours-calculator/" className="hover:text-zinc-950 transition-colors font-medium text-purple-700">
+                  NHS Unsocial Hours &amp; Night Pay
+                </Link>
+              </li>
+              <li>
                 <Link href="/pay-rise-backpay-calculator/" className="hover:text-zinc-950 transition-colors">
                   NHS Back Pay &amp; 3.3% Rise Calculator
                 </Link>

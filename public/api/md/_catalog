@@ -2,8 +2,8 @@
   "site": "NetPayScale UK (NHS Edition)",
   "url": "https://netpayscale.uk",
   "updated": "2026-10-26",
-  "totalMarkdownRoutes": 22,
-  "totalHtmlRoutes": 516,
+  "totalMarkdownRoutes": 23,
+  "totalHtmlRoutes": 517,
   "routes": [
     {
       "htmlUrl": "https://netpayscale.uk/",
@@ -80,6 +80,13 @@
       "markdownUrl": "https://netpayscale.uk/embed.md",
       "title": "Embed Free NHS Salary & Pension Calculator Widget (2026/27)",
       "description": "Free embeddable 2026/27 NHS Agenda for Change take-home pay calculator widget for blogs, intranets, and recruitment portals.",
+      "category": "core"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/unsocial-hours-calculator/",
+      "markdownUrl": "https://netpayscale.uk/unsocial-hours-calculator.md",
+      "title": "NHS Unsocial Hours & Night Shift Pay Calculator 2026/27",
+      "description": "Official Agenda for Change Section 2 unsocial hours calculator: weekday nights (+30%/+44%), Saturdays, and Sundays/Bank Holidays (+60%/+88%) gross and net take-home pay.",
       "category": "core"
     },
     {

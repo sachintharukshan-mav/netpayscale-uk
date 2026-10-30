@@ -169,6 +169,13 @@ export function Navbar() {
           </Link>
           <Link
             className="block px-3 py-2 rounded-lg text-text-body hover:bg-surface-muted font-medium text-sm"
+            href="/unsocial-hours-calculator/"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            NHS Unsocial Hours &amp; Night Pay Calculator
+          </Link>
+          <Link
+            className="block px-3 py-2 rounded-lg text-text-body hover:bg-surface-muted font-medium text-sm"
             href="/pay-rise-backpay-calculator/"
             onClick={() => setMobileMenuOpen(false)}
           >

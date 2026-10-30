@@ -45,8 +45,8 @@ assert(fs.existsSync(catalogPath), 'api/md/_catalog exists in static export');
 const llmsFullContent = fs.readFileSync(llmsFullPath, 'utf8');
 assert(llmsFullContent.length > 10000 && llmsFullContent.length < 500000, `llms-full.txt length is within optimal LLM context window (${llmsFullContent.length} chars)`);
 const catalogData = JSON.parse(fs.readFileSync(catalogPath, 'utf8'));
-assert(catalogData.totalMarkdownRoutes === 22, `api/md/_catalog lists all 22 core & band Markdown routes (actual: ${catalogData.totalMarkdownRoutes})`);
-assert(catalogData.totalHtmlRoutes === 516, `api/md/_catalog reports 516 total HTML routes (actual: ${catalogData.totalHtmlRoutes})`);
+assert(catalogData.totalMarkdownRoutes === 23, `api/md/_catalog lists all 23 core & band Markdown routes (actual: ${catalogData.totalMarkdownRoutes})`);
+assert(catalogData.totalHtmlRoutes === 517, `api/md/_catalog reports 517 total HTML routes (actual: ${catalogData.totalHtmlRoutes})`);
 
 // 2. Sitemap.xml check
 const sitemapPath = path.join(outDir, 'sitemap.xml');
@@ -57,7 +57,7 @@ const sitemapContent = fs.readFileSync(sitemapPath, 'utf8');
 const locMatches = [...sitemapContent.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => m[1]);
 console.log(`Found ${locMatches.length} URLs in sitemap.xml`);
 
-assert(locMatches.length === 516, `Sitemap contains all 516 canonical URLs (7 static + 8 sibling calculators + 11 band hubs + 490 role-region spokes; actual: ${locMatches.length})`);
+assert(locMatches.length === 517, `Sitemap contains all 517 canonical URLs (7 static + 9 sibling calculators + 11 band hubs + 490 role-region spokes; actual: ${locMatches.length})`);
 assert(locMatches[0] === 'https://netpayscale.uk/', `Homepage in sitemap is exact canonical: https://netpayscale.uk/ (actual: ${locMatches[0]})`);
 
 let nonTrailingSlashCount = 0;
@@ -107,7 +107,7 @@ for (const p of trustPages) {
   }
 }
 
-// 3C. 8 High-Volume Sibling Calculators Audit
+// 3C. 9 High-Volume Sibling Calculators Audit
 const siblingCalculators = [
   'pension-calculator',
   'sick-pay-calculator',
@@ -117,6 +117,7 @@ const siblingCalculators = [
   'pay-rise-backpay-calculator',
   'promotion-calculator',
   'redundancy-pay-calculator',
+  'unsocial-hours-calculator',
 ];
 for (const calcSlug of siblingCalculators) {
   const cPath = path.join(outDir, calcSlug, 'index.html');
@@ -133,6 +134,11 @@ for (const calcSlug of siblingCalculators) {
       assert(cHtml.includes('Pension Bracket Trap') || cHtml.includes('Pension Trap'), 'Promotion Calculator includes Pension Trap features and schema');
       assert(cHtml.includes('The £50/Month Trap') || cHtml.includes('£50/mo trap') || cHtml.includes('£50/Month'), 'Promotion Calculator features £50/Month Trap scenario preset');
       assert(cHtml.includes('Is moving from Band 5 to Band 6 financially worth it'), 'Promotion Calculator includes clinical FAQ on Band 5 to Band 6 financial verdict');
+    }
+    if (calcSlug === 'unsocial-hours-calculator') {
+      assert(cHtml.includes('Section 2') || cHtml.includes('Section 2 Terms'), 'Unsocial Hours Calculator includes AfC Section 2 statutory references');
+      assert(cHtml.includes('+30%') && cHtml.includes('+60%'), 'Unsocial Hours Calculator covers +30% night and +60% Sunday enhancements');
+      assert(cHtml.includes('+44%') && cHtml.includes('+88%'), 'Unsocial Hours Calculator covers +44% and +88% Band 2-3 enhancements');
     }
   }
 }
