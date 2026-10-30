@@ -2,8 +2,8 @@
   "site": "NetPayScale UK (NHS Edition)",
   "url": "https://netpayscale.uk",
   "updated": "2026-10-26",
-  "totalMarkdownRoutes": 21,
-  "totalHtmlRoutes": 515,
+  "totalMarkdownRoutes": 22,
+  "totalHtmlRoutes": 516,
   "routes": [
     {
       "htmlUrl": "https://netpayscale.uk/",
@@ -73,6 +73,13 @@
       "markdownUrl": "https://netpayscale.uk/international.md",
       "title": "NHS Salary & Visa Guide for International Recruits 2026/27",
       "description": "Complete guide for overseas nurses, doctors, and healthcare staff: Pre-OSCE (Band 4) vs Post-OSCE (Band 5) pay, Health and Care Worker Visa exemptions, and remittances.",
+      "category": "core"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/embed/",
+      "markdownUrl": "https://netpayscale.uk/embed.md",
+      "title": "Embed Free NHS Salary & Pension Calculator Widget (2026/27)",
+      "description": "Free embeddable 2026/27 NHS Agenda for Change take-home pay calculator widget for blogs, intranets, and recruitment portals.",
       "category": "core"
     },
     {

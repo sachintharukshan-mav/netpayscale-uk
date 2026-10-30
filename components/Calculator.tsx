@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useMemo, useEffect } from "react";
+import Link from "next/link";
 import nhsData from "@/data/nhs_afc_2026.json";
 import { calculateNHSPay, CalculatorInputs } from "@/lib/calculator";
 import { formatCurrency, formatHourlyRate } from "@/lib/formatters";
@@ -748,6 +749,13 @@ Calculate yours at: ${siteUrl}`;
                   {t("printPayslip", "Print ESR Payslip")}
                 </button>
               </div>
+              <Link
+                href="/embed/"
+                className="w-full min-h-[36px] px-3 bg-blue-50/80 hover:bg-blue-100/80 text-[#005EB8] border border-blue-200/80 rounded-lg text-xs font-bold flex items-center justify-center gap-1.5 transition-all duration-150"
+              >
+                <span className="material-symbols-outlined text-[16px]">code</span>
+                Embed Calculator Widget on Your Website
+              </Link>
             </div>
           </div>
 

@@ -45,8 +45,8 @@ assert(fs.existsSync(catalogPath), 'api/md/_catalog exists in static export');
 const llmsFullContent = fs.readFileSync(llmsFullPath, 'utf8');
 assert(llmsFullContent.length > 10000 && llmsFullContent.length < 500000, `llms-full.txt length is within optimal LLM context window (${llmsFullContent.length} chars)`);
 const catalogData = JSON.parse(fs.readFileSync(catalogPath, 'utf8'));
-assert(catalogData.totalMarkdownRoutes === 21, `api/md/_catalog lists all 21 core & band Markdown routes (actual: ${catalogData.totalMarkdownRoutes})`);
-assert(catalogData.totalHtmlRoutes === 515, `api/md/_catalog reports 515 total HTML routes (actual: ${catalogData.totalHtmlRoutes})`);
+assert(catalogData.totalMarkdownRoutes === 22, `api/md/_catalog lists all 22 core & band Markdown routes (actual: ${catalogData.totalMarkdownRoutes})`);
+assert(catalogData.totalHtmlRoutes === 516, `api/md/_catalog reports 516 total HTML routes (actual: ${catalogData.totalHtmlRoutes})`);
 
 // 2. Sitemap.xml check
 const sitemapPath = path.join(outDir, 'sitemap.xml');
@@ -57,7 +57,7 @@ const sitemapContent = fs.readFileSync(sitemapPath, 'utf8');
 const locMatches = [...sitemapContent.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => m[1]);
 console.log(`Found ${locMatches.length} URLs in sitemap.xml`);
 
-assert(locMatches.length === 515, `Sitemap contains all 515 canonical URLs (6 static + 8 sibling calculators + 11 band hubs + 490 role-region spokes; actual: ${locMatches.length})`);
+assert(locMatches.length === 516, `Sitemap contains all 516 canonical URLs (7 static + 8 sibling calculators + 11 band hubs + 490 role-region spokes; actual: ${locMatches.length})`);
 assert(locMatches[0] === 'https://netpayscale.uk/', `Homepage in sitemap is exact canonical: https://netpayscale.uk/ (actual: ${locMatches[0]})`);
 
 let nonTrailingSlashCount = 0;
@@ -167,6 +167,28 @@ if (fs.existsSync(intlPath)) {
   assert(intlHtml.includes('Pre-OSCE') && intlHtml.includes('Post-OSCE'), 'International page explains Pre-OSCE vs Post-OSCE progression');
   assert(intlHtml.includes('Health and Care Worker Visa') || intlHtml.includes('Health &amp; Care Worker Visa'), 'International page covers Health & Care Worker Visa');
   assert(intlHtml.includes('Immigration Health Surcharge') || intlHtml.includes('IHS'), 'International page covers IHS exemption (£1,035/yr)');
+}
+
+// 3F. Embed Generator Hub & Embeddable Calculator Widget Audit (/embed/ and /embed/calculator/)
+const embedHubPath = path.join(outDir, 'embed', 'index.html');
+assert(fs.existsSync(embedHubPath), 'Embed Generator Hub exists: /embed/index.html');
+if (fs.existsSync(embedHubPath)) {
+  const embedHubHtml = fs.readFileSync(embedHubPath, 'utf8');
+  const expectedCanonical = 'https://netpayscale.uk/embed/';
+  const canonicalMatch = embedHubHtml.match(/<link[^>]+rel="canonical"[^>]+href="([^"]+)"/i) || embedHubHtml.match(/<link[^>]+href="([^"]+)"[^>]+rel="canonical"/i);
+  assert(canonicalMatch && canonicalMatch[1] === expectedCanonical, `Page /embed/ has exact self-referential canonical (actual: ${canonicalMatch ? canonicalMatch[1] : 'NONE'})`);
+  assert(embedHubHtml.includes('"@type":"BreadcrumbList"'), 'Embed page contains BreadcrumbList schema');
+  assert(embedHubHtml.includes('"@type":"FAQPage"'), 'Embed page contains FAQPage schema');
+  assert(embedHubHtml.includes('data-share-widget="whatsapp-copy-breakdown"'), 'Embed page contains 1-Tap WhatsApp / Copy Breakdown widget');
+  assert(embedHubHtml.includes('<iframe') || embedHubHtml.includes('&lt;iframe'), 'Embed page contains interactive live iframe preview');
+}
+
+const embedCalcPath = path.join(outDir, 'embed', 'calculator', 'index.html');
+assert(fs.existsSync(embedCalcPath), 'Embeddable Calculator Widget exists: /embed/calculator/index.html');
+if (fs.existsSync(embedCalcPath)) {
+  const embedCalcHtml = fs.readFileSync(embedCalcPath, 'utf8');
+  assert(embedCalcHtml.includes('NetPayScale UK'), 'Embed widget contains NetPayScale UK attribution');
+  assert(embedCalcHtml.includes('2026/27'), 'Embed widget contains 2026/27 AfC benchmark');
 }
 
 // 4. Sample pSEO Pages Audit (Canonical, OpenGraph, BreadcrumbList, Occupation, AEO Direct Answer, Multi-Step Matrix)

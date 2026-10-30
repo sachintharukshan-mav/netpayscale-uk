@@ -188,6 +188,21 @@ export function Navbar() {
           >
             NHS Redundancy &amp; MARS Severance Calculator
           </Link>
+          <Link
+            className="block px-3 py-2 rounded-lg text-text-body hover:bg-surface-muted font-medium text-sm"
+            href="/international/"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            International Recruits &amp; Visa Pay Guide
+          </Link>
+          <Link
+            className="block px-3 py-2 rounded-lg text-emerald-800 bg-emerald-50 hover:bg-emerald-100 font-semibold text-sm flex items-center justify-between"
+            href="/embed/"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <span>Embed Free Calculator Widget</span>
+            <span className="text-[10px] px-1.5 py-0.5 rounded bg-emerald-600 text-white font-bold">1-Click</span>
+          </Link>
           <div className="pt-2 border-t border-border-subtle flex items-center justify-between text-xs font-mono text-text-muted">
             <span className="flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-cash-emerald pulse-glow-dot" />

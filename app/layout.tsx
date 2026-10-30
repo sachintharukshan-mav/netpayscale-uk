@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import CookieConsent from "@/components/CookieConsent";
+import { LayoutShell } from "@/components/LayoutShell";
 import { LanguageProvider } from "@/lib/i18n/LanguageContext";
 
 export const metadata: Metadata = {
@@ -176,10 +174,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen flex flex-col font-sans selection:bg-[#005EB8]/20 selection:text-[#005EB8]">
         <LanguageProvider>
-          <Navbar />
-          <div className="flex-1">{children}</div>
-          <Footer />
-          <CookieConsent />
+          <LayoutShell>{children}</LayoutShell>
         </LanguageProvider>
       </body>
     </html>
