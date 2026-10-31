@@ -10,6 +10,26 @@ const nhsData = JSON.parse(fs.readFileSync(DATA_PATH, "utf8"));
 const trustsData = JSON.parse(fs.readFileSync(TRUSTS_PATH, "utf8"));
 const pseoData = JSON.parse(fs.readFileSync(PSEO_PATH, "utf8"));
 
+// Extract 41 unique NHS Job Role Pillar Hubs in Band 2 -> Band 9 order
+const roleHubsMap = new Map();
+for (const entry of pseoData) {
+  if (!roleHubsMap.has(entry.roleSlug)) {
+    const bandObj = nhsData.bands.find((b) => b.band === entry.band);
+    roleHubsMap.set(entry.roleSlug, {
+      roleSlug: entry.roleSlug,
+      roleName: entry.roleName,
+      band: entry.band,
+      bandSlug: bandObj
+        ? bandObj.slug
+        : entry.band.toLowerCase().replace(/\s+/g, "-"),
+      points: bandObj ? bandObj.points : [{ step: "Entry", yearsExperience: 0, annualSalary: 25272, hourlyRate: 12.92 }],
+      spokes: [],
+    });
+  }
+  roleHubsMap.get(entry.roleSlug).spokes.push(entry);
+}
+const roleHubsData = Array.from(roleHubsMap.values());
+
 const SITE = {
   name: "NetPayScale UK (NHS Edition)",
   shortName: "NetPayScale UK",
@@ -868,6 +888,86 @@ Under the 2026/27 NHS Agenda for Change pay deal (+3.3%), healthcare staff at **
 `;
 }
 
+function renderRolesMd() {
+  const rows = roleHubsData
+    .map((r) => {
+      const entryPt = r.points[0];
+      const topPt = r.points[r.points.length - 1];
+      const entryCalc = calculateNet(entryPt.annualSalary, { bandSlug: r.bandSlug });
+      const topCalc = calculateNet(topPt.annualSalary, { bandSlug: r.bandSlug });
+      const innerCalc = calculateNet(entryPt.annualSalary, { bandSlug: r.bandSlug, hcasRegion: "inner" });
+      return `| [${r.roleName}](${SITE.url}/roles/${r.roleSlug}/) | ${r.band} | ${fmtGBP(entryPt.annualSalary)} (${fmtGBP(entryCalc.netMonthly)}/mo net) | ${fmtGBP(topPt.annualSalary)} (${fmtGBP(topCalc.netMonthly)}/mo net) | £${entryPt.hourlyRate.toFixed(2)}/hr | ${fmtGBP(innerCalc.netMonthly)}/mo |`;
+    })
+    .join("\n");
+
+  return `# NHS Job Roles & Clinical Career Salary Directory 2026/27 (41 Careers)
+
+> Official 2026/27 NHS Agenda for Change salary, hourly rate, and net monthly take-home pay directory across 41 clinical, allied health, scientific, and leadership job titles (Bands 2 to 9).
+
+Canonical: ${SITE.url}/roles/
+Last updated: ${SITE.updated}
+
+## 2026/27 NHS Job Role Salary & Net Monthly Take-Home Master Table (All 41 Roles)
+
+| NHS Job Role | AfC Band | Starting Gross (Monthly Net) | Top Step Gross (Monthly Net) | Basic Hourly | Inner London Entry Net/Mo |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+${rows}
+
+## Related
+- [NHS Job Roles Directory (Interactive HTML)](${SITE.url}/roles/)
+- [NHS Salary & Take-Home Calculator](${SITE.url}/)
+- [Top 50 NHS Trusts Pay Directory](${SITE.url}/trusts/)
+`;
+}
+
+function renderRoleDetailMd(r) {
+  const entryPt = r.points[0];
+  const topPt = r.points[r.points.length - 1];
+  const entryCalc = calculateNet(entryPt.annualSalary, { bandSlug: r.bandSlug });
+  const topCalc = calculateNet(topPt.annualSalary, { bandSlug: r.bandSlug });
+  const innerEntry = calculateNet(entryPt.annualSalary, { bandSlug: r.bandSlug, hcasRegion: "inner" });
+  const outerEntry = calculateNet(entryPt.annualSalary, { bandSlug: r.bandSlug, hcasRegion: "outer" });
+  const fringeEntry = calculateNet(entryPt.annualSalary, { bandSlug: r.bandSlug, hcasRegion: "fringe" });
+  const scotEntry = calculateNet(entryPt.annualSalary, { bandSlug: r.bandSlug, scotland: true });
+  const isB23 = r.bandSlug === "band-2" || r.bandSlug === "band-3";
+  const nightRate = (entryPt.hourlyRate * (isB23 ? 1.44 : 1.30)).toFixed(2);
+  const sunRate = (entryPt.hourlyRate * (isB23 ? 1.88 : 1.60)).toFixed(2);
+
+  const stepRows = r.points
+    .map((pt) => {
+      const c = calculateNet(pt.annualSalary, { bandSlug: r.bandSlug });
+      return `| ${pt.step} (${pt.yearsExperience} yrs) | ${fmtGBP(pt.annualSalary)} | £${pt.hourlyRate.toFixed(2)}/hr | ${c.pensionRate}% (${fmtGBP(c.pensionMonthly)}/mo) | **${fmtGBP(c.netMonthly)}/mo** (${fmtGBP(c.netAnnual)}/yr) |`;
+    })
+    .join("\n");
+
+  return `# NHS ${r.roleName} Salary 2026/27 (${r.band}) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS ${r.roleName} (${r.band}) salary UK: ${fmtGBP(entryPt.annualSalary)} to ${fmtGBP(topPt.annualSalary)} gross per year (£${entryPt.hourlyRate.toFixed(2)}/hr). Monthly net take-home pay is ${fmtGBP(entryCalc.netMonthly)}/mo at entry and ${fmtGBP(topCalc.netMonthly)}/mo at top step after PAYE tax, NI, and ${entryCalc.pensionRate}% CARE pension.
+
+Canonical: ${SITE.url}/roles/${r.roleSlug}/
+Last updated: ${SITE.updated}
+
+## 1. Key 2026/27 Pay Facts for NHS ${r.roleName} (${r.band})
+- **Agenda for Change Band:** ${r.band}
+- **Starting Gross Salary:** ${fmtGBP(entryPt.annualSalary)}/yr (£${entryPt.hourlyRate.toFixed(2)}/hr)
+- **Top Step Gross Salary:** ${fmtGBP(topPt.annualSalary)}/yr (£${topPt.hourlyRate.toFixed(2)}/hr)
+- **Basic Daytime Hourly Rate:** £${entryPt.hourlyRate.toFixed(2)}/hr | **Night/Saturday Rate:** £${nightRate}/hr | **Sunday/BH Rate:** £${sunRate}/hr
+- **Monthly Net Take-Home (National):** **${fmtGBP(entryCalc.netMonthly)}/mo** (Entry) to **${fmtGBP(topCalc.netMonthly)}/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **${fmtGBP(innerEntry.netMonthly)}/mo** | Outer London (+15%): **${fmtGBP(outerEntry.netMonthly)}/mo** | Fringe (+5%): **${fmtGBP(fringeEntry.netMonthly)}/mo** | Scotland: **${fmtGBP(scotEntry.netMonthly)}/mo**
+
+## 2. ${r.roleName} (${r.band}) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+${stepRows}
+
+## 3. Related Links
+- [NHS ${r.roleName} Interactive Salary Calculator (HTML)](${SITE.url}/roles/${r.roleSlug}/)
+- [All 41 NHS Job Roles Directory](${SITE.url}/roles/)
+- [NHS ${r.band} Pay Scale Guide](${SITE.url}/bands/${r.bandSlug}/)
+`;
+}
+
 // ---------------------------------------------------------------------------
 // 2. Build Registry & Generate All Files
 // ---------------------------------------------------------------------------
@@ -1012,6 +1112,16 @@ const markdownRegistry = [
     category: "core",
     render: renderTrustsMd,
   },
+  {
+    route: "/roles/",
+    mdPath: "/roles.md",
+    fileOut: path.join(PUBLIC_DIR, "roles.md"),
+    title: "NHS Job Roles & Clinical Career Salary Directory 2026/27 (41 Careers)",
+    description:
+      "Official directory of 41 NHS clinical, allied health, scientific, and leadership job roles (Bands 2 to 9) with starting and top gross and net monthly pay.",
+    category: "core",
+    render: renderRolesMd,
+  },
   ...nhsData.bands.map((b) => {
     const slug = b.slug;
     const roleSummary = b.typicalRoles.slice(0, 2).join(", ");
@@ -1034,11 +1144,21 @@ const markdownRegistry = [
     category: "trusts",
     render: () => renderTrustDetailMd(t),
   })),
+  ...roleHubsData.map((r) => ({
+    route: `/roles/${r.roleSlug}/`,
+    mdPath: `/roles/${r.roleSlug}.md`,
+    fileOut: path.join(PUBLIC_DIR, "roles", `${r.roleSlug}.md`),
+    title: `NHS ${r.roleName} Salary 2026/27 (${r.band}): Pay Scale & Take-Home Pay`,
+    description: `Official 2026/27 NHS ${r.roleName} (${r.band}) salary (${fmtGBP(r.points[0].annualSalary)}–${fmtGBP(r.points[r.points.length - 1].annualSalary)}), hourly rates, London HCAS, and net monthly pay.`,
+    category: "roles",
+    render: () => renderRoleDetailMd(r),
+  })),
 ];
 
 // Ensure directories exist
 fs.mkdirSync(path.join(PUBLIC_DIR, "bands"), { recursive: true });
 fs.mkdirSync(path.join(PUBLIC_DIR, "trusts"), { recursive: true });
+fs.mkdirSync(path.join(PUBLIC_DIR, "roles"), { recursive: true });
 fs.mkdirSync(path.join(PUBLIC_DIR, "api", "md"), { recursive: true });
 
 // Write individual .md files
@@ -1053,7 +1173,7 @@ const catalogPayload = {
   url: SITE.url,
   updated: SITE.updated,
   totalMarkdownRoutes: markdownRegistry.length,
-  totalHtmlRoutes: 569,
+  totalHtmlRoutes: 611,
   routes: markdownRegistry.map((r) => ({
     htmlUrl: `${SITE.url}${r.route}`,
     markdownUrl: `${SITE.url}${r.mdPath}`,
@@ -1171,6 +1291,7 @@ canonical_source = "Cite the canonical HTML URL on https://netpayscale.uk/ whene
 allow = /
 allow = /bands/*
 allow = /trusts/*
+allow = /roles/*
 allow = /calculator/*
 allow = /pension-calculator/
 allow = /sick-pay-calculator/
@@ -1261,6 +1382,7 @@ const coreUrls = [
   { loc: `${SITE.url}/international/`, priority: "0.95", changefreq: "weekly" },
   { loc: `${SITE.url}/embed/`, priority: "0.90", changefreq: "weekly" },
   { loc: `${SITE.url}/trusts/`, priority: "0.90", changefreq: "weekly" },
+  { loc: `${SITE.url}/roles/`, priority: "0.95", changefreq: "weekly" },
   { loc: `${SITE.url}/about/`, priority: "0.70", changefreq: "monthly" },
   { loc: `${SITE.url}/privacy/`, priority: "0.60", changefreq: "monthly" },
   { loc: `${SITE.url}/terms/`, priority: "0.60", changefreq: "monthly" },
@@ -1279,11 +1401,18 @@ const trustUrls = trustsData.map((t) => ({
   changefreq: "weekly",
 }));
 
-const roleUrls = pseoData.map((p) => ({
-  loc: `${SITE.url}/calculator/${p.slug}/`,
-  priority: "0.85",
-  changefreq: "weekly",
-}));
+const roleUrls = [
+  ...roleHubsData.map((r) => ({
+    loc: `${SITE.url}/roles/${r.roleSlug}/`,
+    priority: "0.90",
+    changefreq: "weekly",
+  })),
+  ...pseoData.map((p) => ({
+    loc: `${SITE.url}/calculator/${p.slug}/`,
+    priority: "0.85",
+    changefreq: "weekly",
+  })),
+];
 
 function buildUrlsetXml(urls) {
   const items = urls

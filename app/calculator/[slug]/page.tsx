@@ -289,7 +289,7 @@ export default async function PseoCalculatorPage({ params }: Props) {
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
         {/* Clean Breadcrumb */}
-        <nav className="flex items-center gap-1.5 text-xs text-zinc-500">
+        <nav className="flex flex-wrap items-center gap-1.5 text-xs text-zinc-500">
           <Link href="/" className="hover:text-zinc-950 transition-colors">
             Home
           </Link>
@@ -301,8 +301,15 @@ export default async function PseoCalculatorPage({ params }: Props) {
             {entry.band} Pay Scale
           </Link>
           <span className="text-zinc-400">/</span>
+          <Link
+            href={`/roles/${entry.roleSlug}/`}
+            className="hover:text-[#005EB8] font-medium transition-colors"
+          >
+            {entry.roleName}
+          </Link>
+          <span className="text-zinc-400">/</span>
           <span className="font-medium text-zinc-900">
-            {entry.band} {entry.roleName} ({entry.regionName})
+            {entry.regionName}
           </span>
         </nav>
 
@@ -313,12 +320,19 @@ export default async function PseoCalculatorPage({ params }: Props) {
         <section className="rounded-xl border border-zinc-200/90 bg-white p-6 sm:p-7 shadow-xs space-y-6">
           <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6 border-b border-zinc-100 pb-6">
             <div className="space-y-2 max-w-3xl">
-              <div className="flex items-center gap-2 text-xs font-mono text-zinc-500">
+              <div className="flex flex-wrap items-center gap-2 text-xs font-mono text-zinc-500">
                 <Link
                   href={`/bands/${bandSlug}/`}
                   className="font-semibold text-[#005EB8] hover:underline"
                 >
                   {entry.band}
+                </Link>
+                <span>•</span>
+                <Link
+                  href={`/roles/${entry.roleSlug}/`}
+                  className="font-semibold text-[#005EB8] hover:underline"
+                >
+                  {entry.roleName} Hub
                 </Link>
                 <span>•</span>
                 <span>{entry.regionName}</span>

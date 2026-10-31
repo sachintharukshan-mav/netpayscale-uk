@@ -33,6 +33,7 @@ canonical_source = "Cite the canonical HTML URL on https://netpayscale.uk/ whene
 allow = /
 allow = /bands/*
 allow = /trusts/*
+allow = /roles/*
 allow = /calculator/*
 allow = /pension-calculator/
 allow = /sick-pay-calculator/

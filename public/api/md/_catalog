@@ -2,8 +2,8 @@
   "site": "NetPayScale UK (NHS Edition)",
   "url": "https://netpayscale.uk",
   "updated": "2026-10-26",
-  "totalMarkdownRoutes": 75,
-  "totalHtmlRoutes": 569,
+  "totalMarkdownRoutes": 117,
+  "totalHtmlRoutes": 611,
   "routes": [
     {
       "htmlUrl": "https://netpayscale.uk/",
@@ -101,6 +101,13 @@
       "markdownUrl": "https://netpayscale.uk/trusts.md",
       "title": "Top 50 NHS Trusts & Hospital Pay Directory 2026/27",
       "description": "Official directory of the 50 largest UK NHS Hospital Trusts, London Weighting (HCAS) zones, starting Band 5 gross and net pay, and hospital sites.",
+      "category": "core"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/",
+      "markdownUrl": "https://netpayscale.uk/roles.md",
+      "title": "NHS Job Roles & Clinical Career Salary Directory 2026/27 (41 Careers)",
+      "description": "Official directory of 41 NHS clinical, allied health, scientific, and leadership job roles (Bands 2 to 9) with starting and top gross and net monthly pay.",
       "category": "core"
     },
     {
@@ -529,6 +536,293 @@
       "title": "Swansea Bay University Health Board Salary 2026/27: Pay Bands & Monthly Take-Home",
       "description": "Official 2026/27 Agenda for Change salary scale for Swansea Bay University Health Board (7A6). Starting Band 5 pay: £32,073/yr (~£2,080/mo net) with Welsh NHS (GIG Cymru).",
       "category": "trusts"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/healthcare-assistant/",
+      "markdownUrl": "https://netpayscale.uk/roles/healthcare-assistant.md",
+      "title": "NHS Healthcare Assistant Salary 2026/27 (Band 2): Pay Scale & Take-Home Pay",
+      "description": "Official 2026/27 NHS Healthcare Assistant (Band 2) salary (£25,272–£25,272), hourly rates, London HCAS, and net monthly pay.",
+      "category": "roles"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/clinical-support-worker/",
+      "markdownUrl": "https://netpayscale.uk/roles/clinical-support-worker.md",
+      "title": "NHS Clinical Support Worker Salary 2026/27 (Band 2): Pay Scale & Take-Home Pay",
+      "description": "Official 2026/27 NHS Clinical Support Worker (Band 2) salary (£25,272–£25,272), hourly rates, London HCAS, and net monthly pay.",
+      "category": "roles"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/phlebotomist/",
+      "markdownUrl": "https://netpayscale.uk/roles/phlebotomist.md",
+      "title": "NHS Phlebotomist Salary 2026/27 (Band 2): Pay Scale & Take-Home Pay",
+      "description": "Official 2026/27 NHS Phlebotomist (Band 2) salary (£25,272–£25,272), hourly rates, London HCAS, and net monthly pay.",
+      "category": "roles"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/senior-healthcare-assistant/",
+      "markdownUrl": "https://netpayscale.uk/roles/senior-healthcare-assistant.md",
+      "title": "NHS Senior Healthcare Assistant Salary 2026/27 (Band 3): Pay Scale & Take-Home Pay",
+      "description": "Official 2026/27 NHS Senior Healthcare Assistant (Band 3) salary (£25,760–£27,476), hourly rates, London HCAS, and net monthly pay.",
+      "category": "roles"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/emergency-care-assistant/",
+      "markdownUrl": "https://netpayscale.uk/roles/emergency-care-assistant.md",
+      "title": "NHS Emergency Care Assistant Salary 2026/27 (Band 3): Pay Scale & Take-Home Pay",
+      "description": "Official 2026/27 NHS Emergency Care Assistant (Band 3) salary (£25,760–£27,476), hourly rates, London HCAS, and net monthly pay.",
+      "category": "roles"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/pharmacy-assistant/",
+      "markdownUrl": "https://netpayscale.uk/roles/pharmacy-assistant.md",
+      "title": "NHS Pharmacy Assistant Salary 2026/27 (Band 3): Pay Scale & Take-Home Pay",
+      "description": "Official 2026/27 NHS Pharmacy Assistant (Band 3) salary (£25,760–£27,476), hourly rates, London HCAS, and net monthly pay.",
+      "category": "roles"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/nursing-associate/",
+      "markdownUrl": "https://netpayscale.uk/roles/nursing-associate.md",
+      "title": "NHS Nursing Associate Salary 2026/27 (Band 4): Pay Scale & Take-Home Pay",
+      "description": "Official 2026/27 NHS Nursing Associate (Band 4) salary (£28,392–£31,157), hourly rates, London HCAS, and net monthly pay.",
+      "category": "roles"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/assistant-practitioner/",
+      "markdownUrl": "https://netpayscale.uk/roles/assistant-practitioner.md",
+      "title": "NHS Assistant Practitioner Salary 2026/27 (Band 4): Pay Scale & Take-Home Pay",
+      "description": "Official 2026/27 NHS Assistant Practitioner (Band 4) salary (£28,392–£31,157), hourly rates, London HCAS, and net monthly pay.",
+      "category": "roles"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/pharmacy-technician/",
+      "markdownUrl": "https://netpayscale.uk/roles/pharmacy-technician.md",
+      "title": "NHS Pharmacy Technician Salary 2026/27 (Band 4): Pay Scale & Take-Home Pay",
+      "description": "Official 2026/27 NHS Pharmacy Technician (Band 4) salary (£28,392–£31,157), hourly rates, London HCAS, and net monthly pay.",
+      "category": "roles"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/nurse/",
+      "markdownUrl": "https://netpayscale.uk/roles/nurse.md",
+      "title": "NHS Staff Nurse (RN) Salary 2026/27 (Band 5): Pay Scale & Take-Home Pay",
+      "description": "Official 2026/27 NHS Staff Nurse (RN) (Band 5) salary (£32,073–£39,043), hourly rates, London HCAS, and net monthly pay.",
+      "category": "roles"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/paramedic/",
+      "markdownUrl": "https://netpayscale.uk/roles/paramedic.md",
+      "title": "NHS Newly Qualified Paramedic Salary 2026/27 (Band 5): Pay Scale & Take-Home Pay",
+      "description": "Official 2026/27 NHS Newly Qualified Paramedic (Band 5) salary (£32,073–£39,043), hourly rates, London HCAS, and net monthly pay.",
+      "category": "roles"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/physiotherapist/",
+      "markdownUrl": "https://netpayscale.uk/roles/physiotherapist.md",
+      "title": "NHS Physiotherapist Salary 2026/27 (Band 5): Pay Scale & Take-Home Pay",
+      "description": "Official 2026/27 NHS Physiotherapist (Band 5) salary (£32,073–£39,043), hourly rates, London HCAS, and net monthly pay.",
+      "category": "roles"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/radiographer/",
+      "markdownUrl": "https://netpayscale.uk/roles/radiographer.md",
+      "title": "NHS Radiographer Salary 2026/27 (Band 5): Pay Scale & Take-Home Pay",
+      "description": "Official 2026/27 NHS Radiographer (Band 5) salary (£32,073–£39,043), hourly rates, London HCAS, and net monthly pay.",
+      "category": "roles"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/occupational-therapist/",
+      "markdownUrl": "https://netpayscale.uk/roles/occupational-therapist.md",
+      "title": "NHS Occupational Therapist Salary 2026/27 (Band 5): Pay Scale & Take-Home Pay",
+      "description": "Official 2026/27 NHS Occupational Therapist (Band 5) salary (£32,073–£39,043), hourly rates, London HCAS, and net monthly pay.",
+      "category": "roles"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/midwife/",
+      "markdownUrl": "https://netpayscale.uk/roles/midwife.md",
+      "title": "NHS Midwife Salary 2026/27 (Band 5): Pay Scale & Take-Home Pay",
+      "description": "Official 2026/27 NHS Midwife (Band 5) salary (£32,073–£39,043), hourly rates, London HCAS, and net monthly pay.",
+      "category": "roles"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/sister-charge-nurse/",
+      "markdownUrl": "https://netpayscale.uk/roles/sister-charge-nurse.md",
+      "title": "NHS Junior Sister / Charge Nurse Salary 2026/27 (Band 6): Pay Scale & Take-Home Pay",
+      "description": "Official 2026/27 NHS Junior Sister / Charge Nurse (Band 6) salary (£39,959–£48,117), hourly rates, London HCAS, and net monthly pay.",
+      "category": "roles"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/senior-paramedic/",
+      "markdownUrl": "https://netpayscale.uk/roles/senior-paramedic.md",
+      "title": "NHS Senior Paramedic Salary 2026/27 (Band 6): Pay Scale & Take-Home Pay",
+      "description": "Official 2026/27 NHS Senior Paramedic (Band 6) salary (£39,959–£48,117), hourly rates, London HCAS, and net monthly pay.",
+      "category": "roles"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/specialist-physiotherapist/",
+      "markdownUrl": "https://netpayscale.uk/roles/specialist-physiotherapist.md",
+      "title": "NHS Specialist Physiotherapist Salary 2026/27 (Band 6): Pay Scale & Take-Home Pay",
+      "description": "Official 2026/27 NHS Specialist Physiotherapist (Band 6) salary (£39,959–£48,117), hourly rates, London HCAS, and net monthly pay.",
+      "category": "roles"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/specialist-radiographer/",
+      "markdownUrl": "https://netpayscale.uk/roles/specialist-radiographer.md",
+      "title": "NHS Specialist Radiographer Salary 2026/27 (Band 6): Pay Scale & Take-Home Pay",
+      "description": "Official 2026/27 NHS Specialist Radiographer (Band 6) salary (£39,959–£48,117), hourly rates, London HCAS, and net monthly pay.",
+      "category": "roles"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/specialist-midwife/",
+      "markdownUrl": "https://netpayscale.uk/roles/specialist-midwife.md",
+      "title": "NHS Specialist Midwife Salary 2026/27 (Band 6): Pay Scale & Take-Home Pay",
+      "description": "Official 2026/27 NHS Specialist Midwife (Band 6) salary (£39,959–£48,117), hourly rates, London HCAS, and net monthly pay.",
+      "category": "roles"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/ward-manager/",
+      "markdownUrl": "https://netpayscale.uk/roles/ward-manager.md",
+      "title": "NHS Ward Manager / Sister Salary 2026/27 (Band 7): Pay Scale & Take-Home Pay",
+      "description": "Official 2026/27 NHS Ward Manager / Sister (Band 7) salary (£49,387–£56,515), hourly rates, London HCAS, and net monthly pay.",
+      "category": "roles"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/acp/",
+      "markdownUrl": "https://netpayscale.uk/roles/acp.md",
+      "title": "NHS Advanced Clinical Practitioner (ACP) Salary 2026/27 (Band 7): Pay Scale & Take-Home Pay",
+      "description": "Official 2026/27 NHS Advanced Clinical Practitioner (ACP) (Band 7) salary (£49,387–£56,515), hourly rates, London HCAS, and net monthly pay.",
+      "category": "roles"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/advanced-paramedic/",
+      "markdownUrl": "https://netpayscale.uk/roles/advanced-paramedic.md",
+      "title": "NHS Advanced Paramedic Salary 2026/27 (Band 7): Pay Scale & Take-Home Pay",
+      "description": "Official 2026/27 NHS Advanced Paramedic (Band 7) salary (£49,387–£56,515), hourly rates, London HCAS, and net monthly pay.",
+      "category": "roles"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/pharmacist/",
+      "markdownUrl": "https://netpayscale.uk/roles/pharmacist.md",
+      "title": "NHS Lead Clinical Pharmacist Salary 2026/27 (Band 7): Pay Scale & Take-Home Pay",
+      "description": "Official 2026/27 NHS Lead Clinical Pharmacist (Band 7) salary (£49,387–£56,515), hourly rates, London HCAS, and net monthly pay.",
+      "category": "roles"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/clinical-manager/",
+      "markdownUrl": "https://netpayscale.uk/roles/clinical-manager.md",
+      "title": "NHS Clinical Team Leader Salary 2026/27 (Band 7): Pay Scale & Take-Home Pay",
+      "description": "Official 2026/27 NHS Clinical Team Leader (Band 7) salary (£49,387–£56,515), hourly rates, London HCAS, and net monthly pay.",
+      "category": "roles"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/matron/",
+      "markdownUrl": "https://netpayscale.uk/roles/matron.md",
+      "title": "NHS Matron Salary 2026/27 (Band 8a): Pay Scale & Take-Home Pay",
+      "description": "Official 2026/27 NHS Matron (Band 8a) salary (£57,528–£64,750), hourly rates, London HCAS, and net monthly pay.",
+      "category": "roles"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/nurse-consultant/",
+      "markdownUrl": "https://netpayscale.uk/roles/nurse-consultant.md",
+      "title": "NHS Advanced Nurse Consultant Salary 2026/27 (Band 8a): Pay Scale & Take-Home Pay",
+      "description": "Official 2026/27 NHS Advanced Nurse Consultant (Band 8a) salary (£57,528–£64,750), hourly rates, London HCAS, and net monthly pay.",
+      "category": "roles"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/psychologist/",
+      "markdownUrl": "https://netpayscale.uk/roles/psychologist.md",
+      "title": "NHS Principal Clinical Psychologist Salary 2026/27 (Band 8a): Pay Scale & Take-Home Pay",
+      "description": "Official 2026/27 NHS Principal Clinical Psychologist (Band 8a) salary (£57,528–£64,750), hourly rates, London HCAS, and net monthly pay.",
+      "category": "roles"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/service-manager/",
+      "markdownUrl": "https://netpayscale.uk/roles/service-manager.md",
+      "title": "NHS Operational Service Manager Salary 2026/27 (Band 8a): Pay Scale & Take-Home Pay",
+      "description": "Official 2026/27 NHS Operational Service Manager (Band 8a) salary (£57,528–£64,750), hourly rates, London HCAS, and net monthly pay.",
+      "category": "roles"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/senior-matron/",
+      "markdownUrl": "https://netpayscale.uk/roles/senior-matron.md",
+      "title": "NHS Senior Matron Salary 2026/27 (Band 8b): Pay Scale & Take-Home Pay",
+      "description": "Official 2026/27 NHS Senior Matron (Band 8b) salary (£66,582–£77,368), hourly rates, London HCAS, and net monthly pay.",
+      "category": "roles"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/consultant-psychologist/",
+      "markdownUrl": "https://netpayscale.uk/roles/consultant-psychologist.md",
+      "title": "NHS Consultant Clinical Psychologist Salary 2026/27 (Band 8b): Pay Scale & Take-Home Pay",
+      "description": "Official 2026/27 NHS Consultant Clinical Psychologist (Band 8b) salary (£66,582–£77,368), hourly rates, London HCAS, and net monthly pay.",
+      "category": "roles"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/head-of-service/",
+      "markdownUrl": "https://netpayscale.uk/roles/head-of-service.md",
+      "title": "NHS Head of Clinical Services Salary 2026/27 (Band 8b): Pay Scale & Take-Home Pay",
+      "description": "Official 2026/27 NHS Head of Clinical Services (Band 8b) salary (£66,582–£77,368), hourly rates, London HCAS, and net monthly pay.",
+      "category": "roles"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/head-of-nursing/",
+      "markdownUrl": "https://netpayscale.uk/roles/head-of-nursing.md",
+      "title": "NHS Head of Nursing Salary 2026/27 (Band 8c): Pay Scale & Take-Home Pay",
+      "description": "Official 2026/27 NHS Head of Nursing (Band 8c) salary (£79,504–£91,609), hourly rates, London HCAS, and net monthly pay.",
+      "category": "roles"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/associate-director/",
+      "markdownUrl": "https://netpayscale.uk/roles/associate-director.md",
+      "title": "NHS Associate Director of Operations Salary 2026/27 (Band 8c): Pay Scale & Take-Home Pay",
+      "description": "Official 2026/27 NHS Associate Director of Operations (Band 8c) salary (£79,504–£91,609), hourly rates, London HCAS, and net monthly pay.",
+      "category": "roles"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/consultant-scientist/",
+      "markdownUrl": "https://netpayscale.uk/roles/consultant-scientist.md",
+      "title": "NHS Consultant Clinical Scientist Salary 2026/27 (Band 8c): Pay Scale & Take-Home Pay",
+      "description": "Official 2026/27 NHS Consultant Clinical Scientist (Band 8c) salary (£79,504–£91,609), hourly rates, London HCAS, and net monthly pay.",
+      "category": "roles"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/deputy-director-nursing/",
+      "markdownUrl": "https://netpayscale.uk/roles/deputy-director-nursing.md",
+      "title": "NHS Deputy Director of Nursing Salary 2026/27 (Band 8d): Pay Scale & Take-Home Pay",
+      "description": "Official 2026/27 NHS Deputy Director of Nursing (Band 8d) salary (£94,356–£108,814), hourly rates, London HCAS, and net monthly pay.",
+      "category": "roles"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/director-of-operations/",
+      "markdownUrl": "https://netpayscale.uk/roles/director-of-operations.md",
+      "title": "NHS Director of Operations Salary 2026/27 (Band 8d): Pay Scale & Take-Home Pay",
+      "description": "Official 2026/27 NHS Director of Operations (Band 8d) salary (£94,356–£108,814), hourly rates, London HCAS, and net monthly pay.",
+      "category": "roles"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/chief-pharmacist/",
+      "markdownUrl": "https://netpayscale.uk/roles/chief-pharmacist.md",
+      "title": "NHS Chief Pharmacist Salary 2026/27 (Band 8d): Pay Scale & Take-Home Pay",
+      "description": "Official 2026/27 NHS Chief Pharmacist (Band 8d) salary (£94,356–£108,814), hourly rates, London HCAS, and net monthly pay.",
+      "category": "roles"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/director-of-nursing/",
+      "markdownUrl": "https://netpayscale.uk/roles/director-of-nursing.md",
+      "title": "NHS Director of Nursing Salary 2026/27 (Band 9): Pay Scale & Take-Home Pay",
+      "description": "Official 2026/27 NHS Director of Nursing (Band 9) salary (£112,782–£129,783), hourly rates, London HCAS, and net monthly pay.",
+      "category": "roles"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/chief-operating-officer/",
+      "markdownUrl": "https://netpayscale.uk/roles/chief-operating-officer.md",
+      "title": "NHS Chief Operating Officer (COO) Salary 2026/27 (Band 9): Pay Scale & Take-Home Pay",
+      "description": "Official 2026/27 NHS Chief Operating Officer (COO) (Band 9) salary (£112,782–£129,783), hourly rates, London HCAS, and net monthly pay.",
+      "category": "roles"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/roles/clinical-director/",
+      "markdownUrl": "https://netpayscale.uk/roles/clinical-director.md",
+      "title": "NHS National Clinical Specialist Advisor Salary 2026/27 (Band 9): Pay Scale & Take-Home Pay",
+      "description": "Official 2026/27 NHS National Clinical Specialist Advisor (Band 9) salary (£112,782–£129,783), hourly rates, London HCAS, and net monthly pay.",
+      "category": "roles"
     }
   ]
 }

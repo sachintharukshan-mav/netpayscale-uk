@@ -1,13 +1,14 @@
 import { MetadataRoute } from "next";
 import nhsData from "@/data/nhs_afc_2026.json";
 import trustsData from "@/data/nhs_trusts.json";
-import { getAllPseoEntries } from "@/lib/pseo-matrix";
+import { getAllPseoEntries, getAllRoleHubs } from "@/lib/pseo-matrix";
 
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://netpayscale.uk";
   const pseoEntries = getAllPseoEntries();
+  const roleHubs = getAllRoleHubs();
   const buildDate = new Date("2026-04-01T00:00:00.000Z");
 
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -96,6 +97,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/roles/`,
+      lastModified: buildDate,
+      changeFrequency: "weekly",
+      priority: 0.95,
+    },
+    {
       url: `${baseUrl}/about/`,
       lastModified: buildDate,
       changeFrequency: "monthly",
@@ -135,6 +142,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   }));
 
+  const roleHubRoutes: MetadataRoute.Sitemap = roleHubs.map((role) => ({
+    url: `${baseUrl}/roles/${role.roleSlug}/`,
+    lastModified: buildDate,
+    changeFrequency: "weekly",
+    priority: 0.9,
+  }));
+
   const programmaticRoutes: MetadataRoute.Sitemap = pseoEntries.map((entry) => ({
     url: `${baseUrl}/calculator/${entry.slug}/`,
     lastModified: buildDate,
@@ -142,5 +156,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   }));
 
-  return [...staticRoutes, ...bandHubRoutes, ...trustRoutes, ...programmaticRoutes];
+  return [
+    ...staticRoutes,
+    ...bandHubRoutes,
+    ...trustRoutes,
+    ...roleHubRoutes,
+    ...programmaticRoutes,
+  ];
 }

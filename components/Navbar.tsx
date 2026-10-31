@@ -47,6 +47,12 @@ export function Navbar() {
             {t("bandHubs", "Band 5–9 Hubs")}
           </Link>
           <Link
+            href="/roles/"
+            className="px-3 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95"
+          >
+            Job Roles
+          </Link>
+          <Link
             href="/pension-calculator/"
             className="px-3 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95"
           >
@@ -137,6 +143,13 @@ export function Navbar() {
             onClick={() => setMobileMenuOpen(false)}
           >
             NHS Band 2–9 Salary Hubs
+          </Link>
+          <Link
+            className="block px-3 py-2 rounded-lg text-text-body hover:bg-surface-muted font-medium text-sm"
+            href="/roles/"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            NHS Job Roles &amp; Career Pay Directory (41 Roles)
           </Link>
           <Link
             className="block px-3 py-2 rounded-lg text-text-body hover:bg-surface-muted font-medium text-sm"

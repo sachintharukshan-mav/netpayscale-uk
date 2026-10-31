@@ -45,8 +45,8 @@ assert(fs.existsSync(catalogPath), 'api/md/_catalog exists in static export');
 const llmsFullContent = fs.readFileSync(llmsFullPath, 'utf8');
 assert(llmsFullContent.length > 10000 && llmsFullContent.length < 500000, `llms-full.txt length is within optimal LLM context window (${llmsFullContent.length} chars)`);
 const catalogData = JSON.parse(fs.readFileSync(catalogPath, 'utf8'));
-assert(catalogData.totalMarkdownRoutes === 75, `api/md/_catalog lists all 75 core, band & trust Markdown routes (actual: ${catalogData.totalMarkdownRoutes})`);
-assert(catalogData.totalHtmlRoutes === 569, `api/md/_catalog reports 569 total HTML routes (actual: ${catalogData.totalHtmlRoutes})`);
+assert(catalogData.totalMarkdownRoutes === 117, `api/md/_catalog lists all 117 core, band, trust & role Markdown routes (actual: ${catalogData.totalMarkdownRoutes})`);
+assert(catalogData.totalHtmlRoutes === 611, `api/md/_catalog reports 611 total HTML routes (actual: ${catalogData.totalHtmlRoutes})`);
 
 // 2. Sitemap.xml check
 const sitemapPath = path.join(outDir, 'sitemap.xml');
@@ -57,7 +57,7 @@ const sitemapContent = fs.readFileSync(sitemapPath, 'utf8');
 const locMatches = [...sitemapContent.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => m[1]);
 console.log(`Found ${locMatches.length} URLs in sitemap.xml`);
 
-assert(locMatches.length === 569, `Sitemap contains all 569 canonical URLs (8 static + 10 sibling calculators + 11 band hubs + 50 trust hubs + 490 role-region spokes; actual: ${locMatches.length})`);
+assert(locMatches.length === 611, `Sitemap contains all 611 canonical URLs (19 core/calculators + 11 band hubs + 50 trust hubs + 41 role pillar hubs + 490 role-region spokes; actual: ${locMatches.length})`);
 assert(locMatches[0] === 'https://netpayscale.uk/', `Homepage in sitemap is exact canonical: https://netpayscale.uk/ (actual: ${locMatches[0]})`);
 
 let nonTrailingSlashCount = 0;
@@ -79,10 +79,10 @@ const sitemapIndexMatches = [...sitemapIndexContent.matchAll(/<loc>(.*?)<\/loc>/
 assert(sitemapIndexMatches.length === 4, `sitemap-index.xml points to 4 child sitemaps (actual: ${sitemapIndexMatches.length})`);
 
 const childSitemaps = [
-  { file: 'sitemap-core.xml', count: 18 },
+  { file: 'sitemap-core.xml', count: 19 },
   { file: 'sitemap-bands.xml', count: 11 },
   { file: 'sitemap-trusts.xml', count: 50 },
-  { file: 'sitemap-roles.xml', count: 490 }
+  { file: 'sitemap-roles.xml', count: 531 }
 ];
 
 let totalSegmentedUrls = 0;
@@ -100,7 +100,7 @@ for (const child of childSitemaps) {
     }
   }
 }
-assert(totalSegmentedUrls === 569, `Segmented child sitemaps sum to exactly 569 URLs matching master sitemap.xml (actual: ${totalSegmentedUrls})`);
+assert(totalSegmentedUrls === 611, `Segmented child sitemaps sum to exactly 611 URLs matching master sitemap.xml (actual: ${totalSegmentedUrls})`);
 
 
 // 3. Homepage HTML Audit (Canonical, Meta, Schema)
@@ -309,6 +309,51 @@ if (fs.existsSync(agencyPath)) {
   assert(aHtml.includes('data-share-widget="whatsapp-copy-breakdown"'), 'Agency vs Bank page contains 1-Tap WhatsApp Share widget');
   assert(fs.existsSync(path.join(outDir, 'agency-vs-bank-calculator.md')), 'agency-vs-bank-calculator.md exists in static export');
 }
+
+// 3K. NHS Job Roles Directory (/roles/) & All 41 National Role Pillar Pages (/roles/[roleSlug]/) Audit
+const rolesHubPath = path.join(outDir, 'roles', 'index.html');
+assert(fs.existsSync(rolesHubPath), 'NHS Job Roles Directory exists: /roles/index.html');
+if (fs.existsSync(rolesHubPath)) {
+  const rHubHtml = fs.readFileSync(rolesHubPath, 'utf8');
+  const expectedCanonical = 'https://netpayscale.uk/roles/';
+  const canonicalMatch = rHubHtml.match(/<link[^>]+rel="canonical"[^>]+href="([^"]+)"/i) || rHubHtml.match(/<link[^>]+href="([^"]+)"[^>]+rel="canonical"/i);
+  assert(canonicalMatch && canonicalMatch[1] === expectedCanonical, `Page /roles/ has exact canonical (actual: ${canonicalMatch ? canonicalMatch[1] : 'NONE'})`);
+  assert(rHubHtml.includes('"@type":"CollectionPage"'), 'Roles directory contains CollectionPage schema');
+  assert(rHubHtml.includes('"@type":"FAQPage"'), 'Roles directory contains FAQPage schema');
+  assert(rHubHtml.includes('"@type":"BreadcrumbList"'), 'Roles directory contains BreadcrumbList schema');
+  assert(rHubHtml.includes('Quick Answer: 2026/27 NHS Salary &amp; Net Pay by Clinical Job Role') || rHubHtml.includes('Quick Answer: 2026/27 NHS Salary & Net Pay by Clinical Job Role'), 'Roles directory contains Position 0 Answer Box');
+  assert(rHubHtml.includes('data-share-widget="whatsapp-copy-breakdown"'), 'Roles directory contains 1-Tap WhatsApp Share widget');
+  assert(!rHubHtml.includes('/hr/hr'), 'Roles directory contains zero /hr/hr formatting bugs');
+  assert(fs.existsSync(path.join(outDir, 'roles.md')), 'roles.md exists in static export');
+}
+
+const rolesDir = path.join(outDir, 'roles');
+const allRoleSlugs = fs.existsSync(rolesDir)
+  ? fs.readdirSync(rolesDir).filter(f => fs.statSync(path.join(rolesDir, f)).isDirectory())
+  : [];
+assert(allRoleSlugs.length === 41, `All 41 National Role Pillar directories exist under /roles/[roleSlug]/ (actual: ${allRoleSlugs.length})`);
+
+let roleSchemaPassCount = 0;
+let roleDoubleHrCount = 0;
+for (const rSlug of allRoleSlugs) {
+  const rPath = path.join(rolesDir, rSlug, 'index.html');
+  const rHtml = fs.readFileSync(rPath, 'utf8');
+  const expectedCanonical = `https://netpayscale.uk/roles/${rSlug}/`;
+  const canonicalMatch = rHtml.match(/<link[^>]+rel="canonical"[^>]+href="([^"]+)"/i) || rHtml.match(/<link[^>]+href="([^"]+)"[^>]+rel="canonical"/i);
+  const hasAll =
+    canonicalMatch &&
+    canonicalMatch[1] === expectedCanonical &&
+    rHtml.includes('"@type":"Occupation"') &&
+    rHtml.includes('"@type":"FAQPage"') &&
+    rHtml.includes('"@type":"BreadcrumbList"') &&
+    rHtml.includes('Direct Answer · 2026/27 Official NHS') &&
+    rHtml.includes('data-share-widget="whatsapp-copy-breakdown"') &&
+    fs.existsSync(path.join(outDir, 'roles', `${rSlug}.md`));
+  if (hasAll) roleSchemaPassCount++;
+  if (rHtml.includes('/hr/hr')) roleDoubleHrCount++;
+}
+assert(roleSchemaPassCount === 41, `All 41 Role Pillar Pages pass canonical, Occupation + FAQPage + BreadcrumbList schema, Position 0 Direct Answer, WhatsApp widget & Markdown twin checks (passed: ${roleSchemaPassCount}/41)`);
+assert(roleDoubleHrCount === 0, `Zero /hr/hr formatting errors across all 41 Role Pillar Pages (actual: ${roleDoubleHrCount})`);
 
 // 4. Sample pSEO Pages Audit (Canonical, OpenGraph, BreadcrumbList, Occupation, AEO Direct Answer, Multi-Step Matrix)
 const sampleSlugs = [

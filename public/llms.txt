@@ -20,6 +20,7 @@ NetPayScale UK is an open-access statutory payroll reference and calculator suit
 - [NHS Unsocial Hours & Night Shift Pay Calculator 2026/27](https://netpayscale.uk/unsocial-hours-calculator.md): Official Agenda for Change Section 2 unsocial hours calculator: weekday nights (+30%/+44%), Saturdays, and Sundays/Bank Holidays (+60%/+88%) gross and net take-home pay.
 - [NHS Bank vs. Agency vs. Substantive Pay Calculator 2026/27](https://netpayscale.uk/agency-vs-bank-calculator.md): Compare net take-home pay: Permanent Substantive AfC vs Trust Staff Bank (+12.07% WTR holiday pay) vs Agency Nursing Inside IR35 after umbrella fees.
 - [Top 50 NHS Trusts & Hospital Pay Directory 2026/27](https://netpayscale.uk/trusts.md): Official directory of the 50 largest UK NHS Hospital Trusts, London Weighting (HCAS) zones, starting Band 5 gross and net pay, and hospital sites.
+- [NHS Job Roles & Clinical Career Salary Directory 2026/27 (41 Careers)](https://netpayscale.uk/roles.md): Official directory of 41 NHS clinical, allied health, scientific, and leadership job roles (Bands 2 to 9) with starting and top gross and net monthly pay.
 
 ## 2026/27 NHS Agenda for Change Band Guides (Markdown Twins)
 - [NHS Band 2 Salary 2026/27 (Healthcare Assistant, Clinical Support Worker)](https://netpayscale.uk/bands/band-2.md): 2026/27 Band 2 pay scale (£25,272–£25,272), hourly rates, step progression, and regional net pay.

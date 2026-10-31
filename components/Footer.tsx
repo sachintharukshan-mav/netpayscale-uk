@@ -115,6 +115,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/roles/" className="hover:text-zinc-950 transition-colors font-medium text-[#005EB8]">
+                  NHS Job Roles Directory (41 Careers)
+                </Link>
+              </li>
+              <li>
                 <Link href="/embed/" className="hover:text-zinc-950 transition-colors flex items-center gap-1.5 text-[#005EB8] font-semibold">
                   <span>Embed Calculator Widget</span>
                   <span className="text-[9px] px-1 py-0.2 bg-blue-100 rounded text-[#005EB8] font-bold">FREE</span>
@@ -128,6 +133,36 @@ export function Footer() {
               Popular Role &amp; Region Guides
             </h4>
             <ul className="space-y-1.5 text-zinc-600">
+              <li>
+                <Link href="/roles/nurse/" className="hover:text-zinc-950 transition-colors font-medium">
+                  NHS Staff Nurse Salary (Band 5)
+                </Link>
+              </li>
+              <li>
+                <Link href="/roles/paramedic/" className="hover:text-zinc-950 transition-colors font-medium">
+                  NHS Paramedic Salary (Band 5/6)
+                </Link>
+              </li>
+              <li>
+                <Link href="/roles/healthcare-assistant/" className="hover:text-zinc-950 transition-colors font-medium">
+                  NHS Healthcare Assistant (Band 2)
+                </Link>
+              </li>
+              <li>
+                <Link href="/roles/midwife/" className="hover:text-zinc-950 transition-colors font-medium">
+                  NHS Midwife Salary (Band 5/6)
+                </Link>
+              </li>
+              <li>
+                <Link href="/roles/physiotherapist/" className="hover:text-zinc-950 transition-colors font-medium">
+                  NHS Physiotherapist Salary (Band 5)
+                </Link>
+              </li>
+              <li>
+                <Link href="/roles/pharmacist/" className="hover:text-zinc-950 transition-colors font-medium">
+                  NHS Clinical Pharmacist (Band 7)
+                </Link>
+              </li>
               <li>
                 <Link href="/calculator/band-5-nurse-salary-inner-london/" className="hover:text-zinc-950 transition-colors">
                   Band 5 Staff Nurse (Inner London)

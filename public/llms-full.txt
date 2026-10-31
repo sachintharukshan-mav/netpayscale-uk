@@ -640,6 +640,66 @@ Under Agenda for Change Section 4 (Annex 8 & Annex 9):
 - [NHS Unsocial Hours & Night Shift Pay Calculator](https://netpayscale.uk/unsocial-hours-calculator/)
 
 ---
+<!-- source: https://netpayscale.uk/roles/ -->
+# NHS Job Roles & Clinical Career Salary Directory 2026/27 (41 Careers)
+
+> Official 2026/27 NHS Agenda for Change salary, hourly rate, and net monthly take-home pay directory across 41 clinical, allied health, scientific, and leadership job titles (Bands 2 to 9).
+
+Canonical: https://netpayscale.uk/roles/
+Last updated: 2026-10-26
+
+## 2026/27 NHS Job Role Salary & Net Monthly Take-Home Master Table (All 41 Roles)
+
+| NHS Job Role | AfC Band | Starting Gross (Monthly Net) | Top Step Gross (Monthly Net) | Basic Hourly | Inner London Entry Net/Mo |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| [Healthcare Assistant](https://netpayscale.uk/roles/healthcare-assistant/) | Band 2 | £25,272 (£1,700/mo net) | £25,272 (£1,700/mo net) | £12.92/hr | £2,023/mo |
+| [Clinical Support Worker](https://netpayscale.uk/roles/clinical-support-worker/) | Band 2 | £25,272 (£1,700/mo net) | £25,272 (£1,700/mo net) | £12.92/hr | £2,023/mo |
+| [Phlebotomist](https://netpayscale.uk/roles/phlebotomist/) | Band 2 | £25,272 (£1,700/mo net) | £25,272 (£1,700/mo net) | £12.92/hr | £2,023/mo |
+| [Senior Healthcare Assistant](https://netpayscale.uk/roles/senior-healthcare-assistant/) | Band 3 | £25,760 (£1,727/mo net) | £27,476 (£1,823/mo net) | £13.17/hr | £2,050/mo |
+| [Emergency Care Assistant](https://netpayscale.uk/roles/emergency-care-assistant/) | Band 3 | £25,760 (£1,727/mo net) | £27,476 (£1,823/mo net) | £13.17/hr | £2,050/mo |
+| [Pharmacy Assistant](https://netpayscale.uk/roles/pharmacy-assistant/) | Band 3 | £25,760 (£1,727/mo net) | £27,476 (£1,823/mo net) | £13.17/hr | £2,050/mo |
+| [Nursing Associate](https://netpayscale.uk/roles/nursing-associate/) | Band 4 | £28,392 (£1,874/mo net) | £31,157 (£1,990/mo net) | £14.52/hr | £2,196/mo |
+| [Assistant Practitioner](https://netpayscale.uk/roles/assistant-practitioner/) | Band 4 | £28,392 (£1,874/mo net) | £31,157 (£1,990/mo net) | £14.52/hr | £2,196/mo |
+| [Pharmacy Technician](https://netpayscale.uk/roles/pharmacy-technician/) | Band 4 | £28,392 (£1,874/mo net) | £31,157 (£1,990/mo net) | £14.52/hr | £2,196/mo |
+| [Staff Nurse (RN)](https://netpayscale.uk/roles/nurse/) | Band 5 | £32,073 (£2,040/mo net) | £39,043 (£2,381/mo net) | £16.40/hr | £2,390/mo |
+| [Newly Qualified Paramedic](https://netpayscale.uk/roles/paramedic/) | Band 5 | £32,073 (£2,040/mo net) | £39,043 (£2,381/mo net) | £16.40/hr | £2,390/mo |
+| [Physiotherapist](https://netpayscale.uk/roles/physiotherapist/) | Band 5 | £32,073 (£2,040/mo net) | £39,043 (£2,381/mo net) | £16.40/hr | £2,390/mo |
+| [Radiographer](https://netpayscale.uk/roles/radiographer/) | Band 5 | £32,073 (£2,040/mo net) | £39,043 (£2,381/mo net) | £16.40/hr | £2,390/mo |
+| [Occupational Therapist](https://netpayscale.uk/roles/occupational-therapist/) | Band 5 | £32,073 (£2,040/mo net) | £39,043 (£2,381/mo net) | £16.40/hr | £2,390/mo |
+| [Midwife](https://netpayscale.uk/roles/midwife/) | Band 5 | £32,073 (£2,040/mo net) | £39,043 (£2,381/mo net) | £16.40/hr | £2,390/mo |
+| [Junior Sister / Charge Nurse](https://netpayscale.uk/roles/sister-charge-nurse/) | Band 6 | £39,959 (£2,430/mo net) | £48,117 (£2,866/mo net) | £20.44/hr | £2,857/mo |
+| [Senior Paramedic](https://netpayscale.uk/roles/senior-paramedic/) | Band 6 | £39,959 (£2,430/mo net) | £48,117 (£2,866/mo net) | £20.44/hr | £2,857/mo |
+| [Specialist Physiotherapist](https://netpayscale.uk/roles/specialist-physiotherapist/) | Band 6 | £39,959 (£2,430/mo net) | £48,117 (£2,866/mo net) | £20.44/hr | £2,857/mo |
+| [Specialist Radiographer](https://netpayscale.uk/roles/specialist-radiographer/) | Band 6 | £39,959 (£2,430/mo net) | £48,117 (£2,866/mo net) | £20.44/hr | £2,857/mo |
+| [Specialist Midwife](https://netpayscale.uk/roles/specialist-midwife/) | Band 6 | £39,959 (£2,430/mo net) | £48,117 (£2,866/mo net) | £20.44/hr | £2,857/mo |
+| [Ward Manager / Sister](https://netpayscale.uk/roles/ward-manager/) | Band 7 | £49,387 (£2,934/mo net) | £56,515 (£3,309/mo net) | £25.26/hr | £3,405/mo |
+| [Advanced Clinical Practitioner (ACP)](https://netpayscale.uk/roles/acp/) | Band 7 | £49,387 (£2,934/mo net) | £56,515 (£3,309/mo net) | £25.26/hr | £3,405/mo |
+| [Advanced Paramedic](https://netpayscale.uk/roles/advanced-paramedic/) | Band 7 | £49,387 (£2,934/mo net) | £56,515 (£3,309/mo net) | £25.26/hr | £3,405/mo |
+| [Lead Clinical Pharmacist](https://netpayscale.uk/roles/pharmacist/) | Band 7 | £49,387 (£2,934/mo net) | £56,515 (£3,309/mo net) | £25.26/hr | £3,405/mo |
+| [Clinical Team Leader](https://netpayscale.uk/roles/clinical-manager/) | Band 7 | £49,387 (£2,934/mo net) | £56,515 (£3,309/mo net) | £25.26/hr | £3,405/mo |
+| [Matron](https://netpayscale.uk/roles/matron/) | Band 8a | £57,528 (£3,353/mo net) | £64,750 (£3,663/mo net) | £29.42/hr | £3,728/mo |
+| [Advanced Nurse Consultant](https://netpayscale.uk/roles/nurse-consultant/) | Band 8a | £57,528 (£3,353/mo net) | £64,750 (£3,663/mo net) | £29.42/hr | £3,728/mo |
+| [Principal Clinical Psychologist](https://netpayscale.uk/roles/psychologist/) | Band 8a | £57,528 (£3,353/mo net) | £64,750 (£3,663/mo net) | £29.42/hr | £3,728/mo |
+| [Operational Service Manager](https://netpayscale.uk/roles/service-manager/) | Band 8a | £57,528 (£3,353/mo net) | £64,750 (£3,663/mo net) | £29.42/hr | £3,728/mo |
+| [Senior Matron](https://netpayscale.uk/roles/senior-matron/) | Band 8b | £66,582 (£3,742/mo net) | £77,368 (£4,136/mo net) | £34.05/hr | £4,118/mo |
+| [Consultant Clinical Psychologist](https://netpayscale.uk/roles/consultant-psychologist/) | Band 8b | £66,582 (£3,742/mo net) | £77,368 (£4,136/mo net) | £34.05/hr | £4,118/mo |
+| [Head of Clinical Services](https://netpayscale.uk/roles/head-of-service/) | Band 8b | £66,582 (£3,742/mo net) | £77,368 (£4,136/mo net) | £34.05/hr | £4,118/mo |
+| [Head of Nursing](https://netpayscale.uk/roles/head-of-nursing/) | Band 8c | £79,504 (£4,226/mo net) | £91,609 (£4,735/mo net) | £40.66/hr | £4,594/mo |
+| [Associate Director of Operations](https://netpayscale.uk/roles/associate-director/) | Band 8c | £79,504 (£4,226/mo net) | £91,609 (£4,735/mo net) | £40.66/hr | £4,594/mo |
+| [Consultant Clinical Scientist](https://netpayscale.uk/roles/consultant-scientist/) | Band 8c | £79,504 (£4,226/mo net) | £91,609 (£4,735/mo net) | £40.66/hr | £4,594/mo |
+| [Deputy Director of Nursing](https://netpayscale.uk/roles/deputy-director-nursing/) | Band 8d | £94,356 (£4,851/mo net) | £108,814 (£5,459/mo net) | £48.26/hr | £5,219/mo |
+| [Director of Operations](https://netpayscale.uk/roles/director-of-operations/) | Band 8d | £94,356 (£4,851/mo net) | £108,814 (£5,459/mo net) | £48.26/hr | £5,219/mo |
+| [Chief Pharmacist](https://netpayscale.uk/roles/chief-pharmacist/) | Band 8d | £94,356 (£4,851/mo net) | £108,814 (£5,459/mo net) | £48.26/hr | £5,219/mo |
+| [Director of Nursing](https://netpayscale.uk/roles/director-of-nursing/) | Band 9 | £112,782 (£5,626/mo net) | £129,783 (£6,115/mo net) | £57.68/hr | £5,888/mo |
+| [Chief Operating Officer (COO)](https://netpayscale.uk/roles/chief-operating-officer/) | Band 9 | £112,782 (£5,626/mo net) | £129,783 (£6,115/mo net) | £57.68/hr | £5,888/mo |
+| [National Clinical Specialist Advisor](https://netpayscale.uk/roles/clinical-director/) | Band 9 | £112,782 (£5,626/mo net) | £129,783 (£6,115/mo net) | £57.68/hr | £5,888/mo |
+
+## Related
+- [NHS Job Roles Directory (Interactive HTML)](https://netpayscale.uk/roles/)
+- [NHS Salary & Take-Home Calculator](https://netpayscale.uk/)
+- [Top 50 NHS Trusts Pay Directory](https://netpayscale.uk/trusts/)
+
+---
 <!-- source: https://netpayscale.uk/bands/band-2/ -->
 # NHS Band 2 Salary 2026/27 — Pay Scale Steps, Hourly Rate & Monthly Net Take-Home
 
@@ -2563,3 +2623,1221 @@ Under the 2026/27 NHS Agenda for Change pay deal (+3.3%), healthcare staff at **
 - [NHS Salary & Take-Home Calculator](https://netpayscale.uk/)
 - [NHS Band 5 to Band 6 Promotion Trap Calculator](https://netpayscale.uk/promotion-calculator/)
 - [NHS Unsocial Hours & Night Shift Pay Calculator](https://netpayscale.uk/unsocial-hours-calculator/)
+
+---
+<!-- source: https://netpayscale.uk/roles/healthcare-assistant/ -->
+# NHS Healthcare Assistant Salary 2026/27 (Band 2) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS Healthcare Assistant (Band 2) salary UK: £25,272 to £25,272 gross per year (£12.92/hr). Monthly net take-home pay is £1,700/mo at entry and £1,700/mo at top step after PAYE tax, NI, and 6.5% CARE pension.
+
+Canonical: https://netpayscale.uk/roles/healthcare-assistant/
+Last updated: 2026-10-26
+
+## 1. Key 2026/27 Pay Facts for NHS Healthcare Assistant (Band 2)
+- **Agenda for Change Band:** Band 2
+- **Starting Gross Salary:** £25,272/yr (£12.92/hr)
+- **Top Step Gross Salary:** £25,272/yr (£12.92/hr)
+- **Basic Daytime Hourly Rate:** £12.92/hr | **Night/Saturday Rate:** £18.60/hr | **Sunday/BH Rate:** £24.29/hr
+- **Monthly Net Take-Home (National):** **£1,700/mo** (Entry) to **£1,700/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **£2,023/mo** | Outer London (+15%): **£1,971/mo** | Fringe (+5%): **£1,775/mo** | Scotland: **£1,702/mo**
+
+## 2. Healthcare Assistant (Band 2) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+| Single Point (0 yrs) | £25,272 | £12.92/hr | 6.5% (£137/mo) | **£1,700/mo** (£20,401/yr) |
+
+## 3. Related Links
+- [NHS Healthcare Assistant Interactive Salary Calculator (HTML)](https://netpayscale.uk/roles/healthcare-assistant/)
+- [All 41 NHS Job Roles Directory](https://netpayscale.uk/roles/)
+- [NHS Band 2 Pay Scale Guide](https://netpayscale.uk/bands/band-2/)
+
+---
+<!-- source: https://netpayscale.uk/roles/clinical-support-worker/ -->
+# NHS Clinical Support Worker Salary 2026/27 (Band 2) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS Clinical Support Worker (Band 2) salary UK: £25,272 to £25,272 gross per year (£12.92/hr). Monthly net take-home pay is £1,700/mo at entry and £1,700/mo at top step after PAYE tax, NI, and 6.5% CARE pension.
+
+Canonical: https://netpayscale.uk/roles/clinical-support-worker/
+Last updated: 2026-10-26
+
+## 1. Key 2026/27 Pay Facts for NHS Clinical Support Worker (Band 2)
+- **Agenda for Change Band:** Band 2
+- **Starting Gross Salary:** £25,272/yr (£12.92/hr)
+- **Top Step Gross Salary:** £25,272/yr (£12.92/hr)
+- **Basic Daytime Hourly Rate:** £12.92/hr | **Night/Saturday Rate:** £18.60/hr | **Sunday/BH Rate:** £24.29/hr
+- **Monthly Net Take-Home (National):** **£1,700/mo** (Entry) to **£1,700/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **£2,023/mo** | Outer London (+15%): **£1,971/mo** | Fringe (+5%): **£1,775/mo** | Scotland: **£1,702/mo**
+
+## 2. Clinical Support Worker (Band 2) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+| Single Point (0 yrs) | £25,272 | £12.92/hr | 6.5% (£137/mo) | **£1,700/mo** (£20,401/yr) |
+
+## 3. Related Links
+- [NHS Clinical Support Worker Interactive Salary Calculator (HTML)](https://netpayscale.uk/roles/clinical-support-worker/)
+- [All 41 NHS Job Roles Directory](https://netpayscale.uk/roles/)
+- [NHS Band 2 Pay Scale Guide](https://netpayscale.uk/bands/band-2/)
+
+---
+<!-- source: https://netpayscale.uk/roles/phlebotomist/ -->
+# NHS Phlebotomist Salary 2026/27 (Band 2) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS Phlebotomist (Band 2) salary UK: £25,272 to £25,272 gross per year (£12.92/hr). Monthly net take-home pay is £1,700/mo at entry and £1,700/mo at top step after PAYE tax, NI, and 6.5% CARE pension.
+
+Canonical: https://netpayscale.uk/roles/phlebotomist/
+Last updated: 2026-10-26
+
+## 1. Key 2026/27 Pay Facts for NHS Phlebotomist (Band 2)
+- **Agenda for Change Band:** Band 2
+- **Starting Gross Salary:** £25,272/yr (£12.92/hr)
+- **Top Step Gross Salary:** £25,272/yr (£12.92/hr)
+- **Basic Daytime Hourly Rate:** £12.92/hr | **Night/Saturday Rate:** £18.60/hr | **Sunday/BH Rate:** £24.29/hr
+- **Monthly Net Take-Home (National):** **£1,700/mo** (Entry) to **£1,700/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **£2,023/mo** | Outer London (+15%): **£1,971/mo** | Fringe (+5%): **£1,775/mo** | Scotland: **£1,702/mo**
+
+## 2. Phlebotomist (Band 2) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+| Single Point (0 yrs) | £25,272 | £12.92/hr | 6.5% (£137/mo) | **£1,700/mo** (£20,401/yr) |
+
+## 3. Related Links
+- [NHS Phlebotomist Interactive Salary Calculator (HTML)](https://netpayscale.uk/roles/phlebotomist/)
+- [All 41 NHS Job Roles Directory](https://netpayscale.uk/roles/)
+- [NHS Band 2 Pay Scale Guide](https://netpayscale.uk/bands/band-2/)
+
+---
+<!-- source: https://netpayscale.uk/roles/senior-healthcare-assistant/ -->
+# NHS Senior Healthcare Assistant Salary 2026/27 (Band 3) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS Senior Healthcare Assistant (Band 3) salary UK: £25,760 to £27,476 gross per year (£13.17/hr). Monthly net take-home pay is £1,727/mo at entry and £1,823/mo at top step after PAYE tax, NI, and 6.5% CARE pension.
+
+Canonical: https://netpayscale.uk/roles/senior-healthcare-assistant/
+Last updated: 2026-10-26
+
+## 1. Key 2026/27 Pay Facts for NHS Senior Healthcare Assistant (Band 3)
+- **Agenda for Change Band:** Band 3
+- **Starting Gross Salary:** £25,760/yr (£13.17/hr)
+- **Top Step Gross Salary:** £27,476/yr (£14.05/hr)
+- **Basic Daytime Hourly Rate:** £13.17/hr | **Night/Saturday Rate:** £18.96/hr | **Sunday/BH Rate:** £24.76/hr
+- **Monthly Net Take-Home (National):** **£1,727/mo** (Entry) to **£1,823/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **£2,050/mo** | Outer London (+15%): **£1,998/mo** | Fringe (+5%): **£1,802/mo** | Scotland: **£1,729/mo**
+
+## 2. Senior Healthcare Assistant (Band 3) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £25,760 | £13.17/hr | 6.5% (£140/mo) | **£1,727/mo** (£20,727/yr) |
+| After 2 years (Top) (2 yrs) | £27,476 | £14.05/hr | 6.5% (£149/mo) | **£1,823/mo** (£21,874/yr) |
+
+## 3. Related Links
+- [NHS Senior Healthcare Assistant Interactive Salary Calculator (HTML)](https://netpayscale.uk/roles/senior-healthcare-assistant/)
+- [All 41 NHS Job Roles Directory](https://netpayscale.uk/roles/)
+- [NHS Band 3 Pay Scale Guide](https://netpayscale.uk/bands/band-3/)
+
+---
+<!-- source: https://netpayscale.uk/roles/emergency-care-assistant/ -->
+# NHS Emergency Care Assistant Salary 2026/27 (Band 3) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS Emergency Care Assistant (Band 3) salary UK: £25,760 to £27,476 gross per year (£13.17/hr). Monthly net take-home pay is £1,727/mo at entry and £1,823/mo at top step after PAYE tax, NI, and 6.5% CARE pension.
+
+Canonical: https://netpayscale.uk/roles/emergency-care-assistant/
+Last updated: 2026-10-26
+
+## 1. Key 2026/27 Pay Facts for NHS Emergency Care Assistant (Band 3)
+- **Agenda for Change Band:** Band 3
+- **Starting Gross Salary:** £25,760/yr (£13.17/hr)
+- **Top Step Gross Salary:** £27,476/yr (£14.05/hr)
+- **Basic Daytime Hourly Rate:** £13.17/hr | **Night/Saturday Rate:** £18.96/hr | **Sunday/BH Rate:** £24.76/hr
+- **Monthly Net Take-Home (National):** **£1,727/mo** (Entry) to **£1,823/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **£2,050/mo** | Outer London (+15%): **£1,998/mo** | Fringe (+5%): **£1,802/mo** | Scotland: **£1,729/mo**
+
+## 2. Emergency Care Assistant (Band 3) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £25,760 | £13.17/hr | 6.5% (£140/mo) | **£1,727/mo** (£20,727/yr) |
+| After 2 years (Top) (2 yrs) | £27,476 | £14.05/hr | 6.5% (£149/mo) | **£1,823/mo** (£21,874/yr) |
+
+## 3. Related Links
+- [NHS Emergency Care Assistant Interactive Salary Calculator (HTML)](https://netpayscale.uk/roles/emergency-care-assistant/)
+- [All 41 NHS Job Roles Directory](https://netpayscale.uk/roles/)
+- [NHS Band 3 Pay Scale Guide](https://netpayscale.uk/bands/band-3/)
+
+---
+<!-- source: https://netpayscale.uk/roles/pharmacy-assistant/ -->
+# NHS Pharmacy Assistant Salary 2026/27 (Band 3) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS Pharmacy Assistant (Band 3) salary UK: £25,760 to £27,476 gross per year (£13.17/hr). Monthly net take-home pay is £1,727/mo at entry and £1,823/mo at top step after PAYE tax, NI, and 6.5% CARE pension.
+
+Canonical: https://netpayscale.uk/roles/pharmacy-assistant/
+Last updated: 2026-10-26
+
+## 1. Key 2026/27 Pay Facts for NHS Pharmacy Assistant (Band 3)
+- **Agenda for Change Band:** Band 3
+- **Starting Gross Salary:** £25,760/yr (£13.17/hr)
+- **Top Step Gross Salary:** £27,476/yr (£14.05/hr)
+- **Basic Daytime Hourly Rate:** £13.17/hr | **Night/Saturday Rate:** £18.96/hr | **Sunday/BH Rate:** £24.76/hr
+- **Monthly Net Take-Home (National):** **£1,727/mo** (Entry) to **£1,823/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **£2,050/mo** | Outer London (+15%): **£1,998/mo** | Fringe (+5%): **£1,802/mo** | Scotland: **£1,729/mo**
+
+## 2. Pharmacy Assistant (Band 3) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £25,760 | £13.17/hr | 6.5% (£140/mo) | **£1,727/mo** (£20,727/yr) |
+| After 2 years (Top) (2 yrs) | £27,476 | £14.05/hr | 6.5% (£149/mo) | **£1,823/mo** (£21,874/yr) |
+
+## 3. Related Links
+- [NHS Pharmacy Assistant Interactive Salary Calculator (HTML)](https://netpayscale.uk/roles/pharmacy-assistant/)
+- [All 41 NHS Job Roles Directory](https://netpayscale.uk/roles/)
+- [NHS Band 3 Pay Scale Guide](https://netpayscale.uk/bands/band-3/)
+
+---
+<!-- source: https://netpayscale.uk/roles/nursing-associate/ -->
+# NHS Nursing Associate Salary 2026/27 (Band 4) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS Nursing Associate (Band 4) salary UK: £28,392 to £31,157 gross per year (£14.52/hr). Monthly net take-home pay is £1,874/mo at entry and £1,990/mo at top step after PAYE tax, NI, and 6.5% CARE pension.
+
+Canonical: https://netpayscale.uk/roles/nursing-associate/
+Last updated: 2026-10-26
+
+## 1. Key 2026/27 Pay Facts for NHS Nursing Associate (Band 4)
+- **Agenda for Change Band:** Band 4
+- **Starting Gross Salary:** £28,392/yr (£14.52/hr)
+- **Top Step Gross Salary:** £31,157/yr (£15.93/hr)
+- **Basic Daytime Hourly Rate:** £14.52/hr | **Night/Saturday Rate:** £18.88/hr | **Sunday/BH Rate:** £23.23/hr
+- **Monthly Net Take-Home (National):** **£1,874/mo** (Entry) to **£1,990/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **£2,196/mo** | Outer London (+15%): **£2,145/mo** | Fringe (+5%): **£1,953/mo** | Scotland: **£1,876/mo**
+
+## 2. Nursing Associate (Band 4) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £28,392 | £14.52/hr | 6.5% (£154/mo) | **£1,874/mo** (£22,485/yr) |
+| After 3 years (Top) (3 yrs) | £31,157 | £15.93/hr | 8.3% (£216/mo) | **£1,990/mo** (£23,884/yr) |
+
+## 3. Related Links
+- [NHS Nursing Associate Interactive Salary Calculator (HTML)](https://netpayscale.uk/roles/nursing-associate/)
+- [All 41 NHS Job Roles Directory](https://netpayscale.uk/roles/)
+- [NHS Band 4 Pay Scale Guide](https://netpayscale.uk/bands/band-4/)
+
+---
+<!-- source: https://netpayscale.uk/roles/assistant-practitioner/ -->
+# NHS Assistant Practitioner Salary 2026/27 (Band 4) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS Assistant Practitioner (Band 4) salary UK: £28,392 to £31,157 gross per year (£14.52/hr). Monthly net take-home pay is £1,874/mo at entry and £1,990/mo at top step after PAYE tax, NI, and 6.5% CARE pension.
+
+Canonical: https://netpayscale.uk/roles/assistant-practitioner/
+Last updated: 2026-10-26
+
+## 1. Key 2026/27 Pay Facts for NHS Assistant Practitioner (Band 4)
+- **Agenda for Change Band:** Band 4
+- **Starting Gross Salary:** £28,392/yr (£14.52/hr)
+- **Top Step Gross Salary:** £31,157/yr (£15.93/hr)
+- **Basic Daytime Hourly Rate:** £14.52/hr | **Night/Saturday Rate:** £18.88/hr | **Sunday/BH Rate:** £23.23/hr
+- **Monthly Net Take-Home (National):** **£1,874/mo** (Entry) to **£1,990/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **£2,196/mo** | Outer London (+15%): **£2,145/mo** | Fringe (+5%): **£1,953/mo** | Scotland: **£1,876/mo**
+
+## 2. Assistant Practitioner (Band 4) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £28,392 | £14.52/hr | 6.5% (£154/mo) | **£1,874/mo** (£22,485/yr) |
+| After 3 years (Top) (3 yrs) | £31,157 | £15.93/hr | 8.3% (£216/mo) | **£1,990/mo** (£23,884/yr) |
+
+## 3. Related Links
+- [NHS Assistant Practitioner Interactive Salary Calculator (HTML)](https://netpayscale.uk/roles/assistant-practitioner/)
+- [All 41 NHS Job Roles Directory](https://netpayscale.uk/roles/)
+- [NHS Band 4 Pay Scale Guide](https://netpayscale.uk/bands/band-4/)
+
+---
+<!-- source: https://netpayscale.uk/roles/pharmacy-technician/ -->
+# NHS Pharmacy Technician Salary 2026/27 (Band 4) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS Pharmacy Technician (Band 4) salary UK: £28,392 to £31,157 gross per year (£14.52/hr). Monthly net take-home pay is £1,874/mo at entry and £1,990/mo at top step after PAYE tax, NI, and 6.5% CARE pension.
+
+Canonical: https://netpayscale.uk/roles/pharmacy-technician/
+Last updated: 2026-10-26
+
+## 1. Key 2026/27 Pay Facts for NHS Pharmacy Technician (Band 4)
+- **Agenda for Change Band:** Band 4
+- **Starting Gross Salary:** £28,392/yr (£14.52/hr)
+- **Top Step Gross Salary:** £31,157/yr (£15.93/hr)
+- **Basic Daytime Hourly Rate:** £14.52/hr | **Night/Saturday Rate:** £18.88/hr | **Sunday/BH Rate:** £23.23/hr
+- **Monthly Net Take-Home (National):** **£1,874/mo** (Entry) to **£1,990/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **£2,196/mo** | Outer London (+15%): **£2,145/mo** | Fringe (+5%): **£1,953/mo** | Scotland: **£1,876/mo**
+
+## 2. Pharmacy Technician (Band 4) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £28,392 | £14.52/hr | 6.5% (£154/mo) | **£1,874/mo** (£22,485/yr) |
+| After 3 years (Top) (3 yrs) | £31,157 | £15.93/hr | 8.3% (£216/mo) | **£1,990/mo** (£23,884/yr) |
+
+## 3. Related Links
+- [NHS Pharmacy Technician Interactive Salary Calculator (HTML)](https://netpayscale.uk/roles/pharmacy-technician/)
+- [All 41 NHS Job Roles Directory](https://netpayscale.uk/roles/)
+- [NHS Band 4 Pay Scale Guide](https://netpayscale.uk/bands/band-4/)
+
+---
+<!-- source: https://netpayscale.uk/roles/nurse/ -->
+# NHS Staff Nurse (RN) Salary 2026/27 (Band 5) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS Staff Nurse (RN) (Band 5) salary UK: £32,073 to £39,043 gross per year (£16.40/hr). Monthly net take-home pay is £2,040/mo at entry and £2,381/mo at top step after PAYE tax, NI, and 8.3% CARE pension.
+
+Canonical: https://netpayscale.uk/roles/nurse/
+Last updated: 2026-10-26
+
+## 1. Key 2026/27 Pay Facts for NHS Staff Nurse (RN) (Band 5)
+- **Agenda for Change Band:** Band 5
+- **Starting Gross Salary:** £32,073/yr (£16.40/hr)
+- **Top Step Gross Salary:** £39,043/yr (£19.97/hr)
+- **Basic Daytime Hourly Rate:** £16.40/hr | **Night/Saturday Rate:** £21.32/hr | **Sunday/BH Rate:** £26.24/hr
+- **Monthly Net Take-Home (National):** **£2,040/mo** (Entry) to **£2,381/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **£2,390/mo** | Outer London (+15%): **£2,305/mo** | Fringe (+5%): **£2,128/mo** | Scotland: **£2,040/mo**
+
+## 2. Staff Nurse (RN) (Band 5) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £32,073 | £16.40/hr | 8.3% (£222/mo) | **£2,040/mo** (£24,483/yr) |
+| After 2 years (Mid) (2 yrs) | £34,592 | £17.69/hr | 8.3% (£239/mo) | **£2,177/mo** (£26,129/yr) |
+| After 4 years (Top) (4 yrs) | £39,043 | £19.97/hr | 9.8% (£319/mo) | **£2,381/mo** (£28,570/yr) |
+
+## 3. Related Links
+- [NHS Staff Nurse (RN) Interactive Salary Calculator (HTML)](https://netpayscale.uk/roles/nurse/)
+- [All 41 NHS Job Roles Directory](https://netpayscale.uk/roles/)
+- [NHS Band 5 Pay Scale Guide](https://netpayscale.uk/bands/band-5/)
+
+---
+<!-- source: https://netpayscale.uk/roles/paramedic/ -->
+# NHS Newly Qualified Paramedic Salary 2026/27 (Band 5) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS Newly Qualified Paramedic (Band 5) salary UK: £32,073 to £39,043 gross per year (£16.40/hr). Monthly net take-home pay is £2,040/mo at entry and £2,381/mo at top step after PAYE tax, NI, and 8.3% CARE pension.
+
+Canonical: https://netpayscale.uk/roles/paramedic/
+Last updated: 2026-10-26
+
+## 1. Key 2026/27 Pay Facts for NHS Newly Qualified Paramedic (Band 5)
+- **Agenda for Change Band:** Band 5
+- **Starting Gross Salary:** £32,073/yr (£16.40/hr)
+- **Top Step Gross Salary:** £39,043/yr (£19.97/hr)
+- **Basic Daytime Hourly Rate:** £16.40/hr | **Night/Saturday Rate:** £21.32/hr | **Sunday/BH Rate:** £26.24/hr
+- **Monthly Net Take-Home (National):** **£2,040/mo** (Entry) to **£2,381/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **£2,390/mo** | Outer London (+15%): **£2,305/mo** | Fringe (+5%): **£2,128/mo** | Scotland: **£2,040/mo**
+
+## 2. Newly Qualified Paramedic (Band 5) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £32,073 | £16.40/hr | 8.3% (£222/mo) | **£2,040/mo** (£24,483/yr) |
+| After 2 years (Mid) (2 yrs) | £34,592 | £17.69/hr | 8.3% (£239/mo) | **£2,177/mo** (£26,129/yr) |
+| After 4 years (Top) (4 yrs) | £39,043 | £19.97/hr | 9.8% (£319/mo) | **£2,381/mo** (£28,570/yr) |
+
+## 3. Related Links
+- [NHS Newly Qualified Paramedic Interactive Salary Calculator (HTML)](https://netpayscale.uk/roles/paramedic/)
+- [All 41 NHS Job Roles Directory](https://netpayscale.uk/roles/)
+- [NHS Band 5 Pay Scale Guide](https://netpayscale.uk/bands/band-5/)
+
+---
+<!-- source: https://netpayscale.uk/roles/physiotherapist/ -->
+# NHS Physiotherapist Salary 2026/27 (Band 5) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS Physiotherapist (Band 5) salary UK: £32,073 to £39,043 gross per year (£16.40/hr). Monthly net take-home pay is £2,040/mo at entry and £2,381/mo at top step after PAYE tax, NI, and 8.3% CARE pension.
+
+Canonical: https://netpayscale.uk/roles/physiotherapist/
+Last updated: 2026-10-26
+
+## 1. Key 2026/27 Pay Facts for NHS Physiotherapist (Band 5)
+- **Agenda for Change Band:** Band 5
+- **Starting Gross Salary:** £32,073/yr (£16.40/hr)
+- **Top Step Gross Salary:** £39,043/yr (£19.97/hr)
+- **Basic Daytime Hourly Rate:** £16.40/hr | **Night/Saturday Rate:** £21.32/hr | **Sunday/BH Rate:** £26.24/hr
+- **Monthly Net Take-Home (National):** **£2,040/mo** (Entry) to **£2,381/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **£2,390/mo** | Outer London (+15%): **£2,305/mo** | Fringe (+5%): **£2,128/mo** | Scotland: **£2,040/mo**
+
+## 2. Physiotherapist (Band 5) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £32,073 | £16.40/hr | 8.3% (£222/mo) | **£2,040/mo** (£24,483/yr) |
+| After 2 years (Mid) (2 yrs) | £34,592 | £17.69/hr | 8.3% (£239/mo) | **£2,177/mo** (£26,129/yr) |
+| After 4 years (Top) (4 yrs) | £39,043 | £19.97/hr | 9.8% (£319/mo) | **£2,381/mo** (£28,570/yr) |
+
+## 3. Related Links
+- [NHS Physiotherapist Interactive Salary Calculator (HTML)](https://netpayscale.uk/roles/physiotherapist/)
+- [All 41 NHS Job Roles Directory](https://netpayscale.uk/roles/)
+- [NHS Band 5 Pay Scale Guide](https://netpayscale.uk/bands/band-5/)
+
+---
+<!-- source: https://netpayscale.uk/roles/radiographer/ -->
+# NHS Radiographer Salary 2026/27 (Band 5) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS Radiographer (Band 5) salary UK: £32,073 to £39,043 gross per year (£16.40/hr). Monthly net take-home pay is £2,040/mo at entry and £2,381/mo at top step after PAYE tax, NI, and 8.3% CARE pension.
+
+Canonical: https://netpayscale.uk/roles/radiographer/
+Last updated: 2026-10-26
+
+## 1. Key 2026/27 Pay Facts for NHS Radiographer (Band 5)
+- **Agenda for Change Band:** Band 5
+- **Starting Gross Salary:** £32,073/yr (£16.40/hr)
+- **Top Step Gross Salary:** £39,043/yr (£19.97/hr)
+- **Basic Daytime Hourly Rate:** £16.40/hr | **Night/Saturday Rate:** £21.32/hr | **Sunday/BH Rate:** £26.24/hr
+- **Monthly Net Take-Home (National):** **£2,040/mo** (Entry) to **£2,381/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **£2,390/mo** | Outer London (+15%): **£2,305/mo** | Fringe (+5%): **£2,128/mo** | Scotland: **£2,040/mo**
+
+## 2. Radiographer (Band 5) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £32,073 | £16.40/hr | 8.3% (£222/mo) | **£2,040/mo** (£24,483/yr) |
+| After 2 years (Mid) (2 yrs) | £34,592 | £17.69/hr | 8.3% (£239/mo) | **£2,177/mo** (£26,129/yr) |
+| After 4 years (Top) (4 yrs) | £39,043 | £19.97/hr | 9.8% (£319/mo) | **£2,381/mo** (£28,570/yr) |
+
+## 3. Related Links
+- [NHS Radiographer Interactive Salary Calculator (HTML)](https://netpayscale.uk/roles/radiographer/)
+- [All 41 NHS Job Roles Directory](https://netpayscale.uk/roles/)
+- [NHS Band 5 Pay Scale Guide](https://netpayscale.uk/bands/band-5/)
+
+---
+<!-- source: https://netpayscale.uk/roles/occupational-therapist/ -->
+# NHS Occupational Therapist Salary 2026/27 (Band 5) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS Occupational Therapist (Band 5) salary UK: £32,073 to £39,043 gross per year (£16.40/hr). Monthly net take-home pay is £2,040/mo at entry and £2,381/mo at top step after PAYE tax, NI, and 8.3% CARE pension.
+
+Canonical: https://netpayscale.uk/roles/occupational-therapist/
+Last updated: 2026-10-26
+
+## 1. Key 2026/27 Pay Facts for NHS Occupational Therapist (Band 5)
+- **Agenda for Change Band:** Band 5
+- **Starting Gross Salary:** £32,073/yr (£16.40/hr)
+- **Top Step Gross Salary:** £39,043/yr (£19.97/hr)
+- **Basic Daytime Hourly Rate:** £16.40/hr | **Night/Saturday Rate:** £21.32/hr | **Sunday/BH Rate:** £26.24/hr
+- **Monthly Net Take-Home (National):** **£2,040/mo** (Entry) to **£2,381/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **£2,390/mo** | Outer London (+15%): **£2,305/mo** | Fringe (+5%): **£2,128/mo** | Scotland: **£2,040/mo**
+
+## 2. Occupational Therapist (Band 5) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £32,073 | £16.40/hr | 8.3% (£222/mo) | **£2,040/mo** (£24,483/yr) |
+| After 2 years (Mid) (2 yrs) | £34,592 | £17.69/hr | 8.3% (£239/mo) | **£2,177/mo** (£26,129/yr) |
+| After 4 years (Top) (4 yrs) | £39,043 | £19.97/hr | 9.8% (£319/mo) | **£2,381/mo** (£28,570/yr) |
+
+## 3. Related Links
+- [NHS Occupational Therapist Interactive Salary Calculator (HTML)](https://netpayscale.uk/roles/occupational-therapist/)
+- [All 41 NHS Job Roles Directory](https://netpayscale.uk/roles/)
+- [NHS Band 5 Pay Scale Guide](https://netpayscale.uk/bands/band-5/)
+
+---
+<!-- source: https://netpayscale.uk/roles/midwife/ -->
+# NHS Midwife Salary 2026/27 (Band 5) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS Midwife (Band 5) salary UK: £32,073 to £39,043 gross per year (£16.40/hr). Monthly net take-home pay is £2,040/mo at entry and £2,381/mo at top step after PAYE tax, NI, and 8.3% CARE pension.
+
+Canonical: https://netpayscale.uk/roles/midwife/
+Last updated: 2026-10-26
+
+## 1. Key 2026/27 Pay Facts for NHS Midwife (Band 5)
+- **Agenda for Change Band:** Band 5
+- **Starting Gross Salary:** £32,073/yr (£16.40/hr)
+- **Top Step Gross Salary:** £39,043/yr (£19.97/hr)
+- **Basic Daytime Hourly Rate:** £16.40/hr | **Night/Saturday Rate:** £21.32/hr | **Sunday/BH Rate:** £26.24/hr
+- **Monthly Net Take-Home (National):** **£2,040/mo** (Entry) to **£2,381/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **£2,390/mo** | Outer London (+15%): **£2,305/mo** | Fringe (+5%): **£2,128/mo** | Scotland: **£2,040/mo**
+
+## 2. Midwife (Band 5) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £32,073 | £16.40/hr | 8.3% (£222/mo) | **£2,040/mo** (£24,483/yr) |
+| After 2 years (Mid) (2 yrs) | £34,592 | £17.69/hr | 8.3% (£239/mo) | **£2,177/mo** (£26,129/yr) |
+| After 4 years (Top) (4 yrs) | £39,043 | £19.97/hr | 9.8% (£319/mo) | **£2,381/mo** (£28,570/yr) |
+
+## 3. Related Links
+- [NHS Midwife Interactive Salary Calculator (HTML)](https://netpayscale.uk/roles/midwife/)
+- [All 41 NHS Job Roles Directory](https://netpayscale.uk/roles/)
+- [NHS Band 5 Pay Scale Guide](https://netpayscale.uk/bands/band-5/)
+
+---
+<!-- source: https://netpayscale.uk/roles/sister-charge-nurse/ -->
+# NHS Junior Sister / Charge Nurse Salary 2026/27 (Band 6) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS Junior Sister / Charge Nurse (Band 6) salary UK: £39,959 to £48,117 gross per year (£20.44/hr). Monthly net take-home pay is £2,430/mo at entry and £2,866/mo at top step after PAYE tax, NI, and 9.8% CARE pension.
+
+Canonical: https://netpayscale.uk/roles/sister-charge-nurse/
+Last updated: 2026-10-26
+
+## 1. Key 2026/27 Pay Facts for NHS Junior Sister / Charge Nurse (Band 6)
+- **Agenda for Change Band:** Band 6
+- **Starting Gross Salary:** £39,959/yr (£20.44/hr)
+- **Top Step Gross Salary:** £48,117/yr (£24.61/hr)
+- **Basic Daytime Hourly Rate:** £20.44/hr | **Night/Saturday Rate:** £26.57/hr | **Sunday/BH Rate:** £32.70/hr
+- **Monthly Net Take-Home (National):** **£2,430/mo** (Entry) to **£2,866/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **£2,857/mo** | Outer London (+15%): **£2,750/mo** | Fringe (+5%): **£2,537/mo** | Scotland: **£2,424/mo**
+
+## 2. Junior Sister / Charge Nurse (Band 6) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £39,959 | £20.44/hr | 9.8% (£326/mo) | **£2,430/mo** (£29,157/yr) |
+| After 2 years (Mid) (2 yrs) | £42,170 | £21.57/hr | 9.8% (£344/mo) | **£2,548/mo** (£30,576/yr) |
+| After 5 years (Top) (5 yrs) | £48,117 | £24.61/hr | 9.8% (£393/mo) | **£2,866/mo** (£34,391/yr) |
+
+## 3. Related Links
+- [NHS Junior Sister / Charge Nurse Interactive Salary Calculator (HTML)](https://netpayscale.uk/roles/sister-charge-nurse/)
+- [All 41 NHS Job Roles Directory](https://netpayscale.uk/roles/)
+- [NHS Band 6 Pay Scale Guide](https://netpayscale.uk/bands/band-6/)
+
+---
+<!-- source: https://netpayscale.uk/roles/senior-paramedic/ -->
+# NHS Senior Paramedic Salary 2026/27 (Band 6) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS Senior Paramedic (Band 6) salary UK: £39,959 to £48,117 gross per year (£20.44/hr). Monthly net take-home pay is £2,430/mo at entry and £2,866/mo at top step after PAYE tax, NI, and 9.8% CARE pension.
+
+Canonical: https://netpayscale.uk/roles/senior-paramedic/
+Last updated: 2026-10-26
+
+## 1. Key 2026/27 Pay Facts for NHS Senior Paramedic (Band 6)
+- **Agenda for Change Band:** Band 6
+- **Starting Gross Salary:** £39,959/yr (£20.44/hr)
+- **Top Step Gross Salary:** £48,117/yr (£24.61/hr)
+- **Basic Daytime Hourly Rate:** £20.44/hr | **Night/Saturday Rate:** £26.57/hr | **Sunday/BH Rate:** £32.70/hr
+- **Monthly Net Take-Home (National):** **£2,430/mo** (Entry) to **£2,866/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **£2,857/mo** | Outer London (+15%): **£2,750/mo** | Fringe (+5%): **£2,537/mo** | Scotland: **£2,424/mo**
+
+## 2. Senior Paramedic (Band 6) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £39,959 | £20.44/hr | 9.8% (£326/mo) | **£2,430/mo** (£29,157/yr) |
+| After 2 years (Mid) (2 yrs) | £42,170 | £21.57/hr | 9.8% (£344/mo) | **£2,548/mo** (£30,576/yr) |
+| After 5 years (Top) (5 yrs) | £48,117 | £24.61/hr | 9.8% (£393/mo) | **£2,866/mo** (£34,391/yr) |
+
+## 3. Related Links
+- [NHS Senior Paramedic Interactive Salary Calculator (HTML)](https://netpayscale.uk/roles/senior-paramedic/)
+- [All 41 NHS Job Roles Directory](https://netpayscale.uk/roles/)
+- [NHS Band 6 Pay Scale Guide](https://netpayscale.uk/bands/band-6/)
+
+---
+<!-- source: https://netpayscale.uk/roles/specialist-physiotherapist/ -->
+# NHS Specialist Physiotherapist Salary 2026/27 (Band 6) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS Specialist Physiotherapist (Band 6) salary UK: £39,959 to £48,117 gross per year (£20.44/hr). Monthly net take-home pay is £2,430/mo at entry and £2,866/mo at top step after PAYE tax, NI, and 9.8% CARE pension.
+
+Canonical: https://netpayscale.uk/roles/specialist-physiotherapist/
+Last updated: 2026-10-26
+
+## 1. Key 2026/27 Pay Facts for NHS Specialist Physiotherapist (Band 6)
+- **Agenda for Change Band:** Band 6
+- **Starting Gross Salary:** £39,959/yr (£20.44/hr)
+- **Top Step Gross Salary:** £48,117/yr (£24.61/hr)
+- **Basic Daytime Hourly Rate:** £20.44/hr | **Night/Saturday Rate:** £26.57/hr | **Sunday/BH Rate:** £32.70/hr
+- **Monthly Net Take-Home (National):** **£2,430/mo** (Entry) to **£2,866/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **£2,857/mo** | Outer London (+15%): **£2,750/mo** | Fringe (+5%): **£2,537/mo** | Scotland: **£2,424/mo**
+
+## 2. Specialist Physiotherapist (Band 6) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £39,959 | £20.44/hr | 9.8% (£326/mo) | **£2,430/mo** (£29,157/yr) |
+| After 2 years (Mid) (2 yrs) | £42,170 | £21.57/hr | 9.8% (£344/mo) | **£2,548/mo** (£30,576/yr) |
+| After 5 years (Top) (5 yrs) | £48,117 | £24.61/hr | 9.8% (£393/mo) | **£2,866/mo** (£34,391/yr) |
+
+## 3. Related Links
+- [NHS Specialist Physiotherapist Interactive Salary Calculator (HTML)](https://netpayscale.uk/roles/specialist-physiotherapist/)
+- [All 41 NHS Job Roles Directory](https://netpayscale.uk/roles/)
+- [NHS Band 6 Pay Scale Guide](https://netpayscale.uk/bands/band-6/)
+
+---
+<!-- source: https://netpayscale.uk/roles/specialist-radiographer/ -->
+# NHS Specialist Radiographer Salary 2026/27 (Band 6) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS Specialist Radiographer (Band 6) salary UK: £39,959 to £48,117 gross per year (£20.44/hr). Monthly net take-home pay is £2,430/mo at entry and £2,866/mo at top step after PAYE tax, NI, and 9.8% CARE pension.
+
+Canonical: https://netpayscale.uk/roles/specialist-radiographer/
+Last updated: 2026-10-26
+
+## 1. Key 2026/27 Pay Facts for NHS Specialist Radiographer (Band 6)
+- **Agenda for Change Band:** Band 6
+- **Starting Gross Salary:** £39,959/yr (£20.44/hr)
+- **Top Step Gross Salary:** £48,117/yr (£24.61/hr)
+- **Basic Daytime Hourly Rate:** £20.44/hr | **Night/Saturday Rate:** £26.57/hr | **Sunday/BH Rate:** £32.70/hr
+- **Monthly Net Take-Home (National):** **£2,430/mo** (Entry) to **£2,866/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **£2,857/mo** | Outer London (+15%): **£2,750/mo** | Fringe (+5%): **£2,537/mo** | Scotland: **£2,424/mo**
+
+## 2. Specialist Radiographer (Band 6) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £39,959 | £20.44/hr | 9.8% (£326/mo) | **£2,430/mo** (£29,157/yr) |
+| After 2 years (Mid) (2 yrs) | £42,170 | £21.57/hr | 9.8% (£344/mo) | **£2,548/mo** (£30,576/yr) |
+| After 5 years (Top) (5 yrs) | £48,117 | £24.61/hr | 9.8% (£393/mo) | **£2,866/mo** (£34,391/yr) |
+
+## 3. Related Links
+- [NHS Specialist Radiographer Interactive Salary Calculator (HTML)](https://netpayscale.uk/roles/specialist-radiographer/)
+- [All 41 NHS Job Roles Directory](https://netpayscale.uk/roles/)
+- [NHS Band 6 Pay Scale Guide](https://netpayscale.uk/bands/band-6/)
+
+---
+<!-- source: https://netpayscale.uk/roles/specialist-midwife/ -->
+# NHS Specialist Midwife Salary 2026/27 (Band 6) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS Specialist Midwife (Band 6) salary UK: £39,959 to £48,117 gross per year (£20.44/hr). Monthly net take-home pay is £2,430/mo at entry and £2,866/mo at top step after PAYE tax, NI, and 9.8% CARE pension.
+
+Canonical: https://netpayscale.uk/roles/specialist-midwife/
+Last updated: 2026-10-26
+
+## 1. Key 2026/27 Pay Facts for NHS Specialist Midwife (Band 6)
+- **Agenda for Change Band:** Band 6
+- **Starting Gross Salary:** £39,959/yr (£20.44/hr)
+- **Top Step Gross Salary:** £48,117/yr (£24.61/hr)
+- **Basic Daytime Hourly Rate:** £20.44/hr | **Night/Saturday Rate:** £26.57/hr | **Sunday/BH Rate:** £32.70/hr
+- **Monthly Net Take-Home (National):** **£2,430/mo** (Entry) to **£2,866/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **£2,857/mo** | Outer London (+15%): **£2,750/mo** | Fringe (+5%): **£2,537/mo** | Scotland: **£2,424/mo**
+
+## 2. Specialist Midwife (Band 6) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £39,959 | £20.44/hr | 9.8% (£326/mo) | **£2,430/mo** (£29,157/yr) |
+| After 2 years (Mid) (2 yrs) | £42,170 | £21.57/hr | 9.8% (£344/mo) | **£2,548/mo** (£30,576/yr) |
+| After 5 years (Top) (5 yrs) | £48,117 | £24.61/hr | 9.8% (£393/mo) | **£2,866/mo** (£34,391/yr) |
+
+## 3. Related Links
+- [NHS Specialist Midwife Interactive Salary Calculator (HTML)](https://netpayscale.uk/roles/specialist-midwife/)
+- [All 41 NHS Job Roles Directory](https://netpayscale.uk/roles/)
+- [NHS Band 6 Pay Scale Guide](https://netpayscale.uk/bands/band-6/)
+
+---
+<!-- source: https://netpayscale.uk/roles/ward-manager/ -->
+# NHS Ward Manager / Sister Salary 2026/27 (Band 7) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS Ward Manager / Sister (Band 7) salary UK: £49,387 to £56,515 gross per year (£25.26/hr). Monthly net take-home pay is £2,934/mo at entry and £3,309/mo at top step after PAYE tax, NI, and 9.8% CARE pension.
+
+Canonical: https://netpayscale.uk/roles/ward-manager/
+Last updated: 2026-10-26
+
+## 1. Key 2026/27 Pay Facts for NHS Ward Manager / Sister (Band 7)
+- **Agenda for Change Band:** Band 7
+- **Starting Gross Salary:** £49,387/yr (£25.26/hr)
+- **Top Step Gross Salary:** £56,515/yr (£28.90/hr)
+- **Basic Daytime Hourly Rate:** £25.26/hr | **Night/Saturday Rate:** £32.84/hr | **Sunday/BH Rate:** £40.42/hr
+- **Monthly Net Take-Home (National):** **£2,934/mo** (Entry) to **£3,309/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **£3,405/mo** | Outer London (+15%): **£3,288/mo** | Fringe (+5%): **£3,062/mo** | Scotland: **£2,905/mo**
+
+## 2. Ward Manager / Sister (Band 7) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £49,387 | £25.26/hr | 9.8% (£403/mo) | **£2,934/mo** (£35,206/yr) |
+| After 2 years (Mid) (2 yrs) | £51,932 | £26.56/hr | 9.8% (£424/mo) | **£3,078/mo** (£36,939/yr) |
+| After 5 years (Top) (5 yrs) | £56,515 | £28.90/hr | 10.7% (£504/mo) | **£3,309/mo** (£39,708/yr) |
+
+## 3. Related Links
+- [NHS Ward Manager / Sister Interactive Salary Calculator (HTML)](https://netpayscale.uk/roles/ward-manager/)
+- [All 41 NHS Job Roles Directory](https://netpayscale.uk/roles/)
+- [NHS Band 7 Pay Scale Guide](https://netpayscale.uk/bands/band-7/)
+
+---
+<!-- source: https://netpayscale.uk/roles/acp/ -->
+# NHS Advanced Clinical Practitioner (ACP) Salary 2026/27 (Band 7) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS Advanced Clinical Practitioner (ACP) (Band 7) salary UK: £49,387 to £56,515 gross per year (£25.26/hr). Monthly net take-home pay is £2,934/mo at entry and £3,309/mo at top step after PAYE tax, NI, and 9.8% CARE pension.
+
+Canonical: https://netpayscale.uk/roles/acp/
+Last updated: 2026-10-26
+
+## 1. Key 2026/27 Pay Facts for NHS Advanced Clinical Practitioner (ACP) (Band 7)
+- **Agenda for Change Band:** Band 7
+- **Starting Gross Salary:** £49,387/yr (£25.26/hr)
+- **Top Step Gross Salary:** £56,515/yr (£28.90/hr)
+- **Basic Daytime Hourly Rate:** £25.26/hr | **Night/Saturday Rate:** £32.84/hr | **Sunday/BH Rate:** £40.42/hr
+- **Monthly Net Take-Home (National):** **£2,934/mo** (Entry) to **£3,309/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **£3,405/mo** | Outer London (+15%): **£3,288/mo** | Fringe (+5%): **£3,062/mo** | Scotland: **£2,905/mo**
+
+## 2. Advanced Clinical Practitioner (ACP) (Band 7) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £49,387 | £25.26/hr | 9.8% (£403/mo) | **£2,934/mo** (£35,206/yr) |
+| After 2 years (Mid) (2 yrs) | £51,932 | £26.56/hr | 9.8% (£424/mo) | **£3,078/mo** (£36,939/yr) |
+| After 5 years (Top) (5 yrs) | £56,515 | £28.90/hr | 10.7% (£504/mo) | **£3,309/mo** (£39,708/yr) |
+
+## 3. Related Links
+- [NHS Advanced Clinical Practitioner (ACP) Interactive Salary Calculator (HTML)](https://netpayscale.uk/roles/acp/)
+- [All 41 NHS Job Roles Directory](https://netpayscale.uk/roles/)
+- [NHS Band 7 Pay Scale Guide](https://netpayscale.uk/bands/band-7/)
+
+---
+<!-- source: https://netpayscale.uk/roles/advanced-paramedic/ -->
+# NHS Advanced Paramedic Salary 2026/27 (Band 7) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS Advanced Paramedic (Band 7) salary UK: £49,387 to £56,515 gross per year (£25.26/hr). Monthly net take-home pay is £2,934/mo at entry and £3,309/mo at top step after PAYE tax, NI, and 9.8% CARE pension.
+
+Canonical: https://netpayscale.uk/roles/advanced-paramedic/
+Last updated: 2026-10-26
+
+## 1. Key 2026/27 Pay Facts for NHS Advanced Paramedic (Band 7)
+- **Agenda for Change Band:** Band 7
+- **Starting Gross Salary:** £49,387/yr (£25.26/hr)
+- **Top Step Gross Salary:** £56,515/yr (£28.90/hr)
+- **Basic Daytime Hourly Rate:** £25.26/hr | **Night/Saturday Rate:** £32.84/hr | **Sunday/BH Rate:** £40.42/hr
+- **Monthly Net Take-Home (National):** **£2,934/mo** (Entry) to **£3,309/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **£3,405/mo** | Outer London (+15%): **£3,288/mo** | Fringe (+5%): **£3,062/mo** | Scotland: **£2,905/mo**
+
+## 2. Advanced Paramedic (Band 7) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £49,387 | £25.26/hr | 9.8% (£403/mo) | **£2,934/mo** (£35,206/yr) |
+| After 2 years (Mid) (2 yrs) | £51,932 | £26.56/hr | 9.8% (£424/mo) | **£3,078/mo** (£36,939/yr) |
+| After 5 years (Top) (5 yrs) | £56,515 | £28.90/hr | 10.7% (£504/mo) | **£3,309/mo** (£39,708/yr) |
+
+## 3. Related Links
+- [NHS Advanced Paramedic Interactive Salary Calculator (HTML)](https://netpayscale.uk/roles/advanced-paramedic/)
+- [All 41 NHS Job Roles Directory](https://netpayscale.uk/roles/)
+- [NHS Band 7 Pay Scale Guide](https://netpayscale.uk/bands/band-7/)
+
+---
+<!-- source: https://netpayscale.uk/roles/pharmacist/ -->
+# NHS Lead Clinical Pharmacist Salary 2026/27 (Band 7) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS Lead Clinical Pharmacist (Band 7) salary UK: £49,387 to £56,515 gross per year (£25.26/hr). Monthly net take-home pay is £2,934/mo at entry and £3,309/mo at top step after PAYE tax, NI, and 9.8% CARE pension.
+
+Canonical: https://netpayscale.uk/roles/pharmacist/
+Last updated: 2026-10-26
+
+## 1. Key 2026/27 Pay Facts for NHS Lead Clinical Pharmacist (Band 7)
+- **Agenda for Change Band:** Band 7
+- **Starting Gross Salary:** £49,387/yr (£25.26/hr)
+- **Top Step Gross Salary:** £56,515/yr (£28.90/hr)
+- **Basic Daytime Hourly Rate:** £25.26/hr | **Night/Saturday Rate:** £32.84/hr | **Sunday/BH Rate:** £40.42/hr
+- **Monthly Net Take-Home (National):** **£2,934/mo** (Entry) to **£3,309/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **£3,405/mo** | Outer London (+15%): **£3,288/mo** | Fringe (+5%): **£3,062/mo** | Scotland: **£2,905/mo**
+
+## 2. Lead Clinical Pharmacist (Band 7) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £49,387 | £25.26/hr | 9.8% (£403/mo) | **£2,934/mo** (£35,206/yr) |
+| After 2 years (Mid) (2 yrs) | £51,932 | £26.56/hr | 9.8% (£424/mo) | **£3,078/mo** (£36,939/yr) |
+| After 5 years (Top) (5 yrs) | £56,515 | £28.90/hr | 10.7% (£504/mo) | **£3,309/mo** (£39,708/yr) |
+
+## 3. Related Links
+- [NHS Lead Clinical Pharmacist Interactive Salary Calculator (HTML)](https://netpayscale.uk/roles/pharmacist/)
+- [All 41 NHS Job Roles Directory](https://netpayscale.uk/roles/)
+- [NHS Band 7 Pay Scale Guide](https://netpayscale.uk/bands/band-7/)
+
+---
+<!-- source: https://netpayscale.uk/roles/clinical-manager/ -->
+# NHS Clinical Team Leader Salary 2026/27 (Band 7) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS Clinical Team Leader (Band 7) salary UK: £49,387 to £56,515 gross per year (£25.26/hr). Monthly net take-home pay is £2,934/mo at entry and £3,309/mo at top step after PAYE tax, NI, and 9.8% CARE pension.
+
+Canonical: https://netpayscale.uk/roles/clinical-manager/
+Last updated: 2026-10-26
+
+## 1. Key 2026/27 Pay Facts for NHS Clinical Team Leader (Band 7)
+- **Agenda for Change Band:** Band 7
+- **Starting Gross Salary:** £49,387/yr (£25.26/hr)
+- **Top Step Gross Salary:** £56,515/yr (£28.90/hr)
+- **Basic Daytime Hourly Rate:** £25.26/hr | **Night/Saturday Rate:** £32.84/hr | **Sunday/BH Rate:** £40.42/hr
+- **Monthly Net Take-Home (National):** **£2,934/mo** (Entry) to **£3,309/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **£3,405/mo** | Outer London (+15%): **£3,288/mo** | Fringe (+5%): **£3,062/mo** | Scotland: **£2,905/mo**
+
+## 2. Clinical Team Leader (Band 7) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £49,387 | £25.26/hr | 9.8% (£403/mo) | **£2,934/mo** (£35,206/yr) |
+| After 2 years (Mid) (2 yrs) | £51,932 | £26.56/hr | 9.8% (£424/mo) | **£3,078/mo** (£36,939/yr) |
+| After 5 years (Top) (5 yrs) | £56,515 | £28.90/hr | 10.7% (£504/mo) | **£3,309/mo** (£39,708/yr) |
+
+## 3. Related Links
+- [NHS Clinical Team Leader Interactive Salary Calculator (HTML)](https://netpayscale.uk/roles/clinical-manager/)
+- [All 41 NHS Job Roles Directory](https://netpayscale.uk/roles/)
+- [NHS Band 7 Pay Scale Guide](https://netpayscale.uk/bands/band-7/)
+
+---
+<!-- source: https://netpayscale.uk/roles/matron/ -->
+# NHS Matron Salary 2026/27 (Band 8a) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS Matron (Band 8a) salary UK: £57,528 to £64,750 gross per year (£29.42/hr). Monthly net take-home pay is £3,353/mo at entry and £3,663/mo at top step after PAYE tax, NI, and 10.7% CARE pension.
+
+Canonical: https://netpayscale.uk/roles/matron/
+Last updated: 2026-10-26
+
+## 1. Key 2026/27 Pay Facts for NHS Matron (Band 8a)
+- **Agenda for Change Band:** Band 8a
+- **Starting Gross Salary:** £57,528/yr (£29.42/hr)
+- **Top Step Gross Salary:** £64,750/yr (£33.11/hr)
+- **Basic Daytime Hourly Rate:** £29.42/hr | **Night/Saturday Rate:** £38.25/hr | **Sunday/BH Rate:** £47.07/hr
+- **Monthly Net Take-Home (National):** **£3,353/mo** (Entry) to **£3,663/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **£3,728/mo** | Outer London (+15%): **£3,616/mo** | Fringe (+5%): **£3,450/mo** | Scotland: **£3,217/mo**
+
+## 2. Matron (Band 8a) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £57,528 | £29.42/hr | 10.7% (£513/mo) | **£3,353/mo** (£40,230/yr) |
+| After 2 years (Mid) (2 yrs) | £60,417 | £30.90/hr | 10.7% (£539/mo) | **£3,477/mo** (£41,720/yr) |
+| After 5 years (Top) (5 yrs) | £64,750 | £33.11/hr | 10.7% (£577/mo) | **£3,663/mo** (£43,955/yr) |
+
+## 3. Related Links
+- [NHS Matron Interactive Salary Calculator (HTML)](https://netpayscale.uk/roles/matron/)
+- [All 41 NHS Job Roles Directory](https://netpayscale.uk/roles/)
+- [NHS Band 8a Pay Scale Guide](https://netpayscale.uk/bands/band-8a/)
+
+---
+<!-- source: https://netpayscale.uk/roles/nurse-consultant/ -->
+# NHS Advanced Nurse Consultant Salary 2026/27 (Band 8a) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS Advanced Nurse Consultant (Band 8a) salary UK: £57,528 to £64,750 gross per year (£29.42/hr). Monthly net take-home pay is £3,353/mo at entry and £3,663/mo at top step after PAYE tax, NI, and 10.7% CARE pension.
+
+Canonical: https://netpayscale.uk/roles/nurse-consultant/
+Last updated: 2026-10-26
+
+## 1. Key 2026/27 Pay Facts for NHS Advanced Nurse Consultant (Band 8a)
+- **Agenda for Change Band:** Band 8a
+- **Starting Gross Salary:** £57,528/yr (£29.42/hr)
+- **Top Step Gross Salary:** £64,750/yr (£33.11/hr)
+- **Basic Daytime Hourly Rate:** £29.42/hr | **Night/Saturday Rate:** £38.25/hr | **Sunday/BH Rate:** £47.07/hr
+- **Monthly Net Take-Home (National):** **£3,353/mo** (Entry) to **£3,663/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **£3,728/mo** | Outer London (+15%): **£3,616/mo** | Fringe (+5%): **£3,450/mo** | Scotland: **£3,217/mo**
+
+## 2. Advanced Nurse Consultant (Band 8a) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £57,528 | £29.42/hr | 10.7% (£513/mo) | **£3,353/mo** (£40,230/yr) |
+| After 2 years (Mid) (2 yrs) | £60,417 | £30.90/hr | 10.7% (£539/mo) | **£3,477/mo** (£41,720/yr) |
+| After 5 years (Top) (5 yrs) | £64,750 | £33.11/hr | 10.7% (£577/mo) | **£3,663/mo** (£43,955/yr) |
+
+## 3. Related Links
+- [NHS Advanced Nurse Consultant Interactive Salary Calculator (HTML)](https://netpayscale.uk/roles/nurse-consultant/)
+- [All 41 NHS Job Roles Directory](https://netpayscale.uk/roles/)
+- [NHS Band 8a Pay Scale Guide](https://netpayscale.uk/bands/band-8a/)
+
+---
+<!-- source: https://netpayscale.uk/roles/psychologist/ -->
+# NHS Principal Clinical Psychologist Salary 2026/27 (Band 8a) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS Principal Clinical Psychologist (Band 8a) salary UK: £57,528 to £64,750 gross per year (£29.42/hr). Monthly net take-home pay is £3,353/mo at entry and £3,663/mo at top step after PAYE tax, NI, and 10.7% CARE pension.
+
+Canonical: https://netpayscale.uk/roles/psychologist/
+Last updated: 2026-10-26
+
+## 1. Key 2026/27 Pay Facts for NHS Principal Clinical Psychologist (Band 8a)
+- **Agenda for Change Band:** Band 8a
+- **Starting Gross Salary:** £57,528/yr (£29.42/hr)
+- **Top Step Gross Salary:** £64,750/yr (£33.11/hr)
+- **Basic Daytime Hourly Rate:** £29.42/hr | **Night/Saturday Rate:** £38.25/hr | **Sunday/BH Rate:** £47.07/hr
+- **Monthly Net Take-Home (National):** **£3,353/mo** (Entry) to **£3,663/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **£3,728/mo** | Outer London (+15%): **£3,616/mo** | Fringe (+5%): **£3,450/mo** | Scotland: **£3,217/mo**
+
+## 2. Principal Clinical Psychologist (Band 8a) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £57,528 | £29.42/hr | 10.7% (£513/mo) | **£3,353/mo** (£40,230/yr) |
+| After 2 years (Mid) (2 yrs) | £60,417 | £30.90/hr | 10.7% (£539/mo) | **£3,477/mo** (£41,720/yr) |
+| After 5 years (Top) (5 yrs) | £64,750 | £33.11/hr | 10.7% (£577/mo) | **£3,663/mo** (£43,955/yr) |
+
+## 3. Related Links
+- [NHS Principal Clinical Psychologist Interactive Salary Calculator (HTML)](https://netpayscale.uk/roles/psychologist/)
+- [All 41 NHS Job Roles Directory](https://netpayscale.uk/roles/)
+- [NHS Band 8a Pay Scale Guide](https://netpayscale.uk/bands/band-8a/)
+
+---
+<!-- source: https://netpayscale.uk/roles/service-manager/ -->
+# NHS Operational Service Manager Salary 2026/27 (Band 8a) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS Operational Service Manager (Band 8a) salary UK: £57,528 to £64,750 gross per year (£29.42/hr). Monthly net take-home pay is £3,353/mo at entry and £3,663/mo at top step after PAYE tax, NI, and 10.7% CARE pension.
+
+Canonical: https://netpayscale.uk/roles/service-manager/
+Last updated: 2026-10-26
+
+## 1. Key 2026/27 Pay Facts for NHS Operational Service Manager (Band 8a)
+- **Agenda for Change Band:** Band 8a
+- **Starting Gross Salary:** £57,528/yr (£29.42/hr)
+- **Top Step Gross Salary:** £64,750/yr (£33.11/hr)
+- **Basic Daytime Hourly Rate:** £29.42/hr | **Night/Saturday Rate:** £38.25/hr | **Sunday/BH Rate:** £47.07/hr
+- **Monthly Net Take-Home (National):** **£3,353/mo** (Entry) to **£3,663/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **£3,728/mo** | Outer London (+15%): **£3,616/mo** | Fringe (+5%): **£3,450/mo** | Scotland: **£3,217/mo**
+
+## 2. Operational Service Manager (Band 8a) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £57,528 | £29.42/hr | 10.7% (£513/mo) | **£3,353/mo** (£40,230/yr) |
+| After 2 years (Mid) (2 yrs) | £60,417 | £30.90/hr | 10.7% (£539/mo) | **£3,477/mo** (£41,720/yr) |
+| After 5 years (Top) (5 yrs) | £64,750 | £33.11/hr | 10.7% (£577/mo) | **£3,663/mo** (£43,955/yr) |
+
+## 3. Related Links
+- [NHS Operational Service Manager Interactive Salary Calculator (HTML)](https://netpayscale.uk/roles/service-manager/)
+- [All 41 NHS Job Roles Directory](https://netpayscale.uk/roles/)
+- [NHS Band 8a Pay Scale Guide](https://netpayscale.uk/bands/band-8a/)
+
+---
+<!-- source: https://netpayscale.uk/roles/senior-matron/ -->
+# NHS Senior Matron Salary 2026/27 (Band 8b) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS Senior Matron (Band 8b) salary UK: £66,582 to £77,368 gross per year (£34.05/hr). Monthly net take-home pay is £3,742/mo at entry and £4,136/mo at top step after PAYE tax, NI, and 10.7% CARE pension.
+
+Canonical: https://netpayscale.uk/roles/senior-matron/
+Last updated: 2026-10-26
+
+## 1. Key 2026/27 Pay Facts for NHS Senior Matron (Band 8b)
+- **Agenda for Change Band:** Band 8b
+- **Starting Gross Salary:** £66,582/yr (£34.05/hr)
+- **Top Step Gross Salary:** £77,368/yr (£39.57/hr)
+- **Basic Daytime Hourly Rate:** £34.05/hr | **Night/Saturday Rate:** £44.27/hr | **Sunday/BH Rate:** £54.48/hr
+- **Monthly Net Take-Home (National):** **£3,742/mo** (Entry) to **£4,136/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **£4,118/mo** | Outer London (+15%): **£4,005/mo** | Fringe (+5%): **£3,839/mo** | Scotland: **£3,593/mo**
+
+## 2. Senior Matron (Band 8b) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £66,582 | £34.05/hr | 10.7% (£594/mo) | **£3,742/mo** (£44,900/yr) |
+| After 2 years (Mid) (2 yrs) | £70,896 | £36.26/hr | 12.5% (£739/mo) | **£3,863/mo** (£46,360/yr) |
+| After 5 years (Top) (5 yrs) | £77,368 | £39.57/hr | 12.5% (£806/mo) | **£4,136/mo** (£49,628/yr) |
+
+## 3. Related Links
+- [NHS Senior Matron Interactive Salary Calculator (HTML)](https://netpayscale.uk/roles/senior-matron/)
+- [All 41 NHS Job Roles Directory](https://netpayscale.uk/roles/)
+- [NHS Band 8b Pay Scale Guide](https://netpayscale.uk/bands/band-8b/)
+
+---
+<!-- source: https://netpayscale.uk/roles/consultant-psychologist/ -->
+# NHS Consultant Clinical Psychologist Salary 2026/27 (Band 8b) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS Consultant Clinical Psychologist (Band 8b) salary UK: £66,582 to £77,368 gross per year (£34.05/hr). Monthly net take-home pay is £3,742/mo at entry and £4,136/mo at top step after PAYE tax, NI, and 10.7% CARE pension.
+
+Canonical: https://netpayscale.uk/roles/consultant-psychologist/
+Last updated: 2026-10-26
+
+## 1. Key 2026/27 Pay Facts for NHS Consultant Clinical Psychologist (Band 8b)
+- **Agenda for Change Band:** Band 8b
+- **Starting Gross Salary:** £66,582/yr (£34.05/hr)
+- **Top Step Gross Salary:** £77,368/yr (£39.57/hr)
+- **Basic Daytime Hourly Rate:** £34.05/hr | **Night/Saturday Rate:** £44.27/hr | **Sunday/BH Rate:** £54.48/hr
+- **Monthly Net Take-Home (National):** **£3,742/mo** (Entry) to **£4,136/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **£4,118/mo** | Outer London (+15%): **£4,005/mo** | Fringe (+5%): **£3,839/mo** | Scotland: **£3,593/mo**
+
+## 2. Consultant Clinical Psychologist (Band 8b) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £66,582 | £34.05/hr | 10.7% (£594/mo) | **£3,742/mo** (£44,900/yr) |
+| After 2 years (Mid) (2 yrs) | £70,896 | £36.26/hr | 12.5% (£739/mo) | **£3,863/mo** (£46,360/yr) |
+| After 5 years (Top) (5 yrs) | £77,368 | £39.57/hr | 12.5% (£806/mo) | **£4,136/mo** (£49,628/yr) |
+
+## 3. Related Links
+- [NHS Consultant Clinical Psychologist Interactive Salary Calculator (HTML)](https://netpayscale.uk/roles/consultant-psychologist/)
+- [All 41 NHS Job Roles Directory](https://netpayscale.uk/roles/)
+- [NHS Band 8b Pay Scale Guide](https://netpayscale.uk/bands/band-8b/)
+
+---
+<!-- source: https://netpayscale.uk/roles/head-of-service/ -->
+# NHS Head of Clinical Services Salary 2026/27 (Band 8b) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS Head of Clinical Services (Band 8b) salary UK: £66,582 to £77,368 gross per year (£34.05/hr). Monthly net take-home pay is £3,742/mo at entry and £4,136/mo at top step after PAYE tax, NI, and 10.7% CARE pension.
+
+Canonical: https://netpayscale.uk/roles/head-of-service/
+Last updated: 2026-10-26
+
+## 1. Key 2026/27 Pay Facts for NHS Head of Clinical Services (Band 8b)
+- **Agenda for Change Band:** Band 8b
+- **Starting Gross Salary:** £66,582/yr (£34.05/hr)
+- **Top Step Gross Salary:** £77,368/yr (£39.57/hr)
+- **Basic Daytime Hourly Rate:** £34.05/hr | **Night/Saturday Rate:** £44.27/hr | **Sunday/BH Rate:** £54.48/hr
+- **Monthly Net Take-Home (National):** **£3,742/mo** (Entry) to **£4,136/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **£4,118/mo** | Outer London (+15%): **£4,005/mo** | Fringe (+5%): **£3,839/mo** | Scotland: **£3,593/mo**
+
+## 2. Head of Clinical Services (Band 8b) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £66,582 | £34.05/hr | 10.7% (£594/mo) | **£3,742/mo** (£44,900/yr) |
+| After 2 years (Mid) (2 yrs) | £70,896 | £36.26/hr | 12.5% (£739/mo) | **£3,863/mo** (£46,360/yr) |
+| After 5 years (Top) (5 yrs) | £77,368 | £39.57/hr | 12.5% (£806/mo) | **£4,136/mo** (£49,628/yr) |
+
+## 3. Related Links
+- [NHS Head of Clinical Services Interactive Salary Calculator (HTML)](https://netpayscale.uk/roles/head-of-service/)
+- [All 41 NHS Job Roles Directory](https://netpayscale.uk/roles/)
+- [NHS Band 8b Pay Scale Guide](https://netpayscale.uk/bands/band-8b/)
+
+---
+<!-- source: https://netpayscale.uk/roles/head-of-nursing/ -->
+# NHS Head of Nursing Salary 2026/27 (Band 8c) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS Head of Nursing (Band 8c) salary UK: £79,504 to £91,609 gross per year (£40.66/hr). Monthly net take-home pay is £4,226/mo at entry and £4,735/mo at top step after PAYE tax, NI, and 12.5% CARE pension.
+
+Canonical: https://netpayscale.uk/roles/head-of-nursing/
+Last updated: 2026-10-26
+
+## 1. Key 2026/27 Pay Facts for NHS Head of Nursing (Band 8c)
+- **Agenda for Change Band:** Band 8c
+- **Starting Gross Salary:** £79,504/yr (£40.66/hr)
+- **Top Step Gross Salary:** £91,609/yr (£46.85/hr)
+- **Basic Daytime Hourly Rate:** £40.66/hr | **Night/Saturday Rate:** £52.86/hr | **Sunday/BH Rate:** £65.06/hr
+- **Monthly Net Take-Home (National):** **£4,226/mo** (Entry) to **£4,735/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **£4,594/mo** | Outer London (+15%): **£4,484/mo** | Fringe (+5%): **£4,321/mo** | Scotland: **£4,060/mo**
+
+## 2. Head of Nursing (Band 8c) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £79,504 | £40.66/hr | 12.5% (£828/mo) | **£4,226/mo** (£50,707/yr) |
+| After 2 years (Mid) (2 yrs) | £84,346 | £43.14/hr | 12.5% (£879/mo) | **£4,429/mo** (£53,152/yr) |
+| After 5 years (Top) (5 yrs) | £91,609 | £46.85/hr | 12.5% (£954/mo) | **£4,735/mo** (£56,820/yr) |
+
+## 3. Related Links
+- [NHS Head of Nursing Interactive Salary Calculator (HTML)](https://netpayscale.uk/roles/head-of-nursing/)
+- [All 41 NHS Job Roles Directory](https://netpayscale.uk/roles/)
+- [NHS Band 8c Pay Scale Guide](https://netpayscale.uk/bands/band-8c/)
+
+---
+<!-- source: https://netpayscale.uk/roles/associate-director/ -->
+# NHS Associate Director of Operations Salary 2026/27 (Band 8c) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS Associate Director of Operations (Band 8c) salary UK: £79,504 to £91,609 gross per year (£40.66/hr). Monthly net take-home pay is £4,226/mo at entry and £4,735/mo at top step after PAYE tax, NI, and 12.5% CARE pension.
+
+Canonical: https://netpayscale.uk/roles/associate-director/
+Last updated: 2026-10-26
+
+## 1. Key 2026/27 Pay Facts for NHS Associate Director of Operations (Band 8c)
+- **Agenda for Change Band:** Band 8c
+- **Starting Gross Salary:** £79,504/yr (£40.66/hr)
+- **Top Step Gross Salary:** £91,609/yr (£46.85/hr)
+- **Basic Daytime Hourly Rate:** £40.66/hr | **Night/Saturday Rate:** £52.86/hr | **Sunday/BH Rate:** £65.06/hr
+- **Monthly Net Take-Home (National):** **£4,226/mo** (Entry) to **£4,735/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **£4,594/mo** | Outer London (+15%): **£4,484/mo** | Fringe (+5%): **£4,321/mo** | Scotland: **£4,060/mo**
+
+## 2. Associate Director of Operations (Band 8c) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £79,504 | £40.66/hr | 12.5% (£828/mo) | **£4,226/mo** (£50,707/yr) |
+| After 2 years (Mid) (2 yrs) | £84,346 | £43.14/hr | 12.5% (£879/mo) | **£4,429/mo** (£53,152/yr) |
+| After 5 years (Top) (5 yrs) | £91,609 | £46.85/hr | 12.5% (£954/mo) | **£4,735/mo** (£56,820/yr) |
+
+## 3. Related Links
+- [NHS Associate Director of Operations Interactive Salary Calculator (HTML)](https://netpayscale.uk/roles/associate-director/)
+- [All 41 NHS Job Roles Directory](https://netpayscale.uk/roles/)
+- [NHS Band 8c Pay Scale Guide](https://netpayscale.uk/bands/band-8c/)
+
+---
+<!-- source: https://netpayscale.uk/roles/consultant-scientist/ -->
+# NHS Consultant Clinical Scientist Salary 2026/27 (Band 8c) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS Consultant Clinical Scientist (Band 8c) salary UK: £79,504 to £91,609 gross per year (£40.66/hr). Monthly net take-home pay is £4,226/mo at entry and £4,735/mo at top step after PAYE tax, NI, and 12.5% CARE pension.
+
+Canonical: https://netpayscale.uk/roles/consultant-scientist/
+Last updated: 2026-10-26
+
+## 1. Key 2026/27 Pay Facts for NHS Consultant Clinical Scientist (Band 8c)
+- **Agenda for Change Band:** Band 8c
+- **Starting Gross Salary:** £79,504/yr (£40.66/hr)
+- **Top Step Gross Salary:** £91,609/yr (£46.85/hr)
+- **Basic Daytime Hourly Rate:** £40.66/hr | **Night/Saturday Rate:** £52.86/hr | **Sunday/BH Rate:** £65.06/hr
+- **Monthly Net Take-Home (National):** **£4,226/mo** (Entry) to **£4,735/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **£4,594/mo** | Outer London (+15%): **£4,484/mo** | Fringe (+5%): **£4,321/mo** | Scotland: **£4,060/mo**
+
+## 2. Consultant Clinical Scientist (Band 8c) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £79,504 | £40.66/hr | 12.5% (£828/mo) | **£4,226/mo** (£50,707/yr) |
+| After 2 years (Mid) (2 yrs) | £84,346 | £43.14/hr | 12.5% (£879/mo) | **£4,429/mo** (£53,152/yr) |
+| After 5 years (Top) (5 yrs) | £91,609 | £46.85/hr | 12.5% (£954/mo) | **£4,735/mo** (£56,820/yr) |
+
+## 3. Related Links
+- [NHS Consultant Clinical Scientist Interactive Salary Calculator (HTML)](https://netpayscale.uk/roles/consultant-scientist/)
+- [All 41 NHS Job Roles Directory](https://netpayscale.uk/roles/)
+- [NHS Band 8c Pay Scale Guide](https://netpayscale.uk/bands/band-8c/)
+
+---
+<!-- source: https://netpayscale.uk/roles/deputy-director-nursing/ -->
+# NHS Deputy Director of Nursing Salary 2026/27 (Band 8d) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS Deputy Director of Nursing (Band 8d) salary UK: £94,356 to £108,814 gross per year (£48.26/hr). Monthly net take-home pay is £4,851/mo at entry and £5,459/mo at top step after PAYE tax, NI, and 12.5% CARE pension.
+
+Canonical: https://netpayscale.uk/roles/deputy-director-nursing/
+Last updated: 2026-10-26
+
+## 1. Key 2026/27 Pay Facts for NHS Deputy Director of Nursing (Band 8d)
+- **Agenda for Change Band:** Band 8d
+- **Starting Gross Salary:** £94,356/yr (£48.26/hr)
+- **Top Step Gross Salary:** £108,814/yr (£55.65/hr)
+- **Basic Daytime Hourly Rate:** £48.26/hr | **Night/Saturday Rate:** £62.74/hr | **Sunday/BH Rate:** £77.22/hr
+- **Monthly Net Take-Home (National):** **£4,851/mo** (Entry) to **£5,459/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **£5,219/mo** | Outer London (+15%): **£5,109/mo** | Fringe (+5%): **£4,946/mo** | Scotland: **£4,644/mo**
+
+## 2. Deputy Director of Nursing (Band 8d) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £94,356 | £48.26/hr | 12.5% (£983/mo) | **£4,851/mo** (£58,207/yr) |
+| After 2 years (Mid) (2 yrs) | £100,140 | £51.21/hr | 12.5% (£1,043/mo) | **£5,094/mo** (£61,128/yr) |
+| After 5 years (Top) (5 yrs) | £108,814 | £55.65/hr | 12.5% (£1,133/mo) | **£5,459/mo** (£65,508/yr) |
+
+## 3. Related Links
+- [NHS Deputy Director of Nursing Interactive Salary Calculator (HTML)](https://netpayscale.uk/roles/deputy-director-nursing/)
+- [All 41 NHS Job Roles Directory](https://netpayscale.uk/roles/)
+- [NHS Band 8d Pay Scale Guide](https://netpayscale.uk/bands/band-8d/)
+
+---
+<!-- source: https://netpayscale.uk/roles/director-of-operations/ -->
+# NHS Director of Operations Salary 2026/27 (Band 8d) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS Director of Operations (Band 8d) salary UK: £94,356 to £108,814 gross per year (£48.26/hr). Monthly net take-home pay is £4,851/mo at entry and £5,459/mo at top step after PAYE tax, NI, and 12.5% CARE pension.
+
+Canonical: https://netpayscale.uk/roles/director-of-operations/
+Last updated: 2026-10-26
+
+## 1. Key 2026/27 Pay Facts for NHS Director of Operations (Band 8d)
+- **Agenda for Change Band:** Band 8d
+- **Starting Gross Salary:** £94,356/yr (£48.26/hr)
+- **Top Step Gross Salary:** £108,814/yr (£55.65/hr)
+- **Basic Daytime Hourly Rate:** £48.26/hr | **Night/Saturday Rate:** £62.74/hr | **Sunday/BH Rate:** £77.22/hr
+- **Monthly Net Take-Home (National):** **£4,851/mo** (Entry) to **£5,459/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **£5,219/mo** | Outer London (+15%): **£5,109/mo** | Fringe (+5%): **£4,946/mo** | Scotland: **£4,644/mo**
+
+## 2. Director of Operations (Band 8d) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £94,356 | £48.26/hr | 12.5% (£983/mo) | **£4,851/mo** (£58,207/yr) |
+| After 2 years (Mid) (2 yrs) | £100,140 | £51.21/hr | 12.5% (£1,043/mo) | **£5,094/mo** (£61,128/yr) |
+| After 5 years (Top) (5 yrs) | £108,814 | £55.65/hr | 12.5% (£1,133/mo) | **£5,459/mo** (£65,508/yr) |
+
+## 3. Related Links
+- [NHS Director of Operations Interactive Salary Calculator (HTML)](https://netpayscale.uk/roles/director-of-operations/)
+- [All 41 NHS Job Roles Directory](https://netpayscale.uk/roles/)
+- [NHS Band 8d Pay Scale Guide](https://netpayscale.uk/bands/band-8d/)
+
+---
+<!-- source: https://netpayscale.uk/roles/chief-pharmacist/ -->
+# NHS Chief Pharmacist Salary 2026/27 (Band 8d) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS Chief Pharmacist (Band 8d) salary UK: £94,356 to £108,814 gross per year (£48.26/hr). Monthly net take-home pay is £4,851/mo at entry and £5,459/mo at top step after PAYE tax, NI, and 12.5% CARE pension.
+
+Canonical: https://netpayscale.uk/roles/chief-pharmacist/
+Last updated: 2026-10-26
+
+## 1. Key 2026/27 Pay Facts for NHS Chief Pharmacist (Band 8d)
+- **Agenda for Change Band:** Band 8d
+- **Starting Gross Salary:** £94,356/yr (£48.26/hr)
+- **Top Step Gross Salary:** £108,814/yr (£55.65/hr)
+- **Basic Daytime Hourly Rate:** £48.26/hr | **Night/Saturday Rate:** £62.74/hr | **Sunday/BH Rate:** £77.22/hr
+- **Monthly Net Take-Home (National):** **£4,851/mo** (Entry) to **£5,459/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **£5,219/mo** | Outer London (+15%): **£5,109/mo** | Fringe (+5%): **£4,946/mo** | Scotland: **£4,644/mo**
+
+## 2. Chief Pharmacist (Band 8d) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £94,356 | £48.26/hr | 12.5% (£983/mo) | **£4,851/mo** (£58,207/yr) |
+| After 2 years (Mid) (2 yrs) | £100,140 | £51.21/hr | 12.5% (£1,043/mo) | **£5,094/mo** (£61,128/yr) |
+| After 5 years (Top) (5 yrs) | £108,814 | £55.65/hr | 12.5% (£1,133/mo) | **£5,459/mo** (£65,508/yr) |
+
+## 3. Related Links
+- [NHS Chief Pharmacist Interactive Salary Calculator (HTML)](https://netpayscale.uk/roles/chief-pharmacist/)
+- [All 41 NHS Job Roles Directory](https://netpayscale.uk/roles/)
+- [NHS Band 8d Pay Scale Guide](https://netpayscale.uk/bands/band-8d/)
+
+---
+<!-- source: https://netpayscale.uk/roles/director-of-nursing/ -->
+# NHS Director of Nursing Salary 2026/27 (Band 9) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS Director of Nursing (Band 9) salary UK: £112,782 to £129,783 gross per year (£57.68/hr). Monthly net take-home pay is £5,626/mo at entry and £6,115/mo at top step after PAYE tax, NI, and 12.5% CARE pension.
+
+Canonical: https://netpayscale.uk/roles/director-of-nursing/
+Last updated: 2026-10-26
+
+## 1. Key 2026/27 Pay Facts for NHS Director of Nursing (Band 9)
+- **Agenda for Change Band:** Band 9
+- **Starting Gross Salary:** £112,782/yr (£57.68/hr)
+- **Top Step Gross Salary:** £129,783/yr (£66.37/hr)
+- **Basic Daytime Hourly Rate:** £57.68/hr | **Night/Saturday Rate:** £74.98/hr | **Sunday/BH Rate:** £92.29/hr
+- **Monthly Net Take-Home (National):** **£5,626/mo** (Entry) to **£6,115/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **£5,888/mo** | Outer London (+15%): **£5,817/mo** | Fringe (+5%): **£5,710/mo** | Scotland: **£5,353/mo**
+
+## 2. Director of Nursing (Band 9) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £112,782 | £57.68/hr | 12.5% (£1,175/mo) | **£5,626/mo** (£67,512/yr) |
+| After 2 years (Mid) (2 yrs) | £119,583 | £61.16/hr | 12.5% (£1,246/mo) | **£5,835/mo** (£70,020/yr) |
+| After 5 years (Top) (5 yrs) | £129,783 | £66.37/hr | 12.5% (£1,352/mo) | **£6,115/mo** (£73,386/yr) |
+
+## 3. Related Links
+- [NHS Director of Nursing Interactive Salary Calculator (HTML)](https://netpayscale.uk/roles/director-of-nursing/)
+- [All 41 NHS Job Roles Directory](https://netpayscale.uk/roles/)
+- [NHS Band 9 Pay Scale Guide](https://netpayscale.uk/bands/band-9/)
+
+---
+<!-- source: https://netpayscale.uk/roles/chief-operating-officer/ -->
+# NHS Chief Operating Officer (COO) Salary 2026/27 (Band 9) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS Chief Operating Officer (COO) (Band 9) salary UK: £112,782 to £129,783 gross per year (£57.68/hr). Monthly net take-home pay is £5,626/mo at entry and £6,115/mo at top step after PAYE tax, NI, and 12.5% CARE pension.
+
+Canonical: https://netpayscale.uk/roles/chief-operating-officer/
+Last updated: 2026-10-26
+
+## 1. Key 2026/27 Pay Facts for NHS Chief Operating Officer (COO) (Band 9)
+- **Agenda for Change Band:** Band 9
+- **Starting Gross Salary:** £112,782/yr (£57.68/hr)
+- **Top Step Gross Salary:** £129,783/yr (£66.37/hr)
+- **Basic Daytime Hourly Rate:** £57.68/hr | **Night/Saturday Rate:** £74.98/hr | **Sunday/BH Rate:** £92.29/hr
+- **Monthly Net Take-Home (National):** **£5,626/mo** (Entry) to **£6,115/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **£5,888/mo** | Outer London (+15%): **£5,817/mo** | Fringe (+5%): **£5,710/mo** | Scotland: **£5,353/mo**
+
+## 2. Chief Operating Officer (COO) (Band 9) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £112,782 | £57.68/hr | 12.5% (£1,175/mo) | **£5,626/mo** (£67,512/yr) |
+| After 2 years (Mid) (2 yrs) | £119,583 | £61.16/hr | 12.5% (£1,246/mo) | **£5,835/mo** (£70,020/yr) |
+| After 5 years (Top) (5 yrs) | £129,783 | £66.37/hr | 12.5% (£1,352/mo) | **£6,115/mo** (£73,386/yr) |
+
+## 3. Related Links
+- [NHS Chief Operating Officer (COO) Interactive Salary Calculator (HTML)](https://netpayscale.uk/roles/chief-operating-officer/)
+- [All 41 NHS Job Roles Directory](https://netpayscale.uk/roles/)
+- [NHS Band 9 Pay Scale Guide](https://netpayscale.uk/bands/band-9/)
+
+---
+<!-- source: https://netpayscale.uk/roles/clinical-director/ -->
+# NHS National Clinical Specialist Advisor Salary 2026/27 (Band 9) — Pay Scale, Hourly Rate & Take-Home Pay
+
+> Official 2026/27 NHS National Clinical Specialist Advisor (Band 9) salary UK: £112,782 to £129,783 gross per year (£57.68/hr). Monthly net take-home pay is £5,626/mo at entry and £6,115/mo at top step after PAYE tax, NI, and 12.5% CARE pension.
+
+Canonical: https://netpayscale.uk/roles/clinical-director/
+Last updated: 2026-10-26
+
+## 1. Key 2026/27 Pay Facts for NHS National Clinical Specialist Advisor (Band 9)
+- **Agenda for Change Band:** Band 9
+- **Starting Gross Salary:** £112,782/yr (£57.68/hr)
+- **Top Step Gross Salary:** £129,783/yr (£66.37/hr)
+- **Basic Daytime Hourly Rate:** £57.68/hr | **Night/Saturday Rate:** £74.98/hr | **Sunday/BH Rate:** £92.29/hr
+- **Monthly Net Take-Home (National):** **£5,626/mo** (Entry) to **£6,115/mo** (Top Step)
+- **Regional Entry Net Pay:** Inner London (+20%): **£5,888/mo** | Outer London (+15%): **£5,817/mo** | Fringe (+5%): **£5,710/mo** | Scotland: **£5,353/mo**
+
+## 2. National Clinical Specialist Advisor (Band 9) Pay Step Progression Table (2026/27)
+
+| Experience Step | Annual Gross | Hourly Rate | 2015 CARE Pension | Monthly Net Take-Home |
+| :--- | :--- | :--- | :--- | :--- |
+| Entry (0 yrs) | £112,782 | £57.68/hr | 12.5% (£1,175/mo) | **£5,626/mo** (£67,512/yr) |
+| After 2 years (Mid) (2 yrs) | £119,583 | £61.16/hr | 12.5% (£1,246/mo) | **£5,835/mo** (£70,020/yr) |
+| After 5 years (Top) (5 yrs) | £129,783 | £66.37/hr | 12.5% (£1,352/mo) | **£6,115/mo** (£73,386/yr) |
+
+## 3. Related Links
+- [NHS National Clinical Specialist Advisor Interactive Salary Calculator (HTML)](https://netpayscale.uk/roles/clinical-director/)
+- [All 41 NHS Job Roles Directory](https://netpayscale.uk/roles/)
+- [NHS Band 9 Pay Scale Guide](https://netpayscale.uk/bands/band-9/)

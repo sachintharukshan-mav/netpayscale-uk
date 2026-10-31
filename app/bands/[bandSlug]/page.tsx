@@ -5,7 +5,7 @@ import Link from "next/link";
 import nhsData from "@/data/nhs_afc_2026.json";
 import { calculateNHSPay } from "@/lib/calculator";
 import { formatCurrency, formatHourlyRate } from "@/lib/formatters";
-import { getAllPseoEntries } from "@/lib/pseo-matrix";
+import { getAllPseoEntries, getAllRoleHubs } from "@/lib/pseo-matrix";
 import Calculator from "@/components/Calculator";
 import AdPlaceholder from "@/components/AdPlaceholder";
 import AffiliateCards from "@/components/AffiliateCards";
@@ -175,6 +175,9 @@ export default async function BandHubPage({ params }: Props) {
 
   const bandPseoEntries = getAllPseoEntries().filter(
     (e) => e.band === bandObj.band
+  );
+  const bandRoleHubs = getAllRoleHubs().filter(
+    (r) => r.band === bandObj.band
   );
 
   const canonicalUrl = `https://netpayscale.uk/bands/${bandObj.slug}/`;
@@ -471,7 +474,51 @@ export default async function BandHubPage({ params }: Props) {
         <AdPlaceholder slotId="band-hub-mid" format="in-content" />
 
         {/* Hub-to-Spoke Directory: All Role & Region Calculators for this Band */}
-        <section className="rounded-xl border border-zinc-200/90 bg-white p-6 sm:p-7 shadow-xs space-y-4">
+        <section className="rounded-xl border border-zinc-200/90 bg-white p-6 sm:p-7 shadow-xs space-y-6">
+          {/* National Role Pillar Guides for this Band */}
+          {bandRoleHubs.length > 0 && (
+            <div className="space-y-3 border-b border-zinc-100 pb-5">
+              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+                <div>
+                  <h2 className="text-base sm:text-lg font-bold text-zinc-950">
+                    National {bandObj.band} Job Role Career &amp; Salary Guides ({bandRoleHubs.length} Roles)
+                  </h2>
+                  <p className="text-xs text-zinc-500">
+                    Explore complete national career pathways, qualification requirements, and step progressions for {bandObj.band} roles.
+                  </p>
+                </div>
+                <Link
+                  href="/roles/"
+                  className="text-xs font-semibold text-[#005EB8] hover:underline shrink-0"
+                >
+                  All 41 NHS Job Roles →
+                </Link>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                {bandRoleHubs.map((role) => (
+                  <Link
+                    key={role.roleSlug}
+                    href={`/roles/${role.roleSlug}/`}
+                    className="group flex items-center justify-between rounded-xl border border-blue-200/80 bg-blue-50/30 p-3.5 text-xs hover:border-[#005EB8] hover:bg-white hover:shadow-2xs transition-all"
+                  >
+                    <div className="min-w-0 pr-2">
+                      <span className="font-bold text-zinc-950 group-hover:text-[#005EB8] block truncate">
+                        NHS {role.roleName}
+                      </span>
+                      <span className="text-[11px] text-zinc-500 block truncate mt-0.5">
+                        {role.category} • {formatCurrency(entryCalc.netPay.monthly)}–{formatCurrency(topCalc.netPay.monthly)}/mo net
+                      </span>
+                    </div>
+                    <span className="text-[11px] font-mono font-bold text-[#005EB8] shrink-0">
+                      Role Guide →
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
           <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 border-b border-zinc-100 pb-3">
             <div>
               <h2 className="text-base sm:text-lg font-bold text-zinc-950">
