@@ -6,6 +6,7 @@ import {
   getAllPseoEntries,
   getPseoEntryBySlug,
   getRegionalEditorial,
+  getRegionalInsights,
   getRelatedPseoEntries,
 } from "@/lib/pseo-matrix";
 import nhsData from "@/data/nhs_afc_2026.json";
@@ -15,6 +16,7 @@ import Calculator from "@/components/Calculator";
 import AffiliateCards from "@/components/AffiliateCards";
 import AdPlaceholder from "@/components/AdPlaceholder";
 import FAQSection from "@/components/FAQSection";
+import EeatVerificationBlock from "@/components/EeatVerificationBlock";
 import { ShareBreakdownButton } from "@/components/ShareBreakdownButton";
 import { MagneticBentoContainer } from "@/components/MagneticBento";
 
@@ -162,13 +164,67 @@ export default async function PseoCalculatorPage({ params }: Props) {
   }));
 
   const editorial = getRegionalEditorial(entry);
+  const regionalInsights = getRegionalInsights(entry);
   const { sameRoleOtherRegions, sameRegionOtherRoles, adjacentPromotionRoles } =
     getRelatedPseoEntries(entry);
   const canonicalUrl = `https://netpayscale.uk/calculator/${entry.slug}/`;
 
+  // Compute Inner London benchmark for Real Purchasing Power & Rent Affordability comparison
+  const innerLondonEntryCalc = calculateNHSPay({
+    band: entry.band,
+    stepIndex: 0,
+    hcasZone: "inner-london",
+    nightHoursPerWeek: 0,
+    sundayHoursPerWeek: 0,
+    pensionOptedOut: false,
+    isScottishTax: false,
+    studentLoan: "none",
+  });
+  const innerLondonTopCalc = calculateNHSPay({
+    band: entry.band,
+    stepIndex: Math.max(0, (bandObj?.points.length ?? 1) - 1),
+    hcasZone: "inner-london",
+    nightHoursPerWeek: 0,
+    sundayHoursPerWeek: 0,
+    pensionOptedOut: false,
+    isScottishTax: false,
+    studentLoan: "none",
+  });
+
+  const localDisposableEntry = Math.round(
+    baselineResult.netPay.monthly - regionalInsights.onsMedianRent1Bed
+  );
+  const localDisposableTop = Math.round(
+    topStepResult.netPay.monthly - regionalInsights.onsMedianRent1Bed
+  );
+  const londonDisposableEntry = Math.round(
+    innerLondonEntryCalc.netPay.monthly - regionalInsights.innerLondonRent1Bed
+  );
+  const londonDisposableTop = Math.round(
+    innerLondonTopCalc.netPay.monthly - regionalInsights.innerLondonRent1Bed
+  );
+  const localRentShareEntry = Math.round(
+    (regionalInsights.onsMedianRent1Bed / baselineResult.netPay.monthly) * 100
+  );
+  const londonRentShareEntry = Math.round(
+    (regionalInsights.innerLondonRent1Bed / innerLondonEntryCalc.netPay.monthly) * 100
+  );
+  const disposableDiffVsLondon = localDisposableEntry - londonDisposableEntry;
+
   const schemaMarkup = {
     "@context": "https://schema.org",
     "@graph": [
+      {
+        "@type": "WebPage",
+        name: `${entry.band} ${entry.roleName} Salary & Net Take-Home in ${entry.regionName} (2026/27)`,
+        url: canonicalUrl,
+        dateModified: "2026-10-31",
+        citation: [
+          "https://www.nhsemployers.org/articles/pay-scales-202627",
+          "https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2026-to-2027",
+          "https://www.nhsbsa.nhs.uk/member-hub/cost-being-scheme",
+        ],
+      },
       {
         "@type": "BreadcrumbList",
         itemListElement: [
@@ -577,6 +633,179 @@ export default async function PseoCalculatorPage({ params }: Props) {
                 </table>
               </div>
             </div>
+
+            {/* Section 3: Real Purchasing Power & Local Rent Affordability in Region vs Inner London */}
+            <div className="space-y-3 pt-2 border-t border-zinc-100">
+              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+                <div>
+                  <h2 className="text-xs sm:text-sm font-bold text-zinc-950">
+                    3. Real Purchasing Power &amp; Rent Affordability in{" "}
+                    {entry.regionName} vs. Inner London
+                  </h2>
+                  <p className="text-[11px] text-zinc-500">
+                    Comparing {entry.band} {entry.roleName} monthly net take-home
+                    against ONS median private rental costs ({regionalInsights.icsHealthBoardName}).
+                  </p>
+                </div>
+                {entry.regionId !== "inner-london" && (
+                  <span
+                    className={`text-[11px] font-mono font-bold px-2 py-0.5 rounded border shrink-0 ${
+                      disposableDiffVsLondon >= 0
+                        ? "bg-emerald-50 text-emerald-800 border-emerald-200"
+                        : "bg-amber-50 text-amber-800 border-amber-200"
+                    }`}
+                  >
+                    {disposableDiffVsLondon >= 0
+                      ? `+${formatCurrency(disposableDiffVsLondon)}/mo More After Rent vs Inner London`
+                      : `${formatCurrency(disposableDiffVsLondon)}/mo vs Inner London`}
+                  </span>
+                )}
+              </div>
+
+              <div className="overflow-x-auto rounded-lg border border-zinc-200/80">
+                <table className="w-full text-left text-xs font-mono">
+                  <thead>
+                    <tr className="border-b border-zinc-200 bg-zinc-50 text-zinc-600 font-sans font-semibold">
+                      <th className="py-2.5 px-3">Location &amp; HCAS Zone</th>
+                      <th className="py-2.5 px-3">Net Pay (Entry → Top)</th>
+                      <th className="py-2.5 px-3">ONS Median 1-Bed Rent</th>
+                      <th className="py-2.5 px-3">ONS Median 2-Bed Rent</th>
+                      <th className="py-2.5 px-3">Rent % of Entry Net</th>
+                      <th className="py-2.5 px-3 text-right">
+                        Cash Left After 1-Bed Rent
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-zinc-100 text-zinc-800">
+                    <tr className="bg-emerald-50/40">
+                      <td className="py-2.5 px-3 font-sans font-bold text-zinc-950">
+                        {entry.regionName}{" "}
+                        <span className="text-[10px] font-mono font-normal text-zinc-500">
+                          ({entry.hcasZone === "standard" ? "National Spine" : entry.hcasZone})
+                        </span>
+                      </td>
+                      <td className="py-2.5 px-3 tabular-nums font-semibold">
+                        {formatCurrency(baselineResult.netPay.monthly)} →{" "}
+                        {formatCurrency(topStepResult.netPay.monthly)}/mo
+                      </td>
+                      <td className="py-2.5 px-3 tabular-nums text-rose-700">
+                        −{formatCurrency(regionalInsights.onsMedianRent1Bed)}/mo
+                      </td>
+                      <td className="py-2.5 px-3 tabular-nums text-zinc-600">
+                        {formatCurrency(regionalInsights.onsMedianRent2Bed)}/mo
+                      </td>
+                      <td className="py-2.5 px-3 tabular-nums">
+                        {localRentShareEntry}% of net pay
+                      </td>
+                      <td className="py-2.5 px-3 text-right font-bold text-emerald-700 tabular-nums">
+                        {formatCurrency(localDisposableEntry)} →{" "}
+                        {formatCurrency(localDisposableTop)}/mo
+                      </td>
+                    </tr>
+                    {entry.regionId !== "inner-london" && (
+                      <tr className="hover:bg-zinc-50/70 text-zinc-600">
+                        <td className="py-2.5 px-3 font-sans font-medium text-zinc-800">
+                          Inner London Benchmark{" "}
+                          <span className="text-[10px] font-mono font-normal text-zinc-500">
+                            (+20% HCAS)
+                          </span>
+                        </td>
+                        <td className="py-2.5 px-3 tabular-nums">
+                          {formatCurrency(innerLondonEntryCalc.netPay.monthly)} →{" "}
+                          {formatCurrency(innerLondonTopCalc.netPay.monthly)}/mo
+                        </td>
+                        <td className="py-2.5 px-3 tabular-nums text-rose-700">
+                          −{formatCurrency(regionalInsights.innerLondonRent1Bed)}/mo
+                        </td>
+                        <td className="py-2.5 px-3 tabular-nums">£2,380/mo</td>
+                        <td className="py-2.5 px-3 tabular-nums">
+                          {londonRentShareEntry}% of net pay
+                        </td>
+                        <td className="py-2.5 px-3 text-right font-semibold text-zinc-800 tabular-nums">
+                          {formatCurrency(londonDisposableEntry)} →{" "}
+                          {formatCurrency(londonDisposableTop)}/mo
+                        </td>
+                      </tr>
+                    )}
+                  </tbody>
+                </table>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs text-zinc-600">
+                <div className="rounded-lg bg-zinc-50/80 border border-zinc-200/70 p-3.5 space-y-1">
+                  <span className="font-bold text-zinc-900 block text-[11px] uppercase tracking-wider">
+                    Regional Workforce &amp; Housing Economics ({entry.regionName})
+                  </span>
+                  <p className="leading-relaxed">
+                    {regionalInsights.localWorkforceNote}
+                  </p>
+                </div>
+                <div className="rounded-lg bg-zinc-50/80 border border-zinc-200/70 p-3.5 space-y-1">
+                  <span className="font-bold text-zinc-900 block text-[11px] uppercase tracking-wider">
+                    Hospital Commuter &amp; Staff Travel Links
+                  </span>
+                  <p className="leading-relaxed">
+                    {regionalInsights.commuterAndTransportNote}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Section 4: Major NHS Hospital Trusts & Employers in This Region */}
+            <div className="space-y-3 pt-2 border-t border-zinc-100">
+              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+                <div>
+                  <h2 className="text-xs sm:text-sm font-bold text-zinc-950">
+                    4. Major NHS Hospital Trusts Recruiting {entry.band}{" "}
+                    {entry.roleName}s in {entry.regionName}
+                  </h2>
+                  <p className="text-[11px] text-zinc-500">
+                    Verified NHS Trusts and Health Boards within{" "}
+                    {regionalInsights.icsHealthBoardName}.
+                  </p>
+                </div>
+                <Link
+                  href="/trusts/"
+                  className="text-[11px] font-semibold text-[#005EB8] hover:underline shrink-0"
+                >
+                  All 50 UK NHS Trusts →
+                </Link>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                {regionalInsights.localTrusts.map((trust) => (
+                  <Link
+                    key={trust.id}
+                    href={`/trusts/${trust.id}/`}
+                    className="group rounded-xl border border-zinc-200/90 bg-zinc-50/50 p-4 hover:border-[#005EB8] hover:bg-white transition-all space-y-2"
+                  >
+                    <div className="flex items-start justify-between gap-2">
+                      <div>
+                        <span className="font-bold text-xs sm:text-sm text-zinc-950 group-hover:text-[#005EB8] transition-colors block">
+                          {trust.name}
+                        </span>
+                        <span className="text-[11px] text-zinc-500">
+                          {trust.city} • {trust.staffCount}
+                        </span>
+                      </div>
+                      <span className="font-mono text-[10px] font-bold px-2 py-0.5 rounded bg-blue-50 text-[#005EB8] border border-blue-200 shrink-0">
+                        ODS: {trust.code}
+                      </span>
+                    </div>
+                    <p className="text-[11px] text-zinc-600 leading-relaxed">
+                      <strong>Major Hospital Sites:</strong>{" "}
+                      {trust.majorHospitals.join(", ")}
+                    </p>
+                    <div className="flex items-center justify-between pt-1 text-[11px] font-mono text-zinc-500 border-t border-zinc-200/60">
+                      <span>{trust.hcasRate}</span>
+                      <span className="text-[#005EB8] font-sans font-semibold">
+                        Trust Pay Tables →
+                      </span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
@@ -772,6 +1001,12 @@ export default async function PseoCalculatorPage({ params }: Props) {
             </div>
           </div>
         </section>
+
+        {/* Statutory Provenance & YMYL E-E-A-T Verification */}
+        <EeatVerificationBlock
+          contextLabel={`${entry.band} ${entry.roleName} Pay in ${entry.regionName}`}
+          isScotland={entry.regionId === "scotland"}
+        />
 
         {/* FAQs */}
         <FAQSection />

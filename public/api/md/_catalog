@@ -2,8 +2,8 @@
   "site": "NetPayScale UK (NHS Edition)",
   "url": "https://netpayscale.uk",
   "updated": "2026-10-26",
-  "totalMarkdownRoutes": 117,
-  "totalHtmlRoutes": 611,
+  "totalMarkdownRoutes": 120,
+  "totalHtmlRoutes": 614,
   "routes": [
     {
       "htmlUrl": "https://netpayscale.uk/",
@@ -108,6 +108,27 @@
       "markdownUrl": "https://netpayscale.uk/roles.md",
       "title": "NHS Job Roles & Clinical Career Salary Directory 2026/27 (41 Careers)",
       "description": "Official directory of 41 NHS clinical, allied health, scientific, and leadership job roles (Bands 2 to 9) with starting and top gross and net monthly pay.",
+      "category": "core"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/scotland-pay-calculator/",
+      "markdownUrl": "https://netpayscale.uk/scotland-pay-calculator.md",
+      "title": "NHS Scotland Pay Calculator 2026/27: 35-Hour Week & S1257L Tax",
+      "description": "NHS Scotland 2026/27 salary, 35.0-hour working week (1,825 hrs/yr), and Scottish 6-band Income Tax (S1257L: 19%–48%) take-home pay calculator.",
+      "category": "core"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/part-time-pay-calculator/",
+      "markdownUrl": "https://netpayscale.uk/part-time-pay-calculator.md",
+      "title": "NHS Part-Time & Pro-Rata Salary Calculator 2026/27 (15h, 22.5h, 30h)",
+      "description": "NHS Agenda for Change part-time pro-rata net take-home pay across 0.4, 0.5, 0.6, and 0.8 WTE contracts, pro-rata HCAS, and Section 13 holiday hours.",
+      "category": "core"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/hourly-rate-calculator/",
+      "markdownUrl": "https://netpayscale.uk/hourly-rate-calculator.md",
+      "title": "NHS Hourly Pay Rates 2026/27 (Bands 2 to 9): Basic, Night, Sunday & Bank Chart",
+      "description": "Complete 2026/27 NHS Agenda for Change hourly rate master chart across Bands 2 to 9 including Section 2 night/weekend uplifts, 1.5x overtime, and +12.07% Bank WTR.",
       "category": "core"
     },
     {

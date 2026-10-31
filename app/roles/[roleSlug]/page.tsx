@@ -13,6 +13,7 @@ import Calculator from "@/components/Calculator";
 import AdPlaceholder from "@/components/AdPlaceholder";
 import AffiliateCards from "@/components/AffiliateCards";
 import FAQSection from "@/components/FAQSection";
+import EeatVerificationBlock from "@/components/EeatVerificationBlock";
 import { ShareBreakdownButton } from "@/components/ShareBreakdownButton";
 import { MagneticBentoContainer } from "@/components/MagneticBento";
 
@@ -1215,6 +1216,9 @@ export default async function RolePillarPage({ params }: Props) {
         </section>
 
         <AffiliateCards />
+        <EeatVerificationBlock
+          contextLabel={`NHS ${role.roleName} (${role.band}) Pay & Career Progression`}
+        />
         <FAQSection />
       </div>
     </div>

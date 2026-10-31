@@ -21,6 +21,9 @@ NetPayScale UK is an open-access statutory payroll reference and calculator suit
 - [NHS Bank vs. Agency vs. Substantive Pay Calculator 2026/27](https://netpayscale.uk/agency-vs-bank-calculator.md): Compare net take-home pay: Permanent Substantive AfC vs Trust Staff Bank (+12.07% WTR holiday pay) vs Agency Nursing Inside IR35 after umbrella fees.
 - [Top 50 NHS Trusts & Hospital Pay Directory 2026/27](https://netpayscale.uk/trusts.md): Official directory of the 50 largest UK NHS Hospital Trusts, London Weighting (HCAS) zones, starting Band 5 gross and net pay, and hospital sites.
 - [NHS Job Roles & Clinical Career Salary Directory 2026/27 (41 Careers)](https://netpayscale.uk/roles.md): Official directory of 41 NHS clinical, allied health, scientific, and leadership job roles (Bands 2 to 9) with starting and top gross and net monthly pay.
+- [NHS Scotland Pay Calculator 2026/27: 35-Hour Week & S1257L Tax](https://netpayscale.uk/scotland-pay-calculator.md): NHS Scotland 2026/27 salary, 35.0-hour working week (1,825 hrs/yr), and Scottish 6-band Income Tax (S1257L: 19%–48%) take-home pay calculator.
+- [NHS Part-Time & Pro-Rata Salary Calculator 2026/27 (15h, 22.5h, 30h)](https://netpayscale.uk/part-time-pay-calculator.md): NHS Agenda for Change part-time pro-rata net take-home pay across 0.4, 0.5, 0.6, and 0.8 WTE contracts, pro-rata HCAS, and Section 13 holiday hours.
+- [NHS Hourly Pay Rates 2026/27 (Bands 2 to 9): Basic, Night, Sunday & Bank Chart](https://netpayscale.uk/hourly-rate-calculator.md): Complete 2026/27 NHS Agenda for Change hourly rate master chart across Bands 2 to 9 including Section 2 night/weekend uplifts, 1.5x overtime, and +12.07% Bank WTR.
 
 ## 2026/27 NHS Agenda for Change Band Guides (Markdown Twins)
 - [NHS Band 2 Salary 2026/27 (Healthcare Assistant, Clinical Support Worker)](https://netpayscale.uk/bands/band-2.md): 2026/27 Band 2 pay scale (£25,272–£25,272), hourly rates, step progression, and regional net pay.

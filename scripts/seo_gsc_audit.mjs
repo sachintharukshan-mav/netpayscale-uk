@@ -45,8 +45,8 @@ assert(fs.existsSync(catalogPath), 'api/md/_catalog exists in static export');
 const llmsFullContent = fs.readFileSync(llmsFullPath, 'utf8');
 assert(llmsFullContent.length > 10000 && llmsFullContent.length < 500000, `llms-full.txt length is within optimal LLM context window (${llmsFullContent.length} chars)`);
 const catalogData = JSON.parse(fs.readFileSync(catalogPath, 'utf8'));
-assert(catalogData.totalMarkdownRoutes === 117, `api/md/_catalog lists all 117 core, band, trust & role Markdown routes (actual: ${catalogData.totalMarkdownRoutes})`);
-assert(catalogData.totalHtmlRoutes === 611, `api/md/_catalog reports 611 total HTML routes (actual: ${catalogData.totalHtmlRoutes})`);
+assert(catalogData.totalMarkdownRoutes === 120, `api/md/_catalog lists all 120 core, band, trust & role Markdown routes (actual: ${catalogData.totalMarkdownRoutes})`);
+assert(catalogData.totalHtmlRoutes === 614, `api/md/_catalog reports 614 total HTML routes (actual: ${catalogData.totalHtmlRoutes})`);
 
 // 2. Sitemap.xml check
 const sitemapPath = path.join(outDir, 'sitemap.xml');
@@ -57,7 +57,7 @@ const sitemapContent = fs.readFileSync(sitemapPath, 'utf8');
 const locMatches = [...sitemapContent.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => m[1]);
 console.log(`Found ${locMatches.length} URLs in sitemap.xml`);
 
-assert(locMatches.length === 611, `Sitemap contains all 611 canonical URLs (19 core/calculators + 11 band hubs + 50 trust hubs + 41 role pillar hubs + 490 role-region spokes; actual: ${locMatches.length})`);
+assert(locMatches.length === 614, `Sitemap contains all 614 canonical URLs (22 core/calculators + 11 band hubs + 50 trust hubs + 41 role pillar hubs + 490 role-region spokes; actual: ${locMatches.length})`);
 assert(locMatches[0] === 'https://netpayscale.uk/', `Homepage in sitemap is exact canonical: https://netpayscale.uk/ (actual: ${locMatches[0]})`);
 
 let nonTrailingSlashCount = 0;
@@ -79,7 +79,7 @@ const sitemapIndexMatches = [...sitemapIndexContent.matchAll(/<loc>(.*?)<\/loc>/
 assert(sitemapIndexMatches.length === 4, `sitemap-index.xml points to 4 child sitemaps (actual: ${sitemapIndexMatches.length})`);
 
 const childSitemaps = [
-  { file: 'sitemap-core.xml', count: 19 },
+  { file: 'sitemap-core.xml', count: 22 },
   { file: 'sitemap-bands.xml', count: 11 },
   { file: 'sitemap-trusts.xml', count: 50 },
   { file: 'sitemap-roles.xml', count: 531 }
@@ -100,7 +100,7 @@ for (const child of childSitemaps) {
     }
   }
 }
-assert(totalSegmentedUrls === 611, `Segmented child sitemaps sum to exactly 611 URLs matching master sitemap.xml (actual: ${totalSegmentedUrls})`);
+assert(totalSegmentedUrls === 614, `Segmented child sitemaps sum to exactly 614 URLs matching master sitemap.xml (actual: ${totalSegmentedUrls})`);
 
 
 // 3. Homepage HTML Audit (Canonical, Meta, Schema)
@@ -139,7 +139,7 @@ for (const p of trustPages) {
   }
 }
 
-// 3C. 10 High-Volume Sibling Calculators Audit
+// 3C. 13 High-Volume Sibling Calculators Audit
 const siblingCalculators = [
   'pension-calculator',
   'sick-pay-calculator',
@@ -151,6 +151,9 @@ const siblingCalculators = [
   'redundancy-pay-calculator',
   'unsocial-hours-calculator',
   'agency-vs-bank-calculator',
+  'scotland-pay-calculator',
+  'part-time-pay-calculator',
+  'hourly-rate-calculator',
 ];
 for (const calcSlug of siblingCalculators) {
   const cPath = path.join(outDir, calcSlug, 'index.html');
@@ -384,6 +387,9 @@ for (const slug of sampleSlugs) {
   assert(pageHtml.includes('Direct Answer · 2026/27 Official Benchmark'), `Page /${slug}/ contains AEO Direct Answer executive block`);
   assert(pageHtml.includes('data-share-widget="whatsapp-copy-breakdown"'), `Page /${slug}/ contains 1-Tap WhatsApp / Copy Breakdown widget`);
   assert(pageHtml.includes('Full-Time, Part-Time Pro-Rata &amp; Night Shift Take-Home Matrix'), `Page /${slug}/ contains Phase 2 Working Pattern & Shift Matrix`);
+  assert(pageHtml.includes('Real Purchasing Power &amp; Rent Affordability'), `Page /${slug}/ contains Regional ONS Rent Affordability & Disposable Pay Table`);
+  assert(pageHtml.includes('Major NHS Hospital Trusts Recruiting'), `Page /${slug}/ contains Local NHS Hospital Trusts Directory Section`);
+  assert(pageHtml.includes('Statutory Provenance &amp; Audit Trail'), `Page /${slug}/ contains YMYL Statutory E-E-A-T Provenance Block`);
 }
 
 // 5. Check Internal Link consistency

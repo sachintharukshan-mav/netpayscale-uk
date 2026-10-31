@@ -53,6 +53,24 @@ export function Navbar() {
             Job Roles
           </Link>
           <Link
+            href="/hourly-rate-calculator/"
+            className="px-2.5 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95 whitespace-nowrap"
+          >
+            Hourly Rates
+          </Link>
+          <Link
+            href="/part-time-pay-calculator/"
+            className="hidden xl:inline-block px-2.5 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95 whitespace-nowrap"
+          >
+            Part-Time
+          </Link>
+          <Link
+            href="/scotland-pay-calculator/"
+            className="hidden 2xl:inline-block px-2.5 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95 whitespace-nowrap"
+          >
+            Scotland
+          </Link>
+          <Link
             href="/pension-calculator/"
             className="px-2.5 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95 whitespace-nowrap"
           >
@@ -144,6 +162,27 @@ export function Navbar() {
             onClick={() => setMobileMenuOpen(false)}
           >
             NHS Job Roles &amp; Career Pay Directory (41 Roles)
+          </Link>
+          <Link
+            className="block px-3 py-2 rounded-lg text-text-body hover:bg-surface-muted font-medium text-sm"
+            href="/hourly-rate-calculator/"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            NHS Hourly Pay Rates 2026/27 Master Chart
+          </Link>
+          <Link
+            className="block px-3 py-2 rounded-lg text-text-body hover:bg-surface-muted font-medium text-sm"
+            href="/part-time-pay-calculator/"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            NHS Part-Time &amp; Pro-Rata Pay Calculator
+          </Link>
+          <Link
+            className="block px-3 py-2 rounded-lg text-text-body hover:bg-surface-muted font-medium text-sm"
+            href="/scotland-pay-calculator/"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            NHS Scotland 35-Hour Week &amp; S1257L Calculator
           </Link>
           <Link
             className="block px-3 py-2 rounded-lg text-text-body hover:bg-surface-muted font-medium text-sm"

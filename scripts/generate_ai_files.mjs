@@ -968,6 +968,94 @@ ${stepRows}
 `;
 }
 
+function renderScotlandPayMd() {
+  const rows = nhsData.bands
+    .map((b) => {
+      const entry = b.points[0];
+      const scot = calculateNet(entry.annualSalary, { bandSlug: b.slug, scotland: true });
+      const eng = calculateNet(entry.annualSalary, { bandSlug: b.slug, scotland: false });
+      const scot35Hourly = (entry.annualSalary / 1825).toFixed(2);
+      return `| ${b.band} Entry | ${fmtGBP(entry.annualSalary)} | £${scot35Hourly}/hr | £${entry.hourlyRate.toFixed(2)}/hr | ${fmtGBP(scot.netMonthly)}/mo | ${fmtGBP(eng.netMonthly)}/mo |`;
+    })
+    .join("\n");
+
+  return `# NHS Scotland Pay Calculator 2026/27 — 35-Hour Week, S1257L Tax & Take-Home Pay
+
+> Official 2026/27 NHS Scotland Agenda for Change salary, 35.0-hour working week (1,825 hrs/yr), and Scottish 6-band Income Tax (S1257L: 19%–48%) calculator.
+
+Canonical: ${SITE.url}/scotland-pay-calculator/
+Last updated: ${SITE.updated}
+
+## 1. Key NHS Scotland 2026/27 Pay & Working Week Rules
+- **35.0-Hour Full-Time Working Week:** Full-time NHS Scotland staff work 35.0 hours/week (1,825 hours/year) vs 37.5 hours/week (1,955.36 hours/year) in NHS England—delivering a **+7.14% higher effective hourly rate** and **130.36 extra free hours per year**.
+- **Scottish Devolved Income Tax (S1257L):** Starter 19% (£12,571–£14,876), Basic 20% (£14,877–£26,561), Intermediate 21% (£26,562–£43,662), Higher 42% (£43,663–£75,000), Advanced 45% (£75,001–£125,140), Top 48% (>£125,140).
+
+## 2. NHS Scotland vs. NHS England Entry Pay Comparison (Bands 2 to 9)
+
+| Band | Annual Gross | Scotland 35h Rate | England 37.5h Rate | Scotland Net/Mo (S1257L) | England Net/Mo (1257L) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+${rows}
+`;
+}
+
+function renderPartTimePayMd() {
+  const rows = nhsData.bands
+    .map((b) => {
+      const sal = b.points[0].annualSalary;
+      const wte05 = calculateNet(sal, { bandSlug: b.slug, fte: 0.5 });
+      const wte06 = calculateNet(sal, { bandSlug: b.slug, fte: 0.6 });
+      const wte08 = calculateNet(sal, { bandSlug: b.slug, fte: 0.8 });
+      const wte10 = calculateNet(sal, { bandSlug: b.slug, fte: 1.0 });
+      return `| ${b.band} Entry | ${fmtGBP(wte05.netMonthly)}/mo | ${fmtGBP(wte06.netMonthly)}/mo | ${fmtGBP(wte08.netMonthly)}/mo | ${fmtGBP(wte10.netMonthly)}/mo |`;
+    })
+    .join("\n");
+
+  return `# NHS Part-Time & Pro-Rata Salary Calculator 2026/27 — 15h, 18.75h, 22.5h & 30h WTE Pay
+
+> Calculate 2026/27 NHS Agenda for Change part-time pro-rata net take-home pay across 0.4, 0.5, 0.6, and 0.8 WTE contracts, including pro-rata HCAS and Section 13 holiday hours.
+
+Canonical: ${SITE.url}/part-time-pay-calculator/
+Last updated: ${SITE.updated}
+
+## 1. NHS Pro-Rata Formula & Tax Advantage
+- **Pro-Rata WTE Formula:** \`Pro-Rata Gross = Full-Time Salary × (Contracted Weekly Hours ÷ 37.5)\`.
+- **Full £12,570 Personal Allowance:** Because the £12,570 tax-free Personal Allowance is not reduced for part-time workers, part-time NHS staff keep a higher percentage of their gross salary in net take-home pay.
+
+## 2. Part-Time Net Monthly Take-Home Matrix (2026/27)
+
+| Band | 18.75h (0.5 WTE) Net | 22.5h (0.6 WTE) Net | 30.0h (0.8 WTE) Net | 37.5h (1.0 WTE) Net |
+| :--- | :--- | :--- | :--- | :--- |
+${rows}
+`;
+}
+
+function renderHourlyRateMd() {
+  const rows = nhsData.bands
+    .flatMap((b) => {
+      const isB23 = b.band === "Band 2" || b.band === "Band 3";
+      const nightM = isB23 ? 1.44 : 1.3;
+      const sunM = isB23 ? 1.88 : 1.6;
+      return b.points.map((pt) => {
+        return `| ${b.band} ${pt.step} | ${fmtGBP(pt.annualSalary)} | £${pt.hourlyRate.toFixed(2)}/hr | £${(pt.hourlyRate * nightM).toFixed(2)}/hr | £${(pt.hourlyRate * sunM).toFixed(2)}/hr | £${(pt.hourlyRate * 1.1207).toFixed(2)}/hr |`;
+      });
+    })
+    .join("\n");
+
+  return `# NHS Hourly Pay Rates 2026/27 (Bands 2 to 9) — Basic, Night, Weekend, Overtime & Bank Chart
+
+> Complete 2026/27 NHS Agenda for Change hourly rate chart across all 25 spine points (Bands 2 to 9), comparing Basic (1.0x), Night/Saturday (+44%/+30%), Sunday/BH (+88%/+60%), and Bank (+12.07% WTR) hourly rates.
+
+Canonical: ${SITE.url}/hourly-rate-calculator/
+Last updated: ${SITE.updated}
+
+## 1. 2026/27 NHS Hourly Pay Rates Master Table (All Spine Points)
+
+| Band & Step | Annual Gross | Basic Day (1.0x) | Night / Saturday | Sunday / Bank Holiday | Bank (+12.07% WTR) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+${rows}
+`;
+}
+
 // ---------------------------------------------------------------------------
 // 2. Build Registry & Generate All Files
 // ---------------------------------------------------------------------------
@@ -1122,6 +1210,36 @@ const markdownRegistry = [
     category: "core",
     render: renderRolesMd,
   },
+  {
+    route: "/scotland-pay-calculator/",
+    mdPath: "/scotland-pay-calculator.md",
+    fileOut: path.join(PUBLIC_DIR, "scotland-pay-calculator.md"),
+    title: "NHS Scotland Pay Calculator 2026/27: 35-Hour Week & S1257L Tax",
+    description:
+      "NHS Scotland 2026/27 salary, 35.0-hour working week (1,825 hrs/yr), and Scottish 6-band Income Tax (S1257L: 19%–48%) take-home pay calculator.",
+    category: "core",
+    render: renderScotlandPayMd,
+  },
+  {
+    route: "/part-time-pay-calculator/",
+    mdPath: "/part-time-pay-calculator.md",
+    fileOut: path.join(PUBLIC_DIR, "part-time-pay-calculator.md"),
+    title: "NHS Part-Time & Pro-Rata Salary Calculator 2026/27 (15h, 22.5h, 30h)",
+    description:
+      "NHS Agenda for Change part-time pro-rata net take-home pay across 0.4, 0.5, 0.6, and 0.8 WTE contracts, pro-rata HCAS, and Section 13 holiday hours.",
+    category: "core",
+    render: renderPartTimePayMd,
+  },
+  {
+    route: "/hourly-rate-calculator/",
+    mdPath: "/hourly-rate-calculator.md",
+    fileOut: path.join(PUBLIC_DIR, "hourly-rate-calculator.md"),
+    title: "NHS Hourly Pay Rates 2026/27 (Bands 2 to 9): Basic, Night, Sunday & Bank Chart",
+    description:
+      "Complete 2026/27 NHS Agenda for Change hourly rate master chart across Bands 2 to 9 including Section 2 night/weekend uplifts, 1.5x overtime, and +12.07% Bank WTR.",
+    category: "core",
+    render: renderHourlyRateMd,
+  },
   ...nhsData.bands.map((b) => {
     const slug = b.slug;
     const roleSummary = b.typicalRoles.slice(0, 2).join(", ");
@@ -1173,7 +1291,7 @@ const catalogPayload = {
   url: SITE.url,
   updated: SITE.updated,
   totalMarkdownRoutes: markdownRegistry.length,
-  totalHtmlRoutes: 611,
+  totalHtmlRoutes: 614,
   routes: markdownRegistry.map((r) => ({
     htmlUrl: `${SITE.url}${r.route}`,
     markdownUrl: `${SITE.url}${r.mdPath}`,
@@ -1305,6 +1423,9 @@ allow = /pay-rise-backpay-calculator/
 allow = /redundancy-pay-calculator/
 allow = /international/
 allow = /embed/
+allow = /scotland-pay-calculator/
+allow = /part-time-pay-calculator/
+allow = /hourly-rate-calculator/
 allow = /llms.txt
 allow = /llms-full.txt
 disallow = /_next/*
@@ -1383,6 +1504,9 @@ const coreUrls = [
   { loc: `${SITE.url}/embed/`, priority: "0.90", changefreq: "weekly" },
   { loc: `${SITE.url}/trusts/`, priority: "0.90", changefreq: "weekly" },
   { loc: `${SITE.url}/roles/`, priority: "0.95", changefreq: "weekly" },
+  { loc: `${SITE.url}/scotland-pay-calculator/`, priority: "0.95", changefreq: "weekly" },
+  { loc: `${SITE.url}/part-time-pay-calculator/`, priority: "0.95", changefreq: "weekly" },
+  { loc: `${SITE.url}/hourly-rate-calculator/`, priority: "0.95", changefreq: "weekly" },
   { loc: `${SITE.url}/about/`, priority: "0.70", changefreq: "monthly" },
   { loc: `${SITE.url}/privacy/`, priority: "0.60", changefreq: "monthly" },
   { loc: `${SITE.url}/terms/`, priority: "0.60", changefreq: "monthly" },

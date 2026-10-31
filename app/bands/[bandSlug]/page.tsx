@@ -10,6 +10,7 @@ import Calculator from "@/components/Calculator";
 import AdPlaceholder from "@/components/AdPlaceholder";
 import AffiliateCards from "@/components/AffiliateCards";
 import FAQSection from "@/components/FAQSection";
+import EeatVerificationBlock from "@/components/EeatVerificationBlock";
 import { ShareBreakdownButton } from "@/components/ShareBreakdownButton";
 
 interface Props {
@@ -554,6 +555,9 @@ export default async function BandHubPage({ params }: Props) {
         </section>
 
         <AffiliateCards />
+        <EeatVerificationBlock
+          contextLabel={`NHS ${bandObj.band} Pay Scale & Deductions`}
+        />
         <FAQSection />
       </div>
     </div>

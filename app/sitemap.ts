@@ -103,6 +103,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.95,
     },
     {
+      url: `${baseUrl}/scotland-pay-calculator/`,
+      lastModified: buildDate,
+      changeFrequency: "weekly",
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/part-time-pay-calculator/`,
+      lastModified: buildDate,
+      changeFrequency: "weekly",
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/hourly-rate-calculator/`,
+      lastModified: buildDate,
+      changeFrequency: "weekly",
+      priority: 0.95,
+    },
+    {
       url: `${baseUrl}/about/`,
       lastModified: buildDate,
       changeFrequency: "monthly",

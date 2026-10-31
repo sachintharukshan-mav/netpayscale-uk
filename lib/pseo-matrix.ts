@@ -1,5 +1,29 @@
 import pseoData from "@/data/pseo_cities_roles.json";
 import nhsData from "@/data/nhs_afc_2026.json";
+import trustsData from "@/data/nhs_trusts.json";
+
+export interface LocalTrustSummary {
+  id: string;
+  name: string;
+  shortName: string;
+  code: string;
+  city: string;
+  hcasRate: string;
+  majorHospitals: string[];
+  staffCount: string;
+}
+
+export interface RegionalInsights {
+  regionId: string;
+  regionName: string;
+  icsHealthBoardName: string;
+  onsMedianRent1Bed: number;
+  onsMedianRent2Bed: number;
+  innerLondonRent1Bed: number;
+  commuterAndTransportNote: string;
+  localWorkforceNote: string;
+  localTrusts: LocalTrustSummary[];
+}
 
 export interface PseoEntry {
   slug: string;
@@ -621,20 +645,261 @@ export function getRelatedPseoEntries(current: PseoEntry): {
   };
 }
 
+const REGION_TRUST_IDS: Record<string, string[]> = {
+  "inner-london": [
+    "guys-and-st-thomas",
+    "barts-health",
+    "imperial-college-healthcare",
+    "kings-college-hospital",
+    "uclh",
+    "royal-free-london",
+    "chelsea-and-westminster",
+    "st-georges-university-hospitals",
+    "great-ormond-street",
+    "lewisham-and-greenwich",
+  ],
+  "outer-london": [
+    "london-north-west-university",
+    "barking-havering-redbridge",
+    "croydon-health-services",
+    "kingston-hospital",
+    "epsom-and-st-helier",
+    "hillingdon-hospitals",
+  ],
+  fringe: [
+    "frimley-health",
+    "west-hertfordshire-teaching",
+    "east-and-north-hertfordshire",
+    "royal-surrey-county",
+    "surrey-and-sussex-healthcare",
+    "dartford-and-gravesham",
+  ],
+  manchester: ["manchester-university"],
+  birmingham: ["university-hospitals-birmingham"],
+  leeds: ["leeds-teaching-hospitals", "hull-university-teaching"],
+  newcastle: ["newcastle-upon-tyne-hospitals"],
+  liverpool: ["liverpool-university-hospitals", "wirral-university-teaching"],
+  southampton: [
+    "university-hospital-southampton",
+    "portsmouth-hospitals-university",
+    "oxford-university-hospitals",
+  ],
+  scotland: ["nhs-greater-glasgow-clyde", "nhs-lothian"],
+  "northern-ireland": ["belfast-health-social-care"],
+  bristol: [
+    "university-hospitals-bristol-weston",
+    "north-bristol-nhs-trust",
+    "gloucestershire-hospitals",
+    "royal-devon-university",
+    "university-hospitals-plymouth",
+    "royal-cornwall-hospitals",
+  ],
+  sheffield: ["sheffield-teaching-hospitals"],
+  nottingham: [
+    "nottingham-university-hospitals",
+    "university-hospitals-of-leicester",
+    "united-lincolnshire-hospitals",
+  ],
+  wales: ["cardiff-and-vale-university", "swansea-bay-university"],
+};
+
+const REGIONAL_ECONOMICS: Record<
+  string,
+  {
+    icsHealthBoardName: string;
+    onsMedianRent1Bed: number;
+    onsMedianRent2Bed: number;
+    commuterAndTransportNote: string;
+    localWorkforceNote: string;
+  }
+> = {
+  "inner-london": {
+    icsHealthBoardName: "NHS North Central, South East & North West London ICBs",
+    onsMedianRent1Bed: 1850,
+    onsMedianRent2Bed: 2380,
+    commuterAndTransportNote:
+      "TfL Zone 1–2 Underground & Overground access (approx. £164–£196/mo travelcard); most Inner London teaching trusts offer interest-free annual season ticket loans and cycle-to-work schemes.",
+    localWorkforceNote:
+      "Inner London hosts the UK's highest concentration of tertiary specialist and Shelford Group teaching hospitals. Although the 20% HCAS adds £5,794 to £8,746 gross per year, private 1-bed rents average £1,850/month, meaning many staff commute from Zone 3–5 or share accommodation.",
+  },
+  "outer-london": {
+    icsHealthBoardName: "NHS North East, South West & North West London Outer Borough ICBs",
+    onsMedianRent1Bed: 1480,
+    onsMedianRent2Bed: 1840,
+    commuterAndTransportNote:
+      "TfL Zone 3–6 Rail, Elizabeth Line, and Superloop bus corridors connects major District General Hospitals across Harrow, Romford, Croydon, Kingston, Sutton, and Uxbridge.",
+    localWorkforceNote:
+      "Outer London NHS Trusts pay the 15% HCAS supplement (£4,870 to £6,137/yr) while benefiting from £370/month lower median 1-bed rents compared to Inner London Zone 1–2 postcodes.",
+  },
+  fringe: {
+    icsHealthBoardName: "NHS Frimley, Hertfordshire & West Essex, Surrey Heartlands & Kent ICBs",
+    onsMedianRent1Bed: 1290,
+    onsMedianRent2Bed: 1590,
+    commuterAndTransportNote:
+      "Home Counties M25 commuter belt served by Thameslink, South Western Railway, and GWR; staff parking permits are widely available at acute hospital campuses in Slough, Watford, Guildford, Stevenage, and Dartford.",
+    localWorkforceNote:
+      "The 5% London Fringe HCAS (£1,346 to £2,270/yr) applies to NHS Trusts bordering Greater London in Surrey, Hertfordshire, Berkshire, Essex, and Kent, helping offset Home Counties housing costs.",
+  },
+  manchester: {
+    icsHealthBoardName: "NHS Greater Manchester Integrated Care (GM ICP)",
+    onsMedianRent1Bed: 1050,
+    onsMedianRent2Bed: 1320,
+    commuterAndTransportNote:
+      "Bee Network bus and Metrolink tram corridors connect the Oxford Road Corridor (Manchester Royal Infirmary, RMCH, Saint Mary's), Wythenshawe Hospital, and Salford Royal.",
+    localWorkforceNote:
+      "Greater Manchester operates the UK's largest single NHS Foundation Trust (Manchester University NHS Foundation Trust, R0A, with 28,000+ staff). Even without London HCAS, lower regional rent (£1,050/mo vs £1,850/mo in Inner London) leaves Manchester clinicians with £350–£450/mo higher post-rent disposable cash.",
+  },
+  birmingham: {
+    icsHealthBoardName: "NHS Birmingham and Solihull Integrated Care Board (BSol ICB)",
+    onsMedianRent1Bed: 920,
+    onsMedianRent2Bed: 1160,
+    commuterAndTransportNote:
+      "Direct Cross-City rail link to University Station (adjacent to Queen Elizabeth Hospital Birmingham) and West Midlands Metro links across Edgbaston, Heartlands, Good Hope, and Solihull sites.",
+    localWorkforceNote:
+      "University Hospitals Birmingham (UHB, RRK) is one of Europe's largest clinical academic centres (22,000+ staff). With median 1-bed rents around £920/month, NHS staff in Birmingham retain roughly £480–£580/month more disposable income after rent than Inner London equivalents.",
+  },
+  leeds: {
+    icsHealthBoardName: "NHS West Yorkshire Integrated Care Board",
+    onsMedianRent1Bed: 890,
+    onsMedianRent2Bed: 1110,
+    commuterAndTransportNote:
+      "First Bus hospital shuttle network and Northern Rail commuter routes serving St James's University Hospital ('Jimmy's'), Leeds General Infirmary (LGI), and Chapel Allerton.",
+    localWorkforceNote:
+      "Leeds Teaching Hospitals NHS Trust (RR8) employs 20,000+ staff across major tertiary cancer, paediatric, and trauma centres. West Yorkshire's £890/month median 1-bed rent provides strong real-terms purchasing power on standard Agenda for Change pay.",
+  },
+  newcastle: {
+    icsHealthBoardName: "NHS North East and North Cumbria Integrated Care Board (NENC ICB)",
+    onsMedianRent1Bed: 750,
+    onsMedianRent2Bed: 940,
+    commuterAndTransportNote:
+      "Tyne & Wear Metro stations at Haymarket (Royal Victoria Infirmary) and South Gosforth / Longbenton (Freeman Hospital) offer low-cost rapid transit across Tyneside and Northumberland.",
+    localWorkforceNote:
+      "Newcastle upon Tyne Hospitals NHS Foundation Trust (RTD) is twice CQC 'Outstanding'-rated and employs 15,000+ staff. At £750/month median 1-bed rent—the most affordable major teaching hospital city in England—Newcastle NHS staff enjoy the highest post-housing disposable pay ratio in the country.",
+  },
+  liverpool: {
+    icsHealthBoardName: "NHS Cheshire and Merseyside Integrated Care Board",
+    onsMedianRent1Bed: 810,
+    onsMedianRent2Bed: 1010,
+    commuterAndTransportNote:
+      "Merseyrail network and Knowledge Quarter bus corridors linking the new Royal Liverpool University Hospital, Aintree Major Trauma Centre, Broadgreen, Alder Hey, and Arrowe Park (Wirral).",
+    localWorkforceNote:
+      "Liverpool's Knowledge Quarter houses world-leading acute, infectious disease, paediatric, and cardiothoracic NHS centres. Median 1-bed private rent of £810/month gives Merseyside NHS staff over £600/month in real disposable savings after rent compared to Inner London.",
+  },
+  southampton: {
+    icsHealthBoardName: "NHS Hampshire and Isle of Wight Integrated Care Board (HIOW ICB)",
+    onsMedianRent1Bed: 1120,
+    onsMedianRent2Bed: 1390,
+    commuterAndTransportNote:
+      "Bluestar hospital bus routes and South Western Railway links across Southampton General Hospital, Princess Anne Hospital, and Queen Alexandra Hospital (Portsmouth).",
+    localWorkforceNote:
+      "University Hospital Southampton (RHM) is the South Coast's primary Major Trauma and Wessex specialist tertiary centre (12,500+ staff). While Southampton sits outside the London Fringe HCAS zone, its £1,120/month median 1-bed rent remains £730/month below Inner London.",
+  },
+  scotland: {
+    icsHealthBoardName: "NHS Scotland Territorial Health Boards (NHS Greater Glasgow & Clyde / NHS Lothian)",
+    onsMedianRent1Bed: 960,
+    onsMedianRent2Bed: 1240,
+    commuterAndTransportNote:
+      "ScotRail, Glasgow Subway / First Bus to Queen Elizabeth University Hospital (QEUH), and Lothian Buses serving the Royal Infirmary of Edinburgh (Little France) and Western General.",
+    localWorkforceNote:
+      "NHS Scotland operates a reduced 35.0-hour standard full-time working week (1,825 hours/year vs 1,955.36 hours/year in England—2.5 hours extra free time every week for full WTE salary) alongside Scottish Parliament devolved 6-band Income Tax (19%–48% under tax code S1257L).",
+  },
+  "northern-ireland": {
+    icsHealthBoardName: "Health and Social Care Northern Ireland (HSCNI - Belfast, South Eastern, Northern, Southern & Western Trusts)",
+    onsMedianRent1Bed: 790,
+    onsMedianRent2Bed: 980,
+    commuterAndTransportNote:
+      "Translink Glider (G1/G2) and NI Railways corridors directly serving Royal Victoria Hospital (Belfast), Belfast City Hospital, Mater Infirmorum, and Ulster Hospital.",
+    localWorkforceNote:
+      "Health and Social Care Northern Ireland (HSCNI) integrates acute hospital and social care under unified Trusts led by Belfast Health & Social Care Trust (20,000+ staff). Standard UK PAYE (1257L) applies alongside affordable £790/month median 1-bed rents.",
+  },
+  bristol: {
+    icsHealthBoardName: "NHS Bristol, North Somerset and South Gloucestershire ICB (BNSSG)",
+    onsMedianRent1Bed: 1260,
+    onsMedianRent2Bed: 1560,
+    commuterAndTransportNote:
+      "MetroBus (m1/m2/m3) and Hospital Shuttle buses connecting Bristol Royal Infirmary (BRI city centre), Southmead Hospital (Brunel Building, North Bristol), and Weston-super-Mare.",
+    localWorkforceNote:
+      "Bristol is served by two major acute trusts—University Hospitals Bristol & Weston (RA7) and North Bristol NHS Trust at Southmead (RV3)—employing 22,500+ staff combined. Despite £1,260/month median 1-bed rents, Bristol net disposable pay after rent still exceeds Inner London.",
+  },
+  sheffield: {
+    icsHealthBoardName: "NHS South Yorkshire Integrated Care Board",
+    onsMedianRent1Bed: 780,
+    onsMedianRent2Bed: 970,
+    commuterAndTransportNote:
+      "Sheffield Supertram and H1 inter-site hospital shuttle bus linking the Royal Hallamshire Hospital, Weston Park Cancer Centre, Jessop Wing, and Northern General Hospital.",
+    localWorkforceNote:
+      "Sheffield Teaching Hospitals NHS Foundation Trust (RHQ) employs 18,500+ staff across five major hospitals. With median 1-bed rents at £780/month, South Yorkshire offers one of the highest net-pay-to-housing affordability ratios in the NHS.",
+  },
+  nottingham: {
+    icsHealthBoardName: "NHS Nottingham and Nottinghamshire Integrated Care Board",
+    onsMedianRent1Bed: 860,
+    onsMedianRent2Bed: 1080,
+    commuterAndTransportNote:
+      "NET Nottingham Express Transit tram stop directly on campus at Queen's Medical Centre (QMC) plus Medilink electric shuttle buses connecting QMC and Nottingham City Hospital.",
+    localWorkforceNote:
+      "Nottingham University Hospitals NHS Trust (RX1, 19,000+ staff) operates the East Midlands Major Trauma Centre at Queen's Medical Centre. Median 1-bed rents of £860/month leave Nottingham clinicians with nearly £1,000/month lower rent outgoings than Inner London.",
+  },
+  wales: {
+    icsHealthBoardName: "NHS Wales / GIG Cymru Local Health Boards (Cardiff & Vale / Swansea Bay / Betsi Cadwaladr)",
+    onsMedianRent1Bed: 840,
+    onsMedianRent2Bed: 1060,
+    commuterAndTransportNote:
+      "Transport for Wales (TfW) South Wales Metro and Cardiff Bus routes serving University Hospital of Wales (Heath Park, Cardiff), Llandough, and Morriston Hospital (Swansea).",
+    localWorkforceNote:
+      "NHS Wales (GIG Cymru) operates integrated University Health Boards including Cardiff and Vale (7A4) and Swansea Bay (7A6). Welsh taxpayers pay standard UK Income Tax rates under Welsh Revenue Authority prefix C1257L (20%/40%/45%), combined with an affordable £840/month median 1-bed rent.",
+  },
+};
+
+export function getRegionalInsights(entry: PseoEntry): RegionalInsights {
+  const trustIds = REGION_TRUST_IDS[entry.regionId] ?? ["manchester-university"];
+  const localTrusts: LocalTrustSummary[] = trustIds
+    .map((id) =>
+      (trustsData as LocalTrustSummary[]).find((t) => t.id === id)
+    )
+    .filter((t): t is LocalTrustSummary => Boolean(t));
+
+  const econ = REGIONAL_ECONOMICS[entry.regionId] ?? {
+    icsHealthBoardName: "NHS Regional Integrated Care Board",
+    onsMedianRent1Bed: 920,
+    onsMedianRent2Bed: 1150,
+    commuterAndTransportNote:
+      "Local NHS Trust public transport, park-and-ride shuttle, and cycle-to-work schemes apply.",
+    localWorkforceNote:
+      "Standard UK Agenda for Change national pay spine applies with lower regional housing costs than Greater London.",
+  };
+
+  return {
+    regionId: entry.regionId,
+    regionName: entry.regionName,
+    icsHealthBoardName: econ.icsHealthBoardName,
+    onsMedianRent1Bed: econ.onsMedianRent1Bed,
+    onsMedianRent2Bed: econ.onsMedianRent2Bed,
+    innerLondonRent1Bed: 1850,
+    commuterAndTransportNote: econ.commuterAndTransportNote,
+    localWorkforceNote: econ.localWorkforceNote,
+    localTrusts,
+  };
+}
+
 export function getRegionalEditorial(entry: PseoEntry) {
   const isLondon = entry.hcasZone === "inner-london" || entry.hcasZone === "outer-london";
   const isFringe = entry.hcasZone === "fringe";
   const isScotland = entry.regionId === "scotland";
+  const insights = getRegionalInsights(entry);
+  const primaryTrustNames = insights.localTrusts
+    .slice(0, 2)
+    .map((t) => t.shortName)
+    .join(" and ");
 
   return {
     hcasExplanation: isLondon
-      ? `As this post is situated within ${entry.regionName}, your salary includes the statutory High Cost Area Supplement (HCAS). Under Agenda for Change Annex 9, staff working in ${entry.hcasZone === "inner-london" ? "Inner London receive a 20% allowance (minimum £5,794, maximum £8,746)" : "Outer London receive a 15% allowance (minimum £4,870, maximum £6,137)"}. This supplement is pensionable under NHS pension regulations.`
+      ? `As this post is situated within ${entry.regionName} (${insights.icsHealthBoardName}), your salary includes the statutory High Cost Area Supplement (HCAS). Under Agenda for Change Annex 9, staff working at trusts such as ${primaryTrustNames} in ${entry.hcasZone === "inner-london" ? "Inner London receive a 20% allowance (minimum £5,794, maximum £8,746)" : "Outer London receive a 15% allowance (minimum £4,870, maximum £6,137)"}. This supplement is fully pensionable under NHSBSA regulations.`
       : isFringe
-      ? `This post falls within the London Fringe boundary (Fringe zone), entitling staff to a 5% High Cost Area Supplement (minimum £1,346, maximum £2,270). This helps offset elevated living and commuting expenses in regions bordering Greater London.`
+      ? `This post falls within the London Fringe boundary (${insights.icsHealthBoardName}), entitling staff at employers such as ${primaryTrustNames} to a 5% High Cost Area Supplement (minimum £1,346, maximum £2,270). This helps offset Home Counties commuting and private rental costs (averaging £${insights.onsMedianRent1Bed.toLocaleString("en-GB")}/month for a 1-bed flat).`
       : isScotland
-      ? `In NHS Scotland, Agenda for Change salaries follow Scottish national agreements. Scottish taxpayers fall under the Scottish Parliament's devolved income tax bands (Starter 19%, Basic 20%, Intermediate 21%, Higher 42%, Advanced 45%, and Top 48%).`
-      : `Staff in ${entry.regionName} are paid under the standard UK Agenda for Change national pay scales without London Weighting. Living expenses and housing costs in this region are significantly lower than Greater London, providing favorable real-terms purchasing power.`,
-    careerProgression: `For a ${entry.roleName} in ${entry.band}, annual pay progression occurs through experience step-points. Newly qualified practitioners start at the entry point and progress upon completing designated years of service, subject to local statutory appraisal and competency sign-offs.`,
-    pensionContext: `All NHS employees are contractually enrolled into the 2015 NHS Pension Scheme (Career Average Revalued Earnings - CARE). Employee contribution rates range from 5.2% up to 12.5% based on actual earnings. Contributions are deducted before Income Tax under Net Pay arrangements, providing automatic 20% to 40% tax relief at source.`,
+      ? `In NHS Scotland (${insights.icsHealthBoardName}, including ${primaryTrustNames}), Agenda for Change staff work a standard 35.0-hour full-time week (2.5 hours shorter than NHS England's 37.5-hour week for full WTE salary) and are taxed under the Scottish Parliament's 6-band Income Tax structure (Starter 19%, Basic 20%, Intermediate 21%, Higher 42%, Advanced 45%, and Top 48% via tax code S1257L).`
+      : `Staff in ${entry.regionName} (${insights.icsHealthBoardName}, including ${primaryTrustNames}) are paid on the standard UK Agenda for Change national pay spine without London Weighting. However, with ONS median 1-bed private rent in ${entry.regionName} at £${insights.onsMedianRent1Bed.toLocaleString("en-GB")}/month (versus £1,850/month in Inner London), local clinicians retain significantly higher disposable take-home pay after housing costs.`,
+    careerProgression: `For a ${entry.roleName} in ${entry.band} across ${entry.regionName}, annual pay progression occurs through statutory experience step-points. Newly appointed practitioners start at the ${entry.band} entry spine point and unlock step increments upon completing designated years of reckonable NHS service and local appraisal sign-offs.`,
+    pensionContext: `All ${entry.regionName} NHS employees are automatically enrolled into the 2015 NHS Pension Scheme (Career Average Revalued Earnings - CARE). Employee contribution tiers range from 5.2% to 12.5% of pensionable pay and are deducted before Income Tax under Net-Pay arrangements, providing automatic 20% to 45% tax relief at source.`,
   };
 }

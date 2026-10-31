@@ -16,6 +16,7 @@ interface CalculatorProps {
   initialHcasZone?: "inner-london" | "outer-london" | "fringe" | "standard";
   initialRoleTitle?: string;
   initialTaxCode?: "1257L" | "S1257L" | "C1257L" | "BR" | "D0";
+  initialContractedHours?: number;
 }
 
 export default function Calculator({
@@ -24,12 +25,13 @@ export default function Calculator({
   initialHcasZone = "standard",
   initialRoleTitle,
   initialTaxCode = "1257L",
+  initialContractedHours = 37.5,
 }: CalculatorProps) {
   const { t, language, currentLanguage } = useLanguage();
   const [band, setBand] = useState<string>(initialBand);
   const [stepIndex, setStepIndex] = useState<number>(initialStepIndex);
   const [hcasZone, setHcasZone] = useState<"inner-london" | "outer-london" | "fringe" | "standard">(initialHcasZone);
-  const [contractedHours, setContractedHours] = useState<number>(37.5);
+  const [contractedHours, setContractedHours] = useState<number>(initialContractedHours);
   const [nightHours, setNightHours] = useState<number>(11.5);
   const [sundayHours, setSundayHours] = useState<number>(2.88);
   const [rotaPreset, setRotaPreset] = useState<"standard" | "acute" | "none">("standard");
@@ -49,7 +51,8 @@ export default function Calculator({
     if (typeof initialStepIndex === "number") setStepIndex(initialStepIndex);
     if (initialHcasZone) setHcasZone(initialHcasZone);
     if (initialTaxCode) setTaxCode(initialTaxCode);
-  }, [initialBand, initialStepIndex, initialHcasZone, initialTaxCode]);
+    if (typeof initialContractedHours === "number") setContractedHours(initialContractedHours);
+  }, [initialBand, initialStepIndex, initialHcasZone, initialTaxCode, initialContractedHours]);
 
   // Support external triggers (e.g. quick select chips)
   useEffect(() => {

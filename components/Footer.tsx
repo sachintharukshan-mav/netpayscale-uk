@@ -55,6 +55,21 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/hourly-rate-calculator/" className="hover:text-zinc-950 transition-colors font-medium text-[#005EB8]">
+                  NHS Hourly Pay Rates 2026/27 Chart
+                </Link>
+              </li>
+              <li>
+                <Link href="/part-time-pay-calculator/" className="hover:text-zinc-950 transition-colors font-medium text-[#005EB8]">
+                  NHS Part-Time &amp; Pro-Rata Calculator
+                </Link>
+              </li>
+              <li>
+                <Link href="/scotland-pay-calculator/" className="hover:text-zinc-950 transition-colors font-medium text-[#005EB8]">
+                  NHS Scotland 35-Hour Week Calculator
+                </Link>
+              </li>
+              <li>
                 <Link href="/pension-calculator/" className="hover:text-zinc-950 transition-colors">
                   NHS Pension (2015 CARE) Calculator
                 </Link>
