@@ -2,13 +2,14 @@
 
 import React, { useState, useMemo } from "react";
 import Link from "next/link";
-import { PseoEntry } from "@/lib/pseo-matrix";
+import { PseoEntry, RoleHubEntry } from "@/lib/pseo-matrix";
 
 interface PseoDirectoryProps {
   entries: PseoEntry[];
+  roleHubs?: RoleHubEntry[];
 }
 
-export default function PseoDirectory({ entries }: PseoDirectoryProps) {
+export default function PseoDirectory({ entries, roleHubs = [] }: PseoDirectoryProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState("all");
 
@@ -184,6 +185,45 @@ export default function PseoDirectory({ entries }: PseoDirectoryProps) {
           <p className="text-xs text-zinc-500 font-mono">
             Showing 24 of {filteredEntries.length} matching guides. Use the search box above or expand the complete index below.
           </p>
+        </div>
+      )}
+
+      {/* National Job Role Pillar Hubs (Crawl-Depth-1 from Homepage for all 41 Clinical Careers) */}
+      {roleHubs.length > 0 && (
+        <div className="rounded-xl border border-zinc-200/90 bg-white p-5 shadow-2xs space-y-3">
+          <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 border-b border-zinc-100 pb-2.5">
+            <div>
+              <h4 className="text-sm sm:text-base font-bold text-zinc-950">
+                National NHS Job Role Salary Guides (All {roleHubs.length} Clinical &amp; Leadership Careers)
+              </h4>
+              <p className="text-xs text-zinc-500">
+                Direct national 2026/27 pay scales, hourly rates, and net take-home pay by job title (Bands 2 to 9)
+              </p>
+            </div>
+            <Link
+              href="/roles/"
+              className="text-xs font-semibold text-[#005EB8] hover:underline shrink-0"
+            >
+              Open Full Job Roles Directory →
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+            {roleHubs.map((role) => (
+              <Link
+                key={role.roleSlug}
+                href={`/roles/${role.roleSlug}/`}
+                className="group flex items-center justify-between rounded-lg border border-zinc-200/80 bg-zinc-50/60 px-3 py-2 text-xs hover:border-[#005EB8] hover:bg-white transition-all"
+              >
+                <span className="truncate pr-2 text-zinc-800 group-hover:text-[#005EB8] font-medium">
+                  <strong className="font-mono text-zinc-950">{role.band.replace("Band ", "B")}</strong>{" "}
+                  {role.roleName}
+                </span>
+                <span className="font-mono text-[10px] text-zinc-400 group-hover:text-[#005EB8] shrink-0">
+                  →
+                </span>
+              </Link>
+            ))}
+          </div>
         </div>
       )}
 

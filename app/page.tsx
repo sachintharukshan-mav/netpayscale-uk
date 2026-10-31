@@ -12,11 +12,12 @@ import AffiliateCards from "@/components/AffiliateCards";
 import AdPlaceholder from "@/components/AdPlaceholder";
 import FAQSection from "@/components/FAQSection";
 import PseoDirectory from "@/components/PseoDirectory";
-import { getAllPseoEntries } from "@/lib/pseo-matrix";
+import { getAllPseoEntries, getAllRoleHubs } from "@/lib/pseo-matrix";
 import { calculateNHSPay } from "@/lib/calculator";
 
 export default function HomePage() {
   const pseoEntries = getAllPseoEntries();
+  const roleHubs = getAllRoleHubs();
 
   // Baseline calculation for the default ESR Payslip Replica (Band 5 Intermediate Staff Nurse)
   const defaultEsrResult = calculateNHSPay({
@@ -145,8 +146,8 @@ export default function HomePage() {
           <HcasGuide />
         </section>
 
-        {/* 12. PROGRAMMATIC SEO REGIONAL GUIDES DIRECTORY */}
-        <PseoDirectory entries={pseoEntries} />
+        {/* 12. PROGRAMMATIC SEO REGIONAL & NATIONAL ROLE GUIDES DIRECTORY */}
+        <PseoDirectory entries={pseoEntries} roleHubs={roleHubs} />
 
         {/* AD SLOT 5: Pre-FAQ Organic Search Anchor Slot */}
         <AdPlaceholder

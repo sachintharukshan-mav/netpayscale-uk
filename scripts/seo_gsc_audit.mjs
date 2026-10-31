@@ -391,7 +391,7 @@ console.log('\n--- Checking Internal Links for Trailing Slash Compliance ---');
 let internalLinksChecked = 0;
 let internalLinksNonCompliant = 0;
 
-const hrefMatches = [...homeHtml.matchAll(/href="(\/(?:calculator|bands)\/[^"#]+)"/g)].map(m => m[1]);
+const hrefMatches = [...homeHtml.matchAll(/href="(\/(?:calculator|bands|roles)\/[^"#]*)"/g)].map(m => m[1]);
 for (const href of hrefMatches) {
   internalLinksChecked++;
   if (!href.endsWith('/')) {
