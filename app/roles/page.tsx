@@ -112,6 +112,12 @@ export default function RolesDirectoryPage() {
     };
   });
 
+  const b2Summary = roleSummaries.find((r) => r.role.band === "Band 2")!;
+  const b4Summary = roleSummaries.find((r) => r.role.band === "Band 4")!;
+  const b5Summary = roleSummaries.find((r) => r.role.band === "Band 5")!;
+  const b6Summary = roleSummaries.find((r) => r.role.band === "Band 6")!;
+  const b7Summary = roleSummaries.find((r) => r.role.band === "Band 7")!;
+
   const schemaMarkup = {
     "@context": "https://schema.org",
     "@graph": [
@@ -157,7 +163,7 @@ export default function RolesDirectoryPage() {
             name: "How are NHS job roles assigned to Agenda for Change pay bands in 2026/27?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Every NHS Agenda for Change job role is evaluated using the statutory NHS Job Evaluation Scheme (JES), which scores posts across 16 factors including clinical knowledge, registration requirements, patient accountability, and physical/emotional effort. Healthcare Assistants and Phlebotomists sit in Band 2 (£25,272/yr), Nursing Associates and Pharmacy Technicians sit in Band 4 (£28,433–£31,264/yr), newly qualified Nurses, Midwives, Paramedics, and AHPs enter at Band 5 (£32,073–£39,043/yr), Specialists and Junior Sisters sit in Band 6 (£39,959–£48,117/yr), and Ward Managers, Pharmacists, and ACPs sit in Band 7 (£49,408–£56,536/yr).",
+              text: `Every NHS Agenda for Change job role is evaluated using the statutory NHS Job Evaluation Scheme (JES), which scores posts across 16 factors including clinical knowledge, registration requirements, patient accountability, and physical/emotional effort. Healthcare Assistants and Phlebotomists sit in Band 2 (${formatCurrency(b2Summary.entryCalc.baseSalary.annual)}/yr), Nursing Associates and Pharmacy Technicians sit in Band 4 (${formatCurrency(b4Summary.entryCalc.baseSalary.annual)}–${formatCurrency(b4Summary.topCalc.baseSalary.annual)}/yr), newly qualified Nurses, Midwives, Paramedics, and AHPs enter at Band 5 (${formatCurrency(b5Summary.entryCalc.baseSalary.annual)}–${formatCurrency(b5Summary.topCalc.baseSalary.annual)}/yr), Specialists and Junior Sisters sit in Band 6 (${formatCurrency(b6Summary.entryCalc.baseSalary.annual)}–${formatCurrency(b6Summary.topCalc.baseSalary.annual)}/yr), and Ward Managers, Pharmacists, and ACPs sit in Band 7 (${formatCurrency(b7Summary.entryCalc.baseSalary.annual)}–${formatCurrency(b7Summary.topCalc.baseSalary.annual)}/yr).`,
             },
           },
           {
@@ -165,7 +171,7 @@ export default function RolesDirectoryPage() {
             name: "What is the starting salary and net take-home pay for an NHS Band 5 Nurse or Paramedic in 2026/27?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Under the 2026/27 Agenda for Change pay settlement (+3.3%), a newly qualified Band 5 Staff Nurse, Paramedic, Midwife, Physiotherapist, or Radiographer starts on £32,073 gross per year (£16.40/hr) outside London, taking home £2,080/month net after an 8.3% NHS CARE Pension deduction, PAYE Income Tax, and National Insurance. In Inner London (+20% HCAS), starting gross pay is £38,488/year (£2,377/month net).",
+              text: `Under the 2026/27 Agenda for Change pay settlement (+3.3%), a newly qualified Band 5 Staff Nurse, Paramedic, Midwife, Physiotherapist, or Radiographer starts on ${formatCurrency(b5Summary.entryCalc.baseSalary.annual)} gross per year (${formatHourlyRate(b5Summary.entryCalc.hourlyRate)}) outside London, taking home ${formatCurrency(b5Summary.entryCalc.netPay.monthly)}/month net after an ${b5Summary.entryCalc.pensionTierLabel} NHS CARE Pension deduction, PAYE Income Tax, and National Insurance. In Inner London (+20% HCAS), starting gross pay is ${formatCurrency(b5Summary.innerLondonEntry.grossPay.annual)}/year (${formatCurrency(b5Summary.innerLondonEntry.netPay.monthly)}/month net).`,
             },
           },
           {
@@ -173,7 +179,7 @@ export default function RolesDirectoryPage() {
             name: "Which NHS clinical roles automatically progress from Band 5 to Band 6?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Newly Qualified Midwives (under Annex 20) and Newly Qualified Paramedics (NQPs) enter the NHS at Band 5 and complete a structured 12-to-24-month preceptorship portfolio, after which they transition directly into Band 6 (£39,959 to £48,117/year). Hospital Pharmacists typically complete their foundation year and progress from Band 6 into Band 7 Specialist Pharmacist roles (£49,408 to £56,536/year).",
+              text: `Newly Qualified Midwives (under Annex 20) and Newly Qualified Paramedics (NQPs) enter the NHS at Band 5 and complete a structured 12-to-24-month preceptorship portfolio, after which they transition directly into Band 6 (${formatCurrency(b6Summary.entryCalc.baseSalary.annual)} to ${formatCurrency(b6Summary.topCalc.baseSalary.annual)}/year). Hospital Pharmacists typically complete their foundation year and progress from Band 6 into Band 7 Specialist Pharmacist roles (${formatCurrency(b7Summary.entryCalc.baseSalary.annual)} to ${formatCurrency(b7Summary.topCalc.baseSalary.annual)}/year).`,
             },
           },
         ],
@@ -190,7 +196,7 @@ export default function RolesDirectoryPage() {
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-1.5 text-xs text-zinc-500">
+        <nav className="flex flex-wrap items-center gap-1.5 text-xs text-zinc-500">
           <Link href="/" className="hover:text-zinc-950 transition-colors">
             Home
           </Link>
@@ -203,10 +209,10 @@ export default function RolesDirectoryPage() {
         <AdPlaceholder slotId="roles-hub-top" format="leaderboard" />
 
         {/* Hero & Position 0 Direct Answer Box */}
-        <section className="rounded-xl border border-zinc-200/90 bg-white p-6 sm:p-7 shadow-xs space-y-6">
+        <section className="rounded-xl border border-zinc-200/90 bg-white p-5 sm:p-7 shadow-xs space-y-6 overflow-hidden">
           <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6 border-b border-zinc-100 pb-6">
-            <div className="space-y-2.5 max-w-3xl">
-              <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 border border-blue-200 px-3 py-1 text-xs font-semibold text-[#005EB8]">
+            <div className="space-y-2.5 max-w-3xl min-w-0">
+              <div className="inline-flex flex-wrap items-center gap-1.5 rounded-full bg-blue-50 border border-blue-200 px-3 py-1 text-[11px] sm:text-xs font-semibold text-[#005EB8]">
                 <span>
                   2026/27 Agenda for Change (+3.3% Official Uplift) • 41 NHS Careers
                 </span>
@@ -225,36 +231,36 @@ export default function RolesDirectoryPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-3 shrink-0">
-              <div className="rounded-lg bg-zinc-50 border border-zinc-200/80 p-3.5 min-w-[160px]">
-                <span className="text-[11px] font-medium text-zinc-500 block">
+            <div className="grid grid-cols-2 gap-2.5 sm:gap-3 w-full lg:w-auto shrink-0">
+              <div className="rounded-lg bg-zinc-50 border border-zinc-200/80 p-3 sm:p-3.5 min-w-0">
+                <span className="text-[11px] font-medium text-zinc-500 block truncate">
                   Band 5 RN / NQP Entry
                 </span>
-                <div className="text-xl sm:text-2xl font-extrabold text-emerald-700 font-mono tabular-nums mt-0.5">
-                  £2,080
+                <div className="text-lg sm:text-2xl font-extrabold text-emerald-700 font-mono tabular-nums mt-0.5">
+                  {formatCurrency(b5Summary.entryCalc.netPay.monthly)}
                   <span className="text-xs font-normal text-zinc-500"> /mo</span>
                 </div>
-                <span className="text-[11px] font-mono text-zinc-500 block mt-0.5">
-                  Gross: £32,073 (£16.40/hr)
+                <span className="text-[10px] sm:text-[11px] font-mono text-zinc-500 block mt-0.5 truncate">
+                  Gross: {formatCurrency(b5Summary.entryCalc.baseSalary.annual)} ({formatHourlyRate(b5Summary.entryCalc.hourlyRate)})
                 </span>
               </div>
-              <div className="rounded-lg bg-zinc-50 border border-zinc-200/80 p-3.5 min-w-[160px]">
-                <span className="text-[11px] font-medium text-zinc-500 block">
+              <div className="rounded-lg bg-zinc-50 border border-zinc-200/80 p-3 sm:p-3.5 min-w-0">
+                <span className="text-[11px] font-medium text-zinc-500 block truncate">
                   Band 6 Sister / Paramedic
                 </span>
-                <div className="text-xl sm:text-2xl font-extrabold text-zinc-950 font-mono tabular-nums mt-0.5">
-                  £2,489
+                <div className="text-lg sm:text-2xl font-extrabold text-zinc-950 font-mono tabular-nums mt-0.5">
+                  {formatCurrency(b6Summary.entryCalc.netPay.monthly)}
                   <span className="text-xs font-normal text-zinc-500"> /mo</span>
                 </div>
-                <span className="text-[11px] font-mono text-zinc-500 block mt-0.5">
-                  Gross: £39,959 (£20.44/hr)
+                <span className="text-[10px] sm:text-[11px] font-mono text-zinc-500 block mt-0.5 truncate">
+                  Gross: {formatCurrency(b6Summary.entryCalc.baseSalary.annual)} ({formatHourlyRate(b6Summary.entryCalc.hourlyRate)})
                 </span>
               </div>
             </div>
           </div>
 
           {/* Position 0 Executive Answer Box */}
-          <div className="rounded-xl bg-emerald-50/80 border border-emerald-200/90 p-5 text-xs text-emerald-950 leading-relaxed shadow-2xs space-y-2">
+          <div className="rounded-xl bg-emerald-50/80 border border-emerald-200/90 p-4 sm:p-5 text-xs text-emerald-950 leading-relaxed shadow-2xs space-y-2">
             <div className="flex items-center gap-1.5 font-bold text-emerald-900">
               <span className="w-2 h-2 rounded-full bg-cash-emerald pulse-glow-dot shrink-0" />
               <span>
@@ -265,24 +271,24 @@ export default function RolesDirectoryPage() {
               Under the <strong>2026/27 NHS Agenda for Change</strong> pay
               structure (+3.3% consolidated award), clinical support staff (
               <strong>Healthcare Assistants, Phlebotomists</strong>) earn{" "}
-              <strong>£25,272/yr</strong> (£1,729/mo net);{" "}
+              <strong>{formatCurrency(b2Summary.entryCalc.baseSalary.annual)}/yr</strong> ({formatCurrency(b2Summary.entryCalc.netPay.monthly)}/mo net);{" "}
               <strong>Nursing Associates &amp; Pharmacy Technicians</strong>{" "}
-              (Band 4) earn <strong>£28,433–£31,264/yr</strong> (£1,910–£2,053/mo
+              (Band 4) earn <strong>{formatCurrency(b4Summary.entryCalc.baseSalary.annual)}–{formatCurrency(b4Summary.topCalc.baseSalary.annual)}/yr</strong> ({formatCurrency(b4Summary.entryCalc.netPay.monthly)}–{formatCurrency(b4Summary.topCalc.netPay.monthly)}/mo
               net); newly qualified{" "}
               <strong>
                 Nurses, Midwives, Paramedics, Physiotherapists &amp; Radiographers
               </strong>{" "}
-              (Band 5) earn <strong>£32,073–£39,043/yr</strong> (£2,080–£2,442/mo
+              (Band 5) earn <strong>{formatCurrency(b5Summary.entryCalc.baseSalary.annual)}–{formatCurrency(b5Summary.topCalc.baseSalary.annual)}/yr</strong> ({formatCurrency(b5Summary.entryCalc.netPay.monthly)}–{formatCurrency(b5Summary.topCalc.netPay.monthly)}/mo
               net); <strong>Junior Sisters &amp; Senior Paramedics</strong> (Band
-              6) earn <strong>£39,959–£48,117/yr</strong> (£2,489–£2,913/mo net);
+              6) earn <strong>{formatCurrency(b6Summary.entryCalc.baseSalary.annual)}–{formatCurrency(b6Summary.topCalc.baseSalary.annual)}/yr</strong> ({formatCurrency(b6Summary.entryCalc.netPay.monthly)}–{formatCurrency(b6Summary.topCalc.netPay.monthly)}/mo net);
               and <strong>Ward Managers, Pharmacists &amp; ACPs</strong> (Band 7)
-              earn <strong>£49,408–£56,536/yr</strong> (£2,980–£3,275/mo net).
+              earn <strong>{formatCurrency(b7Summary.entryCalc.baseSalary.annual)}–{formatCurrency(b7Summary.topCalc.baseSalary.annual)}/yr</strong> ({formatCurrency(b7Summary.entryCalc.netPay.monthly)}–{formatCurrency(b7Summary.topCalc.netPay.monthly)}/mo net).
             </p>
           </div>
 
           {/* 1-Tap WhatsApp Share */}
           <ShareBreakdownButton
-            shareText="NHS 2026/27 Job Role Salary Directory (41 Clinical Careers): Band 2 HCA £1,729/mo net, Band 4 RNA £1,910/mo, Band 5 Nurse/Paramedic £2,080/mo, Band 6 Sister £2,489/mo, Band 7 Ward Manager £2,980/mo."
+            shareText={`NHS 2026/27 Job Role Salary Directory (41 Clinical Careers): Band 2 HCA ${formatCurrency(b2Summary.entryCalc.netPay.monthly)}/mo net, Band 4 RNA ${formatCurrency(b4Summary.entryCalc.netPay.monthly)}/mo, Band 5 Nurse/Paramedic ${formatCurrency(b5Summary.entryCalc.netPay.monthly)}/mo, Band 6 Sister ${formatCurrency(b6Summary.entryCalc.netPay.monthly)}/mo, Band 7 Ward Manager ${formatCurrency(b7Summary.entryCalc.netPay.monthly)}/mo.`}
             url={canonicalUrl}
             variant="light"
             label="Share NHS 2026/27 Job Role Salary Directory with Colleagues"
@@ -411,7 +417,7 @@ export default function RolesDirectoryPage() {
         <AdPlaceholder slotId="roles-hub-mid" format="in-content" />
 
         {/* Master 41-Role Comparison Table */}
-        <section className="rounded-xl border border-zinc-200/90 bg-white p-6 sm:p-7 shadow-xs space-y-4">
+        <section className="rounded-xl border border-zinc-200/90 bg-white p-5 sm:p-7 shadow-xs space-y-4 overflow-hidden">
           <div className="space-y-1">
             <h2 className="text-base sm:text-lg font-bold text-zinc-950">
               Complete 2026/27 NHS Job Role Salary &amp; Net Take-Home Master

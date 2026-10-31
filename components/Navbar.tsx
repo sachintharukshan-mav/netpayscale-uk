@@ -33,70 +33,64 @@ export function Navbar() {
         </div>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center gap-1 whitespace-nowrap">
           <Link
             href="/"
-            className="px-3 py-1.5 transition-all duration-150 bg-nhs-blue text-white font-semibold text-sm rounded-lg shadow-xs active:scale-95"
+            className="px-3 py-1.5 transition-all duration-150 bg-nhs-blue text-white font-semibold text-sm rounded-lg shadow-xs active:scale-95 whitespace-nowrap"
           >
             {t("payCalculator", "Pay Calculator")}
           </Link>
           <Link
             href="/bands/band-5/"
-            className="px-3 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95"
+            className="px-2.5 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95 whitespace-nowrap"
           >
             {t("bandHubs", "Band 5–9 Hubs")}
           </Link>
           <Link
             href="/roles/"
-            className="px-3 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95"
+            className="px-2.5 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95 whitespace-nowrap"
           >
             Job Roles
           </Link>
           <Link
             href="/pension-calculator/"
-            className="px-3 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95"
+            className="px-2.5 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95 whitespace-nowrap"
           >
             {t("pension", "Pension")}
           </Link>
           <Link
             href="/maternity-pay-calculator/"
-            className="px-3 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95"
+            className="px-2.5 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95 whitespace-nowrap"
           >
             {t("maternityPay", "Maternity Pay")}
           </Link>
           <Link
             href="/annual-leave-calculator/"
-            className="px-3 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95"
+            className="hidden xl:inline-block px-2.5 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95 whitespace-nowrap"
           >
             {t("annualLeave", "Annual Leave")}
           </Link>
           <Link
             href="/bank-shift-calculator/"
-            className="px-3 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95"
+            className="px-2.5 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95 whitespace-nowrap"
           >
             {t("bankShift", "Bank & Overtime")}
           </Link>
           <Link
             href="/sick-pay-calculator/"
-            className="hidden xl:inline-block px-3 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95"
+            className="hidden 2xl:inline-block px-2.5 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95 whitespace-nowrap"
           >
             {t("sickPay", "Sick Pay")}
           </Link>
           <Link
             href="/pay-rise-backpay-calculator/"
-            className="hidden xl:inline-block px-3 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95"
+            className="hidden 2xl:inline-block px-2.5 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95 whitespace-nowrap"
           >
             {t("backPay", "Back Pay")}
           </Link>
           <Link
-            href="/promotion-calculator/"
-            className="hidden 2xl:inline-block px-3 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95"
-          >
-            {t("promotion", "Promotion")}
-          </Link>
-          <Link
             href="/agency-vs-bank-calculator/"
-            className="hidden 2xl:inline-block px-3 py-1.5 rounded-lg text-sm text-amber-700 hover:text-amber-900 hover:bg-amber-50 font-medium transition-all duration-150 active:scale-95"
+            className="hidden xl:inline-block px-2.5 py-1.5 rounded-lg text-sm text-amber-700 hover:text-amber-900 hover:bg-amber-50 font-medium transition-all duration-150 active:scale-95 whitespace-nowrap"
           >
             Bank vs Agency
           </Link>

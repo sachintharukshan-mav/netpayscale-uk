@@ -393,7 +393,7 @@ const ROLE_METADATA: Record<string, RoleHubMetadata> = {
     clinicalSummary:
       "Band 8b Senior Matrons and Lead Nurses direct nursing workforce strategy, safe staffing establishment reviews, and clinical governance across large multi-site hospital divisions.",
     progressionSummary:
-      "Band 8b spans Entry (0 yrs) to Top Step (5+ yrs). Crossing £65,191 triggers the top 12.5% NHS CARE Pension contribution tier, and prepares leaders for Band 8c Head of Nursing.",
+      "Band 8b spans Entry (0 yrs, £66,582) to Mid (2 yrs, £70,896) and Top Step (5+ yrs, £77,368). Crossing £67,668 triggers the top 12.5% NHS CARE Pension contribution tier, and prepares leaders for Band 8c Head of Nursing.",
   },
   "consultant-psychologist": {
     category: "Psychology, Healthcare Science & Leadership",
@@ -404,7 +404,7 @@ const ROLE_METADATA: Record<string, RoleHubMetadata> = {
     clinicalSummary:
       "Band 8b Consultant Clinical Psychologists serve as clinical leads for psychological therapies across NHS Mental Health Trusts, directing complex care pathways, service governance, and doctoral supervision.",
     progressionSummary:
-      "Band 8b Consultant Psychologists reach the top step after 5 years of service and can advance to Band 8c/8d Professional Lead or Trust Director of Psychological Therapies.",
+      "Band 8b Consultant Psychologists reach the intermediate step at 2 years and top step after 5 years of service, and can advance to Band 8c/8d Professional Lead or Trust Director of Psychological Therapies.",
   },
   "head-of-service": {
     category: "Psychology, Healthcare Science & Leadership",
@@ -415,7 +415,7 @@ const ROLE_METADATA: Record<string, RoleHubMetadata> = {
     clinicalSummary:
       "Band 8b Heads of Clinical Services and Divisional General Managers lead multi-specialty hospital directorates, controlling clinical capital programmes, consultant job planning, and Trust-wide service transformation.",
     progressionSummary:
-      "Band 8b reaches its top pay step after 5 years of reckonable service, leading directly to Band 8c Associate Director of Operations.",
+      "Band 8b reaches its intermediate step after 2 years and top pay step after 5 years of reckonable service, leading directly to Band 8c Associate Director of Operations.",
   },
 
   // Band 8c
@@ -428,7 +428,7 @@ const ROLE_METADATA: Record<string, RoleHubMetadata> = {
     clinicalSummary:
       "Band 8c Divisional Heads of Nursing and Midwifery hold professional and operational accountability for hundreds of nursing staff across a major clinical group (such as Unscheduled Care, Surgery, or Women & Children's Services).",
     progressionSummary:
-      "Band 8c progresses from Entry to Top Step after 5 years of service, serving as the primary stepping stone to Band 8d Deputy Chief Nurse / Deputy Director of Nursing.",
+      "Band 8c progresses from Entry (£79,504) to Mid (£84,346 at 2 yrs) and Top Step (£91,609 after 5 years of service), serving as the primary stepping stone to Band 8d Deputy Chief Nurse / Deputy Director of Nursing.",
   },
   "associate-director": {
     category: "Psychology, Healthcare Science & Leadership",
@@ -439,7 +439,7 @@ const ROLE_METADATA: Record<string, RoleHubMetadata> = {
     clinicalSummary:
       "Band 8c Associate Directors of Operations and Strategy lead hospital-wide operational performance, Integrated Care System (ICS) commissioning interfaces, and major clinical reconfiguration programmes.",
     progressionSummary:
-      "Band 8c spans Entry to Top Step (5+ years), with progression to Band 8d Director of Operations or Divisional Managing Director.",
+      "Band 8c spans Entry (£79,504) to Top Step (£91,609 at 5+ years), with progression to Band 8d Director of Operations or Divisional Managing Director.",
   },
   "consultant-scientist": {
     category: "Psychology, Healthcare Science & Leadership",
@@ -450,7 +450,7 @@ const ROLE_METADATA: Record<string, RoleHubMetadata> = {
     clinicalSummary:
       "Band 8c Consultant Clinical Scientists head NHS pathology, clinical biochemistry, genomics, medical physics, and bioinformatics departments, providing consultant-level diagnostic interpretation and scientific direction.",
     progressionSummary:
-      "Band 8c Consultant Clinical Scientists progress to the top step at 5 years and can advance to Band 8d and Band 9 Scientific Director posts.",
+      "Band 8c Consultant Clinical Scientists progress to the intermediate step at 2 years and top step at 5 years, and can advance to Band 8d and Band 9 Scientific Director posts.",
   },
 
   // Band 8d
@@ -463,7 +463,7 @@ const ROLE_METADATA: Record<string, RoleHubMetadata> = {
     clinicalSummary:
       "Band 8d Deputy Directors of Nursing (Deputy Chief Nurses) deputise for the Executive Chief Nurse across the entire NHS Trust, leading statutory patient safety, CQC regulatory readiness, and nursing workforce strategy.",
     progressionSummary:
-      "At Band 8d, gross salaries exceed £94,826/yr at entry and £99,197/yr at top step (plus HCAS in London). Using the 12.5% NHS CARE Pension Net-Pay arrangement reduces Adjusted Net Income to protect the £12,570 Personal Allowance from the £100,000 HMRC 60% tax trap.",
+      "At Band 8d, gross salaries span £94,356/yr at entry, £100,140/yr at 2 years, and £108,814/yr at the 5-year top step (plus HCAS in London). Using the 12.5% NHS CARE Pension Net-Pay arrangement reduces Adjusted Net Income to protect the £12,570 Personal Allowance from the £100,000 HMRC 60% tax trap.",
   },
   "director-of-operations": {
     category: "Psychology, Healthcare Science & Leadership",
@@ -474,7 +474,7 @@ const ROLE_METADATA: Record<string, RoleHubMetadata> = {
     clinicalSummary:
       "Band 8d Hospital Directors of Operations oversee acute site delivery, urgent and emergency care (UEC) four-hour standards, elective surgical hubs, and multi-hundred-million-pound divisional budgets.",
     progressionSummary:
-      "Band 8d progresses from Entry to Top Step after 5 years of service and leads directly to Band 9 Chief Operating Officer (COO).",
+      "Band 8d progresses from Entry (£94,356) to Mid (£100,140 at 2 yrs) and Top Step (£108,814 after 5 years of service) and leads directly to Band 9 Chief Operating Officer (COO).",
   },
   "chief-pharmacist": {
     category: "Pharmacy & Advanced Clinical Practice",
@@ -485,7 +485,7 @@ const ROLE_METADATA: Record<string, RoleHubMetadata> = {
     clinicalSummary:
       "Band 8d Trust Chief Pharmacists and Directors of Pharmacy & Medicines Optimisation serve as the statutory Controlled Drugs Accountable Officer (CDAO) and direct all clinical pharmacy services, aseptic manufacturing, and high-cost medicines budgets.",
     progressionSummary:
-      "Band 8d Chief Pharmacists reach the top step after 5 years of service, with the largest multi-hospital teaching trusts grading Group Chief Pharmacists at Band 9.",
+      "Band 8d Chief Pharmacists reach the intermediate step at 2 years and top step after 5 years of service, with the largest multi-hospital teaching trusts grading Group Chief Pharmacists at Band 9.",
   },
 
   // Band 9
@@ -497,7 +497,7 @@ const ROLE_METADATA: Record<string, RoleHubMetadata> = {
     clinicalSummary:
       "Band 9 Executive Directors of Nursing and Regional Chief Nurses represent the pinnacle of the Agenda for Change nursing career structure, holding Board-level accountability for clinical quality, patient safety, and professional regulation.",
     progressionSummary:
-      "Band 9 is the highest Agenda for Change pay band (£114,552 Entry to £131,617 Top Step after 5 years). At this salary level, the 12.5% pre-tax NHS Pension deduction is essential for mitigating the £100,000–£125,140 personal allowance taper.",
+      "Band 9 is the highest Agenda for Change pay band (£112,782 Entry, £119,583 after 2 years, and £129,783 Top Step after 5 years). At this salary level, the 12.5% pre-tax NHS Pension deduction is essential for mitigating the £100,000–£125,140 personal allowance taper.",
   },
   "chief-operating-officer": {
     category: "Psychology, Healthcare Science & Leadership",
@@ -507,7 +507,7 @@ const ROLE_METADATA: Record<string, RoleHubMetadata> = {
     clinicalSummary:
       "Band 9 Chief Operating Officers (COOs) and Group Hospital Managing Directors command full operational delivery across major NHS Foundation Trusts and Integrated Care Systems.",
     progressionSummary:
-      "Band 9 COOs progress from £114,552 Entry to £131,617 Top Step after 5 years of service, accruing over £2,120 to £2,437 per year in guaranteed index-linked 2015 CARE retirement pension.",
+      "Band 9 COOs progress from £112,782 Entry to £119,583 at 2 years and £129,783 Top Step after 5 years of service, accruing over £2,089 to £2,403 per year in guaranteed index-linked 2015 CARE retirement pension.",
   },
   "clinical-director": {
     category: "Psychology, Healthcare Science & Leadership",
@@ -517,7 +517,7 @@ const ROLE_METADATA: Record<string, RoleHubMetadata> = {
     clinicalSummary:
       "Band 9 National Clinical Specialist Advisors and Clinical Directors lead national NHS clinical networks, specialist commissioning frameworks, genomics hubs, and multi-professional clinical directorates.",
     progressionSummary:
-      "Band 9 represents the ceiling of the national Agenda for Change pay spine, reaching £131,617 basic salary (up to £140,363 in Inner London with HCAS) at the 5-year top step.",
+      "Band 9 represents the ceiling of the national Agenda for Change pay spine, reaching £129,783 basic salary (up to £138,529 in Inner London with HCAS) at the 5-year top step.",
   },
 };
 

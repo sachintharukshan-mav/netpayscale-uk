@@ -464,9 +464,9 @@ export default async function RolePillarPage({ params }: Props) {
         <AdPlaceholder slotId="role-pillar-top" format="leaderboard" />
 
         {/* Hero & Position 0 Direct Answer Section */}
-        <section className="rounded-xl border border-zinc-200/90 bg-white p-6 sm:p-7 shadow-xs space-y-6">
+        <section className="rounded-xl border border-zinc-200/90 bg-white p-5 sm:p-7 shadow-xs space-y-6 overflow-hidden">
           <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6 border-b border-zinc-100 pb-6">
-            <div className="space-y-2.5 max-w-3xl">
+            <div className="space-y-2.5 max-w-3xl min-w-0">
               <div className="flex flex-wrap items-center gap-2 text-xs font-mono text-zinc-500">
                 <Link
                   href={`/bands/${role.bandSlug}/`}
@@ -492,10 +492,10 @@ export default async function RolePillarPage({ params }: Props) {
               </p>
 
               <div className="flex flex-wrap gap-2 pt-1 text-[11px]">
-                <span className="rounded-md bg-zinc-100 border border-zinc-200/80 px-2.5 py-1 text-zinc-700">
+                <span className="rounded-md bg-zinc-100 border border-zinc-200/80 px-2.5 py-1 text-zinc-700 break-words">
                   <strong>Regulator:</strong> {role.registrationBody}
                 </span>
-                <span className="rounded-md bg-zinc-100 border border-zinc-200/80 px-2.5 py-1 text-zinc-700">
+                <span className="rounded-md bg-zinc-100 border border-zinc-200/80 px-2.5 py-1 text-zinc-700 break-words">
                   <strong>Entry Requirement:</strong> {role.typicalQualification}
                 </span>
               </div>
@@ -504,7 +504,7 @@ export default async function RolePillarPage({ params }: Props) {
             {/* Baseline & Top Step Snapshot Card */}
             <MagneticBentoContainer
               variant="card"
-              className="shrink-0 min-w-[260px]"
+              className="w-full lg:w-auto shrink-0 lg:min-w-[260px]"
             >
               <div className="bento-card rounded-xl bg-zinc-50 border border-zinc-200/90 p-4 space-y-2.5">
                 <div className="flex items-center justify-between">
@@ -530,7 +530,7 @@ export default async function RolePillarPage({ params }: Props) {
                     Night: {formatHourlyRate(entryCalc.hourlyRate * nightMult)}
                   </span>
                 </div>
-                <div className="pt-1.5 border-t border-zinc-200/70 flex items-center justify-between text-[11px] font-mono text-zinc-600">
+                <div className="pt-1.5 border-t border-zinc-200/70 flex flex-wrap items-center justify-between gap-1 text-[11px] font-mono text-zinc-600">
                   <span>Top Step Net:</span>
                   <strong className="text-zinc-950">
                     {formatCurrency(topCalc.netPay.monthly, true)}/mo (
