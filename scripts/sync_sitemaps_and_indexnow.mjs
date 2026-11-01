@@ -9,11 +9,11 @@ console.log(`=== 1. Verifying Live Production Endpoints (${urls.length} Sitemap 
 
 const testEndpoints = [
   "https://netpayscale.uk/sitemap.xml",
+  "https://netpayscale.uk/nhs-pay-rise-2027/",
+  "https://netpayscale.uk/nhs-payslip-explained/",
+  "https://netpayscale.uk/salary-sacrifice-mileage-calculator/",
+  "https://netpayscale.uk/northern-ireland-pay-calculator/",
   "https://netpayscale.uk/bands/band-5/",
-  "https://netpayscale.uk/bands/band-6/",
-  "https://netpayscale.uk/maternity-pay-calculator/",
-  "https://netpayscale.uk/annual-leave-calculator/",
-  "https://netpayscale.uk/bank-shift-calculator/",
   "https://netpayscale.uk/calculator/band-5-nurse-salary-inner-london/",
 ];
 

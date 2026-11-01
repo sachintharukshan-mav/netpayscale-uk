@@ -45,8 +45,8 @@ assert(fs.existsSync(catalogPath), 'api/md/_catalog exists in static export');
 const llmsFullContent = fs.readFileSync(llmsFullPath, 'utf8');
 assert(llmsFullContent.length > 10000 && llmsFullContent.length < 500000, `llms-full.txt length is within optimal LLM context window (${llmsFullContent.length} chars)`);
 const catalogData = JSON.parse(fs.readFileSync(catalogPath, 'utf8'));
-assert(catalogData.totalMarkdownRoutes === 120, `api/md/_catalog lists all 120 core, band, trust & role Markdown routes (actual: ${catalogData.totalMarkdownRoutes})`);
-assert(catalogData.totalHtmlRoutes === 614, `api/md/_catalog reports 614 total HTML routes (actual: ${catalogData.totalHtmlRoutes})`);
+assert(catalogData.totalMarkdownRoutes === 124, `api/md/_catalog lists all 124 core, band, trust & role Markdown routes (actual: ${catalogData.totalMarkdownRoutes})`);
+assert(catalogData.totalHtmlRoutes === 618, `api/md/_catalog reports 618 total HTML routes (actual: ${catalogData.totalHtmlRoutes})`);
 
 // 2. Sitemap.xml check
 const sitemapPath = path.join(outDir, 'sitemap.xml');
@@ -57,7 +57,7 @@ const sitemapContent = fs.readFileSync(sitemapPath, 'utf8');
 const locMatches = [...sitemapContent.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => m[1]);
 console.log(`Found ${locMatches.length} URLs in sitemap.xml`);
 
-assert(locMatches.length === 614, `Sitemap contains all 614 canonical URLs (22 core/calculators + 11 band hubs + 50 trust hubs + 41 role pillar hubs + 490 role-region spokes; actual: ${locMatches.length})`);
+assert(locMatches.length === 618, `Sitemap contains all 618 canonical URLs (26 core/calculators + 11 band hubs + 50 trust hubs + 41 role pillar hubs + 490 role-region spokes; actual: ${locMatches.length})`);
 assert(locMatches[0] === 'https://netpayscale.uk/', `Homepage in sitemap is exact canonical: https://netpayscale.uk/ (actual: ${locMatches[0]})`);
 
 let nonTrailingSlashCount = 0;
@@ -79,7 +79,7 @@ const sitemapIndexMatches = [...sitemapIndexContent.matchAll(/<loc>(.*?)<\/loc>/
 assert(sitemapIndexMatches.length === 4, `sitemap-index.xml points to 4 child sitemaps (actual: ${sitemapIndexMatches.length})`);
 
 const childSitemaps = [
-  { file: 'sitemap-core.xml', count: 22 },
+  { file: 'sitemap-core.xml', count: 26 },
   { file: 'sitemap-bands.xml', count: 11 },
   { file: 'sitemap-trusts.xml', count: 50 },
   { file: 'sitemap-roles.xml', count: 531 }
@@ -100,7 +100,7 @@ for (const child of childSitemaps) {
     }
   }
 }
-assert(totalSegmentedUrls === 614, `Segmented child sitemaps sum to exactly 614 URLs matching master sitemap.xml (actual: ${totalSegmentedUrls})`);
+assert(totalSegmentedUrls === 618, `Segmented child sitemaps sum to exactly 618 URLs matching master sitemap.xml (actual: ${totalSegmentedUrls})`);
 
 
 // 3. Homepage HTML Audit (Canonical, Meta, Schema)
@@ -139,7 +139,7 @@ for (const p of trustPages) {
   }
 }
 
-// 3C. 13 High-Volume Sibling Calculators Audit
+// 3C. 17 High-Volume Sibling Calculators Audit
 const siblingCalculators = [
   'pension-calculator',
   'sick-pay-calculator',
@@ -154,6 +154,10 @@ const siblingCalculators = [
   'scotland-pay-calculator',
   'part-time-pay-calculator',
   'hourly-rate-calculator',
+  'nhs-pay-rise-2027',
+  'nhs-payslip-explained',
+  'salary-sacrifice-mileage-calculator',
+  'northern-ireland-pay-calculator',
 ];
 for (const calcSlug of siblingCalculators) {
   const cPath = path.join(outDir, calcSlug, 'index.html');
@@ -166,6 +170,7 @@ for (const calcSlug of siblingCalculators) {
     assert(cHtml.includes('"@type":"BreadcrumbList"'), `Calculator /${calcSlug}/ contains BreadcrumbList schema`);
     assert(cHtml.includes('"@type":"FAQPage"'), `Calculator /${calcSlug}/ contains FAQPage schema`);
     assert(cHtml.includes('data-share-widget="whatsapp-copy-breakdown"'), `Calculator /${calcSlug}/ contains 1-Tap WhatsApp / Copy Breakdown widget`);
+    assert(fs.existsSync(path.join(outDir, `${calcSlug}.md`)), `Calculator /${calcSlug}/ has Markdown twin ${calcSlug}.md`);
     if (calcSlug === 'promotion-calculator') {
       assert(cHtml.includes('Pension Bracket Trap') || cHtml.includes('Pension Trap'), 'Promotion Calculator includes Pension Trap features and schema');
       assert(cHtml.includes('The £50/Month Trap') || cHtml.includes('£50/mo trap') || cHtml.includes('£50/Month'), 'Promotion Calculator features £50/Month Trap scenario preset');
@@ -180,6 +185,23 @@ for (const calcSlug of siblingCalculators) {
       assert(cHtml.includes('Inside IR35') || cHtml.includes('IR35'), 'Agency vs Bank Calculator covers Inside IR35 umbrella deductions');
       assert(cHtml.includes('12.07%') || cHtml.includes('+12.07%'), 'Agency vs Bank Calculator covers 12.07% WTR holiday pay uplift');
       assert(cHtml.includes('Employer NI') || cHtml.includes('Employer Class 1 NI') || cHtml.includes('13.8%'), 'Agency vs Bank Calculator audits 13.8% Employer NI deductions');
+    }
+    if (calcSlug === 'nhs-pay-rise-2027') {
+      assert(cHtml.includes('2.4%') && cHtml.includes('19 October 2026'), '2027/28 Pay Rise Calculator covers 19 Oct 2026 DHSC 2.4% written evidence proposal');
+      assert(cHtml.includes('tabindex="0"') && cHtml.includes('role="region"'), '2027/28 Pay Rise Calculator implements accessible responsive-table container');
+    }
+    if (calcSlug === 'nhs-payslip-explained') {
+      assert(cHtml.includes('AfC Absence') && cHtml.includes('WTD Pay'), 'NHS Payslip Decoder covers AfC Absence and WTD Pay ESR codes');
+      assert(cHtml.includes('tabindex="0"') && cHtml.includes('role="region"'), 'NHS Payslip Decoder implements accessible responsive-table container');
+    }
+    if (calcSlug === 'salary-sacrifice-mileage-calculator') {
+      assert(cHtml.includes('59p') && cHtml.includes('24p') && cHtml.includes('30p'), 'Salary Sacrifice & Mileage Calculator covers Section 17 59p/24p/30p statutory rates');
+      assert(cHtml.includes('1/54th') && cHtml.includes('P87'), 'Salary Sacrifice & Mileage Calculator covers 1/54th CARE pension impact and HMRC Form P87');
+      assert(cHtml.includes('tabindex="0"') && cHtml.includes('role="region"'), 'Salary Sacrifice & Mileage Calculator implements accessible responsive-table container');
+    }
+    if (calcSlug === 'northern-ireland-pay-calculator') {
+      assert(cHtml.includes('HSCNI') && cHtml.includes('20 November 2026'), 'Northern Ireland Pay Calculator covers HSCNI 3.3% parity backpay and RCN 20 Nov 2026 ballot');
+      assert(cHtml.includes('tabindex="0"') && cHtml.includes('role="region"'), 'Northern Ireland Pay Calculator implements accessible responsive-table container');
     }
   }
 }

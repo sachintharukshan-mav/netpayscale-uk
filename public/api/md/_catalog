@@ -2,8 +2,8 @@
   "site": "NetPayScale UK (NHS Edition)",
   "url": "https://netpayscale.uk",
   "updated": "2026-10-26",
-  "totalMarkdownRoutes": 120,
-  "totalHtmlRoutes": 614,
+  "totalMarkdownRoutes": 124,
+  "totalHtmlRoutes": 618,
   "routes": [
     {
       "htmlUrl": "https://netpayscale.uk/",
@@ -129,6 +129,34 @@
       "markdownUrl": "https://netpayscale.uk/hourly-rate-calculator.md",
       "title": "NHS Hourly Pay Rates 2026/27 (Bands 2 to 9): Basic, Night, Sunday & Bank Chart",
       "description": "Complete 2026/27 NHS Agenda for Change hourly rate master chart across Bands 2 to 9 including Section 2 night/weekend uplifts, 1.5x overtime, and +12.07% Bank WTR.",
+      "category": "core"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/nhs-pay-rise-2027/",
+      "markdownUrl": "https://netpayscale.uk/nhs-pay-rise-2027.md",
+      "title": "NHS Pay Rise 2027/28 Calculator: 2.4% DHSC Offer & Band 2–9 Net Pay",
+      "description": "2027/28 NHS Agenda for Change pay rise calculator modelling the 19 Oct 2026 DHSC 2.4% PRB proposal across Bands 2 to 9 after frozen tax thresholds.",
+      "category": "core"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/nhs-payslip-explained/",
+      "markdownUrl": "https://netpayscale.uk/nhs-payslip-explained.md",
+      "title": "NHS Payslip Explained 2026/27: Every ESR Code (EN, AfC Absence, NP, WTD) Decoded",
+      "description": "Interactive NHS Electronic Staff Record (ESR) payslip code decoder covering Night Duty EN, AfC Absence, NP, WTD Pay (+12.07%), and fractional PAID/DUE hours.",
+      "category": "core"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/salary-sacrifice-mileage-calculator/",
+      "markdownUrl": "https://netpayscale.uk/salary-sacrifice-mileage-calculator.md",
+      "title": "NHS Salary Sacrifice Car & Section 17 Mileage Calculator 2026/27 (59p/Mile)",
+      "description": "NHS Fleet Solutions EV salary sacrifice car net cost, 4% 2026/27 BiK, 1/54th CARE pension impact, and Section 17 business mileage (59p/24p/30p) calculator.",
+      "category": "core"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/northern-ireland-pay-calculator/",
+      "markdownUrl": "https://netpayscale.uk/northern-ireland-pay-calculator.md",
+      "title": "NHS Northern Ireland (HSCNI) Pay Calculator 2026/27: 3.3% Backpay & RCN Ballot",
+      "description": "HSC Northern Ireland 2025/26 vs 2026/27 (+3.3%) salary comparator and accrued backpay calculator since 1 April 2026 during the RCN NI strike ballot.",
       "category": "core"
     },
     {

@@ -107,6 +107,18 @@ export function Navbar() {
             {t("backPay", "Back Pay")}
           </Link>
           <Link
+            href="/nhs-pay-rise-2027/"
+            className="px-2.5 py-1.5 rounded-lg text-sm text-emerald-800 hover:text-emerald-950 hover:bg-emerald-50 font-semibold transition-all duration-150 active:scale-95 whitespace-nowrap"
+          >
+            2027/28 Rise (2.4%)
+          </Link>
+          <Link
+            href="/nhs-payslip-explained/"
+            className="hidden xl:inline-block px-2.5 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95 whitespace-nowrap"
+          >
+            ESR Payslip
+          </Link>
+          <Link
             href="/agency-vs-bank-calculator/"
             className="hidden xl:inline-block px-2.5 py-1.5 rounded-lg text-sm text-amber-700 hover:text-amber-900 hover:bg-amber-50 font-medium transition-all duration-150 active:scale-95 whitespace-nowrap"
           >
@@ -148,6 +160,35 @@ export function Navbar() {
             onClick={() => setMobileMenuOpen(false)}
           >
             2026/27 NHS Salary Calculator
+          </Link>
+          <Link
+            className="block px-3 py-2 rounded-lg text-emerald-900 bg-emerald-50 hover:bg-emerald-100 font-semibold text-sm flex items-center justify-between"
+            href="/nhs-pay-rise-2027/"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <span>NHS Pay Rise 2027/28 Calculator (2.4% Offer)</span>
+            <span className="text-[10px] px-1.5 py-0.5 rounded bg-emerald-600 text-white font-bold">Hot</span>
+          </Link>
+          <Link
+            className="block px-3 py-2 rounded-lg text-text-body hover:bg-surface-muted font-medium text-sm"
+            href="/nhs-payslip-explained/"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            NHS Payslip Explained (ESR Code Decoder)
+          </Link>
+          <Link
+            className="block px-3 py-2 rounded-lg text-text-body hover:bg-surface-muted font-medium text-sm"
+            href="/salary-sacrifice-mileage-calculator/"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            NHS Salary Sacrifice Car &amp; Section 17 Mileage (59p/m)
+          </Link>
+          <Link
+            className="block px-3 py-2 rounded-lg text-text-body hover:bg-surface-muted font-medium text-sm"
+            href="/northern-ireland-pay-calculator/"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            HSC Northern Ireland 3.3% Backpay Calculator
           </Link>
           <Link
             className="block px-3 py-2 rounded-lg text-text-body hover:bg-surface-muted font-medium text-sm"

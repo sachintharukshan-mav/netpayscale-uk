@@ -109,6 +109,30 @@
     <priority>0.95</priority>
   </url>
   <url>
+    <loc>https://netpayscale.uk/nhs-pay-rise-2027/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://netpayscale.uk/nhs-payslip-explained/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://netpayscale.uk/salary-sacrifice-mileage-calculator/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://netpayscale.uk/northern-ireland-pay-calculator/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://netpayscale.uk/about/</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>

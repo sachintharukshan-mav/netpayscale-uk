@@ -801,6 +801,125 @@ Last updated: 2026-10-26
 | Band 9 After 5 years (Top) | £129,783 | £66.37/hr | £86.28/hr | £106.19/hr | £74.38/hr |
 
 ---
+<!-- source: https://netpayscale.uk/nhs-pay-rise-2027/ -->
+# NHS Pay Rise 2027/28 Calculator — 2.4% DHSC Proposal (19 Oct 2026) & Band 2–9 Net Take-Home
+
+> Official analysis and net take-home calculator for the 2027/28 NHS Agenda for Change pay round following the Department of Health and Social Care (DHSC) and NHS England joint written evidence to the NHS Pay Review Body (19 October 2026) proposing a 2.4% uplift.
+
+Canonical: https://netpayscale.uk/nhs-pay-rise-2027/
+Last updated: 2026-11-01
+
+## 1. Confirmed Facts vs. Opening Government Proposal (As of 1 November 2026)
+- **19 October 2026 DHSC & NHS England Evidence:** Proposed a **2.4% pay uplift** for Agenda for Change staff in 2027/28 (and 2.4% to the DDRB for doctors/dentists).
+- **Historical Context:** In October 2025, DHSC proposed 2.5% for 2026/27 before the NHSPRB (39th Report) recommended the confirmed **3.3% 2026/27 award**.
+- **28 October 2026 Autumn Budget Impact:** Income Tax Personal Allowance (£12,570) and Higher Rate threshold (£50,270) remain frozen in 2027/28.
+- **Effective Date:** 1 April 2027.
+
+## 2. 2026/27 Confirmed Pay vs. 2027/28 (+2.4% DHSC Proposal) Across All 25 Spine Points
+
+| Band & Step | 2026/27 Confirmed (Hr) | 2027/28 at +2.4% (Hr) | Annual Gross Gain | Monthly Net Take-Home (2026/27 → 2027/28) |
+| :--- | :--- | :--- | :--- | :--- |
+| Band 2 Single Point | £25,272 (£12.92/hr) | £25,879 (£13.23/hr) | +£607/yr | £1,700/mo → **£1,734/mo** (+£34/mo) |
+| Band 3 Entry | £25,760 (£13.17/hr) | £26,378 (£13.49/hr) | +£618/yr | £1,727/mo → **£1,762/mo** (+£35/mo) |
+| Band 3 After 2 years (Top) | £27,476 (£14.05/hr) | £28,135 (£14.39/hr) | +£659/yr | £1,823/mo → **£1,859/mo** (+£36/mo) |
+| Band 4 Entry | £28,392 (£14.52/hr) | £29,073 (£14.87/hr) | +£681/yr | £1,874/mo → **£1,877/mo** (+£3/mo) |
+| Band 4 After 3 years (Top) | £31,157 (£15.93/hr) | £31,905 (£16.32/hr) | +£748/yr | £1,990/mo → **£2,031/mo** (+£41/mo) |
+| Band 5 Entry | £32,073 (£16.40/hr) | £32,843 (£16.80/hr) | +£770/yr | £2,040/mo → **£2,082/mo** (+£42/mo) |
+| Band 5 After 2 years (Mid) | £34,592 (£17.69/hr) | £35,422 (£18.12/hr) | +£830/yr | £2,177/mo → **£2,187/mo** (+£10/mo) |
+| Band 5 After 4 years (Top) | £39,043 (£19.97/hr) | £39,980 (£20.45/hr) | +£937/yr | £2,381/mo → **£2,431/mo** (+£50/mo) |
+| Band 6 Entry | £39,959 (£20.44/hr) | £40,918 (£20.93/hr) | +£959/yr | £2,430/mo → **£2,481/mo** (+£51/mo) |
+| Band 6 After 2 years (Mid) | £42,170 (£21.57/hr) | £43,182 (£22.08/hr) | +£1,012/yr | £2,548/mo → **£2,602/mo** (+£54/mo) |
+| Band 6 After 5 years (Top) | £48,117 (£24.61/hr) | £49,272 (£25.20/hr) | +£1,155/yr | £2,866/mo → **£2,928/mo** (+£62/mo) |
+| Band 7 Entry | £49,387 (£25.26/hr) | £50,572 (£25.86/hr) | +£1,185/yr | £2,934/mo → **£2,999/mo** (+£65/mo) |
+| Band 7 After 2 years (Mid) | £51,932 (£26.56/hr) | £53,178 (£27.20/hr) | +£1,246/yr | £3,078/mo → **£3,119/mo** (+£41/mo) |
+| Band 7 After 5 years (Top) | £56,515 (£28.90/hr) | £57,871 (£29.60/hr) | +£1,356/yr | £3,309/mo → **£3,367/mo** (+£58/mo) |
+| Band 8a Entry | £57,528 (£29.42/hr) | £58,909 (£30.13/hr) | +£1,381/yr | £3,353/mo → **£3,412/mo** (+£59/mo) |
+| Band 8a After 2 years (Mid) | £60,417 (£30.90/hr) | £61,867 (£31.64/hr) | +£1,450/yr | £3,477/mo → **£3,539/mo** (+£62/mo) |
+| Band 8a After 5 years (Top) | £64,750 (£33.11/hr) | £66,304 (£33.91/hr) | +£1,554/yr | £3,663/mo → **£3,730/mo** (+£67/mo) |
+| Band 8b Entry | £66,582 (£34.05/hr) | £68,180 (£34.87/hr) | +£1,598/yr | £3,742/mo → **£3,749/mo** (+£7/mo) |
+| Band 8b After 2 years (Mid) | £70,896 (£36.26/hr) | £72,598 (£37.13/hr) | +£1,702/yr | £3,863/mo → **£3,935/mo** (+£72/mo) |
+| Band 8b After 5 years (Top) | £77,368 (£39.57/hr) | £79,225 (£40.52/hr) | +£1,857/yr | £4,136/mo → **£4,214/mo** (+£78/mo) |
+| Band 8c Entry | £79,504 (£40.66/hr) | £81,412 (£41.64/hr) | +£1,908/yr | £4,226/mo → **£4,306/mo** (+£80/mo) |
+| Band 8c After 2 years (Mid) | £84,346 (£43.14/hr) | £86,370 (£44.17/hr) | +£2,024/yr | £4,429/mo → **£4,515/mo** (+£86/mo) |
+| Band 8c After 5 years (Top) | £91,609 (£46.85/hr) | £93,808 (£47.97/hr) | +£2,199/yr | £4,735/mo → **£4,828/mo** (+£93/mo) |
+| Band 8d Entry | £94,356 (£48.26/hr) | £96,621 (£49.41/hr) | +£2,265/yr | £4,851/mo → **£4,946/mo** (+£95/mo) |
+| Band 8d After 2 years (Mid) | £100,140 (£51.21/hr) | £102,543 (£52.44/hr) | +£2,403/yr | £5,094/mo → **£5,195/mo** (+£101/mo) |
+| Band 8d After 5 years (Top) | £108,814 (£55.65/hr) | £111,426 (£56.98/hr) | +£2,612/yr | £5,459/mo → **£5,569/mo** (+£110/mo) |
+| Band 9 Entry | £112,782 (£57.68/hr) | £115,489 (£59.06/hr) | +£2,707/yr | £5,626/mo → **£5,722/mo** (+£96/mo) |
+| Band 9 After 2 years (Mid) | £119,583 (£61.16/hr) | £122,453 (£62.62/hr) | +£2,870/yr | £5,835/mo → **£5,914/mo** (+£79/mo) |
+| Band 9 After 5 years (Top) | £129,783 (£66.37/hr) | £132,898 (£67.97/hr) | +£3,115/yr | £6,115/mo → **£6,201/mo** (+£86/mo) |
+
+---
+<!-- source: https://netpayscale.uk/nhs-payslip-explained/ -->
+# NHS Payslip Explained 2026/27 — Every Electronic Staff Record (ESR) Code Decoded
+
+> Complete reference to NHS Electronic Staff Record (ESR) payslip codes: Night Duty EN, Saturday EN, Sunday EN, AfC Absence, AfC Absence NP, WTD Pay (+12.07%), Basic Pay Arrs, and fractional PAID/DUE hours.
+
+Canonical: https://netpayscale.uk/nhs-payslip-explained/
+Last updated: 2026-11-01
+
+## 1. Most Searched NHS ESR Payslip Codes
+- **Night Duty EN / Unsocial EN (Section 2):** Weekday night enhancement (8pm–6am) paid at +44% (Bands 2–3) or +30% (Bands 4–9). Pensionable.
+- **Saturday EN (Section 2):** Saturday enhancement paid at +44% (Bands 2–3) or +30% (Bands 4–9). Pensionable.
+- **Sunday EN / Bank Hol EN (Section 2):** Sunday and Public Holiday enhancement paid at +88% (Bands 2–3) or +60% (Bands 4–9). Pensionable.
+- **AfC Absence (Section 13.9):** Pensionable holiday pay top-up paid automatically during annual leave based on your average regular unsocial hours enhancements.
+- **AfC Absence NP (Section 13.9):** Non-pensionable ('NP') holiday pay top-up calculated on regularly worked overtime.
+- **WTD Pay (+12.07%):** Working Time Directive rolled-up statutory holiday pay paid on NHS Staff Bank shifts.
+- **Why PAID/DUE Hours Are Smaller Than WKD/EARNED Hours:** Because basic daytime pay is already included in your monthly Basic Pay line, ESR multiplies your unsocial hours worked by the enhancement percentage (e.g. 34.50 hours × 30% = 10.35 PAID/DUE hours) and pays those fractional hours at your plain hourly rate.
+
+---
+<!-- source: https://netpayscale.uk/salary-sacrifice-mileage-calculator/ -->
+# NHS Salary Sacrifice Car (EV Fleet) & Section 17 Mileage Calculator 2026/27 (59p/Mile)
+
+> Calculate your post-tax monthly cost on an NHS Fleet Solutions / Tusker EV salary sacrifice car (including 4% 2026/27 EV Benefit-in-Kind and 1/54th CARE pension impact) plus Section 17 NHS business mileage rates (59p/mile first 3,500 miles, 24p/mile above, 30p/mile reserve rate).
+
+Canonical: https://netpayscale.uk/salary-sacrifice-mileage-calculator/
+Last updated: 2026-11-01
+
+## 1. NHS Section 17 Business Mileage Rates (2026/27)
+
+| Vehicle Category | NHS Section 17 Rate | Annual Threshold | HMRC Tax-Free AMAP | Tax / P87 MAR Treatment |
+| :--- | :--- | :--- | :--- | :--- |
+| **Car (Standard Rate)** | **59p / mile** | Up to 3,500 miles/yr (£2,065/yr) | 45p / mile | 14p/mile excess is taxable (PAYE + NI) |
+| **Car (Above Threshold)** | **24p / mile** | Over 3,500 miles/yr | 45p (up to 10k miles) | 100% Tax-Free + Claim P87 on 21p gap |
+| **Reserve / NHS Lease Car** | **30p / mile** | All business miles | 45p (up to 10k miles) | 100% Tax-Free + Claim P87 on 15p gap |
+| **Motorcycle** | **29p / mile** | All business miles | 24p / mile | 5p/mile excess is taxable |
+| **Pedal Cycle** | **20p / mile** | All business miles | 20p / mile | 100% Tax-Free |
+| **Heavy / Bulky Equipment** | **+3p / mile** | Added per eligible mile | Included in AMAP | Taxed if total rate exceeds 45p/mile |
+
+## 2. NHS EV Car Salary Sacrifice & 1/54th CARE Pension Trade-Off (2026/27)
+- **Tax & NI Savings:** Gross lease sacrifice reduces PAYE Income Tax (20%/40%), Class 1 Employee NI (8%/2%), Student Loan (9%), and NHS Pension contributions.
+- **2026/27 EV Benefit-in-Kind (BiK):** Pure electric cars (0g/km CO2) attract **4% BiK** of the P11D list price in 2026/27 (rising to 5% in 2027/28).
+- **1/54th CARE Pension Reduction:** Every £5,400/year (£450/mo) of gross salary sacrificed reduces that year's guaranteed annual pension accrual by **£100/year for life** (£5,400 ÷ 54).
+
+---
+<!-- source: https://netpayscale.uk/northern-ireland-pay-calculator/ -->
+# NHS Northern Ireland (HSCNI) Pay Calculator 2026/27 — 3.3% Unpaid Backpay & RCN Strike Ballot
+
+> Compare HSC Northern Ireland 2025/26 salaries currently in payment against the delayed 3.3% 2026/27 Agenda for Change parity scale and calculate 7+ months of accrued backpay since 1 April 2026.
+
+Canonical: https://netpayscale.uk/northern-ireland-pay-calculator/
+Last updated: 2026-11-01
+
+## 1. HSCNI 2026/27 Pay Status & RCN Strike Ballot (14 Oct – 20 Nov 2026)
+- **Current Payment Status:** As of 1 November 2026, Health and Social Care Northern Ireland (HSCNI) staff remain paid on the **2025/26 pay scale** while awaiting NI Executive funding (£120m) for the 3.3% NHSPRB 39th Report recommendation.
+- **RCN Northern Ireland Strike Ballot:** Opened **14 October 2026**, closing **Friday 20 November 2026**.
+- **Backpay Rule:** Once implemented, the 3.3% uplift is backdated to **1 April 2026**.
+
+## 2. HSCNI 2025/26 (Paid Now) vs. 2026/27 (+3.3% Parity) & 7-Month Accrued Backpay (Apr–Oct 2026)
+
+| HSCNI Band | 2025/26 Confirmed (In Payment) | 2026/27 (+3.3% Parity Scale) | Annual Parity Gap | 7-Month Gross Backpay Owed (Apr–Oct) |
+| :--- | :--- | :--- | :--- | :--- |
+| **Band 2** | £24,465 (£12.50/hr) | £25,272 (£12.92/hr) | +£807/yr | £471 |
+| **Band 3** | £24,937 → £26,598 | £25,760 → £27,476 | +£823 → +£878/yr | £480 – £512 |
+| **Band 4** | £27,485 → £30,162 | £28,392 → £31,157 | +£907 → +£995/yr | £529 – £580 |
+| **Band 5** | £31,049 → £37,796 | £32,073 → £39,043 | +£1,024 → +£1,247/yr | £597 – £727 |
+| **Band 6** | £38,682 → £46,580 | £39,959 → £48,117 | +£1,277 → +£1,537/yr | £745 – £897 |
+| **Band 7** | £47,810 → £54,710 | £49,387 → £56,515 | +£1,577 → +£1,805/yr | £920 – £1,053 |
+| **Band 8a** | £55,690 → £62,682 | £57,528 → £64,750 | +£1,838 → +£2,068/yr | £1,072 – £1,206 |
+| **Band 9** | £109,179 → £125,637 | £112,782 → £129,783 | +£3,603 → +£4,146/yr | £2,102 – £2,419 |
+
+---
 <!-- source: https://netpayscale.uk/bands/band-2/ -->
 # NHS Band 2 Salary 2026/27 — Pay Scale Steps, Hourly Rate & Monthly Net Take-Home
 

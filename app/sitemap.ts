@@ -121,6 +121,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.95,
     },
     {
+      url: `${baseUrl}/nhs-pay-rise-2027/`,
+      lastModified: buildDate,
+      changeFrequency: "daily",
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/nhs-payslip-explained/`,
+      lastModified: buildDate,
+      changeFrequency: "weekly",
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/salary-sacrifice-mileage-calculator/`,
+      lastModified: buildDate,
+      changeFrequency: "weekly",
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/northern-ireland-pay-calculator/`,
+      lastModified: buildDate,
+      changeFrequency: "daily",
+      priority: 0.95,
+    },
+    {
       url: `${baseUrl}/about/`,
       lastModified: buildDate,
       changeFrequency: "monthly",

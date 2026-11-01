@@ -1056,6 +1056,114 @@ ${rows}
 `;
 }
 
+function renderPayRise2027Md() {
+  const rows = nhsData.bands
+    .flatMap((b) =>
+      b.points.map((pt) => {
+        const g26 = pt.annualSalary;
+        const g27 = Math.round(g26 * 1.024);
+        const hr27 = (g27 / 1955.36).toFixed(2);
+        const c26 = calculateNet(g26, { bandSlug: b.slug });
+        const c27 = calculateNet(g27, { bandSlug: b.slug });
+        return `| ${b.band} ${pt.step} | ${fmtGBP(g26)} (£${pt.hourlyRate.toFixed(2)}/hr) | ${fmtGBP(g27)} (£${hr27}/hr) | +${fmtGBP(g27 - g26)}/yr | ${fmtGBP(c26.netMonthly)}/mo → **${fmtGBP(c27.netMonthly)}/mo** (+${fmtGBP(c27.netMonthly - c26.netMonthly)}/mo) |`;
+      })
+    )
+    .join("\n");
+
+  return `# NHS Pay Rise 2027/28 Calculator — 2.4% DHSC Proposal (19 Oct 2026) & Band 2–9 Net Take-Home
+
+> Official analysis and net take-home calculator for the 2027/28 NHS Agenda for Change pay round following the Department of Health and Social Care (DHSC) and NHS England joint written evidence to the NHS Pay Review Body (19 October 2026) proposing a 2.4% uplift.
+
+Canonical: ${SITE.url}/nhs-pay-rise-2027/
+Last updated: 2026-11-01
+
+## 1. Confirmed Facts vs. Opening Government Proposal (As of 1 November 2026)
+- **19 October 2026 DHSC & NHS England Evidence:** Proposed a **2.4% pay uplift** for Agenda for Change staff in 2027/28 (and 2.4% to the DDRB for doctors/dentists).
+- **Historical Context:** In October 2025, DHSC proposed 2.5% for 2026/27 before the NHSPRB (39th Report) recommended the confirmed **3.3% 2026/27 award**.
+- **28 October 2026 Autumn Budget Impact:** Income Tax Personal Allowance (£12,570) and Higher Rate threshold (£50,270) remain frozen in 2027/28.
+- **Effective Date:** 1 April 2027.
+
+## 2. 2026/27 Confirmed Pay vs. 2027/28 (+2.4% DHSC Proposal) Across All 25 Spine Points
+
+| Band & Step | 2026/27 Confirmed (Hr) | 2027/28 at +2.4% (Hr) | Annual Gross Gain | Monthly Net Take-Home (2026/27 → 2027/28) |
+| :--- | :--- | :--- | :--- | :--- |
+${rows}
+`;
+}
+
+function renderPayslipExplainedMd() {
+  return `# NHS Payslip Explained 2026/27 — Every Electronic Staff Record (ESR) Code Decoded
+
+> Complete reference to NHS Electronic Staff Record (ESR) payslip codes: Night Duty EN, Saturday EN, Sunday EN, AfC Absence, AfC Absence NP, WTD Pay (+12.07%), Basic Pay Arrs, and fractional PAID/DUE hours.
+
+Canonical: ${SITE.url}/nhs-payslip-explained/
+Last updated: 2026-11-01
+
+## 1. Most Searched NHS ESR Payslip Codes
+- **Night Duty EN / Unsocial EN (Section 2):** Weekday night enhancement (8pm–6am) paid at +44% (Bands 2–3) or +30% (Bands 4–9). Pensionable.
+- **Saturday EN (Section 2):** Saturday enhancement paid at +44% (Bands 2–3) or +30% (Bands 4–9). Pensionable.
+- **Sunday EN / Bank Hol EN (Section 2):** Sunday and Public Holiday enhancement paid at +88% (Bands 2–3) or +60% (Bands 4–9). Pensionable.
+- **AfC Absence (Section 13.9):** Pensionable holiday pay top-up paid automatically during annual leave based on your average regular unsocial hours enhancements.
+- **AfC Absence NP (Section 13.9):** Non-pensionable ('NP') holiday pay top-up calculated on regularly worked overtime.
+- **WTD Pay (+12.07%):** Working Time Directive rolled-up statutory holiday pay paid on NHS Staff Bank shifts.
+- **Why PAID/DUE Hours Are Smaller Than WKD/EARNED Hours:** Because basic daytime pay is already included in your monthly Basic Pay line, ESR multiplies your unsocial hours worked by the enhancement percentage (e.g. 34.50 hours × 30% = 10.35 PAID/DUE hours) and pays those fractional hours at your plain hourly rate.
+`;
+}
+
+function renderCarMileageMd() {
+  return `# NHS Salary Sacrifice Car (EV Fleet) & Section 17 Mileage Calculator 2026/27 (59p/Mile)
+
+> Calculate your post-tax monthly cost on an NHS Fleet Solutions / Tusker EV salary sacrifice car (including 4% 2026/27 EV Benefit-in-Kind and 1/54th CARE pension impact) plus Section 17 NHS business mileage rates (59p/mile first 3,500 miles, 24p/mile above, 30p/mile reserve rate).
+
+Canonical: ${SITE.url}/salary-sacrifice-mileage-calculator/
+Last updated: 2026-11-01
+
+## 1. NHS Section 17 Business Mileage Rates (2026/27)
+
+| Vehicle Category | NHS Section 17 Rate | Annual Threshold | HMRC Tax-Free AMAP | Tax / P87 MAR Treatment |
+| :--- | :--- | :--- | :--- | :--- |
+| **Car (Standard Rate)** | **59p / mile** | Up to 3,500 miles/yr (£2,065/yr) | 45p / mile | 14p/mile excess is taxable (PAYE + NI) |
+| **Car (Above Threshold)** | **24p / mile** | Over 3,500 miles/yr | 45p (up to 10k miles) | 100% Tax-Free + Claim P87 on 21p gap |
+| **Reserve / NHS Lease Car** | **30p / mile** | All business miles | 45p (up to 10k miles) | 100% Tax-Free + Claim P87 on 15p gap |
+| **Motorcycle** | **29p / mile** | All business miles | 24p / mile | 5p/mile excess is taxable |
+| **Pedal Cycle** | **20p / mile** | All business miles | 20p / mile | 100% Tax-Free |
+| **Heavy / Bulky Equipment** | **+3p / mile** | Added per eligible mile | Included in AMAP | Taxed if total rate exceeds 45p/mile |
+
+## 2. NHS EV Car Salary Sacrifice & 1/54th CARE Pension Trade-Off (2026/27)
+- **Tax & NI Savings:** Gross lease sacrifice reduces PAYE Income Tax (20%/40%), Class 1 Employee NI (8%/2%), Student Loan (9%), and NHS Pension contributions.
+- **2026/27 EV Benefit-in-Kind (BiK):** Pure electric cars (0g/km CO2) attract **4% BiK** of the P11D list price in 2026/27 (rising to 5% in 2027/28).
+- **1/54th CARE Pension Reduction:** Every £5,400/year (£450/mo) of gross salary sacrificed reduces that year's guaranteed annual pension accrual by **£100/year for life** (£5,400 ÷ 54).
+`;
+}
+
+function renderNorthernIrelandPayMd() {
+  return `# NHS Northern Ireland (HSCNI) Pay Calculator 2026/27 — 3.3% Unpaid Backpay & RCN Strike Ballot
+
+> Compare HSC Northern Ireland 2025/26 salaries currently in payment against the delayed 3.3% 2026/27 Agenda for Change parity scale and calculate 7+ months of accrued backpay since 1 April 2026.
+
+Canonical: ${SITE.url}/northern-ireland-pay-calculator/
+Last updated: 2026-11-01
+
+## 1. HSCNI 2026/27 Pay Status & RCN Strike Ballot (14 Oct – 20 Nov 2026)
+- **Current Payment Status:** As of 1 November 2026, Health and Social Care Northern Ireland (HSCNI) staff remain paid on the **2025/26 pay scale** while awaiting NI Executive funding (£120m) for the 3.3% NHSPRB 39th Report recommendation.
+- **RCN Northern Ireland Strike Ballot:** Opened **14 October 2026**, closing **Friday 20 November 2026**.
+- **Backpay Rule:** Once implemented, the 3.3% uplift is backdated to **1 April 2026**.
+
+## 2. HSCNI 2025/26 (Paid Now) vs. 2026/27 (+3.3% Parity) & 7-Month Accrued Backpay (Apr–Oct 2026)
+
+| HSCNI Band | 2025/26 Confirmed (In Payment) | 2026/27 (+3.3% Parity Scale) | Annual Parity Gap | 7-Month Gross Backpay Owed (Apr–Oct) |
+| :--- | :--- | :--- | :--- | :--- |
+| **Band 2** | £24,465 (£12.50/hr) | £25,272 (£12.92/hr) | +£807/yr | £471 |
+| **Band 3** | £24,937 → £26,598 | £25,760 → £27,476 | +£823 → +£878/yr | £480 – £512 |
+| **Band 4** | £27,485 → £30,162 | £28,392 → £31,157 | +£907 → +£995/yr | £529 – £580 |
+| **Band 5** | £31,049 → £37,796 | £32,073 → £39,043 | +£1,024 → +£1,247/yr | £597 – £727 |
+| **Band 6** | £38,682 → £46,580 | £39,959 → £48,117 | +£1,277 → +£1,537/yr | £745 – £897 |
+| **Band 7** | £47,810 → £54,710 | £49,387 → £56,515 | +£1,577 → +£1,805/yr | £920 – £1,053 |
+| **Band 8a** | £55,690 → £62,682 | £57,528 → £64,750 | +£1,838 → +£2,068/yr | £1,072 – £1,206 |
+| **Band 9** | £109,179 → £125,637 | £112,782 → £129,783 | +£3,603 → +£4,146/yr | £2,102 – £2,419 |
+`;
+}
+
 // ---------------------------------------------------------------------------
 // 2. Build Registry & Generate All Files
 // ---------------------------------------------------------------------------
@@ -1240,6 +1348,46 @@ const markdownRegistry = [
     category: "core",
     render: renderHourlyRateMd,
   },
+  {
+    route: "/nhs-pay-rise-2027/",
+    mdPath: "/nhs-pay-rise-2027.md",
+    fileOut: path.join(PUBLIC_DIR, "nhs-pay-rise-2027.md"),
+    title: "NHS Pay Rise 2027/28 Calculator: 2.4% DHSC Offer & Band 2–9 Net Pay",
+    description:
+      "2027/28 NHS Agenda for Change pay rise calculator modelling the 19 Oct 2026 DHSC 2.4% PRB proposal across Bands 2 to 9 after frozen tax thresholds.",
+    category: "core",
+    render: renderPayRise2027Md,
+  },
+  {
+    route: "/nhs-payslip-explained/",
+    mdPath: "/nhs-payslip-explained.md",
+    fileOut: path.join(PUBLIC_DIR, "nhs-payslip-explained.md"),
+    title: "NHS Payslip Explained 2026/27: Every ESR Code (EN, AfC Absence, NP, WTD) Decoded",
+    description:
+      "Interactive NHS Electronic Staff Record (ESR) payslip code decoder covering Night Duty EN, AfC Absence, NP, WTD Pay (+12.07%), and fractional PAID/DUE hours.",
+    category: "core",
+    render: renderPayslipExplainedMd,
+  },
+  {
+    route: "/salary-sacrifice-mileage-calculator/",
+    mdPath: "/salary-sacrifice-mileage-calculator.md",
+    fileOut: path.join(PUBLIC_DIR, "salary-sacrifice-mileage-calculator.md"),
+    title: "NHS Salary Sacrifice Car & Section 17 Mileage Calculator 2026/27 (59p/Mile)",
+    description:
+      "NHS Fleet Solutions EV salary sacrifice car net cost, 4% 2026/27 BiK, 1/54th CARE pension impact, and Section 17 business mileage (59p/24p/30p) calculator.",
+    category: "core",
+    render: renderCarMileageMd,
+  },
+  {
+    route: "/northern-ireland-pay-calculator/",
+    mdPath: "/northern-ireland-pay-calculator.md",
+    fileOut: path.join(PUBLIC_DIR, "northern-ireland-pay-calculator.md"),
+    title: "NHS Northern Ireland (HSCNI) Pay Calculator 2026/27: 3.3% Backpay & RCN Ballot",
+    description:
+      "HSC Northern Ireland 2025/26 vs 2026/27 (+3.3%) salary comparator and accrued backpay calculator since 1 April 2026 during the RCN NI strike ballot.",
+    category: "core",
+    render: renderNorthernIrelandPayMd,
+  },
   ...nhsData.bands.map((b) => {
     const slug = b.slug;
     const roleSummary = b.typicalRoles.slice(0, 2).join(", ");
@@ -1291,7 +1439,7 @@ const catalogPayload = {
   url: SITE.url,
   updated: SITE.updated,
   totalMarkdownRoutes: markdownRegistry.length,
-  totalHtmlRoutes: 614,
+  totalHtmlRoutes: 618,
   routes: markdownRegistry.map((r) => ({
     htmlUrl: `${SITE.url}${r.route}`,
     markdownUrl: `${SITE.url}${r.mdPath}`,
@@ -1426,6 +1574,10 @@ allow = /embed/
 allow = /scotland-pay-calculator/
 allow = /part-time-pay-calculator/
 allow = /hourly-rate-calculator/
+allow = /nhs-pay-rise-2027/
+allow = /nhs-payslip-explained/
+allow = /salary-sacrifice-mileage-calculator/
+allow = /northern-ireland-pay-calculator/
 allow = /llms.txt
 allow = /llms-full.txt
 disallow = /_next/*
@@ -1507,6 +1659,10 @@ const coreUrls = [
   { loc: `${SITE.url}/scotland-pay-calculator/`, priority: "0.95", changefreq: "weekly" },
   { loc: `${SITE.url}/part-time-pay-calculator/`, priority: "0.95", changefreq: "weekly" },
   { loc: `${SITE.url}/hourly-rate-calculator/`, priority: "0.95", changefreq: "weekly" },
+  { loc: `${SITE.url}/nhs-pay-rise-2027/`, priority: "0.95", changefreq: "daily" },
+  { loc: `${SITE.url}/nhs-payslip-explained/`, priority: "0.95", changefreq: "weekly" },
+  { loc: `${SITE.url}/salary-sacrifice-mileage-calculator/`, priority: "0.95", changefreq: "weekly" },
+  { loc: `${SITE.url}/northern-ireland-pay-calculator/`, priority: "0.95", changefreq: "daily" },
   { loc: `${SITE.url}/about/`, priority: "0.70", changefreq: "monthly" },
   { loc: `${SITE.url}/privacy/`, priority: "0.60", changefreq: "monthly" },
   { loc: `${SITE.url}/terms/`, priority: "0.60", changefreq: "monthly" },

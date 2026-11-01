@@ -15,3 +15,5 @@ next-env.d.ts
 *-gsc-*.json
 *service-account*.json
 *.key
+
+.firecrawl/
