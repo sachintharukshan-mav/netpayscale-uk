@@ -1,5 +1,8 @@
+import dns from "dns";
 import fs from "fs";
 import path from "path";
+
+dns.setDefaultResultOrder("ipv4first");
 
 const sitemapPath = path.resolve("out", "sitemap.xml");
 const sitemapContent = fs.readFileSync(sitemapPath, "utf8");

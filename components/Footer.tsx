@@ -55,26 +55,6 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/nhs-pay-rise-2027/" className="hover:text-zinc-950 transition-colors font-bold text-emerald-700">
-                  NHS Pay Rise 2027/28 (2.4% Offer)
-                </Link>
-              </li>
-              <li>
-                <Link href="/nhs-payslip-explained/" className="hover:text-zinc-950 transition-colors font-medium text-[#005EB8]">
-                  NHS Payslip &amp; ESR Code Decoder
-                </Link>
-              </li>
-              <li>
-                <Link href="/salary-sacrifice-mileage-calculator/" className="hover:text-zinc-950 transition-colors font-medium text-[#005EB8]">
-                  NHS Car Lease &amp; Mileage (59p/m)
-                </Link>
-              </li>
-              <li>
-                <Link href="/northern-ireland-pay-calculator/" className="hover:text-zinc-950 transition-colors font-medium text-amber-700">
-                  Northern Ireland 3.3% Backpay
-                </Link>
-              </li>
-              <li>
                 <Link href="/hourly-rate-calculator/" className="hover:text-zinc-950 transition-colors font-medium text-[#005EB8]">
                   NHS Hourly Pay Rates 2026/27 Chart
                 </Link>

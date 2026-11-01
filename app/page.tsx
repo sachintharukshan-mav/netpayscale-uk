@@ -149,6 +149,101 @@ export default function HomePage() {
         {/* 12. PROGRAMMATIC SEO REGIONAL & NATIONAL ROLE GUIDES DIRECTORY */}
         <PseoDirectory entries={pseoEntries} roleHubs={roleHubs} />
 
+        {/* 12B. NOVEMBER 2026 HIGH-VELOCITY NHS PAY & POLICY CALCULATORS */}
+        <section className="scroll-mt-20 pt-8 border-t border-border-subtle space-y-4">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+            <div>
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-nhs-blue/10 text-nhs-blue text-xs font-bold uppercase tracking-wider mb-1.5">
+                Updated November 2026 · Primary Statutory Tools
+              </span>
+              <h2 className="text-xl sm:text-2xl font-bold text-text-ink">
+                2027/28 Pay Forecast, ESR Payslip Decoder, EV Mileage &amp; NI Backpay
+              </h2>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <a
+              href="/nhs-pay-rise-2027/"
+              className="group bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-nhs-blue transition-colors flex flex-col justify-between"
+            >
+              <div>
+                <div className="text-xs font-bold uppercase tracking-wider text-nhs-blue mb-1">
+                  DHSC 19 Oct 2026 Evidence
+                </div>
+                <h3 className="text-sm font-extrabold text-slate-900 group-hover:text-nhs-blue">
+                  NHS Pay Rise 2027/28 Calculator (2.4% Proposal)
+                </h3>
+                <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                  Compare the 2.4% DHSC proposal against 3.3% CPI and 5.0% union claims across Bands 2–9 with pension cliff-edge alerts.
+                </p>
+              </div>
+              <span className="text-xs font-bold text-nhs-blue mt-3 inline-flex items-center gap-1">
+                Model 2027/28 Net Pay →
+              </span>
+            </a>
+
+            <a
+              href="/nhs-payslip-explained/"
+              className="group bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-nhs-blue transition-colors flex flex-col justify-between"
+            >
+              <div>
+                <div className="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-1">
+                  ESR Payroll Audit
+                </div>
+                <h3 className="text-sm font-extrabold text-slate-900 group-hover:text-nhs-blue">
+                  NHS Payslip Explained &amp; ESR Code Decoder
+                </h3>
+                <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                  Decode Night Duty EN, Saturday/Sunday EN, AfC Absence, NP, and WTD Pay with an interactive shift enhancement verifier.
+                </p>
+              </div>
+              <span className="text-xs font-bold text-nhs-blue mt-3 inline-flex items-center gap-1">
+                Verify ESR Payslip →
+              </span>
+            </a>
+
+            <a
+              href="/salary-sacrifice-mileage-calculator/"
+              className="group bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-nhs-blue transition-colors flex flex-col justify-between"
+            >
+              <div>
+                <div className="text-xs font-bold uppercase tracking-wider text-indigo-700 mb-1">
+                  Section 17 &amp; EV Fleet
+                </div>
+                <h3 className="text-sm font-extrabold text-slate-900 group-hover:text-nhs-blue">
+                  NHS Salary Sacrifice Car &amp; 59p Mileage Calculator
+                </h3>
+                <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                  Calculate 59p/24p/30p Section 17 mileage, HMRC Form P87 tax relief, EV 4% BiK net cost, and 1/54th CARE pension impact.
+                </p>
+              </div>
+              <span className="text-xs font-bold text-nhs-blue mt-3 inline-flex items-center gap-1">
+                Calculate EV &amp; Mileage →
+              </span>
+            </a>
+
+            <a
+              href="/northern-ireland-pay-calculator/"
+              className="group bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-nhs-blue transition-colors flex flex-col justify-between"
+            >
+              <div>
+                <div className="text-xs font-bold uppercase tracking-wider text-amber-700 mb-1">
+                  HSCNI &amp; RCN Ballot
+                </div>
+                <h3 className="text-sm font-extrabold text-slate-900 group-hover:text-nhs-blue">
+                  Northern Ireland (HSCNI) 3.3% Backpay Calculator
+                </h3>
+                <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                  Compare 2025/26 HSCNI pay in payment against the unpaid 2026/27 +3.3% parity award and accumulate monthly arrears.
+                </p>
+              </div>
+              <span className="text-xs font-bold text-nhs-blue mt-3 inline-flex items-center gap-1">
+                Calculate NI Backpay →
+              </span>
+            </a>
+          </div>
+        </section>
+
         {/* AD SLOT 5: Pre-FAQ Organic Search Anchor Slot */}
         <AdPlaceholder
           slotId="home-pre-faq"
