@@ -66,8 +66,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ? `${formatCurrency(entryCalc.netPay.monthly)}–${formatCurrency(topCalc.netPay.monthly)}/mo`
       : `${formatCurrency(entryCalc.netPay.monthly)}/mo`;
 
-  const title = `NHS ${role.roleName} Salary 2026/27 (${role.band}): ${netRange} Net & ${formatHourlyRate(entryCalc.hourlyRate)}`;
-  const description = `Official 2026/27 NHS ${role.roleName} (${role.band}) salary UK: ${formatCurrency(entryCalc.baseSalary.annual)} to ${formatCurrency(topCalc.baseSalary.annual)} gross (${formatHourlyRate(entryCalc.hourlyRate)}). Monthly net take-home pay is ${netRange} after PAYE tax, NI, and ${entryCalc.pensionTierLabel} CARE pension. Compare London HCAS, Scotland, and night shift rates.`;
+  const isAcp = role.roleSlug === "acp";
+  const title = isAcp
+    ? `ACP Salary UK 2026/27 — Band 7 & 8a Advanced Clinical Practitioner Pay Scale (${netRange} Net)`
+    : `NHS ${role.roleName} Salary 2026/27 (${role.band}): ${netRange} Net & ${formatHourlyRate(entryCalc.hourlyRate)}`;
+  const description = isAcp
+    ? `Verified 2026/27 ACP salary UK guide: Advanced Clinical Practitioner Agenda for Change pay scale, Band 7 & 8a banding (${formatCurrency(entryCalc.baseSalary.annual)} to ${formatCurrency(topCalc.baseSalary.annual)}), monthly take-home pay (${netRange}), hourly wage, and 2015 CARE NHS pension deductions.`
+    : `Official 2026/27 NHS ${role.roleName} (${role.band}) salary UK: ${formatCurrency(entryCalc.baseSalary.annual)} to ${formatCurrency(topCalc.baseSalary.annual)} gross (${formatHourlyRate(entryCalc.hourlyRate)}). Monthly net take-home pay is ${netRange} after PAYE tax, NI, and ${entryCalc.pensionTierLabel} CARE pension. Compare London HCAS, Scotland, and night shift rates.`;
   const canonicalUrl = `https://netpayscale.uk/roles/${role.roleSlug}/`;
 
   return {
@@ -484,8 +489,9 @@ export default async function RolePillarPage({ params }: Props) {
               </div>
 
               <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-zinc-950 tracking-tight leading-snug break-words">
-                NHS {role.roleName} Salary, Hourly Rate &amp; Net Take-Home Pay
-                (2026/27)
+                {role.roleSlug === "acp"
+                  ? "ACP Salary UK 2026/27 — Band 7 & 8a Advanced Clinical Practitioner Pay Scale, Wage & Net Take-Home"
+                  : `NHS ${role.roleName} Salary, Hourly Rate & Net Take-Home Pay (2026/27)`}
               </h1>
 
               <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">

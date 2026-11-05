@@ -41,15 +41,34 @@ export default function AnnualLeaveCalculatorPage() {
           {
             "@type": "ListItem",
             position: 1,
-            name: "NHS Pay Calculator",
+            name: "NetPayScale UK NHS Pay Calculator",
             item: "https://netpayscale.uk/",
           },
           {
             "@type": "ListItem",
             position: 2,
-            name: "NHS Annual Leave Calculator",
+            name: "NHS Annual Leave & Bank Holiday Calculator",
             item: "https://netpayscale.uk/annual-leave-calculator/",
           },
+        ],
+      },
+      {
+        "@type": "WebApplication",
+        "@id": "https://netpayscale.uk/annual-leave-calculator/#webapp",
+        name: "NetPayScale UK — 2026/27 NHS Annual Leave, Pro-Rata Hours & Bank Holiday Pay Calculator",
+        url: "https://netpayscale.uk/annual-leave-calculator/",
+        applicationCategory: "FinanceApplication",
+        operatingSystem: "All",
+        offers: {
+          "@type": "Offer",
+          price: "0.00",
+          priceCurrency: "GBP",
+        },
+        featureList: [
+          "Agenda for Change Section 13 Annual Leave Entitlement (27, 29 & 33 Days + 8 Bank Holidays)",
+          "Full-Time (37.5h / 35h) and Part-Time Pro-Rata HealthRoster Hours Converter",
+          "7.5-Hour, 11.5-Hour & 12-Hour Shift Equivalent Leave Calculator",
+          "NHS Bank Holiday Pay (+60% / +88% Section 2 Uplift) & Time Off In Lieu (TOIL) Calculator",
         ],
       },
       {
@@ -60,7 +79,15 @@ export default function AnnualLeaveCalculatorPage() {
             name: "How many hours is NHS annual leave for full-time staff (37.5 hours/week)?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Under Agenda for Change Section 13, a full-time (37.5 hours/week) NHS employee in England and Wales receives: 202.5 hours (27 days) plus 60 hours (8 bank holidays) = 262.5 total hours on entry (0 to 5 years); 217.5 hours (29 days) plus 60 hours = 277.5 total hours after 5 years of service; and 247.5 hours (33 days) plus 60 hours = 307.5 total hours after 10 years of reckonable NHS service.",
+              text: "Under Agenda for Change Section 13, a full-time (37.5 hours/week) NHS employee in England, Wales, and Northern Ireland receives: 202.5 hours (27 days) plus 60 hours (8 bank holidays) = 262.5 total hours on entry (0 to 5 years); 217.5 hours (29 days) plus 60 hours = 277.5 total hours after 5 years of service; and 247.5 hours (33 days) plus 60 hours = 307.5 total hours after 10 years of reckonable NHS service.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "How much is NHS bank holiday pay in 2026/27?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Under Agenda for Change Section 2 and Section 13.4, NHS staff who work on a public/bank holiday receive their normal hourly pay PLUS a +88% enhancement (Bands 2), +74% (Band 3), +60% (Bands 4 to 9) AND plain-time Time Off In Lieu (TOIL) hours added back to their HealthRoster annual leave balance for every bank holiday hour worked.",
             },
           },
           {
@@ -112,9 +139,19 @@ export default function AnnualLeaveCalculatorPage() {
             <span className="text-emerald-600">2026/27</span>
           </h1>
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-            Instantly convert your NHS annual leave and public holiday entitlement into <strong>total HealthRoster hours</strong> and <strong>7.5h, 11.5h, or 12h shift equivalents</strong> for full-time or part-time pro-rata contracts across 0–5 years, 5–10 years, and 10+ years of reckonable NHS service.
+            Instantly convert your NHS annual leave and public holiday entitlement with <strong>NetPayScale UK</strong> into <strong>total HealthRoster hours</strong>, <strong>7.5h, 11.5h, or 12h shift equivalents</strong>, and <strong>NHS bank holiday pay (+60% / +88% + TOIL)</strong> across 0–5 years, 5–10 years, and 10+ years of reckonable NHS service.
           </p>
         </header>
+
+        {/* Position 0 Direct Answer Box */}
+        <section className="rounded-2xl border-2 border-emerald-600/25 bg-gradient-to-r from-emerald-50/80 via-white to-emerald-50/40 p-5 sm:p-6 shadow-xs space-y-2.5">
+          <div className="text-xs font-extrabold uppercase tracking-wider text-emerald-800">
+            Quick Answer: 2026/27 NHS Annual Leave Entitlement (Section 13) &amp; Bank Holiday Pay
+          </div>
+          <p className="text-xs sm:text-sm text-slate-800 leading-relaxed">
+            Under <strong>NHS Agenda for Change Section 13</strong>, full-time staff (37.5h/wk) receive <strong>27 days (202.5 hrs) on entry (0–5 years)</strong>, <strong>29 days (217.5 hrs) after 5 years</strong>, and <strong>33 days (247.5 hrs) after 10 years</strong> of aggregated NHS service—plus <strong>8 public bank holidays (60 hrs)</strong>, giving <strong>262.5 hrs, 277.5 hrs, or 307.5 hrs</strong> total combined leave per year. Part-time staff receive the exact pro-rata percentage of both annual leave and bank holidays. Working a public bank holiday pays <strong>+60% hourly enhancement (Bands 4–9)</strong> or <strong>+74%–+88% (Bands 2–3)</strong> plus <strong>100% Time Off In Lieu (TOIL)</strong>.
+          </p>
+        </section>
 
         {/* Interactive Calculator */}
         <AnnualLeaveCalculatorClient />
@@ -182,6 +219,74 @@ export default function AnnualLeaveCalculatorPage() {
                         <span className="text-[11px] font-normal text-emerald-600">
                           ({(t10 / 11.5).toFixed(1)} × 11.5h)
                         </span>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        {/* Table 2: NHS Bank Holiday Pay Enhancement (+60% / +88%) & TOIL Reference Matrix */}
+        <section
+          id="nhs-bank-holiday-pay"
+          aria-labelledby="bank-holiday-pay-heading"
+          className="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 sm:p-8 space-y-6"
+        >
+          <div>
+            <h2 id="bank-holiday-pay-heading" className="text-xl sm:text-2xl font-extrabold text-slate-900">
+              NHS Bank Holiday Pay Rates 2026/27 (+60% to +88% Enhancement &amp; TOIL)
+            </h2>
+            <p className="text-sm text-slate-600 mt-1">
+              Under Agenda for Change Section 2 and Section 13.4, working any of the 8 UK Public / Bank Holidays pays an enhanced hourly rate PLUS hour-for-hour Time Off In Lieu (TOIL).
+            </p>
+          </div>
+
+          <div
+            tabIndex={0}
+            role="region"
+            aria-labelledby="bank-holiday-pay-heading"
+            className="overflow-x-auto rounded-xl border border-slate-200 focus:outline-2 focus:outline-emerald-600"
+          >
+            <table className="w-full text-left border-collapse text-xs sm:text-sm">
+              <thead>
+                <tr className="bg-slate-50 border-b border-slate-200 text-[11px] font-bold uppercase tracking-wider text-slate-500">
+                  <th scope="col" className="sticky top-0 bg-slate-50 py-3.5 px-4">NHS Pay Band (Entry)</th>
+                  <th scope="col" className="sticky top-0 bg-slate-50 py-3.5 px-4 text-right">Basic Hourly Rate</th>
+                  <th scope="col" className="sticky top-0 bg-slate-50 py-3.5 px-4 text-right">Bank Holiday Uplift %</th>
+                  <th scope="col" className="sticky top-0 bg-slate-50 py-3.5 px-4 text-right">Total Bank Holiday Hourly Rate</th>
+                  <th scope="col" className="sticky top-0 bg-slate-50 py-3.5 px-4 text-right">11.5h Bank Holiday Shift Cash + TOIL</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100 text-slate-700">
+                {[
+                  { band: "Band 2", slug: "band-2", baseHr: 13.13, upliftPct: 88 },
+                  { band: "Band 3", slug: "band-3", baseHr: 13.68, upliftPct: 74 },
+                  { band: "Band 4", slug: "band-4", baseHr: 15.00, upliftPct: 60 },
+                  { band: "Band 5", slug: "band-5", baseHr: 16.40, upliftPct: 60 },
+                  { band: "Band 6", slug: "band-6", baseHr: 20.44, upliftPct: 60 },
+                  { band: "Band 7", slug: "band-7", baseHr: 25.26, upliftPct: 60 },
+                  { band: "Band 8a", slug: "band-8a", baseHr: 29.42, upliftPct: 60 },
+                ].map((r) => {
+                  const totalHr = r.baseHr * (1 + r.upliftPct / 100);
+                  const upliftCash115 = r.baseHr * (r.upliftPct / 100) * 11.5;
+                  return (
+                    <tr key={r.band} className="hover:bg-slate-50/80">
+                      <th scope="row" className="py-3.5 px-4 font-bold text-slate-900">
+                        <Link href={`/bands/${r.slug}/`} className="text-emerald-700 hover:underline">
+                          2026/27 NHS {r.band}
+                        </Link>
+                      </th>
+                      <td className="py-3.5 px-4 text-right font-mono">£{r.baseHr.toFixed(2)}/hr</td>
+                      <td className="py-3.5 px-4 text-right font-mono font-bold text-emerald-700">
+                        +{r.upliftPct}% (Time + {r.upliftPct}%)
+                      </td>
+                      <td className="py-3.5 px-4 text-right font-mono font-extrabold text-slate-900">
+                        £{totalHr.toFixed(2)}/hr
+                      </td>
+                      <td className="py-3.5 px-4 text-right font-mono font-semibold text-emerald-800">
+                        +£{upliftCash115.toFixed(2)} extra + 11.5h TOIL
                       </td>
                     </tr>
                   );

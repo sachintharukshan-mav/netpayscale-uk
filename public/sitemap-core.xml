@@ -133,6 +133,12 @@
     <priority>0.95</priority>
   </url>
   <url>
+    <loc>https://netpayscale.uk/wales-pay-calculator/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://netpayscale.uk/about/</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>

@@ -171,7 +171,7 @@ export default function PseoDirectory({ entries, roleHubs = [] }: PseoDirectoryP
               </p>
             </div>
             <div className="mt-3 pt-2.5 border-t border-zinc-100 flex items-center justify-between text-[11px] font-semibold text-zinc-700 group-hover:text-zinc-950">
-              <span>Open localized model</span>
+              <span>Calculate {entry.band} {entry.regionName} Pay</span>
               <span className="font-mono text-zinc-400 group-hover:text-zinc-950 transition-colors">
                 →
               </span>

@@ -5,8 +5,14 @@ import { LanguageProvider } from "@/lib/i18n/LanguageContext";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://netpayscale.uk"),
+  applicationName: "NetPayScale UK",
+  appleWebApp: {
+    capable: true,
+    title: "NetPayScale UK",
+    statusBarStyle: "default",
+  },
   title: {
-    default: "NetPayScale UK (NHS Edition) | 2026/27 NHS Salary & Pension Calculator",
+    default: "NetPayScale UK | 2026/27 NHS Salary & Pension Calculator",
     template: "%s | NetPayScale UK",
   },
   description:
@@ -56,7 +62,7 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "NetPayScale UK (NHS Edition) | 2026/27 NHS Pay & Pension Calculator",
+    title: "NetPayScale UK | 2026/27 NHS Pay & Pension Calculator",
     description:
       "Instant take-home pay calculation for 1.3M+ NHS healthcare staff. Includes 3.3% pay uplift, HCAS London weighting, and 2015 CARE Pension tiers.",
     url: "https://netpayscale.uk/",
@@ -101,26 +107,19 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
-        "@id": "https://netpayscale.uk/#organization",
-        name: "NetPayScale UK (NHS Edition)",
-        url: "https://netpayscale.uk/",
-        logo: "https://netpayscale.uk/icon-512.png",
-        description:
-          "Official 2026/27 UK NHS Salary & Pension Calculator for 1.3M+ Agenda for Change healthcare staff. Computes net take-home pay, 3.3% AfC pay steps, London Weighting (HCAS), NHS 2015 CARE Pension tiers, Section 2 unsocial hours, Maternity Pay (OMP/SMP), Sick Pay, and Annual Leave.",
-        contactPoint: {
-          "@type": "ContactPoint",
-          email: "editorial@netpayscale.uk",
-          contactType: "editorial & payroll verification",
-          url: "https://netpayscale.uk/contact/",
-        },
-      },
-      {
         "@type": "WebSite",
-        name: "NetPayScale UK (NHS Edition)",
+        "@id": "https://netpayscale.uk/#website",
         url: "https://netpayscale.uk/",
+        name: "NetPayScale UK",
+        alternateName: [
+          "NetPayScale",
+          "NetPayScale.uk",
+          "NetPayScale UK (NHS Edition)",
+          "NetPayScale NHS Pay Calculator",
+        ],
         description:
           "Official 2026/2027 UK NHS Salary & Pension Calculator for 1.3M+ Agenda for Change staff.",
+        inLanguage: "en-GB",
         publisher: {
           "@id": "https://netpayscale.uk/#organization",
         },
@@ -134,24 +133,92 @@ export default function RootLayout({
         },
       },
       {
+        "@type": "Organization",
+        "@id": "https://netpayscale.uk/#organization",
+        name: "NetPayScale UK",
+        alternateName: "NetPayScale NHS Payroll Intelligence",
+        url: "https://netpayscale.uk/",
+        logo: "https://netpayscale.uk/icon-512.png",
+        description:
+          "NetPayScale UK is an independent UK payroll computational platform that calculates NHS Agenda for Change salaries, HMRC PAYE income tax, National Insurance, and 2015 CARE NHS Pension deductions.",
+        contactPoint: {
+          "@type": "ContactPoint",
+          email: "editorial@netpayscale.uk",
+          contactType: "editorial & payroll verification",
+          url: "https://netpayscale.uk/contact/",
+        },
+      },
+      {
         "@type": "WebApplication",
-        name: "NHS Salary & Pension Calculator",
+        "@id": "https://netpayscale.uk/#webapp",
+        name: "NetPayScale UK — 2026/27 NHS Pay & Pension Calculator",
         url: "https://netpayscale.uk/",
         applicationCategory: "FinanceApplication",
         operatingSystem: "All",
         browserRequirements: "Requires JavaScript. Requires HTML5.",
+        isPartOf: {
+          "@id": "https://netpayscale.uk/#website",
+        },
+        publisher: {
+          "@id": "https://netpayscale.uk/#organization",
+        },
         offers: {
           "@type": "Offer",
-          price: "0",
+          price: "0.00",
           priceCurrency: "GBP",
         },
         featureList: [
-          "Agenda for Change 2026/27 Pay Scale Verification (+3.3%)",
-          "High Cost Area Supplement (HCAS London Weighting)",
-          "Section 2 Unsocial Hours & Night Shift Uplift Calculation",
-          "NHS 2015 Scheme CARE Pension Tier Deductions",
-          "HMRC PAYE Income Tax & Class 1 NIC Calculations",
-          "Official Electronic Staff Record (ESR) Payslip Simulation",
+          "2026/27 NHS Agenda for Change Band 2 to Band 9 Take-Home Pay Calculator",
+          "Side-by-Side NHS Band Promotion & Pension Cliff Comparator",
+          "Electronic Staff Record (ESR) Itemised Payslip Simulation",
+          "Section 2 Unsocial Hours, Night Shift & Weekend Enhancement Calculator",
+          "NHS 2015 CARE Pension 1/54th Accrual & Lump Sum Commutation Model",
+          "NHS Staff Bank vs Agency Inside IR35 Net Pay Comparator",
+          "NHS Occupational Maternity Pay (OMP) & Statutory Sick Pay Planner",
+        ],
+        about: [
+          {
+            "@type": "Thing",
+            name: "Agenda for Change",
+            sameAs: [
+              "https://www.wikidata.org/wiki/Q4691995",
+              "https://en.wikipedia.org/wiki/Agenda_for_Change",
+            ],
+          },
+          {
+            "@type": "Thing",
+            name: "National Health Service",
+            sameAs: [
+              "https://www.wikidata.org/wiki/Q918396",
+              "https://en.wikipedia.org/wiki/National_Health_Service",
+            ],
+          },
+        ],
+        isBasedOn: [
+          {
+            "@type": "Thing",
+            name: "Pay-as-you-earn tax",
+            sameAs: [
+              "https://www.wikidata.org/wiki/Q1136969",
+              "https://en.wikipedia.org/wiki/Pay-as-you-earn_tax",
+            ],
+          },
+          {
+            "@type": "Thing",
+            name: "National Insurance",
+            sameAs: [
+              "https://www.wikidata.org/wiki/Q1967294",
+              "https://en.wikipedia.org/wiki/National_Insurance",
+            ],
+          },
+          {
+            "@type": "GovernmentOrganization",
+            name: "HM Revenue and Customs",
+            sameAs: [
+              "https://www.wikidata.org/wiki/Q1631196",
+              "https://en.wikipedia.org/wiki/HM_Revenue_and_Customs",
+            ],
+          },
         ],
       },
     ],

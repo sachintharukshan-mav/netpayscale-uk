@@ -1,6 +1,13 @@
+import dns from "dns";
+import net from "net";
 import fs from "fs";
 import path from "path";
 import crypto from "crypto";
+
+dns.setDefaultResultOrder("ipv4first");
+if (typeof net.setDefaultAutoSelectFamily === "function") {
+  net.setDefaultAutoSelectFamily(false);
+}
 
 const keyPath = path.resolve("nhspayscale-gsc-2f1e6db0dd83.json");
 const keyData = JSON.parse(fs.readFileSync(keyPath, "utf8"));

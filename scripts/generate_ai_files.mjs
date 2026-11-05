@@ -1164,6 +1164,38 @@ Last updated: 2026-11-01
 `;
 }
 
+function renderWalesPayMd() {
+  const rows = nhsData.bands
+    .map((b) => {
+      const entry = b.points[0];
+      const top = b.points[b.points.length - 1];
+      const entryCalc = calculateNet(entry.annualSalary, { bandSlug: b.slug });
+      const topCalc = calculateNet(top.annualSalary, { bandSlug: b.slug });
+      const wales365Hourly = (entry.annualSalary / (36.5 * 52.143)).toFixed(2);
+      return `| ${b.band} | ${fmtGBP(entry.annualSalary)} (${fmtGBP(entryCalc.netMonthly)}/mo net) | ${fmtGBP(top.annualSalary)} (${fmtGBP(topCalc.netMonthly)}/mo net) | £${wales365Hourly}/hr | £${entry.hourlyRate.toFixed(2)}/hr |`;
+    })
+    .join("\n");
+
+  return `# NHS Wales (GIG Cymru) Pay Calculator 2026/27 — 36.5-Hour Week, Band 2–9 Scales & Take-Home Pay
+
+> Official 2026/27 NHS Wales (GIG Cymru) Agenda for Change salary, 36.5-hour reduced working week (+2.74% higher hourly rate), and C1257L Welsh Income Tax take-home pay calculator across all 7 Welsh Health Boards.
+
+Canonical: ${SITE.url}/wales-pay-calculator/
+Last updated: 2026-11-03
+
+## 1. Key NHS Wales (GIG Cymru) 2026/27 Pay & Working Week Rules
+- **2026/27 +3.3% Consolidated Pay Award:** Effective 1 April 2026 across all 7 Welsh Health Boards and 3 NHS Wales Trusts.
+- **36.5-Hour Working Week Reduction:** Under the Welsh Government Collective Agreement, full-time NHS Wales Agenda for Change hours reduce from 37.5 hours/week to **36.5 hours/week (1,903.2 hours/year)** with zero loss of annual salary—increasing every clinician's effective hourly rate and Section 2 unsocial hours rate by **+2.74%** and granting **52.1 hours (~7 shifts) of paid time back per year**.
+- **Welsh Rate of Income Tax (C1257L):** Identical tax bands to England/NI in 2026/27 (£12,570 Personal Allowance, 20% Basic, 40% Higher, 45% Additional).
+
+## 2. NHS Wales 2026/27 Salary & 36.5h vs 37.5h Hourly Rate Table (Bands 2 to 9)
+
+| Band | Entry Gross (Monthly Net) | Top Step Gross (Monthly Net) | Wales 36.5h Hourly Rate | England 37.5h Hourly Rate |
+| :--- | :--- | :--- | :--- | :--- |
+${rows}
+`;
+}
+
 // ---------------------------------------------------------------------------
 // 2. Build Registry & Generate All Files
 // ---------------------------------------------------------------------------
@@ -1388,6 +1420,16 @@ const markdownRegistry = [
     category: "core",
     render: renderNorthernIrelandPayMd,
   },
+  {
+    route: "/wales-pay-calculator/",
+    mdPath: "/wales-pay-calculator.md",
+    fileOut: path.join(PUBLIC_DIR, "wales-pay-calculator.md"),
+    title: "NHS Wales (GIG Cymru) Pay Calculator 2026/27: 36.5-Hour Week & Band 2–9 Scales",
+    description:
+      "NHS Wales (GIG Cymru) 2026/27 Agenda for Change salary, 36.5-hour working week (+2.74% higher hourly rate), and C1257L Welsh Income Tax take-home pay calculator.",
+    category: "core",
+    render: renderWalesPayMd,
+  },
   ...nhsData.bands.map((b) => {
     const slug = b.slug;
     const roleSummary = b.typicalRoles.slice(0, 2).join(", ");
@@ -1439,7 +1481,7 @@ const catalogPayload = {
   url: SITE.url,
   updated: SITE.updated,
   totalMarkdownRoutes: markdownRegistry.length,
-  totalHtmlRoutes: 618,
+  totalHtmlRoutes: 619,
   routes: markdownRegistry.map((r) => ({
     htmlUrl: `${SITE.url}${r.route}`,
     markdownUrl: `${SITE.url}${r.mdPath}`,
@@ -1578,6 +1620,7 @@ allow = /nhs-pay-rise-2027/
 allow = /nhs-payslip-explained/
 allow = /salary-sacrifice-mileage-calculator/
 allow = /northern-ireland-pay-calculator/
+allow = /wales-pay-calculator/
 allow = /llms.txt
 allow = /llms-full.txt
 disallow = /_next/*
@@ -1663,6 +1706,7 @@ const coreUrls = [
   { loc: `${SITE.url}/nhs-payslip-explained/`, priority: "0.95", changefreq: "weekly" },
   { loc: `${SITE.url}/salary-sacrifice-mileage-calculator/`, priority: "0.95", changefreq: "weekly" },
   { loc: `${SITE.url}/northern-ireland-pay-calculator/`, priority: "0.95", changefreq: "daily" },
+  { loc: `${SITE.url}/wales-pay-calculator/`, priority: "0.95", changefreq: "weekly" },
   { loc: `${SITE.url}/about/`, priority: "0.70", changefreq: "monthly" },
   { loc: `${SITE.url}/privacy/`, priority: "0.60", changefreq: "monthly" },
   { loc: `${SITE.url}/terms/`, priority: "0.60", changefreq: "monthly" },

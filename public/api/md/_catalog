@@ -2,8 +2,8 @@
   "site": "NetPayScale UK (NHS Edition)",
   "url": "https://netpayscale.uk",
   "updated": "2026-10-26",
-  "totalMarkdownRoutes": 124,
-  "totalHtmlRoutes": 618,
+  "totalMarkdownRoutes": 125,
+  "totalHtmlRoutes": 619,
   "routes": [
     {
       "htmlUrl": "https://netpayscale.uk/",
@@ -157,6 +157,13 @@
       "markdownUrl": "https://netpayscale.uk/northern-ireland-pay-calculator.md",
       "title": "NHS Northern Ireland (HSCNI) Pay Calculator 2026/27: 3.3% Backpay & RCN Ballot",
       "description": "HSC Northern Ireland 2025/26 vs 2026/27 (+3.3%) salary comparator and accrued backpay calculator since 1 April 2026 during the RCN NI strike ballot.",
+      "category": "core"
+    },
+    {
+      "htmlUrl": "https://netpayscale.uk/wales-pay-calculator/",
+      "markdownUrl": "https://netpayscale.uk/wales-pay-calculator.md",
+      "title": "NHS Wales (GIG Cymru) Pay Calculator 2026/27: 36.5-Hour Week & Band 2–9 Scales",
+      "description": "NHS Wales (GIG Cymru) 2026/27 Agenda for Change salary, 36.5-hour working week (+2.74% higher hourly rate), and C1257L Welsh Income Tax take-home pay calculator.",
       "category": "core"
     },
     {

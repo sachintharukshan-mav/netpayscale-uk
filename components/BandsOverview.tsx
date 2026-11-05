@@ -81,14 +81,14 @@ export default function BandsOverview() {
                         href={`/bands/${b.slug}/`}
                         className="rounded-md border border-zinc-200 bg-white px-2.5 py-1 text-[11px] font-semibold text-[#005EB8] hover:border-[#005EB8] transition-colors"
                       >
-                        {b.band} Guide
+                        2026/27 NHS {b.band} Pay Guide
                       </Link>
                       <button
                         type="button"
                         onClick={() => handleModelBand(b.band)}
                         className="rounded-md bg-zinc-100 px-2.5 py-1 text-[11px] font-semibold text-zinc-800 hover:bg-zinc-900 hover:text-white transition-colors cursor-pointer"
                       >
-                        Calculate →
+                        Calculate {b.band} Take-Home →
                       </button>
                     </div>
                   </td>

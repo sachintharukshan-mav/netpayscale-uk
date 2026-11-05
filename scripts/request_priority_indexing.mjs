@@ -1,22 +1,32 @@
+import dns from "dns";
+import net from "net";
 import fs from "fs";
 import path from "path";
 import crypto from "crypto";
+
+dns.setDefaultResultOrder("ipv4first");
+if (typeof net.setDefaultAutoSelectFamily === "function") {
+  net.setDefaultAutoSelectFamily(false);
+}
 
 const keyPath = path.resolve("nhspayscale-gsc-2f1e6db0dd83.json");
 const keyData = JSON.parse(fs.readFileSync(keyPath, "utf8"));
 
 const NEW_PRIORITY_URLS = [
+  "https://netpayscale.uk/",
+  "https://netpayscale.uk/nhs-pay-rise-2027/",
+  "https://netpayscale.uk/nhs-payslip-explained/",
+  "https://netpayscale.uk/salary-sacrifice-mileage-calculator/",
+  "https://netpayscale.uk/northern-ireland-pay-calculator/",
+  "https://netpayscale.uk/scotland-pay-calculator/",
+  "https://netpayscale.uk/part-time-pay-calculator/",
+  "https://netpayscale.uk/hourly-rate-calculator/",
+  "https://netpayscale.uk/roles/",
   "https://netpayscale.uk/agency-vs-bank-calculator/",
   "https://netpayscale.uk/pension-calculator/",
   "https://netpayscale.uk/trusts/",
-  "https://netpayscale.uk/trusts/guys-and-st-thomas/",
-  "https://netpayscale.uk/trusts/barts-health/",
-  "https://netpayscale.uk/trusts/manchester-university/",
-  "https://netpayscale.uk/trusts/nhs-greater-glasgow-clyde/",
   "https://netpayscale.uk/promotion-calculator/",
   "https://netpayscale.uk/unsocial-hours-calculator/",
-  "https://netpayscale.uk/embed/",
-  "https://netpayscale.uk/",
 ];
 
 const SITEMAPS_TO_SUBMIT = [
@@ -76,12 +86,15 @@ async function getAccessToken(scopes) {
 }
 
 async function main() {
-  console.log("=== 1. Verifying Live Production Edge Endpoints (568 URLs) ===");
+  console.log("=== 1. Verifying Live Production Edge Endpoints (618 URLs) ===");
   for (const url of [
     "https://netpayscale.uk/sitemap.xml",
     "https://netpayscale.uk/sitemap-index.xml",
-    "https://netpayscale.uk/pension-calculator/",
-    "https://netpayscale.uk/trusts/guys-and-st-thomas/",
+    "https://netpayscale.uk/sitemap-core.xml",
+    "https://netpayscale.uk/nhs-pay-rise-2027/",
+    "https://netpayscale.uk/nhs-payslip-explained/",
+    "https://netpayscale.uk/salary-sacrifice-mileage-calculator/",
+    "https://netpayscale.uk/northern-ireland-pay-calculator/",
   ]) {
     const r = await fetch(url, { redirect: "manual" });
     const text = await r.text();
@@ -96,7 +109,7 @@ async function main() {
     }
   }
 
-  console.log("\n=== 2. Pushing All 568 URLs to IndexNow (Bing, Copilot, ChatGPT, DuckDuckGo) ===");
+  console.log("\n=== 2. Pushing All 618 URLs to IndexNow (Bing, Copilot, ChatGPT, DuckDuckGo) ===");
   const sitemapXml = fs.readFileSync(path.resolve("out", "sitemap.xml"), "utf8");
   const allUrls = [...sitemapXml.matchAll(/<loc>(.*?)<\/loc>/g)].map((m) => m[1]);
   const indexNowRes = await fetch("https://api.indexnow.org/indexnow", {
@@ -115,7 +128,7 @@ async function main() {
     "https://www.googleapis.com/auth/indexing https://www.googleapis.com/auth/webmasters"
   );
 
-  console.log("=== 3. Registering Segmented Sitemaps in Google Search Console ===");
+  console.log("=== 3. Re-Submitting All 6 Sitemaps in Google Search Console ===");
   for (const sitemapUrl of SITEMAPS_TO_SUBMIT) {
     const smRes = await fetch(
       `https://www.googleapis.com/webmasters/v3/sites/${encodeURIComponent(
@@ -126,7 +139,20 @@ async function main() {
         headers: { Authorization: `Bearer ${token}` },
       }
     );
-    console.log(`[GSC Sitemap HTTP ${smRes.status}] Registered: ${sitemapUrl}`);
+    console.log(`[GSC Sitemap PUT HTTP ${smRes.status}] Submitted: ${sitemapUrl}`);
+  }
+
+  console.log("\n=== 3B. Fetching Live Google Search Console Sitemap Registry Status ===");
+  const listSmRes = await fetch(
+    `https://www.googleapis.com/webmasters/v3/sites/${encodeURIComponent("sc-domain:netpayscale.uk")}/sitemaps`,
+    { headers: { Authorization: `Bearer ${token}` } }
+  );
+  const listSmData = await listSmRes.json();
+  for (const sm of listSmData.sitemap || []) {
+    const submittedCount = (sm.contents || []).reduce((acc, c) => acc + Number(c.submitted || 0), 0);
+    console.log(
+      `- ${sm.path} | lastSubmitted: ${sm.lastSubmitted} | lastDownloaded: ${sm.lastDownloaded || "Pending"} | errors: ${sm.errors} | warnings: ${sm.warnings} | submittedURLs: ${submittedCount}`
+    );
   }
 
   console.log("\n=== 4. Requesting Google Indexing API (urlNotifications:publish) ===");
@@ -150,12 +176,14 @@ async function main() {
     );
   }
 
-  console.log("\n=== 5. Inspecting URLs via Google Search Console URL Inspection API ===");
+  console.log("\n=== 5. Inspecting New URLs via Google Search Console URL Inspection API ===");
   for (const url of [
-    "https://netpayscale.uk/pension-calculator/",
-    "https://netpayscale.uk/trusts/",
-    "https://netpayscale.uk/trusts/guys-and-st-thomas/",
     "https://netpayscale.uk/",
+    "https://netpayscale.uk/nhs-pay-rise-2027/",
+    "https://netpayscale.uk/nhs-payslip-explained/",
+    "https://netpayscale.uk/salary-sacrifice-mileage-calculator/",
+    "https://netpayscale.uk/northern-ireland-pay-calculator/",
+    "https://netpayscale.uk/roles/",
   ]) {
     const inspectRes = await fetch("https://searchconsole.googleapis.com/v1/urlInspection/index:inspect", {
       method: "POST",

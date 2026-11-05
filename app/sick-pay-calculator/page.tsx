@@ -8,9 +8,9 @@ import AdPlaceholder from "@/components/AdPlaceholder";
 import { ChevronRight, HeartPulse, ShieldAlert, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "NHS Sick Pay Calculator 2026/27 | Full Pay, Half Pay & SSP Entitlement",
+  title: "NHS Sick Pay & 12-Month Rolling Sickness Calculator 2026/27 (Full, Half & SSP)",
   description:
-    "Calculate your 2026/27 NHS sick pay entitlement under Agenda for Change Section 14 (1 to 6 months Full Pay and Half Pay + £118.75/wk SSP). See your exact net monthly take-home pay during full pay and half pay.",
+    "Calculate your 2026/27 NHS sick pay under Agenda for Change Section 14 (1–6 months Full & Half Pay + £118.75/wk SSP), plus 12-month rolling sickness balance and Bradford Factor (S² × D) triggers.",
   alternates: {
     canonical: "https://netpayscale.uk/sick-pay-calculator/",
     types: {
@@ -19,12 +19,12 @@ export const metadata: Metadata = {
   },
   other: {
     "ai-summary":
-      "2026/27 NHS Sick Pay Calculator (Agenda for Change Section 14): calculates 1 to 6 months Full Pay and 2 to 6 months Half Pay + £118.75/wk Statutory Sick Pay (SSP) based on continuous NHS service, with exact monthly net take-home pay.",
+      "2026/27 NHS Sick Pay & 12-Month Rolling Sickness Calculator (Agenda for Change Section 14): calculates 1 to 6 months Full Pay and 2 to 6 months Half Pay + £118.75/wk Statutory Sick Pay (SSP), 12-month rolling sickness balance, and NHS Bradford Factor (S² × D) Stage 1–3 triggers.",
   },
   openGraph: {
-    title: "NHS Sick Pay Calculator 2026/27 (Full Pay, Half Pay & SSP) | NetPayScale UK",
+    title: "NHS Sick Pay & 12-Month Rolling Sickness Calculator 2026/27 | NetPayScale UK",
     description:
-      "Instant NHS Agenda for Change Section 14 sick pay calculator. Check your full pay and half pay months by length of service and exact net monthly take-home pay.",
+      "Instant NHS Agenda for Change Section 14 sick pay and 12-month rolling sickness calculator. Check Full Pay, Half Pay + £118.75/wk SSP, and Bradford Factor triggers.",
     url: "https://netpayscale.uk/sick-pay-calculator/",
     siteName: "NetPayScale UK",
     locale: "en_GB",
@@ -50,15 +50,34 @@ export default function SickPayCalculatorPage() {
           {
             "@type": "ListItem",
             position: 1,
-            name: "NHS Pay Calculator",
+            name: "NetPayScale UK NHS Pay Calculator",
             item: "https://netpayscale.uk/",
           },
           {
             "@type": "ListItem",
             position: 2,
-            name: "NHS Sick Pay Calculator",
+            name: "NHS Sick Pay & 12-Month Rolling Sickness Calculator",
             item: "https://netpayscale.uk/sick-pay-calculator/",
           },
+        ],
+      },
+      {
+        "@type": "WebApplication",
+        "@id": "https://netpayscale.uk/sick-pay-calculator/#webapp",
+        name: "NetPayScale UK — 2026/27 NHS Sick Pay, SSP & 12-Month Rolling Sickness Calculator",
+        url: "https://netpayscale.uk/sick-pay-calculator/",
+        applicationCategory: "FinanceApplication",
+        operatingSystem: "All",
+        offers: {
+          "@type": "Offer",
+          price: "0.00",
+          priceCurrency: "GBP",
+        },
+        featureList: [
+          "Agenda for Change Section 14 Occupational Sick Pay (1 to 6 Months Full & Half Pay)",
+          "2026/27 Statutory Sick Pay (SSP) £118.75/week (£514.58/month) Net Pay Calculator",
+          "12-Month Rolling Sickness Window Remaining Entitlement Calculator",
+          "NHS Bradford Factor (S² × D) Stage 1, Stage 2 & Stage 3 Absence Trigger Model",
         ],
       },
       {
@@ -74,18 +93,26 @@ export default function SickPayCalculatorPage() {
           },
           {
             "@type": "Question",
-            name: "Does NHS sick pay include unsocial hours enhancements?",
+            name: "How does the 12-month rolling sickness calculator work in the NHS?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Yes. Under Agenda for Change Section 14.4, NHS occupational sick pay is calculated on your normal full pay, including regularly rostered unsocial hours (night, weekend, and bank holiday) enhancements averaged over the reference period prior to sickness absence.",
+              text: "On the first day of any new sickness absence, NHS Electronic Staff Record (ESR) payroll looks back exactly 365 days (12 rolling months) from that start date and totals all calendar days of paid sickness taken in that 12-month window. Those days are subtracted from your Section 14 entitlement (e.g. 180 days Full Pay and 180 days Half Pay after 5 years service) to calculate your remaining Full Pay and Half Pay days.",
             },
           },
           {
             "@type": "Question",
-            name: "How is NHS half pay calculated with Statutory Sick Pay (SSP)?",
+            name: "What is the Statutory Sick Pay (SSP) rate for 2026/27 and how is NHS half pay calculated?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "During the half-pay phase of NHS sick leave, you receive 50% of your normal gross monthly pay PLUS Statutory Sick Pay (£118.75 per week / £514.58 per month in 2026/27), provided the combined total does not exceed your normal full pay. Because PAYE tax and National Insurance drop significantly on half pay, most NHS staff take home 62% to 68% of their normal net monthly pay during the half-pay phase.",
+              text: "For 2026/27, UK Statutory Sick Pay (SSP) is £118.75 per week (£514.58 per calendar month) for up to 28 weeks, subject to earning at least £125/week (Lower Earnings Limit). During the NHS Half Pay phase, you receive 50% of your normal gross pay PLUS £118.75/wk SSP (capped at 100% full pay), allowing most NHS staff to keep 62% to 68% of their normal net take-home pay.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Does NHS sick pay include unsocial hours enhancements?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. Under Agenda for Change Section 14.4, NHS occupational sick pay is calculated on your normal full pay, including regularly rostered unsocial hours (night, weekend, and bank holiday) enhancements averaged over the reference period prior to sickness absence.",
             },
           },
         ],
@@ -118,16 +145,26 @@ export default function SickPayCalculatorPage() {
         <header className="space-y-4 max-w-4xl">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-100 text-rose-800 text-xs font-extrabold uppercase tracking-wider">
             <HeartPulse className="w-3.5 h-3.5" />
-            Agenda for Change Section 14 (2026/27 Rates)
+            Agenda for Change Section 14 • 12-Month Rolling Window &amp; 2026/27 SSP (£118.75/wk)
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
-            NHS Sick Pay &amp; Half-Pay Calculator{" "}
+            NHS Sick Pay &amp; 12-Month Rolling Sickness Calculator{" "}
             <span className="text-rose-600">2026/27</span>
           </h1>
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-            Check your exact <strong>NHS occupational sick pay entitlement (1 to 6 months Full Pay &amp; Half Pay)</strong> by years of service, and see how much <strong>net monthly cash</strong> you actually take home during the Half Pay + Statutory Sick Pay (`SSP`) phase.
+            Check your exact <strong>NHS occupational sick pay entitlement (1 to 6 months Full Pay &amp; Half Pay)</strong> with <strong>NetPayScale UK</strong>, calculate your remaining <strong>12-month rolling sickness balance &amp; Bradford Factor (`S² × D`)</strong>, and see how much net cash you keep during <strong>Half Pay + Statutory Sick Pay (`£118.75/wk SSP`)</strong>.
           </p>
         </header>
+
+        {/* Position 0 Direct Answer Box */}
+        <section className="rounded-2xl border-2 border-rose-500/25 bg-gradient-to-r from-rose-50/80 via-white to-rose-50/40 p-5 sm:p-6 shadow-xs space-y-2.5">
+          <div className="text-xs font-extrabold uppercase tracking-wider text-rose-700">
+            Quick Answer: 2026/27 NHS Sick Pay (Section 14), 12-Month Rolling Window &amp; SSP
+          </div>
+          <p className="text-xs sm:text-sm text-slate-800 leading-relaxed">
+            Under <strong>NHS Agenda for Change Section 14</strong>, paid sick leave rises with reckonable service from <strong>1 month Full Pay + 2 months Half Pay (Year 1)</strong> up to <strong>6 months Full Pay + 6 months Half Pay (after 5 years completed service)</strong>. Entitlement is calculated over a <strong>12-month rolling sickness window</strong>: on the first day of any absence, ESR looks back 365 days and deducts any sick days already taken. During the Half Pay phase, <strong>2026/27 Statutory Sick Pay (£118.75/week = £514.58/month)</strong> is added on top of 50% occupational pay, meaning a Band 5 or Band 6 clinician retains <strong>~64%–68% of their normal net monthly take-home pay</strong>.
+          </p>
+        </section>
 
         {/* Interactive Client Calculator */}
         <SickPayCalculatorClient />
@@ -246,6 +283,98 @@ export default function SickPayCalculatorPage() {
                     </tr>
                   );
                 })}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        {/* Table 3: 12-Month Rolling Sickness & Bradford Factor Trigger Reference Chart */}
+        <section
+          id="rolling-12-month-sickness-triggers"
+          aria-labelledby="rolling-sickness-heading"
+          className="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 sm:p-8 space-y-6"
+        >
+          <div>
+            <h2 id="rolling-sickness-heading" className="text-xl sm:text-2xl font-extrabold text-slate-900">
+              12-Month Rolling Sickness Calculator &amp; NHS Bradford Factor (`S² × D`) Triggers
+            </h2>
+            <p className="text-sm text-slate-600 mt-1">
+              How NHS HR &amp; HealthRoster calculate rolling 365-day sickness absence triggers alongside the Bradford Factor formula (`Spells × Spells × Total Days`).
+            </p>
+          </div>
+
+          <div
+            tabIndex={0}
+            role="region"
+            aria-labelledby="rolling-sickness-heading"
+            className="overflow-x-auto rounded-xl border border-slate-200 focus:outline-2 focus:outline-rose-600"
+          >
+            <table className="w-full text-left border-collapse text-xs sm:text-sm">
+              <thead>
+                <tr className="bg-slate-50 border-b border-slate-200 text-[11px] font-bold uppercase tracking-wider text-slate-500">
+                  <th scope="col" className="sticky top-0 bg-slate-50 py-3.5 px-4">Absence Pattern in 12 Rolling Months</th>
+                  <th scope="col" className="sticky top-0 bg-slate-50 py-3.5 px-4 text-right">Bradford Score (`S² × D`)</th>
+                  <th scope="col" className="sticky top-0 bg-slate-50 py-3.5 px-4">Typical NHS Trust Attendance Stage</th>
+                  <th scope="col" className="sticky top-0 bg-slate-50 py-3.5 px-4">Impact on Section 14 Sick Pay</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100 text-slate-700">
+                <tr className="hover:bg-slate-50/80">
+                  <th scope="row" className="py-3.5 px-4 font-bold text-slate-900">
+                    1 Spell of 14 Days (e.g. Post-Op Recovery)
+                  </th>
+                  <td className="py-3.5 px-4 text-right font-mono font-bold text-emerald-700">
+                    1² × 14 = 14 pts
+                  </td>
+                  <td className="py-3.5 px-4">
+                    Return-to-Work (RTW) interview only; below short-term spell trigger
+                  </td>
+                  <td className="py-3.5 px-4">
+                    100% Full Pay (deducts 14 calendar days from your 12-month rolling Full Pay balance)
+                  </td>
+                </tr>
+                <tr className="hover:bg-slate-50/80">
+                  <th scope="row" className="py-3.5 px-4 font-bold text-slate-900">
+                    3 Spells totalling 9 Days (or 3% rolling absence)
+                  </th>
+                  <td className="py-3.5 px-4 text-right font-mono font-bold text-amber-700">
+                    3² × 9 = 81 pts
+                  </td>
+                  <td className="py-3.5 px-4 font-semibold text-amber-800">
+                    Stage 1 Informal Attendance Review (triggered at 3 spells or 10–12 days in 12 rolling months)
+                  </td>
+                  <td className="py-3.5 px-4">
+                    100% Full Pay (including regularly rostered Section 2 night/weekend enhancements)
+                  </td>
+                </tr>
+                <tr className="hover:bg-slate-50/80">
+                  <th scope="row" className="py-3.5 px-4 font-bold text-slate-900">
+                    4 Spells totalling 14 Days
+                  </th>
+                  <td className="py-3.5 px-4 text-right font-mono font-bold text-rose-700">
+                    4² × 14 = 224 pts
+                  </td>
+                  <td className="py-3.5 px-4 font-semibold text-rose-700">
+                    Stage 2 Formal Attendance Support Meeting &amp; Occupational Health Referral
+                  </td>
+                  <td className="py-3.5 px-4">
+                    100% Full Pay in Years 1–6+ (Year 1 staff have 16 days Full Pay + 60 days Half Pay remaining)
+                  </td>
+                </tr>
+                <tr className="hover:bg-slate-50/80">
+                  <th scope="row" className="py-3.5 px-4 font-bold text-slate-900">
+                    Long-Term Sickness (28+ Consecutive Calendar Days)
+                  </th>
+                  <td className="py-3.5 px-4 text-right font-mono font-bold text-sky-700">
+                    1² × 28+ = 28+ pts
+                  </td>
+                  <td className="py-3.5 px-4">
+                    Managed under Long-Term Sickness &amp; Phased Return pathway (up to 4–6 weeks phased return on Full Pay)
+                  </td>
+                  <td className="py-3.5 px-4">
+                    Full Pay for 1–6 months by service tier, then Half Pay + £118.75/wk SSP (`£514.58/mo`)
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>

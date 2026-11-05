@@ -45,8 +45,8 @@ assert(fs.existsSync(catalogPath), 'api/md/_catalog exists in static export');
 const llmsFullContent = fs.readFileSync(llmsFullPath, 'utf8');
 assert(llmsFullContent.length > 10000 && llmsFullContent.length < 500000, `llms-full.txt length is within optimal LLM context window (${llmsFullContent.length} chars)`);
 const catalogData = JSON.parse(fs.readFileSync(catalogPath, 'utf8'));
-assert(catalogData.totalMarkdownRoutes === 124, `api/md/_catalog lists all 124 core, band, trust & role Markdown routes (actual: ${catalogData.totalMarkdownRoutes})`);
-assert(catalogData.totalHtmlRoutes === 618, `api/md/_catalog reports 618 total HTML routes (actual: ${catalogData.totalHtmlRoutes})`);
+assert(catalogData.totalMarkdownRoutes === 125, `api/md/_catalog lists all 125 core, band, trust & role Markdown routes (actual: ${catalogData.totalMarkdownRoutes})`);
+assert(catalogData.totalHtmlRoutes === 619, `api/md/_catalog reports 619 total HTML routes (actual: ${catalogData.totalHtmlRoutes})`);
 
 // 2. Sitemap.xml check
 const sitemapPath = path.join(outDir, 'sitemap.xml');
@@ -57,7 +57,7 @@ const sitemapContent = fs.readFileSync(sitemapPath, 'utf8');
 const locMatches = [...sitemapContent.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => m[1]);
 console.log(`Found ${locMatches.length} URLs in sitemap.xml`);
 
-assert(locMatches.length === 618, `Sitemap contains all 618 canonical URLs (26 core/calculators + 11 band hubs + 50 trust hubs + 41 role pillar hubs + 490 role-region spokes; actual: ${locMatches.length})`);
+assert(locMatches.length === 619, `Sitemap contains all 619 canonical URLs (27 core/calculators + 11 band hubs + 50 trust hubs + 41 role pillar hubs + 490 role-region spokes; actual: ${locMatches.length})`);
 assert(locMatches[0] === 'https://netpayscale.uk/', `Homepage in sitemap is exact canonical: https://netpayscale.uk/ (actual: ${locMatches[0]})`);
 
 let nonTrailingSlashCount = 0;
@@ -79,7 +79,7 @@ const sitemapIndexMatches = [...sitemapIndexContent.matchAll(/<loc>(.*?)<\/loc>/
 assert(sitemapIndexMatches.length === 4, `sitemap-index.xml points to 4 child sitemaps (actual: ${sitemapIndexMatches.length})`);
 
 const childSitemaps = [
-  { file: 'sitemap-core.xml', count: 26 },
+  { file: 'sitemap-core.xml', count: 27 },
   { file: 'sitemap-bands.xml', count: 11 },
   { file: 'sitemap-trusts.xml', count: 50 },
   { file: 'sitemap-roles.xml', count: 531 }
@@ -100,7 +100,7 @@ for (const child of childSitemaps) {
     }
   }
 }
-assert(totalSegmentedUrls === 618, `Segmented child sitemaps sum to exactly 618 URLs matching master sitemap.xml (actual: ${totalSegmentedUrls})`);
+assert(totalSegmentedUrls === 619, `Segmented child sitemaps sum to exactly 619 URLs matching master sitemap.xml (actual: ${totalSegmentedUrls})`);
 
 
 // 3. Homepage HTML Audit (Canonical, Meta, Schema)
@@ -115,6 +115,22 @@ assert(homeHtml.includes('"@type":"Organization"'), 'Homepage contains Organizat
 assert(homeHtml.includes('"@type":"WebSite"'), 'Homepage contains WebSite schema');
 assert(homeHtml.includes('"@type":"WebApplication"'), 'Homepage contains WebApplication schema');
 assert(homeHtml.includes('"@type":"FAQPage"'), 'Homepage contains FAQPage schema');
+assert(homeHtml.includes('property="og:site_name" content="NetPayScale UK"'), 'Homepage contains <meta property="og:site_name" content="NetPayScale UK">');
+assert(homeHtml.includes('name="application-name" content="NetPayScale UK"'), 'Homepage contains <meta name="application-name" content="NetPayScale UK">');
+assert(homeHtml.includes('name="apple-mobile-web-app-title" content="NetPayScale UK"'), 'Homepage contains <meta name="apple-mobile-web-app-title" content="NetPayScale UK">');
+assert(homeHtml.includes('"@id":"https://netpayscale.uk/#website"') && homeHtml.includes('"name":"NetPayScale UK"') && homeHtml.includes('"alternateName":["NetPayScale","NetPayScale.uk","NetPayScale UK (NHS Edition)","NetPayScale NHS Pay Calculator"]'), 'Root JSON-LD @graph declares unified WebSite.name="NetPayScale UK" and alternateName array');
+assert(
+  homeHtml.includes('https://www.wikidata.org/wiki/Q4691995') &&
+  homeHtml.includes('https://www.wikidata.org/wiki/Q918396') &&
+  homeHtml.includes('https://www.wikidata.org/wiki/Q1136969') &&
+  homeHtml.includes('https://www.wikidata.org/wiki/Q1967294') &&
+  homeHtml.includes('https://www.wikidata.org/wiki/Q1631196'),
+  'Root JSON-LD @graph includes all 5 verified Wikidata sameAs triples (Q4691995, Q918396, Q1136969, Q1967294, Q1631196)'
+);
+assert(homeHtml.includes('title="NetPayScale UK — 2026/27 NHS Pay &amp; Pension Calculator"') && homeHtml.includes('aria-label="NetPayScale UK — 2026/27 NHS Pay &amp; Pension Calculator"'), 'Navbar brand link includes explicit title and aria-label combining NetPayScale UK and primary query group');
+assert(homeHtml.includes('statutory-notice') && homeHtml.includes('<strong>NetPayScale UK</strong>') && homeHtml.includes('<strong>2026/27 NHS Agenda for Change (AfC) pay scales</strong>'), 'Footer statutory-notice renders Subject-Predicate-Object semantic triples in plain SSR HTML');
+assert(homeHtml.includes('id="nhs-contract-comparison"') && homeHtml.includes('NHS Staff Bank vs. Inside IR35 Agency, 2015 CARE Pension vs. Opting Out'), 'Homepage renders static SSR Sibling Entity Comparison Block and accessible comparison table');
+assert(!homeHtml.includes('>Calculate →<'), 'Homepage contains zero generic "Calculate →" button/anchor labels');
 assert(homeHtml.includes('name="ai-summary"'), 'Homepage contains <meta name="ai-summary"> head signal');
 assert(homeHtml.includes('type="text/markdown"'), 'Homepage contains <link rel="alternate" type="text/markdown"> head signal');
 assert(fs.existsSync(path.join(outDir, 'favicon.ico')), 'favicon.ico exists in static export');
@@ -158,6 +174,7 @@ const siblingCalculators = [
   'nhs-payslip-explained',
   'salary-sacrifice-mileage-calculator',
   'northern-ireland-pay-calculator',
+  'wales-pay-calculator',
 ];
 for (const calcSlug of siblingCalculators) {
   const cPath = path.join(outDir, calcSlug, 'index.html');
@@ -202,6 +219,23 @@ for (const calcSlug of siblingCalculators) {
     if (calcSlug === 'northern-ireland-pay-calculator') {
       assert(cHtml.includes('HSCNI') && cHtml.includes('20 November 2026'), 'Northern Ireland Pay Calculator covers HSCNI 3.3% parity backpay and RCN 20 Nov 2026 ballot');
       assert(cHtml.includes('tabindex="0"') && cHtml.includes('role="region"'), 'Northern Ireland Pay Calculator implements accessible responsive-table container');
+    }
+    if (calcSlug === 'maternity-pay-calculator') {
+      assert(cHtml.includes('"@type":"WebApplication"'), 'Maternity Pay Calculator contains WebApplication schema');
+      assert(cHtml.includes('Maternity Pay Calculator for 2 Jobs') && cHtml.includes('748.72') && cHtml.includes('811.11'), 'Maternity Pay Calculator covers 2 Jobs (Dual Contracts) and £187.18 × 4 (£748.72 vs £811.11/mo ESR)');
+    }
+    if (calcSlug === 'sick-pay-calculator') {
+      assert(cHtml.includes('"@type":"WebApplication"'), 'Sick Pay Calculator contains WebApplication schema');
+      assert(cHtml.includes('12-Month Rolling Sickness') && cHtml.includes('Bradford Factor'), 'Sick Pay Calculator covers 12-Month Rolling Sickness & Bradford Factor triggers');
+    }
+    if (calcSlug === 'annual-leave-calculator') {
+      assert(cHtml.includes('"@type":"WebApplication"'), 'Annual Leave Calculator contains WebApplication schema');
+      assert(cHtml.includes('NHS Bank Holiday Pay Rates 2026/27') && cHtml.includes('+88%') && cHtml.includes('+60%'), 'Annual Leave Calculator covers NHS Bank Holiday Pay Rates (+88% Bands 2-3 / +60% Bands 4-9 & TOIL)');
+    }
+    if (calcSlug === 'wales-pay-calculator') {
+      assert(cHtml.includes('"@type":"WebApplication"'), 'Wales Pay Calculator contains WebApplication schema');
+      assert(cHtml.includes('GIG Cymru') && cHtml.includes('36.5') && cHtml.includes('C1257L'), 'Wales Pay Calculator covers GIG Cymru 36.5-hour working week and C1257L tax');
+      assert(cHtml.includes('tabindex="0"') && cHtml.includes('role="region"'), 'Wales Pay Calculator implements accessible responsive-table container');
     }
   }
 }

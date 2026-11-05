@@ -28,6 +28,7 @@ NetPayScale UK is an open-access statutory payroll reference and calculator suit
 - [NHS Payslip Explained 2026/27: Every ESR Code (EN, AfC Absence, NP, WTD) Decoded](https://netpayscale.uk/nhs-payslip-explained.md): Interactive NHS Electronic Staff Record (ESR) payslip code decoder covering Night Duty EN, AfC Absence, NP, WTD Pay (+12.07%), and fractional PAID/DUE hours.
 - [NHS Salary Sacrifice Car & Section 17 Mileage Calculator 2026/27 (59p/Mile)](https://netpayscale.uk/salary-sacrifice-mileage-calculator.md): NHS Fleet Solutions EV salary sacrifice car net cost, 4% 2026/27 BiK, 1/54th CARE pension impact, and Section 17 business mileage (59p/24p/30p) calculator.
 - [NHS Northern Ireland (HSCNI) Pay Calculator 2026/27: 3.3% Backpay & RCN Ballot](https://netpayscale.uk/northern-ireland-pay-calculator.md): HSC Northern Ireland 2025/26 vs 2026/27 (+3.3%) salary comparator and accrued backpay calculator since 1 April 2026 during the RCN NI strike ballot.
+- [NHS Wales (GIG Cymru) Pay Calculator 2026/27: 36.5-Hour Week & Band 2–9 Scales](https://netpayscale.uk/wales-pay-calculator.md): NHS Wales (GIG Cymru) 2026/27 Agenda for Change salary, 36.5-hour working week (+2.74% higher hourly rate), and C1257L Welsh Income Tax take-home pay calculator.
 
 ## 2026/27 NHS Agenda for Change Band Guides (Markdown Twins)
 - [NHS Band 2 Salary 2026/27 (Healthcare Assistant, Clinical Support Worker)](https://netpayscale.uk/bands/band-2.md): 2026/27 Band 2 pay scale (£25,272–£25,272), hourly rates, step progression, and regional net pay.

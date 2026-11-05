@@ -125,6 +125,16 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/wales-pay-calculator/" className="hover:text-zinc-950 transition-colors font-medium text-red-700">
+                  NHS Wales 36.5h Week Calculator
+                </Link>
+              </li>
+              <li>
+                <Link href="/calculator/" className="hover:text-zinc-950 transition-colors font-medium text-[#005EB8]">
+                  Regional Pay Guides (490 Calculators)
+                </Link>
+              </li>
+              <li>
                 <Link href="/trusts/" className="hover:text-zinc-950 transition-colors font-medium text-[#005EB8]">
                   Top 50 NHS Trusts Directory
                 </Link>
@@ -237,7 +247,7 @@ export function Footer() {
 
         {/* Regulatory Disclaimer */}
         <div className="rounded-lg border border-zinc-200/70 bg-zinc-50/70 p-3.5 text-[11px] leading-relaxed text-zinc-500">
-          <strong>Notice: </strong>
+          <span className="statutory-notice block mb-1.5"><strong>NetPayScale UK</strong> is an independent UK healthcare payroll calculator that models <strong>2026/27 NHS Agenda for Change (AfC) pay scales</strong>, <strong>HMRC PAYE income tax</strong>, <strong>Class 1 National Insurance contributions</strong>, and <strong>NHS 2015 CARE Pension scheme</strong> deductions across England, Wales, Scotland, and Northern Ireland.</span> <strong>Notice: </strong>
           NetPayScale UK is an independent computational utility and is not affiliated with or endorsed by the National Health Service (NHS), NHS Employers, or HM Revenue &amp; Customs (HMRC). All outputs are calculated strictly according to published 2026/27 Agenda for Change pay circulars and UK statutory payroll rules.
         </div>
 

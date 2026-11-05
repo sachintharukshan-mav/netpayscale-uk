@@ -24,6 +24,8 @@ export function SickPayCalculatorClient() {
   const [hcasZone, setHcasZone] = useState<"standard" | "inner-london" | "outer-london" | "fringe">("standard");
   const [contractedHours, setContractedHours] = useState<number>(37.5);
   const [nightHoursPerWeek, setNightHoursPerWeek] = useState<number>(0);
+  const [rollingSpells, setRollingSpells] = useState<number>(2);
+  const [rollingDaysTaken, setRollingDaysTaken] = useState<number>(8);
 
   const selectedBandObj = useMemo(
     () => nhsData.bands.find((b) => b.band === band) || nhsData.bands[3],
@@ -86,6 +88,22 @@ export function SickPayCalculatorClient() {
     const totalProtectedNet =
       fullMonthlyNet * currentTier.fullMonths + halfPayMonthlyNet * currentTier.halfMonths;
 
+    // 12-Month Rolling Sickness & Bradford Factor (S^2 * D)
+    const maxFullDays = currentTier.fullMonths * 30;
+    const maxHalfDays = currentTier.halfMonths * 30;
+    const remainingFullDays = Math.max(0, maxFullDays - rollingDaysTaken);
+    const remainingHalfDays = Math.max(
+      0,
+      maxHalfDays - Math.max(0, rollingDaysTaken - maxFullDays)
+    );
+    const bradfordScore = rollingSpells * rollingSpells * rollingDaysTaken;
+    const triggerStage =
+      rollingSpells >= 4 || rollingDaysTaken >= 28 || bradfordScore >= 200
+        ? "Stage 2 / Formal Absence Review Trigger"
+        : rollingSpells >= 3 || rollingDaysTaken >= 10 || bradfordScore >= 80
+        ? "Stage 1 Informal Sickness Trigger (3 Spells / 10+ Days)"
+        : "Below Standard NHS Sickness Trigger";
+
     return {
       fullMonthlyGross,
       fullMonthlyNet,
@@ -97,8 +115,14 @@ export function SickPayCalculatorClient() {
       halfPayMonthlyNet,
       halfPayRetentionPct,
       totalProtectedNet,
+      maxFullDays,
+      maxHalfDays,
+      remainingFullDays,
+      remainingHalfDays,
+      bradfordScore,
+      triggerStage,
     };
-  }, [normalPay, currentTier]);
+  }, [normalPay, currentTier, rollingSpells, rollingDaysTaken]);
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -246,6 +270,64 @@ export function SickPayCalculatorClient() {
           <p className="text-[11px] text-slate-500 mt-1.5">
             Under Section 14.4, regularly rostered unsocial hours enhancements are paid during NHS sick leave.
           </p>
+        </div>
+
+        {/* 12-Month Rolling Sickness & Bradford Factor Inputs */}
+        <div className="pt-4 border-t border-slate-100 space-y-3">
+          <div className="flex items-center justify-between">
+            <span className="text-xs font-extrabold uppercase tracking-wider text-rose-700">
+              12-Month Rolling Sickness &amp; Bradford Calculator
+            </span>
+            <span className="text-[11px] font-mono font-bold text-slate-600">
+              Score: {sickModel.bradfordScore} pts
+            </span>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label htmlFor="rolling-spells" className="block text-[11px] font-bold text-slate-700 mb-1">
+                Sickness Spells in Last 12m (S): <span className="text-rose-600">{rollingSpells}</span>
+              </label>
+              <input
+                id="rolling-spells"
+                type="range"
+                min={0}
+                max={8}
+                step={1}
+                value={rollingSpells}
+                onChange={(e) => setRollingSpells(Number(e.target.value))}
+                className="w-full accent-rose-600"
+              />
+            </div>
+            <div>
+              <label htmlFor="rolling-days" className="block text-[11px] font-bold text-slate-700 mb-1">
+                Sick Days Taken in Last 12m (D): <span className="text-rose-600">{rollingDaysTaken}d</span>
+              </label>
+              <input
+                id="rolling-days"
+                type="range"
+                min={0}
+                max={180}
+                step={1}
+                value={rollingDaysTaken}
+                onChange={(e) => setRollingDaysTaken(Number(e.target.value))}
+                className="w-full accent-rose-600"
+              />
+            </div>
+          </div>
+          <div className="rounded-xl bg-slate-50 border border-slate-200 p-3 text-xs space-y-1">
+            <div className="flex items-center justify-between">
+              <span className="text-slate-600 font-medium">Remaining Full Pay in Rolling 12m:</span>
+              <span className="font-mono font-extrabold text-emerald-700">{sickModel.remainingFullDays} days</span>
+            </div>
+            <div className="flex items-center justify-between">
+              <span className="text-slate-600 font-medium">Remaining Half Pay in Rolling 12m:</span>
+              <span className="font-mono font-bold text-sky-700">{sickModel.remainingHalfDays} days</span>
+            </div>
+            <div className="flex items-center justify-between pt-1 border-t border-slate-200/80">
+              <span className="text-slate-600 font-medium">HR Policy Status:</span>
+              <span className="font-bold text-rose-700">{sickModel.triggerStage}</span>
+            </div>
+          </div>
         </div>
       </div>
 

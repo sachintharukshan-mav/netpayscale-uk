@@ -14,7 +14,7 @@ export function Navbar() {
       <div className="h-16 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-3">
         {/* Brand & Logo */}
         <div className="flex items-center gap-3 shrink-0">
-          <Link href="/" className="flex items-center gap-2.5 group">
+          <Link href="/" title="NetPayScale UK — 2026/27 NHS Pay & Pension Calculator" aria-label="NetPayScale UK — 2026/27 NHS Pay & Pension Calculator" className="flex items-center gap-2.5 group">
             <div className="flex h-8 w-11 items-center justify-center rounded bg-nhs-blue text-white shadow-xs group-hover:scale-105 transition-transform duration-150">
               <span className="font-extrabold text-sm tracking-tight">NHS</span>
             </div>
@@ -183,6 +183,20 @@ export function Navbar() {
             onClick={() => setMobileMenuOpen(false)}
           >
             NHS Scotland 35-Hour Week &amp; S1257L Calculator
+          </Link>
+          <Link
+            className="block px-3 py-2 rounded-lg text-text-body hover:bg-surface-muted font-medium text-sm"
+            href="/wales-pay-calculator/"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            NHS Wales 36.5-Hour Week Calculator
+          </Link>
+          <Link
+            className="block px-3 py-2 rounded-lg text-text-body hover:bg-surface-muted font-medium text-sm"
+            href="/calculator/"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Regional Pay Calculators (490 Locations)
           </Link>
           <Link
             className="block px-3 py-2 rounded-lg text-text-body hover:bg-surface-muted font-medium text-sm"

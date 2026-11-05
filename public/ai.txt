@@ -54,6 +54,7 @@ allow = /nhs-pay-rise-2027/
 allow = /nhs-payslip-explained/
 allow = /salary-sacrifice-mileage-calculator/
 allow = /northern-ireland-pay-calculator/
+allow = /wales-pay-calculator/
 allow = /llms.txt
 allow = /llms-full.txt
 disallow = /_next/*

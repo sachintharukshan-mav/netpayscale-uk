@@ -31,18 +31,23 @@ export function EmbedGeneratorClient() {
   const queryString = queryParts.length > 0 ? `?${queryParts.join("&")}` : "";
   const embedUrl = `https://netpayscale.uk/embed/calculator/${queryString}`;
 
+  const selectedBandObj = nhsData.bands.find((b) => b.slug === selectedBand);
+  const selectedBandLabel = selectedBandObj ? selectedBandObj.band : "Band 5";
+
   // Generated HTML Snippet
-  const embedCode = `<!-- NetPayScale UK 2026/27 NHS Salary Calculator Embed -->
-<iframe
-  src="${embedUrl}"
-  width="${widthMode === "responsive" ? "100%" : "600"}"
-  height="580"
-  style="border: 1px solid #e2e8f0; border-radius: 16px; max-width: 640px; width: 100%; display: block; margin: 0 auto; box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);"
-  title="NHS Salary & Pension Calculator 2026/27"
-  loading="lazy"
-></iframe>
-<div style="font-size: 12px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; text-align: center; margin-top: 8px; color: #64748b;">
-  Free NHS payroll data provided by <a href="https://netpayscale.uk/" target="_blank" rel="noopener" style="color: #005EB8; font-weight: 600; text-decoration: underline;">NetPayScale UK</a> (2026/27 Agenda for Change)
+  const embedCode = `<!-- NetPayScale UK — Official 2026/27 NHS Pay Calculator Embed -->
+<div class="netpayscale-embed-wrapper" style="max-width: 640px; margin: 0 auto; font-family: system-ui, -apple-system, sans-serif;">
+  <iframe
+    src="${embedUrl}"
+    width="${widthMode === "responsive" ? "100%" : "600"}"
+    height="580"
+    style="border: 1px solid #e2e8f0; border-radius: 16px; max-width: 640px; width: 100%; display: block; margin: 0 auto; box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);"
+    title="NetPayScale UK — 2026/27 NHS ${selectedBandLabel} Agenda for Change Pay & Pension Calculator"
+    loading="lazy"
+  ></iframe>
+  <p style="margin-top: 8px; font-size: 12px; color: #475569; text-align: right;">
+    Verified 2026/27 NHS ${selectedBandLabel} Agenda for Change figures powered by <a href="https://netpayscale.uk/" target="_blank" rel="noopener" style="color: #005eb8; font-weight: 600; text-decoration: underline;">NetPayScale UK — NHS Pay &amp; Pension Calculator</a>
+  </p>
 </div>`;
 
   const handleCopy = async () => {

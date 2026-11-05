@@ -95,11 +95,13 @@ export default function FAQSection() {
                   {isOpen ? "−" : "+"}
                 </span>
               </button>
-              {isOpen && (
-                <div className="border-t border-zinc-100 px-4 py-3 text-xs leading-relaxed text-zinc-600 bg-zinc-50/40">
-                  {faq.answer}
-                </div>
-              )}
+              <div
+                className={`border-t border-zinc-100 px-4 py-3 text-xs leading-relaxed text-zinc-600 bg-zinc-50/40 ${
+                  isOpen ? "block" : "hidden"
+                }`}
+              >
+                {faq.answer}
+              </div>
             </div>
           );
         })}
