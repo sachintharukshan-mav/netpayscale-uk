@@ -3,7 +3,7 @@
 > Official 2026/27 Agenda for Change salary and take-home pay tables for Great Ormond Street Hospital for Children NHS Foundation Trust (RP4). Includes Inner London (+20%, up to £8,746), starting Band 5 take-home pay, and hospital site allocations.
 
 Canonical: https://netpayscale.uk/trusts/great-ormond-street/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## 1. Key Trust Facts
 - **Trust Name:** Great Ormond Street Hospital for Children NHS Foundation Trust (GOSH)

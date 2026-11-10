@@ -3,7 +3,7 @@
 > Calculate your real 2026/27 NHS Bank Shift or Overtime take-home pay after marginal PAYE tax (20%/40%), 8% National Insurance, Section 2 night/weekend enhancements, and 12.07% WTD holiday pay.
 
 Canonical: https://netpayscale.uk/bank-shift-calculator/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## NHS Agenda for Change Section 2 Unsocial Hours Multipliers (2026/27)
 

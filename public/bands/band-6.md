@@ -3,7 +3,7 @@
 > Official 2026/27 NHS Agenda for Change Band 6 (Junior Sister / Charge Nurse, Senior Paramedic, Specialist Physiotherapist) salary breakdown: £39,959 to £48,117 gross per year, exact monthly net pay after pension, PAYE tax, and NICs across England, Scotland, and London HCAS zones.
 
 Canonical: https://netpayscale.uk/bands/band-6/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## Band 6 Overview (Junior Sister / Charge Nurse, Senior Paramedic, Specialist Physiotherapist)
 - **2026/27 Gross Salary Range:** **£39,959** (Entry) to **£48,117** (Top Step)

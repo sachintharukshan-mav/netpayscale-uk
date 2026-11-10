@@ -3,7 +3,7 @@
 > Official 2026/27 NHS Director of Operations (Band 8d) salary UK: £94,356 to £108,814 gross per year (£48.26/hr). Monthly net take-home pay is £4,851/mo at entry and £5,459/mo at top step after PAYE tax, NI, and 12.5% CARE pension.
 
 Canonical: https://netpayscale.uk/roles/director-of-operations/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## 1. Key 2026/27 Pay Facts for NHS Director of Operations (Band 8d)
 - **Agenda for Change Band:** Band 8d

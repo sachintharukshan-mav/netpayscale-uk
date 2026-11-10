@@ -3,7 +3,7 @@
 > Official 2026/27 NHS Matron (Band 8a) salary UK: £57,528 to £64,750 gross per year (£29.42/hr). Monthly net take-home pay is £3,353/mo at entry and £3,663/mo at top step after PAYE tax, NI, and 10.7% CARE pension.
 
 Canonical: https://netpayscale.uk/roles/matron/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## 1. Key 2026/27 Pay Facts for NHS Matron (Band 8a)
 - **Agenda for Change Band:** Band 8a

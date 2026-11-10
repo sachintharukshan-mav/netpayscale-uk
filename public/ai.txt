@@ -1,6 +1,6 @@
 # ai.txt for NetPayScale UK (NHS Edition) (ai-visibility.org.uk spec v1.1.1)
 # Keep in sync with /robots.txt and /llms.txt
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 [identity]
 name = NetPayScale UK (NHS Edition)

@@ -3,7 +3,7 @@
 > Official 2026/27 UK NHS Salary & Pension Calculator for 1.3M+ Agenda for Change healthcare staff. Computes net take-home pay, 3.3% AfC pay steps, London Weighting (HCAS), NHS 2015 CARE Pension tiers, Section 2 unsocial hours, Maternity Pay (OMP/SMP), Sick Pay, and Annual Leave.
 
 Canonical: https://netpayscale.uk/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## Summary of 2026/27 Statutory NHS Pay Rules
 - **Agenda for Change Pay Uplift (Effective 1 April 2026):** Confirmed **3.3% consolidated increase** across all Bands 2 to 9, with the Band 2 single spine point set at **£25,272/yr (£12.92/hr)** and Band 5 entry at **£32,073/yr (£16.40/hr)**.

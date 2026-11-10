@@ -3,7 +3,7 @@
 > Official 2026/27 Agenda for Change salary and take-home pay tables for Cardiff and Vale University Health Board (7A4). Includes Welsh NHS (GIG Cymru), starting Band 5 take-home pay, and hospital site allocations.
 
 Canonical: https://netpayscale.uk/trusts/cardiff-and-vale-university/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## 1. Key Trust Facts
 - **Trust Name:** Cardiff and Vale University Health Board (Cardiff & Vale (GIG Cymru))

@@ -3,7 +3,7 @@
 > Calculate your 2026/27 NHS Occupational Maternity Pay (OMP), Statutory Maternity Pay (SMP £187.18/wk), Equal Monthly Spread option, and Holiday Accrual across all 52 weeks.
 
 Canonical: https://netpayscale.uk/maternity-pay-calculator/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## 2026/27 NHS Occupational Maternity Pay (OMP) 4-Phase Timeline
 To qualify for NHS Occupational Maternity Pay (Section 15), you must have **12 months of continuous NHS service** by the beginning of the 11th week before your Expected Week of Childbirth (EWC) and commit to returning to NHS employment for at least 3 months:

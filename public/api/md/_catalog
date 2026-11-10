@@ -1,9 +1,9 @@
 {
   "site": "NetPayScale UK (NHS Edition)",
   "url": "https://netpayscale.uk",
-  "updated": "2026-10-26",
+  "updated": "2026-11-10",
   "totalMarkdownRoutes": 125,
-  "totalHtmlRoutes": 619,
+  "totalHtmlRoutes": 620,
   "routes": [
     {
       "htmlUrl": "https://netpayscale.uk/",

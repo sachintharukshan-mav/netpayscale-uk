@@ -3,7 +3,7 @@
 > Official 2026/27 NHS Agenda for Change Band 3 (Senior Healthcare Assistant, Emergency Care Assistant, Pharmacy Assistant) salary breakdown: £25,760 to £27,476 gross per year, exact monthly net pay after pension, PAYE tax, and NICs across England, Scotland, and London HCAS zones.
 
 Canonical: https://netpayscale.uk/bands/band-3/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## Band 3 Overview (Senior Healthcare Assistant, Emergency Care Assistant, Pharmacy Assistant)
 - **2026/27 Gross Salary Range:** **£25,760** (Entry) to **£27,476** (Top Step)

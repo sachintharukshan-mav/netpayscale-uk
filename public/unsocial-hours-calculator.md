@@ -3,7 +3,7 @@
 > Official NHS Section 2 unsocial hours guidance, night shift enhancements (+30% / +44%), Saturday uplifts, and Sunday/Bank Holiday double-time equivalents (+60% / +88%) across Bands 2 to 9.
 
 Canonical: https://netpayscale.uk/unsocial-hours-calculator/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## 1. Agenda for Change Section 2 Statutory Terms
 

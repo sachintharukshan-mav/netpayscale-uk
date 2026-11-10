@@ -3,7 +3,7 @@
 > Official 2026/27 Agenda for Change salary and take-home pay tables for Hull University Teaching Hospitals NHS Trust (RWA). Includes Standard National (No HCAS), starting Band 5 take-home pay, and hospital site allocations.
 
 Canonical: https://netpayscale.uk/trusts/hull-university-teaching/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## 1. Key Trust Facts
 - **Trust Name:** Hull University Teaching Hospitals NHS Trust (Hull Hospitals)

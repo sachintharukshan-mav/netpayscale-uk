@@ -3,7 +3,7 @@
 > Official 2026/27 Agenda for Change salary and take-home pay tables for University Hospitals Birmingham NHS Foundation Trust (RRK). Includes Standard National (No HCAS), starting Band 5 take-home pay, and hospital site allocations.
 
 Canonical: https://netpayscale.uk/trusts/university-hospitals-birmingham/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## 1. Key Trust Facts
 - **Trust Name:** University Hospitals Birmingham NHS Foundation Trust (UHB (Birmingham))

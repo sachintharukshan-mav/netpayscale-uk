@@ -3,7 +3,7 @@
 > Official 2026/27 NHS Clinical Team Leader (Band 7) salary UK: £49,387 to £56,515 gross per year (£25.26/hr). Monthly net take-home pay is £2,934/mo at entry and £3,309/mo at top step after PAYE tax, NI, and 9.8% CARE pension.
 
 Canonical: https://netpayscale.uk/roles/clinical-manager/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## 1. Key 2026/27 Pay Facts for NHS Clinical Team Leader (Band 7)
 - **Agenda for Change Band:** Band 7

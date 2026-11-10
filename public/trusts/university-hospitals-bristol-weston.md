@@ -3,7 +3,7 @@
 > Official 2026/27 Agenda for Change salary and take-home pay tables for University Hospitals Bristol and Weston NHS Foundation Trust (RA7). Includes Standard National (No HCAS), starting Band 5 take-home pay, and hospital site allocations.
 
 Canonical: https://netpayscale.uk/trusts/university-hospitals-bristol-weston/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## 1. Key Trust Facts
 - **Trust Name:** University Hospitals Bristol and Weston NHS Foundation Trust (Bristol & Weston)

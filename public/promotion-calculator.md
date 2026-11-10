@@ -3,7 +3,7 @@
 > Direct Answer: Is stepping up from Band 5 to Band 6 financially worth it in the NHS? Analysis of the £50/month promotion trap, 9.8% pension tier cliffs, and losing unsocial ward shifts.
 
 Canonical: https://netpayscale.uk/promotion-calculator/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## Executive Summary: Band 5 to Band 6 Promotion Reality (2026/27)
 

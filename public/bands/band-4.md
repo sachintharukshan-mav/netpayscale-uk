@@ -3,7 +3,7 @@
 > Official 2026/27 NHS Agenda for Change Band 4 (Nursing Associate, Assistant Practitioner, Pharmacy Technician) salary breakdown: £28,392 to £31,157 gross per year, exact monthly net pay after pension, PAYE tax, and NICs across England, Scotland, and London HCAS zones.
 
 Canonical: https://netpayscale.uk/bands/band-4/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## Band 4 Overview (Nursing Associate, Assistant Practitioner, Pharmacy Technician)
 - **2026/27 Gross Salary Range:** **£28,392** (Entry) to **£31,157** (Top Step)

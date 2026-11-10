@@ -3,7 +3,7 @@
 > Compare exact net take-home pay and hidden costs between Permanent NHS Substantive contracts, Trust Staff Bank (+12.07% WTR holiday pay uplift), and Agency Nursing Inside IR35 (after 13.8% Employer NI, 0.5% Apprenticeship Levy, and umbrella fees).
 
 Canonical: https://netpayscale.uk/agency-vs-bank-calculator/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ---
 

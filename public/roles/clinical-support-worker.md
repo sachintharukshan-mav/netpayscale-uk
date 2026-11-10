@@ -3,7 +3,7 @@
 > Official 2026/27 NHS Clinical Support Worker (Band 2) salary UK: £25,272 to £25,272 gross per year (£12.92/hr). Monthly net take-home pay is £1,700/mo at entry and £1,700/mo at top step after PAYE tax, NI, and 6.5% CARE pension.
 
 Canonical: https://netpayscale.uk/roles/clinical-support-worker/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## 1. Key 2026/27 Pay Facts for NHS Clinical Support Worker (Band 2)
 - **Agenda for Change Band:** Band 2

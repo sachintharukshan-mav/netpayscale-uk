@@ -3,7 +3,7 @@
 > Calculate 2026/27 NHS Agenda for Change part-time pro-rata net take-home pay across 0.4, 0.5, 0.6, and 0.8 WTE contracts, including pro-rata HCAS and Section 13 holiday hours.
 
 Canonical: https://netpayscale.uk/part-time-pay-calculator/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## 1. NHS Pro-Rata Formula & Tax Advantage
 - **Pro-Rata WTE Formula:** `Pro-Rata Gross = Full-Time Salary × (Contracted Weekly Hours ÷ 37.5)`.

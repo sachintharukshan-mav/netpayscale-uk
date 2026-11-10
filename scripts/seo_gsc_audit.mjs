@@ -46,7 +46,7 @@ const llmsFullContent = fs.readFileSync(llmsFullPath, 'utf8');
 assert(llmsFullContent.length > 10000 && llmsFullContent.length < 500000, `llms-full.txt length is within optimal LLM context window (${llmsFullContent.length} chars)`);
 const catalogData = JSON.parse(fs.readFileSync(catalogPath, 'utf8'));
 assert(catalogData.totalMarkdownRoutes === 125, `api/md/_catalog lists all 125 core, band, trust & role Markdown routes (actual: ${catalogData.totalMarkdownRoutes})`);
-assert(catalogData.totalHtmlRoutes === 619, `api/md/_catalog reports 619 total HTML routes (actual: ${catalogData.totalHtmlRoutes})`);
+assert(catalogData.totalHtmlRoutes === 620, `api/md/_catalog reports 620 total HTML routes (actual: ${catalogData.totalHtmlRoutes})`);
 
 // 2. Sitemap.xml check
 const sitemapPath = path.join(outDir, 'sitemap.xml');
@@ -57,7 +57,7 @@ const sitemapContent = fs.readFileSync(sitemapPath, 'utf8');
 const locMatches = [...sitemapContent.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => m[1]);
 console.log(`Found ${locMatches.length} URLs in sitemap.xml`);
 
-assert(locMatches.length === 619, `Sitemap contains all 619 canonical URLs (27 core/calculators + 11 band hubs + 50 trust hubs + 41 role pillar hubs + 490 role-region spokes; actual: ${locMatches.length})`);
+assert(locMatches.length === 620, `Sitemap contains all 620 canonical URLs (28 core/calculators + 11 band hubs + 50 trust hubs + 41 role pillar hubs + 490 role-region spokes; actual: ${locMatches.length})`);
 assert(locMatches[0] === 'https://netpayscale.uk/', `Homepage in sitemap is exact canonical: https://netpayscale.uk/ (actual: ${locMatches[0]})`);
 
 let nonTrailingSlashCount = 0;
@@ -79,7 +79,7 @@ const sitemapIndexMatches = [...sitemapIndexContent.matchAll(/<loc>(.*?)<\/loc>/
 assert(sitemapIndexMatches.length === 4, `sitemap-index.xml points to 4 child sitemaps (actual: ${sitemapIndexMatches.length})`);
 
 const childSitemaps = [
-  { file: 'sitemap-core.xml', count: 27 },
+  { file: 'sitemap-core.xml', count: 28 },
   { file: 'sitemap-bands.xml', count: 11 },
   { file: 'sitemap-trusts.xml', count: 50 },
   { file: 'sitemap-roles.xml', count: 531 }
@@ -100,7 +100,7 @@ for (const child of childSitemaps) {
     }
   }
 }
-assert(totalSegmentedUrls === 619, `Segmented child sitemaps sum to exactly 619 URLs matching master sitemap.xml (actual: ${totalSegmentedUrls})`);
+assert(totalSegmentedUrls === 620, `Segmented child sitemaps sum to exactly 620 URLs matching master sitemap.xml (actual: ${totalSegmentedUrls})`);
 
 
 // 3. Homepage HTML Audit (Canonical, Meta, Schema)

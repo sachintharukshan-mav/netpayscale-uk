@@ -3,7 +3,7 @@
 > Official 2026/27 NHS Occupational Therapist (Band 5) salary UK: £32,073 to £39,043 gross per year (£16.40/hr). Monthly net take-home pay is £2,040/mo at entry and £2,381/mo at top step after PAYE tax, NI, and 8.3% CARE pension.
 
 Canonical: https://netpayscale.uk/roles/occupational-therapist/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## 1. Key 2026/27 Pay Facts for NHS Occupational Therapist (Band 5)
 - **Agenda for Change Band:** Band 5

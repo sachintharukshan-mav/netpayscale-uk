@@ -3,7 +3,7 @@
 > Official embed instructions and code generator for nursing blogs, NHS Trust intranets, unions, and healthcare recruitment agencies. Add an interactive Agenda for Change take-home pay calculator to your website.
 
 Canonical: https://netpayscale.uk/embed/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## 1. Quick Embed Code Snippet
 

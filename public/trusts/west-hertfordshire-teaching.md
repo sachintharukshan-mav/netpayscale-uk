@@ -3,7 +3,7 @@
 > Official 2026/27 Agenda for Change salary and take-home pay tables for West Hertfordshire Teaching Hospitals NHS Trust (RWG). Includes Fringe Zone (+5%, up to £2,270), starting Band 5 take-home pay, and hospital site allocations.
 
 Canonical: https://netpayscale.uk/trusts/west-hertfordshire-teaching/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## 1. Key Trust Facts
 - **Trust Name:** West Hertfordshire Teaching Hospitals NHS Trust (West Hertfordshire)

@@ -3,7 +3,7 @@
 > Authoritative guidance for overseas nurses, doctors, and allied health professionals joining the UK NHS: Pre-OSCE (Band 4) vs Post-OSCE (Band 5) take-home pay, IHS exemption savings, and monthly remittance benchmarks.
 
 Canonical: https://netpayscale.uk/international/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## 1. Pre-OSCE (Band 4) vs Post-OSCE (Band 5) Pay Progression
 

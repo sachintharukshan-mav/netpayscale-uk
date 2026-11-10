@@ -3,7 +3,7 @@
 > Official 2026/27 Agenda for Change salary and take-home pay tables for NHS Lothian Health Board (S08000024). Includes Scottish AfC & 6-Band Tax, starting Band 5 take-home pay, and hospital site allocations.
 
 Canonical: https://netpayscale.uk/trusts/nhs-lothian/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## 1. Key Trust Facts
 - **Trust Name:** NHS Lothian Health Board (NHS Lothian (Edinburgh))

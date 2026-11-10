@@ -3,7 +3,7 @@
 > Official 2026/27 NHS Scotland Agenda for Change salary, 35.0-hour working week (1,825 hrs/yr), and Scottish 6-band Income Tax (S1257L: 19%–48%) calculator.
 
 Canonical: https://netpayscale.uk/scotland-pay-calculator/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## 1. Key NHS Scotland 2026/27 Pay & Working Week Rules
 - **35.0-Hour Full-Time Working Week:** Full-time NHS Scotland staff work 35.0 hours/week (1,825 hours/year) vs 37.5 hours/week (1,955.36 hours/year) in NHS England—delivering a **+7.14% higher effective hourly rate** and **130.36 extra free hours per year**.

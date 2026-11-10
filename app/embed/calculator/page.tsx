@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: "https://netpayscale.uk/",
+    canonical: "https://netpayscale.uk/embed/calculator/",
   },
 };
 

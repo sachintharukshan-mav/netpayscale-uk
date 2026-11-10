@@ -3,7 +3,7 @@
 > Official 2026/27 NHS Agenda for Change salary, hourly rate, and net monthly take-home pay directory across 41 clinical, allied health, scientific, and leadership job titles (Bands 2 to 9).
 
 Canonical: https://netpayscale.uk/roles/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## 2026/27 NHS Job Role Salary & Net Monthly Take-Home Master Table (All 41 Roles)
 

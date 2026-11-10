@@ -95,6 +95,12 @@ export function Navbar() {
             {t("bankShift", "Bank & Overtime")}
           </Link>
           <Link
+            href="/unsocial-hours-calculator/"
+            className="hidden 2xl:inline-block px-2.5 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95 whitespace-nowrap"
+          >
+            Unsocial Hours
+          </Link>
+          <Link
             href="/sick-pay-calculator/"
             className="hidden 2xl:inline-block px-2.5 py-1.5 rounded-lg text-sm text-text-muted hover:text-text-ink hover:bg-surface-muted transition-all duration-150 active:scale-95 whitespace-nowrap"
           >

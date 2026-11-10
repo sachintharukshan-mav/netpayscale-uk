@@ -3,7 +3,7 @@
 > Official 2026/27 NHS Agenda for Change Band 8a (Matron, Principal Clinical Psychologist, Advanced Nurse Consultant) salary breakdown: £57,528 to £64,750 gross per year, exact monthly net pay after pension, PAYE tax, and NICs across England, Scotland, and London HCAS zones.
 
 Canonical: https://netpayscale.uk/bands/band-8a/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## Band 8a Overview (Matron, Principal Clinical Psychologist, Advanced Nurse Consultant)
 - **2026/27 Gross Salary Range:** **£57,528** (Entry) to **£64,750** (Top Step)

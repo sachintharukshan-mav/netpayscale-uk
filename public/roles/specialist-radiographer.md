@@ -3,7 +3,7 @@
 > Official 2026/27 NHS Specialist Radiographer (Band 6) salary UK: £39,959 to £48,117 gross per year (£20.44/hr). Monthly net take-home pay is £2,430/mo at entry and £2,866/mo at top step after PAYE tax, NI, and 9.8% CARE pension.
 
 Canonical: https://netpayscale.uk/roles/specialist-radiographer/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## 1. Key 2026/27 Pay Facts for NHS Specialist Radiographer (Band 6)
 - **Agenda for Change Band:** Band 6

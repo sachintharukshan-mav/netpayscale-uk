@@ -3,7 +3,7 @@
 > Official 2026/27 NHS Agenda for Change Band 7 (Ward Manager / Sister, Advanced Clinical Practitioner (ACP), Advanced Paramedic) salary breakdown: £49,387 to £56,515 gross per year, exact monthly net pay after pension, PAYE tax, and NICs across England, Scotland, and London HCAS zones.
 
 Canonical: https://netpayscale.uk/bands/band-7/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## Band 7 Overview (Ward Manager / Sister, Advanced Clinical Practitioner (ACP), Advanced Paramedic)
 - **2026/27 Gross Salary Range:** **£49,387** (Entry) to **£56,515** (Top Step)

@@ -3,7 +3,7 @@
 > Official 2026/27 NHS Assistant Practitioner (Band 4) salary UK: £28,392 to £31,157 gross per year (£14.52/hr). Monthly net take-home pay is £1,874/mo at entry and £1,990/mo at top step after PAYE tax, NI, and 6.5% CARE pension.
 
 Canonical: https://netpayscale.uk/roles/assistant-practitioner/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## 1. Key 2026/27 Pay Facts for NHS Assistant Practitioner (Band 4)
 - **Agenda for Change Band:** Band 4

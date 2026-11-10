@@ -3,7 +3,7 @@
 > Complete 2026/27 NHS Agenda for Change hourly rate chart across all 25 spine points (Bands 2 to 9), comparing Basic (1.0x), Night/Saturday (+44%/+30%), Sunday/BH (+88%/+60%), and Bank (+12.07% WTR) hourly rates.
 
 Canonical: https://netpayscale.uk/hourly-rate-calculator/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## 1. 2026/27 NHS Hourly Pay Rates Master Table (All Spine Points)
 

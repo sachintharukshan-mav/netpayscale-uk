@@ -3,7 +3,7 @@
 > Official 2026/27 Agenda for Change salary and take-home pay tables for Belfast Health and Social Care Trust (BHSCT). Includes HSC Northern Ireland Standard, starting Band 5 take-home pay, and hospital site allocations.
 
 Canonical: https://netpayscale.uk/trusts/belfast-health-social-care/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## 1. Key Trust Facts
 - **Trust Name:** Belfast Health and Social Care Trust (Belfast Trust (HSC))

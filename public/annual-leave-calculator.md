@@ -3,7 +3,7 @@
 > Convert your 2026/27 NHS Annual Leave and 8 Public Bank Holidays into exact working hours or days based on years of NHS service (0–4 yrs, 5–9 yrs, 10+ yrs), weekly contract hours, and shift length.
 
 Canonical: https://netpayscale.uk/annual-leave-calculator/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## 2026/27 NHS Agenda for Change Annual Leave Tiers (Section 13)
 

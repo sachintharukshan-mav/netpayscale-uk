@@ -3,7 +3,7 @@
 > Calculate your exact 2026/27 NHS Occupational Sick Pay entitlement by years of continuous NHS service, plus net monthly take-home during Full Pay and Half Pay + Statutory Sick Pay (SSP).
 
 Canonical: https://netpayscale.uk/sick-pay-calculator/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## NHS Terms & Conditions Handbook (Section 14) Sick Pay Entitlement Table
 

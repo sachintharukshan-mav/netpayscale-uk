@@ -3,7 +3,7 @@
 > Official 2026/27 NHS Director of Nursing (Band 9) salary UK: £112,782 to £129,783 gross per year (£57.68/hr). Monthly net take-home pay is £5,626/mo at entry and £6,115/mo at top step after PAYE tax, NI, and 12.5% CARE pension.
 
 Canonical: https://netpayscale.uk/roles/director-of-nursing/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## 1. Key 2026/27 Pay Facts for NHS Director of Nursing (Band 9)
 - **Agenda for Change Band:** Band 9

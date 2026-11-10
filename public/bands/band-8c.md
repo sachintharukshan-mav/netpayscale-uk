@@ -3,7 +3,7 @@
 > Official 2026/27 NHS Agenda for Change Band 8c (Head of Nursing, Associate Director, Consultant Scientist) salary breakdown: £79,504 to £91,609 gross per year, exact monthly net pay after pension, PAYE tax, and NICs across England, Scotland, and London HCAS zones.
 
 Canonical: https://netpayscale.uk/bands/band-8c/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## Band 8c Overview (Head of Nursing, Associate Director, Consultant Scientist)
 - **2026/27 Gross Salary Range:** **£79,504** (Entry) to **£91,609** (Top Step)

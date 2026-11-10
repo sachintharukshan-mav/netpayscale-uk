@@ -3,7 +3,7 @@
 > Official 2026/27 Agenda for Change salary and take-home pay tables for Croydon Health Services NHS Trust (RJ6). Includes Outer London (+15%, up to £6,137), starting Band 5 take-home pay, and hospital site allocations.
 
 Canonical: https://netpayscale.uk/trusts/croydon-health-services/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## 1. Key Trust Facts
 - **Trust Name:** Croydon Health Services NHS Trust (Croydon Health)

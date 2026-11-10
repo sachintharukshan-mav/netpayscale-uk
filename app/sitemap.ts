@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://netpayscale.uk";
   const pseoEntries = getAllPseoEntries();
   const roleHubs = getAllRoleHubs();
-  const buildDate = new Date("2026-04-01T00:00:00.000Z");
+  const buildDate = new Date("2026-11-10T00:00:00.000Z");
 
   const staticRoutes: MetadataRoute.Sitemap = [
     {
@@ -101,6 +101,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: buildDate,
       changeFrequency: "weekly",
       priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/calculator/`,
+      lastModified: buildDate,
+      changeFrequency: "weekly",
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/scotland-pay-calculator/`,

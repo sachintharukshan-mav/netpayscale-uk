@@ -3,7 +3,7 @@
 > Official 2026/27 NHS Agenda for Change Band 5 (Staff Nurse (RN), Newly Qualified Paramedic, Physiotherapist) salary breakdown: £32,073 to £39,043 gross per year, exact monthly net pay after pension, PAYE tax, and NICs across England, Scotland, and London HCAS zones.
 
 Canonical: https://netpayscale.uk/bands/band-5/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## Band 5 Overview (Staff Nurse (RN), Newly Qualified Paramedic, Physiotherapist)
 - **2026/27 Gross Salary Range:** **£32,073** (Entry) to **£39,043** (Top Step)

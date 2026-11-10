@@ -3,7 +3,7 @@
 > Calculate your exact 2026/27 NHS 3.3% Agenda for Change backdated arrears lump sum from 1 April after PAYE tax, National Insurance, NHS Pension, and Student Loan deductions.
 
 Canonical: https://netpayscale.uk/pay-rise-backpay-calculator/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## 2026/27 NHS 3.3% Pay Rise & 6-Month Arrears Table (Bands 2 to 9)
 

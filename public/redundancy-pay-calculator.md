@@ -3,7 +3,7 @@
 > Calculate your 2026/27 NHS Section 16 contractual redundancy pay (1 month per year of service up to 24 years, £80k salary cap) and NHS MARS voluntary severance after the £30,000 HMRC tax-free allowance.
 
 Canonical: https://netpayscale.uk/redundancy-pay-calculator/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## 2026/27 NHS Section 16 Redundancy Payout Matrix by Band & Reckonable Service
 

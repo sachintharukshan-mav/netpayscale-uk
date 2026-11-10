@@ -3,7 +3,7 @@
 > Official 2026/27 Agenda for Change salary and take-home pay tables for Liverpool University Hospitals NHS Foundation Trust (REM). Includes Standard National (No HCAS), starting Band 5 take-home pay, and hospital site allocations.
 
 Canonical: https://netpayscale.uk/trusts/liverpool-university-hospitals/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## 1. Key Trust Facts
 - **Trust Name:** Liverpool University Hospitals NHS Foundation Trust (Liverpool Hospitals)

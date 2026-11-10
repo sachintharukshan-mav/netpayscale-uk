@@ -3,7 +3,7 @@
 > Official directory of the 50 largest NHS Hospital Trusts and Health Boards in the UK: exact High Cost Area Supplement (HCAS) allowances, starting Band 5 gross and net monthly take-home pay, and hospital sites.
 
 Canonical: https://netpayscale.uk/trusts/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## 1. High Cost Area Supplement (HCAS) Rules for 2026/27
 

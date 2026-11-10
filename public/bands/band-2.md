@@ -3,7 +3,7 @@
 > Official 2026/27 NHS Agenda for Change Band 2 (Healthcare Assistant, Clinical Support Worker, Phlebotomist) salary breakdown: £25,272 to £25,272 gross per year, exact monthly net pay after pension, PAYE tax, and NICs across England, Scotland, and London HCAS zones.
 
 Canonical: https://netpayscale.uk/bands/band-2/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## Band 2 Overview (Healthcare Assistant, Clinical Support Worker, Phlebotomist)
 - **2026/27 Gross Salary Range:** **£25,272** (Entry) to **£25,272** (Top Step)

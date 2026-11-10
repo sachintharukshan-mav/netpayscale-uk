@@ -266,10 +266,10 @@ export function Footer() {
             <Link href="/contact/" className="hover:text-zinc-600 transition-colors">
               Contact Us
             </Link>
-            <a href="/llms.txt" className="hover:text-zinc-600 transition-colors">
+            <a href="/llms.txt" rel="nofollow" className="hover:text-zinc-600 transition-colors">
               LLMs.txt
             </a>
-            <a href="/index.md" className="hover:text-zinc-600 transition-colors">
+            <a href="/index.md" rel="nofollow" className="hover:text-zinc-600 transition-colors">
               Markdown
             </a>
           </div>

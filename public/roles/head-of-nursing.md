@@ -3,7 +3,7 @@
 > Official 2026/27 NHS Head of Nursing (Band 8c) salary UK: £79,504 to £91,609 gross per year (£40.66/hr). Monthly net take-home pay is £4,226/mo at entry and £4,735/mo at top step after PAYE tax, NI, and 12.5% CARE pension.
 
 Canonical: https://netpayscale.uk/roles/head-of-nursing/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## 1. Key 2026/27 Pay Facts for NHS Head of Nursing (Band 8c)
 - **Agenda for Change Band:** Band 8c

@@ -3,7 +3,7 @@
 > Official 2026/27 NHS Agenda for Change Band 9 (Director of Nursing, Chief Operating Officer, Director of Clinical Strategy) salary breakdown: £112,782 to £129,783 gross per year, exact monthly net pay after pension, PAYE tax, and NICs across England, Scotland, and London HCAS zones.
 
 Canonical: https://netpayscale.uk/bands/band-9/
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 ## Band 9 Overview (Director of Nursing, Chief Operating Officer, Director of Clinical Strategy)
 - **2026/27 Gross Salary Range:** **£112,782** (Entry) to **£129,783** (Top Step)

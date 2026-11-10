@@ -37,7 +37,7 @@ const SITE = {
   description:
     "Official 2026/27 UK NHS Salary & Pension Calculator for 1.3M+ Agenda for Change healthcare staff. Computes net take-home pay, 3.3% AfC pay steps, London Weighting (HCAS), NHS 2015 CARE Pension tiers, Section 2 unsocial hours, Maternity Pay (OMP/SMP), Sick Pay, and Annual Leave.",
   contact: "editorial@netpayscale.uk",
-  updated: "2026-10-26",
+  updated: "2026-11-10",
 };
 
 function fmtGBP(val) {
@@ -1481,7 +1481,7 @@ const catalogPayload = {
   url: SITE.url,
   updated: SITE.updated,
   totalMarkdownRoutes: markdownRegistry.length,
-  totalHtmlRoutes: 619,
+  totalHtmlRoutes: 620,
   routes: markdownRegistry.map((r) => ({
     htmlUrl: `${SITE.url}${r.route}`,
     markdownUrl: `${SITE.url}${r.mdPath}`,
@@ -1681,7 +1681,7 @@ fs.writeFileSync(path.join(PUBLIC_DIR, "robots.txt"), robotsTxt, "utf8");
 // ---------------------------------------------------------------------------
 // XML Segmented Sitemaps Generation (Core, Bands, Trusts, Roles, Index)
 // ---------------------------------------------------------------------------
-const buildDate = "2026-10-30";
+const buildDate = "2026-11-10";
 
 const coreUrls = [
   { loc: `${SITE.url}/`, priority: "1.0", changefreq: "daily" },
@@ -1699,6 +1699,7 @@ const coreUrls = [
   { loc: `${SITE.url}/embed/`, priority: "0.90", changefreq: "weekly" },
   { loc: `${SITE.url}/trusts/`, priority: "0.90", changefreq: "weekly" },
   { loc: `${SITE.url}/roles/`, priority: "0.95", changefreq: "weekly" },
+  { loc: `${SITE.url}/calculator/`, priority: "0.90", changefreq: "weekly" },
   { loc: `${SITE.url}/scotland-pay-calculator/`, priority: "0.95", changefreq: "weekly" },
   { loc: `${SITE.url}/part-time-pay-calculator/`, priority: "0.95", changefreq: "weekly" },
   { loc: `${SITE.url}/hourly-rate-calculator/`, priority: "0.95", changefreq: "weekly" },
