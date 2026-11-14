@@ -40,7 +40,12 @@ const faqs: FAQItem[] = [
   },
 ];
 
-export default function FAQSection() {
+export default function FAQSection({
+  emitSchema = true,
+}: {
+  /** Set false on pages that already emit their own page-specific FAQPage JSON-LD (avoids duplicate FAQPage). */
+  emitSchema?: boolean;
+} = {}) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const faqSchema = {
@@ -58,10 +63,12 @@ export default function FAQSection() {
 
   return (
     <section id="faq" className="w-full space-y-4 pt-6">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      {emitSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
 
       <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 border-b border-zinc-200/80 pb-3">
         <div>

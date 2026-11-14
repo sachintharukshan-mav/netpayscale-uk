@@ -270,18 +270,6 @@ export default async function PseoCalculatorPage({ params }: Props) {
         ],
       },
       {
-        "@type": "FinancialProduct",
-        name: `${entry.band} ${entry.roleName} Pay Scale (${entry.regionName})`,
-        description: entry.description,
-        provider: {
-          "@type": "Organization",
-          name: "NHS Agenda for Change",
-        },
-        annualPercentageRate: 3.3,
-        feesAndCommissionsSpecification:
-          "No user fees. Free computational resource.",
-      },
-      {
         "@type": "FAQPage",
         mainEntity: [
           {
@@ -1009,7 +997,7 @@ export default async function PseoCalculatorPage({ params }: Props) {
         />
 
         {/* FAQs */}
-        <FAQSection />
+        <FAQSection emitSchema={false} />
       </div>
     </div>
   );

@@ -358,18 +358,6 @@ export default async function RolePillarPage({ params }: Props) {
         ],
       },
       {
-        "@type": "FinancialProduct",
-        name: `NHS ${role.band} ${role.roleName} Salary & Net Pay Calculator (2026/27)`,
-        description: role.clinicalSummary,
-        provider: {
-          "@type": "Organization",
-          name: "NHS Agenda for Change",
-        },
-        annualPercentageRate: 3.3,
-        feesAndCommissionsSpecification:
-          "No user fees. Free statutory payroll reference.",
-      },
-      {
         "@type": "FAQPage",
         mainEntity: [
           {
@@ -1225,7 +1213,7 @@ export default async function RolePillarPage({ params }: Props) {
         <EeatVerificationBlock
           contextLabel={`NHS ${role.roleName} (${role.band}) Pay & Career Progression`}
         />
-        <FAQSection />
+        <FAQSection emitSchema={false} />
       </div>
     </div>
   );

@@ -558,7 +558,7 @@ export default async function BandHubPage({ params }: Props) {
         <EeatVerificationBlock
           contextLabel={`NHS ${bandObj.band} Pay Scale & Deductions`}
         />
-        <FAQSection />
+        <FAQSection emitSchema={false} />
       </div>
     </div>
   );
