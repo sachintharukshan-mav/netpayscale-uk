@@ -84,6 +84,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: {
       canonical: canonicalUrl,
     },
+    // Programmatic role x region spokes are near-duplicates of each other and of /roles/*;
+    // keep them live and crawlable (follow) but out of the index to protect site-wide quality.
+    robots: {
+      index: false,
+      follow: true,
+    },
     other: {
       "ai-summary": description,
     },

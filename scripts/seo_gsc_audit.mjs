@@ -57,7 +57,7 @@ const sitemapContent = fs.readFileSync(sitemapPath, 'utf8');
 const locMatches = [...sitemapContent.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => m[1]);
 console.log(`Found ${locMatches.length} URLs in sitemap.xml`);
 
-assert(locMatches.length === 620, `Sitemap contains all 620 canonical URLs (28 core/calculators + 11 band hubs + 50 trust hubs + 41 role pillar hubs + 490 role-region spokes; actual: ${locMatches.length})`);
+assert(locMatches.length === 130, `Sitemap contains 130 indexable canonical URLs (28 core/calculators + 11 band hubs + 50 trust hubs + 41 role pillar hubs; the 490 role-region spokes are noindex and excluded; actual: ${locMatches.length})`);
 assert(locMatches[0] === 'https://netpayscale.uk/', `Homepage in sitemap is exact canonical: https://netpayscale.uk/ (actual: ${locMatches[0]})`);
 
 let nonTrailingSlashCount = 0;
@@ -82,7 +82,7 @@ const childSitemaps = [
   { file: 'sitemap-core.xml', count: 28 },
   { file: 'sitemap-bands.xml', count: 11 },
   { file: 'sitemap-trusts.xml', count: 50 },
-  { file: 'sitemap-roles.xml', count: 531 }
+  { file: 'sitemap-roles.xml', count: 41 }
 ];
 
 let totalSegmentedUrls = 0;
@@ -100,7 +100,7 @@ for (const child of childSitemaps) {
     }
   }
 }
-assert(totalSegmentedUrls === 620, `Segmented child sitemaps sum to exactly 620 URLs matching master sitemap.xml (actual: ${totalSegmentedUrls})`);
+assert(totalSegmentedUrls === 130, `Segmented child sitemaps sum to exactly 130 URLs matching master sitemap.xml (actual: ${totalSegmentedUrls})`);
 
 
 // 3. Homepage HTML Audit (Canonical, Meta, Schema)

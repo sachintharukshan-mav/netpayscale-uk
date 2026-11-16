@@ -1,13 +1,12 @@
 import { MetadataRoute } from "next";
 import nhsData from "@/data/nhs_afc_2026.json";
 import trustsData from "@/data/nhs_trusts.json";
-import { getAllPseoEntries, getAllRoleHubs } from "@/lib/pseo-matrix";
+import { getAllRoleHubs } from "@/lib/pseo-matrix";
 
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://netpayscale.uk";
-  const pseoEntries = getAllPseoEntries();
   const roleHubs = getAllRoleHubs();
   const buildDate = new Date("2026-11-10T00:00:00.000Z");
 
@@ -203,18 +202,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  const programmaticRoutes: MetadataRoute.Sitemap = pseoEntries.map((entry) => ({
-    url: `${baseUrl}/calculator/${entry.slug}/`,
-    lastModified: buildDate,
-    changeFrequency: "weekly",
-    priority: 0.85,
-  }));
-
+  // NOTE: /calculator/<spoke>/ pages are noindex (near-duplicate programmatic pages) and are intentionally excluded.
   return [
     ...staticRoutes,
     ...bandHubRoutes,
     ...trustRoutes,
     ...roleHubRoutes,
-    ...programmaticRoutes,
   ];
 }

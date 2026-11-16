@@ -1732,11 +1732,7 @@ const roleUrls = [
     priority: "0.90",
     changefreq: "weekly",
   })),
-  ...pseoData.map((p) => ({
-    loc: `${SITE.url}/calculator/${p.slug}/`,
-    priority: "0.85",
-    changefreq: "weekly",
-  })),
+  // /calculator/<spoke>/ pages are noindex (near-duplicate programmatic pages) and intentionally excluded.
 ];
 
 function buildUrlsetXml(urls) {
